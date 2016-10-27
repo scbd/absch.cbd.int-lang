@@ -6,13 +6,13 @@
                 <th class="color-litegrey" style="font-size:12px;bold;"> Date <span ng-if="!publicView">Published</span> </th>
                 <th class="color-litegrey" style="font-size:12px;bold;" ng-if="!publicView"> Date Requested </th>
             </tr>
-            <tr ng-show="documents.length > 0">
-             <td colspan="4" class="text-center"> no record history available </td>
+            <tr ng-if="documents.length =< 0">
+             <td colspan="4" > no history available  </td>
            </tr>
         <tbody ng-repeat="document in documents | orderBy:'updatedOn':true" style="font-size:12px;" >
             <tr>
                 <td style="white-space:nowrap;">
-                    <a ng-href="/database/{{document.type | schemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank">
+                    <a translation-url  ng-href="/database/{{document.type | schemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank">
                         <strong>{{document | uniqueID}}</strong>
                     </a>
                 </td>
@@ -22,7 +22,7 @@
                             <span class="bold color-red"> REVOKED</span>
                         </span>
                         <span ng-show="((documents.length>1 && !document.deletedOn && document.body.amendmentIntent!=1 && document.revision < documents.length))">
-                            <span class="bold color-grey"> OLD</span>
+                            <span class="bold color-grey" >{{(document.type | schemaShortName) === 'IRCC' ? "NOT VALID" : "OLD VERSION"}}</span>
                         </span>
                         <span ng-show="!document.deletedOn && (documents.length==1 || (documents.length>1 && documents.length == document.revision && (!isPermit || document.body.amendmentIntent!=1)))">
                             <span class="bold color-green"> PUBLISHED</span>
@@ -44,14 +44,14 @@
                         <span ng-show="document.body.amendmentDescription">
 						  		<div ng-show="!more">
                                     <span ng-bind-html="document.body.amendmentDescription| lstring:locale | limitTo:200"></span>
-                                    <a ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200">
+                                    <a translation-url  ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200">
                                         <strong>...more</strong> 
                                     </a>
                                 </div>
                                 <div ng-show="more"> 
                                     <span ng-bind-html="document.body.amendmentDescription| lstring:locale">
                                     </span>
-                                    <a ng-href="#" ng-click="more=!more"> <strong>...less</strong></a>
+                                    <a translation-url  ng-href="#" ng-click="more=!more"> <strong>...less</strong></a>
                                 </div>
                         </span>
                     </div>

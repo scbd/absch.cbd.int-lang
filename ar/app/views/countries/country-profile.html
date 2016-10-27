@@ -3,9 +3,12 @@
         .cp-header label{margin-right:10px; width:180px;margin-bottom:0;}
 </style>
 <div smooth-scroll duration="100" offset="200"></div>
-
-   <div id="Jumbotron" class="bg-texture-green color-black hidden-xs" selected-color="#FFFFFF" style="border-top:1px solid #555;border-bottom:2px solid #ddd;">
-        <zoom-map ng-attr-zoom-to="{{country.code}}" map-id="zoom-map-country" height="350px"></zoom-map>
+   
+    <div id="Jumbotron" class="bg-texture-green color-black hidden-xs" selected-color="#FFFFFF" 
+    style="border-top:1px solid #555;border-bottom:2px solid #ddd;">     
+        <div block-region activate="loading" block-text=" Loading map">
+            <search-zoom-map zoom-to="{{country.code}}" height="350px"></search-zoom-map>
+        </div>   
     </div>
 
     <div class="row" style="margin:0;">
@@ -38,7 +41,7 @@
                    
                     <div style="white-space:nowrap;overflow-x:hidden;margin-bottom:5px;">
                         <label>CBD Country Profile:</label>
-                        <a  href="https://www.cbd.int/countries/?country={{country.code}}" target="_new"> www.cbd.int/countries/?country={{country.code}} </a>
+                        <a translation-url   href="https://www.cbd.int/countries/?country={{country.code}}" target="_new"> www.cbd.int/countries/?country={{country.code}} </a>
                     </div>
                         
             </div>
