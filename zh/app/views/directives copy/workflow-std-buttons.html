@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-xs-12">
+        UTF-8 漢字
+        <span ng-show="lastSaved && hideTimer=='false'" class="color-grey label pull-right" style="background-color:#ddd;text-transform:uppercase;font-size:12px;"><span style="position:relative;top:1px;"><i class="glyphicon glyphicon-time" style="position:relative;top:2px;"></i>���󱣴��� <span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span></span>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-xs-12">
+        <div km-form-languages ng-model="languages" style="padding-top:20px;" class="pull-left btn-xs"></div>
+
+        <ul style="list-style-type:none;margin:0;padding:0;padding-top:20px;" class="pull-right">
+            <li style="display: inline;"><button type="button" class="btn btn-warning " ng-click="close()" ng-disabled="loading">
+                <i class="glyphicon glyphicon-remove"></i> �ر�</button>
+            </li>
+            <li style="display: inline;"  ng-show="security.canSaveDraft">
+                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">�����ݸ� <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i>
+                  </button>
+            </li> 
+            <li style="display: inline;" ng-show="security.canSave">
+                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">���� <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i>
+                    </button>
+            </li>
+            <li style="display: inline;" ng-show="security.canSave!==undefined && (!security.canSave && security.canSaveDraft)">
+                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">���󷢲� <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i>
+                    </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-xs-12" style="border-bottom:1px solid #eee;margin-bottom:20px;">
+        <ul style="list-style-type:none;margin:0;padding:0;padding-top:20px;" class="pull-left">
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='edit'}">
+                <a ng-click="tab='edit'" ng-disabled="loading || security==undefined">�ύ��Ϣ��</a>
+            </li>
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='review'}">
+                <a ng-click="tab='review'" ng-disabled="loading || security==undefined">����</a>
+            </li>
+        </ul>
+    </div>
+
+    <div style="display:none" id="msgDraftSaveMessage">
+        ���ļ�¼�Ѵ�Ϊ�ݸ塣
+    </div>
+
+    <div class="row" style="display:none" id="divShowError" ng-show="showError">
+        <div class="col-xs-12">
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" ng-click="showError=false">
+                    <span aria-hidden="true">&times;</span> <span class="sr-only">�ر�</span>
+                </button> {{errorMessage}}
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="dialogCancel" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="closeDialog()" aria-hidden="true">&Atilde;&mdash;</button>
+                    <h4>ȡ������</h4>
+                </div>
+                <div class="modal-body">
+                    <p>������Ҫȡ���ոնԲݸ����еĸ��ģ������Ա����ݸ���ԭ���汾���Ժ������ڹ������ĵĲݸ��б��з��ʸòݸ塣��������ͬ�����ڻ��Ժ����Լ����༭�ü�¼��</p>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose">ȡ��</button>
+                    <button type="button" ng-click="close(true)" class="btn btn-warning closeWithoutSaving pull-left">�������ر�</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divAdditionalInfo" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-red color-white">
+                    <button type="button" class="close" ng-click="closeAddInfoDialog(false)" aria-hidden="true">&Atilde;&mdash;</button>
+                    <h2>��������</h2>
+                </div>
+                <div class="modal-body">
+                    <p>����ҪΪ������������������Ϣ����</p>
+                    <textarea class="form-control" rows="5" name="info" ng-model="InfoDoc.additionalInfo"></textarea>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">ȡ��</button>
+                    <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">��������</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

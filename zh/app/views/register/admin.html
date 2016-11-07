@@ -8,7 +8,7 @@
   <div class="register-content card card-1-notrans">
     <div class="register-content-header bg-pink color-white">
       <div style="padding:1px 10px;">
-        <h3>ABSCH Admin </h3>
+        <h3>ABSCH 管理 </h3>
       </div>
     </div>
     <div class="register-content-content" ng-if="roles.isAbsAdministrator || roles.isAdministrator">
@@ -16,15 +16,12 @@
         <div class="col-md-12 cp-header">
           <table style="width:100%;">
             <tr>
-              <td><label>Current Realm: </label></td>
+              <td><label>当前域： </label></td>
               <td><span switch-realm></span></td>
             </tr>
           </table>
         </div>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/reported-records">Manage Reported Records</a>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/pending-requests">Manage Workflow Records</a>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/report-counts">Report counts</a>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/error-logs">Error Logs</a>
+        <a translation-url  class="btn btn-default" ng-href="/register/admin/reported-records">管理已报告的记录</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/pending-requests">管理工作流记录</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/report-counts">报告数量</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/error-logs">错误日志</a>
 
       </div>
     </div>
