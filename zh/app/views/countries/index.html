@@ -1,219 +1,135 @@
-<div ng-controller="CountriesMapController">
-	<style>
-		table {
-			border-collapse: collapse;
-		}
-		
-		.tableContainer {
-			margin: auto;
-		}
-		
-		.fixed {
-			top: 0;
-			position: fixed;
-		}
-		
-		.scrollMore {
-			margin-top: 600px;
-		}
-		
-		.up {
-			cursor: pointer;
-		}
-		
-		.table-hover > tbody > tr:hover > td {
-			background-color: #FFF;
-		}
-		
-		.letter {
-			color: #999;
-		}
-		
-		.letter-active {
-			font-weight: bold;
-			color: #111!important;
-		}
-		
-		.evenly-spaced {
-			display: flex;
-			justify-content: space-between;
-		}
-		
-		.zero {
-			background-color: #DDD!important;
-		}
-		
-		@media (max-width: 992px) {
-			.sm-small {
-				font-size: 10px;
-			}
-		}
-	</style>
+﻿<div id="RegisterPage">
+
+    <link href="/app/css/register.css" rel="stylesheet">
+    <link href="/app/css/record.css" rel="stylesheet">
+
+    <span register-top-menu></span>
 
 
-	<div id="Jumbotron" class="bg-texture-green color-black  hidden-xs" style="border-top:1px solid #555;border-bottom:2px solid #ddd;position:relative;">
-		<div block-region activate="loadingMap" block-text=" Loading map">
-            <search-map height="400px" id="npMap"></search-map>
+    <style>
+        .ngdialog-content {
+            background: transparent !important;
+        }
+        
+        .ngdialog.ngdialog-theme-default.wide .ngdialog-content {
+            width: 750px !important;
+        }
+    </style>
+
+
+    <div ng-controller="nationalUsersController" class="register-content card card-1-notrans">
+
+        <div class="register-content-header bg-blue color-white">
+            <div style="padding:10px 10px;">
+                <h3> 用户管理 <span class="helpinfoInline"><i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i></span>
+        </h3>
+
+                <!--help info---------------------------->
+                <div ng-if="showInfo" class="well well-help">
+                    <strong>User Management for ABS-CH authorized users</strong>
+                    <p>
+                        This page allows focal points (NFP) to designate or make changes to the designation of the publishing authority (PA) and the publishing authority (PA) to designate or update national authorized users (NAU).Listed below you will find all ABS-CH authorized users that have been granted permission to work on national records for your country.You can select a particular CBD account, and click on edit to assign/ revoke roles (for instance, change the PA or delete a NAU).If a person already holding a CBD account does not appear as an ABS-CH authorized user for your country, you can find them by clicking &lsquo;Add Authorized User&rsquo;.Through this feature, you can search among all CBD accounts using their email addresses, and assign them a PA or NAU role.This feature also allows you to assign roles to someone who does not yet have a CBD account.To do this, click on &lsquo;Add Authorized User&rsquo;, and enter an email address and other details of the person you wish to include as PA or NAU.The ABS Clearing-House will send them an automated email request to activate their account.Once they have activated their CBD account, they can start working on national records.
+                    </p>
+                    <strong>Functions of the publishing authorities (PA)</strong>
+                    <p>
+                        The PA is responsible for:
+                        <ul>
+                            <li>Authorizing the publication of all national records registered in the ABS Clearing-House;</li>
+                            <li>Deleting records already published in the ABS Clearing-House, if necessary;</li>
+                            <li>Ensuring that the information made available in the ABS Clearing-House is complete, relevant and up-to-date; and</li>
+                            <li>Ensuring that no confidential data is published in the ABS Clearing-House.The ABS Clearing-House does not host any confidential information and all information published in the ABS Clearing-House is publicly available and can be accessed by the general public.</li>
+                        </ul>
+                    </p>
+                    <strong>Functions of national authorized users (NAUs)</strong>
+                    <p>
+                        The function of NAUs is to assist the PA in the preparation of draft national records.NAUs are only allowed to create and manage draft records which are then forwarded to the PA for publication.
+                    </p>
+
+                </div>
+            </div>
         </div>
-	</div>
-	<div block-region activate="loading" block-text=" Loading country details">
 
-		<div class="row bg-grey1" style="margin:10px 0 5px 0;padding:10px 0 5px 0;border:1px solid #d5d5d5;">
-			<div class="col-sm-12 col-md-6">
 
-				<div class="dropdown" style="display:inline;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="true">
-                            <i ng-if="sortTerm==='name.en'" class="fa" ng-class="{'fa-sort-alpha-asc':!orderList, 'fa-sort-alpha-desc':orderList}" style="width:20px;"></i>
-                            <span ng-if="sortTerm!=='name.en'">Ordered by: <strong> {{sortTerm}}</strong></span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a translation-url  href="#" ng-click="sortTable('name.en', 'ASC')"><i class=" fa fa-sort-alpha-asc" style="width:20px;"></i> Sort alphabetical A-Z </a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('name.en', 'DESC')"><i class=" fa fa-sort-alpha-desc" style="width:20px;"></i> Sort alphabetical Z-A</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('NFP')"> {{ "NFP" | mapSchema |schemaNamePlural}}   <!--<span class="badge">{{headerCount.focalPoint}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('CNA')"> {{ "CNA" | mapSchema |schemaNamePlural}}   <!--<span class="badge">{{headerCount.authority}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('MSR')"> {{ "MSR" | mapSchema |schemaNamePlural}}   <!--<span class="badge">{{headerCount.measure}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('NDB')"> {{ "NDB" | mapSchema |schemaNamePlural}}   <!--<span class="badge">{{headerCount.database}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('IRCC')"> {{ "IRCC" | mapSchema |schemaNamePlural}} <!--<span class="badge">{{headerCount.absPermit}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('CPC')"> {{ "CPC" | mapSchema | schemaNamePlural}}      <!--<span class="badge">{{headerCount.absCheckpoint}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('CP')"> {{ "CP" | mapSchema |schemaNamePlural}}     <!--<span class="badge">{{headerCount.absCheckpointCommunique}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('NR')"> {{ "NR" | mapSchema |schemaNamePlural}}     <!--<span class="badge">{{headerCount.nationalReport}}</span>--></a></li>
-                    </ul>
+        <div class="register-content-content">
+            <div class="row">
+
+
+                <div class="col-xs-12" ng-show="error">
+
+                    <div ng-switch="error.code + '-' + error.field">
+                        <div class="alert alert-warning" ng-switch-when="mandatory-government">
+                            <b>Oops...</b>You are not authorized access this page.This page is only available to national users.Please contact the absch@cbd.int if you require assistance.
+                        </div>
+                        <div class="alert alert-warning" ng-switch-when="forbidden-">
+                            <b>Oups...</b>We're sorry, but you are not authorized access this page.
+                        </div>
+                        <div class="alert alert-danger" ng-switch-default>
+                            <b>Oops...</b>We're sorry, but something went wrong.{{error|json}}
+                        </div>
                     </div>
 
-                    <input type="text" class="form-control" ng-model="keyword" placeholder="search for a country" style="width:180px;display:inline;margin-left:3px;"></input>
+                </div>
 
-				   <div class="dropdown" style="display:inline;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<span>
-							<strong ng-if="partyFilter==='All' || !partyFilter" >Party Status</strong>
-							<strong ng-if="partyFilter == 'party'" ><i class="color-party fa fa-square"></i> Parties</strong>
-							<strong ng-if="partyFilter == 'inbetween'" ><i class="color-inbetween fa fa-square"></i> Ratified, not yet Party</strong>
-							<strong ng-if="partyFilter == 'nonparty'" ><i class="color-nonparty fa fa-square"></i> Non-Parties</strong>
-						</span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><a translation-url  href="#" ng-click="setPartyFilter('All');" > Show all </a></li>
-						<li role="separator" class="divider"></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('party');" > <i class="color-party fa fa-square"></i> Parties</a></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('inbetween');" >  <i class="color-inbetween fa fa-square"></i> Ratified, not yet Party</a></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('nonparty');" > <i class="color-nonparty fa fa-square"></i> Non-Parties</a></li>
-                    </ul>
+                <div class="col-sm-offset-8 col-sm-4 col-xs-12" ng-hide="error">
+
+                    <div class="input-group" style="margin-bottom:2px; padding-left: 0px">
+                        <input type="text" class="form-control" ng-model="searchText.$" ng-disabled="loading" placeholder="Search within the national users list..." />
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
                     </div>
+                </div>
 
-					<div class="dropdown" style="display:inline;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<span>
-							<strong ng-if="rfilter==='Regional groups'">Regional groups</strong>
-							<strong ng-if="rfilter !== 'Regional groups' && rfilter" >{{rfilter}}</strong>
-						</span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" style="width:520px;max-height:450px; overflow:scroll;" aria-labelledby="dropdownMenu3" >
-                        <li><a translation-url  href="#" ng-click="filterRegion(null)"> Show all </a></li>
-						<div ng-repeat="region in regionFilter" >
-							<li role="separator" class="divider" ng-if="region.level == 2 || region.level == 1 || region.level == 3 || region.level == 11 || region.level == 9"></li>
-							<li><a translation-url  href="#" ng-click="filterRegion(region.id)" ng-class="{'bold':region.level == 2 || region.level == 1 || region.level == 3 || region.level == 11 || region.level == 9 }"> 
-						   		<span  ng-if="region.level != 0 && region.level != 2 && region.level != 1 && region.level != 3 && region.level != 11 && region.level != 9 ">&nbsp;&nbsp;</span> 
-						    	<span ng-if="region.level == 0">&nbsp; &nbsp; &nbsp; &nbsp;</span> 
-							 	&nbsp; &nbsp; {{region.name}} </a></li>
-						</div>
-                    </ul>
-                    </div>
-              </div>
-              <div class="col-xs-6 evenly-spaced center-text hidden-xs hidden-sm" >
-                            <div>
-                                <span style="cursor:pointer;" ng-click="sortTable('NFP')" data-toggle="tooltip" title="ABS National Focal Points" data-container="body">
-                                    <span id="nfpCount" class="bold color-black">NFP&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br>
-					<span class="badge bg-black">{{total.focalPoint}}</span>
-					</span>
-				</div>
+                <div class="col-xs-12" ng-hide="error">
 
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('CNA')" data-toggle="tooltip" title="Competent National Authorities" data-container="body">
-                                    <span id="cnaCount" class="bold color-black">CNA&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br>
-					<span class="badge bg-black">{{total.authority}}</span>
-					</span>
-				</div>
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('MSR')" data-toggle="tooltip" title="Legislative, administrative or policy measures"
-						data-container="body">
-                                    <span id="msrCount" class="bold color-black">MSR&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br>
-					<span class="badge bg-black">{{total.measure}}</span>
-					</span>
-				</div>
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('NDB')" data-toggle="tooltip" title="National Websites and Databases" data-container="body">
-                                    <span id="ndbCount" class="bold color-black">NDB&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br>
-					<span class="badge bg-black">{{total.database}}</span>
-					</span>
-				</div>
+                    <table class="table table-striped" style="width:100%">
+                        <tr>
+                            <th>User</th>
+                            <th>Organization/Division</th>
+                            <th style="max-width:200px">职能</th>
+                            <th class="text-right">
+                                <button class="btn btn-default" ng-click="search()" ng-disabled="loading || !canAdd()">Add Authorized User <i class="fa fa-plus-circle"></i></button>
+                            </th>
+                        </tr>
+                        <tr ng-repeat="u in users | filter:defaultFilter | filter:searchText | orderBy:sortKey ">
+                            <td>
+                                <b>{{u.firstName}} {{u.lastName}}</b> <br> <a translation-url  href="mailto:{{u.email}}">{{u.email}}</a>
+                            </td>
+                            <td>
+                                {{u.organization}}
+                            </td>
+                            <td>
+                                <span ng-repeat="rid in u.roles|filter:isContextRole"><span class="label label-default" style="font-size:10px;margin-right:4px">{{roles[rid].name}}</span> <br></span>
 
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('IRCC')" data-toggle="tooltip" title="Internationally Recognized Certificate of Compliance"
-						data-container="body">
-                                    <span id="irccCount" class="bold color-black">IRCC&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br>
-					<span class="badge bg-black">{{total.absPermit}}</span>
-					</span>
-				</div>
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('CP')" data-toggle="tooltip" title="Checkpoints" data-container="body">
-                                    <span id="cpCount" class="bold color-black">CP&nbsp;<i class="fa fa-info-circle color-litegrey" ></i> </span><br>
-					 <span class="badge bg-black">{{total.absCheckpoint}}</span>
-					</span>
-				</div>
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('CPC')" data-toggle="tooltip" title="Checkpoint Communiqués" data-container="body">
-                                    <span id="cpcCount" class="bold color-black">CPC&nbsp;<i class="fa fa-info-circle color-litegrey" ></i> </span><br>
-					<span class="badge bg-black">{{total.absCheckpointCommunique}}</span>
-					</span>
-				</div>
-				<div>
-					<span style="cursor:pointer;" ng-click="sortTable('NR')" data-toggle="tooltip" title="Interim National Reports on the Implementation of the Nagoya Protocol"
-						data-container="body">
-                                    <span id="nrCount" class="bold color-black">NR&nbsp;<i class="fa fa-info-circle color-litegrey" ></i> </span><br>
-					<span class="badge bg-black">{{total.nationalReport}}</span>
-					</span>
-				</div>
-			</div>
-		</div>
-		<!--end row-->
-		<div class="row linkWhite" style="margin:0;border-bottom:2px solid #DDD;padding:5px 0 10px 0;" ng-click="gotoCountryProfile(country.code)"
-			ng-repeat="country in list = (countries | filter:keyword | filter: hasStatus | orderBy:sortTermFilter:orderList) track by country.name.en">
-			<div class="col-md-6">
+                                <a translation-url  href="#" style="font-size:75%" ng-click="u.showExtraRoles=!u.showExtraRoles" ng-show="(u.roles|filter:isNotContextRole).length"><span ng-show="!u.showExtraRoles">Show additional roles <i class="fa fa-caret-down"></i></span> <span ng-show=" u.showExtraRoles">Hide additional roles <i class="fa fa-caret-up"></i></span></a>
 
-				<div style="text-align:left;width:30px;display:inline-block;"> {{$index+1}} </div>
+                                <div ng-if="u.showExtraRoles">
+                                    <span ng-repeat="rid in u.roles|filter:isNotContextRole"><span class="label label-info" style="font-size:10px;margin-right:4px">{{roles[rid].name}}</span> <br></span>
+                                </div>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button class="btn btn-default" ng-click="edit(u)" ng-disabled="!canEdit(u)"><i class="fa fa-list  fa-fw"></i></button>
+                                    <button class="btn btn-default" ng-click="dropUser(u)" ng-disabled="!canDrop(u)"><i class="fa fa-trash fa-fw"></i></button>
+                                </div>
+                            </td>
 
-				<div style="display:inline;">
-					<span style="font-size:18px;font-weight:500;" ng-class="{'color-party': country.isNPParty, 'color-grey':!country.isNPParty, 'color-inbetween': country.isNPInbetweenParty}">
-                                    {{country.name.en}}</span>
-				</div>
-				<div style="margin-left:35px;text-transform:uppercase;font-weight:500;">
-					<span ng-if="!country.isNPParty && !country.isNPInbetweenParty" class="color-grey" style="font-size:10px;margin-right:10px;">Non-Party</span>
-					<span ng-if="country.isNPParty" class="color-party" style="font-size:10px;margin-right:10px;">Party to the Nagoya Protocol</span>
-					<span ng-if="country.isNPInbetweenParty" class="color-inbetween" style="font-size:10px;margin-right:10px;">Ratified, not yet Party</span>
-					<span ng-if="country.isNPSignatory" class="color-pink" style="font-size:10px;margin-right:10px;">Signatory</span>
-					<span ng-if="country.entryIntoForce" class="color-grey" style="font-size:10px;margin-right:20px;">Entry into force: {{country.entryIntoForce|formatDate}}</span>
-				</div>
-			</div>
-
-			<div class="col-md-6 evenly-spaced center-text xs-small sm-small hidden-xs" style="white-space:nowrap;margin-top:5px;">
-				<span class="color-litegrey" style="margin-right:5px;"> NFP <span class="label label-default"  ng-class="{'zero':!country.schemas.focalPoint, 'bg-green':country.schemas.focalPoint}" >{{country.schemas.focalPoint ? country.schemas.focalPoint  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> CNA <span class="label label-default"  ng-class="{'zero':!country.schemas.authority, 'bg-green':country.schemas.authority}">{{country.schemas.authority ? country.schemas.authority  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> MSR <span class="label label-default"  ng-class="{'zero':!country.schemas.measure, 'bg-green':country.schemas.measure}">{{country.schemas.measure ? country.schemas.measure  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> NDB <span class="label label-default"  ng-class="{'zero':!country.schemas.database, 'bg-green':country.schemas.database}">{{country.schemas.database ? country.schemas.database  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> IRCC <span class="label label-default" ng-class="{'zero':!country.schemas.absPermit, 'bg-green':country.schemas.absPermit}">{{country.schemas.absPermit ? country.schemas.absPermit  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> CP <span class="label label-default"   ng-class="{'zero':!country.schemas.absCheckpoint, 'bg-green':country.schemas.absCheckpoint}">{{country.schemas.absCheckpoint ? country.schemas.absCheckpoint  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:5px;"> CPC <span class="label label-default"  ng-class="{'zero':!country.schemas.absCheckpointCommunique, 'bg-green':country.schemas.absCheckpointCommunique}">{{country.schemas.absCheckpointCommunique ? country.schemas.absCheckpointCommunique  : "0"}}</span></span>
-				<span class="color-litegrey" style="margin-right:0px;">  NR <span class="label label-default"  ng-class="{'zero':!country.schemas.nationalreport, 'bg-green':country.schemas.nationalreport}">{{country.schemas.nationalreport ? country.schemas.nationalreport  : "0"}}</span></span>
-			</div>
-		</div>
-
-	</div>
-	<!--end loading-->
+                        </tr>
+                        <tr ng-if="!users">
+                            <td colspan="4">
+                                <i class="fa fa-cog fa-spin fa-fw"></i> 正在加载...
+                            </td>
+                        </tr>
+                        <tr ng-if="!!users">
+                            <td colspan="3">
+                                {{(users | filter:defaultFilter | filter:searchText).length}} of {{users.length}} | <a translation-url  href="#" ng-show="!$parent.showAll" ng-click="$parent.showAll=true;$parent.searchText={}">Show more <i class="fa fa-caret-down"></i></a> <a translation-url  href="#" ng-show=" $parent.showAll" ng-click="$parent.showAll=false;$parent.searchText={}">Show less <i class="fa fa-caret-up"></i></a>
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default" ng-click="search()" ng-disabled="loading || !canAdd()">Add Authorized User <i class="fa fa-plus-circle"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
-<!--end controller-->

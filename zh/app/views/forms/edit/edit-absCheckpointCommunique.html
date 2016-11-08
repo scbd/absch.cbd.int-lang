@@ -1,4 +1,4 @@
-
+﻿
 <div ng-controller="editCheckpointCommunique">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
@@ -9,7 +9,7 @@
         <div class="registerpage-content">
 
             <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Error as occured...</strong>
+                <strong>发生错误...</strong>
                 <div>{{error}}</div>
             </div>
 
@@ -24,9 +24,8 @@
                 <div km-document-validation ng-model="validationReport"></div>
                 <form class="editForm" name="editForm" style="margin-top:10px">
                     <div ng-show="tab=='edit'" km-tab="edit">
-                        <!--<legend name="formInfo" style="display:none"></legend>-->
-                        <section>
-                            <legend name="generalInfo">General information</legend>
+                        <!--<legend name="formInfo" style="display:none"></legend>--> <section>
+                            <legend name="generalInfo">一般信息</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
@@ -41,7 +40,7 @@
                                 <div class="col-xs-12">
                                     <div class="control-group">
                                         <div class="km-control-group" name="title" required caption="Title of this checkpoint communique">
-                                            <div class="help-info">This field serves as the title of the record, therefore it should be distinct and help to easily identify the record in the ABS Clearing-House.</div>
+                                            <div class="help-info">此字段用作该记录的标题，所以应独特而醒目，并有助于在获取和惠益分享信息交换所轻松找到该记录。</div>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Title of this checkpoint communique" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -80,8 +79,8 @@
                                             </span>
                                         </div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
-                                            <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="Links to internationally recognized certificate(s) of compliance (IRCC) that relate to this communiqué">
-                                                  <div class="help-info">Here, the reference of the IRCC is to be included if a user of a genetic resource presented an IRCC to the checkpoint. Use the different filters or the unique identifier in the text field to search for the existing relevant IRCC. If the IRCC is not available you need to select the option “This information is not available” and the grey box below will be enabled.</div>
+                                            <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="Links to internationally recognized certificate(s) of compliance (IRCC) that relate to this communiqu&eacute;">
+                                                  <div class="help-info">Here, the reference of the IRCC is to be included if a user of a genetic resource presented an IRCC to the checkpoint.Use the different filters or the unique identifier in the text field to search for the existing relevant IRCC.If the IRCC is not available you need to select the option &ldquo;This information is not available&rdquo; and the grey box below will be enabled.</div>
                                                 <div document-selector ng-model="document.absIRCCs"
                                                                         question="absIRCCs"
                                                                         schema="absPermit"
@@ -111,7 +110,7 @@
                                     <div class="col-xs-12">
                                         <div class="control-group">
                                             <div class="km-control-group" name="sourceCountries" required caption="Source of the genetic resource">
-                                                <div class="help-info">Select the country/ies which is /are the source of the genetic resource. The country/ies selected will be the ones receiving the CPC issued from the information registered.</div>
+                                                <div class="help-info">Select the country/ies which is /are the source of the genetic resource.The country/ies selected will be the ones receiving the CPC issued from the information registered.</div>
                                                 <div km-select required name="sourceCountries" ng-model="document.sourceCountries" multiple items="options.countries()" placeholder="Please select a country..."></div>
                                             </div>
                                         </div>
@@ -123,16 +122,13 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="subjectMatter" required caption="Subject-matter or genetic resources relevant to the information collected or received">
-                                            <div class="help-info">Please provide details on the subject-matter or genetic resources relevant to the information collected or received by the checkpoint. This could include biota at any taxonomic rank, which may carry a taxonomic
-                                                name. It may also include a locality of collection of the material. It may also be possible to identify the genetic resource through reference to a voucher specimen or field notes held in an identified archive
-                                                or collection. </div>
+                                            <div class="help-info">Please provide details on the subject-matter or genetic resources relevant to the information collected or received by the checkpoint.This could include biota at any taxonomic rank, which may carry a taxonomic name.It may also include a locality of collection of the material.It may also be possible to identify the genetic resource through reference to a voucher specimen or field notes held in an identified archive or collection. </div>
                                             <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                     <div class="legend2" >Additional subject matter or genetic resource information
-                                        <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
+                                     <div class="legend2" >Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -144,7 +140,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="taxonomies" caption="Taxonomy">
+                                            <div class="km-control-group" name="taxonomies" caption="分类学">
                                                 <span class="help-info">Link to record in external taxonomy database, e.g. GBIF, Catalogue of Life</span>
                                                 <div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
@@ -197,7 +193,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="evidenceOfPIC" caption="Reference or evidence of prior informed consent (PIC)">
-                                             <div class="help-info">This field is to provide information on PIC. This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to PIC, or the permit or its equivalent in their national files.</div>
+                                             <div class="help-info">This field is to provide information on PIC.This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to PIC, or the permit or its equivalent in their national files.</div>
                                             <div km-rich-textbox name="evidenceOfPIC" rows="4" ng-model="document.evidenceOfPIC" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -231,7 +227,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="evidenceOfMAT" caption="Reference or evidence of establishment of mutually agreed terms (MAT)">
-                                           <div class="help-info">This field is to provide information on MAT. This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to MAT, or the permit or its equivalent in their national files.</div>
+                                           <div class="help-info">This field is to provide information on MAT.This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to MAT, or the permit or its equivalent in their national files.</div>
                                             <div km-rich-textbox name="evidenceOfMAT" rows="4" ng-model="document.evidenceOfMAT" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -244,15 +240,14 @@
                                         </div>
                                     </div>
                                 </div>
-                        </section>
-                        <section>
+                        </section> <section>
 
                             <legend>Information on the utilization of the genetic resource(s)</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" required name="description" caption="Short description of the information collected or received by the checkpoint relevant to the utilization of genetic resources, including  the type of use">
-                                        <div class="help-info">This could include information on utilization of genetic resources at, inter alia, any stage of research, development, innovation, pre-commercialization or commercialization. The information provided will allow the provider of the genetic resource to check whether the use of the genetic resource is in conformity with PIC and MAT and that benefits are shared in accordance with MAT.</div>
+                                        <div class="help-info">This could include information on utilization of genetic resources at, inter alia, any stage of research, development, innovation, pre-commercialization or commercialization.The information provided will allow the provider of the genetic resource to check whether the use of the genetic resource is in conformity with PIC and MAT and that benefits are shared in accordance with MAT.</div>
                                         <div km-rich-textbox name="description" rows="4" ng-model="document.description" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -261,7 +256,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="personsAtCheckpoint" caption=" Person or entity making information available to the checkpoint on the utilization of the genetic resource ">
-                                        <div class="help-info">This information allows the provider of the genetic resource to check whether the person or entity to whom the PIC was granted is the same person or entity providing evidence of PIC and MAT at the checkpoint. In case of discrepancy, providers can verify information and conditions related to third party transfer.</div>
+                                        <div class="help-info">This information allows the provider of the genetic resource to check whether the person or entity to whom the PIC was granted is the same person or entity providing evidence of PIC and MAT at the checkpoint.In case of discrepancy, providers can verify information and conditions related to third party transfer.</div>
                                         <div document-selector ng-model="document.personsAtCheckpoint"
                                                                         question="personsAtCheckpoint"
                                                                         schema="(contact authority)"
@@ -292,11 +287,11 @@
 
                         <section>
 
-                            <legend>Additional Information</legend>
+                            <legend>更多信息</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantInformation" caption="Additional Information">
-                                        <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+                                    <div class="km-control-group" name="relevantInformation" caption="更多信息">
+                                        <div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -304,19 +299,18 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
+                                    <div class="km-control-group" name="relevantDocuments" caption="其它相关网址或附加文档">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section>
-                            <legend>Notes</legend>
+                        </section> <section>
+                            <legend>备注</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="notes">
-                                        <div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+                                        <div class="help-info">&ldquo;注释&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                     </div>
                                 </div>

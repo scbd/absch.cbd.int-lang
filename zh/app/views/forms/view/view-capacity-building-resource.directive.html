@@ -1,4 +1,4 @@
-<div id="Record" class="record panel panel-default">
+﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
 		<h4>Capacity-building Resource<span class="color-black"> (CBR) </span>
@@ -71,31 +71,28 @@
 		</div>
 
 		<div ng-show="document.rights">
-			<label>Rights</label>
+			<label>权利</label>
 			<div class="km-value km-pre">{{document.rights | lstring:locale}}</div>
 		</div>
 
 		<div ng-show="document.source">
-			<label>Source</label>
+			<label>来源</label>
 			<div class="km-value km-pre">{{document.source | lstring:locale}}</div>
 		</div>
 
-		<legend ng-show="document.resourceLinks || document.covers">Access to the resource</legend>
+		<legend ng-show="document.resourceLinks || document.covers">访问资源</legend>
 
 		<div ng-show="document.resourceLinks">
 			<label>Link to the resource(s)</label>
 			<div class="km-value" ng-repeat="item in document.resourceLinks">
-				<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-				<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+				<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 			</div>
 		</div>
 
 		<div ng-show="document.covers">
 			<label >Cover image(s)</label>
 			<div class="km-value">
-				<a translation-url  ng-repeat="link in document.covers" ng-href="{{link.url}}" target="{{target}}">
-					<img class="img-polaroid" ng-src="{{link.url}}" alt="{{link.name}}" style="max-height: 150px; max-width: 150px" />
-				</a>
+				<a translation-url  ng-repeat="link in document.covers" ng-href="{{link.url}}" target="{{target}}"><img class="img-polaroid" ng-src="{{link.url}}" alt="{{link.name}}" style="max-height: 150px; max-width: 150px" /></a>
 			</div>
 		</div>
 
@@ -154,7 +151,7 @@
 
 		<div ng-show="document.bchSubjects">
 
-			<legend>Cartagena Protocol on Biosafety</legend>
+			<legend>卡塔赫纳生物安全议定书</legend>
 
 			<div ng-show="document.bchSubjects">
 				<label>Thematic areas(s)</label>
@@ -167,17 +164,16 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Additional Information</legend>
+			<legend>更多信息</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value km-pre" ng-bind-html="document.relevantInformation | lstring:locale | markdown"></div>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>其他相关网址或附加文档</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments">
-					<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-					<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+					<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 				</div>
 			</div>
 		</div>

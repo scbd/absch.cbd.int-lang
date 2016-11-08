@@ -1,4 +1,4 @@
-<div class="modal-content">
+﻿<div class="modal-content">
     <style>
         .has-error .fa-validate:before {
             content: "\f069";
@@ -83,11 +83,10 @@
 
             <div ng-switch="searchUserDialogCtrl.error.code">
                 <div class="alert alert-warning" ng-switch-when="forbidden">
-                    <b>Oups...</b> We're sorry, but you are not authorized to nominate a new user.
+                    <b>Oups...</b>We're sorry, but you are not authorized to nominate a new user.
                 </div>
                 <div class="alert alert-danger" ng-switch-default>
-                    <b>Oops...</b> We're sorry, but something went wrong.
-                    <br> {{searchUserDialogCtrl.error|json}}
+                    <b>Oops...</b>We're sorry, but something went wrong.<br>{{searchUserDialogCtrl.error|json}}
                 </div>
             </div>
 
@@ -102,18 +101,15 @@
 
                     <div class="alert alert-warning" role="alert">
                         <p>
-                            <b>User not found: </b> <i>{{searchUserDialogCtrl.email}}</i>
+                            <b>User not found:</b><i>{{searchUserDialogCtrl.email}}</i>
                         </p>
                         <p>
-                            Please note the specified email address does not correspond to any existing User Account.
-                            You can however proceed with nomination by initiating the creation of a new User Account.
-                            The new user will be asked to confirm his/her participation and complete contact details.
+                            Please note the specified email address does not correspond to any existing User Account.You can however proceed with nomination by initiating the creation of a new User Account.The new user will be asked to confirm his/her participation and complete contact details.
                         </p>
                     </div>
 
                     <button class="btn btn-lg btn-block btn-success" ng-click="searchUserDialogCtrl.save()">
-                        Nominate a new user using following email address<br>
-                        <b>{{searchUserDialogCtrl.user.email}}</b>
+                        Nominate a new user using following email address<br> <b>{{searchUserDialogCtrl.user.email}}</b>
                     </button>
 
                 </div>
@@ -129,7 +125,7 @@
                         <div class="col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label for="firstName">First name</label>
-                                <input type="text" class="form-control" name="firstName" ng-model="searchUserDialogCtrl.user.firstName" ng-disabled="true" placeholder="<new>">
+                                <input type="text" class="form-control" name="firstName" ng-model="searchUserDialogCtrl.user.firstName" ng-disabled="true" placeholder="&lt;new&gt;">
                             </div>
                         </div>
 
@@ -155,7 +151,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>电子邮件</label>
                                 <div class="input-group" style="margin-bottom:2px; padding-left: 0px">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="email" name="email" class="form-control" ng-model="searchUserDialogCtrl.user.email" ng-disabled="true" placeholder="email@domain.xyz">
@@ -165,8 +161,7 @@
                     </div>
 
                     <button class="btn btn-lg btn-block btn-primary" ng-click="searchUserDialogCtrl.save()">
-                        Continue with <b>{{searchUserDialogCtrl.user.firstName}} {{searchUserDialogCtrl.user.lastName}}</b><br>
-                        <b>{{searchUserDialogCtrl.user.email}}</b>
+                        Continue with <b>{{searchUserDialogCtrl.user.firstName}} {{searchUserDialogCtrl.user.lastName}}</b><br> <b>{{searchUserDialogCtrl.user.email}}</b>
                     </button>
                 </div>
 
@@ -174,7 +169,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">Cancel</button>
+        <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">取消</button>
         <button type="button" class="btn btn-primary" aria-label="Save" ng-click="searchUserDialogCtrl.save()" ng-disabled="form.$invalid || !searchUserDialogCtrl.user">Next »</button>
     </div>
 </div>

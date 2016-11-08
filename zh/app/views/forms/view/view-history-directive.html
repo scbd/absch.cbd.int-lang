@@ -1,22 +1,22 @@
-<div id="view-history" style="max-height:200px;overflow:scroll;">
+п»ї<div id="view-history" style="max-height:200px;overflow:scroll;">
     <table style="width:100%!important;" class="table table-condensed" >
         <tr>
-                <th class="color-litegrey" style="font-size:12px;bold;"> Уникальный идентификатор</th>
-                <th class="color-litegrey" style="font-size:12px;bold;"> Статус</th>
-                <th class="color-litegrey" style="font-size:12px;bold;"> Дата <span ng-if="!publicView">публикации</span> </th>
-                <th class="color-litegrey" style="font-size:12px;bold;" ng-if="!publicView"> Дата запроса </th>
+                <th class="color-litegrey" style="font-size:12px;bold;"> е”ЇдёЂиЇ†е€«з Ѓ</th>
+                <th class="color-litegrey" style="font-size:12px;bold;"> зЉ¶жЂЃ</th>
+                <th class="color-litegrey" style="font-size:12px;bold;"> <span ng-if="!publicView">еЏ‘еёѓ</span>ж—Ґжњџ </th>
+                <th class="color-litegrey" style="font-size:12px;bold;" ng-if="!publicView"> иЇ·ж±‚ж—Ґжњџ </th>
             </tr>
-            <tr ng-if="documents.length =< 0">
-             <td colspan="4" > нет доступной хронологии  </td>
+            <tr ng-if="documents.length == 0">
+             <td colspan="4" > жІЎжњ‰еЏЇз”ЁеЋ†еЏІз‰€жњ¬  </td>
            </tr>
         <tbody ng-repeat="document in documents | orderBy:'updatedOn':true" style="font-size:12px;" >
             <tr>
                 <td style="white-space:nowrap;">
-                    <a ng-href="/database/{{document.type | schemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank"><strong>{{document | uniqueID}}</strong></a>
+                    <a translation-url  ng-href="/database/{{document.type | urlSchemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank"><strong>{{document | uniqueID}}</strong></a>
                 </td>
                 <td>
                     <div>
-                        <span ng-show="!document.deletedOn && document.body.amendmentIntent==1  && document.type!='absCheckpointCommunique'"><span class="bold color-red"> ОТОЗВАНО</span></span> <span ng-show="((documents.length>1 && !document.deletedOn && document.body.amendmentIntent!=1 && document.revision < documents.length))"><span class="bold color-grey" >{{(document.type | schemaShortName) === 'IRCC' ? &quot;НЕДЕЙСТВИТЕЛЬНО&quot; : &quot;УСТАРЕВШАЯ ВЕРСИЯ&quot;}}</span></span> <span ng-show="!document.deletedOn && (documents.length==1 || (documents.length>1 && documents.length == document.revision && (!isPermit || document.body.amendmentIntent!=1)))"><span class="bold color-green"> ОПУБЛИКОВАНО</span></span> <span ng-show="document.deletedOn"><span class="bold color-grey"> УДАЛЕНО</span></span>
+                        <span ng-show="!document.deletedOn && document.body.amendmentIntent==1  && document.type!='absCheckpointCommunique'"><span class="bold color-red"> е·Іж’¤й”Ђ</span></span> <span ng-show="((documents.length>1 && !document.deletedOn && document.body.amendmentIntent!=1 && document.revision < documents.length))"><span class="bold color-grey" >{{(document.type | schemaShortName) === 'IRCC' ?&quot;NOT VALID&quot; :&quot;ж—§з‰€жњ¬&quot;}}</span></span> <span ng-show="!document.deletedOn && (documents.length==1 || (documents.length>1 && documents.length == document.revision && (!isPermit || document.body.amendmentIntent!=1)))"><span class="bold color-green"> е·ІеЏ‘еёѓ</span></span> <span ng-show="document.deletedOn"><span class="bold color-grey"> е·Іе€ й™¤</span></span>
                     </div>
                 </td>
                 <td >
@@ -24,15 +24,15 @@
                         <span>{{document.updatedBy.firstName}} {{document.updatedBy.lastName}} ({{document.updatedBy.email}})</span> <br> <span style="font-size:11px;text-transform:uppercase;font-weight:bold">{{document.updatedOn | formatDateWithTime}}</span>
                         </div>
                         
-                        <div ng-show="publicView"> on <span style="font-weight:500;">{{document.updatedOn | formatDateWithTime}}</span></div>
+                        <div ng-show="publicView"> дєЋ<span style="font-weight:500;">{{document.updatedOn | formatDateWithTime}}</span></div>
 
                     <div ng-show="document.body.amendmentDescription">
                         <span ng-show="document.body.amendmentDescription">
 						  		<div ng-show="!more">
-                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale | limitTo:200"></span> <a ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200"><strong>...больше</strong></a>
+                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale | limitTo:200"></span> <a translation-url  ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200"><strong>...ж›ґе¤љ</strong></a>
                                 </div>
                                 <div ng-show="more"> 
-                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <a ng-href="#" ng-click="more=!more"> <strong>...меньше</strong></a>
+                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <a translation-url  ng-href="#" ng-click="more=!more"> <strong>...ж›ґе°‘</strong></a>
                                 </div>
                         </span>
                     </div>

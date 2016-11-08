@@ -1,4 +1,4 @@
-<div class="md-whiteframe-z2" ng-controller="editCapacityBuildingInitiative">
+﻿<div class="md-whiteframe-z2" ng-controller="editCapacityBuildingInitiative">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -13,13 +13,12 @@
             </div>
 
             <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Error as occured...</strong>
+                <strong>发生错误...</strong>
                 <div>{{error}}</div>
             </div>
 
             <div ng-show="isLoading()">
-                <i class="fa fa-spinner fa-spin"></i>
-                Loading...
+                <i class="fa fa-spinner fa-spin"></i> 正在加载...
             </div>
 
             <div ng-show="!isLoading() && status!='hidden'">
@@ -33,7 +32,7 @@
 
 					<!-- <div km-tab="general"> -->
                     <div ng-show="tab=='edit'" km-tab="edit">
-						<legend>General information</legend>
+						<legend>一般信息</legend>
 
 						<div class="row">
 
@@ -94,15 +93,15 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group well well-sm" name="timeframe" required caption="Timeframe">
+								<div class="km-control-group well well-sm" name="timeframe" required caption="时间表">
 									<div class="row">
 									  	<div class="col-md-3">
-											<div class="km-control-group" name="startDate" caption="Start date">
+											<div class="km-control-group" name="startDate" caption="开始日期">
 												<div km-date name="startDate" ng-model="document.startDate" ng-change="clearDuration()"></div>
 											</div>
 									  	</div>
 										<div class="col-md-3">
-											<div class="km-control-group" name="endDate" caption="End date">
+											<div class="km-control-group" name="endDate" caption="结束日期">
 												<div km-date name="endDate" ng-model="document.endDate" ng-change="clearDuration()"></div>
 											</div>
 										</div>
@@ -122,16 +121,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="organizations" caption="Agency(ies) or organisation(s) implementing and/or executing the initiative">
-                                <div class="help-info">In some instances an agency could play both the implementing and executing roles. In those cases, please select both boxes.</div>
+                                <div class="help-info">In some instances an agency could play both the implementing and executing roles.In those cases, please select both boxes.</div>
 								<div class="checkbox"><label><input type="checkbox" ng-model="document.isImplementedByAgencies">Implementing agency(ies) or organization(s)</label></div>
 
                                 <div class="row" >
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isImplementedByAgencies" name="implementingAgencies" caption="Please select the implementing agency(ies) or organization(s)">
-                                            <div class="help-info">Implementing agency refers to the organisation or legal entity responsible for developing the initiative and overseeing its
-                                                implementation, monitoring and evaluation, including making funding available, ensuring that fiduciary standards and quality
-                                                assurance are applied, and preparation of the project completion reports. The implementing agency is ultimately the entity
-                                                responsible for the completion of the initiative and is accountable to the donor.</div>
+                                            <div class="help-info">Implementing agency refers to the organisation or legal entity responsible for developing the initiative and overseeing its implementation, monitoring and evaluation, including making funding available, ensuring that fiduciary standards and quality assurance are applied, and preparation of the project completion reports.The implementing agency is ultimately the entity responsible for the completion of the initiative and is accountable to the donor.</div>
 
 
                                             <field-embed-contact multiple ng-model="document.implementingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
@@ -143,9 +139,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isExecutededByAgencies" name="executingAgencies" caption="Please select the executing agency(ies) or organization(s)">
-                                            <div class="help-info">Executing agency refers to the organisation/institution directly managing the initiative, including the day-to- day planning,
-                                            coordination and execution of its activities, monitoring and reporting on the progress made, procuring and managing resources
-                                            (staff, funds, equipment, etc.), and carrying out other project management functions.</div>
+                                            <div class="help-info">Executing agency refers to the organisation/institution directly managing the initiative, including the day-to- day planning, coordination and execution of its activities, monitoring and reporting on the progress made, procuring and managing resources (staff, funds, equipment, etc.), and carrying out other project management functions.</div>
 
                                             <field-embed-contact multiple ng-model="document.executingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
@@ -156,8 +150,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Please select the collaborating partner(s)">
-                                            <div class="help-info">Collaborating partners refer to entities or organizations making significant financial or other contribution to the initiative and/or
-                                                    actively supporting or collaborating in the implementation of the initiative.</div>
+                                            <div class="help-info">Collaborating partners refer to entities or organizations making significant financial or other contribution to the initiative and/or actively supporting or collaborating in the implementation of the initiative.</div>
                                              
                                             <field-embed-contact multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
@@ -179,8 +172,7 @@
                                                                         filter="true"
                                                                         ></div> -->
 
-                                    <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> -->
-                                <!-- </div>
+                                    <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> --> <!-- </div>
                             </div>
                         </div> -->
 
@@ -204,13 +196,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="projectDocument" caption="Project document or document describing the initiative">
-									<div class="help-info">Please always attach the relevant document(s) that will be stored in the database for users to download. When documents are available on the Internet, please also provide a link to them.</div>
+									<div class="help-info">请始终附加相关文档。该文档将存储在数据库中，以供用户下载。When documents are available on the Internet, please also provide a link to them.</div>
 									<div km-link name="projectDocument" required ng-model="document.projectDocument" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 								</div>
 							</div>
 						</div>
 
-						<legend>Detailed information</legend>
+						<legend>详细信息</legend>
 
 						<div class="row">
 							<div class="col-md-12">
@@ -264,8 +256,7 @@
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div> -->
-                                    <field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
+                                                                        ></div> --> <field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                 </div>
                             </div>
                         </div>
@@ -305,7 +296,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="resultsAchievements" caption="Results: Main achievements">
-									<span class="help-info">Please provide a short summary of the main achievements of the initiative, including those related to advancing gender equality in achieving the objectives of the Convention and its Protocols, if applicable. (max 200 words)</span>
+									<span class="help-info">Please provide a short summary of the main achievements of the initiative, including those related to advancing gender equality in achieving the objectives of the Convention and its Protocols, if applicable.(max 200 words)</span>
 									<div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -363,12 +354,12 @@
 
 
 						<a translation-url  name="#AdditionalInformation"></a>
-						<legend>Additional information</legend>
+						<legend>更多信息</legend>
 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="address" caption="Any other relavent information" >
-									<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+									<div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -385,10 +376,8 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>Notes</legend>
-									<span class="help-info">
-										The field “Notes” is for personal reference and can be seen only when the record is being edited.
-									</span>
+									<legend>备注</legend>
+									<span class="help-info">&ldquo;注释&rdquo;字段供个人参考之用，并仅在编辑记录时方可看到。</span>
 									<div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>

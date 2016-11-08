@@ -29,7 +29,7 @@
         <div class="registerpage-content">
 
             <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Error as occured...</strong>
+                <strong>发生错误...</strong>
                 <div>{{error}}</div>
             </div>
             <div ng-show="!isLoading() && status!='hidden'" class="dimmer-parent">
@@ -69,8 +69,7 @@
                             </div>-->
                             <div class="row">
                                 <div class="col-xs-12">
-                                        <div class="alert alert-info"><h3>Please note that by amending a published internationally recognized certificate
-                                        of compliance (IRCC) a new IRCC will be constituted and the old IRCC will no longer be valid.
+                                        <div class="alert alert-info"><h3>Please note that by amending a published internationally recognized certificate of compliance (IRCC) a new IRCC will be constituted and the old IRCC will no longer be valid.
                                         </h3></div>
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="amendmentDescription" required caption="Provide a summary of the reason for the update of the record">
@@ -83,10 +82,10 @@
                         </section>
 
                         <section>
-                            <legend>General information</legend>
+                            <legend>一般信息</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="government" required caption="Country">
+                                    <div class="km-control-group" name="government" required caption="国家">
                                         <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
                                     </div>
                                 </div>
@@ -95,17 +94,14 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="permit" caption="Links to other internationally recognized certificate(s) of compliance (IRCC) that relate(s) to this permit">
-                                            <div class="help-info">Sometimes a permit can be related to other previously issued permits, for instance to a permit for accessing a soil sample. Depending on the MAT, it is possible that some countries decide to issue specific permits
-                                                for subsequently identified genetic resources from the taken soil sample. For such cases, the ABS Clearing-House offers the possibility to link different IRCCs together. IRCCs linked through this mechanism
-                                                will be displayed together and thus facilitate tracking of the IRCCs. </div>
+                                            <div class="help-info">Sometimes a permit can be related to other previously issued permits, for instance to a permit for accessing a soil sample.Depending on the MAT, it is possible that some countries decide to issue specific permits for subsequently identified genetic resources from the taken soil sample.For such cases, the ABS Clearing-House offers the possibility to link different IRCCs together.IRCCs linked through this mechanism will be displayed together and thus facilitate tracking of the IRCCs. </div>
                                             <div document-selector ng-model="document.relatedIRCCs" question="relatedIRCCs" government="document.government" schema="absPermit" hide-self="document.header.identifier"></div>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section>
+                        </section> <section>
                             <legend>Issuing Authority</legend>
 
                             <div class="row">
@@ -126,8 +122,7 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="title" required caption="Reference number of the permit or its equivalent">
-                                            <span class="help-info">This field will also appear as the title of this record.
-                                            </span>
+                                            <span class="help-info">This field will also appear as the title of this record.</span>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="" locales="document.header.languages" />
                                         </div>
                                     </div>
@@ -146,14 +141,13 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="km-control-group" name="dateOfIssuance" required caption="Date of issuance of the permit or its equivalent">
-                                        <div class="help-info">This field refers to the date of issuance of the national permit. This information is mandatory and key to ensure legal certainty regarding the right of the user to utilize the genetic resource covered by the permit.</div>
+                                        <div class="help-info">This field refers to the date of issuance of the national permit.This information is mandatory and key to ensure legal certainty regarding the right of the user to utilize the genetic resource covered by the permit.</div>
                                         <div km-date placeholder="YYYY-MM-DD" required name="dateOfIssuance" ng-model="document.dateOfIssuance"></div>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="km-control-group" name="dateOfExpiry" caption="Date of expiry of the permit or its equivalent">
-                                        <div class="help-info">Two months before the permit expires, an email is sent to the CNA alerting of the date of expiry of the IRCC. After the date of expiry of the permit, the IRCC constituted from that information will be marked as
-                                            expired.</div>
+                                        <div class="help-info">Two months before the permit expires, an email is sent to the CNA alerting of the date of expiry of the IRCC.After the date of expiry of the permit, the IRCC constituted from that information will be marked as expired.</div>
                                         <div km-date placeholder="YYYY-MM-DD" name="dateOfExpiry" ng-model="document.dateOfExpiry"></div>
                                     </div>
                                 </div>
@@ -190,7 +184,7 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group" required name="picGranted" caption="Confirmation that prior informed consent (PIC) was obtained or granted">
                                         <span class="help-info">If PIC has not been obtained or granted,  this record cannot be posted in the ABS Clearing-House and, therefore, the internationally recognized certificate of compliance will not be issued.</span>
-                                        <button data-toggle="buttons-checkbox" type="button" class="btn" ng-class="{'btn-primary':document.picGranted, 'btn-default': !document.picGranted}" ng-click="document.picGranted=!document.picGranted">Yes</button>
+                                        <button data-toggle="buttons-checkbox" type="button" class="btn" ng-class="{'btn-primary':document.picGranted, 'btn-default': !document.picGranted}" ng-click="document.picGranted=!document.picGranted">是</button>
                                     </div>
                                 </div>
                             </div>
@@ -198,17 +192,14 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="picInformation" caption="Additional information about the prior informed consent (PIC)">
-                                        <span class="help-info">
-                                    If applicable, please provide any additional information about the prior informed consent (PIC). Detailed information may be provided in an attached document
-                                </span>
+                                        <span class="help-info">If applicable, please provide any additional information about the prior informed consent (PIC).Detailed information may be provided in an attached document</span>
                                         <div km-rich-textbox name="picInformation" rows="4" ng-model="document.picInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="picDocuments" caption="Additional information about the prior informed consent (PIC) - Documents">
-                                        <span class="help-info">
-                                    If applicable, please provide the link or upload the documents.</span>
+                                        <span class="help-info">If applicable, please provide the link or upload the documents.</span>
                                         <div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -227,8 +218,7 @@
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.entitiesToWhomPICGrantedConfidential}">
                                             <div class="km-control-group " name="entitiesToWhomPICGranted" required required caption="Person or entity to whom prior informed consent (PIC) was granted" style="margin-top:0;">
                                                 <div ng-show="!document.entitiesToWhomPICGrantedConfidential">
-                                                    <div class="help-info">Please provide the name and contact details of the person or entity to whom prior informed consent was granted. If the information is marked as confidential that person will not be able to receive the
-                                                        courtesy copy of the IRCC or the CPC. </div>
+                                                    <div class="help-info">Please provide the name and contact details of the person or entity to whom prior informed consent was granted.If the information is marked as confidential that person will not be able to receive the courtesy copy of the IRCC or the CPC. </div>
                                                     <div document-selector ng-model="document.entitiesToWhomPICGranted" question="entitiesToWhomPICGranted" government="document.government" schema="(contact authority)"></div>
                                                 </div>
                                             </div>
@@ -248,7 +238,7 @@
                                     <div class="km-control-group" required name="matEstablished" caption="Confirmation that mutually agreed terms (MAT) were established">
                                         <span class="help-info">If no mutually agreed terms (MAT) have been established, this record cannot be published in the ABS Clearing-House and, therefore, an internationally recognized certificate of compliance can not be issued.</span>
 
-                                        <button data-toggle="buttons-checkbox" type="button" class="btn" ng-class="{'btn-primary':document.matEstablished, 'btn-default':!document.matEstablished}" ng-click="document.matEstablished=!document.matEstablished">Yes</button>
+                                        <button data-toggle="buttons-checkbox" type="button" class="btn" ng-class="{'btn-primary':document.matEstablished, 'btn-default':!document.matEstablished}" ng-click="document.matEstablished=!document.matEstablished">是</button>
 
                                     </div>
                                 </div>
@@ -257,8 +247,7 @@
                                 <div class="col-xs-12">
 
                                     <div class="km-control-group" name="matInformation" caption="Additional information about the mutually agreed terms (MAT) - Information">
-                                        <span class="help-info">
-                                    If applicable,  please provide any information about the MAT. For example, this may include information on conditions for access and for benefit-sharing and other relevant information included in the MAT. Detailed information may be provided in an attached document.</span>
+                                        <span class="help-info">If applicable,  please provide any information about the MAT.For example, this may include information on conditions for access and for benefit-sharing and other relevant information included in the MAT.Detailed information may be provided in an attached document.</span>
                                         <div km-rich-textbox name="matInformation" rows="4" ng-model="document.matInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -266,8 +255,7 @@
 
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="matDocuments" caption="Additional information about the mutually agreed terms (MAT) - Documents">
-                                        <span class="help-info">
-                                    If applicable,  please provide the link or upload the documents.</span>
+                                        <span class="help-info">If applicable,  please provide the link or upload the documents.</span>
                                         <div km-link name="matDocuments" ng-model="document.matDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -291,7 +279,7 @@
                                         </div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.subjectMatterConfidential}">
                                             <div class="km-control-group" required name="subjectMatter" caption="Subject-matter or genetic resources covered by the permit or its equivalent">
-                                                <span class="help-info">Please provide information on the subject matter or genetic resources covered by the permit. This could include biota at any taxonomic rank, which may carry a taxonomic name. It may also include a locality of collection of the material. It may also be possible to identify the genetic resource through reference to a voucher specimen or field notes held in an identified archive or collection.</span>
+                                                <span class="help-info">Please provide information on the subject matter or genetic resources covered by the permit.This could include biota at any taxonomic rank, which may carry a taxonomic name.It may also include a locality of collection of the material.It may also be possible to identify the genetic resource through reference to a voucher specimen or field notes held in an identified archive or collection.</span>
 
                                                 <div ng-show="!document.subjectMatterConfidential">
                                                     <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter" locales="document.header.languages"></div>
@@ -305,8 +293,7 @@
 
                             <div class="row" style="margin-top:20px;">
                                 <div class="col-xs-12">
-                                    <div class="legend2">Additional subject matter or genetic resource information
-                                        <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
+                                    <div class="legend2">Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
                                     </div>
                                     <div class="km-control-group" name="specimens" caption="Specimen data">
                                         <span class="help-info">Link to a voucher specimen held in an appropriate facility</span>
@@ -317,7 +304,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="taxonomies" caption="Taxonomy">
+                                    <div class="km-control-group" name="taxonomies" caption="分类学">
                                         <span class="help-info">Link to record in external taxonomy database, e.g. GBIF, Catalogue of Life</span>
                                         <div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                     </div>
@@ -356,7 +343,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="keywords" caption="Keywords to describe the subject-matter or genetic resource(s) covered by the permit or its equivalent">
-                                        <span class="help-info">The collection of this information is important for facilitating harmonized searches throughout the records. Please select all relevant keywords that could assist in describing the subject-matter or genetic resource(s) covered by the permit or its equivalent.</span>
+                                        <span class="help-info">The collection of this information is important for facilitating harmonized searches throughout the records.Please select all relevant keywords that could assist in describing the subject-matter or genetic resource(s) covered by the permit or its equivalent.</span>
                                         <div km-select multiple show-description="true" required name="keywords" ng-model="document.keywords" items="options.keywords()"></div>
                                     </div>
                                 </div>
@@ -402,7 +389,7 @@
                             <div class="row" style="margin-top:20px;">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="usagesDescription" caption="Additional information about the specified uses covered by the permit or its equivalent or use restrictions">
-                                        <span class="help-info">Access can be granted only for specified uses (e.g. for medical use), or on the contrary access could be granted for multiple uses but with specific restrictions applying (e.g. restriction to obtain intellectual property rights). If applicable, please provide any additional information about the specific uses or any use restrictions covered by the permit or its equivalent.</span>
+                                        <span class="help-info">Access can be granted only for specified uses (e.g. for medical use), or on the contrary access could be granted for multiple uses but with specific restrictions applying (e.g. restriction to obtain intellectual property rights).If applicable, please provide any additional information about the specific uses or any use restrictions covered by the permit or its equivalent.</span>
                                         <div km-rich-textbox name="usagesDescription" rows="6" ng-model="document.usagesDescription" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -417,13 +404,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section>
+                        </section> <section>
                             <legend>Documentation</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="permitFiles" caption="Copy of the permit or its equivalent, or other relevant open-access document">
-                                        <span class="help-info">Please use this field to upload a copy of the permit or its equivalent or other relevant document if desired, or provide a link to its equivalent on a national website. Include a short description of the link or attachment. Note that this information will be made publicly available through the ABS Clearing-House and therefore should not contain confidential information, nor links to information that has restricted access.</span>
+                                        <span class="help-info">Please use this field to upload a copy of the permit or its equivalent or other relevant document if desired, or provide a link to its equivalent on a national website.Include a short description of the link or attachment.Note that this information will be made publicly available through the ABS Clearing-House and therefore should not contain confidential information, nor links to information that has restricted access.</span>
                                         <div km-link name="permitFiles" ng-model="document.permitFiles" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -439,11 +425,11 @@
                         </section>
 
                         <section>
-                            <legend>Additional Information</legend>
+                            <legend>更多信息</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantInformation" caption="Additional Information">
-                                        <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+                                    <div class="km-control-group" name="relevantInformation" caption="更多信息">
+                                        <div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -451,7 +437,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
+                                    <div class="km-control-group" name="relevantDocuments" caption="其它相关网址或附加文档">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -459,11 +445,11 @@
                         </section>
 
                         <section>
-                            <legend>Notes</legend>
+                            <legend>备注</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="notes">
-                                        <div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+                                        <div class="help-info">&ldquo;注释&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                     </div>
                                 </div>
