@@ -1,4 +1,4 @@
-﻿<div>
+<div>
 	<div class="reference-select">
 		<table class="table table-hover table-striped">
 			<tr ng-repeat="reference in references" >
@@ -9,23 +9,25 @@
 					</div>
 
 					<div ng-show="reference.__loading">
-						<i class="fa fa-spinner fa-spin"></i> 正在加载...
+						<i class="fa fa-spinner fa-spin"></i> Loading...
 					</div>
 
 					<div ng-show="reference.__errorCode">
 						<div ng-switch="reference.__errorCode">
 							<div ng-switch-when="404" class="alert alert-warning">
-								<strong>Record not found</strong> {{reference.identifier}}
+								<strong>Record not found</strong>
+								{{reference.identifier}}
 							</div>
 							<div ng-switch-default class="alert alert-danger">
-								<strong>Error loading record</strong> {{reference.identifier}}
+								<strong>Error loading record</strong>
+								{{reference.identifier}}
 								<div>{{reference.__error}}<div>
 							</div>
 						</div>
 					</div>
 				</td>
 				<td style="text-align:end">
-					<button type="button" title="删除" class="btn btn-default" ng-click="remove(reference)"><i class="glyphicon glyphicon-trash"></i></button>
+					<button type="button" title="Remove" class="btn btn-default" ng-click="remove(reference)"><i class="glyphicon glyphicon-trash"></i></button>
 				</td>
 			</tr>
 		</table>
@@ -62,7 +64,7 @@
 
 						<tr ng-show="isLoading">
 							<td colspan="2">
-								正在加载...
+								Loading...
 							</td>
 						</tr>
 					</table>
@@ -77,8 +79,8 @@
 					</div>
 
 					<div class="col-sm-4" style="text-align:right">
-						<button type="button"  class="btn btn-default" ng-click="editor.close()">取消</button>
-						<button type="button"  class="btn btn-primary" ng-click="editor.save()" >保存</button>
+						<button type="button"  class="btn btn-default" ng-click="editor.close()">Cancel</button>
+						<button type="button"  class="btn btn-primary" ng-click="editor.save()" >Save</button>
 					</div>
 				</div>
 			</div>

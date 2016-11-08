@@ -1,4 +1,4 @@
-﻿<span>
+<span>
 
 	<script type="text/ng-template"  id="select-tree-renderer.html">
 		<a ng-click="clicked(item)" href="">{{item.title||item.name | lstring:locale | truncate:120:'...'}}</a>
@@ -20,13 +20,17 @@
 			       
 		</div>
 
-	</span></span>
+	</span>
+</span>
 
 <ul class="nav nav-pills">
   <li class="dropdown">
     <a class="dropdown-toggle"
        data-toggle="dropdown"
-       href="#">Dropdown <b class="caret"></b></a>
+       href="#">
+        Dropdown
+        <b class="caret"></b>
+      </a>
     <ul class="dropdown-menu">
        <span search-filter-dates title='Date of Adoption' query='adoptionDate'></span> 
     </ul>
