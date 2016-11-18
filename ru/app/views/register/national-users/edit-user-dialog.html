@@ -1,4 +1,4 @@
-<div class="modal-content">
+﻿<div class="modal-content">
     <style>
         .has-error .fa-validate:before {
             content: "\f069";
@@ -50,8 +50,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()">
             <span aria-hidden="true">&times;</span>
         </button>
-        <h3 class="modal-title">New user - {{editUserDialogCtrl.user.firstName}} {{editUserDialogCtrl.user.lastName}}
-            <span ng-if="!editUserDialogCtrl.user.firstName && !editUserDialogCtrl.user.lastName">contact details</span>
+        <h3 class="modal-title">New user - {{editUserDialogCtrl.user.firstName}} {{editUserDialogCtrl.user.lastName}} <span ng-if="!editUserDialogCtrl.user.firstName && !editUserDialogCtrl.user.lastName">contact details</span>
         </h3>
         <h4 class="modal-title">{{editUserDialogCtrl.user.email}}</h4>
     </div>
@@ -86,7 +85,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group" ng-class="{ 'has-warning': form.organization.$invalid }">
-                                <label for="organization">Organization</label>
+                                <label for="organization">Организация</label>
                                 <input type="text" class="form-control" name="organization" ng-model="editUserDialogCtrl.user.organization" required>
                                 <p class="help-info error" ng-show="form.organization.$invalid">This field is mandatory</p>
                             </div>
@@ -96,7 +95,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group" ng-class="{ 'has-warning': form.email.$invalid }">
-                                <label>Email</label>
+                                <label>Адрес электронной почты</label>
                                 <div class="input-group" style="margin-bottom:2px; padding-left: 0px">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="email" name="email" class="form-control" ng-model="editUserDialogCtrl.user.email" ng-disabled="true" placeholder="email@domain.xyz" required>
@@ -112,7 +111,7 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">Cancel</button>
-        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editUserDialogCtrl.save()" ng-disabled="form.$invalid">Next »</button>
+        <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">Отмена</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editUserDialogCtrl.save()" ng-disabled="form.$invalid">Следующая статья »</button>
     </div>
 </div>

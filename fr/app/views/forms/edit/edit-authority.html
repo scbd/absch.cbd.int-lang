@@ -1,4 +1,4 @@
-
+﻿
 <div ng-controller="editAuthority">
     <div>
         <!--help schema="55e073c2e81495f09996b4d8" show-help="showHelp" repalce-glossary-terms="true">-->
@@ -29,11 +29,11 @@
                             <legend name="formInfo" style="display:none"></legend>
 
                             <section>
-                                <legend name="generalInfo">General information</legend>
+                                <legend name="generalInfo">Informations g&eacute;n&eacute;rales</legend>
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="government" required caption="Country">
+                                        <div class="km-control-group" name="government" required caption="Pays">
                                             <div>
                                                 <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
                                             </div>
@@ -43,7 +43,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="name" required caption="Name of the Competent National Authority">
+                                        <div class="km-control-group" name="name" required caption="Nom de l'autorit&eacute; nationale comp&eacute;tente">
                                            <div class="help-info"> Provide the name of the responsible entity e.g. Ministry of Environment. Bear in mind that the name of the CNA will help to identify the record in the ABS Clearing-House.</div>
                                             <div km-textbox-ml name="name" required ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
@@ -52,12 +52,12 @@
                             </section>
 
                             <section>
-                                <legend name="coordinates">Coordinates</legend>
+                                <legend name="coordinates">Coordonn&eacute;es</legend>
                                 <div class="help-info">The coordinates will help users of genetic resources to get in contact with the CNA. It is important to keep this information up to date in order to provide users with recent and accurate information.</div>
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="address" caption="Address">
+                                        <div class="km-control-group" name="address" caption="Adresse">
                                             <div km-textbox-ml ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -65,14 +65,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="city" required caption="City">
+                                        <div class="km-control-group" name="city" required caption="Ville">
                                             <div km-textbox-ml name="city" ng-model="document.city" required locales="document.header.languages" placeholder="example: Montreal"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="state" caption="State or Province">
-                                            <div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Quebec"></div>
+                                        <div class="km-control-group" name="state" caption="&Eacute;tat ou province">
+                                            <div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Qu&eacute;bec"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="country" required caption="Country">
+                                        <div class="km-control-group" name="country" required caption="Pays">
                                             <div afc-autocomplete name="country" ng-model="document.country" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" required></div>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="websites" caption="Website address">
+                                        <div class="km-control-group" name="websites" caption="Adresse du site Web">
                                             <!--   <div class="help-info">Please provide the URL of the website (e.g http://absch.cbd.int/) and the name of the website (e.g. ‘Access and Benefit-sharing Clearing-House’).</div> -->
                                             <div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
                                         </div>
@@ -168,16 +168,15 @@
 
 
                             <section>
-                                <legend name="responsibilities">Responsibilities</legend>
+                                <legend name="responsibilities">Responsabilit&eacute;s</legend>
                                     <div class="help-info">
-                                                            Article 13, paragraph 4 provides that "Where a Party designates more than one competent national authority, it shall convey to the Secretariat, with its notification thereof, relevant information on the respective
-                                                            responsibilities of those authorities. Where applicable, such information, shall, at a minimum, specify which competent authority is responsible for the genetic resource sought".
+                                                            Article 13, paragraph 4 provides that &quot;Where a Party designates more than one competent national authority, it shall convey to the Secretariat, with its notification thereof, relevant information on the respective responsibilities of those authorities. Where applicable, such information, shall, at a minimum, specify which competent authority is responsible for the genetic resource sought&quot;.
                                                         </div>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" ng-show="showResponsibleforAllMsg()" name="absResponsibleForAllNot" caption="There is already a CNA for your country, please specify the scope of responsibilities of each CNA." />
 
-                                        <div class="km-control-group" name="absResponsibleForAll" required caption="Is this the only designated competent national authority (CNA) in your country? If “no”, please describe the responsibilities of this competent national authority (CNA).">
+                                        <div class="km-control-group" name="absResponsibleForAll" required caption="Is this the only designated competent national authority (CNA) in your country? If &ldquo;no&rdquo;, please describe the responsibilities of this competent national authority (CNA).">
 
                                             <div km-yes-no required ng-model="document.absResponsibleForAll" locales="document.header.languages"></div>
                                         </div>
@@ -191,18 +190,17 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <h4 ng-show="document.absResponsibleForAll==null">
-                                                        If "no", the following information is required.</h4>
+                                                        If &quot;no&quot;, the following information is required.</h4>
                                                     <h4 ng-show="document.absResponsibleForAll==true">
                                                         This section is not required.</h3>
                                                     <div ng-show="document.absResponsibleForAll==false">
                                                         <h4 class="color-red">
-                                                            This section is required when there is more than one competent national authority (CNA).
-                                                            Please ensure that the responsibilities for each competent national authority (CNA) are well described in all published records.
+                                                            This section is required when there is more than one competent national authority (CNA). Please ensure that the responsibilities for each competent national authority (CNA) are well described in all published records.
                                                             </h4>
                                                         </div>
 
                                                     <div class="km-control-group" name="responsibilities" caption="Short description of CNA responsibilities (maximum 300 characters)." required>
-                                                        <div class="help-info">Article 13, paragraph 2 provides that “Competent national authorities shall, in accordance with applicable national legislative, administrative or policy measures, be responsible for granting access or, as applicable, issuing written evidence that access requirements have been met and be responsible for advising on applicable procedures and requirements for obtaining prior informed consent and entering into mutually agreed terms”. Remember that the purpose of this section is to help users understand responsibilities regarding access to genetic resources and should answer the question: Who grants access for what? The description of responsibilities should be short and clear to understand. </div>
+                                                        <div class="help-info">Article 13, paragraph 2 provides that &ldquo;Competent national authorities shall, in accordance with applicable national legislative, administrative or policy measures, be responsible for granting access or, as applicable, issuing written evidence that access requirements have been met and be responsible for advising on applicable procedures and requirements for obtaining prior informed consent and entering into mutually agreed terms&rdquo;. Remember that the purpose of this section is to help users understand responsibilities regarding access to genetic resources and should answer the question: Who grants access for what? The description of responsibilities should be short and clear to understand. </div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -237,18 +235,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- END IF NO SECTION -->
-                            </section>
+                                <!-- END IF NO SECTION --></section>
 
 
 
 
                             <section>
-                                <legend>Additional Information</legend>
+                                <legend>Renseignements suppl&eacute;mentaires</legend>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="relevantInformation" caption="Additional Information">
-                                            <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+                                        <div class="km-control-group" name="relevantInformation" caption="Renseignements suppl&eacute;mentaires">
+                                            <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n'ayant pas &eacute;t&eacute; incorpor&eacute; ailleurs dans cet enregistrement.</div>
                                             <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -268,7 +265,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+                                            <div class="help-info">Le champ &quot; Notes&quot; est pour votre personnel et des notes ou des commentaires sera cach&eacute; Lors de l'affichage du dossier . Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
                                             <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                         </div>
                                     </div>

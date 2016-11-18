@@ -29,7 +29,7 @@
         <div class="registerpage-content">
 
             <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Error as occured...</strong>
+                <strong>Se produjo un error...</strong>
                 <div>{{error}}</div>
             </div>
             <div ng-show="!isLoading() && status!='hidden'" class="dimmer-parent">
@@ -69,8 +69,7 @@
                             </div>-->
                             <div class="row">
                                 <div class="col-xs-12">
-                                        <div class="alert alert-info"><h3>Please note that by amending a published internationally recognized certificate
-                                        of compliance (IRCC) a new IRCC will be constituted and the old IRCC will no longer be valid.
+                                        <div class="alert alert-info"><h3>Please note that by amending a published internationally recognized certificate of compliance (IRCC) a new IRCC will be constituted and the old IRCC will no longer be valid.
                                         </h3></div>
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="amendmentDescription" required caption="Provide a summary of the reason for the update of the record">
@@ -83,10 +82,10 @@
                         </section>
 
                         <section>
-                            <legend>General information</legend>
+                            <legend>Informaci&oacute;n general</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="government" required caption="Country">
+                                    <div class="km-control-group" name="government" required caption="Pa&iacute;s">
                                         <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
                                     </div>
                                 </div>
@@ -95,17 +94,14 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="permit" caption="Links to other internationally recognized certificate(s) of compliance (IRCC) that relate(s) to this permit">
-                                            <div class="help-info">Sometimes a permit can be related to other previously issued permits, for instance to a permit for accessing a soil sample. Depending on the MAT, it is possible that some countries decide to issue specific permits
-                                                for subsequently identified genetic resources from the taken soil sample. For such cases, the ABS Clearing-House offers the possibility to link different IRCCs together. IRCCs linked through this mechanism
-                                                will be displayed together and thus facilitate tracking of the IRCCs. </div>
+                                            <div class="help-info">Sometimes a permit can be related to other previously issued permits, for instance to a permit for accessing a soil sample. Depending on the MAT, it is possible that some countries decide to issue specific permits for subsequently identified genetic resources from the taken soil sample. For such cases, the ABS Clearing-House offers the possibility to link different IRCCs together. IRCCs linked through this mechanism will be displayed together and thus facilitate tracking of the IRCCs. </div>
                                             <div document-selector ng-model="document.relatedIRCCs" question="relatedIRCCs" government="document.government" schema="absPermit" hide-self="document.header.identifier"></div>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section>
+                        </section> <section>
                             <legend>Issuing Authority</legend>
 
                             <div class="row">
@@ -126,8 +122,7 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group">
                                         <div class="km-control-group" name="title" required caption="Reference number of the permit or its equivalent">
-                                            <span class="help-info">This field will also appear as the title of this record.
-                                            </span>
+                                            <span class="help-info">This field will also appear as the title of this record.</span>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="" locales="document.header.languages" />
                                         </div>
                                     </div>
@@ -147,14 +142,13 @@
                                 <div class="col-xs-6">
                                     <div class="km-control-group" name="dateOfIssuance" required caption="Date of issuance of the permit or its equivalent">
                                         <div class="help-info">This field refers to the date of issuance of the national permit. This information is mandatory and key to ensure legal certainty regarding the right of the user to utilize the genetic resource covered by the permit.</div>
-                                        <div km-date placeholder="YYYY-MM-DD" required name="dateOfIssuance" ng-model="document.dateOfIssuance"></div>
+                                        <div km-date placeholder="A&ntilde;o-Mes-D&iacute;a" required name="dateOfIssuance" ng-model="document.dateOfIssuance"></div>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="km-control-group" name="dateOfExpiry" caption="Date of expiry of the permit or its equivalent">
-                                        <div class="help-info">Two months before the permit expires, an email is sent to the CNA alerting of the date of expiry of the IRCC. After the date of expiry of the permit, the IRCC constituted from that information will be marked as
-                                            expired.</div>
-                                        <div km-date placeholder="YYYY-MM-DD" name="dateOfExpiry" ng-model="document.dateOfExpiry"></div>
+                                        <div class="help-info">Two months before the permit expires, an email is sent to the CNA alerting of the date of expiry of the IRCC. After the date of expiry of the permit, the IRCC constituted from that information will be marked as expired.</div>
+                                        <div km-date placeholder="A&ntilde;o-Mes-D&iacute;a" name="dateOfExpiry" ng-model="document.dateOfExpiry"></div>
                                     </div>
                                 </div>
                             </div>
@@ -198,17 +192,14 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="picInformation" caption="Additional information about the prior informed consent (PIC)">
-                                        <span class="help-info">
-                                    If applicable, please provide any additional information about the prior informed consent (PIC). Detailed information may be provided in an attached document
-                                </span>
+                                        <span class="help-info">If applicable, please provide any additional information about the prior informed consent (PIC). Detailed information may be provided in an attached document</span>
                                         <div km-rich-textbox name="picInformation" rows="4" ng-model="document.picInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="picDocuments" caption="Additional information about the prior informed consent (PIC) - Documents">
-                                        <span class="help-info">
-                                    If applicable, please provide the link or upload the documents.</span>
+                                        <span class="help-info">If applicable, please provide the link or upload the documents.</span>
                                         <div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -227,8 +218,7 @@
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.entitiesToWhomPICGrantedConfidential}">
                                             <div class="km-control-group " name="entitiesToWhomPICGranted" required required caption="Person or entity to whom prior informed consent (PIC) was granted" style="margin-top:0;">
                                                 <div ng-show="!document.entitiesToWhomPICGrantedConfidential">
-                                                    <div class="help-info">Please provide the name and contact details of the person or entity to whom prior informed consent was granted. If the information is marked as confidential that person will not be able to receive the
-                                                        courtesy copy of the IRCC or the CPC. </div>
+                                                    <div class="help-info">Please provide the name and contact details of the person or entity to whom prior informed consent was granted. If the information is marked as confidential that person will not be able to receive the courtesy copy of the IRCC or the CPC. </div>
                                                     <div document-selector ng-model="document.entitiesToWhomPICGranted" question="entitiesToWhomPICGranted" government="document.government" schema="(contact authority)"></div>
                                                 </div>
                                             </div>
@@ -257,8 +247,7 @@
                                 <div class="col-xs-12">
 
                                     <div class="km-control-group" name="matInformation" caption="Additional information about the mutually agreed terms (MAT) - Information">
-                                        <span class="help-info">
-                                    If applicable,  please provide any information about the MAT. For example, this may include information on conditions for access and for benefit-sharing and other relevant information included in the MAT. Detailed information may be provided in an attached document.</span>
+                                        <span class="help-info">If applicable,  please provide any information about the MAT. For example, this may include information on conditions for access and for benefit-sharing and other relevant information included in the MAT. Detailed information may be provided in an attached document.</span>
                                         <div km-rich-textbox name="matInformation" rows="4" ng-model="document.matInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -266,8 +255,7 @@
 
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="matDocuments" caption="Additional information about the mutually agreed terms (MAT) - Documents">
-                                        <span class="help-info">
-                                    If applicable,  please provide the link or upload the documents.</span>
+                                        <span class="help-info">If applicable,  please provide the link or upload the documents.</span>
                                         <div km-link name="matDocuments" ng-model="document.matDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -305,8 +293,7 @@
 
                             <div class="row" style="margin-top:20px;">
                                 <div class="col-xs-12">
-                                    <div class="legend2">Additional subject matter or genetic resource information
-                                        <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
+                                    <div class="legend2">Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
                                     </div>
                                     <div class="km-control-group" name="specimens" caption="Specimen data">
                                         <span class="help-info">Link to a voucher specimen held in an appropriate facility</span>
@@ -317,7 +304,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="taxonomies" caption="Taxonomy">
+                                    <div class="km-control-group" name="taxonomies" caption="Taxonom&iacute;a">
                                         <span class="help-info">Link to record in external taxonomy database, e.g. GBIF, Catalogue of Life</span>
                                         <div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                     </div>
@@ -417,8 +404,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section>
+                        </section> <section>
                             <legend>Documentation</legend>
                             <div class="row">
                                 <div class="col-xs-12">
@@ -443,7 +429,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="relevantInformation" caption="Additional Information">
-                                        <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+                                        <div class="help-info">Por favor, utilice este campo para facilitar cualquier otra informaci&oacute;n pertinente que no haya podido colocarse en otro lugar del registro.</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -451,7 +437,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
+                                    <div class="km-control-group" name="relevantDocuments" caption="Otras direcciones de p&aacute;ginas web o documentos adjuntos pertinentes">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -463,7 +449,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="notes">
-                                        <div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+                                        <div class="help-info">El campo &quot;Notas&quot; es para sus notas u observaciones personales y quedar&aacute; oculto al ver el registro. Este campo no est&aacute; destinado a ser usado para informaci&oacute;n confidencial.</div>
                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                     </div>
                                 </div>

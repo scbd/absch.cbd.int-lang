@@ -1,0 +1,86 @@
+﻿<div id="userSearchFilters">
+    <style>
+        
+        .ngdialog.ngdialog-theme-default.wide .ngdialog-content {
+            width: 70% !important;
+        }
+    </style>
+    <div class="pull-right1">
+        <input type="button" class="btn btn-primary" value="Add New" ng-click="addEdit()" />       
+    </div>     
+    <div style="width:100%" ng-show="userFilters.length>0">
+
+        <ul class="list-group">
+            <li class="list-group-item clearfix"
+            ng-repeat="record in userFilters | orderBy:'reportedOn':'desc'">
+                <div class="pull-right">
+                    <input type="button" class="btn btn-primary" value="Run" ng-click="runUserQuery(record)" ng-show="collection!='subscriptions'" />
+                    <input type="button" class="btn btn-primary" value="编辑" ng-click="addEdit(record)" />
+                    <input type="button" class="btn btn-warning" value="删除" ng-click="deleteFilter($event, record)" />
+                </div>
+                <p class="text-bold mb0">#{{$index+1}} {{record.queryTitle}}</p>
+                <small><span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;"><span class="label label-info"><span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span>{{filter.name}} <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span></span></span></small>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="!userFilters || userFilters.length==0">
+        <br/><br/>
+        <div class="alert alert-info" role="alert">
+            <strong><i class="fa fa-info" /></strong> <span ng-if="user.isAuthenticated">You do not have any saved filters.</span><span ng-if="!user.isAuthenticated">Please log in to view your saved filters.</span>
+        </div>
+    </div>
+    <script type="text/ng-template" trados-translation="true" id="confirmDeleteDialog">
+        <div class="modal-header">
+            <h3 class="modal-title">
+              Confirm Delete?
+            </h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="col-xs-12">
+                {{record.queryTitle}}
+            </div>
+            <div class="col-xs-12">               
+                 <span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;">
+                    <span class="label label-info">                    
+                        <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&#34;</span>{{filter.name}}
+                        <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&#34;</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">No</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
+        </div>
+    </script>
+
+
+    <script type="text/ng-template" trados-translation="true" id="newFilterDialog">
+        <div class="modal-header">
+            <h3 class="modal-title">
+              Add/Edit filter
+            </h3>
+        </div>
+
+        <div class="modal-body">           
+            <div class="form-group">
+                <label for="filterTitle">Title</label>
+                <input type="text" ng-model="document.queryTitle" class="form-control" placeholder="Filter title">
+            </div>
+            <br/>
+            <search-directive skip-results="true" skip-save-filter="true" skip-date-filter="true" 
+                    skip-keywords-filter="{{skipKeywordsFilter}}" skip-text-filter="{{skipTextFilter}}"></search-directive>
+            
+            <div class="alert alert-danger" role="alert" ng-if="errors">  
+                    <p ng-repeat="error in errors">{{error}}</p>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Close</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save(document)" ng-disabled="loading">Save</button>
+        </div>
+    </script>
+</div>

@@ -1,4 +1,4 @@
-<div id="Record" class="record panel panel-default">
+﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
 		<h4>Capacity-building Initiative<span class="color-black"> (CBI) </span>
@@ -7,7 +7,7 @@
 	<div class="record-body panel-body">
         
         <div ng-show="document.title">
-			<label>Title</label>
+			<label>T&iacute;tulo</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
 
@@ -48,11 +48,11 @@
 		<div ng-show="(document.startDate && document.endDate) || document.duration">
 	  			<div class="row" ng-show="document.startDate && document.endDate">
 	  				<div class="col-md-6">
-	  					<label>Start date</label>
+	  					<label>Fecha de inicio</label>
 	  					<div class="km-value km-pre">{{document.startDate | date : 'longDate'}}</div>
 	  				</div>
 	  				<div class="col-md-6">
-	  					<label>End date</label>
+	  					<label>Fecha de finalizaci&oacute;n</label>
 	  					<div class="km-value km-pre">{{document.endDate | date : 'longDate'}}</div>
 	  				</div>
 	  			</div>
@@ -103,12 +103,11 @@
 		<div ng-show="document.projectDocument">
 			<label>Project document or document describing the initiative</label>
 			<div class="km-value" ng-repeat="item in document.projectDocument">
-				<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-				<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+				<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 			</div>
 		</div>
 
-	  	<legend>Detailed information</legend>
+	  	<legend>Informaci&oacute;n detallada</legend>
 
 		<div ng-show="document.description">
 			<label>Short description of the initiative, including its goals and objectives</label>
@@ -160,7 +159,7 @@
 
 		<div ng-show="document.totalBudget">
 			<label>Total budget (amount, in US dollars)</label>
-			<div class="km-value km-pre">{{document.totalBudget | currency:"USD$"}}</div>
+			<div class="km-value km-pre">{{document.totalBudget | currency:&quot;USD$&quot;}}</div>
 		</div>
 
 
@@ -175,8 +174,7 @@
 			<div ng-show="document.resultsOutputs">
 				<label>Main outputs</label>
 				<div class="km-value" ng-repeat="item in document.resultsOutputs">
-					<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-					<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+					<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 				</div>
 			</div>
 
@@ -206,12 +204,11 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Otras direcciones de p&aacute;ginas web o documentos adjuntos pertinentes</label>
 				<div class="km-value" >
 					<ul class="list">
 						<li ng-repeat="item in document.relevantDocuments">
-							<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-							<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+							<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 						</li>
 					</ul>
 				</div>

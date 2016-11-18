@@ -1,4 +1,4 @@
-<div ng-controller="adminReportedRecordsCtrl" id="RegisterPage">
+﻿<div ng-controller="adminReportedRecordsCtrl" id="RegisterPage">
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@
                     <div class="col-xs-2">Schema</div>
                     <div class="col-xs-2">Reported By</div>
                     <div class="col-xs-2">Reported On</div>
-                    <div class="col-xs-4">Information</div>
+                    <div class="col-xs-4">Informaci&oacute;n</div>
                     <div class="col-xs-2"></div>
                 </div>
                 <div class="row table-striped" style="padding:10px;border-bottom:1px solid white;" 
@@ -35,14 +35,12 @@
                             <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span>
                         </div>
                         <div class="col-xs-4">
-                            <span ng-if="record.incorrect">incorrect or inappropriate |</span>
-                            <span ng-if="record.broken">broken link or outdated information |</span>
-                            <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
+                            <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
                         </div>
                         <div class="col-xs-2">
                             <!--<input type="button" class="btn btn-primary" value="History" ng-click="viewHistory($event, record)" />-->
                             <input type="button" class="btn btn-primary" value="Add Comments" ng-click="addComments($event, record)" />
-                            <input type="button" class="btn btn-warning" value="Delete" ng-click="delete($event, record)" />
+                            <input type="button" class="btn btn-warning" value="Borrar" ng-click="delete($event, record)" />
                         </div>
                     </div>
                     <div ng-if="record.history">
@@ -50,7 +48,7 @@
                         <table class="table table-striped" style="margin:auto;width:80%">
                             <thead class="row " style="padding:10px;border-bottom:1px solid white;">                
                                 <td>No.</td>
-                                <td>Date</td>
+                                <td>Fecha</td>
                                 <td>Status</td>
                                 <td>comments</td>
                             </thead>
@@ -75,7 +73,7 @@
         </div>
     </div>
 
-    <script type="text/ng-template" id="addCommentsDialog">
+    <script type="text/ng-template" trados-translation="true" id="addCommentsDialog">
         <div class="modal-header">           
             <h3 class="modal-title">
                {{record.schema|schemaName}} : - {{record.reportedBy}}
@@ -108,7 +106,7 @@
     </script>
 
 
-    <script type="text/ng-template" id="confirmDeleteDialog">
+    <script type="text/ng-template" trados-translation="true" id="confirmDeleteDialog">
         <div class="modal-header">           
             <h3 class="modal-title">
               Confirm Delete?

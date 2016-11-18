@@ -1,83 +1,102 @@
-<div id="RecordDetails">
-    
-    <style>
-        #RecordDetails td {padding-right:5px;}
-         #RecordDetails label {color:#666;}
-    </style>
+﻿<div ng-controller="recordDetailsController" id="RegisterPage">
 
-   <div class="row" >
-            <div class="col-xs-12">
-                <div class="well">
-                    <h3 style="margin:0 0 20px 0;padding:0;">Record Information</h3>
-                    <table style="width:100%!important;">
-                            <tr>
-                                <td><label> Unique Identifier: </label></td>
-                                <td class="bold"> 
-                                        {{doc | uniqueID}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label> Record Status: </label></td>
-                                <td class="bold">
-                                    
-                                    <span class="color-grey" ng-if="docInfo.revision == '0'">
-                                        DRAFT 
-                                    </span>
-                                    
-                                    <span class="color-green"  ng-if="docInfo.revision > 0">
-                                        PUBLISHED 
-                                    </span>
-                                    
-                                    <span class="color-red"  ng-if="docInfo.workingDocumentLock">
-                                        [ Locked: Pending publishing request ]
-                                    </span>
+    <link href="/app/css/register.css" rel="stylesheet">
+    <link href="/app/css/record.css" rel="stylesheet">
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label> Record Type: </label></td>
-                                <td class="bold">{{docInfo.metadata.schema | schemaName}}</td>
-                            </tr>
-                            
-                             <tr  ng-if="docInfo.revision > 0">
-                                <td><label> Record Versions: </label></td>
-                                <td class="bold">{{docInfo.revision}}</td>
-                            </tr>
-                            <tr ng-if="docInfo.metadata.government">
-                                <td><label> Record Owner: </label></td>
-                                 <td class="bold"> {{getUserCountry(docInfo.metadata.government)}}</td>
-                            </tr>
-                            <tr>
-                                <td><label> History:</label></td>
-                                <td>
-                                  <div view-history document-id="docInfo.identifier"></div>
-                                </td>
-                            </tr>
-                            <!--<tr ng-if="docInfo.revision > 0">
-                                <td><label>Last Published by: </label></td>
-                                <td class="bold">
-                                    {{docInfo.updatedBy.firstName}}  {{docInfo.updatedBy.lastName}} 
-                                    (<a translation-url  ng-href="mailto:{{docInfo.updatedBy.email}}">{{docInfo.updatedBy.email}} </a>)
-                                    <span class="unbold"> on </span>
-                                    {{docInfo.updatedOn | formatDateWithTime}}
-                                </td>
-                            </tr>-->
-                    </table>
+    <span register-top-menu></span>
+    <div class="register-content card card-1-notrans">
+        <div class="register-content-header bg-darkgrey color-white">
+            <div style="padding:10px 10px;">
+                <h3>Record Details <span class="helpinfoInline"><i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i></span>
+                </h3>
+
+                <!--help info---------------------------->
+                <div ng-if="showInfo" class="well well-help">
+                    View all information about a record.
                 </div>
             </div>
         </div>
+        <div class="register-content-content">
 
-        <!--<div class="row" style="margin-bottom:20px;">
-            <div class="col-xs-12">
-                <div class="pull-right" >
-                    <button title="Cancel request" ng-show="canRecall && showAddButton()"
-                    type="button" class="btn btn-warning color-white" ng-click="askRecallWorkflowRequest()"><i class="fa fa-undo"></i> Recall</button>
-                    <a translation-url  title="Edit" ng-show="!canRecall && !showRequestHistory && showButton()" type="button" class="btn btn-default"
-                    href="/register/{{document.schema|mapSchema}}/{{document.identifier}}/edit"><i class="fa fa-edit"></i> Edit</a>
-                    <button title="Delete" ng-show="!canRecall && !showRequestHistory && showButton()"
-                    ng-class="{'red':(documemt.schema == 'MSR' &&  !showRequestHistory)}"
-                    type="button" class="btn btn-danger" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i> Delete</button>
+            <div block-region activate="loading"></div>
+
+            <div ng-if="showRequestHistory">
+                <div task-id show-details="true" class="record-body" load-task-data='showRequestHistory' workflow-task-id="{{document.workflowId}}" on-activity-update="refreshworkflowRecord(document, workflowInfo)"></div>
+            </div>
+
+            <div ng-if="!showRequestHistory">
+                <record-loader show-details="true" class="shadow-z-2" hide-buttons="true" link-target="_self"></record-loader>
+            </div>
+
+            <!--<div class="row" style="margin:0;padding:0;">
+                <div class="col-xs-12">
+                    <div style="margin-top:40px;">
+                        <h4 style=""> Notifications related to this record</h4>
+                        <xuser-notifications-panel doc-id="document.identifier"></xuser-notifications-panel>
+                    </div>
+                </div>
+            </div>-->
+
+            <div id="deleteRecordModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">What do you want to delete? <i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
+                        </div>
+                        <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
+
+                            <div ng-show="isDraft(recordToDelete)" class="well">
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Delete the draft</button>
+                                <em>Draft {{recordToDelete.documentID||'[new]'}}</em>
+                                <p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
+                            </div>
+
+                            <div ng-show="isPublished(recordToDelete)" class="well">
+                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: Any pending draft will also be deleted">
+                                    Unpublish and delete the record</button>
+                                <em>Published record {{recordToDelete.documentID}}</em>
+                                <p><b>{{recordToDelete.title|lstring}}</b></p>
+                                <p ng-bind-html="recordToDelete.summary|lstring"></p>
+                            </div>
+
+                        </div>
+                        <div class="modal-body" ng-show="cantDelete || pilotDelete">
+                            Not allowed to delete published ABSCH-IRCC records. IRCC records can be amended and set to <i>revoked</i>. <i>Revoked</i> IRCC records are no longer valid. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> -->
+                        </div>
+                        <div class="modal-body" ng-show="iacCantDelete">
+                            You do not have sufficient privileges to delete document.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+            <div id="recallWorkflowRequestModal" class="modal fade" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4>Cancel publishing request<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to recall and cancel this publishing request?</p>
+                        </div>
+                        <div class="modal-footer" style="margin-top:0">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Да</button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>-->
+
+        </div>
+    </div>
 </div>
+<!-- controller -->

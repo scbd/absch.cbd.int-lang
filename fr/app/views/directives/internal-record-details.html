@@ -1,4 +1,4 @@
-<div id="RecordDetails">
+﻿<div id="RecordDetails">
     
     <style>
         #RecordDetails td {padding-right:5px;}
@@ -20,17 +20,11 @@
                                 <td><label> Record Status: </label></td>
                                 <td class="bold">
                                     
-                                    <span class="color-grey" ng-if="docInfo.revision == '0'">
-                                        DRAFT 
-                                    </span>
+                                    <span class="color-grey" ng-if="docInfo.revision == '0'">DRAFT</span>
                                     
-                                    <span class="color-green"  ng-if="docInfo.revision > 0">
-                                        PUBLISHED 
-                                    </span>
+                                    <span class="color-green"  ng-if="docInfo.revision > 0">PUBLISHED</span>
                                     
-                                    <span class="color-red"  ng-if="docInfo.workingDocumentLock">
-                                        [ Locked: Pending publishing request ]
-                                    </span>
+                                    <span class="color-red"  ng-if="docInfo.workingDocumentLock">[ Locked: Pending publishing request ]</span>
 
                                 </td>
                             </tr>

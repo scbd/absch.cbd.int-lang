@@ -1,24 +1,22 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
 		<h4 ng-show="display('header')">
-		Legislative, administrative or policy measures on access and benefit-sharing
-		<span class="color-black"> (MSR) </span>
+		Legislative, administrative or policy measures on access and benefit-sharing <span class="color-black"> (MSR) </span>
 		</h4></div>
 	<div class="record-body panel-body">
 
 		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">
-			General information</legend>
+			Informaci&oacute;n general</legend>
 
 		<div ng-show="document.government">
-			<label name="country">Country</label>
+			<label name="country">Pa&iacute;s</label>
 			<div class="km-value">
-				{{document.government|term:locale}}
-				<span ng-party-status government="document.government" id="government"></span>
+				{{document.government|term:locale}} <span ng-party-status government="document.government" id="government"></span>
 			</div>
 		</div>
 
 		<div ng-show="document.title">
-			<label>Title</label>
+			<label>T&iacute;tulo</label>
 			<div class="km-value">
 				<strong>{{document.title | lstring:locale}}</strong>
 			</div>
@@ -32,8 +30,7 @@
 		<div ng-show="document.jurisdiction">
 			<label>Jurisdiction(s)</label>
 			<div class="km-value">
-				{{document.jurisdiction|term:locale}}
-				<span ng-if="document.jurisdictionName ">({{document.jurisdictionName | lstring:locale}})</span>
+				{{document.jurisdiction|term:locale}} <span ng-if="document.jurisdictionName ">({{document.jurisdictionName | lstring:locale}})</span>
 			</div>
 		</div>
 
@@ -61,7 +58,7 @@
 		</div>
 
 		<div ng-show="document.entryIntoForce">
-			<label>Date of entry into force</label>
+			<label>D&iacute;a de entrada en vigor</label>
 			<div class="km-value">{{document.entryIntoForce | formatDate}}</div>
 		</div>
 
@@ -94,14 +91,12 @@
 		</div>
 
 		<div ng-show="document.documents">
-			<legend>Document details</legend>
+			<legend>Informaci&oacute;n de los documentos</legend>
 			<label>Document text</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.documents">
-						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-						<i ng-show="item.language">({{item.language}})</i>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{item.language}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</li>
 				</ul>
 			</div>
@@ -112,12 +107,7 @@
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.documentTranslations">
-						<a translation-url  target="_blank" ng-href="{{item.url}}">
-							<i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}
-						</a>
-						<i ng-show="item.language">({{item.language}})</i>
-						<i ng-show="item.translationType">({{item.translationType}})</i>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{item.language}})</i> <i ng-show="item.translationType">({{item.translationType}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</li>
 				</ul>
 			</div>
@@ -155,7 +145,7 @@
 		</div>
 
 		<div ng-show="document.authorities ">
-			<legend>Regulatory contact information</legend>
+			<legend>Informaci&oacute;n de contacto de regulaci&oacute;n</legend>
 			<div ng-repeat="item in document.authorities">
 				<div view-contact-reference ng-model="item" locale="locale" class="km-value"></div>
 			</div>
@@ -202,13 +192,11 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Otras direcciones de p&aacute;ginas web o documentos adjuntos pertinentes</label>
 				<div class="km-value">
 					<ul>
 						<li ng-repeat="item in document.relevantDocuments">
-							<i class="fa fa-external-link-square" aria-hidden="true"></i>
-							<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-							<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+							<i class="fa fa-external-link-square" aria-hidden="true"></i> <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 						</li>
 					</ul>
 				</div>

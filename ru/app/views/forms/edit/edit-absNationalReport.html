@@ -30,19 +30,19 @@
         <div class="row" ng-show="tab == 'edit'">
             <div class="col-xs-12">
                 <ul class="pagination" id="nrTabs" ng-click="setTab()">
-                     <li class="active"><a href="#part0" data-toggle="tab">Руководящие указания</a></li>
-                    <li><a href="#part1" data-toggle="tab">Часть 1</a></li>
-                    <li><a href="#part2" data-toggle="tab">Часть 2</a></li>
-                    <li><a href="#part3" data-toggle="tab">Часть 3</a></li>
-                    <li><a href="#part4" data-toggle="tab">Часть 4</a></li>
-                    <li><a href="#part5" data-toggle="tab">Часть 5</a></li>
-                    <li><a href="#part6" data-toggle="tab">Часть 6</a></li>
-                    <li><a href="#part7" data-toggle="tab">Часть 7</a></li>
-                    <li><a href="#part8" data-toggle="tab">Часть 8</a></li>
-                    <li><a href="#part9" data-toggle="tab">Часть 9</a></li>
-                    <li><a href="#part10" data-toggle="tab">Часть 10</a></li>
-                    <li><a href="#part11" data-toggle="tab">Часть 11</a></li>
-                    <li><a href="#part12" data-toggle="tab">Часть 12</a></li>
+                     <li class="active"><a translation-url  href="#part0" data-toggle="tab">Руководящие указания</a></li>
+                    <li><a translation-url  href="#part1" data-toggle="tab">Часть 1</a></li>
+                    <li><a translation-url  href="#part2" data-toggle="tab">Часть 2</a></li>
+                    <li><a translation-url  href="#part3" data-toggle="tab">Часть 3</a></li>
+                    <li><a translation-url  href="#part4" data-toggle="tab">Часть 4</a></li>
+                    <li><a translation-url  href="#part5" data-toggle="tab">Часть 5</a></li>
+                    <li><a translation-url  href="#part6" data-toggle="tab">Часть 6</a></li>
+                    <li><a translation-url  href="#part7" data-toggle="tab">Часть 7</a></li>
+                    <li><a translation-url  href="#part8" data-toggle="tab">Часть 8</a></li>
+                    <li><a translation-url  href="#part9" data-toggle="tab">Часть 9</a></li>
+                    <li><a translation-url  href="#part10" data-toggle="tab">Часть 10</a></li>
+                    <li><a translation-url  href="#part11" data-toggle="tab">Часть 11</a></li>
+                    <li><a translation-url  href="#part12" data-toggle="tab">Часть 12</a></li>
                 </ul>
             </div>
         </div>
@@ -90,7 +90,7 @@
                             <legend>Общая информация</legend>
             				<div class="row">
             					<div class="col-xs-12">
-            						<div class="km-control-group" name="government" required  bold="true"  caption="1. Country">
+            						<div class="km-control-group" name="government" required  bold="true"  caption="1. Страна">
                                         <span class="help-inline color-blue bold" ng-if="userGovernment()"> Название страны не подлежит изменению. </span>
                                         <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
             						</div>
@@ -111,7 +111,7 @@
                             
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="contact"  bold="true" caption="2. Contact person">
+                                    <div class="km-control-group" required name="contact"  bold="true" caption="2. Контактное лицо">
                                           <div document-selector ng-model="document.contact"
                                                                 ng-disabled="!document.government"
                                                                 question="contact"
@@ -309,7 +309,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" name="question10" caption="10. Additional information">
+                                    <div class="km-control-group"  bold="true" name="question10" caption="10. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы
                                         <div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -552,7 +552,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true"  name="question19" caption="19. Additional information">
+                                    <div class="km-control-group"  bold="true"  name="question19" caption="19. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы
                                         <div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -639,7 +639,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" name="question23" caption="23. Additional information">
+                                    <div class="km-control-group"  bold="true" name="question23" caption="23. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы в реализации мер:
                                         <div km-textbox-ml rows=4 name="question23" ng-model="document.question23.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -864,7 +864,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" name="question30" caption="30. Additional information">
+                                    <div class="km-control-group"  bold="true" name="question30" caption="30. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы в реализации мер:
                                         <div km-textbox-ml rows=4 name="question30" ng-model="document.question30.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -962,7 +962,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" name="question34" caption="34. Additional information">
+                                    <div class="km-control-group"  bold="true" name="question34" caption="34. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы.
                                         <div km-textbox-ml rows=4 name="question34" ng-model="document.question34.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1070,7 +1070,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" bold="true"  name="question36" caption="36. Additional information">
+                                    <div class="km-control-group" bold="true"  name="question36" caption="36. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы в реализации мер.
                                         <div km-textbox-ml rows=4 name="question36" ng-model="document.question36.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1200,7 +1200,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question40" caption="40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities’ customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?">
+                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question40" caption="40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?">
                                         <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question40FurtherInfo" caption="">
@@ -1320,7 +1320,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question44"  bold="true" caption="44. Additional information">
+                                    <div class="km-control-group" name="question44"  bold="true" caption="44. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы в реализации мер, касающихся традиционных знаний, связанных с генетическими ресурсами:
                                         <div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question44" ng-model="document.question44.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1384,7 +1384,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question47"  bold="true" caption="47. Additional information">
+                                    <div class="km-control-group" name="question47"  bold="true" caption="47. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы:
                                         <div km-textbox-ml rows=4 name="question47" ng-model="document.question47.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1459,7 +1459,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question50" bold="true"  caption="50. Additional information">
+                                    <div class="km-control-group" name="question50" bold="true"  caption="50. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы:
                                         <div km-textbox-ml rows=4 name="question50" ng-model="document.question50.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1527,7 +1527,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question53"  bold="true" caption="53. Additional information">
+                                    <div class="km-control-group" name="question53"  bold="true" caption="53. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы:
                                         <div km-textbox-ml rows=4 name="question53" ng-model="document.question53.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1679,7 +1679,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question58"  bold="true" caption="58. Additional information">
+                                    <div class="km-control-group" name="question58"  bold="true" caption="58. Дополнительная информация">
                                         Кратко опишите основные трудности и проблемы:
                                         <div km-textbox-ml rows=4 name="question58" ng-model="document.question58.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1920,7 +1920,7 @@
                         <legend>Замечания о форме представления отчетности</legend>
                          <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="Notes"  bold="true" caption="65. Notes:">
+                                        <div class="km-control-group" name="Notes"  bold="true" caption="65. Примечания:">
                                             <!-- <div km-textbox-ml rows=4 name="question65FurtherInfo" ng-model="document.question65" locales="document.header.languages" placeholder="">
                                             </div> -->
                                            <div class="help-info">Поле «Примечания» предназначено для личных замечаний или комментариев и будет скрыто при просмотре записи. Данное поле не предназначено для конфиденциальной информации.</div>

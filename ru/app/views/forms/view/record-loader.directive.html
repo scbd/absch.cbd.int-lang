@@ -1,55 +1,55 @@
-<div>
+п»ї<div>
 
     <div smooth-scroll duration="100" offset="200"></div>
     <div block-region activate="loading"></div>
 
     <div class="alert alert-danger text-center" ng-show="error">
-        <strong>Произошла ошибка...</strong>
+        <strong>РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°...</strong>
         <div>{{error}}</div>
     </div>
     <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentSuccess">
-        <h2>Спасибо, что скачали документ {{documentUID}}.</h2>
-        <p>Если загрузка документа не началась, попробуйте перейти по <a href="{{documentUrl}}" class="alert-link">ссылке...</a></p>
-        </br></br></br></br> Это окно закроется автоматически через {{timeLaspe}} с.
+        <h2>РЎРїР°СЃРёР±Рѕ, С‡С‚Рѕ СЃРєР°С‡Р°Р»Рё РґРѕРєСѓРјРµРЅС‚ {{documentUID}}.</h2>
+        <p>Р•СЃР»Рё Р·Р°РіСЂСѓР·РєР° РґРѕРєСѓРјРµРЅС‚Р° РЅРµ РЅР°С‡Р°Р»Р°СЃСЊ, РїРѕРїСЂРѕР±СѓР№С‚Рµ РїРµСЂРµР№С‚Рё РїРѕ <a translation-url  href="{{documentUrl}}" class="alert-link">СЃСЃС‹Р»РєРµ...</a></p>
+        </br></br></br></br> Р­С‚Рѕ РѕРєРЅРѕ Р·Р°РєСЂРѕРµС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· {{timeLaspe}} СЃ.
     </div>
 
     <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentError">
-        <h2>Спасибо, что запросили документ {{documentUID}}.</h2>
-        <p>Этого документа не существует. Если вы думаете, что файл должен быть доступен, пожалуйста, сообщите по адресу <a href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
+        <h2>РЎРїР°СЃРёР±Рѕ, С‡С‚Рѕ Р·Р°РїСЂРѕСЃРёР»Рё РґРѕРєСѓРјРµРЅС‚ {{documentUID}}.</h2>
+        <p>Р­С‚РѕРіРѕ РґРѕРєСѓРјРµРЅС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. Р•СЃР»Рё РІС‹ РґСѓРјР°РµС‚Рµ, С‡С‚Рѕ С„Р°Р№Р» РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РґРѕСЃС‚СѓРїРµРЅ, РїРѕР¶Р°Р»СѓР№СЃС‚Р°, СЃРѕРѕР±С‰РёС‚Рµ РїРѕ Р°РґСЂРµСЃСѓ <a translation-url  href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
     </div>
 
     <div id="RecordDetails" ng-if="showDetails">
         <div class="row">
             <div class="col-xs-12">
                 <div class="well">
-                    <h3 style="margin:0 0 20px 0;padding:0;">Сведения о записи</h3>
+                    <h3 style="margin:0 0 20px 0;padding:0;">РЎРІРµРґРµРЅРёСЏ Рѕ Р·Р°РїРёСЃРё</h3>
                     <table style="width:100%!important;">
                         <tr>
-                            <td><label> Уникальный идентификатор: </label></td>
+                            <td><label> РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ: </label></td>
                             <td class="bold">
                                 {{internalDocument | uniqueID}}
                             </td>
                         </tr>
                         <tr>
-                            <td><label> Текущий статус: </label></td>
+                            <td><label> РўРµРєСѓС‰РёР№ СЃС‚Р°С‚СѓСЃ: </label></td>
                             <td class="bold">
-                                <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">ПРОЕКТ</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">ОПУБЛИКОВАНО</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Locked: Pending {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">УДАЛЕНО</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> ОТОЗВАНО</span></span>
+                                <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">РџР РћР•РљРў</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">РћРџРЈР‘Р›РРљРћР’РђРќРћ</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Locked: Pending {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">РЈР”РђР›Р•РќРћ</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> РћРўРћР—Р’РђРќРћ</span></span>
                             </td>
                         </tr>
                         <tr>
-                            <td><label> Тип записи: </label></td>
+                            <td><label> РўРёРї Р·Р°РїРёСЃРё: </label></td>
                             <td class="bold">{{internalDocumentInfo.metadata.schema | schemaName}}</td>
                         </tr>
                         <tr ng-if="docInfo.revision > 0">
-                            <td><label> Версии записи: </label></td>
+                            <td><label> Р’РµСЂСЃРёРё Р·Р°РїРёСЃРё: </label></td>
                             <td class="bold">{{internalDocumentInfo.revision}}</td>
                         </tr>
                         <tr ng-if="docInfo.metadata.government">
-                            <td><label> Владелец записи: </label></td>
+                            <td><label> Р’Р»Р°РґРµР»РµС† Р·Р°РїРёСЃРё: </label></td>
                             <td class="bold"> {{getUserCountry(internalDocumentInfo.metadata.government)}}</td>
                         </tr>
                         <tr>
-                            <td><label> Хронология:</label></td>
+                            <td><label> РҐСЂРѕРЅРѕР»РѕРіРёСЏ:</label></td>
                             <td>
                                 <div view-history document-id="internalDocumentInfo.identifier"></div>
                             </td>
@@ -62,16 +62,17 @@
 
 
     <div class="alert alert-danger" role="alert" ng-show="internalDocumentInfo.latestRevision != internalDocumentInfo.revision && revisionNo != 'draft'">
-        <h2> 
-                <span> Данная запись обновлена. Эта версия не является последней опубликованной версией.</span> <a ng-href="/database/{{internalDocument.header.schema | schemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}" target="new"> Щелкните здесь, чтобы просмотреть последнюю версию записи.</a>
-			</h2>
+        <h3>
+                This document has been updated. Р­С‚Р° РІРµСЂСЃРёСЏ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРµР№ РѕРїСѓР±Р»РёРєРѕРІР°РЅРЅРѕР№ РІРµСЂСЃРёРµР№. <a translation-url  ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}" target="new">Р©РµР»РєРЅРёС‚Рµ Р·РґРµСЃСЊ, С‡С‚РѕР±С‹ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ Р·Р°РїРёСЃРё.</a>
+			</h3>
     </div>
 
 
     <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
         <div>
-            <a title="Редактировать" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button" class="btn btn-default" href="/register/{{internalDocument.header.schema|schemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Редактировать </a>
-            <button title="Удалить" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
+            <a translation-url  title="Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
+            class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ </a>
+            <button title="РЈРґР°Р»РёС‚СЊ" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
         </div>
     </div>
     <div class="btn-group" ng-show="internalDocument.header.languages.length>1">

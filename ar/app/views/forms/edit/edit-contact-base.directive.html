@@ -7,7 +7,7 @@
 
 	<div ng-show="document.type=='person'">
 
-		<legend>Personal Information</legend>
+		<legend>المعلومات الشخصية</legend>
 
 		<div  class="row">
 
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="km-control-group" name="contact_middleName" caption="Middle Name">
+				<div class="km-control-group" name="contact_middleName" caption="الاسم الأوسط">
 					<input type="text" class="form-control" name="contact_middleName" ng-model="document.middleName"/>
 				</div>
 			</div>
@@ -38,10 +38,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="km-control-group" name="contact_organization"  caption="Organization">
+				<div class="km-control-group" name="contact_organization"  caption="المنظمة">
 					<!-- <div km-select name="contact_organization" ng-model="document.organization"
-						items="options.organization()" required></div> -->
-					<field-embed-contact ng-model="document.contactOrganization" locales="document.header.languages"
+						items="options.organization()" required></div> --> <field-embed-contact ng-model="document.contactOrganization" locales="document.header.languages"
 					name="organization" caption="Link Organization »"
 					sub-filter="[{'type':'organization'}]"></field-embed-contact>
 
@@ -50,14 +49,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="km-control-group" name="contact_department" caption="Department / Division / Unit">
+				<div class="km-control-group" name="contact_department" caption="القسم / الفرع /الوحدة">
 					<div km-textbox-ml name="contact_department" ng-model="document.department" locales="locales"></div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="km-control-group" name="contact_designation" caption="Job Title">
+				<div class="km-control-group" name="contact_designation" caption="العنوان الوظيفي">
 					<div km-textbox-ml name="contact_designation" ng-model="document.designation" locales="locales"></div>
 				</div>
 			</div>
@@ -67,7 +66,7 @@
 		<legend>Organization Information</legend>
 		<div class="row">
 			<div class="col-md-7 col-xs-12">
-				<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="Organization">
+				<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="المنظمة">
 					<div class="help-info">Fullname without abbreviation</div>
 					<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organization" ng-model="document.name" required locales="locales"></div>
 					<div ng-if="document.type=='organization' && document.header.schema=='contact'" km-textbox-ml name="contact_organization" ng-model="document.organization"  locales="locales"></div>
@@ -85,7 +84,7 @@
 
 		<div class="row">
 			<div class="col-md-8">
-				<div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+				<div class="km-control-group" name="contact_organizationType" caption="نوع المنظمة">
 					<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 				</div>
 			</div>
@@ -98,7 +97,7 @@
 	</div>
 	<div ng-hide="document.contactOrganization">
 
-		<legend>Address</legend>
+		<legend>العنوان</legend>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -110,8 +109,8 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<div class="km-control-group" name="contact_city" caption="City" required>
-					<div km-textbox-ml name="contact_city" ng-model="document.city" locales="locales" placeholder="example: Montreal"></div>
+				<div class="km-control-group" name="contact_city" caption="المدينة" required>
+					<div km-textbox-ml name="contact_city" ng-model="document.city" locales="locales" placeholder="example: مونتريال"></div>
 				</div>
 			</div>
 
@@ -138,7 +137,7 @@
 		</div>
 	</div>
 
-	<legend>Contact Information</legend>
+	<legend>معلومات الاتصال</legend>
 
 	<div class="row">
 		<div class="col-md-6 col-xs-12">

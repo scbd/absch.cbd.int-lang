@@ -1,4 +1,4 @@
-<div ng-controller="editContact">
+﻿<div ng-controller="editContact">
 
 	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -19,7 +19,7 @@
 			
 
 			<div class="alert alert-danger" ng-show="hasError()">
-				<strong>Error as occured...</strong>
+				<strong>Произошла ошибка...</strong>
 				<div>{{error}}</div>
 			</div>
 
@@ -29,8 +29,7 @@
 
 			<div ng-show="!isLoading() && status!='hidden'">
 				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
-				<p class="color-litegrey">Please note that national contacts are not publically available in the ABSCH as stand-alone records.
-	Published national contacts will only be display if they are linked to other published national records.</p>
+				<p class="color-litegrey">Please note that national contacts are not publically available in the ABSCH as stand-alone records. Published national contacts will only be display if they are linked to other published national records.</p>
 
 				<div km-document-validation ng-model="validationReport"></div>
 				<form name="editForm" class="editForm" style="margin-top:10px">
@@ -49,9 +48,9 @@
 									<legend name="contactType">Contact Type</legend>
 									<div class="km-control-group" name="notes">
 										<label class="radio-inline">
-											<input type="radio" ng-model="document.type" value="organization" name="editionContactType" />Organization</label>
+											<input type="radio" ng-model="document.type" value="organization" name="editionContactType" />Организация</label>
 										<label class="radio-inline">
-											<input type="radio" ng-model="document.type" value="person" name="editionContactType" />Person</label>
+											<input type="radio" ng-model="document.type" value="person" name="editionContactType" />Лицо</label>
 									</div>
 								</div>
 							</div>
@@ -66,7 +65,7 @@
 
 							<div ng-show="document.type=='person'">
 
-								<legend>Personal Information</legend>
+								<legend>Личные данные</legend>
 
 								<div class="row">
 
@@ -83,7 +82,7 @@
 									</div>
 
 									<div class="col-md-4 col-sm-4 col-xs-12">
-										<div class="km-control-group" name="contact_middleName" caption="Middle Name">
+										<div class="km-control-group" name="contact_middleName" caption="Отчество">
 											<input type="text" class="form-control" name="contact_middleName" ng-model="document.middleName" />
 										</div>
 									</div>
@@ -97,7 +96,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_organization" caption="Organization">
+										<div class="km-control-group" name="contact_organization" caption="Организация">
 											<div document-selector ng-model="document.contactOrganization" type="radio"
 		                                                                 question="contactOrganization"
 		                                                                 government="document.government"
@@ -107,14 +106,14 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_department" caption="Department / Division / Unit">
+										<div class="km-control-group" name="contact_department" caption="Отдел, подразделение, единица">
 											<div km-textbox-ml name="contact_department" ng-model="document.department" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_designation" caption="Job Title">
+										<div class="km-control-group" name="contact_designation" caption="Должность">
 											<div km-textbox-ml name="contact_designation" ng-model="document.designation" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -124,7 +123,7 @@
 								<legend>Organization Information</legend>
 								<div class="row">
 									<div class="col-md-7 col-xs-12">
-										<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="Organization">
+										<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="Организация">
 											<div class="help-info">Fullname without abbreviation</div>
 											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organization" ng-model="document.name" required locales="document.header.languages"></div>
 											<div ng-if="document.type=='organization' && document.header.schema=='contact'" km-textbox-ml name="contact_organization" ng-model="document.organization" locales="document.header.languages"></div>
@@ -134,28 +133,28 @@
 									<div class="col-md-5 col-xs-12">
 										<div class="km-control-group" name="contact_organizationAcronym" caption="Acronym" ng-required="!form.organization.$valid && document.type!='person'">
 											<div class="help-info">Abbreviation for long name</div>
-											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="example: SCBD" locales="document.header.languages"></div>
-											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="example: SCBD" locales="document.header.languages"></div>
+											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="example: СКБР" locales="document.header.languages"></div>
+											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="example: СКБР" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-md-8">
-										<div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+										<div class="km-control-group" name="contact_organizationType" caption="Тип организации">
 											<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 										</div>
 									</div>
 									<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
 										<div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-											<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCBD" locales="document.header.languages"></div>
+											<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: СКБР" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div ng-hide="document.contactOrganization">
 
-								<legend>Address</legend>
+								<legend>Адрес</legend>
 
 								<div class="row">
 									<div class="col-md-12">
@@ -167,8 +166,8 @@
 
 								<div class="row">
 									<div class="col-md-6">
-										<div class="km-control-group" name="contact_city" caption="City" >
-											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="example: Montreal"></div>
+										<div class="km-control-group" name="contact_city" caption="Город" >
+											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="example: г. Монреаль"></div>
 										</div>
 									</div>
 
@@ -183,7 +182,7 @@
 
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_postalCode" caption="Postal Code or Zip">
-											<div km-textbox-ml name="contact_postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="example: H2Y 1N9"></div>
+											<div km-textbox-ml name="contact_postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="example: H2Y 1N9 Canada"></div>
 										</div>
 									</div>
 
@@ -195,18 +194,18 @@
 								</div>
 							</div>
 
-							<legend>Contact Information</legend>
+							<legend>Контактная информация</legend>
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_phones" caption="Phone numbers">
+									<div class="km-control-group" name="contact_phones" caption="Номера телефонов">
 										<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
 										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="example: +1 514.288.2220"></div>
 									</div>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_faxes" caption="Fax Numbers">
+									<div class="km-control-group" name="contact_faxes" caption="Номера факсов">
 										<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
 										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="example: +1 514.288.6588"></div>
 									</div>
@@ -215,7 +214,7 @@
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_emails" caption="Emails" required>
+									<div class="km-control-group" name="contact_emails" caption="Адреса электронной почты" required>
 										<div km-inputtext-list name="contact_emails" type="email" ng-model="document.emails" placeholder="example: secretariat@cbd.int"></div>
 									</div>
 								</div>
@@ -230,11 +229,11 @@
 
 						<section>
 
-							<legend>Notes</legend>
+							<legend>Примечания</legend>
 							<div class="row">
 								<div class="col-xs-12">
 									<div class="km-control-group" name="notes">
-										<div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+										<div class="help-info">Поле «Примечания» предназначено для личных замечаний или комментариев и будет скрыто при просмотре записи. Данное поле не предназначено для конфиденциальной информации.</div>
 										<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 									</div>
 								</div>

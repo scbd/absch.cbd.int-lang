@@ -1,4 +1,4 @@
-<div ng-controller="editOrganization">
+﻿<div ng-controller="editOrganization">
 
 	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -20,7 +20,7 @@
 
 					<div ng-show="tab=='edit'" km-tab="edit">
 
-						<legend>General information</legend>
+						<legend>معلومات عامة</legend>
 						<div class="row">
 							<div class="col-md-8 col-xs-12">
 								<div class="km-control-group" name="name" required caption="Name of the organization">
@@ -36,7 +36,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-8">
-								<div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+								<div class="km-control-group" name="contact_organizationType" caption="نوع المنظمة">
 									<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 								</div>
 							</div>
@@ -46,11 +46,11 @@
 								</div>
 							</div>
 						</div>
-						<legend>Organization Coordinates</legend>
+						<legend>إحداثيات المنظمة</legend>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="address" caption="Address">
+								<div class="km-control-group" name="address" caption="العنوان">
 									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -58,8 +58,8 @@
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="city" required caption="City">
-									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="example: Montreal"></div>
+								<div class="km-control-group" name="city" required caption="المدينة">
+									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="example: مونتريال"></div>
 								</div>
 							</div>
 
@@ -119,8 +119,8 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="notes" caption="Notes">
-									<div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+								<div class="km-control-group" name="notes" caption="ملاحظات">
+									<div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
 									<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 								</div>
 							</div>

@@ -1,7 +1,7 @@
-<div class="row">
+п»ї<div class="row">
     <div class="col-xs-12">
 
-        <span ng-show="lastSaved && hideTimer=='false'" class="color-grey label pull-right" style="background-color:#ddd;text-transform:uppercase;font-size:12px;"><span style="position:relative;top:1px;"><i class="glyphicon glyphicon-time" style="position:relative;top:2px;"></i>Сохранено с момента последнего сохранения: <span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span></span>
+        <span ng-show="lastSaved && hideTimer=='false'" class="color-grey label pull-right" style="background-color:#ddd;text-transform:uppercase;font-size:12px;"><span style="position:relative;top:1px;"><i class="glyphicon glyphicon-time" style="position:relative;top:2px;"></i>РЎРѕС…СЂР°РЅРµРЅРѕ СЃ РјРѕРјРµРЅС‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ СЃРѕС…СЂР°РЅРµРЅРёСЏ: <span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span></span>
     </div>
 
     <div class="clearfix"></div>
@@ -11,18 +11,18 @@
 
         <ul style="list-style-type:none;margin:0;padding:0;padding-top:20px;" class="pull-right">
             <li style="display: inline;"><button type="button" class="btn btn-warning " ng-click="close()" ng-disabled="loading">
-                <i class="glyphicon glyphicon-remove"></i> Закрыть</button>
+                <i class="glyphicon glyphicon-remove"></i> Р—Р°РєСЂС‹С‚СЊ</button>
             </li>
             <li style="display: inline;"  ng-show="security.canSaveDraft">
-                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">Сохранить черновик <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i>
+                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">РЎРѕС…СЂР°РЅРёС‚СЊ С‡РµСЂРЅРѕРІРёРє <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i>
                   </button>
             </li>
             <li style="display: inline;" ng-show="security.canSave">
-                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">Опубликовать <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i>
+                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">РћРїСѓР±Р»РёРєРѕРІР°С‚СЊ <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i>
                     </button>
             </li>
             <li style="display: inline;" ng-show="security.canSave!==undefined && (!security.canSave && security.canSaveDraft)">
-                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">Запросить публикацию <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i>
+                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">Р—Р°РїСЂРѕСЃРёС‚СЊ РїСѓР±Р»РёРєР°С†РёСЋ <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i>
                     </button>
             </li>
         </ul>
@@ -33,23 +33,23 @@
     <div class="col-xs-12" style="border-bottom:1px solid #eee;margin-bottom:20px;">
         <ul style="list-style-type:none;margin:0;padding:0;padding-top:20px;" class="pull-left">
             <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='edit'}">
-                <a ng-click="tab='edit'" ng-disabled="loading || security==undefined">Форма представления</a>
+                <a translation-url  ng-click="tab='edit'" ng-disabled="loading || security==undefined">Р¤РѕСЂРјР° РїСЂРµРґСЃС‚Р°РІР»РµРЅРёСЏ</a>
             </li>
             <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='review'}">
-                <a ng-click="tab='review'" ng-disabled="loading || security==undefined">Обзор</a>
+                <a translation-url  ng-click="tab='review'" ng-disabled="loading || security==undefined">РћР±Р·РѕСЂ</a>
             </li>
         </ul>
     </div>
 
     <div style="display:none" id="msgDraftSaveMessage">
-        Ваша запись сохранена как черновик.
+        Р’Р°С€Р° Р·Р°РїРёСЃСЊ СЃРѕС…СЂР°РЅРµРЅР° РєР°Рє С‡РµСЂРЅРѕРІРёРє.
     </div>
 
     <div class="row" style="display:none" id="divShowError" ng-show="showError">
         <div class="col-xs-12">
             <div class="alert alert-danger" role="alert">
                 <button type="button" class="close" ng-click="showError=false">
-                    <span aria-hidden="true">&times;</span> <span class="sr-only">Закрыть</span>
+                    <span aria-hidden="true">&times;</span> <span class="sr-only">Р—Р°РєСЂС‹С‚СЊ</span>
                 </button> {{errorMessage}}
             </div>
 
@@ -61,15 +61,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" ng-click="closeDialog()" aria-hidden="true">&Atilde;&mdash;</button>
-                    <h4>Отмена изменений</h4>
+                    <button type="button" class="close" ng-click="closeDialog()" aria-hidden="true">Г—</button>
+                    <h4>РћС‚РјРµРЅР° РёР·РјРµРЅРµРЅРёР№</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Если вы хотите отменить внесенные в этот черновик изменения, вы можете вернуться к предыдущей версии черновика, которая затем будет доступна в списке черновиков Центра управления. Затем вы или ваши коллеги могут продолжить редактирование записи в текущем или последующем сеансе.</p>
+                    <p>Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ РѕС‚РјРµРЅРёС‚СЊ РІРЅРµСЃРµРЅРЅС‹Рµ РІ СЌС‚РѕС‚ С‡РµСЂРЅРѕРІРёРє РёР·РјРµРЅРµРЅРёСЏ, РІС‹ РјРѕР¶РµС‚Рµ РІРµСЂРЅСѓС‚СЊСЃСЏ Рє РїСЂРµРґС‹РґСѓС‰РµР№ РІРµСЂСЃРёРё С‡РµСЂРЅРѕРІРёРєР°, РєРѕС‚РѕСЂР°СЏ Р·Р°С‚РµРј Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРЅР° РІ СЃРїРёСЃРєРµ С‡РµСЂРЅРѕРІРёРєРѕРІ Р¦РµРЅС‚СЂР° СѓРїСЂР°РІР»РµРЅРёСЏ. Р—Р°С‚РµРј РІС‹ РёР»Рё РІР°С€Рё РєРѕР»Р»РµРіРё РјРѕРіСѓС‚ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Р·Р°РїРёСЃРё РІ С‚РµРєСѓС‰РµРј РёР»Рё РїРѕСЃР»РµРґСѓСЋС‰РµРј СЃРµР°РЅСЃРµ.</p>
                 </div>
                 <div class="modal-footer" style="margin-top:0">
-                    <button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose">Отмена</button>
-                    <button type="button" ng-click="close(true)" class="btn btn-warning closeWithoutSaving pull-left">Закрыть без сохранения</button>
+                    <button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose">РћС‚РјРµРЅР°</button>
+                    <button type="button" ng-click="close(true)" class="btn btn-warning closeWithoutSaving pull-left">Р—Р°РєСЂС‹С‚СЊ Р±РµР· СЃРѕС…СЂР°РЅРµРЅРёСЏ</button>
                 </div>
             </div>
         </div>
@@ -79,16 +79,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-red color-white">
-                    <button type="button" class="close" ng-click="closeAddInfoDialog(false)" aria-hidden="true">&Atilde;&mdash;</button>
-                    <h2>Запрос публикации</h2>
+                    <button type="button" class="close" ng-click="closeAddInfoDialog(false)" aria-hidden="true">Г—</button>
+                    <h2>Р—Р°РїСЂРѕСЃ РїСѓР±Р»РёРєР°С†РёРё</h2>
                 </div>
                 <div class="modal-body">
-                    <p>Хотели бы вы добавить дополнительные сведения для публикующего органа?</p>
+                    <p>РҐРѕС‚РµР»Рё Р±С‹ РІС‹ РґРѕР±Р°РІРёС‚СЊ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ СЃРІРµРґРµРЅРёСЏ РґР»СЏ РїСѓР±Р»РёРєСѓСЋС‰РµРіРѕ РѕСЂРіР°РЅР°?</p>
                     <textarea class="form-control" rows="5" name="info" ng-model="InfoDoc.additionalInfo"></textarea>
                 </div>
                 <div class="modal-footer" style="margin-top:0">
-                    <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">Отмена</button>
-                    <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">Отправить запрос</button>
+                    <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">РћС‚РјРµРЅР°</button>
+                    <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">РћС‚РїСЂР°РІРёС‚СЊ Р·Р°РїСЂРѕСЃ</button>
                 </div>
             </div>
         </div>

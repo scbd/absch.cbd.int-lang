@@ -1,4 +1,4 @@
-<div class="md-whiteframe-z2" ng-controller="editCapacityBuildingInitiative">
+﻿<div class="md-whiteframe-z2" ng-controller="editCapacityBuildingInitiative">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -18,8 +18,7 @@
             </div>
 
             <div ng-show="isLoading()">
-                <i class="fa fa-spinner fa-spin"></i>
-                Loading...
+                <i class="fa fa-spinner fa-spin"></i> Loading...
             </div>
 
             <div ng-show="!isLoading() && status!='hidden'">
@@ -33,12 +32,12 @@
 
 					<!-- <div km-tab="general"> -->
                     <div ng-show="tab=='edit'" km-tab="edit">
-						<legend>General information</legend>
+						<legend>Informations g&eacute;n&eacute;rales</legend>
 
 						<div class="row">
 
 							<div class="col-md-12">
-								<div class="km-control-group" required name="title" caption="Title">
+								<div class="km-control-group" required name="title" caption="Titre">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -94,20 +93,20 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group well well-sm" name="timeframe" required caption="Timeframe">
+								<div class="km-control-group well well-sm" name="timeframe" required caption="Calendrier">
 									<div class="row">
 									  	<div class="col-md-3">
-											<div class="km-control-group" name="startDate" caption="Start date">
+											<div class="km-control-group" name="startDate" caption="Date de d&eacute;but">
 												<div km-date name="startDate" ng-model="document.startDate" ng-change="clearDuration()"></div>
 											</div>
 									  	</div>
 										<div class="col-md-3">
-											<div class="km-control-group" name="endDate" caption="End date">
+											<div class="km-control-group" name="endDate" caption="Date de fin">
 												<div km-date name="endDate" ng-model="document.endDate" ng-change="clearDuration()"></div>
 											</div>
 										</div>
 										<div class="col-md-1 text-center">
-											<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > OR </div>
+											<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > OU </div>
 										</div>
 										<div class="col-md-5">
 											<div class="km-control-group" name="duration" caption="Duration">
@@ -128,10 +127,7 @@
                                 <div class="row" >
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isImplementedByAgencies" name="implementingAgencies" caption="Please select the implementing agency(ies) or organization(s)">
-                                            <div class="help-info">Implementing agency refers to the organisation or legal entity responsible for developing the initiative and overseeing its
-                                                implementation, monitoring and evaluation, including making funding available, ensuring that fiduciary standards and quality
-                                                assurance are applied, and preparation of the project completion reports. The implementing agency is ultimately the entity
-                                                responsible for the completion of the initiative and is accountable to the donor.</div>
+                                            <div class="help-info">Implementing agency refers to the organisation or legal entity responsible for developing the initiative and overseeing its implementation, monitoring and evaluation, including making funding available, ensuring that fiduciary standards and quality assurance are applied, and preparation of the project completion reports. The implementing agency is ultimately the entity responsible for the completion of the initiative and is accountable to the donor.</div>
 
 
                                             <field-embed-contact multiple ng-model="document.implementingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
@@ -143,9 +139,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isExecutededByAgencies" name="executingAgencies" caption="Please select the executing agency(ies) or organization(s)">
-                                            <div class="help-info">Executing agency refers to the organisation/institution directly managing the initiative, including the day-to- day planning,
-                                            coordination and execution of its activities, monitoring and reporting on the progress made, procuring and managing resources
-                                            (staff, funds, equipment, etc.), and carrying out other project management functions.</div>
+                                            <div class="help-info">Executing agency refers to the organisation/institution directly managing the initiative, including the day-to- day planning, coordination and execution of its activities, monitoring and reporting on the progress made, procuring and managing resources (staff, funds, equipment, etc.), and carrying out other project management functions.</div>
 
                                             <field-embed-contact multiple ng-model="document.executingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
@@ -156,8 +150,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Please select the collaborating partner(s)">
-                                            <div class="help-info">Collaborating partners refer to entities or organizations making significant financial or other contribution to the initiative and/or
-                                                    actively supporting or collaborating in the implementation of the initiative.</div>
+                                            <div class="help-info">Collaborating partners refer to entities or organizations making significant financial or other contribution to the initiative and/or actively supporting or collaborating in the implementation of the initiative.</div>
                                              
                                             <field-embed-contact multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
@@ -179,8 +172,7 @@
                                                                         filter="true"
                                                                         ></div> -->
 
-                                    <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> -->
-                                <!-- </div>
+                                    <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> --> <!-- </div>
                             </div>
                         </div> -->
 
@@ -204,13 +196,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="projectDocument" caption="Project document or document describing the initiative">
-									<div class="help-info">Please always attach the relevant document(s) that will be stored in the database for users to download. When documents are available on the Internet, please also provide a link to them.</div>
+									<div class="help-info">Pri&egrave;re de toujours joindre le ou les documents pertinents &agrave; int&eacute;grer &agrave; la base de donn&eacute;es afin que les utilisateurs puissent les t&eacute;l&eacute;charger. When documents are available on the Internet, please also provide a link to them.</div>
 									<div km-link name="projectDocument" required ng-model="document.projectDocument" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 								</div>
 							</div>
 						</div>
 
-						<legend>Detailed information</legend>
+						<legend>Renseignements d&eacute;taill&eacute;s</legend>
 
 						<div class="row">
 							<div class="col-md-12">
@@ -264,8 +256,7 @@
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div> -->
-                                    <field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
+                                                                        ></div> --> <field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                 </div>
                             </div>
                         </div>
@@ -363,7 +354,7 @@
 
 
 						<a translation-url  name="#AdditionalInformation"></a>
-						<legend>Additional information</legend>
+						<legend>Renseignements suppl&eacute;mentaires</legend>
 
 						<div class="row">
 							<div class="col-md-12">
@@ -386,9 +377,7 @@
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
 									<legend>Notes</legend>
-									<span class="help-info">
-										The field “Notes” is for personal reference and can be seen only when the record is being edited.
-									</span>
+									<span class="help-info">Le champ «&nbsp;Notes&nbsp;» est r&eacute;serv&eacute; &agrave; votre usage personnel. Il ne peut &ecirc;tre vu que pendant la modification de l'enregistrement.</span>
 									<div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>

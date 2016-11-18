@@ -1,4 +1,4 @@
-<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
+﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
 	<link href="/app/css/register.css" rel="stylesheet">
 	<link href="/app/css/record.css" rel="stylesheet">
 
@@ -27,7 +27,7 @@
 				<legend>Filters </legend>
 				<div class="row">
 					<div class="col-xs-6">
-						<div class="km-control-group" name="startDate" required caption="Start Date">
+						<div class="km-control-group" name="startDate" required caption="تاريخ البداية">
 							<div km-date placeholder="YYYY-MM-DD" required name="startDate" ng-model="filters.startDate"></div>
 						</div>
 					</div>
@@ -43,9 +43,7 @@
                             <input type="text" ng-model="keywords" placeholder=" keyword " class="form-control keyword" style="width:250px;display:inline;">
                         </div>
                     </div>
-                </div>-->
-				<br>
-				<br>
+                </div>--> <br> <br>
 
 				<div class="table-responsive " style="margin-top:15px;">
 
@@ -54,9 +52,9 @@
 							<tr>
 								<th>No.</th>
 								<th>App Version</th>
-								<th>Level</th>
-								<th>Date</th>
-								<th>Message</th>
+								<th>المستوى</th>
+								<th>التاريخ</th>
+								<th>رسالة</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -64,9 +62,7 @@
 							<tr>
 								<td>{{$index+1}}</td>
 								<td>
-									<a target="_new" ng-href="https://github.com/scbd/absch.cbd.int/commit/{{getGitHash(error.appVersion)}}">
-										{{error.appVersion|limitTo:20}}...
-									</a>
+									<a target="_new" ng-href="https://github.com/scbd/absch.cbd.int/commit/{{getGitHash(error.appVersion)}}">{{error.appVersion|limitTo:20}}...</a>
 								</td>
 								<td> {{error.level}}</td>
 								<td>{{error.timestamp|formatDateWithTime}}</td>
@@ -78,16 +74,7 @@
 							</tr>
 							<tr ng-if="error.showDetails">
 								<td colspan="6">
-									<span class="message_body">
-										<span class="">
-                                               <b>URL:</b> {{error.url}}<br>
-                                            </span><br>
-                                            <span class="">
-                                               <b>User Agent:</b> {{error.userAgent.trim()}}<br>
-                                            </span><br>
-                                            <span class="">
-                                               <b>Message:</b> {{error.message.trim()}}
-                                            </span><br>
+									<span class="message_body"><span class=""><b>URL:</b> {{error.url}}<br></span><br> <span class=""><b>User Agent:</b> {{error.userAgent.trim()}}<br></span><br> <span class=""><b>Message:</b> {{error.message.trim()}}</span><br>
 										<pre class="special_formatting">
 											
 											<span class="language-html pull-left" data-lang="html" style="margin:0px" ng-bind-html="error.stack">

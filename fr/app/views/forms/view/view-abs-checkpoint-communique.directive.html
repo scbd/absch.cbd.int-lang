@@ -24,11 +24,11 @@
     		 	    <strong>{{document.title | lstring:locale}}</strong>
     		 	</div>
 		 	</div>
-			<div ng-show="document.checkpoints">
+			<div ng-show="document.absCheckpoints">
 				<legend>Checkpoint/s that collected or received the information</legend>
 					<div class="km-value">
 						<ul>
-							<li ng-repeat="item in document.checkpoints">
+							<li ng-repeat="item in document.absCheckpoints">
 								<div view-default-reference ng-model="item.identifier" locale="locale"></div>
 							</li>
 						</ul>
@@ -61,7 +61,7 @@
 						document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 						document.evidenceOfPIC || document.evidenceOfMAT ||
 						document.entityToWhomPICGranted || document.personsAtCheckpoint">
-				<legend>Details of the internationally recognize certificate of compliance</legend>
+				<legend>Details of the internationally recognized certificate of compliance (IRCC)</legend>
 				<div ng-show="document.absIRCCs">
 					<label>Reference number(s) of the internationally recognized certificate(s) of compliance that relate(s) to this communiqué</label>
 					<div class="km-value">

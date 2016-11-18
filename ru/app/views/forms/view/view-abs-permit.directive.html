@@ -1,7 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Permit or its equivalent constituting an internationally recognized certificate of compliance
-		<span class="color-black"> (IRCC) </span>
+		<h4>Permit or its equivalent constituting an internationally recognized certificate of compliance <span class="color-black"> (IRCC) </span>
 		</h4> </div>
 	<div class="record-body panel-body">
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
@@ -17,15 +16,13 @@
 			</div>
 
 			<legend ng-if="document.government">
-                <a translation-url   ng-if="document.info && document.info.revision === document.info.latestRevision" class="btn btn-default btn-small pull-right" style="background-color:#f5f5f5;" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> Download</a>
-		         General information
+                <a translation-url   ng-if="document.info && document.info.revision === document.info.latestRevision" class="btn btn-default btn-small pull-right" style="background-color:#f5f5f5;" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> Download</a> General information
             </legend>
 
 			<div ng-show="document.government">
-				<label>Country</label>
+				<label>Страна</label>
 				<div class="km-value" >
-					{{document.government|term}}
-                    <span ng-party-status government="document.government" id="government"></span>
+					{{document.government|term}} <span ng-party-status government="document.government" id="government"></span>
 				</div>
 			</div>
 
@@ -54,7 +51,7 @@
 			</div>
 
 			<div ng-show="document.absCNA">
-				<legend>Issuing Authority <span class="help-info">The authority responsible for issuing this permit</span></legend>
+				<label>Issuing Authority (the authority responsible for issuing this permit)</label>
 				<div class="km-value">
 					<div view-contact-reference ng-model="document.absCNA" locale="locale"></div>
 				</div>
@@ -92,8 +89,8 @@
 
 				<div ng-show="document.picGranted!=undefined">
 					<label>Confirmation that prior informed consent was obtained or granted</label>
-					<div class="km-value" ng-show="document.picGranted">Yes</div>
-					<div class="km-value" ng-show="!document.picGranted">No</div>
+					<div class="km-value" ng-show="document.picGranted">Да</div>
+					<div class="km-value" ng-show="!document.picGranted">Нет</div>
 				</div>
 
 				<div ng-show="document.providers || document.providersConfidential">
@@ -132,8 +129,7 @@
                     <div class="km-value">
 						<ul style="list-style-type: none;padding-left:3px;">
 							<li ng-repeat="item in document.picDocuments">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					</div>
@@ -143,8 +139,8 @@
 <legend>Mutually Agreed Terms (MAT) Information</legend>
                 <div ng-show="document.matEstablished!=undefined">
     				<label>Confirmation that mutually agreed terms were established</label>
-    				<div class="km-value" ng-show="document.matEstablished">Yes</div>
-    				<div class="km-value" ng-show="!document.matEstablished">No</div>
+    				<div class="km-value" ng-show="document.matEstablished">Да</div>
+    				<div class="km-value" ng-show="!document.matEstablished">Нет</div>
     				<div ng-show="document.matInformation">
     					<label>Additional information about the mutually agreed terms</label>
     					<div class="km-value km-pre"ng-bind-html="document.matInformation | lstring:locale"></div>
@@ -159,8 +155,7 @@
                             <div class="km-value">
     						<ul style="list-style-type: none;padding-left:3px;">
     							<li ng-repeat="item in document.matDocuments">
-    								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-    						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+    								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
     							</li>
     						</ul>
     					</div>
@@ -191,8 +186,7 @@
                         <div class="km-value">
 						  <ul>
 							<li ng-repeat="item in document.specimens">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					    </div>
@@ -203,8 +197,7 @@
                         <div class="km-value">
 						  <ul>
 							<li ng-repeat="item in document.taxonomies">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					    </div>
@@ -221,15 +214,13 @@
                         <div class="km-value">
 						  <ul style="list-style-type: none;padding-left:3px;">
 							<li ng-repeat="item in document.gisFiles">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					    </div>
 
 						<div class="leaflet" center="gisMapCenter" layers="gisMapLayers"></div>
-						<br />
-						<br />
+						<br /> <br />
 					</div>
 				</div>
 			</div>
@@ -267,8 +258,7 @@
                     <div class="km-value">
 						<ul style="list-style-type: none;padding-left:3px;">
 							<li ng-repeat="item in document.permitFiles">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					</div>
@@ -281,14 +271,14 @@
 
 
 			<div ng-show="document.relevantInformation||document.relevantDocuments">
-				<legend>Additional Information</legend>
+				<legend>Дополнительная информация</legend>
 
 				<div ng-show="document.relevantInformation">
 					<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
 				</div>
 
 				<div ng-show="document.relevantDocuments">
-					<label>Other relevant website address or attached documents</label>
+					<label>Другие релевантные адреса веб-сайтов или прилагающиеся документы</label>
 					<!-- <div class="km-value" ng-repeat="item in document.relevantDocuments">
 						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
 						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
@@ -297,8 +287,7 @@
                     <div class="km-value">
 						<ul style="list-style-type: none;padding-left:3px;">
 							<li ng-repeat="item in document.relevantDocuments">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a>
-						       <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</li>
 						</ul>
 					</div>

@@ -1,4 +1,4 @@
-<div id="view-history" style="max-height:200px;overflow:scroll;">
+﻿<div id="view-history" style="max-height:200px;overflow:scroll;">
     <table style="width:100%!important;" class="table table-condensed" >
         <tr>
                 <th class="color-litegrey" style="font-size:12px;bold;"> Identificador &uacute;nico</th>
@@ -6,13 +6,13 @@
                 <th class="color-litegrey" style="font-size:12px;bold;"> Fecha <span ng-if="!publicView">de publicaci&oacute;n</span> </th>
                 <th class="color-litegrey" style="font-size:12px;bold;" ng-if="!publicView"> Fecha de solicitud </th>
             </tr>
-            <tr ng-if="documents.length =< 0">
+            <tr ng-if="documents.length == 0">
              <td colspan="4" > no history available  </td>
            </tr>
         <tbody ng-repeat="document in documents | orderBy:'updatedOn':true" style="font-size:12px;" >
             <tr>
                 <td style="white-space:nowrap;">
-                    <a ng-href="/database/{{document.type | schemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank"><strong>{{document | uniqueID}}</strong></a>
+                    <a translation-url  ng-href="/database/{{document.type | urlSchemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank"><strong>{{document | uniqueID}}</strong></a>
                 </td>
                 <td>
                     <div>
@@ -29,10 +29,10 @@
                     <div ng-show="document.body.amendmentDescription">
                         <span ng-show="document.body.amendmentDescription">
 						  		<div ng-show="!more">
-                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale | limitTo:200"></span> <a ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200"><strong>... m&aacute;s</strong></a>
+                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale | limitTo:200"></span> <a translation-url  ng-href="#" ng-click="more=!more" ng-show="(document.body.amendmentDescription| lstring:locale).length > 200"><strong>... m&aacute;s</strong></a>
                                 </div>
                                 <div ng-show="more"> 
-                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <a ng-href="#" ng-click="more=!more"> <strong>... menos</strong></a>
+                                    <span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <a translation-url  ng-href="#" ng-click="more=!more"> <strong>... menos</strong></a>
                                 </div>
                         </span>
                     </div>

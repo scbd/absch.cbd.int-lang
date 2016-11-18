@@ -1,6 +1,8 @@
-<html>
+﻿<html>
 
 <head>
+<!-- Inserted by TRADOS: --><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+
     <title>Access and Benefit-Sharing Clearing-House</title>
     <meta name="description" content="Access and Benefit-Sharing Clearing-House">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +19,9 @@
     <link href="/app/css/record.css" rel="stylesheet">
     <link href="/app/libs/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 
-    <script src="../libs/underscore/underscore.js"></script>
-    <script src="../libs/angular/angular.min.js"></script>
-    <script src="../libs/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../libs/underscore/underscore.js"></script> <script src="../libs/angular/angular.min.js"></script> <script src="../libs/angular-sanitize/angular-sanitize.min.js"></script>
 
-    <script src="../libs/momentjs/min/moment.min.js"></script>
-    <script src="absCommon.js"></script>
-    <script src="abs-country-profile-pdf.html.js"></script>
+    <script src="../libs/momentjs/min/moment.min.js"></script> <script src="absCommon.js"></script> <script src="abs-country-profile-pdf.html.js"></script>
     <style>
         a[href]:after {
             content: '';
@@ -114,14 +112,7 @@
             <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="col-xs-10">
-                    For more information, please contact the Secretariat of the Convention at:
-                    <br/> 413, St. Jacques Street, Suite 800
-                    <br/> H2Y 1N9 Montreal, Quebec, Canada
-                    <br/> Tel.: (1-514) 288-2220
-                    <br/> Fax: (1-514) 288-6588
-                    <br/> E-mail: secretariat@cbd.int
-                    <br/> Web: www.cbd.int
-                    <br/>
+                    For more information, please contact the Secretariat of the Convention at: <br/> 413, St. Jacques Street, Suite 800 <br/> H2Y 1N9 Montreal, Quebec, Canada <br/> Tel.: (1-514) 288-2220 <br/> Fax: (1-514) 288-6588 <br/> E-mail: secretariat@cbd.int <br/> Web: www.cbd.int <br/>
                 </div>
             </div>
             <hr />
@@ -137,11 +128,7 @@
                                 <td>
                                     <span class="country-name" style="font-size:300%;">{{country.name.en}}</span>
                                     <h3 style="margin:0;padding:0;padding-top:5px;">
-                                        <span style="vertical-align:top;margin-right:5px" class="label label-default" ng-show="!isRatified(country) || isInbetweenParty(country)">Non-Party</span>
-                                        <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country) && !isInbetweenParty(country)">Party</span>
-                                        <span style="vertical-align:top;margin-right:5px" class="label label-info" ng-show="isSignatory(country) && !isRatified(country)">Signatory</span>
-                                        <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country)">Date of {{country.treaties.XXVII8b.instrument}} {{(country.treaties.XXVII8b.deposit ? country.treaties.XXVII8b.deposit : '- - - - - -') | formatDate}} </span>
-                                        <span style="vertical-align:top;margin-right:5px" class="label label-success" ng-show="isRatified(country)">Date of Entry into force {{country.treaties.XXVII8b.party| formatDate}}</span>
+                                        <span style="vertical-align:top;margin-right:5px" class="label label-default" ng-show="!isRatified(country) || isInbetweenParty(country)">Non-Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country) && !isInbetweenParty(country)">Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-info" ng-show="isSignatory(country) && !isRatified(country)">Signatory</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country)">Date of {{country.treaties.XXVII8b.instrument}} {{(country.treaties.XXVII8b.deposit ? country.treaties.XXVII8b.deposit : '- - - - - -') | formatDate}} </span> <span style="vertical-align:top;margin-right:5px" class="label label-success" ng-show="isRatified(country)">Date of Entry into force {{country.treaties.XXVII8b.party| formatDate}}</span>
                                     </h3>
                                 </td>
                             </tr>
@@ -174,10 +161,7 @@
                                                 </h4>
                                             </div>
                                             <div class="panel-body">
-                                                <strong>
-                                                    <a ng-show="contact.schema_s!='focalPoint'" ng-href="/database/{{contact.doc|uniqueID}}">{{contact.title_t}}</a>
-                                                    <a ng-show="contact.schema_s=='focalPoint'" ng-href="/database/focalPoint/{{contact.documentId}}">{{contact.title_t}}</a>
-                                                </strong>
+                                                <strong><a ng-show="contact.schema_s!='focalPoint'" ng-href="/database/{{contact.doc|uniqueID}}">{{contact.title_t}}</a> <a ng-show="contact.schema_s=='focalPoint'" ng-href="/database/focalPoint/{{contact.documentId}}">{{contact.title_t}}</a></strong>
                                                 <div ng-show="contact.description_t" ng-bind-html="contact.description_t"></div>
                                                 <div ng-show="contact.description_t" ng-bind-html="contact.description_t"></div>
 
@@ -204,8 +188,7 @@
                                 <div class="col-xs-12">
                                     <!-- <table class="table table-hover table-msr" style="width:100%;"> -->
                                     <div class="row table-hover table-msr">
-                                        <div class="col-lg-3 col-md-3 col-xs-3 tableheader" ng-click="sortMeasure='title_t';reverseMeasure=!reverseMeasure">name
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortMeasure=='title_t' && reverseMeasure),'fa-caret-down':(sortMeasure=='title_t' && !reverseMeasure)}"></i>
+                                        <div class="col-lg-3 col-md-3 col-xs-3 tableheader" ng-click="sortMeasure='title_t';reverseMeasure=!reverseMeasure">name <i class="fa" ng-class="{'fa-caret-up':(sortMeasure=='title_t' && reverseMeasure),'fa-caret-down':(sortMeasure=='title_t' && !reverseMeasure)}"></i>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-xs-3 tableheader" ng-click="sortMeasure='type_EN_t';reverseMeasure=!reverseMeasure">type <i class="fa" ng-class="{'fa-caret-up':sortMeasure=='type_EN_t' && reverseMeasure,'fa-caret-down':sortMeasure=='type_EN_t' && !reverseMeasure}" />
                                         </div>
@@ -243,23 +226,17 @@
                             <div class="row fullBorder " >
                                 <div class="col-xs-12">
                                     <div class="row table-msr">
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='title_t';reversePermit=!reversePermit">name
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='title_t' && reversePermit),'fa-caret-down':(sortPermit=='title_t' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='title_t';reversePermit=!reversePermit">name <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='title_t' && reversePermit),'fa-caret-down':(sortPermit=='title_t' && !reversePermit)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='entitiesToWhomPICGranted_CEN_ss';reversePermit=!reversePermit">issued to
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='entitiesToWhomPICGranted_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='entitiesToWhomPICGranted_CEN_ss' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='entitiesToWhomPICGranted_CEN_ss';reversePermit=!reversePermit">issued to <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='entitiesToWhomPICGranted_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='entitiesToWhomPICGranted_CEN_ss' && !reversePermit)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='authority_s';reversePermit=!reversePermit">CNA
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='authority_s' && reversePermit),'fa-caret-down':(sortPermit=='authority_s' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='authority_s';reversePermit=!reversePermit">CNA <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='authority_s' && reversePermit),'fa-caret-down':(sortPermit=='authority_s' && !reversePermit)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='keywords_CEN_ss';reversePermit=!reversePermit">subject matter
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='keywords_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='keywords_CEN_ss' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='keywords_CEN_ss';reversePermit=!reversePermit">subject matter <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='keywords_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='keywords_CEN_ss' && !reversePermit)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='usage_CEN_ss';reversePermit=!reversePermit">use
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='usage_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='usage_CEN_ss' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='usage_CEN_ss';reversePermit=!reversePermit">use <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='usage_CEN_ss' && reversePermit),'fa-caret-down':(sortPermit=='usage_CEN_ss' && !reversePermit)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='date_dt';reversePermit=!reversePermit">date of issue
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='date_dt' && reversePermit),'fa-caret-down':(sortPermit=='date_dt' && !reversePermit)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortPermit='date_dt';reversePermit=!reversePermit">date of issue <i class="fa" ng-class="{'fa-caret-up':(sortPermit=='date_dt' && reversePermit),'fa-caret-down':(sortPermit=='date_dt' && !reversePermit)}"></i>
                                         </div>
                                     </div>
                                     <div class="row table-hover table-msr" ng-repeat="permit in absPermit = (absch_nfp|filter:isPermit|orderBy:'date_dt':true)">
@@ -280,9 +257,7 @@
                                                     <span ng-repeat="keyword in permit.keywords_CEN_ss">{{parseJSON(keyword)|lstring}}{{$last ? '':', '}}</span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-repeat="usage in permit.usage_CEN_ss">{{parseJSON(usage)|lstring}}{{$last ? '':', '}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="usage in permit.usage_CEN_ss">{{parseJSON(usage)|lstring}}{{$last ? '':', '}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">{{permit.date_dt|formatDate}}</div>
                                             </div>
@@ -296,66 +271,47 @@
 
                             <div class="clearfix"></div>
                             <div class="row sectionHeader">
-                                <h3>Checkpoint Communiqués (CPC)
-                                    <span class="label label-info">SENT</span>
+                                <h3>Checkpoint Communiqu&eacute;s (CPC) <span class="label label-info">SENT</span>
                                 </h3>
                             </div>
                             <div class="row fullBorder " >
                                 <div class="col-xs-12">
                                     <div class="row table-msr">
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='checkpoint_CEN_ss';reverseCPC=!reverseCPC">checkpoint
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='checkpoint_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='checkpoint_CEN_ss' && !reverseCPC)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='checkpoint_CEN_ss';reverseCPC=!reverseCPC">checkpoint <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='checkpoint_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='checkpoint_CEN_ss' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='title_t';reverseCPC=!reverseCPC">title
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='title_t' && reverseCPC),'fa-caret-down':(sortCPC=='title_t' && !reverseCPC)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='title_t';reverseCPC=!reverseCPC">title <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='title_t' && reverseCPC),'fa-caret-down':(sortCPC=='title_t' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='sourceCountries_CEN_ss';reverseCPC=!reverseCPC">source country
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='sourceCountries_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='sourceCountries_CEN_ss' && !reverseCPC)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='sourceCountries_CEN_ss';reverseCPC=!reverseCPC">source country <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='sourceCountries_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='sourceCountries_CEN_ss' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPC='personsAtCheckpoint';reverseCPC=!reverseCPC">user
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='personsAtCheckpoint' && reverseCPC),'fa-caret-down':(sortCPC=='personsAtCheckpoint' && !reverseCPC)}"></i>
+                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPC='personsAtCheckpoint';reverseCPC=!reverseCPC">user <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='personsAtCheckpoint' && reverseCPC),'fa-caret-down':(sortCPC=='personsAtCheckpoint' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='keywords_CEN_ss';reverseCPC=!reverseCPC">subject matter
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='keywords_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='keywords_CEN_ss' && !reverseCPC)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='keywords_CEN_ss';reverseCPC=!reverseCPC">subject matter <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='keywords_CEN_ss' && reverseCPC),'fa-caret-down':(sortCPC=='keywords_CEN_ss' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='permit_ss';reverseCPC=!reverseCPC">IRCC
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='permit_ss' && reverseCPC),'fa-caret-down':(sortCPC=='permit_ss' && !reverseCPC)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPC='permit_ss';reverseCPC=!reverseCPC">IRCC <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='permit_ss' && reverseCPC),'fa-caret-down':(sortCPC=='permit_ss' && !reverseCPC)}"></i>
                                         </div>
-                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPC='createdDate_dt';reverseCPC=!reverseCPC">sent
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='createdDate_dt' && reverseCPC),'fa-caret-down':(sortCPC=='createdDate_dt' && !reverseCPC)}"></i>
+                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPC='createdDate_dt';reverseCPC=!reverseCPC">sent <i class="fa" ng-class="{'fa-caret-up':(sortCPC=='createdDate_dt' && reverseCPC),'fa-caret-down':(sortCPC=='createdDate_dt' && !reverseCPC)}"></i>
                                         </div>
                                     </div>
                                     <div class="row table-hover table-msr" ng-repeat="communique in absCommunique = (absch_nfp|filter:isCheckpointCommunique|orderBy:'createdDate_dt':true)">
                                         <div class="row border" style="padding-top: 10px;padding-bottom: 10px;">
                                             <div class="row table-row">
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-repeat="checkpoint in communique.checkpoint_CEN_ss">
-                                                        {{parseJSON(checkpoint)|lstring}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="checkpoint in communique.checkpoint_CEN_ss">{{parseJSON(checkpoint)|lstring}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
                                                     {{communique.title_t}}
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-repeat="country in communique.sourceCountries_CEN_ss">{{parseJSON(country)|lstring}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="country in communique.sourceCountries_CEN_ss">{{parseJSON(country)|lstring}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-1 col-md-1 col-xs-1">
-                                                    <span ng-repeat="user in communique.personsAtCheckpoint">{{user.organization|lstring}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="user in communique.personsAtCheckpoint">{{user.organization|lstring}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
                                                     <span ng-repeat="keyword in communique.keywords_CEN_ss">{{parseJSON(keyword)|lstring}}{{$last ? '':', '}}</span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-show="!communique.absIRCCs_ss">Not available</span>
-                                                    <span ng-repeat="permit in communique.absIRCCs_ss">
-                                                        <a ng-href="/database/{{permit|uniqueID}}" target="_new">{{permit|uniqueID}}</a>
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-show="!communique.absIRCCs_ss">Not available</span> <span ng-repeat="permit in communique.absIRCCs_ss"><a ng-href="/database/{{permit|uniqueID}}" target="_new">{{permit|uniqueID}}</a> <br/></span>
                                                 </div>
                                                 <div class="col-lg-1 col-md-1 col-xs-1">{{communique.createdDate_dt|formatDate}}</div>
                                             </div>
@@ -363,73 +319,54 @@
                                     </div>
 
                                     <div class="row" ng-show="absCommunique.length==0">
-                                        <div class="col-lg-10 col-md-12 col-xs-12 tableheader color-orange">No Checkpoint Communiqués (CPC) sent</div>
+                                        <div class="col-lg-10 col-md-12 col-xs-12 tableheader color-orange">No Checkpoint Communiqu&eacute;s (CPC) sent</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="clearfix"></div>
                             <div class="row sectionHeader">
-                                <h3>Checkpoint Communiqués (CPC)
-                                    <span class="label label-warning">RECEIVED</span>
+                                <h3>Checkpoint Communiqu&eacute;s (CPC) <span class="label label-warning">RECEIVED</span>
                                 </h3>
                             </div>
                             <div class="row fullBorder ">
                                 <div class="col-xs-12">
                                     <div class="row table-msr">
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='government_s';reverseCPCReceived=!reverseCPCReceived">issuing country
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='government_s' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='government_s' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='government_s';reverseCPCReceived=!reverseCPCReceived">issuing country <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='government_s' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='government_s' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='checkpoint_CEN_ss';reverseCPCReceived=!reverseCPCReceived">checkpoint
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='checkpoint_CEN_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='checkpoint_CEN_ss' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='checkpoint_CEN_ss';reverseCPCReceived=!reverseCPCReceived">checkpoint <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='checkpoint_CEN_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='checkpoint_CEN_ss' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='title_t';reverseCPCReceived=!reverseCPCReceived">title
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='title_t' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='title_t' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='title_t';reverseCPCReceived=!reverseCPCReceived">title <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='title_t' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='title_t' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPCReceived='personsAtCheckpoint';reverseCPCReceived=!reverseCPCReceived">user
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='personsAtCheckpoint' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='personsAtCheckpoint' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPCReceived='personsAtCheckpoint';reverseCPCReceived=!reverseCPCReceived">user <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='personsAtCheckpoint' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='personsAtCheckpoint' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='keywords_CEN_ss';reverseCPCReceived=!reverseCPCReceived">subject matter
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='keywords_CEN_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='keywords_CEN_ss' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='keywords_CEN_ss';reverseCPCReceived=!reverseCPCReceived">subject matter <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='keywords_CEN_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='keywords_CEN_ss' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='permit_ss';reverseCPCReceived=!reverseCPCReceived">IRCC
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='permit_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='permit_ss' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-2 col-md-2 col-xs-2 tableheader" ng-click="sortCPCReceived='permit_ss';reverseCPCReceived=!reverseCPCReceived">IRCC <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='permit_ss' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='permit_ss' && !reverseCPCReceived)}"></i>
                                         </div>
-                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPCReceived='createdDate_dt';reverseCPCReceived=!reverseCPCReceived">sent
-                                            <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='createdDate_dt' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='createdDate_dt' && !reverseCPCReceived)}"></i>
+                                        <div class="col-lg-1 col-md-1 col-xs-1 tableheader" ng-click="sortCPCReceived='createdDate_dt';reverseCPCReceived=!reverseCPCReceived">sent <i class="fa" ng-class="{'fa-caret-up':(sortCPCReceived=='createdDate_dt' && reverseCPCReceived),'fa-caret-down':(sortCPCReceived=='createdDate_dt' && !reverseCPCReceived)}"></i>
                                         </div>
                                     </div>
                                     <div class="row table-hover table-msr" ng-repeat="communique in cpcReceived|orderBy:'createdDate_dt':true">
                                         <div class="row border" style="padding-top: 10px;padding-bottom: 10px;">
                                             <div class="row table-row">
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span>{{communique.government_s|term}}
-                                                        <br/>
-                                                    </span>
+                                                    <span>{{communique.government_s|term}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-repeat="checkpoint in communique.checkpoint_CEN_ss">
-                                                        {{parseJSON(checkpoint)|lstring}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="checkpoint in communique.checkpoint_CEN_ss">{{parseJSON(checkpoint)|lstring}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
                                                     {{communique.title_t}}
                                                 </div>
                                                 <div class="col-lg-1 col-md-1 col-xs-1">
-                                                    <span ng-repeat="user in communique.personsAtCheckpoint">{{user.organization|lstring}}
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-repeat="user in communique.personsAtCheckpoint">{{user.organization|lstring}} <br/></span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
                                                     <span ng-repeat="keyword in communique.keywords_CEN_ss">{{parseJSON(keyword)|lstring}}{{$last ? '':', '}}</span>
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-2">
-                                                    <span ng-show="!communique.absIRCCs_ss">Not available</span>
-                                                    <span ng-repeat="permit in communique.absIRCCs_ss">
-                                                        <a ng-href="/database/{{permit|uniqueID}}" target="_new">{{permit|uniqueID}}</a>
-                                                        <br/>
-                                                    </span>
+                                                    <span ng-show="!communique.absIRCCs_ss">Not available</span> <span ng-repeat="permit in communique.absIRCCs_ss"><a ng-href="/database/{{permit|uniqueID}}" target="_new">{{permit|uniqueID}}</a> <br/></span>
                                                 </div>
                                                 <div class="col-lg-1 col-md-1 col-xs-1">{{communique.createdDate_dt|formatDate}}</div>
                                             </div>
@@ -437,7 +374,7 @@
                                     </div>
 
                                     <div class="row" ng-show="cpcReceived.length==0">
-                                        <div class="col-lg-10 col-md-12 col-xs-12 tableheader color-orange">No Checkpoint Communiqués (CPC) received</div>
+                                        <div class="col-lg-10 col-md-12 col-xs-12 tableheader color-orange">No Checkpoint Communiqu&eacute;s (CPC) received</div>
                                     </div>
                                 </div>
                             </div>

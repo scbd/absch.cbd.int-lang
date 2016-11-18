@@ -1,4 +1,4 @@
-<div ng-controller="adminPendingTasksCotroller" id="RegisterPage">
+﻿<div ng-controller="adminPendingTasksCotroller" id="RegisterPage">
   <link href="/app/css/register.css" rel="stylesheet">
   <link href="/app/css/record.css" rel="stylesheet">
 
@@ -18,18 +18,18 @@
           <div class="registerpage-content">
 
               <div class="alert alert-danger" ng-show="__error">
-                  <strong>Error: </strong>{{__error}}
+                  <strong>Ошибка: </strong>{{__error}}
               </div>  
               <legend>Filters </legend>              
                 <div class="row">
                     <div class="col-xs-6">
-                        <div class="km-control-group" name="startDate" required caption="Start Date">
-                            <div km-date placeholder="YYYY-MM-DD" required name="startDate" ng-model="filters.startDate"></div>
+                        <div class="km-control-group" name="startDate" required caption="Дата начала">
+                            <div km-date placeholder="ГГГГ-ММ-ДД" required name="startDate" ng-model="filters.startDate"></div>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="km-control-group" name="endDate" caption="End Date">
-                            <div km-date placeholder="YYYY-MM-DD" name="endDate" ng-model="filters.endDate"></div>
+                            <div km-date placeholder="ГГГГ-ММ-ДД" name="endDate" ng-model="filters.endDate"></div>
                         </div>
                     </div>
                 </div>
@@ -44,8 +44,7 @@
                         </div>
                     </div>
                 </div>
-              <br>
-              <br>
+              <br> <br>
 
               <div class="table " style="margin-top:15px;">
                   <div ng-show="tasks && !__error">
@@ -54,23 +53,19 @@
                           <i ng-show="sortTerm=='workflow._id'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i></div> -->
 
                           <div class="col-xs-3">
-                              <span style="cursor:pointer;" ng-click="sortTable('workflow.data.metadata.schema')">Record Type</i>
-                                  <i ng-show="sortTerm=='workflow.data.metadata.schema'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
+                              <span style="cursor:pointer;" ng-click="sortTable('workflow.data.metadata.schema')">Record Type</i> <i ng-show="sortTerm=='workflow.data.metadata.schema'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
                           </div>
 
                           <div class="col-xs-5">
-                              <span style="cursor:pointer;" ng-click="sortTable('workflow.data.title.en')">Title</i>
-                                  <i ng-show="sortTerm=='workflow.data.title.en'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
+                              <span style="cursor:pointer;" ng-click="sortTable('workflow.data.title.en')">Title</i> <i ng-show="sortTerm=='workflow.data.title.en'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
                           </div>
 
                           <div class="col-xs-2">
-                              <span style="cursor:pointer;" ng-click="sortTable('workflow.createdOn')">Requested
-                                  <i ng-show="sortTerm=='workflow.createdOn'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
+                              <span style="cursor:pointer;" ng-click="sortTable('workflow.createdOn')">Requested <i ng-show="sortTerm=='workflow.createdOn'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
                           </div>
 
                           <div class="col-xs-2">
-                              <span style="cursor:pointer;" ng-click="sortTable('activity.name')">Status
-                                  <i ng-show="sortTerm=='activity.name'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
+                              <span style="cursor:pointer;" ng-click="sortTable('activity.name')">Status <i ng-show="sortTerm=='activity.name'" ng:class="{true:'down-caret', false:'up-caret'}[orderList]"></i>
                           </div>
 
                       </div>
@@ -81,15 +76,9 @@
                               <!-- ng-repeat="task in grpTask|orderBy:createdOn:true|limitTo:1" -->
                               <div class="row">
                                   <div class="col-xs-3">
-                                      <!-- schema -->
-                                      <i class="material-icons"
+                                      <!-- schema --> <i class="material-icons"
                                       ng-class="{'color-red':task.workflow.state!='completed', 'color-green':(task.workflow.state=='completed' && task.activity.result.action=='approve'), 'color-grey': (task.workflow.state=='completed' && task.activity.result.action=='reject') }"
-                                      style="font-size:16pt;position:relative;top:3px;">{{task.workflow.data.metadata.schema | schemaIcon}}</i>
-                                       {{task.workflow.data.metadata.schema|schemaName}}
-                                      <a translation-url  ng-href="#" ng-click="showHistory = !showHistory" ng-show="task.workflowHistory.length>1">
-                                          <i class="fa fa-chevron-circle-up" ng-show="showHistory"></i>
-                                          <i class="fa fa-chevron-circle-down" ng-show="!showHistory"></i>
-                                      </a>
+                                      style="font-size:16pt;position:relative;top:3px;">{{task.workflow.data.metadata.schema | schemaIcon}}</i> {{task.workflow.data.metadata.schema|schemaName}} <a translation-url  ng-href="#" ng-click="showHistory = !showHistory" ng-show="task.workflowHistory.length>1"><i class="fa fa-chevron-circle-up" ng-show="showHistory"></i> <i class="fa fa-chevron-circle-down" ng-show="!showHistory"></i></a>
                                   </div>
                                   <div class="col-xs-5">
                                       <!-- TITLE -->
@@ -97,10 +86,7 @@
                                       <div ng-switch="task.workflow.state">
                                           <div ng-switch-when="completed">
                                               <div ng-show="task.activity.completedOn">
-                                                  <span ng-show="task.activity" ng-switch="task.activity.result.action">
-                                                      <span ng-switch-when="approve"><a translation-url  ng-href="/database/record/{{task.workflow.result.documentID||task.workflow.data.documentID}}" target="_new_">{{task.workflow.data.title | lstring}}</a></span>
-                                                      <span ng-switch-when="reject"><a translation-url  ng-href="/register/{{task.workflow.data.metadata.schema | schemaShortName}}/{{task.workflow.result.identifier}}/edit" target="_new_">{{task.workflow.data.title | lstring}}</a></span>
-                                                  </span>
+                                                  <span ng-show="task.activity" ng-switch="task.activity.result.action"><span ng-switch-when="approve"><a translation-url  ng-href="/database/record/{{task.workflow.result.documentID||task.workflow.data.documentID}}" target="_new_">{{task.workflow.data.title | lstring}}</a></span> <span ng-switch-when="reject"><a translation-url  ng-href="/register/{{task.workflow.data.metadata.schema | urlSchemaShortName}}/{{task.workflow.result.identifier}}/edit" target="_new_">{{task.workflow.data.title | lstring}}</a></span></span>
                                               </div>
                                           </div>
                                           <div ng-switch-default><a translation-url  href="#" class="color-grey" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;">{{task.workflow.data.title | lstring}}</a></div>
@@ -109,8 +95,7 @@
                                       <!-- <strong ng-show="task.workflow.result.documentID||task.workflow.data.documentID"><a translation-url  ng-href="/database/record/{{task.workflow.result.documentID||task.workflow.data.documentID}}" target="_new_">{{task.workflow.data.title | lstring}}</a>
                                       </strong>
                                       <strong ng-hide="task.workflow.result.documentID||task.workflow.data.documentID"><a translation-url  href="#" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;">{{task.workflow.data.title | lstring}}</a>
-                                      </strong> -->
-                                      <span ng-show="task.workflow.data.additionalInfo">(additional info:-{{task.workflow.data.additionalInfo}})
+                                      </strong> --> <span ng-show="task.workflow.data.additionalInfo">(additional info:-{{task.workflow.data.additionalInfo}})
                                   </div>
                                   <div class="col-xs-2">
                                       <!-- Requested on -->
@@ -124,27 +109,17 @@
                                       <div ng-switch="task.workflow.state">
                                           <div ng-switch-when="completed">
                                               <div ng-show="task.activity.completedOn">
-                                                  <span ng-show="task.activity" ng-switch="task.activity.result.action">
-                                                      <span ng-switch-when="approve"><i class="glyphicon glyphicon-ok"></i> Approved</span>
-                                                      <span ng-switch-when="reject"><i class="glyphicon glyphicon-remove"></i> Rejected</span>
-                                                      <span ng-show="task.activity.result.reason"><STRONG> for {{task.activity.result.reason | limitTo:50}} </STRONG></span>
-                                                  </span>
-                                                  {{task.workflow.activities.name}}
+                                                  <span ng-show="task.activity" ng-switch="task.activity.result.action"><span ng-switch-when="approve"><i class="glyphicon glyphicon-ok"></i> Approved</span> <span ng-switch-when="reject"><i class="glyphicon glyphicon-remove"></i> Rejected</span> <span ng-show="task.activity.result.reason"><STRONG> for {{task.activity.result.reason | limitTo:50}} </STRONG></span></span> {{task.workflow.activities.name}}
                                               </div>
                                           </div>
                                       </div>
                                       <div ng-show="task.workflow.state!='completed'">
 
                                           <div ng-show="task.activity.name=='publishRecord' && !task.activity.isUpdating">
-                                              <a translation-url  class="btn btn-danger" type="button" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;task.isActive=false;" style="padding:4px;">
-                                                  <strong><i ng-class="{'glyphicon glyphicon-plus-sign': !tasksDisplay, 'glyphicon glyphicon-minus-sign': tasksDisplay}"></i> Pending approval</strong>
-                                              </a>
-                                             <br/> <span>expires on {{task.workflow.workflowExpiryDate|formatDateWithTime}}</span>
+                                              <a translation-url  class="btn btn-danger" type="button" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;task.isActive=false;" style="padding:4px;"><strong><i ng-class="{'glyphicon glyphicon-plus-sign': !tasksDisplay, 'glyphicon glyphicon-minus-sign': tasksDisplay}"></i> Pending approval</strong></a> <br/> <span>expires on {{task.workflow.workflowExpiryDate|formatDateWithTime}}</span>
                                           </div>
                                           <div ng-show="task.activity.name=='publishRecord' && task.activity.isUpdating">
-                                              <a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;">
-                                                  <strong><i class="fa fa-spin fa-cog"></i> Processing...</strong>
-                                              </a>
+                                              <a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Processing...</strong></a>
                                           </div>
 
                                           <div ng-hide="task.activity.name=='publishRecord'">{{task.activity.name}}*</div>
@@ -162,12 +137,7 @@
                                       <!-- <div class="row"> -->
                                       <div class="col-xs-3 col-lg-3 col-md-3"></div>
                                       <div class="col-xs-5 col-lg-5 col-md-5">
-                                          <!-- Description -->
-                                          <strong ng-show="history.workflow.result.documentID||history.workflow.data.documentID"><a translation-url  ng-href="/database/record/{{history.workflow.result.documentID||history.workflow.data.documentID}}">{{history.workflow.data.title | lstring}}</a>
-                                          </strong>
-                                          <strong ng-hide="history.workflow.result.documentID||history.workflow.data.documentID"><a translation-url  href="#" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;">{{history.workflow.data.title | lstring}}</a>
-                                          </strong>
-                                          <span ng-show="history.workflow.data.additionalInfo">(additional info:-{{history.workflow.data.additionalInfo}})
+                                          <!-- Description --> <strong ng-show="history.workflow.result.documentID||history.workflow.data.documentID"><a translation-url  ng-href="/database/record/{{history.workflow.result.documentID||history.workflow.data.documentID}}">{{history.workflow.data.title | lstring}}</a></strong> <strong ng-hide="history.workflow.result.documentID||history.workflow.data.documentID"><a translation-url  href="#" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;">{{history.workflow.data.title | lstring}}</a></strong> <span ng-show="history.workflow.data.additionalInfo">(additional info:-{{history.workflow.data.additionalInfo}})
                                       </div>
                                       <div class="col-xs-2 col-lg-2 col-md-2">
                                           <!-- Requested on -->
@@ -181,12 +151,7 @@
                                           <div ng-switch="history.workflow.state">
                                               <div ng-switch-when="completed">
                                                   <div ng-show="history.activity.completedOn">
-                                                      <span ng-show="history.activity" ng-switch="history.activity.result.action">
-                                                          <span ng-switch-when="approve"><i class="glyphicon glyphicon-ok"></i> Approved</span>
-                                                          <span ng-switch-when="reject"><i class="glyphicon glyphicon-remove"></i> Rejected</span>
-                                                          <span ng-show="history.activity.result.reason"><STRONG> for {{history.activity.result.reason | limitTo:50}} </STRONG></span>
-                                                      </span>
-                                                      {{history.workflow.activities.name}}
+                                                      <span ng-show="history.activity" ng-switch="history.activity.result.action"><span ng-switch-when="approve"><i class="glyphicon glyphicon-ok"></i> Approved</span> <span ng-switch-when="reject"><i class="glyphicon glyphicon-remove"></i> Rejected</span> <span ng-show="history.activity.result.reason"><STRONG> for {{history.activity.result.reason | limitTo:50}} </STRONG></span></span> {{history.workflow.activities.name}}
                                                   </div>
                                               </div>
                                           </div>

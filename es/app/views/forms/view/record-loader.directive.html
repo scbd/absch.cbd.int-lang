@@ -1,4 +1,4 @@
-<div>
+﻿<div>
 
     <div smooth-scroll duration="100" offset="200"></div>
     <div block-region activate="loading"></div>
@@ -9,13 +9,13 @@
     </div>
     <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentSuccess">
         <h2>Gracias por descargar el documento {{documentUID}}-</h2>
-        <p>Si el documento no se descarg&oacute;, trate haciendo clic <a href="{{documentUrl}}" class="alert-link">aqu&iacute;</a></p>
+        <p>Si el documento no se descarg&oacute;, trate haciendo clic <a translation-url  href="{{documentUrl}}" class="alert-link">aqu&iacute;</a></p>
         </br></br></br></br> Esta ventana se cerrar&aacute; autom&aacute;ticamente en {{timeLaspe}} segundos.
     </div>
 
     <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentError">
         <h2>Gracias por solicitar un documento {{documentUID}}-</h2>
-        <p>El documento no existe. Si usted cree que este archivo deber&iacute;a estar disponible, s&iacute;rvase informar a <a href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
+        <p>El documento no existe. Si usted cree que este archivo deber&iacute;a estar disponible, s&iacute;rvase informar a <a translation-url  href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
     </div>
 
     <div id="RecordDetails" ng-if="showDetails">
@@ -62,15 +62,16 @@
 
 
     <div class="alert alert-danger" role="alert" ng-show="internalDocumentInfo.latestRevision != internalDocumentInfo.revision && revisionNo != 'draft'">
-        <h2> 
-                <span> Este registro ha sido actualizado. Esta no es la &uacute;ltima versi&oacute;n publicada.</span> <a ng-href="/database/{{internalDocument.header.schema | schemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}" target="new"> Haga clic aqu&iacute; para ver la &uacute;ltima versi&oacute;n del registro</a>
-			</h2>
+        <h3>
+                This document has been updated. Esta no es la &uacute;ltima versi&oacute;n publicada. <a translation-url  ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}" target="new">Haga clic aqu&iacute; para ver la &uacute;ltima versi&oacute;n del registro</a>
+			</h3>
     </div>
 
 
     <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
         <div>
-            <a title="Editar �" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button" class="btn btn-default" href="/register/{{internalDocument.header.schema|schemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> editar </a>
+            <a translation-url  title="Editar »" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
+            class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> editar </a>
             <button title="Borrar" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<div>
+﻿<div>
 
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
@@ -41,7 +41,7 @@
          </h3>
 
 
-            <script type="text/ng-template" id="defaultIntro">
+            <script type="text/ng-template" trados-translation="true" id="defaultIntro">
                 <h5> Instructions</h5>
                 <div>Please fill in the submission form and complete all fields following the instructions given. Certain fields are mandatory and indicated with an asterisk(*). The review of the form will highlight the mandatory fields that need to be filled
                     before it is possible to publish the record. The record can be saved as a draft. Frequently saving of records is recommended, especially in case of intermittent internet connections.
@@ -52,10 +52,8 @@
             </script>
 
 
-            <a class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
-                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a>
-
-            <!--CON---------------------------->
+            <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
+                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a><!--CON---------------------------->
             <div ng-if="showCONInfo" class="well well-help">
 
                 <h5> Introducci&oacute;n</h5>
@@ -94,7 +92,7 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
                 <br>
                 <div>Con miras a proporcionar el panorama m&aacute;s preciso sobre el marco jur&iacute;dico nacional en materia de APB, el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios brinda la posibilidad de reflejar enmiendas a las medidas existentes y enlaces a diferentes medidas, por ejemplo, una reglamentaci&oacute;n para la aplicaci&oacute;n de una ley, o una directriz que brinda m&aacute;s orientaci&oacute;n sobre c&oacute;mo aplicar una determinada disposici&oacute;n.</div>
                 <br>
-                <div>La informaci&oacute;n registrada deber&iacute;a ser lo m&aacute;s clara y concisa posible, siempre considerando que la informaci&oacute;n deber&iacute;a guiar a los usuarios potenciales a dar cumplimiento a los requisitos jur&iacute;dicos del pa&iacute;s. La inclusi&oacute;n de traducciones de cortes&iacute;a de la informaci&oacute;n, as&iacute; como informaci&oacute;n explicativa, organigramas o gu&iacute;as paso a paso sobre c&oacute;mo solicitar un consentimiento fundamentado previo es muy &uacute;til a fin de llegar a los usuarios y garantizar que conozcan los requisitos nacionales para el acceso.</div>
+                <div>Information registered should be as clear and concise as possible while bearing in mind that the information should guide potential users to comply with the country&rsquo;s legal requirements. La inclusi&oacute;n de traducciones de cortes&iacute;a de la informaci&oacute;n, as&iacute; como informaci&oacute;n explicativa, organigramas o gu&iacute;as paso a paso sobre c&oacute;mo solicitar un consentimiento fundamentado previo es muy &uacute;til a fin de llegar a los usuarios y garantizar que conozcan los requisitos nacionales para el acceso.</div>
 
                 <div ng-include="'defaultIntro'"></div>
             </div>
@@ -108,8 +106,7 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
             <div ng-if="showIRCCInfo" class="well well-help">
 
                 <h5> Introducci&oacute;n</h5>
-                <div>Las partes que requieran un consentimiento fundamentado previo deben prever el otorgamiento de permisos o su equivalente emitidos en el momento del acceso como prueba de la decisi&oacute;n de otorgar el consentimiento fundamentado previo y de que se han establecido condiciones mutuamente acordadas (art&iacute;culo 3, p&aacute;rrafo 3 e)). 
- Esta informaci&oacute;n se pondr&aacute; a disposici&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios de conformidad con el art&iacute;culo 14, p&aacute;rrafo 2 c) del Protocolo.</div>
+                <div>Las partes que requieran un consentimiento fundamentado previo deben prever el otorgamiento de permisos o su equivalente emitidos en el momento del acceso como prueba de la decisi&oacute;n de otorgar el consentimiento fundamentado previo y de que se han establecido condiciones mutuamente acordadas (art&iacute;culo 3, p&aacute;rrafo 3 e)). Esta informaci&oacute;n se pondr&aacute; a disposici&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios de conformidad con el art&iacute;culo 14, p&aacute;rrafo 2 c) del Protocolo.</div>
                 <br>
                 <div>En el art&iacute;culo 17, p&aacute;rrafo 2, se estipula que un permiso o su equivalente emitido conforme el art&iacute;culo&nbsp;6, p&aacute;rrafo&nbsp;3&nbsp;e) d y dado a conocer en el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios constituir&aacute; un certificado de cumplimiento reconocido internacionalmente.&nbsp;</div>
                 <br>
@@ -195,7 +192,7 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
                 <br>
                 <div>Este formato com&uacute;n se utilizar&aacute; para registrar cl&aacute;usulas contractuales modelo para las condiciones mutuamente acordadas, as&iacute; como c&oacute;digos de conducta voluntarios, directrices y pr&aacute;cticas &oacute;ptimas y/o est&aacute;ndares. </div>
                 <br>
-                <div>Si una Parte desarrolla este instrumento a fin de aplicar los requisitos nacionales en materia de APB, como parte de un marco nacional en materia de APB, se le solicita que registre dicha informaci&oacute;n usando el formato com&uacute;n para medidas legislativas, administrativas o de pol&iacute;ticas. Esto permitir&aacute; que la informaci&oacute;n se muestre como parte del perfil del pa&iacute;s y que se incluya en la lista de medidas nacionales sobre APB. </div>
+                <div>If this tool is developed by a Party to support implementation of domestic ABS requirements as part of a country&rsquo;s national ABS framework, please register that information using the common format for legislative, administrative or policy measures. Esto permitir&aacute; que la informaci&oacute;n se muestre como parte del perfil del pa&iacute;s y que se incluya en la lista de medidas nacionales sobre APB. </div>
 
                 <div ng-include="'defaultIntro'"></div>
             </div>
@@ -205,15 +202,15 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
             <div ng-if="showCPPInfo" class="well well-help">
                 <h5> Introducci&oacute;n</h5>
                 <div>
-                    En el art&iacute;culo 12, p&aacute;rrafo 1 del Protocolo de Nagoya se estipula que las Partes, en el cumplimento de sus obligaciones en virtud del presente Protocolo, conforme a las leyes nacionales, tomar&aacute;n en consideraci&oacute;n las leyes consuetudinarias, protocolos y procedimientos comunitarios, seg&uacute;n proceda, con respecto a los conocimientos tradicionales asociados a recursos gen&eacute;ticos. Adem&aacute;s, las Partes procurar&aacute;n apoyar, seg&uacute;n proceda, el desarrollo por parte de las comunidades ind&iacute;genas y locales de protocolos comunitarios en relaci&oacute;n con el acceso a los conocimientos tradicionales asociados a recursos
+                    Article 12, paragraph 1, of the Nagoya Protocol provides that Parties, in implementing their obligations under the Protocol, shall in accordance with domestic law take into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures, as applicable, with respect to traditional knowledge associated with genetic resources. Adem&aacute;s, las Partes procurar&aacute;n apoyar, seg&uacute;n proceda, el desarrollo por parte de las comunidades ind&iacute;genas y locales de protocolos comunitarios en relaci&oacute;n con el acceso a los conocimientos tradicionales asociados a recursos
 gen&eacute;ticos y los beneficios que se deriven de la utilizaci&oacute;n de tales
-conocimientos (art&iacute;culo 12, p&aacute;rrafo 3, a)). 
+conocimientos (art&iacute;culo 12, p&aacute;rrafo 3, a)).
                 </div>
                 <br>
                 <div>Brindar informaci&oacute;n sobre c&oacute;mo acceder a los conocimientos tradicionales asociados a los recursos gen&eacute;ticos ayuda a los otros actores a comprender mejor y respetar m&aacute;s los procedimientos y valores comunitarios.
                 </div>
                 <br>
-                <div>Este formato com&uacute;n habr&aacute; de utilizarse para registrar los protocolos y procedimientos comunitarios y las leyes consuetudinarias. Una Parte tambi&eacute;n podr&iacute;a decidir incluir esta informaci&oacute;n como medida legislativa, administrativa o de pol&iacute;tica, como parte de un marco nacional en materia de APB a fin de que tambi&eacute;n se muestre como parte del perfil del pa&iacute;s. En este caso, solo las autoridades publicadoras debidamente designadas por el pa&iacute;s pueden publicar protocolos y procedimientos comunitarios, as&iacute; como leyes consuetudinarias, como un registro nacional.
+                <div>Este formato com&uacute;n habr&aacute; de utilizarse para registrar los protocolos y procedimientos comunitarios y las leyes consuetudinarias. A Party may also decideto include this information as a legislative, administrative or policy measure, as part of a country&rsquo;s national ABS framework to also be displayed as part of the country profile. En este caso, solo las autoridades publicadoras debidamente designadas por el pa&iacute;s pueden publicar protocolos y procedimientos comunitarios, as&iacute; como leyes consuetudinarias, como un registro nacional.
                 </div>
                 <div ng-include="'defaultIntro'"></div>
             </div>
@@ -222,12 +219,12 @@ conocimientos (art&iacute;culo 12, p&aacute;rrafo 3, a)).
             <div ng-if="showCBIInfo" class="well well-help">
 
                 <h5> Introducci&oacute;n</h5>
-                <div>En el art&iacute;culo 22 del Protocolo de Nagoya se establece que las Partes cooperar&aacute;n para crear y desarrollar capacidades y fortalecer los recursos humanos y las capacidades institucionales para aplicar Protocolo de manera efectiva en las Partes que son pa&iacute;ses en desarrollo, incluso a trav&eacute;s de las instituciones y organizaciones mundiales, regionales, subregionales y nacionales existentes.  En este contexto, las Partes deber&iacute;an tambi&eacute;n facilitar la participaci&oacute;n de las comunidades ind&iacute;genas y locales y los interesados directos pertinentes, incluidas las organizaciones no gubernamentales y el sector privado.</div>
+                <div>En el art&iacute;culo 22 del Protocolo de Nagoya se establece que las Partes cooperar&aacute;n para crear y desarrollar capacidades y fortalecer los recursos humanos y las capacidades institucionales para aplicar Protocolo de manera efectiva en las Partes que son pa&iacute;ses en desarrollo, incluso a trav&eacute;s de las instituciones y organizaciones mundiales, regionales, subregionales y nacionales existentes. En este contexto, las Partes deber&iacute;an tambi&eacute;n facilitar la participaci&oacute;n de las comunidades ind&iacute;genas y locales y los interesados directos pertinentes, incluidas las organizaciones no gubernamentales y el sector privado.</div>
                 <br>
                 <div>En el art&iacute;culo 22, p&aacute;rrafo 6 se establece que deber&iacute;a proporcionarse informaci&oacute;n sobre iniciativas de creaci&oacute;n y desarrollo de capacidad en el nivel nacional,
-regional e internacional al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios a fin de promover sinergias y coordinaci&oacute;n en materia de creaci&oacute;n y desarrollo de capacidades para el acceso y la participaci&oacute;n en los beneficios. </div>
+regional e internacional al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios a fin de promover sinergias y coordinaci&oacute;n en materia de creaci&oacute;n y desarrollo de capacidades para el acceso y la participaci&oacute;n en los beneficios.</div>
                 <br>
-                <div>Si toda la informaci&oacute;n sobre proyectos e iniciativas en materia de creaci&oacute;n de capacidad est&aacute; disponible en una sola base de datos, esto puede significar oportunidades para la coordinaci&oacute;n entre los actores involucrados en la creaci&oacute;n de capacidad en la misma zona geogr&aacute;fica o que abarquen cuestiones de tem&aacute;ticas similares, as&iacute; como el aprendizaje a partir de las experiencias de los otros. Tambi&eacute;n puede ayudar a determinar cu&aacute;les son las brechas y superposiciones en las iniciativas de creaci&oacute;n de capacidad y hacerles frente. </div>
+                <div>Si toda la informaci&oacute;n sobre proyectos e iniciativas en materia de creaci&oacute;n de capacidad est&aacute; disponible en una sola base de datos, esto puede significar oportunidades para la coordinaci&oacute;n entre los actores involucrados en la creaci&oacute;n de capacidad en la misma zona geogr&aacute;fica o que abarquen cuestiones de tem&aacute;ticas similares, as&iacute; como el aprendizaje a partir de las experiencias de los otros. Tambi&eacute;n puede ayudar a determinar cu&aacute;les son las brechas y superposiciones en las iniciativas de creaci&oacute;n de capacidad y hacerles frente.</div>
 
                 <div ng-include="'defaultIntro'"></div>
 

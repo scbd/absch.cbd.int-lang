@@ -1,4 +1,4 @@
-<div ng-controller="editOrganization">
+﻿<div ng-controller="editOrganization">
 
 	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -20,37 +20,37 @@
 
 					<div ng-show="tab=='edit'" km-tab="edit">
 
-						<legend>General information</legend>
+						<legend>Informations g&eacute;n&eacute;rales</legend>
 						<div class="row">
 							<div class="col-md-8 col-xs-12">
-								<div class="km-control-group" name="name" required caption="Name of the organization">
+								<div class="km-control-group" name="name" required caption="Nom de l'organisation">
 									<div km-textbox-ml name="name" required ng-model="document.name" placeholder="text entry" locales="document.header.languages"></div>
 								</div>
 							</div>
 
 							<div class="col-md-4 col-xs-12">
-								<div class="km-control-group" name="acronym" required caption="Acronym">
+								<div class="km-control-group" name="acronym" required caption="Acronyme">
 									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="text entry" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-8">
-								<div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+								<div class="km-control-group" name="contact_organizationType" caption="Type d'organisation">
 									<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 								</div>
 							</div>
 							<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
 								<div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCBD" locales="document.header.languages"></div>
+									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCDB" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
-						<legend>Organization Coordinates</legend>
+						<legend>Coordonn&eacute;es de l'organisation</legend>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="address" caption="Address">
+								<div class="km-control-group" name="address" caption="Adresse">
 									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -58,14 +58,14 @@
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="city" required caption="City">
+								<div class="km-control-group" name="city" required caption="Ville">
 									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="example: Montreal"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="state" caption="State or Province">
-									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Quebec"></div>
+								<div class="km-control-group" name="state" caption="&Eacute;tat ou province">
+									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Qu&eacute;bec"></div>
 								</div>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="country" required caption="Country">
+								<div class="km-control-group" name="country" required caption="Pays">
 									<div km-select required name="country" ng-model="document.country" items="options.addressCountry()"></div>
 								</div>
 							</div>
@@ -88,14 +88,14 @@
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="phones" required caption="Phone numbers">
-									<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
+									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: +[country code] [city code] [telephone number] [extension, if necessary].</div>
 									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="example: +1 514.288.2220"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="faxes" caption="Fax Numbers">
-									<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
+									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: +[country code] [city code] [telephone number] [extension, if necessary].</div>
 									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="example: +1 514.288.6588"></div>
 								</div>
 							</div>
@@ -120,7 +120,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes" caption="Notes">
-									<div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
+									<div class="help-info">Le champ &quot; Notes&quot; est pour votre personnel et des notes ou des commentaires sera cach&eacute; Lors de l'affichage du dossier . Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
 									<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 								</div>
 							</div>

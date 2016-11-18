@@ -1,18 +1,17 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue"><label>
-		<span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span>
-		<span class="color-black"> (NR) </span>
+		<span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span> <span class="color-black"> (NR) </span>
 		</label>
 	</div>
 	<div class="record-body panel-body">
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Country</label>
+				<label>Pa&iacute;s</label>
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>1. Country</label>
+					<label>1. Pa&iacute;s</label>
 					<div class="km-value"  ng-show="document.government">{{document.government|term}}</div>
 					<div class="km-value"  ng-hide="document.government">No country selected</div>
 				</div>
@@ -21,7 +20,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>2. General information</label>
+				<label>2. Informaci&oacute;n general</label>
 			</div>
 			<div class="panel-body">
 				<div ng-show="document.title">
@@ -31,7 +30,7 @@
 					</div>
 				</div>
 				<div>
-					<label>Contact person</label>
+					<label>Persona responsable</label>
 					<div class="km-value" view-contact-reference ng-model="document.contact" locale="locale"  ng-if="document.contact">
 					</div>
 					<div  class="km-value"  ng-if="!document.contact">No Contact provided</div>
@@ -41,7 +40,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Institutional structures for the implementation of the Protocol</label>
+				<label>Estructuras institucionales para la aplicaci&oacute;n del Protocolo</label>
 			</div>
 			<div class="panel-body">
 		  		<div>
@@ -49,11 +48,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question3.answer)}}</div>
 		               	<div  ng-show="document.question3.challengesInfo" >
-		                        <label>Please provide a summary of the main difficulties and challenges encountered and answer all the following questions.</label>
+		                        <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados y responda las siguientes preguntas.</label>
 		                        <div class="km-value">{{document.question3.challengesInfo | lstring:locale}}</div>
 		                </div>
 						<div ng-show="document.question3.documentReferenceIDs && !documentReferenceIDsEmpty(document.question3.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question3.documentReferenceIDs">
@@ -71,7 +70,7 @@
 					<ul>
 						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question4.answer)}}</div>
 						<div ng-show="document.question4.additionalInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question4.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question4.challengesInfo || document.question3.answer">
@@ -79,7 +78,7 @@
 							<div class="km-value">{{document.question4.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question4.documentReferenceIDs && !documentReferenceIDsEmpty(document.question4.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question4.documentReferenceIDs">
@@ -101,11 +100,11 @@
 							<div class="km-value">{{document.question5.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question5.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question5.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question5.documentReferenceIDs && !documentReferenceIDsEmpty(document.question5.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question5.documentReferenceIDs">
@@ -127,11 +126,11 @@
 							<div class="km-value">{{document.question6.challengesInfo | lstring:locale}} &nbsp;</div>
 		                </div>
 		                <div ng-show="document.question6.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question6.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question6.documentReferenceIDs && !documentReferenceIDsEmpty(document.question6.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question6.documentReferenceIDs">
@@ -147,7 +146,7 @@
 				<div>
 					<label>7. Has your country made available to the ABS Clearing-House permits or their equivalent issued at the time of access as evidence of the decision to grant prior informed consent (PIC) and of the establishment of mutually agreed terms (MAT)?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">Not applicable, since no access requirements are in place</div>
+						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">No procede, ya que no se han establecido requisitos para el acceso.</div>
 						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable) && (!document.question3.answer)">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question7.answer)}}</div>
 						<div ng-show="document.question7.challengesInfo || document.question3.answer">
 							<label>Please provide a summary of the main difficulties and challenges encountered for making this information available</label>
@@ -158,7 +157,7 @@
 							<div class="km-value">{{document.question7.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question7.documentReferenceIDs && !documentReferenceIDsEmpty(document.question7.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question7.documentReferenceIDs">
@@ -174,14 +173,14 @@
 				<div>
 					<label>8. Has your country made available to the ABS Clearing-House permits or their equivalent for the constitution of an internationally recognized certificate of compliance in accordance with Article 17.2?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question8.notApplicable">Not applicable, since no access requirements are in place</div>
+						<div class="km-value" ng-show="document.question8.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
 						<div class="km-value km-pre" ng-show="!document.question8.notApplicable">{{booleanToText(document.question8.answer)}}</div>
 		                <div ng-show="document.question8.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question8.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question8.documentReferenceIDs && !documentReferenceIDsEmpty(document.question8.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question8.documentReferenceIDs">
@@ -203,11 +202,11 @@
 							<div class="km-value">{{document.question9.challengesInfo | lstring:locale}}</div>
 		                </div>
 		                <div ng-show="document.question9.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question9.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question9.documentReferenceIDs && !documentReferenceIDsEmpty(document.question9.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question9.documentReferenceIDs">
@@ -225,11 +224,11 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question10.challengesInfo">
-							<label>Please provide a summary of the main difficulties and challenges </label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os </label>
 							<div class="km-value">{{document.question10.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question10.documentReferenceIDs && !documentReferenceIDsEmpty(document.question10.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question10.documentReferenceIDs">
@@ -242,8 +241,7 @@
 						<div ng-show="document.question10.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question10.relevantDocuments">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -253,12 +251,12 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Legislative, administrative or policy measures on access and benefit-sharing (ABS measures)</label>
+				<label>Medidas legislativas, administrativas y de pol&iacute;tica sobre acceso y participaci&oacute;n en los beneficios</label>
 			</div>
 			<div class="panel-body">
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Access to genetic resources (Article 6)</label>
+						<label>Acceso a los recursos gen&eacute;ticos (art&iacute;culo 6)</label>
 					</div>
 					<div class="panel-body">
 						<div>
@@ -270,11 +268,11 @@
 									<div class="km-value">{{document.question11.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question11.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.documentReferenceIDs && !documentReferenceIDsEmpty(document.question11.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question11.documentReferenceIDs">
@@ -292,11 +290,11 @@
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question12.answer)}}</div>
 								<div ng-show="document.question12.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question12.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question12.documentReferenceIDs && !documentReferenceIDsEmpty(document.question12.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question12.documentReferenceIDs">
@@ -314,11 +312,11 @@
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question13.answer)}}</div>
 								<div ng-show="document.question13.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question13.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question13.documentReferenceIDs && !documentReferenceIDsEmpty(document.question13.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question13.documentReferenceIDs">
@@ -340,7 +338,7 @@
 									<div class="km-value">{{document.question14.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question14.documentReferenceIDs && !documentReferenceIDsEmpty(document.question14.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question14.documentReferenceIDs">
@@ -358,11 +356,11 @@
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question15.answer)}}</div>
 								<div ng-show="document.question15.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question15.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question15.documentReferenceIDs && !documentReferenceIDsEmpty(document.question15.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question15.documentReferenceIDs">
@@ -378,14 +376,14 @@
 						<div>
 							<label>16. Please provide the number of permits or their equivalents made available through the ABS-Clearing-House since the entry into force of the Protocol for your country.</label>
 							<ul>
-								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&&document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: "No answer provided") : "Not applicable"}}</div>
+								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : &quot;Not applicable&quot;}}</div>
 
 								<div ng-show="document.question16.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question16.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question16.documentReferenceIDs && !documentReferenceIDsEmpty(document.question16.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question16.documentReferenceIDs">
@@ -403,11 +401,11 @@
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question17.answer)}}</div>
 								<div ng-show="document.question17.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question17.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question17.documentReferenceIDs && !documentReferenceIDsEmpty(document.question17.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question17.documentReferenceIDs">
@@ -424,10 +422,10 @@
 							<label>18. Benefits received since entry into force of the Protocol for your country from the utilization of:</label>
 							<ul>
 								<div>
-									<label>Genetic resources</label>
+									<label>Recursos gen&eacute;ticos</label>
 									<ul>
 										<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.answer)}}</div>
-										<label>Monetary benefits</label>
+										<label>Beneficios monetarios</label>
 										<ul>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.monetary)}}</div>
 											<div ng-show="document.question18.geneticResources.monetaryInfo">
@@ -435,7 +433,7 @@
 											</div>
 										</ul>
 
-										<label>Non-monetary benefits</label>
+										<label>Beneficios no monetarios</label>
 										<ul>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.nonMonetary)}}</div>
 											<div ng-show="document.question18.geneticResources.nonMonetaryInfo">
@@ -445,10 +443,10 @@
 									</ul>
 								</div>
 								<div>
-									<label>Traditional knowledge associated with genetic resources</label>
+									<label>Conocimientos tradicionales asociados a recursos gen&eacute;ticos</label>
 									<ul>
 										<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.answer)}}</div>
-										<label>Monetary benefits</label>
+										<label>Beneficios monetarios</label>
 										<ul>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.monetary)}}</div>
 											<div ng-show="document.question18.tk.monetaryInfo">
@@ -456,7 +454,7 @@
 											</div>
 										</ul>
 
-										<label>Non-monetary benefits</label>
+										<label>Beneficios no monetarios</label>
 										<ul>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.nonMonetary)}}</div>
 											<div ng-show="document.question18.tk.nonMonetaryInfo">
@@ -466,11 +464,11 @@
 									</ul>
 								</div>
 					            <div ng-show="document.question18.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question18.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question18.documentReferenceIDs && !documentReferenceIDsEmpty(document.question18.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question18.documentReferenceIDs">
@@ -488,11 +486,11 @@
 							<ul>
 								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question19.challengesInfo">
-									<label>Please provide a summary of the main difficulties and challenges </label>
+									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os </label>
 									<div class="km-value">{{document.question19.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question19.documentReferenceIDs && !documentReferenceIDsEmpty(document.question19.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question19.documentReferenceIDs">
@@ -505,8 +503,7 @@
 								<div ng-show="document.question19.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question19.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -517,7 +514,7 @@
 
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Fair and equitable benefit-sharing (Article 5)</label>
+						<label>Participaci&oacute;n justa y equitativa en los beneficios (Art&iacute;culo 5)</label>
 					</div>
 					<div class="panel-body">
 						<div>
@@ -525,11 +522,11 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question20.answer)}}</div>
 								<div ng-show="document.question20.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question20.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question20.documentReferenceIDs && !documentReferenceIDsEmpty(document.question20.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question20.documentReferenceIDs">
@@ -547,11 +544,11 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question21.answer)}}</div>
 								<div ng-show="document.question21.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question21.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question21.documentReferenceIDs && !documentReferenceIDsEmpty(document.question21.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question21.documentReferenceIDs">
@@ -569,11 +566,11 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question22.answer)}}</div>
 								<div ng-show="document.question22.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question22.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question22.documentReferenceIDs && !documentReferenceIDsEmpty(document.question22.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question22.documentReferenceIDs">
@@ -595,7 +592,7 @@
 									<div class="km-value">{{document.question23.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question23.documentReferenceIDs && !documentReferenceIDsEmpty(document.question23.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question23.documentReferenceIDs">
@@ -608,8 +605,7 @@
 								<div ng-show="document.question23.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question23.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -619,7 +615,7 @@
 
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Compliance with domestic legislation or regulatory requirements on ABS (Article 15 and Article 16) and monitoring the utilization of genetic resources (Article 17)</label>
+						<label>Cumplimiento de la legislaci&oacute;n o requisitos reglamentarios nacionales sobre APB (art&iacute;culos 15 y 16) y vigilancia de la utilizaci&oacute;n de recursos gen&eacute;ticos (art&iacute;culo 17)</label>
 					</div>
 					<div class="panel-body">
 
@@ -632,11 +628,11 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.measures.answer)}}</div>
 										<div ng-show="document.question24.measures.furtherInfo">
-				                            <label>Please provide further information on the measures taken, including when they entered into force</label>
+				                            <label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre las medidas adoptadas, incluida la fecha de la entrada en vigor</label>
 				                            <div class="km-value">{{document.question24.measures.furtherInfo | lstring:locale}}</div>
 				                        </div>
 										<div ng-show="document.question24.measures.complianceInfo">
-											<label>Please provide further information on cases of non-compliance</label>
+											<label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre casos de incumplimiento</label>
 											<div class="km-value">{{document.question24.measures.complianceInfo | lstring:locale}}</div>
 										</div>
 									</ul>
@@ -645,18 +641,18 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
-				                            <label>Please provide further information/label>
+				                            <label>Please provide further information/label&gt;
 				                            <div class="km-value">{{document.question24.violation.furtherInfo | lstring:locale}}</div>
 				                        </div>
 									</ul>
 								</div>
 
 								<div ng-show="document.question24.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question24.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question24.documentReferenceIDs && !documentReferenceIDsEmpty(document.question24.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question24.documentReferenceIDs">
@@ -683,17 +679,17 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question25.violation.answer)}}</div>
 										<div ng-show="document.question25.violation.furtherInfo">
-				                            <label>Please provide further information</label>
+				                            <label>Informaci&oacute;n adicional</label>
 				                            <div class="km-value">{{document.question25.violation.furtherInfo | lstring:locale}}</div>
 				                        </div>
 									</ul>
 								</div>
 								<div ng-show="document.question25.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question25.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question25.documentReferenceIDs && !documentReferenceIDsEmpty(document.question25.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question25.documentReferenceIDs">
@@ -713,7 +709,7 @@
 								<div ng-show="document.question26.answer">
 									<ul>
 										<div ng-show="document.question26.additionalInfo">
-											<label>Please provide further information</label>
+											<label>Informaci&oacute;n adicional</label>
 											<div class="km-value">{{document.question26.additionalInfo | lstring:locale}}</div>
 										</div>
 										<label>Has your country taken measures to address situations of non-compliance?</label>
@@ -721,7 +717,7 @@
 										<div>
 											<ul>
 												<div ng-show="document.question26.violation.additionalInfo">
-						                            <label>Please provide further information</label>
+						                            <label>Informaci&oacute;n adicional</label>
 						                            <div class="km-value">{{document.question26.violation.additionalInfo | lstring:locale}}</div>
 						                        </div>
 											</ul>
@@ -729,11 +725,11 @@
 									</ul>
 								</div>
 								<div ng-show="document.question26.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question26.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question26.documentReferenceIDs && !documentReferenceIDsEmpty(document.question26.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question26.documentReferenceIDs">
@@ -754,27 +750,26 @@
 				                	<ul>
 					                    <div>
 							            	<label>Has your country made use of the checkpoint communique?</label>
-							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option : "Not selected"}} </div>
+							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option : &quot;Not selected&quot;}} </div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
-						                    <label>Please provide further information</label>
+						                    <label>Informaci&oacute;n adicional</label>
 						                    <div class="km-value">{{document.question27.cpc.furtherInfo | lstring:locale}}</div>
 						                </div>
 				                	</ul>
 				                </div>
 				                <div ng-show="document.question27.challengesInfo">
-				                    <label>Please provide a summary of the main difficulties and challenges</label>
+				                    <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 				                    <div class="km-value">{{document.question27.challengesInfo | lstring:locale}}</div>
 				                </div>
 				                <div>
 				                	<label>Please provide number of checkpoint communiques available in the ABS Clearing-House, if applicable</label>
-				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&&document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:"No value is entered"}}</div>
+				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question27.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 					    	</ul>
@@ -785,11 +780,11 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question28.answer)}}</div>
 								<div ng-show="document.question28.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question28.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question28.documentReferenceIDs && !documentReferenceIDsEmpty(document.question28.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question28.documentReferenceIDs">
@@ -811,11 +806,11 @@
 									<div class="km-value">{{document.question29.additionalInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question29.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.documentReferenceIDs && !documentReferenceIDsEmpty(document.question29.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question29.documentReferenceIDs">
@@ -837,7 +832,7 @@
 									<div class="km-value">{{document.question30.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question30.documentReferenceIDs && !documentReferenceIDsEmpty(document.question30.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question30.documentReferenceIDs">
@@ -850,8 +845,7 @@
 								<div ng-show="document.question30.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question30.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -861,20 +855,20 @@
 
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Compliance with mutually agreed terms (MAT) (Article 18)</label>
+						<label>Cumplimiento de las condiciones mutuamente acordadas (art&iacute;culo 18)</label>
 					</div>
 					<div class="panel-body">
 						<div>
 							<label>31. Is your country encouraging the inclusion of provisions in MAT to cover dispute resolution as provided in Article 18.1 (a) (b) and (c)?</label>
 							<ul>
-								<div class="km-value" ng-show="document.question31.notApplicable">Not applicable, since no access requirements are in place</div>
+								<div class="km-value" ng-show="document.question31.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
 								<div class="km-value km-pre" ng-show="!document.question31.notApplicable">{{booleanToText(document.question31.answer)}}</div>
 								<div ng-show="document.question31.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question31.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question31.documentReferenceIDs && !documentReferenceIDsEmpty(document.question31.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question31.documentReferenceIDs">
@@ -892,11 +886,11 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question32.answer)}}</div>
 								<div ng-show="document.question32.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question32.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question32.documentReferenceIDs && !documentReferenceIDsEmpty(document.question32.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question32.documentReferenceIDs">
@@ -915,17 +909,17 @@
 								<label>Access to justice?</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.justice.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
-									<label>Please provide further information</label>
+									<label>Informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question33.justice.furtherInfo | lstring:locale}}</div>
 								</div>
 								<label>Utilization of mechanisms regarding mutual recognition and enforcement of foreign judgements and arbitral awards?</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.mechanisms.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
-									<label>Please provide further information</label>
+									<label>Informaci&oacute;n adicional</label>
 									<div class="km-value">{{document.question33.mechanisms.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question33.documentReferenceIDs && !documentReferenceIDsEmpty(document.question33.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question33.documentReferenceIDs">
@@ -943,11 +937,11 @@
 							<ul>
 								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question34.challengesInfo">
-									<label>Please provide a summary of the main difficulties and challenges</label>
+									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 									<div class="km-value">{{document.question34.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question34.documentReferenceIDs && !documentReferenceIDsEmpty(document.question34.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question34.documentReferenceIDs">
@@ -960,8 +954,7 @@
 								<div ng-show="document.question34.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question34.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -973,7 +966,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Special considerations (Article 8)</label>
+				<label>Consideraciones especiales (art&iacute;culo 8)</label>
 			</div>
 			<div class="panel-body">
 
@@ -983,11 +976,11 @@
 						<label>Created conditions to promote and encourage research which contributes to the conservation and sustainable use of biodiversity including through simplified measures on access for non-commercial research purposes, taking into account the need to address a change of intent for such research as provided in Article 8(a)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.research.answer)}}</div>
 						<div ng-show="document.question35.research.furtherInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question35.research.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.research.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.research.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.research.documentReferenceIDs">
@@ -1000,11 +993,11 @@
 						<label>Paid due regard to cases of present or imminent emergencies that threaten or damage human, animal or plant health as provided in Article 8(b)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.emergencies.answer)}}</div>
 						<div ng-show="document.question35.emergencies.furtherInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question35.emergencies.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.emergencies.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.emergencies.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.emergencies.documentReferenceIDs">
@@ -1017,11 +1010,11 @@
 						<label>Taken into consideration the need for expeditious access to genetic resources and expeditious fair and equitable sharing of benefits arising out of the use of such genetic resources, including access to affordable treatments by those in need, especially, in developing countries as provided in Article 8(b)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.access.answer)}}</div>
 						<div ng-show="document.question35.access.furtherInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question35.access.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.access.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.access.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.access.documentReferenceIDs">
@@ -1034,11 +1027,11 @@
 						<label>Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)? </label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question35.importance.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.importance.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.importance.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.importance.documentReferenceIDs">
@@ -1060,7 +1053,7 @@
 							<div class="km-value">{{document.question36.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question36.documentReferenceIDs && !documentReferenceIDsEmpty(document.question36.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question36.documentReferenceIDs">
@@ -1073,8 +1066,7 @@
 						<div ng-show="document.question36.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question36.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1084,7 +1076,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Provisions related to indigenous and local communities (Articles 6, 7 and 12)</label>
+				<label>Disposiciones relacionadas con las comunidades ind&iacute;genas y locales (art&iacute;culos 6, 7 y 12)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1092,11 +1084,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question37.answer)}}</div>
 						<div ng-show="document.question37.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question37.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question37.documentReferenceIDs && !documentReferenceIDsEmpty(document.question37.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question37.documentReferenceIDs">
@@ -1117,11 +1109,11 @@
 							<div style="margin: 0 0 0 20px;" >
 								<div>
 									<div ng-show="document.question38.law.furtherInfo">
-										<label>Please provide further information and reference to the domestic law establishing rights of indigenous and local communities to grant access to genetic resources</label>
+										<label>S&iacute;rvase proporcionar informaci&oacute;n adicional y la referencia de la ley nacional que establece los derechos de las comunidades ind&iacute;genas y locales a otorgar acceso a recursos gen&eacute;ticos.</label>
 										<div class="km-value">{{document.question38.law.furtherInfo | lstring:locale}}</div>
 									</div>
 									<div ng-show="document.question38.law.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.law.documentReferenceIDs)">
-			                			<label>Please select the clearing-house record number containing relevant information</label>
+			                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 										<div class="km-value">
 											<ul class="list">
 												<li ng-repeat="reference in document.question38.law.documentReferenceIDs">
@@ -1137,7 +1129,7 @@
 									<label>Does your country have measures in place with the aim of ensuring that the prior informed consent or approval and involvement of indigenous and local communities is obtained as provided in Article 6.2?</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.measures.answer)}}</div>
 									<div ng-show="document.question38.measures.furtherInfo">
-										<label>Please provide further information</label>
+										<label>Informaci&oacute;n adicional</label>
 										<div class="km-value">{{document.question38.measures.furtherInfo | lstring:locale}}</div>
 									</div>
 								</div>
@@ -1146,18 +1138,18 @@
 									<label>Has your country set out criteria and/or process for obtaining prior informed consent or approval and involvement of indigenous and local communities for access to genetic resources in Article 6.3(f)?</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.pic.answer)}}</div>
 									<div ng-show="document.question38.pic.furtherInfo">
-										<label>Please provide further information</label>
+										<label>Informaci&oacute;n adicional</label>
 										<div class="km-value">{{document.question38.pic.furtherInfo | lstring:locale}}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div ng-show="document.question38.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question38.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question38.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question38.documentReferenceIDs">
@@ -1175,11 +1167,11 @@
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question39.answer)}}</div>
 						<div ng-show="document.question39.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question39.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question39.documentReferenceIDs && !documentReferenceIDsEmpty(document.question39.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question39.documentReferenceIDs">
@@ -1193,15 +1185,15 @@
 				</div>
 
 				<div>
-					<label>40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities’ customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
+					<label>40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question40.answer)}}</div>
 						<div ng-show="document.question40.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question40.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question40.documentReferenceIDs && !documentReferenceIDsEmpty(document.question40.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question40.documentReferenceIDs">
@@ -1219,11 +1211,11 @@
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question41.answer)}}</div>
 						<div ng-show="document.question41.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question41.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question41.documentReferenceIDs && !documentReferenceIDsEmpty(document.question41.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question41.documentReferenceIDs">
@@ -1242,7 +1234,7 @@
 						<div class="km-value km-pre" ng-show="!document.question37.answer">{{conditionalBooleanToText(!document.question37.answer,document.question42.answer)}}</div>
 
 						<div ng-show="document.question37.answer">
-							<label>Community protocols</label>
+							<label>Protocolos comunitarios</label>
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.community.answer)}}</div>
 								<div ng-show="document.question42.community.furtherInfo">
@@ -1250,7 +1242,7 @@
 			                    	<div class="km-value">{{document.question42.community.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.community.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.community.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.community.documentReferenceIDs">
@@ -1264,7 +1256,7 @@
 						</div>
 
 						<div ng-show="document.question37.answer">
-							<label>Minimum requirements for mutually agreed terms</label>
+							<label>Requisitos m&iacute;nimos para las condiciones mutuamente acordadas</label>
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mat.answer)}}</div>
 			                    <div ng-show="document.question42.mat.furtherInfo">
@@ -1272,7 +1264,7 @@
 			                    	<div ng-show="document.question42.mat.furtherInfo" class="km-value">{{document.question42.mat.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mat.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mat.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mat.documentReferenceIDs">
@@ -1286,15 +1278,15 @@
 						</div>
 
 						<div ng-show="document.question37.answer">
-							<label>Model contractual clauses</label>
+							<label>Cl&aacute;usulas contractuales modelo</label>
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mcc.answer)}}</div>
 								<div ng-show="document.question42.mcc.furtherInfo">
-			                    	<label>Please provide further information on how your country is supporting the development of model contractual clauses</label>
+			                    	<label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de cl&aacute;usulas contractuales modelo</label>
 			                    	<div class="km-value">{{document.question42.mcc.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mcc.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mcc.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mcc.documentReferenceIDs">
@@ -1314,11 +1306,11 @@
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question43.answer)}}</div>
 						<div ng-show="document.question43.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question43.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question43.documentReferenceIDs && !documentReferenceIDsEmpty(document.question43.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question43.documentReferenceIDs">
@@ -1341,7 +1333,7 @@
 							<div class="km-value">{{document.question44.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question44.documentReferenceIDs && !documentReferenceIDsEmpty(document.question44.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question44.documentReferenceIDs">
@@ -1354,8 +1346,7 @@
 						<div ng-show="document.question44.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question44.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1366,7 +1357,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Contribution to conservation and sustainable use (Article 9)</label>
+				<label>Contribuci&oacute;n a la conservaci&oacute;n y utilizaci&oacute;n sostenible (art&iacute;culo 9)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1374,11 +1365,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question45.answer)}}</div>
 						<div ng-show="document.question45.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question45.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question45.documentReferenceIDs && !documentReferenceIDsEmpty(document.question45.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question45.documentReferenceIDs">
@@ -1399,7 +1390,7 @@
 							<div class="km-value">{{document.question46.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question46.documentReferenceIDs && !documentReferenceIDsEmpty(document.question46.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question46.documentReferenceIDs">
@@ -1417,11 +1408,11 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">No additional information provided.</div>
 						<div ng-show="document.question47.challengesInfo">
-							<label>Please provide a summary of the main difficulties and challenges</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value">{{document.question47.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question47.documentReferenceIDs && !documentReferenceIDsEmpty(document.question47.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question47.documentReferenceIDs">
@@ -1434,8 +1425,7 @@
 						<div ng-show="document.question47.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question47.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1445,7 +1435,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Transboundary cooperation (Article 11)</label>
+				<label>Cooperaci&oacute;n transfronteriza (art&iacute;culo 11)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1457,11 +1447,11 @@
 							<div class="km-value">{{document.question48.ilcInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question48.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.documentReferenceIDs && !documentReferenceIDsEmpty(document.question48.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question48.documentReferenceIDs">
@@ -1477,14 +1467,14 @@
 				<div>
 					<label>49. Is your country endeavouring to cooperate with a view to implementing the Protocol in instances where the same traditional knowledge associated with genetic resources is shared by one or more indigenous and local communities in several Parties as provided in Article 11.2?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question49.notApplicable">Not applicable, since there are no indigenous and local communities in my country</div>
+						<div class="km-value" ng-show="document.question49.notApplicable">No corresponde ya que no hay comunidades ind&iacute;genas y locales en mi pa&iacute;s</div>
 						<div class="km-value km-pre" ng-show="!document.question49.notApplicable">{{booleanToText(document.question49.answer)}}</div>
 		                <div ng-show="document.question49.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question49.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question49.documentReferenceIDs && !documentReferenceIDsEmpty(document.question49.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question49.documentReferenceIDs">
@@ -1502,11 +1492,11 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question50.challengesInfo">
-							<label>Please provide a summary of the main difficulties and challenges</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value">{{document.question50.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question50.documentReferenceIDs && !documentReferenceIDsEmpty(document.question50.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question50.documentReferenceIDs">
@@ -1519,8 +1509,7 @@
 						<div ng-show="document.question50.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question50.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1530,7 +1519,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Model contractual clauses, codes of conduct, guidelines and best practices and/or standards (Article 19 and 20)</label>
+				<label>Cl&aacute;usulas contractuales modelo, c&oacute;digos de conducta voluntarios, directrices y pr&aacute;cticas &oacute;ptimas y/o est&aacute;ndares (art&iacute;culos 19 y 20)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1538,11 +1527,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question51.answer)}}</div>
 						<div ng-show="document.question51.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question51.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question51.documentReferenceIDs && !documentReferenceIDsEmpty(document.question51.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question51.documentReferenceIDs">
@@ -1559,11 +1548,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question52.answer)}}</div>
 						<div ng-show="document.question52.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question52.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question52.documentReferenceIDs && !documentReferenceIDsEmpty(document.question52.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question52.documentReferenceIDs">
@@ -1580,11 +1569,11 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question53.challengesInfo">
-							<label>Please provide a summary of the main difficulties and challenges</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value">{{document.question53.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question53.documentReferenceIDs && !documentReferenceIDsEmpty(document.question53.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question53.documentReferenceIDs">
@@ -1597,8 +1586,7 @@
 						<div ng-show="document.question53.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question53.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1608,7 +1596,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Awareness-raising and capacity (Article 21 and 22)</label>
+				<label>Aumento de la concienciaci&oacute;n y capacidad (art&iacute;culos 21 y 22)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1624,7 +1612,7 @@
 									<div class="km-value">{{document.question54.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question54.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.measures.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question54.measures.documentReferenceIDs">
@@ -1637,11 +1625,11 @@
 							</div>
 						</div>
 						<div ng-show="document.question54.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question54.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question54.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question54.documentReferenceIDs">
@@ -1667,7 +1655,7 @@
 									<div class="km-value">{{document.question55.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question55.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.measures.documentReferenceIDs)">
-		                			<label>Please select the clearing-house record number containing relevant information</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question55.measures.documentReferenceIDs">
@@ -1680,11 +1668,11 @@
 							</div>
 						</div>
 						<div ng-show="document.question55.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question55.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question55.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question55.documentReferenceIDs">
@@ -1702,11 +1690,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question56.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question56.documentReferenceIDs && !documentReferenceIDsEmpty(document.question56.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question56.documentReferenceIDs">
@@ -1724,11 +1712,11 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question57.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question57.documentReferenceIDs && !documentReferenceIDsEmpty(document.question57.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question57.documentReferenceIDs">
@@ -1746,11 +1734,11 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question58.challengesInfo">
-							<label>Please provide a summary of the main difficulties and challenges</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value">{{document.question58.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question58.documentReferenceIDs && !documentReferenceIDsEmpty(document.question58.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question58.documentReferenceIDs">
@@ -1763,8 +1751,7 @@
 						<div ng-show="document.question58.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question58.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1775,7 +1762,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Technology transfer, collaboration and cooperation (Article 23)</label>
+				<label>Transferencia de tecnolog&iacute;a, colaboraci&oacute;n y cooperaci&oacute;n (art&iacute;culo 23)</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1787,11 +1774,11 @@
 							<div class="km-value">{{document.question59.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question59.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.documentReferenceIDs && !documentReferenceIDsEmpty(document.question59.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question59.documentReferenceIDs">
@@ -1808,7 +1795,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Optional additional information</label>
+				<label>Informaci&oacute;n adicional opcional</label>
 			</div>
 			<div class="panel-body">
 				<div>
@@ -1819,7 +1806,7 @@
 							<div class="km-value">{{document.question60.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question60.documentReferenceIDs && !documentReferenceIDsEmpty(document.question60.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question60.documentReferenceIDs">
@@ -1837,7 +1824,7 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question61.answer)}}</div>
 						<div ng-show="document.question61.additionalInfo">
-							<label>Please provide further information</label>
+							<label>Informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question61.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.challengesInfo">
@@ -1849,7 +1836,7 @@
 							<div class="km-value">{{document.question61.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.documentReferenceIDs && !documentReferenceIDsEmpty(document.question61.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question61.documentReferenceIDs">
@@ -1869,7 +1856,7 @@
 						<ul>
 							<div class="km-value km-pre">{{booleanToText(document.question62.donor.answer)}}</div>
 							<div ng-show="document.question62.donor.additionalInfo">
-                            	<label>Please provide further information</label>
+                            	<label>Informaci&oacute;n adicional</label>
 								<div class="km-value">{{document.question62.donor.additionalInfo | lstring:locale}}</div>
 							</div>
 						</ul>
@@ -1878,34 +1865,34 @@
 						<ul>
 							<div class="km-value km-pre">{{booleanToText(document.question62.recipient.answer)}}</div>
 							<ul>
-								<label>From other Parties</label>
+								<label>De otras Partes</label>
 								<ul>
 									<div class="km-value km-pre">{{booleanToText(document.question62.recipient.parties)}}</div>
 									<div ng-show="document.question62.recipient.partiesInfo">
-                            			<label>Please provide further information</label>
+                            			<label>Informaci&oacute;n adicional</label>
 										<div class="km-value">{{document.question62.recipient.partiesInfo | lstring:locale}}</div>
 									</div>
 								</ul>
 
-								<label>From financial institutions</label>
+								<label>De instituciones financieras</label>
 								<ul>
 									<div class="km-value km-pre">{{booleanToText(document.question62.recipient.financialInstitutions)}}</div>
 									<ul>
-										<label>From the Global Environmental Facility</label>
+										<label>Del Fondo para el Medio Ambiente Mundial</label>
 										<ul>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.gef)}}</div>
 										</ul>
 
-										<label>From the Nagoya Protocol Implementation Fund</label>
+										<label>Del Fondo para la Aplicaci&oacute;n del Protocolo de Nagoya</label>
 										<ul>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.npImplementationFund)}}</div>
 										</ul>
 
-										<label>From other sources</label>
+										<label>De otras fuentes</label>
 										<ul>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.otherSources)}}</div>
 											<div ng-show="document.question62.recipient.otherSourcesInfo">
-                            					<label>Please provide further information</label>
+                            					<label>Informaci&oacute;n adicional</label>
 												<div class="km-value">{{document.question62.recipient.otherSourcesInfo | lstring:locale}}</div>
 											</div>
 										</ul>
@@ -1919,7 +1906,7 @@
 							<div class="km-value">{{document.question62.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question62.documentReferenceIDs && !documentReferenceIDsEmpty(document.question62.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question62.documentReferenceIDs">
@@ -1936,8 +1923,7 @@
 					<label>63. Please provide information on experiences related to the mobilization of resources in support of the implementation of the Protocol.</label>
 					<div class="km-value">{{document.question62new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</div>
 				</div>
 
@@ -1945,8 +1931,7 @@
 					<label>64. Please provide information on the status of funds mobilized in support of the implementation of the Protocol.</label>
 					<div class="km-value">{{document.question63new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</div>
 				</div>
 
@@ -1965,11 +1950,11 @@
 							<div class="km-value">{{document.question63.challengesInfo | lstring:locale}}</div>
                         </div>
                         <div ng-show="document.question63.furtherInfo">
-                            <label>Use the text entry to provide further information</label>
+                            <label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value">{{document.question63.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question63.documentReferenceIDs && !documentReferenceIDsEmpty(document.question63.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question63.documentReferenceIDs">
@@ -1983,11 +1968,11 @@
 				</div>
 
 				<div>
-					<label>66. Any other relevant information:</label>
+					<label>66. Cualquier otra informaci&oacute;n pertinente:</label>
 					<ul>
 						<div class="km-value">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
-                			<label>Please select the clearing-house record number containing relevant information</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question64.documentReferenceIDs">
@@ -2001,8 +1986,7 @@
 						<div ng-show="document.question64.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question64.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>

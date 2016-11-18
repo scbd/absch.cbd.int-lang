@@ -1,4 +1,4 @@
-<div>
+﻿<div>
 	<div class="registerpage-content">
 
 		<div ng-show="msg" class="alert alert-success alert-dismissable">
@@ -25,11 +25,11 @@
 
 					<legend name="formInfo" style="display:none"></legend>
 					<section>
-						<legend>General information</legend>
+						<legend>Informations g&eacute;n&eacute;rales</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="title" caption="Title">
+								<div class="km-control-group" required name="title" caption="Titre">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -37,7 +37,7 @@
 
 						<div class="row">
 							<div class="col-xs-6">
-								<div class="km-control-group" required name="resourceTypes" caption="Type of resource">
+								<div class="km-control-group" required name="resourceTypes" caption="Type de ressource">
                                     <div km-select multiple  name="resourceTypes" required ng-model="document.resourceTypes" items="options.resourceTypes()" show-description="true"></div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@
 						<div class="row" ng-if="isResource">
 							<div class="col-md-12">
 								<div class="km-control-group" name="formatDetails" caption="Format details">
-									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. “Requires Acrobat Reader for viewing”).</div>
+									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. &ldquo;Requires Acrobat Reader for viewing&rdquo;).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages" ></div>
 								</div>
 							</div>
@@ -90,14 +90,12 @@
 
 						<!--//Authors or Authoring organization is madatory Error message -->
 						<label for="author_org" style="width:0px;height:0px;display:inline">
-							<span style="display:none">
-								Please enter author(s) details or select authoring organizations
-							</span>
+							<span style="display:none">Please enter author(s) details or select authoring organizations</span>
 						</label>
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" required name="authors" caption="Author(s)">
-									<div class="help-info">Name of the person who has authored the publication or information resource.</div>
+									<div class="help-info">Nom de l'auteur de la publication ou de la source d'information.</div>
 									<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -114,7 +112,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" required name="publicationYear" caption="Publication year">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>>
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;
 										 <option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
@@ -123,9 +121,8 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="rights" caption="Rights">
-									<div class="help-info">Information about rights held in and over the attached files, such as copyright holder, and availability for reproduction
-										for educational or non-profit purposes.</div>
+								<div class="km-control-group" name="rights" caption="Droits">
+									<div class="help-info">Information about rights held in and over the attached files, such as copyright holder, and availability for reproduction for educational or non-profit purposes.</div>
 									<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -134,8 +131,7 @@
 						<div class="row" ng-if="isResource">
 							<div class="col-xs-12" >
 								<div class="km-control-group" name="source" caption="Source">
-									<div class="help-info">A reference to a document or resource from which the present resource is derived (e.g. an article from a journal). For original
-										documents you may wish to specify "original document".</div>
+									<div class="help-info">A reference to a document or resource from which the present resource is derived (e.g. an article from a journal). Pour les documents originaux, vous pouvez sp&eacute;cifier «&nbsp;document original&nbsp;».</div>
 									<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -144,7 +140,7 @@
 						<div class="row" ng-if="!isResource">
 							<div class="col-md-12">
 								<div class="km-control-group" name="formatDetails" caption="Format details">
-									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. “Requires Acrobat Reader for viewing”).</div>
+									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. &ldquo;Requires Acrobat Reader for viewing&rdquo;).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -156,9 +152,8 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="resourceLinks" caption="Link to the resource(s)">
-									<div class="help-block">Please attach the relevant files so that they will be stored in the database for users to download. When resources
-										are available on the Internet, please also provide a link to them.</div>
+								<div class="km-control-group" required name="resourceLinks" caption="Lien &agrave; la ressource">
+									<div class="help-block">Please attach the relevant files so that they will be stored in the database for users to download. Veuillez &eacute;galement ajouter le lien vers les ressources qui sont disponibles sur Internet.</div>
 									<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" extensions="options.documentLinksExt"
 									identifier="document.header.identifier"></div>
 								</div>
@@ -167,14 +162,13 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" name="cover" caption="Cover image(s)">
-									<div class="help-block">Only JPEG and PNG formats are supported.</div>
+									<div class="help-block">Seuls les formats JPEG et PNG sont support&eacute;s.</div>
 									<div km-link name="cover" ng-model="document.covers" allow-link="false" allow-file="true" mimeTypes="image/jpeg;image/png"
 									identifier="document.header.identifier"></div>
 								</div>
 							</div>
 						</div>
-					</section>
-					<section>
+					</section> <section>
 						<legend>Information on the content of attachments</legend>
 
 						<div class="row">
@@ -199,10 +193,9 @@
 								</div>
 							</div>
 						</div>
-					</section>
-					<section>
+					</section> <section>
 
-						<legend ng-if="IsCapacityBuilding() || IsLiterature() || isMcc">Keywords for facilitating online searches</legend>
+						<legend ng-if="IsCapacityBuilding() || IsLiterature() || isMcc">Mots-cl&eacute;s pour faciliter les perquisitions en ligne</legend>
 
                         <div class="row" ng-if="isMcc">
 							<div class="col-xs-12">
@@ -223,8 +216,7 @@
 						<div class="row" ng-if="IsCapacityBuilding() && IsTarget16()">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="absKeyAreas" caption="Key areas and strategic measures for capacity-building and development">
-                                    <div class="help-info">The key areas are identified by the Strategic Framework for capacity-building and development to support the effective
-implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
+                                    <div class="help-info">The key areas are identified by the Strategic Framework for capacity-building and development to support the effective implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
 									<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -236,13 +228,12 @@ implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
 					<section>
 
 						<a translation-url  name="#AdditionalInformation"></a>
-						<legend>Additional information</legend>
+						<legend>Renseignements suppl&eacute;mentaires</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" name="address" caption="Any other relavent information">
-									<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the
-										record.</div>
+									<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -256,14 +247,12 @@ implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
 							</div>
 						</div>
 
-					</section>
-					<section>
+					</section> <section>
 						<legend>Notes</legend>
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" name="notes">
-									<div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field
-										is not meant to be used for confidential information.</div>
+									<div class="help-block">Le champ &quot; Notes&quot; est pour votre personnel et des notes ou des commentaires sera cach&eacute; Lors de l'affichage du dossier . Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
 									<textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
 								</div>
 							</div>

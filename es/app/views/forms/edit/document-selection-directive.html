@@ -1,4 +1,4 @@
-<div>
+﻿<div>
     <!-- existing documents display -->
     <div class="row">
         <div class="col-xs-12">
@@ -14,7 +14,7 @@
             <table class="table table-hover " id="search-new" style="padding-bottom:3px;width:100%;">
                 <tr ng-repeat="doc in selectedDocuments | orderBy:['schema_s', 'title_t']">
                     <td style="margin-bottom:10px;width:30px;">
-                        <span style="font-size: 16px;margin:0;padding:0;float:right;"><a ng-click="removeDocument(doc)" class="color-red"><i class="fa fa-times"></i></a></span>
+                        <span style="font-size: 16px;margin:0;padding:0;float:right;"><a translation-url  ng-click="removeDocument(doc)" class="color-red"><i class="fa fa-times"></i></a></span>
                     </td>
                     <td style="width:100%;margin-bottom:10px;">
                         <result-default doc='doc' type="nationalRecords"></result-default>
@@ -23,13 +23,12 @@
             </table>
         </div>
     </div>
-    <!-- Modal -->
-    <script type="text/ng-template" id="documentSelectionModal">
+    <!-- Modal --> <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
                <h3>Please select from published record(s) below:</h3>
                 <div>
-                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filtro por tipo de registro..."></div>
+                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filter by record type..."></div>
                 </div>
             </div>
             <div class="modal-body">
@@ -44,14 +43,14 @@
                         </div>
 
                     </div>
-                    <div ng-show="!isLoading"> loading...</div>
+                    <div ng-show="isLoading"> loading...</div>
                 </div>
             </div>
-            <div class="modal-header bg-grey">
+            <div class="modal-footer bg-grey">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a>
-                        <a type="button" class="btn btn-primary" ng-clikc="closeDialog()">Close</a>
+                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a>
+                        <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Close</a>
                     </div>
                 </div>
             </div>
