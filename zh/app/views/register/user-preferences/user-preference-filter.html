@@ -41,18 +41,13 @@
                 {{record.queryTitle}}
             </div>
             <div class="col-xs-12">               
-                 <span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;">
-                    <span class="label label-info">                    
-                        <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&#34;</span>{{filter.name}}
-                        <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&#34;</span>
-                    </span>
-                </span>
+                 <span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;"><span class="label label-info"><span ng-if="filter.type === 'freeText' || filter.type === 'UID'">"</span>{{filter.name}} <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">"</span></span></span>
             </div>
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">No</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">否</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">是</button>
         </div>
     </script>
 
@@ -69,8 +64,7 @@
                 <label for="filterTitle">Title</label>
                 <input type="text" ng-model="document.queryTitle" class="form-control" placeholder="Filter title">
             </div>
-            <br/>
-            <search-directive skip-results="true" skip-save-filter="true" skip-date-filter="true" 
+            <br/> <search-directive skip-results="true" skip-save-filter="true" skip-date-filter="true" 
                     skip-keywords-filter="{{skipKeywordsFilter}}" skip-text-filter="{{skipTextFilter}}"></search-directive>
             
             <div class="alert alert-danger" role="alert" ng-if="errors">  
@@ -79,8 +73,8 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Close</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save(document)" ng-disabled="loading">Save</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">关闭</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save(document)" ng-disabled="loading">保存</button>
         </div>
     </script>
 </div>

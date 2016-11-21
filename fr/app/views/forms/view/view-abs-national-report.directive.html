@@ -1,18 +1,17 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue"><label>
-		<span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span>
-		<span class="color-black"> (NR) </span>
+		<span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span> <span class="color-black"> (NR) </span>
 		</label>
 	</div>
 	<div class="record-body panel-body">
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Country</label>
+				<label>Pays</label>
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>1. Country</label>
+					<label>1. Pays</label>
 					<div class="km-value"  ng-show="document.government">{{document.government|term}}</div>
 					<div class="km-value"  ng-hide="document.government">No country selected</div>
 				</div>
@@ -21,7 +20,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>2. General information</label>
+				<label>2. Informations g&eacute;n&eacute;rales</label>
 			</div>
 			<div class="panel-body">
 				<div ng-show="document.title">
@@ -31,7 +30,7 @@
 					</div>
 				</div>
 				<div>
-					<label>Contact person</label>
+					<label>Personne &agrave; contacter</label>
 					<div class="km-value" view-contact-reference ng-model="document.contact" locale="locale"  ng-if="document.contact">
 					</div>
 					<div  class="km-value"  ng-if="!document.contact">No Contact provided</div>
@@ -242,8 +241,7 @@
 						<div ng-show="document.question10.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question10.relevantDocuments">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -378,7 +376,7 @@
 						<div>
 							<label>16. Please provide the number of permits or their equivalents made available through the ABS-Clearing-House since the entry into force of the Protocol for your country.</label>
 							<ul>
-								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&&document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: "No answer provided") : "Not applicable"}}</div>
+								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : &quot;Not applicable&quot;}}</div>
 
 								<div ng-show="document.question16.furtherInfo">
 									<label>Use the text entry to provide further information</label>
@@ -424,7 +422,7 @@
 							<label>18. Benefits received since entry into force of the Protocol for your country from the utilization of:</label>
 							<ul>
 								<div>
-									<label>Genetic resources</label>
+									<label>Ressources g&eacute;n&eacute;tiques</label>
 									<ul>
 										<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.answer)}}</div>
 										<label>Monetary benefits</label>
@@ -505,8 +503,7 @@
 								<div ng-show="document.question19.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question19.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -608,8 +605,7 @@
 								<div ng-show="document.question23.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question23.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -645,7 +641,7 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
-				                            <label>Please provide further information/label>
+				                            <label>Please provide further information/label&gt;
 				                            <div class="km-value">{{document.question24.violation.furtherInfo | lstring:locale}}</div>
 				                        </div>
 									</ul>
@@ -754,7 +750,7 @@
 				                	<ul>
 					                    <div>
 							            	<label>Has your country made use of the checkpoint communique?</label>
-							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option : "Not selected"}} </div>
+							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option : &quot;Not selected&quot;}} </div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
 						                    <label>Please provide further information</label>
@@ -768,13 +764,12 @@
 				                </div>
 				                <div>
 				                	<label>Please provide number of checkpoint communiques available in the ABS Clearing-House, if applicable</label>
-				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&&document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:"No value is entered"}}</div>
+				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question27.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 					    	</ul>
@@ -850,8 +845,7 @@
 								<div ng-show="document.question30.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question30.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -960,8 +954,7 @@
 								<div ng-show="document.question34.relevantDocuments">
 				                	<label>Any other relevant documents</label>
 									<div class="km-value" ng-repeat="item in document.question34.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-										<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
 								</div>
 							</ul>
@@ -1073,8 +1066,7 @@
 						<div ng-show="document.question36.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question36.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1193,7 +1185,7 @@
 				</div>
 
 				<div>
-					<label>40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities’ customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
+					<label>40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question40.answer)}}</div>
 						<div ng-show="document.question40.furtherInfo">
@@ -1354,8 +1346,7 @@
 						<div ng-show="document.question44.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question44.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1434,8 +1425,7 @@
 						<div ng-show="document.question47.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question47.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1519,8 +1509,7 @@
 						<div ng-show="document.question50.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question50.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1597,8 +1586,7 @@
 						<div ng-show="document.question53.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question53.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1763,8 +1751,7 @@
 						<div ng-show="document.question58.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question58.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>
@@ -1936,8 +1923,7 @@
 					<label>63. Please provide information on experiences related to the mobilization of resources in support of the implementation of the Protocol.</label>
 					<div class="km-value">{{document.question62new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</div>
 				</div>
 
@@ -1945,8 +1931,7 @@
 					<label>64. Please provide information on the status of funds mobilized in support of the implementation of the Protocol.</label>
 					<div class="km-value">{{document.question63new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</div>
 				</div>
 
@@ -1983,7 +1968,7 @@
 				</div>
 
 				<div>
-					<label>66. Any other relevant information:</label>
+					<label>66. Tout autre renseignement pertinent&nbsp;:</label>
 					<ul>
 						<div class="km-value">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
@@ -2001,8 +1986,7 @@
 						<div ng-show="document.question64.relevantDocuments">
 		                	<label>Any other relevant documents</label>
 							<div class="km-value" ng-repeat="item in document.question64.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
-								<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
 						</div>
 					</ul>

@@ -24,7 +24,7 @@
 			</div>
 			<div class="panel-body">
 				<div ng-show="document.title">
-					<label>Title of this national report</label>
+					<label>此国家报告的标题</label>
 					<div class="km-value">
 						<strong>{{document.title | lstring:locale}}</strong>
 					</div>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="panel-body">
 		  		<div>
-					<label>3.Has your country made the information available to the ABS Clearing-House as provided in Article 14.2?</label>
+					<label>3.贵国是否已按照第14.2条规定向获取和惠益分享信息交换所提供此等信息？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question3.answer)}}</div>
 		               	<div  ng-show="document.question3.challengesInfo" >
@@ -66,7 +66,7 @@
 				</div>
 
 				<div>
-					<label>4.Has your country taken legislative, administrative and policy measures on ABS?</label>
+					<label>4.贵国是否已采取关于获取和惠益分享的立法、行政和政策措施？</label>
 					<ul>
 						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question4.answer)}}</div>
 						<div ng-show="document.question4.additionalInfo">
@@ -92,7 +92,7 @@
 				</div>
 
 				<div>
-					<label>5.Has your country designated a national focal point as provided in Article 13?</label>
+					<label>5.贵国是否已按照第13条规定指定一个国家联络点？</label>
 					<ul>
 						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question5.answer)}}</div>
 						<div ng-show="document.question5.challengesInfo || document.question3.answer">
@@ -118,7 +118,7 @@
 				</div>
 
 				<div>
-					<label>6.Has your country designated one or more competent national authorities as provided in Article 13?</label>
+					<label>6.贵国是否已按照第13条规定指定一个或多个国家主管部门？</label>
 					<ul>
 						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question6.answer)}}</div>
 						<div ng-show="document.question6.challengesInfo || document.question3.answer">
@@ -144,7 +144,7 @@
 				</div>
 
 				<div>
-					<label>7.Has your country made available to the ABS Clearing-House permits or their equivalent issued at the time of access as evidence of the decision to grant prior informed consent (PIC) and of the establishment of mutually agreed terms (MAT)?</label>
+					<label>7.贵国是否已向获取和惠益分享信息交换所提供获取时签发的许可证或同等证照，作为事先知情同意决定和设立共同商定的条件的证据？</label>
 					<ul>
 						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">不适用，因为目前没有获取要求</div>
 						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable) && (!document.question3.answer)">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question7.answer)}}</div>
@@ -171,7 +171,7 @@
 				</div>
 
 				<div>
-					<label>8.Has your country made available to the ABS Clearing-House permits or their equivalent for the constitution of an internationally recognized certificate of compliance in accordance with Article 17.2?</label>
+					<label>8.贵国是否已按照第17.2条规定向获取和惠益分享信息交换所提供许可证或同等证照，作为国际公认的合规证书？</label>
 					<ul>
 						<div class="km-value" ng-show="document.question8.notApplicable">不适用，因为目前没有获取要求</div>
 						<div class="km-value km-pre" ng-show="!document.question8.notApplicable">{{booleanToText(document.question8.answer)}}</div>
@@ -194,7 +194,7 @@
 				</div>
 
 				<div>
-					<label>9.Has your country designated one or more checkpoints as provided in Article 17?</label>
+					<label>9.贵国是否已按照第17条规定指定一个或多个检查点？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question9.answer)}}</div>
 						<div  ng-show="document.question9.challengesInfo">
@@ -239,7 +239,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question10.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question10.relevantDocuments">
 								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -260,7 +260,7 @@
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>11.Is access to genetic resources subject to PIC as provided in Article 6.1?</label>
+							<label>11.遗传资源获取是否按照第6.1条规定获得事先知情同意？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question11.answer)}}</div>
 								<div ng-show="document.question11.challengesInfo">
@@ -286,7 +286,7 @@
 						</div>
 
 						<div>
-							<label>12.Does your country have fair and non-arbitrary rules and procedures on accessing genetic resources as provided in Article 6.3 (b)?</label>
+							<label>12.贵国是否按照第6.3(b)条规定设有关于遗传资源获取的公平、非任意性规则和程序？</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question12.answer)}}</div>
 								<div ng-show="document.question12.furtherInfo">
@@ -308,7 +308,7 @@
 						</div>
 
 						<div>
-							<label>13.Does your country provide information on how to apply for PIC as provided in Article 6.3(c)?</label>
+							<label>13.贵国是否按照第6.3(c)条规定提供关于如何申请事先知情同意的信息？</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question13.answer)}}</div>
 								<div ng-show="document.question13.furtherInfo">
@@ -330,7 +330,7 @@
 						</div>
 
 						<div>
-							<label>14.Does your country provide for a clear and transparent written decision by a competent national authority as provided in Article 6.3 (d)?</label>
+							<label>14.贵国是否按照第6.3(d)条规定由国家主管部门签发明确且透明的书面决定？</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question14.answer)}}</div>
 								<div ng-show="document.question14.furtherInfo">
@@ -352,7 +352,7 @@
 						</div>
 
 						<div>
-							<label>15.Does your country provide for the issuance at the time of access of a permit or its equivalent as provided in Article 6.3 (e)?</label>
+							<label>15.贵国是否按照第6.3(e)条规定在获取时签发许可证或同等证照？</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question15.answer)}}</div>
 								<div ng-show="document.question15.furtherInfo">
@@ -374,7 +374,7 @@
 						</div>
 
 						<div>
-							<label>16.Please provide the number of permits or their equivalents made available through the ABS-Clearing-House since the entry into force of the Protocol for your country.</label>
+							<label>16.请提供自本议定书对贵国生效以来贵国通过获取和惠益分享信息交换所提供的许可证或同等证照的数量。</label>
 							<ul>
 								<div class="km-value">{{document.question11.answer?((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh:&quot;No answer provided&quot;) :&quot;Not applicable&quot;}}</div>
 
@@ -397,7 +397,7 @@
 						</div>
 
 						<div>
-							<label>17.Does your country have rules and procedures for requiring and establishing MAT as provided in Article 6.3 (g)?</label>
+							<label>17.贵国是否按照第6.3(g)条规定设有关于要求设立及如何设立共同商定的条件的规则和程序？</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question17.answer)}}</div>
 								<div ng-show="document.question17.furtherInfo">
@@ -419,7 +419,7 @@
 						</div>
 
 						<div>
-							<label>18.Benefits received since entry into force of the Protocol for your country from the utilization of:</label>
+							<label>18.自本议定书对贵国生效以来贵国从利用遗传资源及相关传统知识中获得的惠益：</label>
 							<ul>
 								<div>
 									<label>遗传资源</label>
@@ -443,7 +443,7 @@
 									</ul>
 								</div>
 								<div>
-									<label>遗传资源相关传统知识问题</label>
+									<label>Traditional knowledge associated with genetic resources</label>
 									<ul>
 										<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.answer)}}</div>
 										<label>经济惠益</label>
@@ -501,7 +501,7 @@
 									</div>
 								</div>
 								<div ng-show="document.question19.relevantDocuments">
-				                	<label>Any other relevant documents</label>
+				                	<label>任何其他相关文件</label>
 									<div class="km-value" ng-repeat="item in document.question19.relevantDocuments">
 										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
@@ -518,7 +518,7 @@
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>20.Has your country taken legislative, administrative or policy measures to implement Article 5.1 that provides that benefits arising from the utilization of genetic resources as well as subsequent applications and commercialization are shared with the Party providing such resources that is the country of origin of such resources or a Party that has acquired the genetic resources in accordance with the Convention as provided in Article 5.3?</label>
+							<label>20.第5.1条规定，对遗传资源的利用及随后的应用和商业化所产生的惠益应与提供该等资源的缔约方（即该等资源的原产国或已按照公约及第5.3条规定获取该等遗传资源的缔约方）分享。贵国是否已采取立法、行政或政策措施来落实此项规定？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question20.answer)}}</div>
 								<div ng-show="document.question20.furtherInfo">
@@ -540,7 +540,7 @@
 						</div>
 
 						<div>
-							<label>21.Has your country taken legislative, administrative or policy measures with the aim of ensuring that the benefits from the utilization of genetic resources held by indigenous and local communities, in accordance with domestic legislation regarding the established rights of these indigenous and local communities over these genetic resources, are shared with the indigenous and local communities concerned as provided in Article 5.2?</label>
+							<label>21.为确保按照第5.2条规定以及贵国认可土著和地方社区对其所持有遗传资源之权利的法律法规，与持有遗传资源的土著和地方社区分享利用其持有的遗传资源所产生的惠益，贵国是否已采取立法、行政或政策措施？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question21.answer)}}</div>
 								<div ng-show="document.question21.furtherInfo">
@@ -562,7 +562,7 @@
 						</div>
 
 						<div>
-							<label>22.Has your country taken legislative, administrative or policy measures in order that benefits arising from the utilization of traditional knowledge associated with genetic resources are shared with indigenous and local communities holding such knowledge as provided in Article 5.5?</label>
+							<label>22.为确保按照第5.5条规定与持有遗传资源相关传统知识的土著和地方社区分享利用其持有的遗传资源相关传统知识所产生的惠益，贵国是否已采取立法、行政或政策措施？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question22.answer)}}</div>
 								<div ng-show="document.question22.furtherInfo">
@@ -603,7 +603,7 @@
 									</div>
 								</div>
 								<div ng-show="document.question23.relevantDocuments">
-				                	<label>Any other relevant documents</label>
+				                	<label>任何其他相关文件</label>
 									<div class="km-value" ng-repeat="item in document.question23.relevantDocuments">
 										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
@@ -620,11 +620,11 @@
 					<div class="panel-body">
 
 						<div>
-							<label>24.Has your country taken appropriate, effective and proportionate legislative, administrative or policy measures to provide that genetic resources utilized within your jurisdiction have been accessed in accordance with PIC and that MAT have been established as required by the domestic ABS legislation or regulatory requirements of the other Party as provided in Article 15.1?</label>
+							<label>24.为确保按照第15.1条规定在获取贵国管辖范围内利用的遗传资源时获得事先知情同意，并按照另一缔约方的获取和惠益分享国家立法或法规要求设立共同商定的条件，贵国是否已采取适当、有效、相称的立法、行政或政策措施？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question24.answer)}}</div>
 								<div ng-show="document.question24.answer">
-									<label>Please indicate whether your country has taken measures to address situations of non-compliance with those measures as provided in Article 15.2?</label>
+									<label>请说明贵国是否已按照第15.2条规定采取措施解决不遵循上述措施的情况？</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.measures.answer)}}</div>
 										<div ng-show="document.question24.measures.furtherInfo">
@@ -637,7 +637,7 @@
 										</div>
 									</ul>
 
-									<label>Have there been specific cases in which your country cooperated with other Parties in cases of alleged violation of ABS measures as provided in Article 15.3?</label>
+									<label>贵国是否有在被指违反第15.3条规定的获取和惠益分享措施的情况下配合其他缔约方的具体案例？</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
@@ -666,16 +666,16 @@
 						</div>
 
 						<div>
-							<label>25.Has your country taken appropriate, effective and proportionate legislative, administrative or policy measures to provide that traditional knowledge associated with genetic resources utilized within your jurisdiction has been accessed in accordance with PIC or approval and involvement of indigenous and local communities and that MAT have been established as required by the domestic ABS legislation or regulatory requirements of the other Party where such indigenous and local communities are located as provided in Article 16.1?</label>
+							<label>25.为确保按照第16.1条规定在获取贵国管辖范围内利用的遗传资源相关传统知识时获得土著和地方社区的事先知情同意或批准及参与，并按照该等土著和地方社区所属另一缔约方的获取和惠益分享国家立法或法规要求设立共同商定的条件，贵国是否已采取适当、有效、相称的立法、行政或政策措施？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question25.answer)}}</div>
 								<div ng-show="document.question25.answer">
-									<label>Please indicate whether your country has taken measures to address situations of non-compliance with those measures as provided in Article 16.2?</label>
+									<label>请说明贵国是否已按照第16.2条规定采取措施解决不遵循上述措施的情况？</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question25.hasMeasures)}}</div>
 									</ul>
 
-									<label>Has your country cooperated in specific cases of alleged violation of ABS measures as provided in Article 16.3?</label>
+									<label>贵国是否有在被指违反第16.3条规定的获取和惠益分享措施的情况下给予配合的具体案例？</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question25.violation.answer)}}</div>
 										<div ng-show="document.question25.violation.furtherInfo">
@@ -703,7 +703,7 @@
 					    </div>
 
 						<div>
-							<label>26.Does your country require users of genetic resources to provide information related to PIC, to the source of the genetic resource, to the establishment of MAT and/or utilization of genetic resources at a designated checkpoint, as appropriate, as provided in Article 17.1 (a)(i) and (ii))?</label>
+							<label>26.贵国是否已按照第17.1(a)(i)及(ii))条规定，要求遗传资源使用者酌情在指定检查点提供关于事先知情同意、遗传资源来源、设立共同商定的条件和/或利用遗传资源的信息？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question26.answer)}}</div>
 								<div ng-show="document.question26.answer">
@@ -712,7 +712,7 @@
 											<label>请提供其他信息</label>
 											<div class="km-value">{{document.question26.additionalInfo | lstring:locale}}</div>
 										</div>
-										<label>Has your country taken measures to address situations of non-compliance?</label>
+										<label>贵国是否已采取措施解决违规情况？</label>
 										<div class="km-value km-pre">{{booleanToText(document.question26.violation.answer)}}</div>
 										<div>
 											<ul>
@@ -743,13 +743,13 @@
 					    </div>
 
 					    <div>
-					    	<label>27.Has your country provided the information referred to in Article 17.1 (a)(i) to relevant national authorities, to the Party providing PIC and to the ABS Clearing-House as provided in Article 17.1 (a)(iii)?</label>
+					    	<label>27.贵国是否已按照第17.1(a)(iii)条规定向相关国家机构、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供第17.1(a)(i)条所规定的信息？</label>
 					    	<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question27.answer)}}</div>
 				                <div ng-show="document.question27.answer">
 				                	<ul>
 					                    <div>
-							            	<label>Has your country made use of the checkpoint communique?</label>
+							            	<label>贵国是否已利用检查点公报？</label>
 							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option :&quot;Not selected&quot;}} </div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
@@ -767,7 +767,7 @@
 				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
-				                	<label>Any other relevant documents</label>
+				                	<label>任何其他相关文件</label>
 									<div class="km-value" ng-repeat="item in document.question27.relevantDocuments">
 										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
@@ -776,7 +776,7 @@
 					    </div>
 
 					    <div>
-							<label>28.Has your country taken measures to encourage users and providers to include provisions in MAT to share information on the implementation of such terms as provided in Article 17.1(b)?</label>
+							<label>28.贵国是否已按照第17.1(b)条规定采取措施鼓励使用者和提供者在共同商定的条件中列明分享实施该等条件之相关信息的规定？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question28.answer)}}</div>
 								<div ng-show="document.question28.furtherInfo">
@@ -798,7 +798,7 @@
 						</div>
 
 					    <div>
-							<label>29.Is your country encouraging the use of cost-effective communication tools and systems as provided in Article 17.1 (c)?</label>
+							<label>29.贵国是否正按照第17.1(c)条规定鼓励使用经济高效的交流工具和系统？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question29.answer)}}</div>
 								<div ng-show="document.question29.additionalInfo">
@@ -843,7 +843,7 @@
 									</div>
 								</div>
 								<div ng-show="document.question30.relevantDocuments">
-				                	<label>Any other relevant documents</label>
+				                	<label>任何其他相关文件</label>
 									<div class="km-value" ng-repeat="item in document.question30.relevantDocuments">
 										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
@@ -859,7 +859,7 @@
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>31.Is your country encouraging the inclusion of provisions in MAT to cover dispute resolution as provided in Article 18.1 (a) (b) and (c)?</label>
+							<label>31.贵国是否正按照第18.1(a)、(b)及(c)条规定鼓励在共同商定的条件中列明涉及争端解决的规定？</label>
 							<ul>
 								<div class="km-value" ng-show="document.question31.notApplicable">不适用，因为目前没有获取要求</div>
 								<div class="km-value km-pre" ng-show="!document.question31.notApplicable">{{booleanToText(document.question31.answer)}}</div>
@@ -882,7 +882,7 @@
 						</div>
 
 					    <div>
-							<label>32.Does your country ensure that opportunity to seek recourse is available under your legal systems in cases of disputes arising from MAT as provided in Article 18.2?</label>
+							<label>32.贵国是否正按照第18.2条规定确保在就共同商定的条件发生争端时有机会依照贵国法律制度进行追索？</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question32.answer)}}</div>
 								<div ng-show="document.question32.furtherInfo">
@@ -904,15 +904,15 @@
 						</div>
 
 						<div>
-							<label>33.Has your country taken measures regarding the following points as provided in Article 18.3?</label>
+							<label>33.贵国是否已按照第18.3条规定在以下方面采取措施？</label>
 							<ul>
-								<label>Access to justice?</label>
+								<label>司法援助？</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.justice.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
 									<label>请提供其他信息</label>
 									<div class="km-value">{{document.question33.justice.furtherInfo | lstring:locale}}</div>
 								</div>
-								<label>Utilization of mechanisms regarding mutual recognition and enforcement of foreign judgements and arbitral awards?</label>
+								<label>利用关于相互承认和执行外国判决和仲裁裁决的机制？</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.mechanisms.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
 									<label>请提供其他信息</label>
@@ -952,7 +952,7 @@
 									</div>
 								</div>
 								<div ng-show="document.question34.relevantDocuments">
-				                	<label>Any other relevant documents</label>
+				                	<label>任何其他相关文件</label>
 									<div class="km-value" ng-repeat="item in document.question34.relevantDocuments">
 										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 									</div>
@@ -971,9 +971,9 @@
 			<div class="panel-body">
 
 				<div>
-					<label>35.In the development and implementation of ABS legislation or regulatory requirements has your country:</label>
+					<label>35.在制定和实施获取和惠益分享立法或法规要求方面，贵国：</label>
 					<ul>
-						<label>Created conditions to promote and encourage research which contributes to the conservation and sustainable use of biodiversity including through simplified measures on access for non-commercial research purposes, taking into account the need to address a change of intent for such research as provided in Article 8(a)?</label>
+						<label>是否已按照第8(a)条规定创造条件以促进和鼓励有助于保护和可持续利用生物多样性的研究，包括对出于非商业研究目的之获取实行精简措施，同时考虑有必要解决该等研究改变目的之问题？</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.research.answer)}}</div>
 						<div ng-show="document.question35.research.furtherInfo">
 							<label>请提供其他信息</label>
@@ -990,7 +990,7 @@
 
 							</div>
 						</div>
-						<label>Paid due regard to cases of present or imminent emergencies that threaten or damage human, animal or plant health as provided in Article 8(b)?</label>
+						<label>是否已按照第8(b)条规定充分重视目前面临或即将发生的威胁或损害人类、动物或植物健康的紧急情况？</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.emergencies.answer)}}</div>
 						<div ng-show="document.question35.emergencies.furtherInfo">
 							<label>请提供其他信息</label>
@@ -1007,7 +1007,7 @@
 
 							</div>
 						</div>
-						<label>Taken into consideration the need for expeditious access to genetic resources and expeditious fair and equitable sharing of benefits arising out of the use of such genetic resources, including access to affordable treatments by those in need, especially, in developing countries as provided in Article 8(b)?</label>
+						<label>是否已按照第8(b)条规定考虑有必要迅速有效地获取遗传资源并迅速有效地公平合理分享利用该等遗传资源所产生的惠益，包括有需要者获得可负担的治疗（尤其是在发展中国家）？</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.access.answer)}}</div>
 						<div ng-show="document.question35.access.furtherInfo">
 							<label>请提供其他信息</label>
@@ -1024,7 +1024,7 @@
 
 							</div>
 						</div>
-						<label>Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)? </label>
+						<label>是否已按照第8 (c)条规定考虑粮食和农业遗传资源对于粮食安全的重要性和特殊作用？ </label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
 							<label>请提供其他信息</label>
@@ -1064,7 +1064,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question36.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question36.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1080,7 +1080,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>37.Does your country have indigenous and local communities?</label>
+					<label>37.贵国是否有土著和地方社区？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question37.answer)}}</div>
 						<div ng-show="document.question37.furtherInfo">
@@ -1102,7 +1102,7 @@
 				</div>
 
 				<div>
-					<label>38.Do indigenous and local communities have the established right to grant access to genetic resources according to your domestic law?(Article 6.2)</label>
+					<label>38.贵国法律是否认可土著和地方社区拥有批准获取遗传资源的权利？（第6.2条）</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question38.answer)}}</div>
 						<div style="margin: 0 0 0 20px;" ng-show="document.question38.answer">
@@ -1126,7 +1126,7 @@
 								</div>
 
 								<div>
-									<label>Does your country have measures in place with the aim of ensuring that the prior informed consent or approval and involvement of indigenous and local communities is obtained as provided in Article 6.2?</label>
+									<label>为确保按照第6.2条规定获得土著和地方社区的事先知情同意或批准和参与，贵国这方面的措施是否已到位？</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.measures.answer)}}</div>
 									<div ng-show="document.question38.measures.furtherInfo">
 										<label>请提供其他信息</label>
@@ -1135,7 +1135,7 @@
 								</div>
 
 								<div>
-									<label>Has your country set out criteria and/or process for obtaining prior informed consent or approval and involvement of indigenous and local communities for access to genetic resources in Article 6.3(f)?</label>
+									<label>贵国是否已按照第6.3(f)条规定为获得土著和地方社区的事先知情同意或批准及参与以获取遗传资源设立标准和/或流程？</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.pic.answer)}}</div>
 									<div ng-show="document.question38.pic.furtherInfo">
 										<label>请提供其他信息</label>
@@ -1163,7 +1163,7 @@
 				</div>
 
 				<div>
-					<label>39.In accordance with domestic law has your country taken measures with the aim of ensuring that traditional knowledge associated with genetic resources that is held by indigenous and local communities within your country is accessed with the PIC or approval and involvement of these indigenous and local communities and that MAT have been established as provided in Article 7?</label>
+					<label>39.为确保按照第7条规定在获取贵国境内土著和地方社区所持有的遗传资源相关传统知识时，获得此等土著和地方社区的事先知情同意或批准及参与并设立共同商定的条件，贵国是否已按照国家法律采取措施？</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question39.answer)}}</div>
 						<div ng-show="document.question39.furtherInfo">
@@ -1185,7 +1185,7 @@
 				</div>
 
 				<div>
-					<label>40.In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
+					<label>40.在实施本议定书时，贵国是否正按照国家法律及第12.1条规定考虑关于遗传资源相关传统知识的土著和地方社区习惯法、社区议定书和程序？</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question40.answer)}}</div>
 						<div ng-show="document.question40.furtherInfo">
@@ -1207,7 +1207,7 @@
 				</div>
 
 				<div>
-					<label>41.Has your country established mechanisms to inform potential users of traditional knowledge associated with genetic resources about their obligations as provided in Article 12.2?</label>
+					<label>41.贵国是否已按照第12.2条规定建立让遗传资源相关传统知识的潜在使用者了解其义务的机制？</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question41.answer)}}</div>
 						<div ng-show="document.question41.furtherInfo">
@@ -1229,7 +1229,7 @@
 				</div>
 
 				<div>
-					<label>42.Is your country supporting the development by indigenous and local communities of the following tools as provided in Article 12.3?</label>
+					<label>42.贵国是否正按照第12.3条规定支持土著和地方社区制定以下工具？</label>
 					<ul>
 						<div class="km-value km-pre" ng-show="!document.question37.answer">{{conditionalBooleanToText(!document.question37.answer,document.question42.answer)}}</div>
 
@@ -1302,7 +1302,7 @@
 				</div>
 
 				<div>
-					<label>43.Has your country endeavoured not to restrict the customary use and exchange of genetic resources and associated traditional knowledge within and among indigenous and local communities as provided in Article 12.4?</label>
+					<label>43.贵国是否已按照第12.4条规定尽力不限制土著和地方社区内部以及土著和地方社区之间对遗传资源及相关传统知识的习惯性利用和交换？</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question43.answer)}}</div>
 						<div ng-show="document.question43.furtherInfo">
@@ -1344,7 +1344,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question44.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question44.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1361,7 +1361,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>45.Is your country encouraging users and providers to direct benefits arising from the utilization of genetic resources towards the conservation of biological diversity and sustainable use of its components as provided in Article 9?</label>
+					<label>45.贵国是否正按照第9条规定鼓励使用者和提供者将利用遗传资源所产生的惠益用于保护生物多样性和可持续利用生物多样性组成部分？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question45.answer)}}</div>
 						<div ng-show="document.question45.furtherInfo">
@@ -1383,7 +1383,7 @@
 				</div>
 
 				<div>
-					<label>46.Please indicate how the implementation of the Nagoya Protocol has contributed to conservation and sustainable use of biodiversity in your country:</label>
+					<label>46.请说明贵国实施名古屋议定书为保护和可持续利用生物多样性做出了哪些贡献：</label>
 					<ul>
 						<div class="km-value" ng-show="!document.question46.furtherInfo && (!document.question46.documentReferenceIDs || documentReferenceIDsEmpty(document.question46.documentReferenceIDs))">No answer provided</div>
 						<div ng-show="document.question46.furtherInfo">
@@ -1423,7 +1423,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question47.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question47.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1439,7 +1439,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>48.Is your country endeavouring to cooperate, with the involvement of indigenous and local communities concerned, with a view to implementing the Protocol in instances where the same genetic resources are found in situ within the territory of more than one Party as provided in Article 11.1?</label>
+					<label>48.为了在多个缔约方的领土范围内就地发现相同遗传资源的情况下实施本议定书，贵国是否正按照第11.1条规定在相关土著和地方社区的参与下全力合作？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question48.answer)}}</div>
 						<div ng-show="document.question48.ilcInfo">
@@ -1465,7 +1465,7 @@
 				</div>
 
 				<div>
-					<label>49.Is your country endeavouring to cooperate with a view to implementing the Protocol in instances where the same traditional knowledge associated with genetic resources is shared by one or more indigenous and local communities in several Parties as provided in Article 11.2?</label>
+					<label>49.为了在多个缔约方的一个或多个土著和地方社区持有相同遗传资源相关传统知识的情况下实施本议定书，贵国是否正按照第11.2条规定全力合作？</label>
 					<ul>
 						<div class="km-value" ng-show="document.question49.notApplicable">不适用，因为我的国家没有土著和地方社区</div>
 						<div class="km-value km-pre" ng-show="!document.question49.notApplicable">{{booleanToText(document.question49.answer)}}</div>
@@ -1507,7 +1507,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question50.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question50.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1523,7 +1523,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>51.Is your country encouraging the development, update and use of model contractual clauses for MAT as provided in Article 19?</label>
+					<label>51.贵国是否正按照第19条规定鼓励制定、更新和使用共同商定的条件的合同条款范文？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question51.answer)}}</div>
 						<div ng-show="document.question51.furtherInfo">
@@ -1544,7 +1544,7 @@
 					</ul>
 				</div>
 				<div>
-					<label>52.Is your country encouraging the development, update and use of codes of conduct, guidelines and best practices or standards as provided in Article 20?</label>
+					<label>52.贵国是否正按照第20条规定鼓励制定、更新和使用行为准则、指导方针和最佳做法或标准？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question52.answer)}}</div>
 						<div ng-show="document.question52.furtherInfo">
@@ -1584,7 +1584,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question53.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question53.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1600,12 +1600,12 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>54.Has your country taken measures to raise awareness of the importance of genetic resources and traditional knowledge associated with genetic resources and related access and benefit-sharing issues as provided in Article 21?</label>
+					<label>54.贵国是否已按照第21条规定采取措施提高对遗传资源和相关传统知识及相关获取和惠益分享问题重要性的意识？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question54.answer)}}</div>
 						<div style="margin: 0 0 0 20px;" ng-show="document.question54.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>Has your country taken measures to implement the awareness-raising strategy for the Nagoya Protocol on ABS?</label>
+								<label>贵国是否已采取措施实施名古屋获取和惠益分享议定书意识培养战略？</label>
 								<div class="km-value km-pre">{{document.question54.measures.answer | yesno}}</div>
 								<div ng-show="document.question54.measures.furtherInfo">
 									<label>Please provide a summary of the measures taken</label>
@@ -1643,12 +1643,12 @@
 				</div>
 
 				<div>
-					<label>55.Has your country taken measures to build and develop capacity and strengthening of human resources and institutional capacities to effectively implement the Protocol as provided in Article 22?</label>
+					<label>55.贵国是否已按照第22条规定采取措施建设、培养和加强人力资源与机构的能力以有效实施本议定书？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question55.answer)}}</div>
 						<div style="margin: 0 0 10px 20px;" ng-show="document.question55.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>Has your country taken measures to implement the strategic framework for capacity-building and development to support effective implementation of the Nagoya Protocol on ABS? </label>
+								<label>贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？ </label>
 								<div class="km-value km-pre">{{document.question55.measures.answer | yesno}}</div>
 								<div ng-show="document.question55.measures.furtherInfo">
 									<label>Please provide a summary of the measures taken</label>
@@ -1686,7 +1686,7 @@
 				</div>
 
 				<div>
-					<label>56.Has your country received external support for building and developing capacity for the implementation of the Nagoya Protocol?  </label>
+					<label>56.在名古屋议定书实施能力建设和培养方面，贵国是否已获得外部支持？  </label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
@@ -1708,7 +1708,7 @@
 				</div>
 
 				<div>
-					<label>57.Has your country provided external support for building and developing capacity for the implementation of the Nagoya Protocol? </label>
+					<label>57.在名古屋议定书实施能力建设和培养方面，贵国是否已对外提供支持？ </label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
@@ -1749,7 +1749,7 @@
 							</div>
 						</div>
 						<div ng-show="document.question58.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question58.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>
@@ -1766,7 +1766,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>59.Is your country collaborating and cooperating in technical and scientific research and development programmes as a means to achieve the objective of the Protocol as provided in Article 23?</label>
+					<label>59.贵国是否正按照第23条规定就技术与科学研究和开发计划进行协作与合作，以此作为实现本议定书目标的方式之一？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question59.answer)}}</div>
 						<div ng-show="document.question59.additionalInfo">
@@ -1799,7 +1799,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>60.Please provide a summary of the main difficulties and challenges encountered for becoming a Party to the Nagoya Protocol.</label>
+					<label>60.请提供成为名古屋议定书缔约方所面临主要困难和挑战的摘要。</label>
 					<ul>
 						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question60.challengesInfo">
@@ -1820,7 +1820,7 @@
 				</div>
 
 				<div>
-					<label>61.Has your country established a mechanism for budgetary allocations of funds for the implementation of the Nagoya Protocol?</label>
+					<label>61.贵国是否已建立名古屋议定书实施资金的预算分配机制？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question61.answer)}}</div>
 						<div ng-show="document.question61.additionalInfo">
@@ -1920,7 +1920,7 @@
 				</div>
 
 				<div>
-					<label>63.Please provide information on experiences related to the mobilization of resources in support of the implementation of the Protocol.</label>
+					<label>63.请提供为支持本议定书实施进行资源动员的经验。</label>
 					<div class="km-value">{{document.question62new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments">
 						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
@@ -1928,7 +1928,7 @@
 				</div>
 
 				<div>
-					<label>64.Please provide information on the status of funds mobilized in support of the implementation of the Protocol.</label>
+					<label>64.请提供为支持本议定书实施进行资金动员的情况。</label>
 					<div class="km-value">{{document.question63new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments">
 						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
@@ -1936,12 +1936,12 @@
 				</div>
 
 				<div>
-					<label>65.Does your country have specific staff to administer functions directly related to the implementation of the Nagoya Protocol?</label>
+					<label>65.贵国是否由特定工作人员管理与名古屋议定书直接相关的各项职能？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question63.answer)}}</div>
                         <div ng-show="document.question63.answer">
                         	<ul>
-                        		<label>Please indicate how many</label><br />
+                        		<label>请说明此等工作人员的数量</label><br />
 								<div class="km-value km-pre">{{document.question63.numberOfStaff}}</div>
                         	</ul>
                         </div>
@@ -1968,7 +1968,7 @@
 				</div>
 
 				<div>
-					<label>66.Any other relevant information:</label>
+					<label>66.任何其他相关信息：</label>
 					<ul>
 						<div class="km-value">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
@@ -1984,7 +1984,7 @@
 						</div>
 
 						<div ng-show="document.question64.relevantDocuments">
-		                	<label>Any other relevant documents</label>
+		                	<label>任何其他相关文件</label>
 							<div class="km-value" ng-repeat="item in document.question64.relevantDocuments">
 								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 							</div>

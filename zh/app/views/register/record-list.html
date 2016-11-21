@@ -174,7 +174,7 @@
                         <div ng-show="isDraft(recordToDelete)" class="well" style="font-size:14px;">
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;color:#999;border-bottom:1px solid #ddd;margin-bottom:10px;">DRAFT RECORD</div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Title:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.workingDocumentTitle|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">称谓：</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.workingDocumentTitle|lstring}}</div>
                               </div>
                              <div class="row">    
                                 <div class="col-xs-2" class="small color-litegrey">Unique ID:</div> <div class="col-xs-10" style="font-weight:bold"> <i>DRAFT</i></div>
@@ -191,13 +191,11 @@
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #ddd;margin-bottom:10px;" class="color-green">PUBLISHED RECORD</div>
                              <div class="row"  ng-show="isIRCC" style="margin-bottom:10px;">     
                                  <div class="col-xs-12 bold">
-                                    Published Internationally Recognized Certificates of Compliance (IRCC) records can only be revoked.
-                                    A revoked IRCC will no longer be valid and will remain published in the ABSCH for traceability and transparency. 
-                                    Revoked IRCCs will be clearly marked as revoked in the search and display of the record.
+                                    Published Internationally Recognized Certificates of Compliance (IRCC) records can only be revoked.A revoked IRCC will no longer be valid and will remain published in the ABSCH for traceability and transparency.Revoked IRCCs will be clearly marked as revoked in the search and display of the record.
                                 </div>
                               </div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Title:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.title|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">称谓：</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.title|lstring}}</div>
                               </div>
                              <div class="row">    
                                 <div class="col-xs-2" class="small color-litegrey">Unique ID:</div> <div class="col-xs-10" style="font-weight:bold"> <a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
@@ -210,7 +208,7 @@
                                    <div class="col-xs-12">
                                         <div km-form-languages ng-model="recordToDelete.document.header.languages" class="pull-right"></div><br>
                                         <div class="km-control-group">
-                                            <div class="km-control-group" name="amendmentDescription" required caption="Provide a summary of the reason for revoking this IRCC">
+                                            <div class="km-control-group" name="amendmentDescription" required caption="简要说明撤销此 IRCC 的原因">
                                             <div km-textbox-ml ng-model="recordToDelete.document.amendmentDescription" rows="3" placeholder="" locales="recordToDelete.document.header.languages" />
                                             </div>
                                         </div>
@@ -222,9 +220,8 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: Any pending draft will also be deleted">
-                                <span ng-if="!security.canDelete">Request deletion of this record </span> 
-                                 <span ng-if="security.canDelete"> Delete the record </span>
+                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: 所有待定草案都会被删除">
+                                <span ng-if="!security.canDelete">Request deletion of this record </span> <span ng-if="security.canDelete"> Delete the record </span>
                                 </button> 
                                 </div>
                             </div>
@@ -232,7 +229,7 @@
 
                     </div>
                     <div class="modal-footer" >
-                        <button type="button" class="btn btn-default" ng-click="closeDialog()">Cancel</button>
+                        <button type="button" class="btn btn-default" ng-click="closeDialog()">取消</button>
                     </div>
             </script>
 
@@ -244,24 +241,25 @@
                         <p>Are you sure you want to duplicate this record, this will create a new draft record with same details?</p>
                     </div>
                     <div class="modal-footer" style="margin-top:0">
-                        <button ng-disabled="loading" type="button" class="btn btn-default" ng-click="closeDialog('duplicateRecordModal')">Cancel</button>
-                        <button ng-disabled="loading" type="button" ng-click="duplicate(recordToDuplicate)" class="btn btn-primary pull-left">Duplicate</button>
+                        <button ng-disabled="loading" type="button" class="btn btn-default" ng-click="closeDialog('duplicateRecordModal')">取消</button>
+                        <button ng-disabled="loading" type="button" ng-click="duplicate(recordToDuplicate)" class="btn btn-primary pull-left">复制</button>
                     </div>
             </script>
 
             <script type="text/ng-template" trados-translation="true" id="recallWorkflowRequestModal">
                     <div class="modal-header">
-                        <h4>Cancel publishing request<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
+                        <h4>取消发布请求<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
                     </div>
                     <div class="modal-body">
                         <h2>Are you sure you want to cancel this publishing request?</h2>
                     </div>
                     <div class="modal-footer" style="margin-top:0">
                         <button type="button" class="btn btn-default" ng-click="closeDialog()">Do not cancel the request</button>
-                        <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary pull-left">Cancel request</button>
+                        <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary pull-left">取消请求</button>
 
                     </div>
-            </script> <script type="text/ng-template" trados-translation="true" id="errorModal">
+            </script>
+            <script type="text/ng-template" trados-translation="true" id="errorModal">
                 <div class="modal-header">
                    <h4>Error</h4>
                 </div>

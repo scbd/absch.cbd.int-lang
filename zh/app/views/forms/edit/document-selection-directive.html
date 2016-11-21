@@ -23,12 +23,13 @@
             </table>
         </div>
     </div>
-    <!-- Modal --> <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
+    <!-- Modal -->
+    <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
                <h3>Please select from published record(s) below:</h3>
                 <div>
-                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filter by record type..."></div>
+                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="根据记录类型进行过滤..."></div>
                 </div>
             </div>
             <div class="modal-body">
@@ -43,14 +44,13 @@
                         </div>
 
                     </div>
-                    <div ng-show="isLoading"> loading...</div>
+                    <div ng-show="isLoading"> 正在加载...</div>
                 </div>
             </div>
             <div class="modal-footer bg-grey">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a>
-                        <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Close</a>
+                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a> <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Close</a>
                     </div>
                 </div>
             </div>

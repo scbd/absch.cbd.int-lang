@@ -78,7 +78,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning bold pull-left" data-dismiss="modal" ng-disabled="rejectForm.reason.$error.required" ng-click="updateActivity({ action : 'reject', reason: rejectReason })"><i class="fa fa-times-circle"></i> Reject</button>
-                <button type="button" class="btn btn-default" ng-click="closeDialog();">Cancel</button>
+                <button type="button" class="btn btn-default" ng-click="closeDialog();">取消</button>
             </div>
         </form>
     </script>
@@ -86,14 +86,14 @@
     <script type="text/ng-template" trados-translation="true" id="cancelWorkflowRequestModalTemplate">
         <div id="cancelWorkflowRequestModal">
             <div class="modal-header">
-                <h4>Cancel publishing request<i ng-show="loading==true" class="fa fa-spinner fa-spin" style="display:none"></i></h4>
+                <h4>取消发布请求<i ng-show="loading==true" class="fa fa-spinner fa-spin" style="display:none"></i></h4>
             </div>
             <div class="modal-body bg-white">
                 <h2>Are you sure you want to cancel this publishing request?</h2>
             </div>
             <div class="modal-footer" style="margin-top:0">
-                 <button ng-disabled="loading==true" type="button" ng-click="cancelWorkflowRequest(workflow)" class="btn bold btn-primary">Yes</button>
-                <button type="button" class="btn btn-default" ng-click="closeDialog();">Close</button>
+                 <button ng-disabled="loading==true" type="button" ng-click="cancelWorkflowRequest(workflow)" class="btn bold btn-primary">是</button>
+                <button type="button" class="btn btn-default" ng-click="closeDialog();">关闭</button>
             </div>
         </div>
     </script>
@@ -113,7 +113,7 @@
                             <span class="hidden-xs">Delete record</span>
                         </button>
             <button type="button" class="btn btn-default" ng-click="closeConfirmation()" ng-disabled="isUpdating">
-                            <span class="hidden-xs">Close</span>
+                            <span class="hidden-xs">关闭</span>
                         </button>
         </div>
         <!--</div> -->

@@ -36,8 +36,7 @@
                     </button>
             </div>-->
             <div class="form-group">
-                    Download Format :
-                    <span class="radio" style="display: initial;">
+                    Download Format : <span class="radio" style="display: initial;">
                         <label class="radio-inline"><input type="radio" name="downloadFormatOption" value="xls" ng-model="downloadFormat">XLS</label>                   
                         <!--<label class="radio-inline"><input type="radio" name="downloadFormatOption" value="xlsx" ng-model="downloadFormat">XLSX</label>                   -->
                         <label class="radio-inline"><input type="radio" name="downloadFormatOption" value="csv" ng-model="downloadFormat">CSV</label>
@@ -49,8 +48,8 @@
                         <tr>
                             <th>Record Type</th>
                             <th>UniqueIdentifier</th>
-                            <th>Government</th>
-                            <th>Title </th>
+                            <th>Gouvernements</th>
+                            <th>Titre </th>
                             <th>Meta 1 </th>
                             <th>Meta 2</th>
                             <th>Meta 3 </th>
@@ -71,9 +70,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Cancel</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Annuler</button>
             <button type="button" class="btn btn-primary" aria-label="Close" ng-click="downloadData()"  ng-disabled="loading" id="downloadDataFile">
-                <i class="fa fa-spin fa-spinner" ng-if="loading" /> Download
+                <i class="fa fa-spin fa-spinner" ng-if="loading" /> Télécharger
             </button>            
         </div>
     </script>
