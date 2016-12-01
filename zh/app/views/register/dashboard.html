@@ -8,12 +8,12 @@
             border: 1px solid #ccc;
             border: 1px solid rgba(0, 0, 0, .2);
             }
-            .popover.left > .arrow {            
-            border-left-color: #999;
-            border-left-color: rgba(0, 0, 0, .25);
+            .popover.right > .arrow {            
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
             }
-            .popover.left > .arrow:after {            
-            border-left-color: #d9534f;
+            .popover.right > .arrow:after {            
+            border-right-color: #d9534f;
             }
     </style>
     <span register-top-menu></span>
@@ -40,8 +40,18 @@
         <div class="register-content-content">
 
             <div class="row well" style="margin:0 0 30px 0">
+
+               
+
                 <h4 style="padding:3px;margin-top:0;border-bottom:1px solid #ddd;">&nbsp; 欢迎<span class="color-black bold">{{user.name}}</span></h4>
-                <div class="col-md-6 cp-header">
+                <div class="col-md-2">
+                     <div class="user-image">
+                        <img gravatar-src="user.email" gravatar-size="80" class="img-circle"
+                    alt="{{user.name}}" title="{{user.name}}">
+                    </div>
+                </div>
+               
+                <div class="col-md-5 cp-header">
                     <table>
                         <tr>
                             <td>
@@ -64,24 +74,24 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-md-6 cp-header">
+                <div class="col-md-5 cp-header">
                     <table>
                         <td>
                             <label>角色：</label>
                         </td>
                         <td>
-                            <span class="comma" ng-if="roles.isAbsNationalFocalPoint"><strong>ABS National Focal Point </strong> <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point is responsible for liason with the Secretariat as well as to designate themselves or another user as the Publishing Authority (PA) for the ABSCH." data-container="body"></span></span>
+                            <span class="comma" ng-if="roles.isAbsNationalFocalPoint"><strong>获取和惠益分享国家联络点</strong> <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point is responsible for liason with the Secretariat as well as to designate themselves or another user as the Publishing Authority (PA) for the ABSCH." data-container="body"></span></span>
 
-                            <span class="comma" ng-if="roles.isAbsPublishingAuthority"><strong>National Publishing Authority (PA)</strong> <span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip" data-html="true" data-title="Each country can designate only one PA for the ABSCH. The PA's job is to make information publically available on the ABSCH by verifing and publishing records.
+                            <span class="comma" ng-if="roles.isAbsPublishingAuthority"><strong>国家发布机构（PA）</strong> <span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip" data-html="true" data-title="Each country can designate only one PA for the ABSCH. The PA's job is to make information publically available on the ABSCH by verifing and publishing records.
                                 PAs can also designate National Authorized Users (NAUs) who are allowed to submit draft records for their country." data-container="body"></span></span>
 
-                            <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser"><strong>National Authorized User (NAU)</strong> <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point has the responsiblity to designate themselves or another user as the Publishing Authority (PA) as well as be the liason with the Secretariat." data-container="body"></span></span>
+                            <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser"><strong>国家授权用户（NAU）</strong> <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point has the responsiblity to designate themselves or another user as the Publishing Authority (PA) as well as be the liason with the Secretariat." data-container="body"></span></span>
 
-                            <span class="comma" ng-if="roles.isUser"><strong>Regular User</strong> <span  class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="Regular users can create draft reference records and request their publication from the SCBD." data-container="body"></span></span>
+                            <span class="comma" ng-if="roles.isUser"><strong>普通用户</strong> <span  class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="Regular users can create draft reference records and request their publication from the SCBD." data-container="body"></span></span>
 
-                            <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">ABSCH Admin</strong></span>
+                            <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">获取和惠益分享信息交换所管理员</strong></span>
 
-                            <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">Admin</strong></span>
+                            <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">管理员</strong></span>
 
                         </td>
                         </tr>
@@ -96,12 +106,7 @@
                                 <label>更新密码：</label>
                             </td>
                             <td><a translation-url  href="https://accounts.cbd.int/password" target="_new"><strong>accounts.cbd.int/password</strong></a></td>
-                        </tr>
-                        <tr><td></td>
-                            <td style="margin-top:8px">
-                                <div id="mySettingsPop"  data-toggle="popover" data-trigger="focus" data-placement="left" data-content="New">                         
-                                <i class="fa fa-cog" /> <a  translation-url  href="/register/user-preferences" ><strong>My Settings</strong></a></div>      
-                            </td>
+                      
                         </tr>
                     </table>
                 </div>

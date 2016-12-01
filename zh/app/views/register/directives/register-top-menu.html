@@ -44,6 +44,7 @@
             <li> <a translation-url  href="/register/dashboard" ng-class="{'tabactivated':path.indexOf('dashboard') > 0}"> 仪表板 </a> </li>
             <li> <a translation-url  href="/register/notifications" ng-class="{'tabactivated':path.indexOf('notifications') > 0}"> 请求和通知 </a></li>
             <li ng-if="user.government || roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  ng-class="{'tabactivated':path.indexOf('national-users')>0}" href="/register/national-users"> 用户管理</a> </li>
+            <li> <a translation-url  href="/register/user-preferences" ng-class="{'tabactivated':path.indexOf('user-preferences') > 0}"> Preferences  <span class="label label-danger">New</span> </a> </li>
             <li ng-if="roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  href="/register/admin" class="bg-pink linkDark"><span class="color-white "><span class="hidden-xs hidden-sm">ABSCH</span> 管理</a></span>
             </li>
         </ul>
