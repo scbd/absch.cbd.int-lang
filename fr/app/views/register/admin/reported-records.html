@@ -35,14 +35,12 @@
                             <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span>
                         </div>
                         <div class="col-xs-4">
-                            <span ng-if="record.incorrect">incorrect or inappropriate |</span>
-                            <span ng-if="record.broken">broken link or outdated information |</span>
-                            <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
+                            <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
                         </div>
                         <div class="col-xs-2">
                             <!--<input type="button" class="btn btn-primary" value="History" ng-click="viewHistory($event, record)" />-->
                             <input type="button" class="btn btn-primary" value="Add Comments" ng-click="addComments($event, record)" />
-                            <input type="button" class="btn btn-warning" value="Delete" ng-click="delete($event, record)" />
+                            <input type="button" class="btn btn-warning" value="Supprimer" ng-click="delete($event, record)" />
                         </div>
                     </div>
                     <div ng-if="record.history">
@@ -51,7 +49,7 @@
                             <thead class="row " style="padding:10px;border-bottom:1px solid white;">                
                                 <td>No.</td>
                                 <td>Date</td>
-                                <td>Status</td>
+                                <td>Statut</td>
                                 <td>comments</td>
                             </thead>
                              <tbody class="row table-striped" style="padding:10px;border-bottom:1px solid white;"
@@ -84,7 +82,7 @@
 
         <div class="modal-body">
             <div class="form-group row">
-                <label for="example-text-input" class="col-xs-2 col-form-label">Status</label>
+                <label for="example-text-input" class="col-xs-2 col-form-label">Statut</label>
                 <div class="col-xs-10">
                     <select class="form-control" style="width:10%" required name="status" ng-model="record.status">
                         <option value="Read">Read</option>
@@ -94,7 +92,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-xs-2 col-form-label">Comments</label>
+                <label class="col-xs-2 col-form-label">Commentaires</label>
                 <div class="col-xs-10">
                     <textarea rows="3" class="form-control"  id="comments" ng-model="record.comments"/>
                 </div>
@@ -102,8 +100,8 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Cancel</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save()" ng-disabled="loading">Submit</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Annuler</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save()" ng-disabled="loading">Soumettre</button>
         </div>
     </script>
 
@@ -126,15 +124,13 @@
                     Reported On : <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span>
                 </div>
                 <div class="col-xs-12 col-form-label">
-                   Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span>
-                    <span ng-if="record.broken">broken link or outdated information |</span>
-                    <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
+                   Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
                 </div>
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">No</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Non</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Oui</button>
         </div>
     </script>
 

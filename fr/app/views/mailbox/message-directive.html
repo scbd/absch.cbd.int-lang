@@ -10,11 +10,11 @@
        <div class="box-body no-padding">
          <div class="mailbox-read-info">
            <h3>{{mail.data.subject}}</h3>
-           <h5>From: {{mail.createdBy_info.firstName + ' ' + mail.createdBy_info.lastName}} &lt;{{mail.createdBy_info.email}}&gt; <span class="mailbox-read-time pull-right">{{mail.createdOn|formatDate}}</span></h5>
+           <h5>De : {{mail.createdBy_info.firstName + ' ' + mail.createdBy_info.lastName}} &lt;{{mail.createdBy_info.email}}&gt; <span class="mailbox-read-time pull-right">{{mail.createdOn|formatDate}}</span></h5>
          </div>
          <div class="mailbox-controls with-border text-center">
            <div class="btn-group">
-             <button class="btn btn-default btn-sm" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></button>
+             <button class="btn btn-default btn-sm" data-toggle="tooltip" title="Supprimer"><i class="fa fa-trash-o"></i></button>
              <button class="btn btn-default btn-sm" data-toggle="tooltip" title="Reply"><i class="fa fa-reply"></i></button>
              <button class="btn btn-default btn-sm" data-toggle="tooltip" title="Forward"><i class="fa fa-share"></i></button>
            </div>
@@ -31,7 +31,7 @@
            <button class="btn btn-default" ng-click="reply()"><i class="fa fa-reply"></i> Reply</button>
            <button class="btn btn-default" ng-click="forward()"><i class="fa fa-share"></i> Forward</button>
          </div>
-         <button class="btn btn-default" ng-click="delete()"><i class="fa fa-trash-o"></i> Delete</button>
+         <button class="btn btn-default" ng-click="delete()"><i class="fa fa-trash-o"></i> Supprimer</button>
          <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
        </div>
    </div>

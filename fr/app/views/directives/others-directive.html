@@ -15,19 +15,17 @@
 					<div ng-show="reference.__errorCode">
 						<div ng-switch="reference.__errorCode">
 							<div ng-switch-when="404" class="alert alert-warning">
-								<strong>Record not found</strong>
-								{{reference.identifier}}
+								<strong>Record not found</strong> {{reference.identifier}}
 							</div>
 							<div ng-switch-default class="alert alert-danger">
-								<strong>Error loading record</strong>
-								{{reference.identifier}}
+								<strong>Error loading record</strong> {{reference.identifier}}
 								<div>{{reference.__error}}<div>
 							</div>
 						</div>
 					</div>
 				</td>
 				<td style="text-align:end">
-					<button type="button" title="Remove" class="btn btn-default" ng-click="remove(reference)"><i class="glyphicon glyphicon-trash"></i></button>
+					<button type="button" title="Supprimer" class="btn btn-default" ng-click="remove(reference)"><i class="glyphicon glyphicon-trash"></i></button>
 				</td>
 			</tr>
 		</table>
@@ -79,8 +77,8 @@
 					</div>
 
 					<div class="col-sm-4" style="text-align:right">
-						<button type="button"  class="btn btn-default" ng-click="editor.close()">Cancel</button>
-						<button type="button"  class="btn btn-primary" ng-click="editor.save()" >Save</button>
+						<button type="button"  class="btn btn-default" ng-click="editor.close()">Annuler</button>
+						<button type="button"  class="btn btn-primary" ng-click="editor.save()" >Sauvegarder</button>
 					</div>
 				</div>
 			</div>

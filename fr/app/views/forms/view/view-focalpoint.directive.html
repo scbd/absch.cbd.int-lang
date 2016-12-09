@@ -3,47 +3,34 @@
 	<div class="record-body panel-body">
 
 		<div ng-show="document.government_EN_t">
-			<label>Country</label>
-			<span class="km-value">
-				{{document.government_EN_t}}
-                <span ng-party-status code="document.government_s" id="government"></span>
-			</span>
+			<label>Pays</label>
+			<span class="km-value">{{document.government_EN_t}} <span ng-party-status code="document.government_s" id="government"></span></span>
 		</div>
 
 		<div ng-show="document.title_EN_t">
-			<label>Name</label>
-			<span class="km-value">
-				{{document.title_EN_t | lstring:locale}}
-			</span>
+			<label>Nom</label>
+			<span class="km-value">{{document.title_EN_t | lstring:locale}}</span>
 		</div>
 
 		<div ng-show="document.description_EN_t">
 			<label>Description</label>
-			<span class="km-value">
-				{{document.description_EN_t}}
-			</span>
+			<span class="km-value">{{document.description_EN_t}}</span>
 		</div>
 
 		<div ng-show="document.function_EN_t">
 			<label>Function</label>
-			<span class="km-value">
-				{{document.function_EN_t}}
-			</span>
+			<span class="km-value">{{document.function_EN_t}}</span>
 		</div>
 
 		<div ng-show="document.department_EN_t">
-			<label>Department</label>
-			<span class="km-value">
-				{{document.department_EN_t}}
-			</span>
+			<label>Service</label>
+			<span class="km-value">{{document.department_EN_t}}</span>
 		</div>
 
 
 		<div ng-show="document.organization_EN_t">
-			<label>Organization</label>
-			<span class="km-value">
-				{{document.organization_EN_t}}
-			</span>
+			<label>Organisation</label>
+			<span class="km-value">{{document.organization_EN_t}}</span>
 		</div>
 
 		<div ng-show="document.email_ss">
@@ -91,9 +78,7 @@
 		</div>
 		<div ng-show="document.url_ss">
 			<label>Link to the information on the CBD website</label>
-			<span class="km-value">
-				<a translation-url  ng-href="{{document.url_ss | lstring:locale}}" target="_">{{document.url_ss | lstring:locale}}</a>
-			</span>
+			<span class="km-value"><a translation-url  ng-href="{{document.url_ss | lstring:locale}}" target="_">{{document.url_ss | lstring:locale}}</a></span>
 		</div>
 	</div>
 	

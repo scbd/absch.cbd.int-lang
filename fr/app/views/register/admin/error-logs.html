@@ -74,7 +74,7 @@
 							</tr>
 							<tr ng-if="error.showDetails">
 								<td colspan="6">
-									<span class="message_body"><span class=""><b>URL:</b> {{error.url}}<br></span><br> <span class=""><b>User Agent:</b> {{error.userAgent.trim()}}<br></span><br> <span class=""><b>Message:</b> {{error.message.trim()}}</span><br>
+									<span class="message_body"><span class=""><b>URL:</b> {{error.url}}<br></span><br> <span class=""><b>User:</b> <a ng-if="error.user != 1" ng-href="https://accounts.cbd.int/admin/users/{{error.user}}">{{error.user}}</a> <span ng-if="error.user == 1">Anonymous</span></span><br><br> <span class=""><b>User Agent:</b> {{error.userAgent.trim()}}<br></span><br> <span class=""><b>Message:</b> {{error.message.trim()}}</span><br>
 										<pre class="special_formatting">
 											
 											<span class="language-html pull-left" data-lang="html" style="margin:0px" ng-bind-html="error.stack">
