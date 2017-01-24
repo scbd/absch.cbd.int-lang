@@ -191,9 +191,7 @@
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #ddd;margin-bottom:10px;" class="color-green">PUBLISHED RECORD</div>
                              <div class="row"  ng-show="isIRCC" style="margin-bottom:10px;">     
                                  <div class="col-xs-12 bold">
-                                    Published Internationally Recognized Certificates of Compliance (IRCC) records can only be revoked.
-                                    A revoked IRCC will no longer be valid and will remain published in the ABSCH for traceability and transparency. 
-                                    Revoked IRCCs will be clearly marked as revoked in the search and display of the record.
+                                    Published Internationally Recognized Certificates of Compliance (IRCC) records can only be revoked. A revoked IRCC will no longer be valid and will remain published in the ABSCH for traceability and transparency. Revoked IRCCs will be clearly marked as revoked in the search and display of the record.
                                 </div>
                               </div>
                             <div class="row">     
@@ -223,8 +221,7 @@
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
                                 <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: Any pending draft will also be deleted">
-                                <span ng-if="!security.canDelete">Request deletion of this record </span> 
-                                 <span ng-if="security.canDelete"> Delete the record </span>
+                                <span ng-if="!security.canDelete">Request deletion of this record </span> <span ng-if="security.canDelete"> Delete the record </span>
                                 </button> 
                                 </div>
                             </div>
@@ -232,7 +229,7 @@
 
                     </div>
                     <div class="modal-footer" >
-                        <button type="button" class="btn btn-default" ng-click="closeDialog()">Cancel</button>
+                        <button type="button" class="btn btn-default" ng-click="closeDialog()">Отмена</button>
                     </div>
             </script>
 
@@ -244,7 +241,7 @@
                         <p>Are you sure you want to duplicate this record, this will create a new draft record with same details?</p>
                     </div>
                     <div class="modal-footer" style="margin-top:0">
-                        <button ng-disabled="loading" type="button" class="btn btn-default" ng-click="closeDialog('duplicateRecordModal')">Cancel</button>
+                        <button ng-disabled="loading" type="button" class="btn btn-default" ng-click="closeDialog('duplicateRecordModal')">Отмена</button>
                         <button ng-disabled="loading" type="button" ng-click="duplicate(recordToDuplicate)" class="btn btn-primary pull-left">Duplicate</button>
                     </div>
             </script>
@@ -261,7 +258,8 @@
                         <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary pull-left">Cancel request</button>
 
                     </div>
-            </script> <script type="text/ng-template" trados-translation="true" id="errorModal">
+            </script>
+            <script type="text/ng-template" trados-translation="true" id="errorModal">
                 <div class="modal-header">
                    <h4>Error</h4>
                 </div>

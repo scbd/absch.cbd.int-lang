@@ -15,12 +15,12 @@
         <i class="fa fa-plus"></i> {{caption || 'ADD ORGANIZATION OR CONTACT »'}}
     </button>
 
-    <!-- Modal --> <script type="text/ng-template" trados-translation="true" id="organizationModal">
+    <!-- Modal -->
+    <script type="text/ng-template" trados-translation="true" id="organizationModal">
     <div  id="editContactTemplate" >
                 <div class="modal-header bg-litegrey">
                     <h3 class="modal-title" id="myModalLabel">
-                        <span ng-hide="showExisting">New organization</span>
-                        <span ng-show="showExisting" >Select an exisiting organization</span>
+                        <span ng-hide="showExisting">New organization</span> <span ng-show="showExisting" >Select an exisiting organization</span>
                     </h3>
                 </div>
                 <div class="modal-body" ng-class="{'organization-modal-maxheight':showExisting}" id="scrollableContent">
@@ -29,7 +29,7 @@
                     <div ng-show="!showExisting">
                         <div>
                             <div km-document-validation ng-model="validationReport"></div>
-                            <legend>General information</legend>
+                            <legend>Información general</legend>
                             <div class="row">
                                 <div class="col-md-8 col-xs-12">
                                     <div class="km-control-group" name="name" required caption="Name of the organization">
@@ -45,21 +45,21 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-8">
-                                    <div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+                                    <div class="km-control-group" name="contact_organizationType" caption="Tipo de organización">
                                         <div km-select name="contact_organizationType" ng-model="edition.contact.organizationType" items="options.organizationTypes()"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-4" ng-show="edition.contact.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
                                     <div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="example: SCBD" locales="locales"></div>
+                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="example: Secretaría del CDB" locales="locales"></div>
                                     </div>
                                 </div>
                             </div>
-                            <legend>Organization Coordinates</legend>
+                            <legend>Datos de la Organización</legend>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="km-control-group" name="address" caption="Address">
+                                    <div class="km-control-group" name="address" caption="Dirección">
                                         <div km-textbox-ml ng-model="edition.contact.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="edition.contact.header.languages"></div>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="city" required caption="City">
+                                    <div class="km-control-group" name="city" required caption="Ciudad">
                                         <div km-textbox-ml required name="city" ng-model="edition.contact.city" locales="edition.contact.header.languages" placeholder="example: Montreal"></div>
                                     </div>
                                 </div>
@@ -83,12 +83,12 @@
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="postalCode" caption="Postal Code or Zip">
-                                        <div km-textbox-ml name="postalCode" ng-model="edition.contact.postalCode" locales="edition.contact.header.languages" placeholder="example: H2Y 1N9"></div>
+                                        <div km-textbox-ml name="postalCode" ng-model="edition.contact.postalCode" locales="edition.contact.header.languages" placeholder="example: H2Y 1N9 Canadá"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="country" required caption="Country">
+                                    <div class="km-control-group" name="country" required caption="País">
                                         <div km-select required name="country" ng-model="edition.contact.country" items="options.countries()"></div>
                                     </div>
                                 </div>
@@ -96,15 +96,15 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="phones" required caption="Phone numbers">
-                                        <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
+                                    <div class="km-control-group" name="phones" required caption="Números de teléfono">
+                                        <div class="help-info">Por favor, utilice el siguiente formato: +[country code] [city code] [telephone number] [extension, if necessary].</div>
                                         <div km-inputtext-list required name="phones" ng-model="edition.contact.phones" placeholder="example: +1 514.288.2220"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="faxes" caption="Fax Numbers">
-                                        <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
+                                    <div class="km-control-group" name="faxes" caption="Números de fax">
+                                        <div class="help-info">Por favor, utilice el siguiente formato: +[country code] [city code] [telephone number] [extension, if necessary].</div>
                                         <div km-inputtext-list name="faxes" ng-model="edition.contact.faxes" placeholder="example: +1 514.288.6588"></div>
                                     </div>
                                 </div>
@@ -112,13 +112,13 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="emails" required caption="Emails">
+                                    <div class="km-control-group" name="emails" required caption="Correos electrónicos">
                                         <div km-inputtext-list required name="emails" ng-model="edition.contact.emails" placeholder="example: secretariat@cbd.int"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
-                                    <div class="km-control-group" name="websites" caption="Web Sites">
+                                    <div class="km-control-group" name="websites" caption="Sitios web">
                                         <div km-link name="websites" ng-model="edition.contact.websites" allow-link="true" allow-file="false"></div>
                                     </div>
                                 </div>
@@ -144,8 +144,7 @@
                                     <a translation-url  class="btn btn-default" href="#" ng-click="selectContact(contact)"><i class="fa fa-thumbs-o-up"></i></a>
                                 </div>
                                 <div class="col-xs-11"> 
-                                    <span class="label label-warning" ng-if="contact._state_s=='workflow'">Pending Approval</span>
-                                    <view-organization-reference ng-model='contact' locale="edition.contact.header.languagesen"></view-organization-reference>
+                                    <span class="label label-warning" ng-if="contact._state_s=='workflow'">Pendiente de aprobación</span> <view-organization-reference ng-model='contact' locale="edition.contact.header.languagesen"></view-organization-reference>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -162,10 +161,7 @@
                 <div class="modal-footer bg-litegrey">
                     <div class="clearfix"></div>
                     <div>
-                        <a translation-url  class="btn btn-default pull-left" ng-click="showExisting=true" ng-show="!showExisting" ng-href="#"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select from exisiting organizations</a>
-                        <a translation-url  class="btn btn-primary color-white" ng-click="editContact(-1);showExisting=false" ng-show="showExisting" ng-href="#">Add new organization</a>
-                        <a translation-url  type="button" class="pull-right btn btn-warning" ng-click="closeContact()">Close</a>
-                        <a translation-url  type="button" class="pull-right btn btn-primary" ng-click="saveContact()" ng-show="!showExisting">Save changes</a> &nbsp;
+                        <a translation-url  class="btn btn-default pull-left" ng-click="showExisting=true" ng-show="!showExisting" ng-href="#"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select from exisiting organizations</a> <a translation-url  class="btn btn-primary color-white" ng-click="editContact(-1);showExisting=false" ng-show="showExisting" ng-href="#">Add new organization</a> <a translation-url  type="button" class="pull-right btn btn-warning" ng-click="closeContact()">Close</a> <a translation-url  type="button" class="pull-right btn btn-primary" ng-click="saveContact()" ng-show="!showExisting">Save changes</a>  
                     </div>
                 </div>
     </div>

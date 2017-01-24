@@ -78,7 +78,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning bold pull-left" data-dismiss="modal" ng-disabled="rejectForm.reason.$error.required" ng-click="updateActivity({ action : 'reject', reason: rejectReason })"><i class="fa fa-times-circle"></i> Reject</button>
-                <button type="button" class="btn btn-default" ng-click="closeDialog();">Cancel</button>
+                <button type="button" class="btn btn-default" ng-click="closeDialog();">Cancelar</button>
             </div>
         </form>
     </script>
@@ -93,7 +93,7 @@
             </div>
             <div class="modal-footer" style="margin-top:0">
                  <button ng-disabled="loading==true" type="button" ng-click="cancelWorkflowRequest(workflow)" class="btn bold btn-primary">Yes</button>
-                <button type="button" class="btn btn-default" ng-click="closeDialog();">Close</button>
+                <button type="button" class="btn btn-default" ng-click="closeDialog();">Cerrar</button>
             </div>
         </div>
     </script>
@@ -113,7 +113,7 @@
                             <span class="hidden-xs">Delete record</span>
                         </button>
             <button type="button" class="btn btn-default" ng-click="closeConfirmation()" ng-disabled="isUpdating">
-                            <span class="hidden-xs">Close</span>
+                            <span class="hidden-xs">Cerrar</span>
                         </button>
         </div>
         <!--</div> -->

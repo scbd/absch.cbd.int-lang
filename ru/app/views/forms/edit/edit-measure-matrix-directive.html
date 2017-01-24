@@ -275,9 +275,7 @@
     <script type="text/ng-template" trados-translation="true" id="/app/views/forms/edit/edit-measure.directive/abs/inner">
         <div ng-class="{measureChecked : identifiers[term.identifier]}" style="" ng:if="!isStaticIdentifier(term.identifier) && (!term.broaderTerms || isParentSelected(term.identifier, term.level) || isOther(term))">
             <label for="col_{{term.identifier}}" style="width:0px;height:0px;display:inline">
-            <span style="display:none">
-                          {{term.title||term.name | lstring:locale}} Please indicate which elements are covered.
-                      </span>
+            <span style="display:none">{{term.title||term.name | lstring:locale}} Please indicate which elements are covered.</span>
         </label>
             <table style="width:100%" cellspacing="0" cellpadding="0" id="col_{{term.identifier}}">
                 <tr ng:class="{'paddingleft0 btop bg-main' : isMainElement(term.identifier), 'btop':isYesNo(term.identifier),
@@ -285,31 +283,24 @@
                     <td style="text-align:left;vertical-align:middle;width:125px" ng:if="isYesNo(term.identifier)" ng:class="{'bg-main' : isMainElement(term.identifier)}">
                         <div class="btn-group matrix-btn">
                             <label class="btn">
-                            <input type="radio" ng-change="updateSelected(term, identifiers[term.identifier],'yes')" ng-model="identifiers[term.identifier]" name="rd_{{term.identifier}}" ng-value="true"> Yes
-                            <!--{{((term.narrowerTerms.length||0) ==0) ? true : false}}-->
+                            <input type="radio" ng-change="updateSelected(term, identifiers[term.identifier],'yes')" ng-model="identifiers[term.identifier]" name="rd_{{term.identifier}}" ng-value="true"> Да <!--{{((term.narrowerTerms.length||0) ==0) ? true : false}}-->
                         </label>
                             <label class="btn">
-                            <input type="radio" ng-change="updateSelected(term, identifiers[term.identifier], 'no')" ng-model="identifiers[term.identifier]" name="rd_{{term.identifier}}" ng-value="false"> No
-                            <!--{{((term.narrowerTerms.length||0) == 0) ? false : true}}-->
+                            <input type="radio" ng-change="updateSelected(term, identifiers[term.identifier], 'no')" ng-model="identifiers[term.identifier]" name="rd_{{term.identifier}}" ng-value="false"> Нет <!--{{((term.narrowerTerms.length||0) == 0) ? false : true}}-->
                         </label>
                         </div>
                     </td>
                     <td style="text-align:left;vertical-align:middle;" id="{{term.identifier}}_help" style="" colspan="{{isYesNo(term.identifier) ? 1 : 2}}" ng:class="{'bg-main' : isMainElement(term.identifier)}">
                         <label for="qt_{{term.identifier}}" name="{{term.identifier}}" ng-class="{'required':isYesNo(term.identifier)}">
-                        &nbsp;
+                         
                         <input type="checkbox" ng-model="identifiers[term.identifier]" ng-required="IsRequired()" value="{{term.identifier}}" ng:if="!isReadOnly(term.identifier) && !isYesNo(term.identifier)" />
-                        <span title="{{term.description|lstring:locale}}" ng:class="{true:'bold',false:'normalText'}[isMainElement(term.identifier)]">
-                              <span>{{term.title||term.name | lstring:locale}} </span>
-                        <i ng-show="term.description" class="icon-question-sign"></i>
-                        </span>
+                        <span title="{{term.description|lstring:locale}}" ng:class="{true:'bold',false:'normalText'}[isMainElement(term.identifier)]"><span>{{term.title||term.name | lstring:locale}} </span> <i ng-show="term.description" class="icon-question-sign"></i></span>
                     </label>
                         <span class="help-info" ng:if="term.description && term.description.length > 0 && term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')>=0" style="padding-left:5px">{{term.description}}</span>
                     </td>
                     <td style="width:250px;text-align:right;vertical-align:middle">
                         <label for="sec_{{term.identifier}}" style="width:0px;height:0px;display:inline">
-                        <span style="display:none">
-                              {{term.title||term.name | lstring:locale}} Please enter all references to the relevant articles.
-                          </span>
+                        <span style="display:none">{{term.title||term.name | lstring:locale}} Please enter all references to the relevant articles.</span>
                     </label>
                         <div ng-show="term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')<0 && ((identifiers[term.identifier] && (term.narrowerTerms.length||0) == 0) || (scopeOfMeasureTerm == term.identifier && identifiers[term.identifier]==false))" km-textbox-ml
                             ng-model="sections[term.identifier]" required locales="locales" ng-required="identifiers[term.identifier]" placeholder="e.g.: Article 14.2 or Section I"></div>
@@ -321,14 +312,10 @@
                     <td></td>
                     <td colspan="2">
                         <label for="col_{{term.identifier}}" style="width:0px;height:0px;display:inline">
-                        <span style="display:none">
-                              {{term.title||term.name | lstring:locale}} Please select at least one element.
-                          </span>
+                        <span style="display:none">{{term.title||term.name | lstring:locale}} Please select at least one element.</span>
                         </label>
                         <label for="sec_{{term.identifier}}" style="width:0px;height:0px;display:inline">
-                            <span style="display:none">
-                                {{term.title||term.name | lstring:locale}} Please enter all references to the relevant articles.
-                            </span>
+                            <span style="display:none">{{term.title||term.name | lstring:locale}} Please enter all references to the relevant articles.</span>
                         </label>
                         <span onload="otherElements = otherTerms[term.identifier]" ng-include="'/app/views/forms/edit/edit-measure.directive/abs/inner/other'"></span>
                     </td>

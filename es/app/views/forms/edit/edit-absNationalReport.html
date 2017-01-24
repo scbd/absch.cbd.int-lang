@@ -31,18 +31,18 @@
             <div class="col-xs-12">
                 <ul class="pagination" id="nrTabs" ng-click="setTab()">
                      <li class="active"><a translation-url  href="#part0" data-toggle="tab">Directrices</a></li>
-                    <li><a translation-url  href="#part1" data-toggle="tab">Parte 1:</a></li>
-                    <li><a translation-url  href="#part2" data-toggle="tab">Parte 2:</a></li>
-                    <li><a translation-url  href="#part3" data-toggle="tab">Parte 3:</a></li>
-                    <li><a translation-url  href="#part4" data-toggle="tab">Parte 4:</a></li>
-                    <li><a translation-url  href="#part5" data-toggle="tab">Parte 5:</a></li>
-                    <li><a translation-url  href="#part6" data-toggle="tab">Parte 6:</a></li>
-                    <li><a translation-url  href="#part7" data-toggle="tab">Parte 7:</a></li>
-                    <li><a translation-url  href="#part8" data-toggle="tab">Parte 8:</a></li>
-                    <li><a translation-url  href="#part9" data-toggle="tab">Parte 9:</a></li>
-                    <li><a translation-url  href="#part10" data-toggle="tab">Parte 10:</a></li>
-                    <li><a translation-url  href="#part11" data-toggle="tab">Parte 11:</a></li>
-                    <li><a translation-url  href="#part12" data-toggle="tab">Parte 12:</a></li>
+                    <li><a translation-url  href="#part1" data-toggle="tab">Parte 1</a></li>
+                    <li><a translation-url  href="#part2" data-toggle="tab">Parte 2</a></li>
+                    <li><a translation-url  href="#part3" data-toggle="tab">Parte 3</a></li>
+                    <li><a translation-url  href="#part4" data-toggle="tab">Parte 4</a></li>
+                    <li><a translation-url  href="#part5" data-toggle="tab">Parte 5</a></li>
+                    <li><a translation-url  href="#part6" data-toggle="tab">Parte 6</a></li>
+                    <li><a translation-url  href="#part7" data-toggle="tab">Parte 7</a></li>
+                    <li><a translation-url  href="#part8" data-toggle="tab">Parte 8</a></li>
+                    <li><a translation-url  href="#part9" data-toggle="tab">Parte 9</a></li>
+                    <li><a translation-url  href="#part10" data-toggle="tab">Parte 10</a></li>
+                    <li><a translation-url  href="#part11" data-toggle="tab">Parte 11</a></li>
+                    <li><a translation-url  href="#part12" data-toggle="tab">Parte 12</a></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +58,7 @@
 
                              <div  style="margin-bottom:20px;">
                                  <h4>
-                                DIRECTRICES PARA EL -
+                                DIRECTRICES PARA EL INFORME NACIONAL PROVISIONAL SOBRE LA APLICACI&Oacute;N DEL PROTOCOLO DE NAGOYA
                                  </h4>
                                  <div>
                                  <p>El siguiente formato para la preparaci&oacute;n del informe nacional provisional sobre la aplicaci&oacute;n del Protocolo de Nagoya sobre Acceso y Participaci&oacute;n en los Beneficios requerido por su art&iacute;culo 29 consiste en una serie de preguntas que se basan en aquellas disposiciones del Protocolo que establecen obligaciones para las Partes en el Protocolo. Estas preguntas son de car&aacute;cter obligatorio y se identifican con un asterisco.</p>
@@ -322,7 +322,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question10RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question10RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question10RelevantDocuments" ng-model="document.question10.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                             <legend>Acceso a los recursos gen&eacute;ticos (art&iacute;culo 6)</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="question11"  bold="true"  caption="11. Is access to genetic resources subject to PIC as provided in Article 6.1?">
+                                    <div class="km-control-group" required name="question11"  bold="true"  caption="11. ¿Est&aacute; el acceso a los recursos gen&eacute;ticos sujeto al CFP conforme al art&iacute;culo 6.1?">
                                         <div class="km-yes-no" required name="question11" ng-model="document.question11.answer" ng-click="Q11Clear()"></div>
                                     </div>
 
@@ -359,11 +359,11 @@
                                         </div>
                                     </div>
                                     <div ng-hide="document.question11.answer || document.question11.answer===undefined" ng-class="{'confidential-text': !document.question11.answer}">
-                                        Por favor, saltear las preguntas 12 a 17. <br /> <br />
+                                        No es necesario responder a las preguntas 12 a 17. <br /> <br />
                                     </div>
 
                                     <div ng-show="document.question11.answer===undefined" ng-class="{'confidential-text': document.question11.answer===undefined}">
-                                        Por favor, responder la pregunta 11 para saber si es necesario responder las preguntas 12 a 17. <br /> <br />
+                                        S&iacute;rvase responder la pregunta 11 para saber si es necesario responder las preguntas 12 a 17. <br /> <br />
                                     </div>
                                 </div>
                             </div>
@@ -565,7 +565,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question19RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question19RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question19RelevantDocuments" ng-model="document.question19.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -652,7 +652,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question23RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question23RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question23RelevantDocuments" ng-model="document.question23.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -788,7 +788,7 @@
                                             <div class="km-control-group" name="question27_cc" caption="¿Ha hecho su pa&iacute;s uso del comunicado del punto de verificaci&oacute;n?">
                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option1" value="S&iacute;">S&iacute;</label>
                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option2" value="No">No</label>
-                                                <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option3" value="Otras">Otras</label>
+                                                <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option3" value="Otro">Otro</label>
                                             </div>
                                             <div class="km-control-group" name="question27_ccFurtherInfo">
                                                 S&iacute;rvase proporcionar informaci&oacute;n adicional.
@@ -810,7 +810,7 @@
                                         
                                     </div>
 
-                                    <div class="km-control-group" name="q27relevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="q27relevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="q27relevantDocuments" ng-model="document.question27.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -877,7 +877,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question30RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question30RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question30RelevantDocuments" ng-model="document.question30.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -976,7 +976,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" name="question34RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question34RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question34RelevantDocuments" ng-model="document.question34.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
 
@@ -1083,7 +1083,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question36RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question36RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question36RelevantDocuments" ng-model="document.question36.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1111,11 +1111,11 @@
                                         </div>
                                     </div>
                                     <div ng-hide="document.question37.answer || document.question37.answer===undefined" ng-class="{'confidential-text': !document.question37.answer}">
-                                        Por favor, saltear las preguntas 38 a 44. <br /> <br />
+                                        No es necesario responder a las preguntas 38 a 44. <br /> <br />
                                     </div>
 
                                     <div ng-show="document.question37.answer===undefined" ng-class="{'confidential-text': document.question37.answer===undefined}">
-                                        Por favor, responder la pregunta 37 para saber si es necesario responder las preguntas 38 a 44. <br /> <br />
+                                        S&iacute;rvase responder a la pregunta 37 para saber si es necesario responder las preguntas 38 a 44. <br /> <br />
                                     </div>
                                 </div>
                             </div>
@@ -1333,7 +1333,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div ng-show="document.question37.answer" class="km-control-group" name="question44RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div ng-show="document.question37.answer" class="km-control-group" name="question44RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question44RelevantDocuments" ng-model="document.question44.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1397,7 +1397,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question47RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question47RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question47RelevantDocuments" ng-model="document.question47.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1472,7 +1472,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question50RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question50RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question50RelevantDocuments" ng-model="document.question50.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1540,7 +1540,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question53RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question53RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question53RelevantDocuments" ng-model="document.question53.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1692,7 +1692,7 @@
                                                                 schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database)"   filter="true">
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question58RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question58RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question58RelevantDocuments" ng-model="document.question58.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -1894,7 +1894,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question64"  bold="true" caption="64.  Cualquier otra informaci&oacute;n pertinente:">
+                                    <div class="km-control-group" name="question64"  bold="true" caption="64.  Otra informaci&oacute;n pertinente:">
                                         <div km-textbox-ml rows=4 name="question64FurtherInfo" ng-model="document.question64.furtherInfo" locales="document.header.languages" placeholder="">
                                         </div>
                                     </div>
@@ -1908,7 +1908,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" name="question64RelevantDocuments" caption="Cualquier otros documentos relevantes">
+                                    <div class="km-control-group" name="question64RelevantDocuments" caption="Otros documentos relevantes">
                                         <div km-link name="question64RelevantDocuments" ng-model="document.question64.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>

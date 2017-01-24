@@ -100,8 +100,8 @@
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Cancel</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save()" ng-disabled="loading">Submit</button>
+            <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Cancelar</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="save()" ng-disabled="loading">Presentar</button>
         </div>
     </script>
 
@@ -124,15 +124,13 @@
                     Reported On : <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span>
                 </div>
                 <div class="col-xs-12 col-form-label">
-                   Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span>
-                    <span ng-if="record.broken">broken link or outdated information |</span>
-                    <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
+                   Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
                 </div>
         </div>
 
         <div class="modal-footer">
             <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">No</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Si</button>
         </div>
     </script>
 

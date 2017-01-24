@@ -50,16 +50,12 @@
 
     <script id="/app/views/forms/view/contact-reference/address" type="text/ng-template" trados-translation="true">
         <address style="margin-bottom:2px!important">
-                <span ng-show="document.addressHTML" ng-bind-html="document.addressHTML | lstring:locale"></span>
-                {{document.address | lstring:locale}}</div>
-                {{document.city | lstring:locale}}<span ng-show="document.city && document.state">, </span>
-                {{document.state | lstring:locale}}<br ng-show="document.city || document.state" />
-                {{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">, </span>
-                <span style="font-weight:500;">{{document.country|term}}</span>
+                <span ng-show="document.addressHTML" ng-bind-html="document.addressHTML | lstring:locale"></span> {{document.address | lstring:locale}}</div>
+                {{document.city | lstring:locale}}<span ng-show="document.city && document.state">, </span> {{document.state | lstring:locale}}<br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">, </span> <span style="font-weight:500;">{{document.country|term}}</span>
         </address>
 
         <div ng-show="document.phones">
-            Phone: <span ng-repeat="item in document.phones">{{item}}<span ng-show="!$last">, </span></span>
+            Teléfono: <span ng-repeat="item in document.phones">{{item}}<span ng-show="!$last">, </span></span>
         </div>
         <div ng-show="document.faxes">
             Fax: <span ng-repeat="item in document.faxes">{{item}}<span ng-show="!$last">, </span></span>
@@ -68,15 +64,10 @@
             Email: <span ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}}</a><span ng-show="!$last">, </span></span>
         </div>
         <div ng-show="document.websites">
-            Website: <span ng-repeat="item in document.websites"><a translation-url  target="_new" ng-href="{{item.url}}">{{item.url}}</a><span ng-show="!$last">, </span></span>
+            Sitio web: <span ng-repeat="item in document.websites"><a translation-url  target="_new" ng-href="{{item.url}}">{{item.url}}</a><span ng-show="!$last">, </span></span>
         </div>
         <div ng-if="isCNA">
-            <!--website url is used when generating certificates-->
-            <a translation-url  ng-href="{{websiteUrl}}/database/{{document.header.schema | urlSchemaShortName}}/{{(documentForUID || document) | uniqueIDWithoutRevision}}/{{document.info.revision}}" target="_new">
-                <i class="fa fa-external-link-square" aria-hidden="true"></i> 
-                {{(documentForUID || document) | uniqueID}}
-            </a>
-            <!--{{isCNA}}
+            <!--website url is used when generating certificates--> <a translation-url  ng-href="{{websiteUrl}}/database/{{document.header.schema | urlSchemaShortName}}/{{(documentForUID || document) | uniqueIDWithoutRevision}}/{{document.info.revision}}" target="_new"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{(documentForUID || document) | uniqueID}}</a> <!--{{isCNA}}
         {{document | uniqueID}}{{document}}-->
         </div>
     </script>
