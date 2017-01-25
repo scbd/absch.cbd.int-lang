@@ -1,0 +1,84 @@
+﻿<div>
+
+    <div smooth-scroll duration="100" offset="200"></div>
+    <div block-region activate="loading"></div>
+
+    <div class="alert alert-danger text-center" ng-show="error">
+        <strong>Произошла ошибка...</strong>
+        <div>{{error}}</div>
+    </div>
+    <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentSuccess">
+        <h2>Спасибо, что скачали документ {{documentUID}}.</h2>
+        <p>Если загрузка документа не началась, попробуйте перейти по <a translation-url  href="{{documentUrl}}" class="alert-link">ссылке...</a></p>
+        </br></br></br></br> Это окно закроется автоматически через {{timeLaspe}} с.
+    </div>
+
+    <div class="jumbotron" style="background-color:white;" role="alert" ng-show="documentError">
+        <h2>Спасибо, что запросили документ {{documentUID}}.</h2>
+        <p>Этого документа не существует. Если вы думаете, что файл должен быть доступен, пожалуйста, сообщите по адресу <a translation-url  href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
+    </div>
+
+    <div id="RecordDetails" ng-if="showDetails">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="well">
+                    <h3 style="margin:0 0 20px 0;padding:0;">Сведения о записи</h3>
+                    <table style="width:100%!important;">
+                        <tr>
+                            <td><label> Уникальный идентификатор: </label></td>
+                            <td class="bold">
+                                {{internalDocument | uniqueID}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label> Текущий статус: </label></td>
+                            <td class="bold">
+                                <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">ПРОЕКТ</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">ОПУБЛИКОВАНО</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Locked: Pending {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">УДАЛЕНО</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> ОТОЗВАНО</span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label> Тип записи: </label></td>
+                            <td class="bold">{{internalDocumentInfo.metadata.schema | schemaName}}</td>
+                        </tr>
+                        <tr ng-if="docInfo.revision > 0">
+                            <td><label> Версии записи: </label></td>
+                            <td class="bold">{{internalDocumentInfo.revision}}</td>
+                        </tr>
+                        <tr ng-if="docInfo.metadata.government">
+                            <td><label> Владелец записи: </label></td>
+                            <td class="bold"> {{getUserCountry(internalDocumentInfo.metadata.government)}}</td>
+                        </tr>
+                        <tr>
+                            <td><label> Хронология:</label></td>
+                            <td>
+                                <div view-history document-id="internalDocumentInfo.identifier"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="alert alert-danger" role="alert" ng-show="internalDocumentInfo.latestRevision != internalDocumentInfo.revision && revisionNo != 'draft'">
+        <h3>
+                This document has been updated. Эта версия не является последней опубликованной версией. <a translation-url  ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}" target="new">Щелкните здесь, чтобы просмотреть последнюю версию записи.</a>
+			</h3>
+    </div>
+
+
+    <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
+        <div>
+            <a translation-url  title="Редактировать" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
+            class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Редактировать </a>
+            <button title="Удалить" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
+        </div>
+    </div>
+    <div class="btn-group" ng-show="internalDocument.header.languages.length>1">
+        <input type="button" class="btn" ng-class="{'active' : currentLocale==locale, 'btn-info' : currentLocale!=locale}" 
+        ng-repeat="locale in internalDocument.header.languages" ng-click="setLocale(locale)" value="{{locale | uppercase}}" />
+    </div>
+    <div id="schemaView" ng-show="internalDocument"></div>
+
+</div>

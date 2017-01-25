@@ -1,0 +1,209 @@
+﻿<div class="register-content">
+    <div class="register-content-header color-white" ng-class="{'bg-blue': type.schemaType != 'referenceRecords','bg-orange': type.schemaType == 'referenceRecords' }">
+        <div style="padding:10px 10px;">
+            <h3>{{type.title}} <span class="color-darkgrey"> ({{type.abbreviation}})</span>
+
+        <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span>
+
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span>
+
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span>
+
+              <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span>
+
+
+         </h3>
+
+
+            <script type="text/ng-template" trados-translation="true" id="defaultIntro">
+                <!--<h5> Instructions</h5>
+           <div>Please fill in the submission form and complete all fields following the instructions given.
+                Certain fields are mandatory and indicated with an asterisk(*). The review of the form will highlight the mandatory fields that need
+                to be filled before it is possible to publish the record. The record can be saved as a draft.
+                Frequently saving of records is recommended, especially in case of intermittent internet connections.
+		   </div>
+           <br>
+           <div>It is possible to introduce information one of the six offical UN languages. Select languages using the button located at the top left of the page and for each submission field, a text boxes will
+                appear in the languages selected.</div><br>-->
+            </script>
+
+
+
+            <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
+                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a><!--CON---------------------------->
+            <div ng-if="showCONInfo" class="well well-help">
+
+                <h5> 导言</h5>
+                <div>很多常用格式都可能涉及为个人和机构添加联系方式。通过填写此表，您可以创建一个联系人列表，该列表就像国家议程一样可供所有国家用户分享和查看，并可供您填写常用格式时使用。在另一常用格式中添加联系人时，系统将显示您所在国家/地区的联系人列表，您可以从中选择相关的联系人。如果您想添加一位目前不在该列表中的新联系人，您将需要将此表保存为草稿，然后前往控制面板新建联系人。</div>
+                <br>
+                <div>为了避免重复提交信息，当您想为在同一机构工作的多个人创建联系方式时，您可以先添加该机构的联系方式，然后再添加个人联系信息，并添加一个指向该机构记录的链接。</div>
+
+                <div ng-include="'defaultIntro'"></div>
+
+            </div>
+
+            <!--CNA---------------------------->
+            <div ng-if="showCNAInfo" class="well well-help">
+
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>名古屋议定书第13条要求指定一个或多个获取和惠益分享国家主管部门。此等信息应按照该议定书第14条第2(b)款向获取和惠益分享信息交换所提供。缔约方如果指定了一个以上的国家主管部门，则必须将有关这些主管部门各自职责的资料随关于指定这些主管部门的通知一并送交秘书处。&nbsp;</div>
+                <br>
+                <div>第13条第2款规定，国家主管部门应依照适用的国家立法、行政或政策措施，负责批准获取或酌情签发符合获取要求的书面证明，并负责就获得事先知情同意和设立共同商定的条件的适用程序与要求提供建议。</div>
+            </div>
+
+            <!--MSR---------------------------->
+            <div ng-if="showMSRInfo" class="well well-help">
+
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>名古屋议定书第14条第2(a)款规定，缔约方应向获取和惠益分享信息交换所提供关于获取和惠益分享立法、行政和政策措施的信息。</div>
+                <br>
+                <div>获取和惠益分享措施可能包括国家或区域战略、政策、立法或规定，还可能包括在次国家或社区层面采取的措施。此表也可用于提供关于如何达到获取和惠益分享要求的其他说明性信息。</div>
+                <br>
+                <div>请为每项获取和惠益分享措施提交一份新的表格。您将需要提交与您辖区内现有获取和惠益分享措施数量相同的表格。</div>
+                <br>
+                <div>为了提供最准确的国家获取和惠益分享法律框架概况，获取和惠益分享信息交换所允许对现有措施进行修正和链接不同措施，例如关于实施立法的规定或者为如何落实特定条款提供进一步指导的指导方针。</div>
+                <br>
+                <div>Information registered should be as clear and concise as possible while bearing in mind that the information should guide potential users to comply with the country&rsquo;s legal requirements.提供这些信息的礼节性翻译、说明性信息、流程图或关于如何申请事先知情同意的分步指南对于与用户沟通交流并确保他们了解有关获取的国家要求十分有帮助。</div>
+            </div>
+
+            <!--NDB---------------------------->
+            <div ng-if="showNDBInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+            <!--IRCC---------------------------->
+            <div ng-if="showIRCCInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>需要事先知情同意的缔约方应提供获取时签发的许可证或同等证照，作为事先知情同意决定和设立共同商定的条件的证据（第6条第3(e)款）。此等信息应按照该议定书第14条第2(c)款向获取和惠益分享信息交换所提供。</div>
+                <br>
+                <div>第17条第2款规定，按照第6条第3(e)款签发的并向获取和惠益分享信息交换所提供的许可证或同等证照，应被视为国际公认的合规证书。&nbsp;</div>
+                <br>
+                <div>第17条第3款进一步规定，该国际公认的合规证书应作为按照提供事先知情同意的缔约方的获取和惠益分享国家立法或法规要求，所涉遗传资源已按事先知情同意获取并已设立共同商定的条件的证据。</div>
+                <br>
+                <div>第17条第4款规定，该国际公认的合规证书应至少包含以下信息（如果这些信息不是保密信息）：</div>
+                <br>
+                <ul>
+                    <li><span>签发机构；</span></li>
+                    <li><span>签发日期；</span></li>
+                    <li>提供者；</li>
+                    <li>证书的唯一识别码；</li>
+                    <li><span>获得事先知情同意的个人或实体；</span></li>
+                    <li>证书涉及的主题或遗传资源；</li>
+                    <li>对设立共同商定的条件的确认；</li>
+                    <li>对获得事先知情同意的确认；以及</li>
+                    <li><span>商业和/或非商业用途。</span></li>
+                </ul>
+                <br>
+                <div>缔约方应根据上述信息填写该表。至少应根据国家层面签发的许可证（或同等证照）所含信息填写必填字段。如果需要填入必填字段的信息为保密信息，则该字段可标记为保密。缔约方还可决定添加其他信息，包括该许可证或同等证照的副本。&nbsp;</div>
+                <br>
+                <div>一旦此等信息在获取和惠益分享信息交换所发布，随即签发/生成国际公认的合规证书。之后，获取和惠益分享信息交换所将通过电子方式将该国际公认证书的抄送副本发送至：</div>
+                <br>
+                <ul>
+                    <li>国家联络点和该国负责签发该许可证或同等证照的一个或多个国家主管部门；&nbsp;</li>
+                    <li>提供者（如果此信息不是保密信息）；以及</li>
+                    <li><span>获得事先知情同意的个人或实体（如果此信息不是保密信息）。</span></li>
+                </ul>
+                <br>
+                <div>该国际公认的合规证书在监控和提高价值链各阶段（研究、开发、创新、预商业化或商业化）遗传资源利用的透明度方面具有重要作用。</div>
+            </div>
+
+
+            <!--CPC---------------------------->
+            <div ng-if="showCPCInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>检查点将收集和接收有关事先知情同意、遗传资源来源、设立共同商定的条件和/或遗传资源利用方面的信息（第17条第1(a)(i)款），包括来自国际公认的合规证书（如有）的信息。按照名古屋议定书第17条第1(a)(iii)款规定，检查点收集的这些信息需要酌情向相关国家部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供。</div>
+                <br>
+                <div>根据检查点收集或接收的并由国家发布机构向获取和惠益分享信息交换所提供的信息，将酌情以电子方式自动发送记录抄送副本至下列实体：&nbsp;</div>
+                <br>
+                <ul>
+                    <li>检查点常用格式中指定的国家部门；&nbsp;</li>
+                    <li>国家联络点和遗传资源提供国的国家主管部门；以及</li>
+                    <li>获得事先知情同意的个人或实体（如果此信息不是保密信息）。</li>
+                </ul>
+                <br>
+                <div>此表促进了检查点与有关各方之间的信息交流，使各国得以监控遗传资源的利用。</div>
+            </div>
+
+
+            <!--CP---------------------------->
+            <div ng-if="showCPInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>提交信息表用于在按照议定书第17条第1(a)款指定的检查点登记信息。检查点的职责是酌情收集和接收有关事先知情同意、遗传资源来源、设立共同商定的条件和/或遗传资源利用方面的信息（子款(i)）。检查点收集的这些信息需要酌情向相关国家部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供（子款(iii)）。</div>
+            </div>
+
+            <!--VLR---------------------------->
+            <div ng-if="showVLRInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>获取和惠益分享信息交换所的虚拟图书馆汇聚了关于获取和惠益分享及名古屋议定书的大量资源。其中包括但不限于关于获取和惠益分享及名古屋议定书的一般文献、意识培养材料、案例研究、视频、能力建设资源等。</div>
+                <br>
+                <div>虚拟图书馆可作为分享知识、经验教训、最佳做法的一个平台，为能力建设提供支持以有效实施名古屋议定书。</div>
+
+            </div>
+
+            <!--A19A20---------------------------->
+            <div ng-if="showA19A20Info" class="well well-help">
+                <h5> 导言</h5>
+                <div>议定书第19条和第20条要求各缔约方酌情鼓励制定、更新和使用关于共同商定的条件的部门和跨部门合同条款范文，以及关于获取和惠益分享的自愿行为准则、指导方针和最佳做法和/或标准。这些工具可用来提高法律确定性和透明度，降低落实获取和惠益分享要求的交易成本，同时考虑到了不同部门的做法。</div>
+                <br>
+                <div>此常用格式用于登记关于共同商定的条件的部门和跨部门合同条款范文，以及自愿行为准则、指导方针和最佳做法和/或标准。 </div>
+                <br>
+                <div>If this tool is developed by a Party to support implementation of domestic ABS requirements as part of a country&rsquo;s national ABS framework, please register that information using the common format for legislative, administrative or policy measures.这样，该信息将显示为国家概况的一部分，并将被纳入有关获取和惠益分享的国家措施列表中。 </div>
+
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+
+            <!--CPP---------------------------->
+            <div ng-if="showCPPInfo" class="well well-help">
+                <h5> 导言</h5>
+                <div>
+                    Article 12, paragraph 1, of the Nagoya Protocol provides that Parties, in implementing their obligations under the Protocol, shall in accordance with domestic law take into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures, as applicable, with respect to traditional knowledge associated with genetic resources.此外，缔约方应酌情全力支持土著和地方社区制定关于获取遗传资源相关传统知识和利用该等知识所产生的惠益的社区议定书（第12条第3(a)款）。
+                </div>
+                <br>
+                <div>提供关于如何获取遗传资源相关传统知识的信息有助于其他行为者更好地了解和尊重社区议定书和价值。
+                </div>
+                <br>
+                <div>此常用格式用于登记社区议定书、程序和习惯法。A Party may also decideto include this information as a legislative, administrative or policy measure, as part of a country&rsquo;s national ABS framework to also be displayed as part of the country profile.在这种情况下，仅该国指定的发布机构才能将社区议定书、程序和习惯法作为国家记录发布。
+                </div>
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+            <!--CBI---------------------------->
+            <div ng-if="showCBIInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> 导言</h5>
+                <div>名古屋议定书第22条规定，缔约方应在人力资源与机构的能力建设、能力培养和加强方面展开合作以在发展中国家缔约方有效实施议定书，包括现有的全球、区域、次区域和国家机构和组织。在此背景下，缔约方还应为土著和地方社区以及包括非政府组织和私营部门在内的相关利益攸关方的参与提供便利。</div>
+                <br>
+                <div>第22条第6款规定，为了促进在获取和惠益分享能力建设和培养方面的协同合作，应向获取和惠益分享信息交换所提供关于国家、区域和国际能力建设和培养倡议的信息。</div>
+                <br>
+                <div>将关于能力建设项目的所有信息汇聚到一个数据库中使位于同一地域或涉及类似主题问题的能力建设行为者有机会协同合作或互相学习经验。这还有助于查明和解决能力建设倡议覆盖面空白或重叠情况。</div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>

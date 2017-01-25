@@ -1,0 +1,137 @@
+﻿<div id="Record" class="record panel panel-default">
+	<div class="panel-heading bg-blue">
+		<h4>
+			Контакт <span class="color-black"> (CON) </span>
+		</h4>
+	</div>
+	<div class="record-body panel-body">
+
+		<div ng-show="document.type=='organization'">
+
+
+
+            <legend>Организация</legend>
+			<div ng-show="document.government">
+				<label>Правительство</label>
+				<div class="km-value">
+					{{document.government | term}} <span ng-party-status government="document.government" id="government"></span>
+				</div>
+			</div>
+			<div>
+                <label>Название</label>
+				<div class="km-value">
+					{{document.organization | lstring:locale}} <i ng-show="document.organizationAcronym">({{document.organizationAcronym | lstring:locale}})</i>
+				</div>
+			</div>
+			<div ng-show="document.organizationType">
+				<label>Тип организации</label>
+				<div class="km-value">
+					{{document.organizationType | term}}
+				</div>
+			</div>
+
+		</div>
+
+
+		<div ng-show="document.type=='person'">
+             <legend>Лицо</legend>
+			 <div ng-show="document.government">
+  			   <label>Правительство</label>
+  			   <div class="km-value">
+  				   {{document.government | term}} <span ng-party-status government="document.government" id="government"></span>
+  			   </div>
+  		   </div>
+
+            <div>
+				<label>Название</label>
+				<div class="km-value">
+					{{document.prefix | lstring:locale}} {{document.firstName}} {{document.middleName}} {{document.lastName}}
+				</div>
+			</div>
+
+
+			<div ng-show="document.designation">
+				<label>Название</label>
+				<div class="km-value">
+					{{document.designation| lstring:locale}}
+				</div>
+			</div>
+
+            <div ng-show="document.department">
+				<label>Отдел, подразделение, единица</label>
+				<div class="km-value">
+					{{document.department| lstring:locale}}
+				</div>
+			</div>
+
+            <div ng-show="document.contactOrganization">
+				<legend>Организация</legend>
+				<div class="km-value">
+					<view-contact-reference ng-model='document.contactOrganization' locale="document.header.languages"></view-contact-reference>
+				</div>
+			</div>
+
+		</div>
+		<div ng-show="document.address || document.city || document.state || document.postalCode || document.country">
+			<label>Адрес</label>
+			<address class="km-value">
+				<div class="km-pre">{{document.address | lstring:locale}}</div>
+				{{document.city | lstring:locale}} <span ng-show="document.city">, </span> {{document.state | lstring:locale}} <br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}} <span ng-show="document.postalCode">, </span> <b>{{document.country|term}}</b>
+			</address>
+		</div>
+        <div ng-show="document.phones" >
+            <label>Номера телефонов</label>
+            	<div class="km-value">
+					<ul class="list">
+						<li ng-repeat="item in document.phones">{{item}}</li>
+					</ul>
+				</div>
+        </div>
+
+        <div ng-show="document.faxes">
+            <label>Номера факсов</label>
+            	<div class="km-value">
+					<ul class="list">
+						<li ng-repeat="item in document.faxes">{{item}}</li>
+					</ul>
+				</div>
+        </div>
+
+        <div ng-show="document.emails">
+            <label>Адреса электронной почты</label>
+            <div class="km-value">
+				<ul class="list">
+					<li ng-repeat="item in document.emails">
+						<a translation-url  ng-href="mailto:{{item}}">{{item}}</a></li>
+				</ul>
+			</div>
+        </div>
+
+        <div ng-show="document.websites">
+            <label>Веб-сайты</label>
+            <div class="km-value" ng-repeat="item in document.websites">
+                <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+            </div>
+        </div>
+
+		<div>
+			<div ng-show="document.relevantInformation||document.relevantDocuments">
+				<legend>Дополнительная информация</legend>
+
+				<div ng-show="document.relevantInformation">
+					<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>
+				</div>
+
+				<div ng-show="document.relevantDocuments">
+					<label>Другие релевантные адреса веб-сайтов или прилагающиеся документы</label>
+					<div class="km-value" ng-repeat="item in document.relevantDocuments">
+						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

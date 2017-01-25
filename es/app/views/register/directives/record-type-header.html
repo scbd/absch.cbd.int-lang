@@ -1,0 +1,213 @@
+﻿<div class="register-content">
+    <div class="register-content-header color-white" ng-class="{'bg-blue': type.schemaType != 'referenceRecords','bg-orange': type.schemaType == 'referenceRecords' }">
+        <div style="padding:10px 10px;">
+            <h3>{{type.title}} <span class="color-darkgrey"> ({{type.abbreviation}})</span>
+
+        <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span>
+
+             <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span>
+
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span>
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span>
+
+
+            <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span>
+
+              <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span>
+
+
+         </h3>
+
+
+            <script type="text/ng-template" trados-translation="true" id="defaultIntro">
+                <!--<h5> Instructions</h5>
+           <div>Please fill in the submission form and complete all fields following the instructions given.
+                Certain fields are mandatory and indicated with an asterisk(*). The review of the form will highlight the mandatory fields that need
+                to be filled before it is possible to publish the record. The record can be saved as a draft.
+                Frequently saving of records is recommended, especially in case of intermittent internet connections.
+		   </div>
+           <br>
+           <div>It is possible to introduce information one of the six offical UN languages. Select languages using the button located at the top left of the page and for each submission field, a text boxes will
+                appear in the languages selected.</div><br>-->
+            </script>
+
+
+
+            <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
+                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a><!--CON---------------------------->
+            <div ng-if="showCONInfo" class="well well-help">
+
+                <h5> Introducci&oacute;n</h5>
+                <div>Muchos formatos comunes incluyen la posibilidad de agregar informaci&oacute;n de contacto tanto de personas como de organizaciones. Al completar este formulario, usted puede crear una lista de contactos que se comparte y que todos los usuarios nacionales pueden ver. Es similar a una agenda nacional y puede usarse al completar los formatos comunes. Cuando se agrega un contacto a otro formato com&uacute;n, aparece la lista de contactos de su pa&iacute;s , de la que puede seleccionar el (los) contactos pertinente(s). En caso en que quiera incluir un nuevo contacto que no se encuentra actualmente en la lista, tendr&aacute; que guardar el formulario como un borrador e ir a la barra de tareas para crear un nuevo contacto.</div>
+                <br>
+                <div>Para evitar la duplicaci&oacute;n al enviar la informaci&oacute;n, cuando quiera crear contactos para varios individuos que trabajan en la misma organizaci&oacute;n, puede agregar primero la informaci&oacute;n de contacto de la organizaci&oacute;n y, luego, la informaci&oacute;n de contacto de los individuos, e incluir un enlace al registro de la organizaci&oacute;n.</div>
+
+                <div ng-include="'defaultIntro'"></div>
+
+            </div>
+
+            <!--CNA---------------------------->
+            <div ng-if="showCNAInfo" class="well well-help">
+
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>En el art&iacute;culo 13 del Protocolo de Nagoya se solicita designar uno o m&aacute;s autoridades nacionales competentes en materia de acceso y participaci&oacute;n en los beneficios. Esta informaci&oacute;n se pondr&aacute; a disposici&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios de conformidad con el p&aacute;rrafo 2 b) del art&iacute;culo 14 del Protocolo. Cuando una Parte designa m&aacute;s de una autoridad nacional competente, debe proporcionar a la Secretar&iacute;a la informaci&oacute;n pertinente sobre las responsabilidades respectivas de dichas autoridades, junto con la notificaci&oacute;n de designaci&oacute;n de la (las) autoridad(es).&nbsp;</div>
+                <br>
+                <div>En el art&iacute;culo 13, p&aacute;rrafo 2, se estipula que, con arreglo a las medidas legislativas, administrativas o de pol&iacute;tica correspondientes, las autoridades nacionales competentes estar&aacute;n encargadas de conceder el acceso o, seg&uacute;n proceda, de emitir una prueba por escrito de que se ha cumplido con los requisitos de acceso, y estar&aacute;n encargadas de asesorar 
+sobre los procedimientos y requisitos correspondientes para obtener el consentimiento fundamentado previo y concertar condiciones mutuamente acordadas</div>
+            </div>
+
+            <!--MSR---------------------------->
+            <div ng-if="showMSRInfo" class="well well-help">
+
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>En el art&iacute;culo 14, p&aacute;rrafo 2 a) del Protocolo de Nagoya se estipula que las Partes pondr&aacute;n a disposici&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios medidas legislativas, administrativas y de pol&iacute;tica sobre el acceso y la participaci&oacute;n en los beneficios (APB).</div>
+                <br>
+                <div>Estas medidas comprenden estrategias, pol&iacute;ticas, legislaci&oacute;n o reglamentaciones en materia del acceso y la participaci&oacute;n en los beneficios en el plano nacional o regional. Tambi&eacute;n pueden incluir las medidas adoptadas a nivel subnacional o de la comunidad. Este formulario tambi&eacute;n puede emplearse para brindar informaci&oacute;n explicativa adicional sobre c&oacute;mo cumplir con los requisitos en materia de APB.</div>
+                <br>
+                <div>S&iacute;rvase enviar un nuevo formulario para cada medida sobre APB. Habr&aacute; que enviar tantos formularios como medidas sobre APB est&eacute;n disponibles en su jurisdicci&oacute;n.</div>
+                <br>
+                <div>Con miras a proporcionar el panorama m&aacute;s preciso sobre el marco jur&iacute;dico nacional en materia de APB, el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios brinda la posibilidad de reflejar enmiendas a las medidas existentes y enlaces a diferentes medidas, por ejemplo, una reglamentaci&oacute;n para la aplicaci&oacute;n de una ley, o una directriz que brinda m&aacute;s orientaci&oacute;n sobre c&oacute;mo aplicar una determinada disposici&oacute;n.</div>
+                <br>
+                <div>Information registered should be as clear and concise as possible while bearing in mind that the information should guide potential users to comply with the country&rsquo;s legal requirements. La inclusi&oacute;n de traducciones de cortes&iacute;a de la informaci&oacute;n, as&iacute; como informaci&oacute;n explicativa, organigramas o gu&iacute;as paso a paso sobre c&oacute;mo solicitar un consentimiento fundamentado previo es muy &uacute;til a fin de llegar a los usuarios y garantizar que conozcan los requisitos nacionales para el acceso.</div>
+            </div>
+
+            <!--NDB---------------------------->
+            <div ng-if="showNDBInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+            <!--IRCC---------------------------->
+            <div ng-if="showIRCCInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>Las partes que requieran un consentimiento fundamentado previo deben prever el otorgamiento de permisos o su equivalente emitidos en el momento del acceso como prueba de la decisi&oacute;n de otorgar el consentimiento fundamentado previo y de que se han establecido condiciones mutuamente acordadas (art&iacute;culo 6, p&aacute;rrafo 3 e)). Esta informaci&oacute;n se pondr&aacute; a disposici&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios de conformidad con el art&iacute;culo 14, p&aacute;rrafo 2 c) del Protocolo.</div>
+                <br>
+                <div>En el art&iacute;culo 17, p&aacute;rrafo 2, se estipula que un permiso o su equivalente emitido conforme el art&iacute;culo&nbsp;6, p&aacute;rrafo&nbsp;3&nbsp;e) d y dado a conocer en el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios constituir&aacute; un certificado de cumplimiento reconocido internacionalmente.&nbsp;</div>
+                <br>
+                <div>En el art&iacute;culo 17, p&aacute;rrafo 3, adem&aacute;s se establece que un certificado de cumplimiento reconocido internacionalmente servir&aacute; como prueba de que se ha accedido al recurso que cubre conforme al consentimiento fundamentado previo y de que se han convenido condiciones mutuamente acordadas, conforme a lo requerido por la legislaci&oacute;n o los requisitos reglamentarios nacionales sobre acceso y participaci&oacute;n en los beneficios de la Parte que otorga el consentimiento fundamentado previo.</div>
+                <br>
+                <div>En el art&iacute;culo 17, p&aacute;rrafo 4, se estipula que el certificado de cumplimiento reconocido internacionalmente incluir&aacute; la siguiente informaci&oacute;n como m&iacute;nimo, cuando no sea confidencial:</div>
+                <br>
+                <ul>
+                    <li><span>Autoridad emisora;</span></li>
+                    <li><span>Fecha de emisi&oacute;n;</span></li>
+                    <li>El proveedor;</li>
+                    <li>Identificador exclusivo del certificado;</li>
+                    <li><span>La persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo;</span></li>
+                    <li>Asunto o recursos gen&eacute;ticos cubiertos por el certificado;</li>
+                    <li>Confirmaci&oacute;n de que se han establecido condiciones mutuamente acordadas;</li>
+                    <li>Confirmaci&oacute;n de que se obtuvo el consentimiento fundamentado previo; y</li>
+                    <li><span>Utilizaci&oacute;n comercial y/o de &iacute;ndole no comercial.</span></li>
+                </ul>
+                <br>
+                <div>De conformidad con lo anterior, se solicita a las Partes que completen el formulario. Como m&iacute;nimo, es preciso completar los campos obligatorios con la informaci&oacute;n que figura en el permiso (o su equivalente) emitido a nivel nacional. Si la informaci&oacute;n que ha de incluirse en un campo obligatorio es confidencial, el campo puede marcarse como confidencial. Las Partes tambi&eacute;n pueden incluir informaci&oacute;n adicional, que comprenda copias del permiso o su equivalente, si deciden que corresponde.&nbsp;</div>
+                <br>
+                <div>Una vez que esta informaci&oacute;n se publica en el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios, se emite o constituye un certificado de cumplimiento reconocido internacionalmente. Luego, el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios enviar&aacute; una copia de cortes&iacute;a del certificado  reconocido internacionalmente por medios electr&oacute;nicos a:</div>
+                <br>
+                <ul>
+                    <li>el punto focal nacional y la autoridad (o autoridades) nacional competente del pa&iacute;s responsables de emitir permisos o sus equivalentes;&nbsp;</li>
+                    <li>el proveedor, si la informaci&oacute;n no es confidencial; y</li>
+                    <li><span>la persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo, si la informaci&oacute;n no es confidencial.</span></li>
+                </ul>
+                <br>
+                <div>El certificado de cumplimiento reconocido internacionalmente desempe&ntilde;a un papel fundamental en la vigilancia y en la mejora de la transparencia en la utilizaci&oacute;n de los recursos gen&eacute;ticos a lo largo de la cadena de valor (investigaci&oacute;n, desarrollo, innovaci&oacute;n, precomercializaci&oacute;n o comercializaci&oacute;n).</div>
+            </div>
+
+
+            <!--CPC---------------------------->
+            <div ng-if="showCPCInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>Los puntos de verificaci&oacute;n recolectar&aacute;n o recibir&aacute;n, seg&uacute;n proceda, informaci&oacute;n pertinente relacionada con el consentimiento fundamentado previo, con la fuente del recurso gen&eacute;tico, con el establecimiento de condiciones mutuamente acordadas y/o con la utilizaci&oacute;n de recursos gen&eacute;ticos (art&iacute;culo 17, p&aacute;rrafo 1 a) i)), incluido el certificado de cumplimiento reconocido internacionalmente, cuando est&eacute; disponible. De conformidad con el p&aacute;rrafo 1 a) iii) del art&iacute;culo 17 del Protocolo de Nagoya, la informaci&oacute;n recopilada por los puntos de verificaci&oacute;n se proporcionar&aacute; a las autoridades nacionales pertinentes, a la Parte que otorga el consentimiento fundamentado previo y al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios, seg&uacute;n proceda.</div>
+                <br>
+                <div>Sobre la base de la informaci&oacute;n recopilada o recibida por el punto de verificaci&oacute;n y proporcionada por la autoridad publicadora nacional al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios, autom&aacute;ticamente se enviar&aacute; una copia de cortes&iacute;a del registro por medios electr&oacute;nicos a las siguientes entidades, seg&uacute;n proceda:&nbsp;</div>
+                <br>
+                <ul>
+                    <li>la(s) autoridad(es) nacional(es) designadas(s) seg&uacute;n se determina en el formato com&uacute;n sobre puntos de verificaci&oacute;n;&nbsp;</li>
+                    <li>el punto focal nacional y la(s) autoridad(es) nacional(es) competente(s) del pa&iacute;s que proporciona el recurso gen&eacute;tico, y</li>
+                    <li>la persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo, si la informaci&oacute;n no es confidencial.</li>
+                </ul>
+                <br>
+                <div>Este formulario facilita el flujo de informaci&oacute;n entre los puntos de verificaci&oacute;n y todas las partes implicadas y permite que los pa&iacute;ses controlen la utilizaci&oacute;n de los recursos gen&eacute;ticos.</div>
+            </div>
+
+
+            <!--CP---------------------------->
+            <div ng-if="showCPInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>El formulario de presentaci&oacute;n se emplea para registrar informaci&oacute;n sobre los puntos de verificaci&oacute;n designados en virtud del art&iacute;culo 17, p&aacute;rrafo 1 a) del Protocolo. La funci&oacute;n de los puntos de verificaci&oacute;n es recolectar o recibir, seg&uacute;n proceda, informaci&oacute;n pertinente relacionada con el consentimiento fundamentado previo, con la fuente del recurso gen&eacute;tico, con el establecimiento de condiciones mutuamente acordadas y/o con la utilizaci&oacute;n de recursos gen&eacute;ticos, seg&uacute;n corresponda (subp&aacute;rrafo i). La informaci&oacute;n recopilada por los puntos de verificaci&oacute;n se proporcionar&aacute; a las autoridades nacionales pertinentes, a la Parte que otorga el consentimiento fundamentado previo y al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios (subp&aacute;rrafo 2).</div>
+            </div>
+
+            <!--VLR---------------------------->
+            <div ng-if="showVLRInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>En la Biblioteca Virtual del Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios se dispone de varios recursos que son pertinentes para el APB y el Protocolo de Nagoya. Entre ellos, entre otros, bibliograf&iacute;a general sobre APB y el Protocolo de Nagoya, materiales de sensibilizaci&oacute;n, estudios de casos, videos, recursos para la creaci&oacute;n de capacidad, etc.</div>
+                <br>
+                <div>La Biblioteca Virtual puede ser un espacio de intercambio de conocimientos, lecciones aprendidas y pr&aacute;cticas &oacute;ptimas, a fin de brindar apoyo a la creaci&oacute;n de capacidad para la aplicaci&oacute;n efectiva del Protocolo de Nagoya.</div>
+
+            </div>
+
+            <!--A19A20---------------------------->
+            <div ng-if="showA19A20Info" class="well well-help">
+                <h5> Introducci&oacute;n</h5>
+                <div>En los art&iacute;culos 19 y 20 del Protocolo se solicita a cada Parte que aliente, seg&uacute;n proceda, el desarrollo, la actualizaci&oacute;n y la utilizaci&oacute;n de cl&aacute;usulas contractuales modelo sectoriales e intersectoriales para las condiciones mutuamente acordadas, as&iacute; como los c&oacute;digos de conducta voluntarios, directrices y pr&aacute;cticas &oacute;ptimas y/o est&aacute;ndares en relaci&oacute;n con el acceso y participaci&oacute;n en los beneficios. Estos instrumentos pueden servir para promocionar la certeza y transparencia jur&iacute;dicas y reducir los costos de las transacciones de la aplicaci&oacute;n de los requisitos en materia de APB, considerando las pr&aacute;cticas de los diferentes sectores.</div>
+                <br>
+                <div>Este formato com&uacute;n se utilizar&aacute; para registrar cl&aacute;usulas contractuales modelo para las condiciones mutuamente acordadas, as&iacute; como c&oacute;digos de conducta voluntarios, directrices y pr&aacute;cticas &oacute;ptimas y/o est&aacute;ndares. </div>
+                <br>
+                <div>If this tool is developed by a Party to support implementation of domestic ABS requirements as part of a country&rsquo;s national ABS framework, please register that information using the common format for legislative, administrative or policy measures. Esto permitir&aacute; que la informaci&oacute;n se muestre como parte del perfil del pa&iacute;s y que se incluya en la lista de medidas nacionales sobre APB. </div>
+
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+
+            <!--CPP---------------------------->
+            <div ng-if="showCPPInfo" class="well well-help">
+                <h5> Introducci&oacute;n</h5>
+                <div>
+                    Article 12, paragraph 1, of the Nagoya Protocol provides that Parties, in implementing their obligations under the Protocol, shall in accordance with domestic law take into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures, as applicable, with respect to traditional knowledge associated with genetic resources. Adem&aacute;s, las Partes procurar&aacute;n apoyar, seg&uacute;n proceda, el desarrollo por parte de las comunidades ind&iacute;genas y locales de protocolos comunitarios en relaci&oacute;n con el acceso a los conocimientos tradicionales asociados a recursos
+gen&eacute;ticos y los beneficios que se deriven de la utilizaci&oacute;n de tales
+conocimientos (art&iacute;culo 12, p&aacute;rrafo 3, a)).
+                </div>
+                <br>
+                <div>Brindar informaci&oacute;n sobre c&oacute;mo acceder a los conocimientos tradicionales asociados a los recursos gen&eacute;ticos ayuda a los otros actores a comprender mejor y respetar m&aacute;s los procedimientos y valores comunitarios.
+                </div>
+                <br>
+                <div>Este formato com&uacute;n habr&aacute; de utilizarse para registrar los protocolos y procedimientos comunitarios y las leyes consuetudinarias. A Party may also decideto include this information as a legislative, administrative or policy measure, as part of a country&rsquo;s national ABS framework to also be displayed as part of the country profile. En este caso, solo las autoridades publicadoras debidamente designadas por el pa&iacute;s pueden publicar protocolos y procedimientos comunitarios, as&iacute; como leyes consuetudinarias, como un registro nacional.
+                </div>
+                <div ng-include="'defaultIntro'"></div>
+            </div>
+
+            <!--CBI---------------------------->
+            <div ng-if="showCBIInfo" class="well well-help">
+                <div ng-include="'defaultIntro'"></div>
+                <h5> Introducci&oacute;n</h5>
+                <div>En el art&iacute;culo 22 del Protocolo de Nagoya se establece que las Partes cooperar&aacute;n para crear y desarrollar capacidades y fortalecer los recursos humanos y las capacidades institucionales para aplicar Protocolo de manera efectiva en las Partes que son pa&iacute;ses en desarrollo, incluso a trav&eacute;s de las instituciones y organizaciones mundiales, regionales, subregionales y nacionales existentes. En este contexto, las Partes deber&iacute;an tambi&eacute;n facilitar la participaci&oacute;n de las comunidades ind&iacute;genas y locales y los interesados directos pertinentes, incluidas las organizaciones no gubernamentales y el sector privado.</div>
+                <br>
+                <div>En el art&iacute;culo 22, p&aacute;rrafo 6 se establece que deber&iacute;a proporcionarse informaci&oacute;n sobre iniciativas de creaci&oacute;n y desarrollo de capacidad en el nivel nacional,
+regional e internacional al Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios a fin de promover sinergias y coordinaci&oacute;n en materia de creaci&oacute;n y desarrollo de capacidades para el acceso y la participaci&oacute;n en los beneficios.</div>
+                <br>
+                <div>Si toda la informaci&oacute;n sobre proyectos e iniciativas en materia de creaci&oacute;n de capacidad est&aacute; disponible en una sola base de datos, esto puede significar oportunidades para la coordinaci&oacute;n entre los actores involucrados en la creaci&oacute;n de capacidad en la misma zona geogr&aacute;fica o que abarquen cuestiones de tem&aacute;ticas similares, as&iacute; como el aprendizaje a partir de las experiencias de los otros. Tambi&eacute;n puede ayudar a determinar cu&aacute;les son las brechas y superposiciones en las iniciativas de creaci&oacute;n de capacidad y hacerles frente.</div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
