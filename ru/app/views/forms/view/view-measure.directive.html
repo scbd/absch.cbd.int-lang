@@ -18,7 +18,7 @@
 		<div ng-show="document.title">
 			<label>Title</label>
 			<div class="km-value">
-				<strong>{{document.title | lstring:locale}}</strong>
+				<strong>{{document.address | lstring:locale}}</strong>
 			</div>
 		</div>
 
@@ -96,7 +96,7 @@
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.documents">
-						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{item.language}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</li>
 				</ul>
 			</div>
@@ -107,12 +107,12 @@
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.documentTranslations">
-						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{item.language}})</i> <i ng-show="item.translationType">({{item.translationType}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<div ng-show="document.linkedMeasures">
+		<!--<div ng-show="document.linkedMeasures">
 			<label>Related measures</label>
 			<div class="km-value">
 				<ul>
@@ -121,12 +121,12 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div>-->
 
 
 		<div ng-show="document.amendedMeasures || document.amendmentsDescription">
 			<legend>Amendments</legend>
-			<div ng-show="amendedMeasures">
+			<div ng-show="document.amendedMeasures">
 				<label>This measure is amending the following:</label>
 
 				<div class="km-value">
@@ -157,21 +157,25 @@
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.measureAmendedBy">
-						<div view-default-reference ng-model="item.identifier_s" locale="locale"></div>
+						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
 					</li>
 				</ul>
 			</div>
 		</div>
 
-		<div ng-show="document.measureRelatedTo && document.measureRelatedTo.length>0">
-			<legend>Relationships</legend>
-			<label>This measure is related to:</label>
-			<div class="km-value">
+		<div ng-show="(document.linkedMeasures && document.linkedMeasures.length>0) || document.linkedMeasuresDescription">
+			<legend>Relationships</legend>			
+			<div class="km-value" ng-show="document.linkedMeasures && document.linkedMeasures.length>0">
+				<label>This measure is related to:</label>
 				<ul>
-					<li ng-repeat="item in document.measureRelatedTo">
-						<div view-default-reference ng-model="item.identifier_s" locale="locale"></div>
+					<li ng-repeat="item in document.linkedMeasures">
+						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
 					</li>
 				</ul>
+			</div>
+			<div ng-show="document.linkedMeasuresDescription">
+				<label>Relationships description</label>
+				<div class="km-value km-pre" ng-bind-html="document.linkedMeasuresDescription | lstring:review.locale"></div>
 			</div>
 		</div>
 		<div ng-if="document.absMesasureNotApplicable">

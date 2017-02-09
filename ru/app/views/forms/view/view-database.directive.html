@@ -11,14 +11,14 @@
 		<div ng-show="document.government">
 			<label name="country">Страна</label>
 			<div class="km-value">
-				{{document.government|term}} <span ng-party-status government="document.government" id="government"></span>
+				{{document.government | term}} <span ng-party-status government="document.government" id="government"></span>
 			</div>
 		</div>
 
 			<div ng-show="document.title">
 			 	<label>Title</label>
 			 	<div class="km-value">
-			 	<strong>{{document.title | lstring:locale}}</strong>
+			 	<strong>{{document.address | lstring:locale}}</strong>
 			 	</div>
 		 	</div>
 

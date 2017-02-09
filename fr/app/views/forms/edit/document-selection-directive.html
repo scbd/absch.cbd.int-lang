@@ -2,10 +2,10 @@
     <!-- existing documents display -->
     <div class="row">
         <div class="col-xs-12">
-            <span ng-show="model.length==0 || !model"> <i class="color-blue"> No records have been linked. </i> </span> <span ng-show="model.length==1"><i class="color-blue">There is <b>{{model.length}}</b> linked record.</i></span> <span ng-show="model.length>1"><i class="color-blue">There are <b>{{model.length}}</b> linked records.</i></span>
-            <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'Add record(s)'}}</button>
-            <button type="button" ng-click="showRecords(); areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords" class="btn btn-primary btn-sm">Display records</button>
-            <button type="button" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0" class="btn btn-primary btn-sm">Hide records</button>
+            <span ng-show="model.length==0 || !model"> <i class="color-blue"> Aucun lien d'enregistrement. </i> </span> <span ng-show="model.length==1"><i class="color-blue">Il y a un lien d'enregistrement  <b>{{model.length}}</b> .</i></span> <span ng-show="model.length>1"><i class="color-blue">Il y a des liens d'enregistrement  <b>{{model.length}}</b> .</i></span>
+            <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'Ajouter les enregistrement(s)'}}</button>
+            <button type="button" ng-click="showRecords(); areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords" class="btn btn-primary btn-sm">Afficher les enregistrements</button>
+            <button type="button" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0" class="btn btn-primary btn-sm">Masquer les enregistrements</button>
         </div>
     </div>
     <div class="row" ng-show="areVisible">
@@ -27,9 +27,9 @@
     <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
-               <h3>Please select from published record(s) below:</h3>
+               <h3>Veuillez choisir parmi les enregistrements publiés ci-dessous:</h3>
                 <div>
-                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filter by record type..."></div>
+                    <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filtrer par type d'enregistrement..."></div>
                 </div>
             </div>
             <div class="modal-body">
@@ -44,13 +44,13 @@
                         </div>
 
                     </div>
-                    <div ng-show="isLoading"> loading...</div>
+                    <div ng-show="isLoading"> chargement en cours...</div>
                 </div>
             </div>
             <div class="modal-footer bg-grey">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a> <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Close</a>
+                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Enregistrer</a> <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Fermer</a>
                     </div>
                 </div>
             </div>

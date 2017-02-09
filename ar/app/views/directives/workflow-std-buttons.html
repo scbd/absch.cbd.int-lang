@@ -1,0 +1,105 @@
+﻿<div class="row">
+    <div class="clearfix"></div>
+
+    <div class="col-xs-12">
+
+        <div class="pull-left">
+                <div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">Change website language:</div>
+                <div style="display:inline;" class="locale-header" id="MyLocale"></div>
+                &nbsp; | &nbsp; 
+                <div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">Submit in other language(s):</div>
+                <div style="display:inline;" km-form-languages ng-model="languages"  class="btn-thin"></div>
+                &nbsp; | &nbsp; 
+            <div style="display:inline">
+                <span ng-show="lastSaved && hideTimer=='false'" style="text-transform:uppercase;font-size:12px;font-weight: 500;padding-right:3px;"><span class="bg-yellow label" style="font-size:12px;"><i class="color-grey glyphicon glyphicon-time"></i></span><span class="color-blue" style="padding:3px;">{{lastSaved}}</span>منذ اخر حفظ</span>
+            </div>
+        </div>
+
+        <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;" class="pull-right">
+            <li style="display: inline;"><button type="button" class="btn btn-warning " ng-click="close()" ng-disabled="loading">
+                <i class="glyphicon glyphicon-remove"></i> إغلاق</button>
+            </li>
+            <li style="display: inline;"  ng-show="security.canSaveDraft">
+                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">حفظ المسودة <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i>
+                  </button>
+            </li>
+            <li style="display: inline;" ng-show="security.canSave">
+                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">نشر <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i>
+                    </button>
+            </li>
+            <li style="display: inline;" ng-show="security.canSave!==undefined && (!security.canSave && security.canSaveDraft)">
+                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">طلب النشر <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i>
+                    </button>
+            </li>
+  
+        </ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-xs-12" style="border-bottom:1px solid #eee;margin-bottom:0px;">
+        <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;" class="pull-left">
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='edit'}">
+                <a translation-url  ng-click="tab='edit'" ng-disabled="loading || security==undefined">استمارة التقديم</a>
+            </li>
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='review'}">
+                <a translation-url  ng-click="tab='review'" ng-disabled="loading || security==undefined">مراجعة:</a>
+            </li>
+                     
+        </ul>
+    </div>
+
+    <div style="display:none" id="msgDraftSaveMessage">
+        تم حفظ السجل الخاص بك كمسودة
+    </div>
+
+    <div class="row" style="display:none" id="divShowError" ng-show="showError">
+        <div class="col-xs-12">
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" ng-click="showError=false">
+                    <span aria-hidden="true">&times;</span> <span class="sr-only">أغلق</span>
+                </button> {{errorMessage}}
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dialogCancel" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="closeDialog()" aria-hidden="true">×</button>
+                    <h4>إلغاء التغييرات...</h4>
+                </div>
+                <div class="modal-body">
+                    <p>إذا كنت تريد إلغاء التغييرات التى أضفتها إلي المسودة, فيمكنك حفظ النسخة السابقة من هذه المسودة والتي ستكون متاحة في قائمة المسودات في مركز الإدارة. أنت أو أحد زملائك يمكنه إكمال التعديل لهذا السجل في هذه المرة أو في مرة لاحقة.</p>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose">إلغاء</button>
+                    <button type="button" ng-click="close(true)" class="btn btn-warning closeWithoutSaving pull-left">إغلاق دون حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divAdditionalInfo" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-red color-white">
+                    <button type="button" class="close" ng-click="closeAddInfoDialog(false)" aria-hidden="true">×</button>
+                    <h2>طلب النشر</h2>
+                </div>
+                <div class="modal-body">
+                    <p>هل ترغب في إضافة معلومات إضافية للسلطة النشر؟</p>
+                    <textarea class="form-control" rows="5" name="info" ng-model="InfoDoc.additionalInfo"></textarea>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">إلغاء</button>
+                    <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">رسل طلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

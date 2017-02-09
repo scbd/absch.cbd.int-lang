@@ -14,7 +14,7 @@
 
     <div class="alert alert-danger" ng-show="hasError()">
       <strong>Error as occured...</strong>
-      <div>Erreur :</div>
+      <div>{{error}}</div>
     </div>
 <!--
     <div ng-show="isLoading()">
@@ -61,13 +61,13 @@
                                 LIGNES DIRECTRICES POUR LE RAPPORT NATIONAL INT&Eacute;RIMAIRE SUR LA MISE EN OEUVRE DU PROTOCOLE DE NAGOYA
                                  </h4>
                                  <div>
-                                 <p>Le format ci apr&egrave;s pour la pr&eacute;paration du rapport national int&eacute;rimaire sur la mise en &oelig;uvre du Protocole de Nagoya sur l&rsquo;acc&egrave;s et le partage des avantages, pr&eacute;vu par l&rsquo;article 29 du Protocole, consiste en une s&eacute;rie de questions bas&eacute;es sur les dispositions du Protocole qui &eacute;tablissent des obligations pour les Parties au Protocole.  Ces questions sont identifi&eacute;es comme &eacute;tant obligatoires et sont pr&eacute;c&eacute;d&eacute;es d&rsquo;un ast&eacute;risque.</p>
+                                 <p>Le format ci apr&egrave;s pour la pr&eacute;paration du rapport national int&eacute;rimaire sur la mise en &oelig;uvre du Protocole de Nagoya sur l&rsquo;acc&egrave;s et le partage des avantages, pr&eacute;vu par l&rsquo;article 29 du Protocole, consiste en une s&eacute;rie de questions bas&eacute;es sur les dispositions du Protocole qui &eacute;tablissent des obligations pour les Parties au Protocole. Ces questions sont identifi&eacute;es comme &eacute;tant obligatoires et sont pr&eacute;c&eacute;d&eacute;es d&rsquo;un ast&eacute;risque.</p>
 
                                  <p>Par ailleurs, certaines questions ne sont pas strictement bas&eacute;es sur les dispositions du Protocole et sont identifi&eacute;es comme &eacute;tant facultatives. Elles sont incluses dans le format de rapport afin de contribuer &agrave; l&rsquo;&eacute;valuation et examen de l'efficacit&eacute; du Protocole, dans le cadre de l&rsquo;article 31, ainsi que pour recenser les difficult&eacute;s et les d&eacute;fis qui se sont pr&eacute;sent&eacute;s lors de la mise en &oelig;uvre du Protocole de Nagoya et des d&eacute;cisions adopt&eacute;es par la Conf&eacute;rence des Parties si&eacute;geant en tant que R&eacute;union des Parties au Protocole de Nagoya (COP MOP).</p>
 
                                  <p>Le rapport national int&eacute;rimaire peut s&rsquo;av&eacute;rer un outil pr&eacute;cieux autant pour les Parties que pour les non Parties, pour &eacute;valuer le niveau de mise en &oelig;uvre du Protocole, ainsi que les lacunes et les besoins en mati&egrave;re de capacit&eacute;s, et aidera la COP MOP &agrave; examiner p&eacute;riodiquement la mise en &oelig;uvre du Protocole et &agrave; prendre, dans le cadre de son mandat, les d&eacute;cisions n&eacute;cessaires pour promouvoir sa mise en &oelig;uvre effective, conform&eacute;ment au paragraphe 4 de l&rsquo;article 26.</p>
 
-                                 <p>Les informations pr&eacute;sent&eacute;es au moyen du rapport int&eacute;rimaire national pourraient &eacute;galement permettre aux pays de partager leurs exp&eacute;riences, difficult&eacute;s et solutions relativement &agrave; la mise en &oelig;uvre du Protocole de Nagoya. &Agrave; cet &eacute;gard, le rapport national interm&eacute;diaire peut s'av&eacute;rer un outil pr&eacute;cieux pour d&eacute;velopper et renforcer les capacit&eacute;s de mie en &oelig;uvre du Protocole et pur concevoir des activit&eacute;s et renforcement des capacit&eacute;s de fa&ccedil;on plus efficace. Le format cherche &agrave; r&eacute;duire au minimum la charge que l&rsquo;&eacute;tablissement de rapports fait peser sur les pays, et par cons&eacute;quent, les questions sont simples (en g&eacute;n&eacute;ral de type oui ou non). Dans l&rsquo;ensemble, ces questions sont suivies par des champs de saisie de texte, o&ugrave; les pays sont encourag&eacute;s &agrave; fournir des d&eacute;tails sur les mesures mises en &oelig;uvre et &agrave; consigner les difficult&eacute;s et les d&eacute;fis qui se sont pr&eacute;sent&eacute;s dans la mise en &oelig;uvre de dispositions particuli&egrave;res du Protocole et &agrave; fournir d&rsquo;autres informations sur la question en fournissant des liens &agrave; des dossiers existants du Centre d&rsquo;&eacute;change sur l&rsquo;acc&egrave;s et le partage des avantages (Centre d&rsquo;&eacute;change sur l&rsquo;APA), &agrave; des sites Web, ou en t&eacute;l&eacute;chargeant des documents.  Il s'agit d'une opportunit&eacute; pour identifier les bonnes pratiques et les contraintes dans la mise en &oelig;uvre du Protocole de Nagoya</p>
+                                 <p>Les informations pr&eacute;sent&eacute;es au moyen du rapport int&eacute;rimaire national pourraient &eacute;galement permettre aux pays de partager leurs exp&eacute;riences, difficult&eacute;s et solutions relativement &agrave; la mise en &oelig;uvre du Protocole de Nagoya. &Agrave; cet &eacute;gard, le rapport national interm&eacute;diaire peut s'av&eacute;rer un outil pr&eacute;cieux pour d&eacute;velopper et renforcer les capacit&eacute;s de mie en &oelig;uvre du Protocole et pur concevoir des activit&eacute;s et renforcement des capacit&eacute;s de fa&ccedil;on plus efficace. Le format cherche &agrave; r&eacute;duire au minimum la charge que l&rsquo;&eacute;tablissement de rapports fait peser sur les pays, et par cons&eacute;quent, les questions sont simples (en g&eacute;n&eacute;ral de type oui ou non). Dans l&rsquo;ensemble, ces questions sont suivies par des champs de saisie de texte, o&ugrave; les pays sont encourag&eacute;s &agrave; fournir des d&eacute;tails sur les mesures mises en &oelig;uvre et &agrave; consigner les difficult&eacute;s et les d&eacute;fis qui se sont pr&eacute;sent&eacute;s dans la mise en &oelig;uvre de dispositions particuli&egrave;res du Protocole et &agrave; fournir d&rsquo;autres informations sur la question en fournissant des liens &agrave; des dossiers existants du Centre d&rsquo;&eacute;change sur l&rsquo;acc&egrave;s et le partage des avantages (Centre d&rsquo;&eacute;change sur l&rsquo;APA), &agrave; des sites Web, ou en t&eacute;l&eacute;chargeant des documents. Il s'agit d'une opportunit&eacute; pour identifier les bonnes pratiques et les contraintes dans la mise en &oelig;uvre du Protocole de Nagoya</p>
 
                                  <p>Afin d&rsquo;&eacute;viter les doubles emplois dans la communication des informations et de tirer le meilleur parti des informations d&eacute;j&agrave; disponibles dans le Centre d&rsquo;&eacute;change sur l&rsquo;APA, les pays auront la possibilit&eacute; de lier des dossiers nationaux et de r&eacute;f&eacute;rence d&eacute;j&agrave; existants dans le Centre d&rsquo;&eacute;change, publi&eacute;s par l&rsquo;autorit&eacute; responsable de la publication, aux diverses sections du rapport int&eacute;rimaire national, s&rsquo;ils le souhaitent. Sinon, lorsque le Secr&eacute;tariat consolidera les informations pour la consid&eacute;ration de la COP MOP, outre les informations figurant dans les rapports nationaux int&eacute;rimaires, il inclura &eacute;galement les informations pertinentes d&eacute;j&agrave; publi&eacute;es dans le Centre d&rsquo;&eacute;change sur l&rsquo;APA.</p>
 
@@ -79,7 +79,7 @@
 
                                  <p>Les pays sont encourag&eacute;s &agrave; utiliser la version en ligne du format, &agrave; moins que cela soit impossible du point de vue technique, &agrave; soumettre le rapport par le biais du Centre d&rsquo;&eacute;change sur l&rsquo;APA, &agrave; s&rsquo;assurer de l&rsquo;exactitude des informations nationales existantes sur ce dernier et &agrave; les mettre &agrave; jour si requis.</p>
 
-                                 <p>Les Parties doivent r&eacute;aliser des soumissions hors ligne au Centre d&rsquo;&eacute;change sur l&rsquo;APA uniquement s&rsquo;il n&rsquo;est pas possible, du point de vue technique, de le faire en ligne.  Les soumissions hors ligne doivent se faire au moyen du formulaire prot&eacute;g&eacute;, tel que disponible pour t&eacute;l&eacute;chargement sur le Centre d&rsquo;&eacute;change sur l&rsquo;APA en format MS Word.&nbsp; Pour les communications hors ligne au Centre d&rsquo;&eacute;change sur l&rsquo;APA, veuillez utiliser le formulaire prot&eacute;g&eacute; en format MS Word. Il est recommand&eacute; que les pays envoient le rapport par courriel au Secr&eacute;tariat (secretariat@cbd.int), avec une copie scann&eacute;e de la derni&egrave;re page, sign&eacute;e par l&rsquo;autorit&eacute; responsable de la publication du Centre d&rsquo;&eacute;change sur l&rsquo;APA.  Par la suite, le Secr&eacute;taire ex&eacute;cutif aidera les Parties &agrave; rendre leur rapport disponible dans le Centre d&rsquo;&eacute;change sur l&rsquo;APA.</p>
+                                 <p>Les Parties doivent r&eacute;aliser des soumissions hors ligne au Centre d&rsquo;&eacute;change sur l&rsquo;APA uniquement s&rsquo;il n&rsquo;est pas possible, du point de vue technique, de le faire en ligne. Les soumissions hors ligne doivent se faire au moyen du formulaire prot&eacute;g&eacute;, tel que disponible pour t&eacute;l&eacute;chargement sur le Centre d&rsquo;&eacute;change sur l&rsquo;APA en format MS Word.&nbsp; Pour les communications hors ligne au Centre d&rsquo;&eacute;change sur l&rsquo;APA, veuillez utiliser le formulaire prot&eacute;g&eacute; en format MS Word. Il est recommand&eacute; que les pays envoient le rapport par courriel au Secr&eacute;tariat (secretariat@cbd.int), avec une copie scann&eacute;e de la derni&egrave;re page, sign&eacute;e par l&rsquo;autorit&eacute; responsable de la publication du Centre d&rsquo;&eacute;change sur l&rsquo;APA. Par la suite, le Secr&eacute;taire ex&eacute;cutif aidera les Parties &agrave; rendre leur rapport disponible dans le Centre d&rsquo;&eacute;change sur l&rsquo;APA.</p>
                                  </div>
                              </div>
 
@@ -91,8 +91,8 @@
             				<div class="row">
             					<div class="col-xs-12">
             						<div class="km-control-group" name="government" required  bold="true"  caption="1. Pays">
-                                        <span class="help-inline color-blue bold" ng-if="userGovernment()"> Pays ne peut pas &ecirc;tre modifi&eacute;.  </span>
-                                        <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Veuillez s&eacute;lectionner un pays..."></div>
+                                        <span class="help-inline color-blue bold" ng-if="userGovernment()"> Country can not be changed. </span>
+                                        <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
             						</div>
             					</div>
             				</div>
@@ -101,8 +101,8 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="title" required caption="Titre du pr&eacute;sent rapport national">
-                                            <div class="help-info">Ce champ sert de titre du dossier, il devrait donc &ecirc;tre distinct et aider d'identifier facilement le dossier dans le Centre d'&eacute;change sur l&rsquo;APA.</div>
+                                        <div class="km-control-group" name="title" required caption="Title of this nation report">
+                                            <div class="help-info">This field serves as the title of the record, therefore it should be distinct and help to easily identify the record in the ABS Clearing-House.</div>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Titre du pr&eacute;sent rapport national" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                             
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="contact"  bold="true" caption="2. Personne contact ">
+                                    <div class="km-control-group" required name="contact"  bold="true" caption="2. Personne contact">
                                           <div document-selector ng-model="document.contact"
                                                                 ng-disabled="!document.government"
                                                                 question="contact"
@@ -163,7 +163,7 @@
                                         <div km-textbox-ml rows=4 name="question4.AdditionalInfo" ng-model="document.question4.additionalInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
-                                    <div class="km-control-group" ng-required="isQ3Yes(document.question3.answer)" name="question4.ChallengesInfo" caption="Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s rencontr&eacute;es dans la mise en &oelig;uvre de ces mesures.">
+                                    <div class="km-control-group" ng-required="isQ3Yes(document.question3.answer)" name="question4.ChallengesInfo" caption="Please provide a summary of the main difficulties and challenges encountered in setting up these measures.">
                                         <div km-textbox-ml rows=4 name="question4.ChallengesInfo" ng-required="isQ3Yes(document.question3.answer)" ng-model="document.question4.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
@@ -206,10 +206,10 @@
 
                             <div class="row" ng-class="{'disable': document.question3.answer===undefined}">
             					<div class="col-xs-12">
-                                    <div class="km-control-group" bold="true" ng-required="!isQ3Yes(document.question3.answer)" name="question6" caption="6. Votre pays a-t-il d&eacute;sign&eacute; une ou des autorit&eacute;s nationales comp&eacute;tentes, tel que pr&eacute;vu par l&rsquo;article 13?">
+                                    <div class="km-control-group" bold="true" ng-required="!isQ3Yes(document.question3.answer)" name="question6" caption="6. Votre pays a-t-il d&eacute;sign&eacute; un ou plusieurs points de contr&ocirc;le, tel que pr&eacute;vu par l&rsquo;article 13?">
                                         <div  ng-show="!isQ3Yes(document.question3.answer)" ng-required="!isQ3Yes(document.question3.answer)" class="km-yes-no" required name="question6" ng-model="document.question6.answer"></div>
                                     </div>
-                                    <div class="km-control-group" ng-required="isQ3Yes(document.question3.answer)" name="question6.ChallengesInfo" caption="Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s qui ont entrav&eacute; la d&eacute;signation d&rsquo;au moins une autorit&eacute; nationale comp&eacute;tente ">
+                                    <div class="km-control-group" ng-required="isQ3Yes(document.question3.answer)" name="question6.ChallengesInfo" caption="Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s qui ont entrav&eacute; la d&eacute;signation d&rsquo;au moins une autorit&eacute; nationale comp&eacute;tente">
                                         <div km-textbox-ml rows=4 name="question6.ChallengesInfo" ng-required="isQ3Yes(document.question3.answer)" ng-model="document.question6.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
                                     <div  ng-show="!isQ3Yes(document.question3.answer)" class="km-control-group" name="question6FurtherInfo" caption="">
@@ -234,7 +234,7 @@
                                     <div class="km-control-group" bold="true" ng-required="!isQ3Yes(document.question3.answer)" name="question7" caption="7. Votre pays a-t-il mis &agrave; disposition sur le Centre d&rsquo;&eacute;change sur l&rsquo;APA les permis ou documents &eacute;quivalents d&eacute;livr&eacute;s au moment de l&rsquo;acc&egrave;s pour attester de la d&eacute;cision d&rsquo;accorder le consentement pr&eacute;alable en connaissance de cause (CPCC) et de la conclusion de conditions convenues d&rsquo;un commun accord (CCCA)?">
                                         <div ng-show="!isQ3Yes(document.question3.answer)" class="checkbox">
                                             <label>
-                                              <input  required="!hasValue(document.question7.answer)" type="checkbox" ng-model="document.question7.notApplicable" ng-change="Q7YesNoClear()">Ne s&rsquo;applique pas, car aucune condition d'acc&egrave;s n&rsquo;est en place.
+                                              <input  required="!hasValue(document.question7.answer)" type="checkbox" ng-model="document.question7.notApplicable" ng-change="Q7YesNoClear()">Ne s&rsquo;applique pas, car il n&rsquo;existe aucune condition d'acc&egrave;s.
                                             </label>
                                         </div>
                                         <div ng-show="!isQ3Yes(document.question3.answer)" ng-disabled="document.question7.notApplicable" required="!document.question7.notApplicable" class="km-yes-no" name="question7" ng-model="document.question7.answer"></div>
@@ -262,7 +262,7 @@
                                 <div class="col-xs-12">
                                     <div class="km-control-group"  bold="true" name="question8" caption="8. Votre pays met-il &agrave; disposition sur le Centre d&rsquo;&eacute;change sur l&rsquo;APA, les permis, ou leur &eacute;quivalent, constituant des certificats de conformit&eacute; reconnus &agrave; l&rsquo;&eacute;chelle internationale, en accord avec l&rsquo;article 17.2?">
                                         <div class="checkbox">
-                                            <label><input type="checkbox" ng-model="document.question8.notApplicable" ng-change="Q8YesNoClear()">Ne s&rsquo;applique pas, car aucune condition d'acc&egrave;s n&rsquo;est en place.</label>
+                                            <label><input type="checkbox" ng-model="document.question8.notApplicable" ng-change="Q8YesNoClear()">Ne s&rsquo;applique pas, car il n&rsquo;existe aucune condition d'acc&egrave;s.</label>
                                         </div>
                                         <div ng-disabled="document.question8.notApplicable" class="km-yes-no" name="question8" ng-model="document.question8.answer"></div>
                                     </div>
@@ -310,7 +310,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group"  bold="true" name="question10" caption="10. Informations compl&eacute;mentaires">
-                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
+                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
                                         <div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
@@ -340,7 +340,7 @@
 
                                     <div class="km-control-group" name="question11Challenges" caption="">
                                         <div ng-show="!isQ11Yes(document.question11.answer)">
-                                            Veuillez fournir des Informations compl&eacute;mentaires, y compris si vous avez un autre syst&egrave;me en place concernant l&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques.
+                                            Please provide further information including indicating if there is any other system in place in relation to access to genetic resources.
                                             <div km-textbox-ml rows=4 name="question11Challenges" ng-model="document.question11.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                         </div>
                                     </div>
@@ -460,7 +460,7 @@
                                         <input ng-disabled="!isQ11Yes(document.question11.answer)" type="number" name="permitsOnAbsCh" class="form-control text-right" ng-model="document.question16.permitsOnAbsCh" min="0" ng-init="document.question16.permitsOnAbsCh=0">
                                         
                                         <div class="help-info color-blue bold" ng-if="recordsCount.ircc">
-                                           Actuellement, vous avez <strong>{{recordsCount.ircc}} </strong>permis ou leurs &eacute;quivalents (IRCC) dans le centre d&rsquo;&eacute;change sur l&rsquo;APA.
+                                           Currently you have <strong>{{recordsCount.ircc}} </strong> permits or their equivalents (IRCC) published in the ABS-CH.
                                         </div>
                                     </div>
                                  
@@ -510,7 +510,7 @@
                                             <label><input type="checkbox" ng-model="document.question18.geneticResources.answer" ng-change="Q18Clear()">Ressources g&eacute;n&eacute;tiques</label>
 
                                             <div class="checkbox" ng-show="document.question18.geneticResources.answer">
-                                                <label><input type="checkbox" ng-model="document.question18.geneticResources.monetary" ng-change="Q18GeneticResources(document.question18.geneticResources.monetary); Q18ClearInfo()">Avantages mon&eacute;taires </label>
+                                                <label><input type="checkbox" ng-model="document.question18.geneticResources.monetary" ng-change="Q18GeneticResources(document.question18.geneticResources.monetary); Q18ClearInfo()">Avantages mon&eacute;taires</label>
                                                 <div ng-show="document.question18.geneticResources.monetary" km-textbox-ml rows=2 ng-model="document.question18.geneticResources.monetaryInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
                                             <div class="checkbox" ng-show="document.question18.geneticResources.answer">
@@ -524,7 +524,7 @@
                                         <div class="checkbox">
                                             <label><input type="checkbox" ng-model="document.question18.tk.answer" ng-change="Q18Clear()">Connaissances traditionnelles associ&eacute;es aux ressources g&eacute;n&eacute;tiques</label>
                                             <div class="checkbox" ng-show="document.question18.tk.answer">
-                                                <label><input type="checkbox" ng-model="document.question18.tk.monetary" ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">Avantages mon&eacute;taires </label>
+                                                <label><input type="checkbox" ng-model="document.question18.tk.monetary" ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">Avantages mon&eacute;taires</label>
                                                 <div ng-show="document.question18.tk.monetary" km-textbox-ml rows=2 name="question18FurtherInfo" ng-model="document.question18.tk.monetaryInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
                                             <div class="checkbox" ng-show="document.question18.tk.answer">
@@ -553,7 +553,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group"  bold="true"  name="question19" caption="19. Informations compl&eacute;mentaires">
-                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
+                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
                                         <div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
@@ -676,7 +676,7 @@
                                                 <div km-textbox-ml rows=4 name="question24_measures_FurtherInfo" ng-model="document.question24.measures.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
                                             <div ng-show="document.question24.measures.answer" class="km-control-group" name="question24_measures_complianceInfo" caption="">
-                                                Veuillez fournir des Informations compl&eacute;mentaires sur les situations de non-conformit&eacute;.
+                                                Veuillez fournir des renseignements suppl&eacute;mentaires sur les situations de non-conformit&eacute;.
                                                 <div km-textbox-ml rows=4 name="question24_measures_complianceInfo" ng-model="document.question24.measures.complianceInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
                                         </div>
@@ -798,14 +798,14 @@
                                         </div>
                                     </div>
                                     <div class="km-control-group" name="question27Challenges" caption="">
-                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
+                                        Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s et d&eacute;fis.
                                         <div km-textbox-ml rows=4 name="question27Challenges" ng-model="document.question27.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
                                     <div class="km-control-group row" name="question27_ccsOnAbsCh" caption="Nombre de communiqu&eacute;s de points de contr&ocirc;le disponibles dans le Centre d&rsquo;&eacute;change sur l&rsquo;APA, le cas &eacute;ch&eacute;ant.">
                                         <input class="col-xs-2" type="number" name="ccsOnAbsCh" class="form-control text-right" ng-model="document.question27.cpcsOnAbsChCount" min="0" ng-init="document.question27.cpcsOnAbsChCount=0">
                                         
                                         <div class="help-info color-blue bold" ng-if="recordsCount.cpc">
-                                           Actuellement, vous avez <strong>{{recordsCount.cpc}} </strong>communiqu&eacute;s de point de contr&ocirc;le (CPC) dans le centre d&rsquo;&eacute;change sur l&rsquo;APA.
+                                           Actuellement, vous avez {{recordsCount.cpc}} communiqu&eacute;s de point de contr&ocirc;le (CPC) dans le centre d&rsquo;&eacute;change sur l&rsquo;APA.
                                         </div>
                                         
                                     </div>
@@ -1006,7 +1006,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group"  required name="question35_emergencies" caption="Pris dûment en considération les situations d&rsquo;urgence actuelles ou imminentes qui menacent ou nuisent à la santé humaine, animale ou végétale, comme pr&eacute;vu par l&rsquo;article 8(b)? ">
+                                    <div class="km-control-group"  required name="question35_emergencies" caption="Paid due regard to cases of present or imminent emergencies that threaten or damage human, animal or plant health as provided in Article 8(b)?">
                                         <div class="km-yes-no" required name="question35_emergencies" ng-model="document.question35.emergencies.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question35EmergenciesFurtherInfo" caption="">
@@ -1022,7 +1022,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" required name="question35_access" caption="Pris en compte la n&eacute;cessit&eacute; d'un acc&egrave;s rapide aux ressources g&eacute;n&eacute;tiques et au partage juste et &eacute;quitable des avantages d&eacute;coulant de l'utilisation de ces derni&egrave;res, y compris l'acc&egrave;s &agrave; des traitements abordables par les plus d&eacute;favoris&eacute;s, en particulier, dans les pays en d&eacute;veloppement conform&eacute;ment &agrave; l'article 8 b)?">
+                                    <div class="km-control-group" required name="question35_access" caption="Pris en compte la n&eacute;cessit&eacute; d'un acc&egrave;s rapide aux ressources g&eacute;n&eacute;tiques et au partage juste et &eacute;quitable des avantages d&eacute;coulant de l'utilisation de ces derni&egrave;res, y compris l'acc&egrave;s &agrave; des traitements abordables par les plus d&eacute;favoris&eacute;s, en particulier, dans les pays en d&eacute;veloppement conform&eacute;ment &agrave; l'article 8(b)?">
                                         <div class="km-yes-no" required name="question35_access" ng-model="document.question35.access.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question35AccessFurtherInfo" caption="">
@@ -1038,7 +1038,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" required name="question35_importance" caption="Tenu compte de l&rsquo;importance des ressources génétiques pour l&rsquo;alimentation et l&rsquo;agriculture et du rôle spécial qu&rsquo;elles jouent pour la sécurité alimentaire, comme pr&eacute;vu par l&rsquo;article 8 c)? ">
+                                    <div class="km-control-group" required name="question35_importance" caption="Tenu compte de l&rsquo;importance des ressources génétiques pour l&rsquo;alimentation et l&rsquo;agriculture et du rôle spécial qu&rsquo;elles jouent pour la sécurité alimentaire, comme pr&eacute;vu par l&rsquo;article 8 c)?">
                                         <div class="km-yes-no" required name="question35_importance" ng-model="document.question35.importance.answer"></div>
                                     </div>
 
@@ -1111,7 +1111,7 @@
                                         </div>
                                     </div>
                                     <div ng-hide="document.question37.answer || document.question37.answer===undefined" ng-class="{'confidential-text': !document.question37.answer}">
-                                        Merci de sauter les questions 38 &agrave; 44.   <br /> <br />
+                                        Merci de sauter les questions 38 &agrave; 44. <br /> <br />
                                     </div>
 
                                     <div ng-show="document.question37.answer===undefined" ng-class="{'confidential-text': document.question37.answer===undefined}">
@@ -1150,7 +1150,7 @@
                                                 <div km-textbox-ml rows=2 name="question38MeasuresFurtherInfo" ng-model="document.question38.measures.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
 
-                                            <div class="km-control-group" name="question38_pic" ng-required="document.question38.answer" caption="Votre pays a-t-il &eacute;tabli des crit&egrave;res et/ou proc&eacute;d&eacute;s pour l&rsquo;obtention du consentement ou accord pr&eacute;alable en connaissance de cause et participation des communautés autochtones et locales pour l&rsquo;accès aux ressources génétiques, comme pr&eacute;vu par l&rsquo;article 6.3(f)">
+                                            <div class="km-control-group" name="question38_pic" ng-required="document.question38.answer" caption="Votre pays a-t-il &eacute;tabli des crit&egrave;res et/ou proc&eacute;d&eacute;s pour l&rsquo;obtention du consentement ou accord pr&eacute;alable en connaissance de cause et participation des communautés autochtones et locales pour l&rsquo;accès aux ressources génétiques, comme pr&eacute;vu par l&rsquo;article 6.3(f)?">
                                                 <div class="km-yes-no" name="question38_pic" ng-required="document.question38.answer" ng-model="document.question38.pic.answer"></div>
                                             </div>
 
@@ -1729,7 +1729,7 @@
                         <!-- </div>
 
                         <div class="tab-pane" id="part14"> -->
-                            <legend>Informations compl&eacute;mentaires optionnels </legend>
+                            <legend>Informations compl&eacute;mentaires optionnels</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="question60"  bold="true" caption="60. Veuillez fournir un r&eacute;sum&eacute; des principales difficult&eacute;s qui vous ont emp&ecirc;ch&eacute;s de devenir Partie au Protocole de Nagoya.">
@@ -1839,7 +1839,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question63new"  bold="true" caption="62&nbsp;(b) Veuillez fournir des renseignements sur les exp&eacute;riences relatives &agrave; la mobilisation des ressources en appui &agrave; la mise en &oelig;uvre du Protocole.">
+                                    <div class="km-control-group" name="question63new"  bold="true" caption="62&nbsp;(b) Veuillez partager les exp&eacute;riences relatives &agrave; la mobilisation des ressources en appui &agrave; la mise en &oelig;uvre du Protocole.">
                                     <div km-textbox-ml rows=4 name="question63newRelevantInformation" ng-model="document.question63new.relevantInformation" locales="document.header.languages" placeholder=""></div>
                                     <div km-link name="question63newRelevantDocuments" ng-model="document.question63new.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
@@ -1848,7 +1848,7 @@
 
                              <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="question64new"  bold="true" caption="62&nbsp;(c) Veuillez fournir des renseignements sur l'&eacute;tat des financements mobilis&eacute;s &agrave; l'appui de la mise en &oelig;uvre du Protocole.">
+                                    <div class="km-control-group" name="question64new"  bold="true" caption="62&nbsp;(c) Veuillez fournir des renseignements suppl&eacute;mentaires sur l'&eacute;tat des financements mobilis&eacute;s &agrave; l'appui de la mise en &oelig;uvre du Protocole.">
                                     <div km-textbox-ml rows=4 name="question64newRelevantInformation" ng-model="document.question64new.relevantInformation" locales="document.header.languages" placeholder=""></div>
                                     <div km-link name="question64newRelevantDocuments" ng-model="document.question64new.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
@@ -1923,7 +1923,7 @@
                                         <div class="km-control-group" name="Notes"  bold="true" caption="65. Notes&nbsp;:">
                                             <!-- <div km-textbox-ml rows=4 name="question65FurtherInfo" ng-model="document.question65" locales="document.header.languages" placeholder="">
                                             </div> -->
-                                           <div class="help-info">Le champ « Notes » sert pour les r&eacute;f&eacute;rences personnelles et n&rsquo;est visible que lorsque le dossier est en cours de traitement. Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
+                                           <div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
                                             <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                             <!-- <div km-notes name="notes" ng-model="document.notes"></div>-->
                                         </div>

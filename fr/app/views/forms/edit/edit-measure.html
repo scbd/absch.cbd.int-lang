@@ -45,7 +45,7 @@
                                             <div class="km-control-group">
                                                 <div class="km-control-group" name="amendedMeasures" caption="List of amended measures">
                                                     <div class="help-info">Please indicate if this measure amends a previously registered one by providing a cross-reference link to the amended measure.</div>
-                                                    <div document-selector ng-model="document.amendedMeasures" question="amendedMeasures" government="document.government" schema="measure"></div>
+                                                    <div document-selector hide-self="document.header.identifier" ng-model="document.amendedMeasures" question="amendedMeasures" government="document.government" schema="measure"></div>
 
                                                     <!--<div km-select multiple name="amendedMeasures" ng-model="document.amendedMeasures"items="options.measures()" placeholder="Please select ..."></div>-->
                                                 </div>
@@ -187,7 +187,7 @@
                                         <div class="km-control-group" name="isModelContractualClause" caption="Does the measure contain model contractual clauses?">
                                             <div km-yes-no required ng-model="document.isModelContractualClause" locales="document.header.languages"></div>
                                             <div ng-show="document.isModelContractualClause">
-                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Please provide further information">
+                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Veuillez fournir des informations compl&eacute;mentaires.">
                                                     <div km-textbox-ml ng-model="document.modelContractualClauseDescription" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
@@ -225,7 +225,7 @@
                                             </div>
                                             <!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>-->
 
-                                            <div document-selector ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
+                                            <div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
 
 
                                         </div>
@@ -312,7 +312,7 @@
 
 
                             <section>
-                                <legend>Renseignements suppl&eacute;mentaires</legend>
+                                <legend>Additional information</legend>
 
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -325,7 +325,7 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="relevantDocuments" caption="Any other relevant documents">
+                                        <div class="km-control-group" name="relevantDocuments" caption="Autres documents pertinents">
                                             <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                         </div>
                                     </div>
@@ -335,7 +335,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-block">Le champ &quot; Notes&quot; est pour votre personnel et des notes ou des commentaires sera cach&eacute; Lors de l'affichage du dossier . Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
+                                            <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
                                             <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                         </div>
                                     </div>

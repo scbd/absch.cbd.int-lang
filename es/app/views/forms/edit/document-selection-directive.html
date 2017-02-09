@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
             <span ng-show="model.length==0 || !model"> <i class="color-blue"> No hay enlaces a registros. </i> </span> <span ng-show="model.length==1"><i class="color-blue">Hay enlaces a un registro <b>{{model.length}}</b>.</i></span> <span ng-show="model.length>1"><i class="color-blue">Hay enlaces a registros <b>{{model.length}}</b>.</i></span>
-            <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'Add record(s)'}}</button>
+            <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'A&ntilde;adir registro(s)'}}</button>
             <button type="button" ng-click="showRecords(); areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords" class="btn btn-primary btn-sm">Mostrar registros</button>
             <button type="button" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0" class="btn btn-primary btn-sm">Ocultar registros</button>
         </div>
@@ -27,7 +27,7 @@
     <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
-               <h3>Please select from published record(s) below:</h3>
+               <h3>Sírvase seleccionar de registro(s) que se publica(n) a continuación:</h3>
                 <div>
                     <div ng-show="!schema" km-select name="selectedSchema" ng-model="selectedSchema" items="options.nationalSchemas()" placeholder="Filtro por tipo de registro..."></div>
                 </div>
@@ -44,13 +44,13 @@
                         </div>
 
                     </div>
-                    <div ng-show="isLoading"> loading...</div>
+                    <div ng-show="isLoading"> cargando...</div>
                 </div>
             </div>
             <div class="modal-footer bg-grey">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Save</a> <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Close</a>
+                        <a translation-url  type="button" class="btn btn-primary" ng-click="saveDocuments()">Grabar</a> <a translation-url  type="button" class="btn btn-default" ng-clikc="closeDialog()">Cerrar</a>
                     </div>
                 </div>
             </div>
