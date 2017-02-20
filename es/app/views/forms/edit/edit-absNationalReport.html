@@ -92,7 +92,7 @@
             					<div class="col-xs-12">
             						<div class="km-control-group" name="government" required  bold="true"  caption="1. Pa&iacute;s">
                                         <span class="help-inline color-blue bold" ng-if="userGovernment()"> No puede cambiarse el pa&iacute;s. </span>
-                                        <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
+                                        <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Por favor, seleccione un gobierno"></div>
             						</div>
             					</div>
             				</div>
@@ -149,7 +149,7 @@
 
                             <div class="row">
             					<div class="col-xs-12">
-                                    <div class="km-control-group" bold="true" required name="question4" caption="4. Has your country taken legislative, administrative and policy measures on ABS?">
+                                    <div class="km-control-group" bold="true" required name="question4" caption="4. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas y de pol&iacute;tica relacionadas con el APB?">
                                         <div required class="km-yes-no"  name="question4" ng-model="document.question4.answer" ></div>
                                     </div>
                                     <div class="km-control-group"  name="question4.ChallengesInfo" caption="S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados al adoptar esas medidas.">
@@ -174,7 +174,7 @@
 
                             <div class="row" >
             					<div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" required name="question5" caption="5. Has your country designated a national focal point as provided in Article 13?">
+                                    <div class="km-control-group"  bold="true" required name="question5" caption="5. ¿Ha designado su pa&iacute;s uno o m&aacute;s puntos de control conforme a lo dispuesto en el art&iacute;culo 13?">
                                         <div class="km-yes-no" required name="question5" ng-model="document.question5.answer"  ></div>
                                     </div>
                                     <div class="km-control-group"  name="question5.ChallengesInfo" caption="S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar un punto focal nacional.">
@@ -199,7 +199,7 @@
 
                             <div class="row" >
             					<div class="col-xs-12">
-                                    <div class="km-control-group" bold="true" required name="question6" caption="6. Has your country designated one or more competent national authorities as provided in Article 13?">
+                                    <div class="km-control-group" bold="true" required name="question6" caption="6. ¿Ha designado su pa&iacute;s uno o m&aacute;s puntos de control conforme a lo dispuesto en el art&iacute;culo 13?">
                                         <div  class="km-yes-no" required name="question6" ng-model="document.question6.answer" ></div>
                                     </div>
                                     <div class="km-control-group"  name="question6.ChallengesInfo" caption="S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar una o m&aacute;s autoridades nacionales competentes.">

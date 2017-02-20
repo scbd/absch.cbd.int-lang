@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'Add record'}}{{type!=='radio' ? &quot;(s)&quot; : &quot;&quot;}}</button>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'A&ntilde;adir registro'}}{{type!=='radio' ? &quot;(s)&quot; : &quot;&quot;}}</button>
 
             <span ng-show="model.length==0 || !model"> <i class="color-blue"> No hay enlaces a registros. </i> </span>
 
@@ -43,8 +43,8 @@
     <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
-                <h3>Please select from the list of published record(s) below:</h3>
-                <div class="help-info">If the record is not yet listed, please save your current draft and go to ‘Dashboard’ and create a new record.</div>
+                <h3>Seleccione de la lista de registros publicados a continuación:</h3>
+                <div class="help-info">Si el registro aún no se encuentra en la lista, guarde su borrador actual y vaya a 'Dashboard' y cree un nuevo registro.</div>
                 <div ng-show="filter">
                     <input type="textbox" ng-model="keyword" placeholder="filter records by keywords or unique identifier" class="form-control">
                 </div>
@@ -61,14 +61,14 @@
                         </div>
                     </div>
                     <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> Loading...</div>
-                    <div ng-if="rawDocuments.numFound===0"> no records found.</div>
+                    <div ng-if="rawDocuments.numFound===0"> No se encontró registro</div>
                 </div>
             </div>
 
             <div class="modal-footer bg-grey">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Save</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Close</a>
+                        <a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">salvar</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">cerca</a>
                     </div>
                 </div>
             </div>

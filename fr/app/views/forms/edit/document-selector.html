@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'Add record'}}{{type!=='radio' ? &quot;(s)&quot; : &quot;&quot;}}</button>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'Ajouter les enregistrement'}}{{type!=='radio' ? &quot;(s)&quot; : &quot;&quot;}}</button>
 
             <span ng-show="model.length==0 || !model"> <i class="color-blue"> Aucun lien d'enregistrement. </i> </span>
 
@@ -43,7 +43,7 @@
     <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
-                <h3>Please select from the list of published record(s) below:</h3>
+                <h3>Veuillez choisir parmi les enregistrements publiés ci-dessous:</h3>
                 <div class="help-info">If the record is not yet listed, please save your current draft and go to ‘Dashboard’ and create a new record.</div>
                 <div ng-show="filter">
                     <input type="textbox" ng-model="keyword" placeholder="filter records by keywords or unique identifier" class="form-control">
@@ -60,7 +60,7 @@
                             <result-default doc='doc' type="nationalRecords"></result-default>
                         </div>
                     </div>
-                    <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> Loading...</div>
+                    <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> chargement en cours...</div>
                     <div ng-if="rawDocuments.numFound===0"> no records found.</div>
                 </div>
             </div>

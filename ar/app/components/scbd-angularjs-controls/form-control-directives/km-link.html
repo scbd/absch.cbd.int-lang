@@ -11,8 +11,8 @@
 			</tr>
 		</table>
 
-		<button class="btn btn-default" ng-click="addLink()" ng-show="isAllowLink()"><i class="glyphicon glyphicon-globe"></i> Add link</button>
-		<button class="btn btn-default" ng-click="addFile()" ng-show="isAllowFile()" ng-disabled="!identifier"><i class="glyphicon glyphicon-file"></i> Add file</button>
+		<button class="btn btn-default" ng-click="addLink()" ng-show="isAllowLink()"><i class="glyphicon glyphicon-globe"></i> إضافة رابط</button>
+		<button class="btn btn-default" ng-click="addFile()" ng-show="isAllowFile()" ng-disabled="!identifier"><i class="glyphicon glyphicon-file"></i> اضف ملف</button>
 	</div>
 
 
@@ -26,7 +26,7 @@
 	        	<h4 class="modal-title">Editing link</h4>
 	      	</div>
 			<div class="modal-body">
-				<div class="alert alert-info">Please provide the URL of the website (e.g. <a target="_blank" href="http://www.cbd.int">http://www.cbd.int</a>) and the name of the website (e.g. &quot;The Convention on Biological Diversity&quot;).</div>
+				<div class="alert alert-info">يُرجى ذكر رابط موقع الويب (على سبيل المثال: http://bch.cbd.int) واسم موقع الويب (على سبيل المثال: &rsquo;غرفة تبادل معلومات السلامة الأحيائية&lsquo;).</div>
 				<form name="linkForm">
 					<fieldset>
 						<div class="alert alert-warning" ng-show="linkForm.input.$error.url || linkForm.$error.pattern">
@@ -42,7 +42,7 @@
 
 						<div class="control-group" ng-class="{error: linkForm.name.$invalid}">
 							<label class="control-label">الاسم</label>
-							<input type="text" style="width:98%" ng-model="editor.name"  placeholder="example: SCBD website">
+							<input type="text" style="width:98%" ng-model="editor.name"  placeholder="مثال: SCBD website">
 						</div>
 
 						<div ng-show="extensions">
@@ -68,7 +68,7 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h4 class="modal-title">Uploading file</h4>
+	        <h4 class="modal-title">تحميل الملف...</h4>
 	      </div>
 	      <div class="modal-body">
 			<div class="alert alert-error" ng-show="editor.error!=null">
@@ -124,7 +124,7 @@
 		<div class="modal-dialog">
     		<div class="modal-content">
 				<div class="modal-header">
-					<h3>Uploading file</h3>
+					<h3>تحميل الملف...</h3>
 				</div>
 				<div class="modal-body">
 

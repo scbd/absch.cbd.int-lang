@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'Add record'}}{{type!=='radio' ?&quot;(s)&quot; :&quot;&quot;}}</button>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || '添加记录'}}{{type!=='radio' ?x&quot;(s)&quot; :&quot;&quot;}}</button>
 
             <span ng-show="model.length==0 || !model"> <i class="color-blue"> 未链接任何记录。</i></span>
 
@@ -43,8 +43,8 @@
     <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded" id="{{question}}">
             <div class="modal-header bg-grey">
-                <h3>Please select from the list of published record(s) below:</h3>
-                <div class="help-info">If the record is not yet listed, please save your current draft and go to ‘Dashboard’ and create a new record.</div>
+                <h3>请从以下内容中选择:</h3>
+                <div class="help-info">如果記錄尚未列出，請保存您當前的草稿，並轉到“信息中心”並創建新記錄。</div>
                 <div ng-show="filter">
                     <input type="textbox" ng-model="keyword" placeholder="filter records by keywords or unique identifier" class="form-control">
                 </div>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> 正在加载...</div>
-                    <div ng-if="rawDocuments.numFound===0"> no records found.</div>
+                    <div ng-if="rawDocuments.numFound===0"> 未找到记录。</div>
                 </div>
             </div>
 
