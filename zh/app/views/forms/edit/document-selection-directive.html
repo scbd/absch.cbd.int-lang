@@ -2,7 +2,7 @@
     <!-- existing documents display -->
     <div class="row">
         <div class="col-xs-12">
-            <span ng-show="model.length==0 || !model"> <i class="color-blue">  未链接任何记录。</i></span><span ng-show="model.length==1"><i class="color-blue"><i class="color-blue">已链接 <b>{{model.length}}</b> 条记录。</i></i></span><span ng-show="model.length>1"><i class="color-blue"><b>已链接 <b>{{model.length}}</b> 条记录。</b></i></span>
+            <span ng-show="model.length==0 || !model"> <i class="color-blue"> 未链接任何记录。</i></span><span ng-show="model.length==1"><i class="color-blue"><i class="color-blue">已链接 <b>{{model.length}}</b> 条记录。</i></i></span><span ng-show="model.length>1"><i class="color-blue"><b>已链接 <b>{{model.length}}</b> 条记录。</b></i></span>
             <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'添加记录'}}</button>
             <button type="button" ng-click="showRecords(); areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords" class="btn btn-primary btn-sm">显示记录</button>
             <button type="button" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0" class="btn btn-primary btn-sm">隐藏记录</button>

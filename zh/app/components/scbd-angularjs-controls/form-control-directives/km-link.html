@@ -3,7 +3,7 @@
 		<table class="table table-hover" ng-show="links||links.length">
 			<tr ng-repeat="link in links" >
 				<td>
-					<a target="_blank" ng-href="{{link.url}}">{{link.name||link.url}}</a> <span ng-repeat="ext in extensions"><i ng-show="link[ext.model]">({{link[ext.model]}}) <!--({{( ext.options | filter: { identifier : link[ext.model] } )[0].title|lstring}})--></i> <!-- <i ng-show="link.type!= 'file' && link[ext.model]">({{link[ext.model]}})</i> --></span>
+					<a target="_blank" ng-href="{{link.url}}">{{link.name||link.url}}</a> <span ng-repeat="ext in extensions"><i ng-show="link[ext.model]"><!--({{link[ext.model]}})--> ({{( ext.options | filter:{ identifier : link[ext.model] } )[0].title|lstring}})</i> <!--<i ng-show="link.type!= 'file' && link[ext.model]">({{link[ext.model]}})</i> --></span>
 				</td>
 				<td style="text-align:end;white-space:nowrap">
 					<a title="删除" class="btn btn-default" ng-click="remove(link)"><i class="glyphicon glyphicon-trash"></i></a>
@@ -98,7 +98,7 @@
 			<div id="uploadPlaceholder" style="display:none"></div>
 
 			<form name="fileForm">
-			<fieldset>
+			<fieldset ng-hide="editor.progress.style=='error' || editor.error">
 				<div ng-show="extensions">
 
 					<div ng-repeat="ext in extensions"  ng-class="{error: fileForm[ext.model].$invalid}">

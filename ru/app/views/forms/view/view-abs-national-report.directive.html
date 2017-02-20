@@ -51,16 +51,9 @@
 		                        <label>Кратко опишите основные трудности и проблемы, с которыми вы столкнулись, и ответьте на все следующие вопросы.</label>
 		                        <div class="km-value">{{document.address | lstring:locale}}</div>
 		                </div>
-						<div ng-show="document.question3.documentReferenceIDs && !documentReferenceIDsEmpty(document.question3.documentReferenceIDs)">
-                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
-							<div class="km-value">
-								<ul class="list">
-									<li ng-repeat="reference in document.question3.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
-								</ul>
-
-							</div>
+						<div ng-show="document.question3.additionalInfo">
+							<label>Представьте дополнительную информацию</label>
+							<div class="km-value">{{document.question3.additionalInfo | lstring:locale}}</div>
 						</div>
 					</ul>
 				</div>
@@ -69,13 +62,14 @@
 					<label>4. Приняты ли в вашей стране законодательные, административные и политические меры регулирования ДГРСИВ?</label>
 					<ul>
 						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question4.answer)}}</div>
-						<div ng-show="document.question4.additionalInfo">
-							<label>Представьте дополнительную информацию</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
-						</div>
+						
 						<div ng-show="document.question4.challengesInfo || document.question3.answer">
 							<label>Кратко опишите основные трудности и проблемы, с которыми вы столкнулись при разработке данных мер.</label>
 							<div class="km-value">{{document.address | lstring:locale}} &nbsp;</div>
+						</div>
+						<div ng-show="document.question4.additionalInfo">
+							<label>Представьте дополнительную информацию</label>
+							<div class="km-value">{{document.address | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question4.documentReferenceIDs && !documentReferenceIDsEmpty(document.question4.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -376,7 +370,7 @@
 						<div>
 							<label>16. Укажите номер разрешений или эквивалентных документов, представленных через Механизм посредничества для регулирования ДГРСИВ после вступления в силу Протокола в вашей стране.</label>
 							<ul>
-								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: Оставлено без ответа Не применимо</div>
+								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : Не применимо</div>
 
 								<div ng-show="document.question16.furtherInfo">
 									<label>Используйте поле для ввода текста для представления дополнительной информации</label>
@@ -1669,7 +1663,7 @@
 						</div>
 						<div ng-show="document.question55.furtherInfo">
 							<label>Используйте поле для ввода текста для представления дополнительной информации</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question55.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question55.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1691,7 +1685,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
 							<label>Используйте поле для ввода текста для представления дополнительной информации</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question56.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question56.documentReferenceIDs && !documentReferenceIDsEmpty(document.question56.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1713,7 +1707,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
 							<label>Используйте поле для ввода текста для представления дополнительной информации</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question57.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question57.documentReferenceIDs && !documentReferenceIDsEmpty(document.question57.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1735,7 +1729,7 @@
 						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Оставлено без дополнительной информации</div>
 						<div ng-show="document.question58.challengesInfo">
 							<label>Кратко опишите основные трудности и проблемы</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question58.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question58.documentReferenceIDs && !documentReferenceIDsEmpty(document.question58.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1770,12 +1764,12 @@
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question59.answer)}}</div>
 						<div ng-show="document.question59.additionalInfo">
-							<label>Кратко опишите принятые меры.</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<label>Please provide a summary of the measures taken</label>
+							<div class="km-value">{{document.question59.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.furtherInfo">
 							<label>Используйте поле для ввода текста для представления дополнительной информации</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question59.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.documentReferenceIDs && !documentReferenceIDsEmpty(document.question59.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1803,7 +1797,7 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Оставлено без дополнительной информации</div>
 						<div ng-show="document.question60.challengesInfo">
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question60.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question60.documentReferenceIDs && !documentReferenceIDsEmpty(document.question60.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
@@ -1825,15 +1819,15 @@
 						<div class="km-value km-pre">{{booleanToText(document.question61.answer)}}</div>
 						<div ng-show="document.question61.additionalInfo">
 							<label>Представьте дополнительную информацию</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question61.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.challengesInfo">
-							<label>Кратко опишите основные трудности и проблемы, с которыми вы столкнулись.</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<label>Please provide a summary of the main difficulties and challenges encountered</label>
+							<div class="km-value">{{document.question61.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.furtherInfo">
 							<label>Use the text entry to provide further information. including on experiences gained in relation to mobilization of resources to support the implementation of the Nagoya Protocol and the status of funds mobilized (level of domestic expenditures, or the amount of and trends in funding allocated, for the implementation of the Protocol and the funding gap)</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question61.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.documentReferenceIDs && !documentReferenceIDsEmpty(document.question61.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
