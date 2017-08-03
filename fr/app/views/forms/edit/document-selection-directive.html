@@ -6,7 +6,7 @@
             <button class="btn btn-default btn-sm" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption||'Ajouter les enregistrement(s)'}}</button>
             <button type="button" ng-click="showRecords(); areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords" class="btn btn-primary btn-sm">Afficher les enregistrements</button>
             <button type="button" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0" class="btn btn-primary btn-sm">Masquer les enregistrements</button>
-        </div>
+        </div> 
     </div>
     <div class="row" ng-show="areVisible">
         <div class="col-xs-12">
