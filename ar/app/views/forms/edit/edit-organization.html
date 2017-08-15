@@ -1,14 +1,9 @@
-﻿<div ng-controller="editOrganization">
+﻿<div ng-controller="editOrganization" dir="rtl">
 
 	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-		<div class="registerpage-content">
-			<span block-region activate="isLoading()" ng-if="isLoading()"></span>
-
-			<div class="alert alert-danger" ng-show="hasError()">
-				<strong>حدث خطأ...</strong>
-				<div>{{error}}</div>
+		<div class="registerpage-content"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="alert alert-danger" ng-show="hasError()"><strong>حدث خطأ...</strong><div>{{error}}</div>
 			</div>
 
 			<div ng-show="!isLoading() && status!='hidden'">
@@ -23,14 +18,14 @@
 						<legend>معلومات عامة</legend>
 						<div class="row">
 							<div class="col-md-8 col-xs-12">
-								<div class="km-control-group" name="name" required caption="Name of the organization">
-									<div km-textbox-ml name="name" required ng-model="document.name" placeholder="text entry" locales="document.header.languages"></div>
+								<div class="km-control-group" name="name" required caption="اسم المنظمة">
+									<div km-textbox-ml name="name" required ng-model="document.name" placeholder="إدخال النص" locales="document.header.languages"></div>
 								</div>
 							</div>
 
 							<div class="col-md-4 col-xs-12">
-								<div class="km-control-group" name="acronym" required caption="Acronym">
-									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="text entry" locales="document.header.languages"></div>
+								<div class="km-control-group" name="acronym" required caption="الاسم المختصر">
+									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="إدخال النص" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
@@ -41,8 +36,8 @@
 								</div>
 							</div>
 							<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
-								<div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCBD" locales="document.header.languages"></div>
+								<div class="km-control-group" name="contact_organizationTypeName" caption="نوع منظمة أخرى">
+									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="مثال: SCBD" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
@@ -51,7 +46,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="address" caption="العنوان">
-									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
+									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="مثال: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
@@ -59,13 +54,13 @@
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="city" required caption="المدينة">
-									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="example: مونتريال"></div>
+									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="مثال: Montreal"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="state" caption="State or Province">
-									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Quebec"></div>
+								<div class="km-control-group" name="state" caption="الولاية أو المقاطعة">
+									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="مثال: Quebec"></div>
 								</div>
 							</div>
 						</div>
@@ -73,13 +68,13 @@
 						<div class="row">
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="postalCode" caption="Postal Code or Zip">
-									<div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="example: H2Y 1N9"></div>
+								<div class="km-control-group" name="postalCode" caption="الرقم أو الرمز البريدي">
+									<div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="مثال: H2Y 1N9"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="country" required caption="Country">
+								<div class="km-control-group" name="country" required caption="الدولة">
 									<div km-select required name="country" ng-model="document.country" items="options.addressCountry()"></div>
 								</div>
 							</div>
@@ -87,29 +82,29 @@
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="phones" required caption="Phone numbers">
-									<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
-									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="example: +1 514.288.2220"></div>
+								<div class="km-control-group" name="phones" required caption="أرقام الهاتف">
+									<div class="help-info">يُرجى استخدام النسق التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="مثال: 2220 288 514 1+"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="faxes" caption="Fax Numbers">
-									<div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div>
-									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="example: +1 514.288.6588"></div>
+								<div class="km-control-group" name="faxes" caption="أرقام الفاكس">
+									<div class="help-info">يُرجى استخدام النسق التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="مثال: 6588 288 514 1+"></div>
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="emails" required caption="Emails">
-									<div km-inputtext-list required name="emails" ng-model="document.emails" placeholder="example: secretariat@cbd.int"></div>
+								<div class="km-control-group" name="emails" required caption="البريد الإلكتروني">
+									<div km-inputtext-list required name="emails" ng-model="document.emails" placeholder="مثال: secretariat@cbd.int"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="websites" caption="Web Sites">
+								<div class="km-control-group" name="websites" caption="الموقع الإلكتروني:">
 									<div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
 								</div>
 							</div>
@@ -120,7 +115,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes" caption="ملاحظات">
-									<div class="help-info">حقل &quot;ملاحظات&quot; هو لتدوين الملاحظات الشخصية أو التعليقات، وسوف تكون مخفية عند عرض السجل هذا المجال ليس المقصود إستخدامه للحصول على معلومات سرية.</div>
+									<div class="help-info">حقل &quot;ملاحظات&quot; لتدوين الملاحظات الشخصية أو التعليقات، وسوف يكون مخفيًا عند عرض السجل. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
 									<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 								</div>
 							</div>

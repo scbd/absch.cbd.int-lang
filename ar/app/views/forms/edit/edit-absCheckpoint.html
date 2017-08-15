@@ -1,28 +1,17 @@
-﻿<div  ng-controller="editAbsCheckpoint" >
+﻿<div  ng-controller="editAbsCheckpoint"  dir="rtl">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-
-        <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-        <div class="registerpage-content" >
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content" >
 
           <div ng-show="msg" class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button>
-            <strong>{{msg}}</strong>
-          </div>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
 
-          <div class="alert alert-danger" ng-show="hasError()">
-              <strong>حدث خطأ...</strong>
-              <div>{{error}}</div>
-          </div>
-
-          <!--<div ng-show="isLoading()">
+          <div class="alert alert-danger" ng-show="hasError()"><strong>حدث خطأ...</strong><div>{{error}}</div>
+          </div><!--<div ng-show="isLoading()">
               <i class="fa fa-spinner fa-spin"></i> Loading...
-          </div>-->
-
-          <div ng-show="!isLoading() && status!='hidden'">
+          </div>--><div ng-show="!isLoading() && status!='hidden'">
 
               <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages"  hide-timer="false"/>
 
@@ -46,8 +35,8 @@
                       </div>
                       <div class="row">
                           <div class="col-xs-12">
-                                  <div class="km-control-group" name="name" required caption="Name of the checkpoint">
-                                      <div class="help-info">Bear in mind that the name of the checkpoint will help to identify the record in the ABS Clearing-House.</div>
+                                  <div class="km-control-group" name="name" required caption="اسم نقطة التفتيش">
+                                      <div class="help-info">يُرجى العلم أن اسم نقطة التفتيش سيساعد في تحديد السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
                                       <div km-textbox-ml ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                   </div>
                           </div>
@@ -56,41 +45,41 @@
 
                       <section>
 
-                      <legend name="responsibilities–title">Responsibilities</legend>
-                      <div class="help-info">Article 17, paragraph 1 (a) (i) provides that designated checkpoints would collect or receive relevant information related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources, as appropriate; subparagraph (iv) provides that checkpoints should have functions relevant to the utilization of genetic resources, or to the collection of relevant information at, inter alia, any stage of research, development, innovation, pre commercialization or commercialization. </div>
+                      <legend name="responsibilities–title">المسئوليات</legend>
+                      <div class="help-info">تنص الفقرة 1 (أ) (1) من المادة 17 على أن (i) نقاط التفتيش المعينة تجمع أو تستلم، حسب الحالة، المعلومات المتصلة بالموافقة المسبقة عن علم، من مصدر المورد الجيني، بإبرام الشروط المتفق عليها بصورة متبادلة، و/أو استخدام الموارد الجينية، حسب الاقتضاء؛ وتنص الفقرة 1 (أ) (4)  على أنه ينبغي أن تكون مهام نقاط التفتيش متصلة باستخدام الموارد الجينية أو بجمع المعلومات ذات الصلة في المراحل التي تشمل أيا من مراحل البحوث أو التطوير أو الابتكار أو قبل التسويق التجاري أو مرحلة التسويق التجاري. </div>
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="responsibilities" caption="Short description of responsibilities">
-                                     <div class="help-info">A short description of the responsibilities of the checkpoint will help users of genetic resources and others to identify and clarify the role and functioning of the checkpoint in the collection of relevant information about the utilization of resources at, inter alia, any stage of research, development, innovation, pre-commercialization or commercialization. (maximum 300 characters)</div>
+                              <div class="km-control-group" required name="responsibilities" caption="وصف مختصر للمسؤوليات">
+                                     <div class="help-info">سيساعد الوصف المختصر لمسؤوليات نقطة التفتيش مستخدمي الموارد الجينية وآخرين علىلا تحديد وتوضيح دور ومهام نقطة التفتيش في جمع المعلومات ذات الصلة في المراحل التي تشمل أيا من مراحل البحوث أو التطوير أو الابتكار أو قبل التسويق التجاري أو مرحلة التسويق التجاري.  (بحد أقصى 300 حرف)</div>
                                   <div km-rich-textbox name="responsibilities" rows="6" ng-model="document.responsibilities" locales="document.header.languages"></div>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-xs-12">
-                                  <div class="km-control-group" name="jurisdiction" caption="Area of jurisdiction">
-                                      <div class="help-info">The information on the area of jurisdiction (national/federal, subnational, or community level) can help mapping different geographical responsibilities if there is more than one checkpoint.</div>
+                                  <div class="km-control-group" name="jurisdiction" caption="منطقة الولاية القضائية">
+                                      <div class="help-info">تساعد المعلومات حول منطقة الولاية القضائية (المستوى الوطني/الاتحادي، أو دون الوطني أو المجتمع) في تخطيط المسؤوليات الجغرافية المختلفة إذا كان هناك أكثر من نقطة تفتيش.</div>
                                        <div afc-autocomplete name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" required></div>
                                   </div>
                           </div>
                       </div>
                       <div class="row" ng-show="isSubNational()">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="jurisdictionName" caption="Name of the sub-national jurisdiction">
+                              <div class="km-control-group" required name="jurisdictionName" caption="اسم الولاية القضائية دون الإقليمية">
                                   <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                               </div>
                           </div>
                       </div>
                       <div class="row" ng-show="isCommunity()">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="jurisdictionName" caption="Name of the community">
+                              <div class="km-control-group" required name="jurisdictionName" caption="اسم نقطة التفتيش">
                                   <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                               </div>
                           </div>
                       </div>
                       <div class="row" ng-show="isOthers()">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="jurisdictionName" caption="Name of other jurisdiction">
+                              <div class="km-control-group" required name="jurisdictionName" caption="اسم منطقة ولاية قضائية أخرى">
                                   <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                               </div>
                           </div>
@@ -100,24 +89,19 @@
 
                       <section>
 
-                      <legend name="nationalAuthorities">National authority/ies to receive the information collected or received by the designated checkpoint</legend>
-                      <div class="help-info">
-                          In accordance with Article 17, paragraph 1 (a) (i) and (iii), of the Nagoya Protocol, the information collected or received by the checkpoint related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources, including from the internationally recognized certificate of compliance, needs to be provided to relevant national authorities, to the Party providing prior informed consent and to the ABS Clearing-House, as appropriate. On the basis of the information provided, the ABS Clearing-House will issue a communiqu&eacute; and automatically send a courtesy copy to the designated national authority/ies of your country. <br><br> Therefore, the contacts included in the following section on national authority/ies will be the ones to receive the information collected or received by the designated checkpoint (and communicated to the ABS Clearing-House through the checkpoint communique (CPC)). For multiple authorities, please include multiple record numbers or contact detail forms. Please note that the Party providing prior informed consent will automatically receive the information collected or received by the checkpoint. Please indicate to which national authority or contact person in your country you wish to send the information collected or received by the designated checkpoint. For multiple authorities, please include multiple record numbers or contact details forms. Please note that the Party providing prior informed consent will automatically receive the information collected or received by the checkpoint.
-                       
-                        </div>
+                      <legend name="nationalAuthorities">السلطة (السلطات) الوطنية التي تستلم المعلومات التي جمعتها أو استلمتها نقطة التفتيش المعينة</legend>
+                      <div class="help-info">وفقًا للفقرتين الفرعيتين (1) و(3) من الفقرة 1 (أ) في المادة 17 من بروتوكول ناغويا، المعلومات التي جمعتها أو استلمتها نقطة التفتيش وكانت متصلة بالموافقة المسبقة عن علم، من مصدر المورد الجيني، بإبرام الشروط المتفق عليها بصورة متبادلة و/أو استخدام الموارد الجينية بما فيها من شهادات الامتثال المعترف بها دوليًا  ينبغي تقديمها إلى السلطات الوطنية المختصة وإلى الطرف الذي يقدم الموافقة المسبقة عن علم وإلى غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع، حسب الاقتضاء. على أساس المعلومات المقدمة، ستصدر غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع بيانًا وترسل نسخة مجانية إلى السلطة (السلطات) الوطنية المعينة في بلدك.  <br><br> لهذا ستكون جهات الاتصال في القسم التالي المتعلق بالسلطة (السلطات) الوطنية هي نفسها التي ستتلقى المعلومات التي جمعتها أو استلمتها نقطة التفتيش المعينة (وإرسالها إلى غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع من خلال بيان نقطة التفتيش). يرجى وضع أرقام سجلات متعددة أو نماذج تفاصيل الاتصال للسلطات المتعددة. يرجى العلم أن الطرف الذي يقدم الموافقة المسبقة عن علم سيستلم تلقائيًا المعلومات التي جمعتها أو استلمتها نقطة التفتيش. يرجى توضيح السلطة الوطنية أو شخص الاتصال في بلدك الذي ترغب في إرسال المعلومات التي جمعتها نقطة التفتيش المعينة.  يرجى وضع أرقام سجلات متعددة أو نماذج تفاصيل الاتصال للسلطات المتعددة. يرجى العلم أن الطرف الذي يقدم الموافقة المسبقة عن علم سيستلم تلقائيًا المعلومات التي جمعتها أو استلمتها نقطة التفتيش.</div>
                       
                       
                       
 
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="informAllAuthorities" caption="Send a copy of the communiqu&eacute; to all competent national authorities within my country">
+                              <div class="km-control-group" required name="informAllAuthorities" caption="إرسال نسخة من ا لبيان لكل السلطات الوطنية المختصة في بلدي">
                                   <div class="km-yes-no" name="informAllAuthorities" ng-model="document.informAllAuthorities"></div>
                               </div>
                           </div>
-                      </div>
-
-                     <!--  <div class="row" ng-show="document.informAllAuthorities==false">
+                      </div><!--  <div class="row" ng-show="document.informAllAuthorities==false">
                           <div class="col-xs-12">
                               <div class="km-control-group" required name="authoritiesToInform" caption="Please select which competent national authority/ies from the list to whom you wish to send a copy of the communiqué">
                                   <div km-reference required name="authoritiesToInform" ng-model="document.authoritiesToInform" loader="loadRecords(identifier, 'authority')">
@@ -130,20 +114,14 @@
                                   </div>
                               </div>
                           </div>
-                      </div> -->
-
-                      <div class="row">
+                      </div> --><div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" name="contactsToInform" caption="Please select any national authorities whom you wish to send a copy of the communiqu&eacute;">
+                              <div class="km-control-group" name="contactsToInform" caption="يرجاى تحديد السلطات الوطنية التي ترغب في إرسال نسخة من البيان إليها.">
                                   
                                   <div document-selector ng-model="document.contactsToInform"
                                                                question="contactsToInform"
                                                                government="document.government"
-                                                               schema="(authority contact)"></div>
-                                  
-                                  <!--<field-embed-contact multiple ng-model="document.contactsToInform" locales="document.header.languages" caption="Add an organisation or a contact »" ></field-embed-contact>-->
-
-                              </div>
+                                                               schema="(authority contact)"></div><!--<field-embed-contact multiple ng-model="document.contactsToInform" locales="document.header.languages" caption="Add an organisation or a contact »" ></field-embed-contact>--></div>
                           </div>
                       </div>
                       </section>
@@ -192,9 +170,7 @@
                   </div>
                   <div class="view-abs-checkpoint" ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
               </div>
-              <hr>
-
-<!--
+              <hr><!--
                   <hr style="margin-top:20px;">
 
               <div class="row">
@@ -203,9 +179,7 @@
                           <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
 
                   </div>
-              </div> -->
-
-          </div>
+              </div> --></div>
         </div>
       </div>
 </div>

@@ -1,35 +1,24 @@
 ﻿
-<div ng-controller="editCheckpointCommunique">
+<div ng-controller="editCheckpointCommunique" dir="rtl">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;">
+    <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
 
-                <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-        <div class="registerpage-content">
-
-            <div class="alert alert-danger" ng-show="hasError()">
-                <strong>حدث خطأ...</strong>
-                <div>{{error}}</div>
-            </div>
-
-            <!--<div ng-show="isLoading()">
+            <div class="alert alert-danger" ng-show="hasError()"><strong>حدث خطأ...</strong><div>{{error}}</div>
+            </div><!--<div ng-show="isLoading()">
                 <i class="fa fa-spinner fa-spin"></i> Loading...
-            </div>-->
-
-
-            <div ng-show="!isLoading() && status!='hidden'">
+            </div>--><div ng-show="!isLoading() && status!='hidden'">
                 <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"></div>
 
                 <div km-document-validation ng-model="validationReport"></div>
                 <form class="editForm" name="editForm" style="margin-top:10px">
-                    <div ng-show="tab=='edit'" km-tab="edit">
-                        <!--<legend name="formInfo" style="display:none"></legend>--> <section>
+                    <div ng-show="tab=='edit'" km-tab="edit"><!--<legend name="formInfo" style="display:none"></legend>--><section>
                             <legend name="generalInfo">معلومات عامة</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="government" required caption="Country issuing this checkpoint communique">
+                                        <div class="km-control-group" name="government" required caption="البلد الذي أصدر هذا البيان الخاص بنقطة التفتيش ">
                                             <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
                                         </div>
                                     </div>
@@ -39,9 +28,9 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="title" required caption="Title of this checkpoint communique">
-                                            <div class="help-info">يخدم هذا المجال كعنوان السجل، ولذلك ينبغي أن يكون متميز ويساعد على التعرف بسهولة على تبادل المعلومات للحصول وتقاسم المنافع.</div>
-                                            <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Title of this checkpoint communique" locales="document.header.languages"></div>
+                                        <div class="km-control-group" name="title" required caption="عنوان هذا البيان الخاص بنقطة التفتيش">
+                                            <div class="help-info">يمثل هذا الحقل عنوان السجل، لذلك ينبغي أن يكون متميزًا، ويساعد على التعرف بسهولة على السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
+                                            <div km-textbox-ml ng-model="document.title" rows="1" placeholder="عنوان هذا البيان الخاص بنقطة التفتيش" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -53,8 +42,8 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="absCheckpoints" required caption="Checkpoint/s that collected or received the information">
-                                            <div class="help-info"> In this field you can select from the existing ABS-CH records, the record of the checkpoint/s that collected or received the information.</div>
+                                        <div class="km-control-group" name="absCheckpoints" required caption="نقطة/نقاط التفتيش التي جمعت أو تلقت المعلومات">
+                                            <div class="help-info">في هذا الحقل يمكنك اختيار سجل نقطة/نقاط التفتيش التي جمعت أو تلقت المعلومات من السجلات الحالية في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
 
                                              <div document-selector ng-model="document.absCheckpoints"
                                                                question="absCheckpoints"
@@ -68,19 +57,15 @@
                         </section>
 
                         <section>
-                            <legend name="certificate">Details of the internationally recognized certificate of compliance</legend>
+                            <legend name="certificate">تفاصيل شهادة الامتثال المعترف بها دوليًا</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <span ng-class="{'confidential-text':document.absIRCCsNotAvailable}">
-                                                <input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable" watch-items> The internationally recognized certificate of compliance (IRCC) is not available</input>
-                                            </span>
-                                        </div>
+                                        <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable" watch-items>شهادة الامتثال المعترف بها دوليًا غير متاحة.</input></span></div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
-                                            <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="Links to internationally recognized certificate(s) of compliance (IRCC) that relate to this communiqu&eacute;">
-                                                  <div class="help-info">Here, the reference of the IRCC is to be included if a user of a genetic resource presented an IRCC to the checkpoint. Use the different filters or the unique identifier in the text field to search for the existing relevant IRCC. If the IRCC is not available you need to select the option &ldquo;This information is not available&rdquo; and the grey box below will be enabled.</div>
+                                            <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="الروابط لشهادة/شهادات الامتثال المعترف بها دوليًا التي ترتبط بهذا البيان">
+                                                  <div class="help-info">يوضع المرجع  استخدم الفلاتر المختلفة أو معرف البيان في الحقل النصي للبحث عن شهادة الامتثال المعترف بها دوليًا الحالية المطلوبة. إذا لم تكن شهادة الامتثال المعترف بها دوليًا متاحة، ينبغي تحديد الخيار &quot;هذه المعلومات غير متاحة&quot;، وسيتم تنشيط المربع الرمادي أدناه.</div>
                                                 <div document-selector ng-model="document.absIRCCs"
                                                                         question="absIRCCs"
                                                                         schema="absPermit"
@@ -93,24 +78,21 @@
 
                                         </div>
                                     </div>
-                                </div>
-                            <br>
-
-                            <div class="clearfix"></div>
+                                </div><br><div class="clearfix"></div>
 
                             <div ng-class="{'disable':!isAbsIRCCsNotAvailable(), 'bg-white':isAbsIRCCsNotAvailable() }" class="well no-shadow" style="padding-top:0;padding-bottom:0;">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <h3>This section is required when the internationally recognized certificate of compliance (IRCC) is not available.</h3>
+                                        <h3>هذا القسم مطلوب إذ كانت شهادة الامتثال المعترف بها دوليًا غير متاحة.</h3>
                                     </div>
                                 </div>
 
-                                <legend>Source of the genetic resource</legend>
+                                <legend>مصدر المورد الجيني</legend>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="control-group">
-                                            <div class="km-control-group" name="sourceCountries" required caption="Source of the genetic resource">
-                                                <div class="help-info">Select the country/ies which is /are the source of the genetic resource. The country/ies selected will be the ones receiving the CPC issued from the information registered.</div>
+                                            <div class="km-control-group" name="sourceCountries" required caption="مصدر المورد الجيني">
+                                                <div class="help-info">حدد البلد/البلاد التي تمثل مصدر المورد الجيني البلد/البلاد المحددة ستصبح البلاد التي تحصل على  بيانات نقاط التفتيش تم إصدارها من المعلومات المسجلة.</div>
                                                 <div km-select required name="sourceCountries" ng-model="document.sourceCountries" multiple items="options.countries()" placeholder="يرجى اختيار البلد..."></div>
                                             </div>
                                         </div>
@@ -118,46 +100,40 @@
                                 </div>
 
 
-                                <legend>Subject-matter or genetic resource</legend>
+                                <legend>الموضوع أو المورد الجيني</legend>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="subjectMatter" required caption="Subject-matter or genetic resources relevant to the information collected or received">
-                                            <div class="help-info">Please provide details on the subject-matter or genetic resources relevant to the information collected or received by the checkpoint. This could include biota at any taxonomic rank, which may carry a taxonomic name. It may also include a locality of collection of the material. It may also be possible to identify the genetic resource through reference to a voucher specimen or field notes held in an identified archive or collection. </div>
+                                        <div class="km-control-group" name="subjectMatter" required caption="الموضوع أو الموارد الجينية المتصلة بالمعلومات التي تم جمعها أو استلامها.">
+                                            <div class="help-info">يرجى إدخال التفاصيل حول الموضوع أو الموارد الجينية للمعلومات التي تم جمعها أو استلامها في نقطة التفتيش. قد يتضمن ذلك الكائنات الحية في أي مرتبة تصنيفية قد تحمل اسمًا تصنيفيًا. ربما يتضمن ذلك مكان أو منطقة جمع المادة. من الممكن كذلك تحديد المورد الجيني من خلال الإشارة إلى عينة قسيمة أو ملاحظات ميدانية محفوظة في أرشيف أو مجموعة محددة.</div>
                                             <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                     <div class="legend2" >Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span>
-                                    </div>
+                                     <div class="legend2" >معلومات إضافية حول موضوع أو مورد جيني  <span class="help-info">توفير التفاصيل حول الموضوع أو المورد الجيني الذي يغطيه التصريح أو أن ما يكافئه يمكنه أن يقدم ما يوفر مزيدًا من اليقين القانوني.</span></div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="specimens" caption="Specimen data">
-                                                <span class="help-info">Link to a voucher specimen held in an appropriate facility</span>
-                                                <div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="specimens" caption="بيانات العينة"><span class="help-info">رابط لعينة قسيمة شراء محفوظة في منشأة ملائمة</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="taxonomies" caption="التصنيف">
-                                                <span class="help-info">Link to record in external taxonomy database, e.g. GBIF, Catalogue of Life</span>
-                                                <div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="taxonomies" caption="التصنيف"><span class="help-info">رابط لسجل في قاعدة بيانات تصنيف خارجية، على سبيل المثال، GBIF، قائمة الحياة</span><div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12" ng-class="{'warning':isInvalid('gisFiles')}">
                                             <div class="km-control-group">
-                                                <label class="control-label" for="gisFiles">Geographic coordinates</label>
-                                                <span class="help-info">Limited to .geojson files (<a translation-url  href="http://www.geojson.org/" target="_blank">http://www.geojson.org/</a>)</span>
-                                                <div km-link required name="gisFiles" ng-model="document.gisFiles" allow-link="false" identifier="document.header.identifier" mime-types="application/json"></div>
+                                                <label class="control-label" for="gisFiles">الإحداثيات الجغرافية</label><span class="help-info">قاصرة على ملفات .geojson
+(<a translation-url  href="http://www.geojson.org/" target="_blank">http://www.geojson.org/</a>)</span><div km-link required name="gisFiles" ng-model="document.gisFiles" allow-link="false" identifier="document.header.identifier" mime-types="application/json"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="keywords" caption="Keywords to describe the subject-matter or genetic resource(s) covered by the permit or its equivalent">
+                                            <div class="km-control-group" name="keywords" caption="كلمات مفتاحية لوصف الموضوع أو المورد (الموارد) الجينية التي يشملها التصريح أو ما يعادله.">
                                                  <div class="help-info"></div>
                                                 <div km-select multiple show-description="true" required name="keywords" ng-model="document.keywords" items="options.keywords()"></div>
                                             </div>
@@ -165,7 +141,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12" ng-show="isOthers()">
-                                            <div class="km-control-group" required name="keywordOther" caption="Other keywords">
+                                            <div class="km-control-group" required name="keywordOther" caption="كلمات أساسية أخرى">
                                                 <div km-textbox-ml required name="keywordOther" rows="1" ng-model="document.keywordOther" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -174,33 +150,27 @@
                                 </div>
                                 <div ng-show="document.gisFiles">
                                     <div class="input-prepend input-append">
-                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lat | number:6}}">
-                                        <span class="add-on">lat</span>
-                                    </div>
+                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lat | number:6}}"><span class="add-on">لات</span></div>
                                     <div class="input-prepend input-append">
-                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lng | number:6}}">
-                                        <span class="add-on">long</span>
-                                    </div>
+                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lng | number:6}}"><span class="add-on">طويل</span></div>
                                     <div class="input-prepend input-append">
-                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.zoom | number:0}}">
-                                        <span class="add-on">zoom</span>
-                                    </div>
+                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.zoom | number:0}}"><span class="add-on">تقريب</span></div>
                                 </div>
                                 <div ng-show="document.gisFiles" class="leaflet" center="document.gisMapCenter" layers="gisLayer"></div>
 
-                                <legend>Evidence of PIC and MAT</legend>
+                                <legend>أدلة الموافقة المسبقة عن علم والشروط المتفق عليها بصورة متبادلة</legend>
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="evidenceOfPIC" caption="Reference or evidence of prior informed consent (PIC)">
-                                             <div class="help-info">This field is to provide information on PIC. This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to PIC, or the permit or its equivalent in their national files.</div>
+                                        <div class="km-control-group" name="evidenceOfPIC" caption="مرجع أو دليل على الموافقة المسبقة عن علم">
+                                             <div class="help-info">هذا الحقل لتقديم معلومات عن الموافقة المسبقة عن علم. يتضمن معلومات عن أي مرجع وطني أو معرفات تساعد الدول في البحث عن واسترجاع المعلومات المرتبطة بالموافقة المسبقة عن علم أو التصريح أو ما يعادله في ملفاتها الوطنية.</div>
                                             <div km-rich-textbox name="evidenceOfPIC" rows="4" ng-model="document.evidenceOfPIC" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="entityWhoGrantedPIC" caption="Person or entity who granted prior informed consent (PIC)">
+                                        <div class="km-control-group" name="entityWhoGrantedPIC" caption="الشخص أو الكيان الذي منح الموافقة المسبقة عن علم">
                                              <div document-selector ng-model="document.entityWhoGrantedPIC" type="radio"
                                                                         question="entityWhoGrantedPIC"
                                                                         schema="(contact authority)"
@@ -212,9 +182,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                       <div class="km-control-group" name="entityToWhomPICGranted" caption="Person or entity to whom prior informed consent (PIC) was granted">
-                                            <span class="help-info">Please provide the contact details of the person or entity to whom prior informed consent was granted.</span>
-                                            <div document-selector ng-model="document.entityToWhomPICGranted" type="radio"
+                                       <div class="km-control-group" name="entityToWhomPICGranted" caption="الشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم"><span class="help-info">يرجى نشر تفاصيل الاتصال للشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم.</span><div document-selector ng-model="document.entityToWhomPICGranted" type="radio"
                                                                         question="entityToWhomPICGranted"
                                                                         schema="(contact authority)"
                                                                         government="document.government"
@@ -226,8 +194,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="evidenceOfMAT" caption="Reference or evidence of establishment of mutually agreed terms (MAT)">
-                                           <div class="help-info">This field is to provide information on MAT. This includes information on any national reference or identifiers that may aid countries to search and retrieve information related to MAT, or the permit or its equivalent in their national files.</div>
+                                        <div class="km-control-group" name="evidenceOfMAT" caption="مرجع أو دليل على وضع الشروط المتفق عليها عن علم">
+                                           <div class="help-info">هذا الحقل لتقديم معلومات عن الشروط المتفق عليها بصورة متبادلة. يشمل هذا الحقل أي معلومات عن أي مرجع وطني أو معرفات قد تساعد الدول في البحث عن أو استرجاع المعلومات المرتبطة بالشروط المتفق عليها أو التصريح أو ما يعادله  في ملفاتها الوطنية.</div>
                                             <div km-rich-textbox name="evidenceOfMAT" rows="4" ng-model="document.evidenceOfMAT" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -235,19 +203,20 @@
 
                                 <div class="row">
                                     <div class="col-xs-12 col-md-3">
-                                        <div class="km-control-group" name="dateOfAccess" caption="Date of access to the genetic resources">
-                                            <div km-date placeholder="YYYY-MM-DD" required name="dateOfAccess" ng-model="document.dateOfAccess"></div>
+                                        <div class="km-control-group" name="dateOfAccess" caption="تاريخ الوصول للموارد الجينية">
+                                            <div km-date placeholder="السنة - الشهر - اليوم" required name="dateOfAccess" ng-model="document.dateOfAccess"></div>
                                         </div>
                                     </div>
                                 </div>
-                        </section> <section>
+                        </section>
+                        <section>
 
-                            <legend>Information on the utilization of the genetic resource(s)</legend>
+                            <legend>معلومات عن استخدام المورد (الموارد) الجينية</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="description" caption="Short description of the information collected or received by the checkpoint relevant to the utilization of genetic resources, including  the type of use">
-                                        <div class="help-info">This could include information on utilization of genetic resources at, inter alia, any stage of research, development, innovation, pre-commercialization or commercialization. The information provided will allow the provider of the genetic resource to check whether the use of the genetic resource is in conformity with PIC and MAT and that benefits are shared in accordance with MAT.</div>
+                                    <div class="km-control-group" required name="description" caption="وصف مختصر للمعلومات التي جمعتها أو تلقتها نقطة التفتيش حول استخدام الموارد الجينية، بما في ذلك نوع الاستخدام">
+                                        <div class="help-info">يتضمن ذلك معلومات عن استخدام الموارد الجينية في أي مرحلة، ضمن أشياء أخرى، من البحث أو التنمية أو الابتكار أو  ما قبل التسويق التجاري أو التسويق التجاري. تتيح هذه المعلومات لمقدم المورد الجيني مراجعة مدى توافق استخدام المورد الجيني مع الموافقة المسبقة عن علم والشروط المتفق عليها بصورة متبادلة، ومدى توافق تقاسم المنافع مع الشروط المتفق عليها بصورة متبادلة.</div>
                                         <div km-rich-textbox name="description" rows="4" ng-model="document.description" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -255,8 +224,8 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="personsAtCheckpoint" caption=" Person or entity making information available to the checkpoint on the utilization of the genetic resource ">
-                                        <div class="help-info">This information allows the provider of the genetic resource to check whether the person or entity to whom the PIC was granted is the same person or entity providing evidence of PIC and MAT at the checkpoint. In case of discrepancy, providers can verify information and conditions related to third party transfer.</div>
+                                    <div class="km-control-group" name="personsAtCheckpoint" caption="الشخص أو الكيان الذي يتيح المعلومات لنقطة التفتيش حول استخدام المورد الجيني">
+                                        <div class="help-info">تتيح هذه المعلومات لموفر المورد الجيني التحقق مما إذا كان الشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم هو الشخص أو الكيان نفسه الذي قدم دليلا على الشروط المتفق عليها بصورة متبادلة في نقطة التفتيش.  في حالة الاختلاف، بإمكان الموفرين التحقق من المعلومات والظروف المرتبطة بالنقل من خلال طرف خارجي.</div>
                                         <div document-selector ng-model="document.personsAtCheckpoint"
                                                                         question="personsAtCheckpoint"
                                                                         schema="(contact authority)"
@@ -267,19 +236,19 @@
                                 </div>
                             </div>
 
-                            <label>Date on which the information was collected or received at the checkpoint</label>
+                            <label>تاريخ جمع المعلومات أو تلقيها في نقطة التفتيش</label>
                             <div class="row" style="margin-bottom:20px;">
                                 <div class="col-xs-4">
-                                    <div km-date placeholder="YYYY-MM-DD" required name="dateCollected" ng-model="document.dateCollected"></div>
+                                    <div km-date placeholder="السنة - الشهر - اليوم" required name="dateCollected" ng-model="document.dateCollected"></div>
                                 </div>
                                 <div class="col-xs-1 bg-grey">
                                     <div style="font-size:16px;font-weight:bold;padding: 6px;text-align: center;" name="dateOR" caption="أو">أو</div>
                                 </div>
                                 <div class="col-xs-3 text-right">
-                                    <div km-date placeholder="FROM" required name="dateCollectedFrom" ng-model="document.dateCollectedFrom"></div>
+                                    <div km-date placeholder="من" required name="dateCollectedFrom" ng-model="document.dateCollectedFrom"></div>
                                 </div>
                                 <div class="col-xs-3  text-right">
-                                    <div km-date placeholder="TO" required name="ddateCollectedTo" ng-model="document.dateCollectedTo"></div>
+                                    <div km-date placeholder="إلى" required name="ddateCollectedTo" ng-model="document.dateCollectedTo"></div>
                                 </div>
                             </div>
 
@@ -299,18 +268,19 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="مواقع الانترنت أو مستندات مرفقة أخرى ذات صلة">
+                                    <div class="km-control-group" name="relevantDocuments" caption="مواقع إنترنت أو مستندات مرفقة أخرى ذات صلة">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
-                        </section> <section>
+                        </section>
+                        <section>
                             <legend>ملاحظات</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="notes">
-                                        <div class="help-info">حقل &quot;ملاحظات&quot; هو لتدوين الملاحظات الشخصية أو التعليقات، وسوف تكون مخفية عند عرض السجل هذا المجال ليس المقصود إستخدامه للحصول على معلومات سرية.</div>
+                                        <div class="help-info">حقل &quot;ملاحظات&quot; لتدوين الملاحظات الشخصية أو التعليقات، وسوف يكون مخفيًا عند عرض السجل. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                     </div>
                                 </div>
