@@ -2,33 +2,21 @@
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-
-                <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-        <div class="registerpage-content">
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
             <div class="alert alert-success alert-dismissable" ng-show="msg">
-                <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button>
-                <strong>{{msg}}</strong>
+                <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
+
+            <div class="alert alert-danger" ng-show="hasError()"><strong>Une erreur est survenue...</strong><div>{{error}}</div>
             </div>
 
-            <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Error as occured...</strong>
-                <div>{{error}}</div>
-            </div>
-
-            <div ng-show="isLoading()">
-                <i class="fa fa-spinner fa-spin"></i> Loading...
-            </div>
+            <div ng-show="isLoading()"><i class="fa fa-spinner fa-spin"></i> chargement en cours...</div>
 
             <div ng-show="!isLoading() && status!='hidden'">
 
                 <div document="getCleanDocument()" hide-timer="false" languages="document.header.languages" workflow-std-buttons/>
 
-                <div km-document-validation ng-model="validationReport"></div>
-
-                <!-- edit form -->
-                <form name="editForm" style="margin-top:10px">
+                <div km-document-validation ng-model="validationReport"></div><!-- edit form --><form name="editForm" style="margin-top:10px">
 
                     <div ng-show="tab=='edit'" km-tab="edit">
 
@@ -52,7 +40,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="fileFormat" caption="Format/File type">
+    							<div class="km-control-group" required name="fileFormat" caption="Format/type de fichier">
     								<div km-select  name="fileFormat" required ng-model="document.fileFormat" items="options.fileFormats()"></div>
     							</div>
     						</div>
@@ -61,7 +49,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="formatDetails" caption="Format details">
+    							<div class="km-control-group" name="formatDetails" caption="Détails du format">
     								<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -69,7 +57,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="purpose" caption="Please identify the main purpose of the resource">
+    							<div class="km-control-group" name="purpose" caption="Veuillez identifier l’utilité de la ressource">
     								<div km-select multiple  name="purpose" ng-model="document.purpose" items="options.purposes()"></div>
     							</div>
     						</div>
@@ -77,7 +65,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="targetGroups" caption="Target group(s)/beneficiary(ies)">
+    							<div class="km-control-group" required name="targetGroups" caption="Cible un/des groupe (s) bénéficiaire (s)">
     								<div km-term-check name="targetGroups" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
     							</div>
     						</div>
@@ -85,7 +73,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="expertiseLevel" caption="Level of the content or   level of knowledge/expertise of the audience for which the resource is intended">
+    							<div class="km-control-group" name="expertiseLevel" caption="Niveau de contenu ou niveau d’expertise/connaissances de l’audiencce à laquelle se destine la ressources">
     								<div km-select name="expertiseLevel" ng-model="document.expertiseLevel" items="options.expertiseLevels()"></div>
     							</div>
     						</div>
@@ -93,8 +81,8 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="authors" caption="Author(s)">
-    								<div class="help-info">Nom de l'auteur de la publication ou de la source d'information.</div>
+    							<div class="km-control-group" required name="authors" caption="Auteur(s)* :">
+    								<div class="help-info">Nom de l&apos;auteur de la publication ou de la source d&apos;information.</div>
     								<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -102,32 +90,26 @@
 
     					<div class="row">
     						<div class="col-md-12">
-                                <div class="km-control-group" name="organizations" caption="Reference to the authoring organisation(s)">
+                                <div class="km-control-group" name="organizations" caption="Référence à l’organisation de création de la source d’information">
                                     
                                     <div document-selector ng-model="document.organizations"
                                                                         question="organizations"
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div>
-                                    
-                                    
-                                    <!--<field-embed-contact multiple ng-model="document.organizations" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>-->
-                                </div>
-    							<!-- <div class="km-control-group" name="organizations" caption="Reference to the authoring organisation(s)">
+                                                                        ></div><!--<field-embed-contact multiple ng-model="document.organizations" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>--></div><!-- <div class="km-control-group" name="organizations" caption="Reference to the authoring organisation(s)">
     								<div km-reference multiple name="organizations" ng-model="document.organizations" loader="loadRecords(identifier, 'organization')" order-by="sortContacts(reference)">
     										<div>
     											<div><strong>{{reference.title | lstring}}</strong></div>
     											<div>{{reference.summary | lstring}}</div>
     										</div>
     								</div>
-    							</div> -->
-    						</div>
+    							</div> --></div>
     					</div>
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="publicationYear" caption="Publication year">
+    							<div class="km-control-group" required name="publicationYear" caption="Année de publication">
     								<input type="number" class="form-control" style="width:200px" required name="publicationYear" ng-model="document.publicationYear" />
     							</div>
     						</div>
@@ -136,7 +118,7 @@
     					<div class="row">
     						<div class="col-md-12">
     							<div class="km-control-group" name="rights" caption="Droits">
-    								<div class="help-info">Renseignements sur les droits associ&eacute;s &agrave; la ressource tels que le d&eacute;tenteur du droit d'auteur et la disponibilit&eacute; aux fins de reproduction &agrave; des fins &eacute;ducatives et &agrave; but non lucratif.</div>
+    								<div class="help-info">Renseignements sur les droits associ&eacute;s &agrave; la ressource tels que le d&eacute;tenteur du droit d&apos;auteur et la disponibilit&eacute; aux fins de reproduction &agrave; des fins &eacute;ducatives et &agrave; but non lucratif.</div>
     								<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -145,7 +127,7 @@
     					<div class="row">
     						<div class="col-md-12">
     							<div class="km-control-group" name="source" caption="Source">
-    								<div class="help-info">Toute r&eacute;f&eacute;rence &agrave; l'origine de la pr&eacute;sente ressource (p. ex., l'article d'un journal). Pour les documents originaux, vous pouvez sp&eacute;cifier «&nbsp;document original&nbsp;».</div>
+    								<div class="help-info">Toute r&eacute;f&eacute;rence &agrave; l&apos;origine de la pr&eacute;sente ressource (p. ex., l&apos;article d&apos;un journal). Pour les documents originaux, vous pouvez sp&eacute;cifier «&nbsp;document original&nbsp;».</div>
     								<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -155,7 +137,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="resourceLinks" caption="Lien &agrave; la ressource">
+    							<div class="km-control-group" required name="resourceLinks" caption="Lien à la ressource">
     								<div class="help-info">Pri&egrave;re de toujours joindre le ou les documents pertinents &agrave; int&eacute;grer &agrave; la base de donn&eacute;es afin que les utilisateurs puissent les t&eacute;l&eacute;charger. Veuillez &eacute;galement ajouter le lien vers les ressources qui sont disponibles sur Internet.</div>
     								<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
     							</div>
@@ -164,18 +146,18 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="cover" caption="Cover image(s)">
+    							<div class="km-control-group" name="cover" caption="Image (s) de couverture ">
     								<div class="help-info">Seuls les formats JPEG et PNG sont support&eacute;s.</div>
     								<div km-link name="cover" ng-model="document.covers" allow-link="false" allow-file="true" mime-types="image/jpeg;image/png" identifier="document.header.identifier"></div>
     							</div>
     						</div>
     					</div>
 
-    					<legend>Information on the content of resource</legend>
+    					<legend>Information sur le contenu de la ressource</legend>
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="summary" caption="Summary or abstract">
+    							<div class="km-control-group" name="summary" caption="Résumé ">
     								<div km-textbox-ml ng-model="document.summary"  rows="4" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -183,8 +165,8 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="regions" caption="Country(ies), Regional or Economic group(s) related to the resource">
-    								<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="Select a country(ies) and/or region(s)..."></div>
+    							<div class="km-control-group" required name="regions" caption="Pays ou groupe(s) régional (aux) ou économique(s) liés à la ressources">
+    								<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="Choisissez un pays et/ou une région"></div>
     							</div>
     						</div>
     					</div>
@@ -193,19 +175,16 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="absKeyAreas" caption="Key areas and strategic measures for capacity-building and development">
+    							<div class="km-control-group" name="absKeyAreas" caption="Domaines clés et mesures stratégiques pour le renforcement et le développement des capacités ">
     								<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
     							</div>
     						</div>
-    					</div>
-
-    					<a translation-url  name="#AdditionalInformation"></a>
-    					<legend>Additional information</legend>
+    					</div><a translation-url  name="#AdditionalInformation"></a><legend>Renseignements suppl&eacute;mentaires</legend>
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" name="address" caption="Any other relavent information">
-    								<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+    							<div class="km-control-group" name="address" caption="Toute autre information utile">
+    								<div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; int&eacute;gr&eacute; ailleurs dans cet enregistrement.</div>
     								<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -222,9 +201,7 @@
     					<div class="row">
     						<div class="col-md-12">
     							<div class="km-control-group" name="notes">
-    								<legend>Notes</legend>
-    								<span class="help-info">Le champ «&nbsp;Notes&nbsp;» est r&eacute;serv&eacute; &agrave; votre usage personnel. Il ne peut &ecirc;tre vu que pendant la modification de l'enregistrement.</span>
-    								<div km-notes name="notes" ng-model="document.notes"></div>
+    								<legend>Notes</legend><span class="help-info">Le champ «&nbsp;Notes&nbsp;» est r&eacute;serv&eacute; &agrave; votre usage personnel. Il ne peut &ecirc;tre vu que pendant la modification de l&apos;enregistrement.</span><div km-notes name="notes" ng-model="document.notes"></div>
     							</div>
     						</div>
     					</div>
