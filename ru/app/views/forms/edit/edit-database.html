@@ -2,26 +2,15 @@
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-
-                <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-  <div class="registerpage-content">
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
     <div ng-show="msg" class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button>
-      <strong>{{msg}}</strong>
-    </div>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
 
-    <div class="alert alert-danger" ng-show="hasError()">
-      <strong>Произошла ошибка...</strong>
-      <div>{{error}}</div>
-    </div>
-
-    <!--<div ng-show="isLoading()">
+    <div class="alert alert-danger" ng-show="hasError()"><strong>Произошла ошибка...</strong><div>{{error}}</div>
+    </div><!--<div ng-show="isLoading()">
         <i class="fa fa-spinner fa-spin"></i> Loading...
-    </div>-->
-
-    <div ng-show="!isLoading() && status!='hidden'">
+    </div>--><div ng-show="!isLoading() && status!='hidden'">
     <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages"  hide-timer="false"/>
 
             <div km-document-validation ng-model="validationReport"></div>
@@ -29,7 +18,7 @@
 			<div ng-show="tab=='edit'" km-tab="edit">
 				<legend name="formInfo" style="display:none"></legend>
 				<section>
-				<legend>Website or Database details </legend>
+				<legend>Сведения о веб-сайте или базе данных</legend>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="government" required caption="Страна">
@@ -39,25 +28,25 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="km-control-group" name="title" required caption="Website or database name">
-							<div class="help-info">Просьба указать название веб-сайта или базы данных так, как вы хотели бы чтобы оно было представлено в названии записи.</div>
-							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="example: The title"></div>
+						<div class="km-control-group" name="title" required caption="Название веб-сайта или базы данных">
+							<div class="help-info">Введите название веб-сайта или базы данных в том виде, в котором бы вы хотели бы, чтобы оно было представлено в названии записи.</div>
+							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="пример: Название"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="description" required caption="Описание">
-							<div class="help-info">Please enter a short description of the national website or database, such as its function or information it makes available.</div>
-							<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages" placeholder="example: The description"></div>
+							<div class="help-info">Кратко опишите национальный веб-сайт или национальную базу данных (например, их функции или информацию, к которой они обеспечивают доступ).</div>
+							<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages" placeholder="пример: Описание"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="website" required caption="Адрес веб-сайта">
-							<div class="help-info">Please provide the full URL of the website (e.g. http://www.cbd.int).</div>
-							<input type="url" ng-model="document.website.url" required class="form-control" placeholder="example: http://www.cbd.int" />
+							<div class="help-info">Укажите полный URL-адрес веб-сайта (например, http://www.cbd.int).</div>
+							<input type="url" ng-model="document.website.url" required class="form-control" placeholder="пример: http://www.cbd.int" />
 						</div>
 					</div>
 				</div>
@@ -69,8 +58,8 @@
 
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="km-control-group" name="address" caption="Любая другая релевантная информация">
-							<div class="help-info">Укажите в этом поле любую релевантную информацию, которая, возможно, не отражена в других разделах записи.</div>
+						<div class="km-control-group" name="address" caption="Любая другая актуальная информация">
+							<div class="help-info">Просьба использовать это поле для представления любой другой актуальной информации, которая, возможно, не была учтена в других разделах записи.</div>
 							<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 						</div>
 					</div>
@@ -109,9 +98,7 @@
 
             <div view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 
-		</div>
-
-        <!-- <hr style="margin-top:20px;">
+		</div><!-- <hr style="margin-top:20px;">
 
         <div class="row" style="padding-top:20px;">
             <div class="col-xs-12">
@@ -120,10 +107,7 @@
 
 
             </div>
-        </div> -->
-
-
-    </div>
+        </div> --></div>
   </div>
 </div>
 
