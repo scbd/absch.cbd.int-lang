@@ -2,26 +2,15 @@
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-
-                <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-  <div class="registerpage-content">
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
     <div ng-show="msg" class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button>
-      <strong>{{msg}}</strong>
-    </div>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
 
-    <div class="alert alert-danger" ng-show="hasError()">
-      <strong>Se produjo un error...</strong>
-      <div>{{error}}</div>
-    </div>
-
-    <!--<div ng-show="isLoading()">
+    <div class="alert alert-danger" ng-show="hasError()"><strong>Se produjo un error...</strong><div>{{error}}</div>
+    </div><!--<div ng-show="isLoading()">
         <i class="fa fa-spinner fa-spin"></i> Loading...
-    </div>-->
-
-    <div ng-show="!isLoading() && status!='hidden'">
+    </div>--><div ng-show="!isLoading() && status!='hidden'">
     <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages"  hide-timer="false"/>
 
             <div km-document-validation ng-model="validationReport"></div>
@@ -29,35 +18,35 @@
 			<div ng-show="tab=='edit'" km-tab="edit">
 				<legend name="formInfo" style="display:none"></legend>
 				<section>
-				<legend>Website or Database details </legend>
+				<legend>Informaci&oacute;n sobre el sitio web o la base de datos</legend>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="government" required caption="Pa&iacute;s">
-              <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
+              <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un pa&iacute;s"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="km-control-group" name="title" required caption="Website or database name">
-							<div class="help-info">Por favor, ingrese el nombre del sitio web o base de datos como desea que aparezca en el t&iacute;tulo del registro.</div>
-							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="example: The title"></div>
+						<div class="km-control-group" name="title" required caption="Nombre del sitio web o de la base de datos">
+							<div class="help-info">Por favor, ingrese el nombre del sitio web o de la base de datos como desea que aparezca en el t&iacute;tulo del registro.</div>
+							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="ejemplo: T&iacute;tulo"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="description" required caption="Descripci&oacute;n">
-							<div class="help-info">Please enter a short description of the national website or database, such as its function or information it makes available.</div>
-							<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages" placeholder="example: The description"></div>
+							<div class="help-info">Por favor, ingrese una breve descripci&oacute;n del sitio web o de la base de datos nacionales, as&iacute; como como su funci&oacute;n o la informaci&oacute;n que ofrece.</div>
+							<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages" placeholder="ejemplo: Descripci&oacute;n"></div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="website" required caption="Direcci&oacute;n del sitio web">
-							<div class="help-info">Please provide the full URL of the website (e.g. http://www.cbd.int).</div>
-							<input type="url" ng-model="document.website.url" required class="form-control" placeholder="example: http://www.cbd.int" />
+							<div class="help-info">Proporcione el URL completo del sitio web (por ej., http://www.cbd.int).</div>
+							<input type="url" ng-model="document.website.url" required class="form-control" placeholder="ejemplo: http://www.cbd.int" />
 						</div>
 					</div>
 				</div>
@@ -65,12 +54,12 @@
 
 				<section>
 
-				<legend>Additional information</legend>
+				<legend>Informaci&oacute;n adicional</legend>
 
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
-							<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+							<div class="help-info">Por favor, utilice este campo para proporcionar cualquier otra informaci&oacute;n pertinente que no se haya podido incluir en otro lugar del registro.</div>
 							<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 						</div>
 					</div>
@@ -78,7 +67,7 @@
 
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="km-control-group" name="relevantDocuments" caption="Otros documentos relevantes">
+						<div class="km-control-group" name="relevantDocuments" caption="Otros documentos pertinentes">
 							<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 						</div>
 					</div>
@@ -87,7 +76,7 @@
 
 				<section>
 
-				<legend>Notes</legend>
+				<legend>Notas</legend>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="notes">
@@ -109,9 +98,7 @@
 
             <div view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 
-		</div>
-
-        <!-- <hr style="margin-top:20px;">
+		</div><!-- <hr style="margin-top:20px;">
 
         <div class="row" style="padding-top:20px;">
             <div class="col-xs-12">
@@ -120,10 +107,7 @@
 
 
             </div>
-        </div> -->
-
-
-    </div>
+        </div> --></div>
   </div>
 </div>
 

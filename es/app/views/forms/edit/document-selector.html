@@ -1,34 +1,19 @@
-﻿<div>
-    
-    <!-- existing documents display -->
-    <div class="row">
+﻿<div><!-- existing documents display --><div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'A&ntilde;adir registro'}}{{type!=='radio' ? &quot;(s)&quot; : &quot;&quot;}}</button>
-
-            <span ng-show="model.length==0 || !model"> <i class="color-blue"> No hay enlaces a registros. </i> </span>
-
-            <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} linked records.</a>
-
-        </div>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || &apos;Add record&apos;}}{{type!==&apos;radio&apos; ? &quot;(s)&quot; : &quot;&quot;}}</button><span ng-show="model.length==0 || !model"><i class="color-blue">No hay enlaces a registros.</i></span> <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} linked records.</a></div>
     </div>
     <div class="row" ng-show="areVisible && !disabled">
-        <div class="col-xs-12">
-            <br />
-            <table class="table" id="search-new" style="padding-bottom:3px;width:100%;">
+        <div class="col-xs-12"><br /><table class="table" id="search-new" style="padding-bottom:3px;width:100%;">
                 <tr ng-repeat="doc in model" ng-if="type!='radio'">
-                    <td style="margin-bottom:15px;width:15px;">
-                        <a translation-url  class="btn btn-default" ng-click="removeDocument(doc)" class="link color-red"><i class="fa fa-times"></i></a>
-                    </td>
+                    <td style="margin-bottom:15px;width:15px;"><a translation-url  class="btn btn-default" ng-click="removeDocument(doc)" class="link color-red"><i class="fa fa-times"></i></a></td>
                     <td style="margin-bottom:20px;">
                         <div ng-if="isContact(doc) || isAuthority(doc) || isFocalPoint(doc)" view-contact-reference ng-model="doc" locale="locale" class="km-value"></div>
                         <div ng-if="!isContact(doc) && !isAuthority(doc) && !isFocalPoint(doc)" view-default-reference ng-model="doc.identifier" locale="locale"></div>
                     </td>
                 </tr>
                 <tr ng-if="type=='radio' && model">
-                    <td style="margin-bottom:15px;width:15px;">
-                        <a translation-url  class="btn btn-default" ng-click="removeDocument(model)" class="link color-red"><i class="fa fa-times"></i></a>
-                    </td>
+                    <td style="margin-bottom:15px;width:15px;"><a translation-url  class="btn btn-default" ng-click="removeDocument(model)" class="link color-red"><i class="fa fa-times"></i></a></td>
                     <td style="margin-bottom:20px;">
                         <div ng-if="isContact(model) || isAuthority(model) || doc.schema_s== 'focalPoint'" view-contact-reference ng-model="model" locale="locale" class="km-value"></div>
                         <div ng-if="!isContact(model) && !isAuthority(model) && doc.schema_s!= 'focalPoint'" view-default-reference ng-model="model.identifier" locale="locale"></div>
@@ -37,17 +22,13 @@
             </table>
         </div>
 
-    </div>
-
-    <!-- Modal -->
-
-    <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
-        <div class="rounded" id="{{question}}">
-            <div class="modal-header bg-grey">
-                <h3>Seleccione de la lista de registros publicados a continuación:</h3>
-                <div class="help-info">Si el registro aún no se encuentra en la lista, guarde su borrador actual y vaya a 'Dashboard' y cree un nuevo registro.</div>
+    </div><!-- Modal --> <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
+        <div class="rounded bg-dropshadow" id="{{question}}">
+            <div class="modal-header bg-grey ">
+                <h3>S&iacute;rvase seleccionar de la lista de registro(s) que se publica(n) a continuaci&oacute;n:</h3>
+                <div class="help-info">Si el registro todav&iacute;a no figura en la lista, s&iacute;rvase grabar el borrador actual e ir a el &apos;Tablero de control&apos; y crear un nuevo registro.</div>
                 <div ng-show="filter">
-                    <input type="textbox" ng-model="keyword" placeholder="filter records by keywords or unique identifier" class="form-control">
+                    <input type="textbox" ng-model="keyword" placeholder="filtrar registros por palabras clave o identificador &uacute;nico" class="form-control">
                 </div>
             </div>
             <div class="modal-body">
@@ -61,18 +42,15 @@
                             <result-default doc='doc' type="nationalRecords"></result-default>
                         </div>
                     </div>
-                    <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> Loading...</div>
-                    <div ng-if="rawDocuments.numFound===0"> No se encontró registro</div>
+                    <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> Cargando...</div>
+                    <div ng-if="rawDocuments.numFound===0">No se encontr&oacute; registro</div>
                 </div>
             </div>
 
             <div class="modal-footer bg-grey">
                 <div class="row">
-                    <div class="col-xs-12">
-                        <a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">salvar</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">cerca</a>
-                    </div>
+                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Grabar</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Cerrar</a></div>
                 </div>
             </div>
         </div>
-    </script>
-</div>
+    </script></div>
