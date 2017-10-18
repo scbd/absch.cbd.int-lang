@@ -1,55 +1,32 @@
-﻿<div>
-    <style>
-            .navbar-nav>li {
-                float: left;
-            }
-            .helpOn{color:#FFF}
-            .helpOff{color:#333;}
-            /*.helpinfo{display:{{showHelp ? block : none}};}*/
-            #PortalLinks1 .icon{margin-top:2px;}
-    </style>
+﻿<div dir="rtl">
+    <style>.navbar-nav>li { float: left; } .helpOn{color:#FFF} .helpOff{color:#333;} /*.helpinfo{display:{{showHelp ? block : none}};}*/ #PortalLinks1 .icon{margin-top:2px;}</style>
     <nav id="PortalLinks1" class="navbar navbar-links navbar-default navbar-static-top" >
         <div class="container-fluid container-links color-grey">
             <div class="navbar-header">
             </div>
             <div id="navbar">
-                <ul class="nav navbar-nav pull-left" style="width:100%" >
-                    <!-- <div class="bold color-orange1 hidden-md hidden-lg" ng-if="!production_env">
+                <ul class="nav navbar-nav pull-left" style="width:100%" ><!-- <div class="bold color-orange1 hidden-md hidden-lg" ng-if="!production_env">
                         <span ng-show="development_env"> DEV</span>
                         <span ng-show="training_env"> TRG</span>
                     </div>
                     <div class="bold color-orange1 hidden-xs" ng-if="!production_env">
                         <span ng-show="development_env"> DEVELOPMENT</span>
                         <span ng-show="training_env"> TRAINING</span>
-                    </div> -->
-                    <li >
-                         <a translation-url  ng-href="."><strong class="color-white visible-xs ">ABSCH</strong> <strong class="color-white visible-sm visible-md visible-lg"><i class="fa fa-home"></i></strong></a>
-                    </li>
-                    <li>
-                         <a translation-url  ng-href="about"> <i class="icon fa fa-question-circle  visible-xs "></i> <span class="hidden-xs "> About the ABSCH</span></a>
-                    </li>
-                    <li>
-                        <a translation-url  ng-href="search"> <i class="icon fa fa-search visible-xs "></i> <span class="hidden-xs "> البحث</span></a>
-                    </li>
-                    <li>
-                        <a translation-url  ng-href="register"> <i class="icon fa fa-pencil-square-o visible-xs"></i> <span class="hidden-xs "> إرسال</span></a>
-                    </li>
-                    <li>
-                        <a translation-url  ng-href="countries"> <i class="icon fa fa-globe visible-xs"></i> <span class="hidden-xs"> Country Profiles </span></a>
-                    </li>
-                    <!--<li class="last pull-right">
+                    </div> --><li ><a translation-url  ng-href="."><strong class="color-white visible-xs ">غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع</strong><strong class="color-white visible-sm visible-md visible-lg"><i class="fa fa-home"></i></strong></a></li>
+                    <li><a translation-url  ng-href="about"><i class="icon fa fa-question-circle  visible-xs "></i><span class="hidden-xs ">حول الغرفة</span></a></li>
+                    <li><a translation-url  ng-href="search"><i class="icon fa fa-search visible-xs "></i><span class="hidden-xs ">بحث</span></a></li>
+                    <li><a translation-url  ng-href="register"><i class="icon fa fa-pencil-square-o visible-xs"></i><span class="hidden-xs ">إرسال</span></a></li>
+                    <li><a translation-url  ng-href="countries"><i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs">معلومات الدول</span></a></li><!--<li class="last pull-right">
                         <a translation-url  ng-click="toggleHelp();"> <i class="fa fa-info-circle" ng-class="{'helpOn':showHelp ,'helpOff':!showHelp }"></i> </i>
                         </a>
-                    </li>-->
-                    <li class="pull-right" ng-if="training_env||development_env"><a translation-url  href="/forums" ng-class="{'link-active' : getClass('/forums')}"><i class="fa fa-comments"></i><span class="hidden-xs hidden-sm">&nbsp;المنتديات</span></a></li>
+                    </li>--><li class="pull-right" ng-if="training_env||development_env"><a translation-url  href="/forums" ng-class="{'link-active' : getClass('/forums')}"><i class="fa fa-comments"></i><span class="hidden-xs hidden-sm">&nbsp;المنتديات</span></a></li>
                 </ul>
             </div>
         </div>
-    </nav> <nav class="navbar navbar-breadcrumbs navbar-default navbar-static-top"  ng-hide="breadcrumbs.get().length == 1" >
+    </nav>
+        <nav class="navbar navbar-breadcrumbs navbar-default navbar-static-top"  ng-hide="breadcrumbs.get().length == 1" >
         <div class="container-fluid container-breadcrumbs">
-            <div class="color-litegrey" >
-                    <a translation-url  href="http://www.cbd.int" class="margin-right-xs">CBD</a> <span ng-repeat="breadcrumb in breadcrumbs.get()" >&nbsp;&nbsp;<i class="fa fa-chevron-right color-litegrey"></i>&nbsp;&nbsp; <span ng-if="!breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span> <span ng-if="breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span></span>
-            </div>
+            <div class="color-litegrey" ><a translation-url  href="http://www.cbd.int" class="margin-right-xs">الاتفاقية المتعلقة بالتنوع البيولوجي</a> <span ng-repeat="breadcrumb in breadcrumbs.get()" >&nbsp;&nbsp;<i class="fa fa-chevron-right color-litegrey"></i>&nbsp;&nbsp;<span ng-if="!breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a><span ng-if="$last" ng-bind="breadcrumb.label"></span></span><span ng-if="breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a><span ng-if="$last" ng-bind="breadcrumb.label"></span></span></span></div>
         </div>
     </nav>
 </div>

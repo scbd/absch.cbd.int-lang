@@ -4,22 +4,15 @@
 			<tr ng-repeat="reference in references" >
 				<td>
 					<div ng-show="!reference.__loading && !reference.__errorCode">
-						<div><strong>{{reference.title | lstring}}</strong>
-							<div ng-bind-html="reference.summary | lstring"></div>
+						<div><strong>{{reference.title | lstring}}</strong><div ng-bind-html="reference.summary | lstring"></div>
 					</div>
 
-					<div ng-show="reference.__loading">
-						<i class="fa fa-spinner fa-spin"></i> 正在加载...
-					</div>
+					<div ng-show="reference.__loading"><i class="fa fa-spinner fa-spin"></i> 正在加载...</div>
 
 					<div ng-show="reference.__errorCode">
 						<div ng-switch="reference.__errorCode">
-							<div ng-switch-when="404" class="alert alert-warning">
-								<strong>Record not found</strong> {{reference.identifier}}
-							</div>
-							<div ng-switch-default class="alert alert-danger">
-								<strong>Error loading record</strong> {{reference.identifier}}
-								<div>{{reference.__error}}<div>
+							<div ng-switch-when="404" class="alert alert-warning"><strong>Record not found</strong> {{reference.identifier}}</div>
+							<div ng-switch-default class="alert alert-danger"><strong>Error loading record</strong> {{reference.identifier}}<div>{{reference.__error}}<div>
 							</div>
 						</div>
 					</div>
@@ -33,10 +26,7 @@
 
 		<button type="button" class="btn btn-default" ng-show="multiple" ng-click="addReference()">Add a reference</button>
 		<button type="button" class="km-reference-select btn btn-default" ng-hide="multiple" ng-click="addReference()">Select a reference...</button>
-	</div>
-
-    <!--Reference Editor-->
-	<div id="editReference" class="modal fade" data-backdrop="true">
+	</div><!--Reference Editor--><div id="editReference" class="modal fade" data-backdrop="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -51,8 +41,7 @@
 								<input ng-keydown="keydown($event)" type="checkbox" ng-model="reference.__checked"/>
 							</td>
 							<td class="reference-summary-cell">
-								<div><strong>{{reference.title | lstring}}</strong>
-									<div ng-bind-html="reference.summary | lstring"></div>
+								<div><strong>{{reference.title | lstring}}</strong><div ng-bind-html="reference.summary | lstring"></div>
 							</td>
 						</tr>
 
@@ -61,9 +50,7 @@
 						</tr>
 
 						<tr ng-show="isLoading">
-							<td colspan="2">
-								正在加载...
-							</td>
+							<td colspan="2">正在加载...</td>
 						</tr>
 					</table>
 

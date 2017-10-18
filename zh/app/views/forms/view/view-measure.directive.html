@@ -1,42 +1,35 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4 ng-show="display('header')">
-		Legislative, administrative or policy measures on access and benefit-sharing <span class="color-black"> (MSR) </span>
-		</h4></div>
+		<h4 ng-show="display('header')">关于获取和惠益分享的立法、行政和政策措施<span class="color-black">（MSR）</span></h4></div>
 	<div class="record-body panel-body">
 
-		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">
-			一般信息</legend>
+		<div record-options></div>
+
+		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">一般信息</legend>
 
 		<div ng-show="document.government">
 			<label name="country">国家</label>
-			<div class="km-value">
-				{{document.government|term:locale}} <span ng-party-status government="document.government" id="government"></span>
-			</div>
+			<div class="km-value">{{document.government|term:locale}} <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-show="document.title">
 			<label>Title</label>
-			<div class="km-value">
-				<strong>{{document.title | lstring:locale}}</strong>
-			</div>
+			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		</div>
 
 		<div ng-show="document.description">
-			<label>Brief description</label>
+			<label>简要描述</label>
 			<div class="km-value km-pre" ng-bind-html="document.description | lstring:locale"></div>
 		</div>
 
 		<div ng-show="document.jurisdiction">
-			<label>Jurisdiction(s)</label>
-			<div class="km-value">
-				{{document.jurisdiction|term:locale}} <span ng-if="document.jurisdictionName ">({{document.jurisdictionName | lstring:locale}})</span>
-			</div>
+			<label>辖区</label>
+			<div class="km-value">{{document.jurisdiction|term:locale}} <span ng-if="document.jurisdictionName ">({{document.jurisdictionName | lstring:locale}})</span></div>
 		</div>
 
 
 		<div ng-show="document.jurisdictionRegions">
-			<label>Country name and/or Geographical or political/economic group(s)</label>
+			<label>国家名称和/或地理或政治/经济组</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="term in document.jurisdictionRegions">{{term|term:locale}}</li>
@@ -46,14 +39,12 @@
 
 
 		<div ng-show="document.status">
-			<label>Current status of the measure</label>
-			<div class="km-value">
-				{{document.status|term:locale}}
-			</div>
+			<label>措施当前状态</label>
+			<div class="km-value">{{document.status|term:locale}}</div>
 		</div>
 
 		<div ng-show="document.adoption">
-			<label>Date of adoption</label>
+			<label>通过日期</label>
 			<div class="km-value">{{document.adoption | formatDate}}</div>
 		</div>
 
@@ -63,28 +54,24 @@
 		</div>
 
 		<div ng-show="document.retired">
-			<label>Date of retirement</label>
+			<label>退出日期</label>
 			<div class="km-value">{{document.retired | formatDate}}</div>
 		</div>
 
 		<div ng-show="document.limitedApplication">
-			<label>Date of measure no longer in force</label>
+			<label>措施日期不再有效</label>
 			<div class="km-value">{{document.limitedApplication | formatDate}}</div>
 		</div>
 
 
 		<div ng-show="document.type">
-			<label>Type of document / measure</label>
-			<div class="km-value">
-				{{document.type|term:locale}}
-			</div>
+			<label>文件类型/措施</label>
+			<div class="km-value">{{document.type|term:locale}}</div>
 		</div>
 
 		<div ng-show="document.isModelContractualClause">
-			<label>The measure contains model contractual clauses</label>
-			<div class="km-value" ng-if="document.modelContractualClauseDescription">
-				{{document.modelContractualClauseDescription|lstring:locale}}
-			</div>
+			<label>此措施包含示范合同条款</label>
+			<div class="km-value" ng-if="document.modelContractualClauseDescription">{{document.modelContractualClauseDescription|lstring:locale}}</div>
 		</div>
 		<div ng-show="document.registeredMeasuresDescription">
 			<div class="km-value km-pre">{{document.registeredMeasuresDescription | lstring:locale}}</div>
@@ -92,27 +79,22 @@
 
 		<div ng-show="document.documents">
 			<legend>文档细节</legend>
-			<label>Document text</label>
+			<label>文档文本</label>
 			<div class="km-value">
 				<ul>
-					<li ng-repeat="item in document.documents">
-						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-					</li>
+					<li ng-repeat="item in document.documents"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
 		</div>
 
 		<div ng-show="document.documentTranslations">
-			<label>Translation</label>
+			<label>翻译</label>
 			<div class="km-value">
 				<ul>
-					<li ng-repeat="item in document.documentTranslations">
-						<a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-					</li>
+					<li ng-repeat="item in document.documentTranslations"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
-		</div>
-		<!--<div ng-show="document.linkedMeasures">
+		</div><!--<div ng-show="document.linkedMeasures">
 			<label>Related measures</label>
 			<div class="km-value">
 				<ul>
@@ -121,13 +103,10 @@
 					</li>
 				</ul>
 			</div>
-		</div>-->
-
-
-		<div ng-show="document.amendedMeasures || document.amendmentsDescription">
-			<legend>Amendments</legend>
+		</div>--><div ng-show="document.amendedMeasures || document.amendmentsDescription">
+			<legend>增补</legend>
 			<div ng-show="document.amendedMeasures">
-				<label>This measure is amending the following:</label>
+				<label>此措施将修订以下内容：</label>
 
 				<div class="km-value">
 					<ul>
@@ -138,7 +117,7 @@
 				</div>
 			</div>
 			<div ng-show="document.amendmentsDescription">
-				<label>Summary of the amendments</label>
+				<label>修订摘要</label>
 				<div class="km-value km-pre" ng-bind-html="document.amendmentsDescription | lstring:review.locale"></div>
 			</div>
 
@@ -152,21 +131,21 @@
 		</div>
 
 		<div ng-show="document.measureAmendedBy && document.measureAmendedBy.length>0">
-			<legend>Amendments</legend>
-			<label>This measure has been amended by:</label>
+			<legend>增补</legend>
+			<label>此措施修订人：</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.measureAmendedBy">
-						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
+						<div view-default-reference ng-model="item.identifier_s" locale="locale"></div>
 					</li>
 				</ul>
 			</div>
 		</div>
 
 		<div ng-show="(document.linkedMeasures && document.linkedMeasures.length>0) || document.linkedMeasuresDescription">
-			<legend>Relationships</legend>			
+			<legend>关系</legend>			
 			<div class="km-value" ng-show="document.linkedMeasures && document.linkedMeasures.length>0">
-				<label>This measure is related to:</label>
+				<label>此措施涉及：</label>
 				<ul>
 					<li ng-repeat="item in document.linkedMeasures">
 						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
@@ -174,14 +153,12 @@
 				</ul>
 			</div>
 			<div ng-show="document.linkedMeasuresDescription">
-				<label>Relationships description</label>
+				<label>关系描述</label>
 				<div class="km-value km-pre" ng-bind-html="document.linkedMeasuresDescription | lstring:review.locale"></div>
 			</div>
 		</div>
 		<div ng-if="document.absMesasureNotApplicable">
-			<legend>Elements of the measure</legend>
-			<span class="km-value confidential-text">The elements of the measure are not applicable for this measure.</span>
-		</div>
+			<legend>措施要素</legend><span class="km-value confidential-text">此措施的要素不适用此措施。</span></div>
 		<div ng-if="document.absMeasures">
 			<div measure-matrix-elements name="absMeasures" type="single" ng-model="document.absMeasures" 
 			locale="locale" document="document" api="measureMatrixApi">
@@ -199,9 +176,7 @@
 				<label>其他相关网址或附加文档</label>
 				<div class="km-value">
 					<ul>
-						<li ng-repeat="item in document.relevantDocuments">
-							<i class="fa fa-external-link-square" aria-hidden="true"></i> <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-						</li>
+						<li ng-repeat="item in document.relevantDocuments"><i class="fa fa-external-link-square" aria-hidden="true"></i> <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 					</ul>
 				</div>
 			</div>

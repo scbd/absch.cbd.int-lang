@@ -1,39 +1,8 @@
 ﻿<div class="register-content">
     <div class="register-content-header color-white" ng-class="{'bg-blue': type.schemaType != 'referenceRecords','bg-orange': type.schemaType == 'referenceRecords' }">
         <div style="padding:10px 10px;">
-            <h3>{{type.title}} <span class="color-darkgrey"> ({{type.abbreviation}})</span>
-
-        <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span>
-
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span>
-
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span>
-
-              <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span>
-
-
-         </h3>
-
-
-            <script type="text/ng-template" trados-translation="true" id="defaultIntro">
+            <h3>{{type.title}} <span class="color-darkgrey">({{type.abbreviation}})</span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span></h3> <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
+                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a> <!--CON----------------------------><script type="text/ng-template" trados-translation="true" id="defaultIntro">
                 <!--<h5> Instructions</h5>
            <div>Please fill in the submission form and complete all fields following the instructions given.
                 Certain fields are mandatory and indicated with an asterisk(*). The review of the form will highlight the mandatory fields that need
@@ -42,167 +11,79 @@
 		   </div>
            <br>
            <div>It is possible to introduce information one of the six official UN languages. Select languages using the button located at the top left of the page and for each submission field, a text boxes will
-                appear in the languages selected.</div><br>-->
-            </script>
+                appear in the languages selected.</div><br>--></script><div ng-if="showCONInfo" class="well well-help">
 
-
-
-            <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
-                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a>
-
-            <!--CON---------------------------->
-            <div ng-if="showCONInfo" class="well well-help">
-
-                <h5> Introduction</h5>
-                <div>Many common formats include the possibility to add contact details for both individuals and organisations. Through filling this form you can create a list of contacts which is shared and visible among all national users, similar to a national agenda, and that you can use in filling the common formats. When adding a contact to another common format, the list of contacts for your country will appear and you can select from it the relevant contact(s). In case that you want to include a new contact which is not currently in the list, you will need to save the form as a draft and go to the dashboard to create a new contact.</div>
-                <br>
-                <div>To avoid duplication in the submission of information, when you want to create contacts for several individuals working in the same organisation, you can first add the contact of the organisation, and then add the individual contact information and include a link to the record on the organisation.</div>
+                <h5>Introduction</h5>
+                <div>Plusieurs formats communs offrent la possibilit&eacute; d&apos;ajouter des coordonn&eacute;es &agrave; la fois pour les individus et les organisations. En compl&eacute;tant ce formulaire, vous pouvez cr&eacute;er une liste de contacts qui sera partag&eacute;e et disponible pour tous les usagers nationaux, tel un agenda national que vous pourrez utiliser en compl&eacute;tant les formats communs. En ajoutant un contact &agrave; un autre format commun, la liste de contacts de votre pays appara&icirc;tra et vous pourrez y s&eacute;lectionner le (s) contact (s) recherch&eacute; (s). Dans le cas o&ugrave; vous souhaitez inclure un nouveau contact qui n&rsquo;appara&icirc;t pas dans la liste actuelle, vous devrez sauvegarder le format en tant que brouillon et aller sur le tableau de bord afin de cr&eacute;er un nouveau contact.</div><br><div>Lorsque vous souhaitez cr&eacute;er des fiches de contacts pour plusieurs individus travaillant au sein d&rsquo;une m&ecirc;me organisation, vous pouvez d&apos;abord ajouter les coordonn&eacute;es de l&rsquo;organisation puis ajouter les renseignements individuels et inclure un lien vers cette fiche sur le profil de l&rsquo;organisation.</div>
 
                 <div ng-include="'defaultIntro'"></div>
 
-            </div>
-
-            <!--CNA---------------------------->
-            <div ng-if="showCNAInfo" class="well well-help">
+            </div><!--CNA----------------------------><div ng-if="showCNAInfo" class="well well-help">
 
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>Article 13 of the Nagoya Protocol requires the designation of one or more competent national authorities (CNA) on access and benefit-sharing. This information shall be made available to the ABS Clearing-House in accordance with paragraph 2 (b) of Article 14 of the Protocol. Where a Party designates more than one competent national authority, it must provide relevant information on the respective responsibilities of those authorities to the Secretariat along with its notification designating the authority(ies).&nbsp;</div>
-                <br>
-                <div>Article 13, paragraph 2, provides that competent national authorities shall, in accordance with applicable national legislative, administrative, or policy measures, be responsible for granting access or, as applicable, issuing written evidence that access requirements have been met and be responsible for advising on applicable procedures and requirements for obtaining prior informed consent and entering into mutually agreed terms.</div>
-            </div>
-
-            <!--MSR---------------------------->
-            <div ng-if="showMSRInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>L&rsquo;article 13 du Protocole de Nagoya requiert la d&eacute;signation d&rsquo;un ou plusieurs autorit&eacute;s nationales comp&eacute;tentes (ANC) sur l&rsquo;acc&egrave;s et le partage des avantages. Cette information devrait &ecirc;tre disponible au Centre d&rsquo;information APA conform&eacute;ment avec le paragraphe 2 (b) de l&rsquo;Article 14 du Protocole. Lorsqu&rsquo;une Partie d&eacute;signe plus d&rsquo;une autorit&eacute; nationale comp&eacute;tente, elle doit fournir au Secr&eacute;tariat l&rsquo;information appropri&eacute;e quand aux responsabilit&eacute;s respectives de ces autorit&eacute;s avec une notification qui d&eacute;signe ces autorit&eacute;s.&nbsp;</div><br><div>Le paragraphe 2 de l&rsquo;Article 13, pr&eacute;voit &agrave; ce que les autorités nationales compétentes, en conformité avec les mesures législatives et administratives ainsi que les politiques nationales applicables, sont chargées d&rsquo;accorder l&rsquo;accès ou, s&rsquo;il y a lieu, de délivrer une preuve écrite que les conditions d&rsquo;accès ont été respectées, et de fournir des conseils sur les procédures et les conditions d&rsquo;obtention du consentement préalable donné en connaissance de cause et de conclusion de conditions convenues d&rsquo;un commun accord.</div>
+            </div><!--MSR----------------------------><div ng-if="showMSRInfo" class="well well-help">
 
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>Article 14 paragraph 2 (a) of the Nagoya Protocol provides that Parties shall make available to the ABS Clearing-House information on legislative, administrative and policy measures on access and benefit-sharing.</div>
-                <br>
-                <div>Access and benefit-sharing measures may include national or regional strategies, policies, legislation or regulations. They may also include measures undertaken at the subnational or community level. This form can also be used to make available additional explanatory information on how to meet ABS requirements.</div>
-                <br>
-                <div>Please submit a new form for each ABS measure. You will need to submit as many forms as the number of ABS measures that are available within your jurisdiction.</div>
-                <br>
-                <div>With a view to provide the most accurate overview of the national ABS legal framework, the ABS Clearing-House allows for the possibility of reflecting amendments to existing measures and linking different measures, for instance a regulation that implements legislation, or a guideline that provides further guidance on how to implement a given provision.</div>
-                <br>
-                <div>Information registered should be as clear and concise as possible while bearing in mind that the information should guide potential users to comply with the country&rsquo;s legal requirements. Including courtesy translation of the information, and explanatory information, flow charts, or step-by-step guides on how to apply for prior informed consent are very useful for reaching out to users and ensuring that they are aware of the national requirements for access.</div>
-            </div>
-
-            <!--NDB---------------------------->
-            <div ng-if="showNDBInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Le paragraphe 2 (a) de l&apos;article 14 du Protocole de Nagoya pr&eacute;voit &agrave; ce que les Parties rendent disponible sur le Centre d&rsquo;&eacute;change APA, des informations sur les mesures l&eacute;gislatives, administratives et politiques sur l&apos;acc&egrave;s et le partage des avantages.</div><br><div>Les mesures d&rsquo;acc&egrave;s et de partage des avantages peuvent comprendre les strat&eacute;gies, les politiques, les lois et les r&egrave;glements nationaux ou r&eacute;gionaux. Elle peut &eacute;galement inclure des mesures entreprises au niveau r&eacute;gional, national, infra-national ou communautaire. Ce formulaire peut &eacute;galement &ecirc;tre utilis&eacute; pour rendre disponible toute information explicative sur la fa&ccedil;on de r&eacute;pondre aux exigences relatives &agrave; l&rsquo;APA.</div><br><div>Veuillez soumettre un nouveau formulaire pour chaque mesure relative &agrave; l&rsquo;APA. Vous aurez besoin de soumettre autant de formulaires que le nombre de mesures APA disponibles dans le cadre de votre juridiction.</div><br><div>Afin de fournir un aper&ccedil;u qui soit le plus pr&eacute;cis possible sur le cadre l&eacute;gal national d&rsquo;APA, le Centre d&rsquo;&eacute;change permet la possibilit&eacute; de refl&eacute;ter les amendements aux mesures existantes et de relier les diff&eacute;rentes mesures, par exemple,  pour un r&egrave;glement qui met en &oelig;uvre une l&eacute;gislation ou des directives donnant des indications suppl&eacute;mentaires sur la fa&ccedil;on de mettre en &oelig;uvre une disposition donn&eacute;e.</div><br><div>L&rsquo;information sauvegard&eacute;e doit &eacute;galement &ecirc;tre  aussi claire et concise que possible, consid&eacute;rant que les informations doivent pouvoir orienter les usagers potentiels &agrave; respecter les exigences l&eacute;gales des pays. L&apos;inclusion d&rsquo;une traduction de courtoisie de l&apos;information et des informations explicatives, des organigrammes ou des guides de style &eacute;tape par &eacute;tape sur la fa&ccedil;on de pr&eacute;senter une demande de consentement pr&eacute;alable en connaissance de cause est tr&egrave;s utile pour s&apos;adresser aux utilisateurs et s&apos;assurer qu&apos;ils soient avis&eacute;s des exigences nationales d&apos;acc&egrave;s.</div>
+            </div><!--NDB----------------------------><div ng-if="showNDBInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-            <!--IRCC---------------------------->
-            <div ng-if="showIRCCInfo" class="well well-help">
+            </div><!--IRCC----------------------------><div ng-if="showIRCCInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>Parties requiring prior informed consent (PIC) are to provide for the issuance of a permit or its equivalent at the time of access as evidence of the decision to grant PIC and of the establishment of mutually agreed terms (MAT) (Article 6, paragraph 3(e)). This information is to be made available to the ABS Clearing-House in accordance with Article 14, paragraph 2(c).</div>
-                <br>
-                <div>Article 17, paragraph 2, provides that a permit or its equivalent issued in accordance with Article 6, paragraph 3(e), and made available to the ABS Clearing-House, shall constitute an internationally recognized certificate of compliance (IRCC).&nbsp;</div>
-                <br>
-                <div>Article 17, paragraph 3, further establishes that the internationally recognized certificate of compliance shall serve as evidence that the genetic resource which it covers has been accessed in accordance with PIC and that MAT have been established, as required by the domestic access and benefit sharing legislation or regulatory requirements of the Party providing prior informed consent.</div>
-                <br>
-                <div>Article 17, paragraph 4, provides that the internationally recognized certificate of compliance shall contain the following minimum information when it is not confidential:</div>
-                <br>
-                <ul>
-                    <li><span>Issuing authority;</span></li>
-                    <li><span>Date of issuance;</span></li>
-                    <li>The provider;</li>
-                    <li>Unique identifier of the certificate;</li>
-                    <li><span>The person or entity to whom prior informed consent was granted;</span></li>
-                    <li>Subject-matter or genetic resources covered by the certificate;</li>
-                    <li>Confirmation that mutually agreed terms were established;</li>
-                    <li>Confirmation that prior informed consent was obtained; and</li>
-                    <li><span>Commercial and/or non-commercial use.</span></li>
-                </ul>
-                <br>
-                <div>In accordance with the above, Parties are required to fill out the form. At a minimum, the mandatory fields should be filled out with the information contained in the permit (or its equivalent) issued at national level. If information to be included in a mandatory field is confidential, the field can be marked as confidential. Parties can also include additional information, including copies of the permit or its equivalent, if they so decide.&nbsp;</div>
-                <br>
-                <div>Once this information is published in the ABS Clearing-House, an internationally recognized certificate of compliance is issued/constituted. The ABS Clearing-House will then send a courtesy copy of the internationally recognized certificate by electronic means to:</div>
-                <br>
-                <ul>
-                    <li>The national focal point (NFP) and the competent national authority (CNA) or authorities of the country responsible for issuing the permits or its equivalent;&nbsp;</li>
-                    <li>The provider, if this information is not confidential; and</li>
-                    <li><span>The person or entity to whom prior informed consent was granted, if this information is not confidential.</span></li>
-                </ul>
-                <br>
-                <div>The internationally recognized certificate of compliance plays a key role in monitoring and enhancing transparency about the utilization of genetic resources along the value chain (research, development, innovation, pre-commercialization or commercialization).</div>
-            </div>
-
-
-            <!--CPC---------------------------->
-            <div ng-if="showCPCInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Les Parties qui demande le consentement pr&eacute;alable en connaissance de cause (CPCC) doivent pr&eacute;voir la d&eacute;livrance d&apos;un permis ou son &eacute;quivalent au moment de l&apos;acc&egrave;s en tant que preuve de la d&eacute;cision d&apos;accord du CPCC et de l&apos;&eacute;tablissement des conditions convenues d&rsquo;un commun accord (CCCA) (article 3, paragraphe 3 (e)). Cette information devrait &ecirc;tre disponible au Centre d&rsquo;information APA conform&eacute;ment avec le paragraphe 2 (c) de l&rsquo;article 14.</div><br><div>Le paragraphe 2 de l&rsquo;article 17, pr&eacute;voit de fournir un permis ou un document &eacute;quivalent d&eacute;livr&eacute; conform&eacute;ment au paragraphe 3 e) de l&rsquo;article 6 et mis &agrave; la disposition du Centre d&rsquo;&eacute;change sur l&rsquo;acc&egrave;s et le partage des avantages, et qui servira de certificat de conformit&eacute; reconnu &agrave; l&rsquo;&eacute;chelle internationale (IRCC).&nbsp;</div><br><div>Le paragraphe 3 de l&apos;article 17, &eacute;tablit que le certificat de conformit&eacute; reconnu &agrave; l&rsquo;&eacute;chelle internationale prouve que l&rsquo;acc&egrave;s &agrave; la ressource g&eacute;n&eacute;tique dont il traite a fait l&rsquo;objet d&rsquo;un consentement pr&eacute;alable donn&eacute; en connaissance de cause et que des conditions convenues d&rsquo;un commun accord ont &eacute;t&eacute; &eacute;tablies, conform&eacute;ment aux dispositions l&eacute;gislatives ou r&eacute;glementaires internes relatives &agrave; l&rsquo;acc&egrave;s et au partage des avantages de la Partie accordant le consentement pr&eacute;alable donn&eacute; en connaissance de cause.</div><br><div>Le paragraphe 4 de l&apos;article 17 pr&eacute;voit que le certificat de conformit&eacute; reconnu &agrave; l&rsquo;&eacute;chelle internationale contienne au minimum les renseignements suivants lorsqu&rsquo;ils ne sont pas confidentiels :</div><br><ul>
+                    <li><span>L&rsquo;autorit&eacute; de d&eacute;livrance;</span></li>
+                    <li><span>La date de d&eacute;livrance;</span></li>
+                    <li>Le fournisseur;</li>
+                    <li>L&rsquo;identifiant unique du certificat;</li>
+                    <li><span>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;;</span></li>
+                    <li>Le sujet ou les ressources g&eacute;n&eacute;tiques auxquels se rapporte le certificat;</li>
+                    <li>La confirmation que des conditions convenues d&rsquo;un commun accord ont &eacute;t&eacute;
+&eacute;tablies;</li>
+                    <li>La confirmation que le consentement pr&eacute;alable en connaissance de cause a
+&eacute;t&eacute; obtenu; et</li>
+                    <li><span>L&rsquo;utilisation &agrave; des fins commerciales et/ou non commerciales.</span></li>
+                </ul><br><div>Conform&eacute;ment avec les &eacute;l&eacute;ments ci-mentionn&eacute;s, les Parties doivent compl&eacute;ter le formulaire. Les champs obligatoires doivent &ecirc;tre, au minimum, compl&eacute;t&eacute;s avec l&rsquo;information contenue dans le permis (o son &eacute;quivalent) &eacute;mis &agrave; l&rsquo;&eacute;chelon national. Si l&rsquo;information devant &ecirc;tre incluse dans les champs obligatoires est confidentielle, le champ peut &ecirc;tre marqu&eacute; comme tel. Les Parties peuvent &eacute;galement inclure des informations suppl&eacute;mentaires, notamment des copies du permis ou son &eacute;quivalent, si elles le d&eacute;sirent.&nbsp;</div><br><div>Une fois que l&rsquo;information est publi&eacute;e au Centre d&rsquo;&eacute;change APA, certificat de conformit&eacute; reconnu &agrave; l&rsquo;&eacute;chelle internationale est &eacute;mis. Le Centre d&rsquo;&eacute;change APA enverra par la suite une copie de courtoisie de ce certificat par voie &eacute;lectronique au :</div><br><ul>
+                    <li>Le correspondant national (CN) et l&rsquo;autorit&eacute; nationale comp&eacute;tente (ANC) ou les autorit&eacute;s du pays responsable d&rsquo;&eacute;mettre les permis ou leurs &eacute;quivalents;&nbsp;</li>
+                    <li>Au fournisseur, si cette information n&apos;est pas confidentielle; et</li>
+                    <li><span>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;;</span></li>
+                </ul><br><div>Le certificat de conformit&eacute; reconnu &agrave; l&rsquo;&eacute;chelle internationale  joue un r&ocirc;le cl&eacute; dans l&rsquo;&eacute;valuation et l&rsquo;am&eacute;lioration de la transparence sur l&apos;utilisation des ressources g&eacute;n&eacute;tiques tout au long de la cha&icirc;ne de valeur (recherche, d&eacute;veloppement, innovation,pr&eacute;-commercialisation ou commercialisation).</div>
+            </div><!--CPC----------------------------><div ng-if="showCPCInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>Checkpoints will collect and receive relevant information related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources (Article 17, paragraph 1 (a) (i)), including from the internationally recognized certificate of compliance, when such a certificate is available. In accordance with paragraph 1 (a) (iii) of Article 17 of the Nagoya Protocol, such information collected by the checkpoint needs to be provided to relevant national authorities, to the Party providing prior informed consent and to the ABS Clearing-House, as appropriate.</div>
-                <br>
-                <div>On the basis of the information collected or received by the checkpoint and provided by the national publishing authority to the ABS Clearing-House, a courtesy copy of the record will automatically be sent by electronic means to the following entities, as appropriate:&nbsp;</div>
-                <br>
-                <ul>
-                    <li>The designated national authority/ies as determined in the common format on checkpoints;&nbsp;</li>
-                    <li>The national focal point (NFP) and the competent national authority/ies (CNA) of the country providing the genetic resource; and</li>
-                    <li>The person or entity to whom prior informed consent was granted, if this information is not confidential.</li>
-                </ul>
-                <br>
-                <div>This form facilitates the flow of information between checkpoints and all parties involved, allowing countries to monitor the utilization of genetic resources.</div>
-            </div>
-
-
-            <!--CP---------------------------->
-            <div ng-if="showCPInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Les points de contr&ocirc;le collecteront et recevront des informations pertinentes relatives au consentement pr&eacute;alable en connaissance de cause, &agrave; la source de la ressource g&eacute;n&eacute;tique, &agrave; l&apos;&eacute;tablissement de termes mutuellement convenus et/ou &agrave; l&apos;utilisation des ressources g&eacute;n&eacute;tiques (article 17, paragraphe 1 a) i) ), y compris sur le certificat de conformit&eacute; internationalement reconnu, lorsqu&apos;un tel certificat est disponible. En conformit&eacute; avec le paragraphe 1 (a) de l&apos;article 17 du Protocole de Nagoya, de telles informations collect&eacute;es par les points de contr&ocirc;le doivent &ecirc;tre fournies par les autorit&eacute;s nationales concern&eacute;s, &agrave; la Partie qui fournit le consentement pr&eacute;alable en connaissance de cause ainsi qu&rsquo;au Centre d&rsquo;&eacute;change d&rsquo;information, le cas &eacute;ch&eacute;ant.</div><br><div>Sur la base de l&rsquo;information amass&eacute;e ou fournie par les points de contr&ocirc;le ou par les autorit&eacute; nationale charg&eacute;es de la publication au Centre d&rsquo;&eacute;change APA, une copie de courtoisie du fichier sera automatiquement envoy&eacute;e par voie &eacute;lectronique aux entit&eacute;s suivantes, le cas &eacute;ch&eacute;ant :&nbsp;</div><br><ul>
+                    <li>Les autorit&eacute;s nationales d&eacute;sign&eacute;es tel que d&eacute;termin&eacute;es dans le format commun sur les points de contr&ocirc;le :&nbsp;</li>
+                    <li>Le correspondant national (CN) et l&rsquo;autorit&eacute; nationale comp&eacute;tente (ANC) du pays qui fournit la ressources g&eacute;n&eacute;tique; et</li>
+                    <li>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;, si cette information ne s&apos;av&egrave;re pas confidentielle.</li>
+                </ul><br><div>Ce formulaire facilite le flux d&rsquo;informations entre les points de contr&ocirc;le et les parties impliqu&eacute;s, permettant ainsi aux pays d&rsquo;&eacute;valuer l&apos;utilisation des ressources g&eacute;n&eacute;tiques.</div>
+            </div><!--CP----------------------------><div ng-if="showCPInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>The submission form is to be used for registering information on checkpoints designated under Article 17, paragraph 1 (a) of the Protocol. The role of checkpoints is to collect or receive, as appropriate, relevant information related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources (subparagraph i). Such information collected by the checkpoint needs to be provided to relevant national authorities, to the Party providing prior informed consent and to the ABS Clearing-House, as appropriate (subparagraph iii).</div>
-            </div>
-
-            <!--VLR---------------------------->
-            <div ng-if="showVLRInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Le formulaire de soumission est aussi utilis&eacute; pour enregistrer de l&apos;information sur les points de contr&ocirc;les d&eacute;sign&eacute; en vertu du paragraphe 1 (a) de l&apos;article 17 du Protocole. Le r&ocirc;le des points de contr&ocirc;le d&eacute;sign&eacute;s est de recueillir et recevoir, selon ce qu&rsquo;il convient, les informations pertinentes concernant l&rsquo;obtention du
+consentement pr&eacute;alable donn&eacute; en connaissance de cause, la source de la
+ressource g&eacute;n&eacute;tique, l&rsquo;existence de conditions convenues d&rsquo;un commun
+accord et/ou l&rsquo;utilisation des ressources g&eacute;n&eacute;tiques (sous-paragraphe i). De telles informations collect&eacute;es par les points de contr&ocirc;le doivent &ecirc;tre fournies par les autorit&eacute;s nationales concern&eacute;s, &agrave; la Partie qui fournit le consentement pr&eacute;alable en connaissance de cause ainsi qu&rsquo;au Centre d&rsquo;&eacute;change d&rsquo;information, le cas &eacute;ch&eacute;ant (sous-paragraphe iii).</div>
+            </div><!--VLR----------------------------><div ng-if="showVLRInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>The Virtual Library of the ABS Clearing-House hosts a number of resources which are relevant to ABS and the Nagoya Protocol. This includes, among others, general literature on ABS and the Nagoya Protocol, awareness-raising materials, case studies, videos, capacity-building resources, etc.</div>
-                <br>
-                <div>The Virtual Library can be a space where knowledge, lessons learned and best practices are shared to support capacity-building for the effective implementation of the Nagoya Protocol.</div>
+                <h5>Introduction</h5>
+                <div>La biblioth&egrave;que virtuelle du Centre d&rsquo;&eacute;change APA h&eacute;berge un bon nombre de ressources qui sont pertinentes pour l&rsquo;APA et le Protocole de Nagoya. Cela comprend notamment de la litt&eacute;rature g&eacute;n&eacute;rale sur l&rsquo;APA et sur le Protocole de Nagoya, du mat&eacute;riel de sensibilisation, des &eacute;tudes de cas, des vid&eacute;os des ressources pour le renforcement des capacit&eacute;s , etc.</div><br><div>La biblioth&egrave;que virtuelle sert d&apos;espace o&ugrave; la connaissance, les apprentissages et les pratiques exemplaires sont partag&eacute;s en soutien au renforcement des capacit&eacute;s pour une mise en oeuvre efficace du Protocole de Nagoya.</div>
 
-            </div>
-
-            <!--A19A20---------------------------->
-            <div ng-if="showA19A20Info" class="well well-help">
-                <h5> Introduction</h5>
-                <div>Articles 19 and 20 of the Protocol require each Party to encourage, as appropriate, the development, update and use of sectoral and cross-sectoral model contractual clauses for mutually agreed terms, as well as voluntary codes of conduct, guidelines and best practices and/or standards in relation to access and benefit-sharing. These tools can serve to promote legal certainty and transparency, and reduce transaction costs in the implementation of ABS requirements, while taking into account the practices of different sectors.</div>
-                <br>
-                <div>This common format is to be used for registering model contractual clauses for mutually agreed terms, as well as voluntary codes of conduct, guidelines and best practices and/or standards. </div>
-                <br>
-                <div>If this tool is developed by a Party to support implementation of domestic ABS requirements as part of a country&rsquo;s national ABS framework, please register that information using the common format for legislative, administrative or policy measures. This will allow the information to be displayed as part of the country profile and to be included in the list of national ABS measures. </div>
+            </div><!--A19A20----------------------------><div ng-if="showA19A20Info" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Les articles 19 et 20 du Protocole exigent que chaque Partie encourage, le cas &eacute;ch&eacute;ant, l&apos;&eacute;laboration, la mise &agrave; jour et l&apos;utilisation de clauses contractuelles types sectorielles et intersectorielles sur les conditions convenues d&apos;un commun accord, de codes de conduite volontaires, de lignes directrices et de pratiques exemplaires et/ou de normes sur l&apos;acc&egrave;s et le partage des avantages. Ces outils servent &agrave; promouvoir la s&eacute;curit&eacute; et la transparence juridique, et &agrave; r&eacute;duire les co&ucirc;ts de transaction dans la mise en &oelig;uvre des exigences d&apos;APA tout en tenant compte des pratiques de diff&eacute;rents secteurs.</div><br><div>Ce format commun doit &ecirc;tre utilis&eacute; pour inscrire des clauses contractuelles types sur les conditions convenues d&apos;un commun accord, ainsi que les codes de conduite volontaires, les lignes directrices et les pratiques exemplaires  et/ou les normes.</div><br><div>Si cet outil es d&eacute;velopp&eacute; par une Partie en soutien &agrave;  la mise en oeuvre des exigences APA nationales en tant que partie du cadre de travail national APA d&rsquo;un pays, veuillez l&rsquo;inscrire cette information en utilisant le format commun pour les mesures l&eacute;gislatives, administratives et politiques. Cela permettra que l&rsquo;information soit publi&eacute;e en tant que partie du profil du pays et sera incluse dans la liste des mesures nationales pour l&rsquo;APA.</div>
 
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-
-            <!--CPP---------------------------->
-            <div ng-if="showCPPInfo" class="well well-help">
-                <h5> Introduction</h5>
-                <div>
-                    Article 12, paragraph 1, of the Nagoya Protocol provides that Parties, in implementing their obligations under the Protocol, shall in accordance with domestic law take into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures, as applicable, with respect to traditional knowledge associated with genetic resources. Furthermore, Parties are to endeavour to support, as appropriate, the development by indigenous and local communities of community protocols in relation to access to traditional knowledge associated with genetic resources and benefits arising out of the utilization of such knowledge (Article 12, paragraph 3, (a)).
-                </div>
-                <br>
-                <div>Providing information on how to access traditional knowledge associated with genetic resources helps other actors to better understand and respect community procedures and values.
-                </div>
-                <br>
-                <div>This common format is to be used for registering community protocols and procedures and customary laws. A Party may also decideto include this information as a legislative, administrative or policy measure, as part of a country&rsquo;s national ABS framework to also be displayed as part of the country profile. If this is the case, only publishing authorities duly designated by the country can publish community protocols and procedures and customary laws as a national record.
-                </div>
+            </div><!--CPP----------------------------><div ng-if="showCPPInfo" class="well well-help">
+                <h5>Introduction</h5>
+                <div>Le paragraphe 1 de l&apos;article 12 du Protocole de Nagoya pr&eacute;voit que les Parties, en mettant en &oelig;uvre les obligations qui leur incombent en vertu du présent Protocole, tiennent compte, s&rsquo;il y a lieu et en conformité avec leur droit interne, du droit coutumier des communautés autochtones et locales ainsi que de leurs protocoles et procédures, pour tout ce qui concerne les connaissances traditionnelles associées aux ressources génétiques. De plus, les Parties doivent s&apos;efforcer de soutenir, le cas &eacute;ch&eacute;ant, le d&eacute;veloppement de protocoles communautaires par les communaut&eacute;s autochtones et locales en ce qui concerne l&apos;acc&egrave;s aux connaissances traditionnelles associ&eacute;es aux ressources g&eacute;n&eacute;tiques et aux avantages d&eacute;coulant de l&apos;utilisation de ces connaissances (article 12, paragraphe 3 (a) ).</div><br><div>Fournir des informations sur comment acc&eacute;der les connaissances traditionnelles associ&eacute;es aux ressources g&eacute;n&eacute;tiques aide les autres parties prenantes &agrave; mieux comprendre et respecter les proc&eacute;dures et valeurs communautaires.</div><br><div>Ce format commun est aussi utilis&eacute; pour inscrire les protocoles, les proc&eacute;dures et lois coutumi&egrave;res des communaut&eacute;s. Une Partie peut ainsi d&eacute;cider d&rsquo;inclure cette information en tant que mesure l&eacute;gislative, administrative et politique, comme partie int&eacute;grante du cadre de travail national APA d&rsquo;un pays qui sera aussi publi&eacute;e dans le profil du pays. Si tel est le cas, seulement les autorit&eacute;s charg&eacute;es de la publication d&ucirc;ment d&eacute;sign&eacute;es par le pays peuvent publier les protocoles et proc&eacute;dures communautaires ainsi que les lois coutumi&egrave;res en tant que fichier national.</div>
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-            <!--CBI---------------------------->
-            <div ng-if="showCBIInfo" class="well well-help">
+            </div><!--CBI----------------------------><div ng-if="showCBIInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> Introduction</h5>
-                <div>Article 22 of the Nagoya Protocol provides that Parties shall cooperate in the capacity-building, capacity development and strengthening of human resources and institutional capacities to effectively implement the Protocol in developing country Parties, including existing global, regional, subregional and national institutions and organizations. In this context, Parties should also facilitate the involvement of indigenous and local communities and relevant stakeholders, including non-governmental organizations and the private sector.</div>
-                <br>
-                <div>Article 22, paragraph 6, provides that information on capacity-building and development initiatives at national, regional, international levels should be provided to the ABS Clearing-House with a view of promoting synergy and coordination on capacity-building and development for ABS.</div>
-                <br>
-                <div>Having all information on capacity-building projects and initiatives available in one database can provide opportunities for coordination among actors involved in capacity-building in the same geographical area or covering similar thematic issues and to learn from each other experiences. It can also help to identify and address gaps and overlaps in the coverage of capacity-building initiatives.</div>
+                <h5>Introduction</h5>
+                <div>L&apos;article&nbsp;22 du Protocole de Nagoya pr&eacute;voit que les Parties doivent coop&eacute;rer au d&eacute;veloppement et au renforcement des capacit&eacute;s ainsi qu&apos;au renforcement des ressources humaines et des capacit&eacute;s institutionnelles en vue de la mise en &oelig;uvre effective du Protocole dans les pays en voie de d&eacute;veloppement  y compris les institutions et organisation mondiales, nationales, r&eacute;gionales et infra-r&eacute;gionales. Dans ce contexte, les Parties devraient faciliter la
+participation des communaut&eacute;s autochtones et locales et des parties prenantes concern&eacute;es, y compris les organisations non gouvernementales et le secteur priv&eacute;.</div><br><div>Le paragraphe 6 de l&apos;article 22 pr&eacute;voit que les informations sur le renforcement des capacit&eacute;s et le d&eacute;veloppement d&rsquo;initiatives aux &eacute;chelons r&eacute;gionaux, nationaux et internationaux soient fournies par le Centre d&rsquo;&eacute;change APA dans le but de promouvoir la synergie et la coordination sur le renforcement des capacit&eacute;s et le d&eacute;veloppement de l&rsquo;APA.</div><br><div>Disposer de toute l&rsquo;information sur les projets de renforcement des capacit&eacute;s et les initiatives disponibles en une seule base de donn&eacute;es peut offrir des possibilit&eacute;s de coordination entre les acteurs impliqu&eacute;s dans le renforcement des capacit&eacute;s dans la m&ecirc;me zone g&eacute;ographique ou sur des probl&egrave;mes th&eacute;matiques similaires et ainsi pouvoir apprendre les uns des autres. Cela peut &eacute;galement aider &agrave; identifier et aborder les lacunes et les chevauchements quant sur l&rsquo;&eacute;tendu des initiatives de renforcement des capacit&eacute;s.</div>
 
             </div>
         </div>

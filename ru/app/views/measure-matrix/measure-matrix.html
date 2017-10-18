@@ -43,9 +43,9 @@
 				background-color: #fff!important;
 			}
 
-			.rightBorder {
-				border-right: 1px solid #ddd;
-			}
+			/*.rightBorder {
+				/*border-right: none!important;*/
+			}*/
 
 			.subList {
 				padding-left: 5%!important;
@@ -80,7 +80,7 @@
 			}
 
 			.elementMeasure {
-				padding-bottom: : 0px!important;
+				padding-bottom:  0px!important;
 			}
 
 			.whiteTopBorder {
@@ -93,34 +93,24 @@
 		</style>
 		<div class="row">
 			<div class="col-sm-12 well">
-				<h1> Measure Matrix</h1>
+				<h1>Measure Matrix</h1>
 			</div>
 
 			<div class="col-sm-12 well" ng-repeat="measure in measures">
-				<div ng-click="loadMatrix(measure)" style="cursor:pointer">
-					<strong>{{measure.government_EN_t}}</strong> | <strong>{{measure.title_t}}</strong> | {{measure.status_EN_t}} | {{measure.type_EN_t}} | {{measure.jurisdiction_EN_t}} | <span ng-show="measure.adoption_dt">Adopted on </span> <span ng-show="measure.entryIntoForce_dt">Entry into force on </span> <span ng-show="measure.retired_dt">Retired on </span> {{(measure.adoption_dt ||measure.entryIntoForce_dt || measure.retired_dt)|formatDate}} <span ng-show="measure.limitedApplication_dt"> - {{measure.limitedApplication_dt|formatDate}}</span>
-
-					<i class="fa fa-chevron-circle-down"></i>
-				</div>
-				<div ng-show="measure.isLoading">
-					<i class="fa fa-spinner fa-spin"></i> Loading...
-				</div>
-				<div class="row" ng-show="measure.document && measure.showDocument">
-					<br/>
-					<div class="col-sm-1"></div>
+				<div ng-click="loadMatrix(measure)" style="cursor:pointer"><strong>{{measure.government_EN_t}}</strong> | <strong>{{measure.title_t}}</strong> | {{measure.status_EN_t}} | {{measure.type_EN_t}} | {{measure.jurisdiction_EN_t}} | <span ng-show="measure.adoption_dt">Adopted on</span> <span ng-show="measure.entryIntoForce_dt">Entry into force on</span> <span ng-show="measure.retired_dt">Retired on</span> {{(measure.adoption_dt ||measure.entryIntoForce_dt || measure.retired_dt)|formatDate}} <span ng-show="measure.limitedApplication_dt">- {{measure.limitedApplication_dt|formatDate}}</span> <i class="fa fa-chevron-circle-down"></i></div>
+				<div ng-show="measure.isLoading"><i class="fa fa-spinner fa-spin"></i> Загрузка ....</div>
+				<div class="row" ng-show="measure.document && measure.showDocument"><br/><div class="col-sm-1"></div>
 					<div class="col-sm-11">
 						<table class="table noBorder">
 							<tr>
-								<td> <b>Amended by:</b></td>
+								<td><b>Amended by:</b></td>
 								<td>
 									<div ng-repeat="amended in measure.document[0].amendedMeasures">{{amended.measure.title|lstring}}</div>
 								</td>
 							</tr>
 							<tr>
 								<td><b>Amendment Description:</b></td>
-								<td>
-									<span ng-bind-html="measure.document[0].amendmentsDescription|lstring"></span>
-								</td>
+								<td><span ng-bind-html="measure.document[0].amendmentsDescription|lstring"></span></td>
 							</tr>
 							<tr>
 								<td><b>Related to:</b></td>
@@ -130,9 +120,7 @@
 							</tr>
 							<tr>
 								<td><b>Relation Description:</b></td>
-								<td>
-									<span ng-bind-html="measure.document[0].linkedMeasuresDescription|lstring"></span>
-								</td>
+								<td><span ng-bind-html="measure.document[0].linkedMeasuresDescription|lstring"></span></td>
 							</tr>
 						</table>
 					</div>

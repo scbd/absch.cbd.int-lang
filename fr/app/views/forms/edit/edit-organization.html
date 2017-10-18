@@ -3,12 +3,7 @@
 	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-		<div class="registerpage-content">
-			<span block-region activate="isLoading()" ng-if="isLoading()"></span>
-
-			<div class="alert alert-danger" ng-show="hasError()">
-				<strong>Error as occured...</strong>
-				<div>{{error}}</div>
+		<div class="registerpage-content"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="alert alert-danger" ng-show="hasError()"><strong>Une erreur est survenue...</strong><div>{{error}}</div>
 			</div>
 
 			<div ng-show="!isLoading() && status!='hidden'">
@@ -23,35 +18,35 @@
 						<legend>Informations g&eacute;n&eacute;rales</legend>
 						<div class="row">
 							<div class="col-md-8 col-xs-12">
-								<div class="km-control-group" name="name" required caption="Nom de l'organisation">
-									<div km-textbox-ml name="name" required ng-model="document.name" placeholder="text entry" locales="document.header.languages"></div>
+								<div class="km-control-group" name="name" required caption="Nom de l&apos;organisation">
+									<div km-textbox-ml name="name" required ng-model="document.name" placeholder="Entr&eacute;e de texte" locales="document.header.languages"></div>
 								</div>
 							</div>
 
 							<div class="col-md-4 col-xs-12">
 								<div class="km-control-group" name="acronym" required caption="Acronyme">
-									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="text entry" locales="document.header.languages"></div>
+									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="Entr&eacute;e de texte" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-8">
-								<div class="km-control-group" name="contact_organizationType" caption="Type d'organisation">
+								<div class="km-control-group" name="contact_organizationType" caption="Type d&apos;organisation">
 									<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 								</div>
 							</div>
 							<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
-								<div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCDB" locales="document.header.languages"></div>
+								<div class="km-control-group" name="contact_organizationTypeName" caption="Autre type d&rsquo;organisation">
+									<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="exemple: SCDB" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
-						<legend>Coordonn&eacute;es de l'organisation</legend>
+						<legend>Coordonn&eacute;es de l&apos;organisation</legend>
 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="address" caption="Adresse">
-									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
+									<div km-textbox-ml ng-model="document.address" rows="2" placeholder="exemple: 413 rue St-Jacques Suite 800" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
@@ -59,13 +54,13 @@
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="city" required caption="Ville">
-									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="example: Montreal"></div>
+									<div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages" placeholder="exemple: Montr&eacute;al :"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="state" caption="&Eacute;tat ou province">
-									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="example: Qu&eacute;bec"></div>
+									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="exemple: Qu&eacute;bec"></div>
 								</div>
 							</div>
 						</div>
@@ -73,8 +68,8 @@
 						<div class="row">
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="postalCode" caption="Postal Code or Zip">
-									<div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="example: H2Y 1N9"></div>
+								<div class="km-control-group" name="postalCode" caption="Code postal">
+									<div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="exemple: H2Y 1N9"></div>
 								</div>
 							</div>
 
@@ -87,29 +82,29 @@
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="phones" required caption="Phone numbers">
-									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: +[country code] [city code] [telephone number] [extension, if necessary].</div>
-									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="example: +1 514.288.2220"></div>
+								<div class="km-control-group" name="phones" required caption="Num&eacute;ros de t&eacute;l&eacute;phone">
+									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: + (code du pays) (code de la ville) (num&eacute;ro de t&eacute;l&eacute;phone) (poste, s&apos;il y a lieu&nbsp;.</div>
+									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="exemple: +1 514.288.2220"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="faxes" caption="Fax Numbers">
-									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: +[country code] [city code] [telephone number] [extension, if necessary].</div>
-									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="example: +1 514.288.6588"></div>
+								<div class="km-control-group" name="faxes" caption="T&eacute;l&eacute;copieur&nbsp;:">
+									<div class="help-info">Veuillez utiliser le format suivant&nbsp;: + (code du pays) (code de la ville) (num&eacute;ro de t&eacute;l&eacute;phone) (poste, s&apos;il y a lieu&nbsp;.</div>
+									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="exemple: +1 514.288.6588"></div>
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="emails" required caption="Emails">
-									<div km-inputtext-list required name="emails" ng-model="document.emails" placeholder="example: secretariat@cbd.int"></div>
+								<div class="km-control-group" name="emails" required caption="courriels&nbsp;:">
+									<div km-inputtext-list required name="emails" ng-model="document.emails" placeholder="exemple: secretariat@cbd.int"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="websites" caption="Web Sites">
+								<div class="km-control-group" name="websites" caption="Sites Web connexes">
 									<div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
 								</div>
 							</div>
@@ -128,11 +123,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 					<div view-organization ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 

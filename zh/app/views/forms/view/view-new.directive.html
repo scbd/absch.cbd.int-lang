@@ -2,17 +2,11 @@
 	<div class="panel-heading  bg-darkgrey"><h4>最新消息</h4></div>
 	<div class="record-body panel-body">
 
-	
-
-		<div ng-show="document.title_EN_t">
-			<label>Title</label>
-			<span class="km-value">{{document.title_EN_t | lstring:locale}}</span>
-		</div>
+			<div record-options></div><br><div ng-show="document.title_EN_t">
+			<label>Title</label><span class="km-value">{{document.title_EN_t | lstring:locale}}</span></div>
 
 		<div ng-show="document.description_EN_t">
-			<label>描述</label>
-			<span class="km-value">{{document.description_EN_t}}</span>
-		</div>
+			<label>描述</label><span class="km-value">{{document.description_EN_t}}</span></div>
 
 		<div ng-show="document.themes_CEN_ss">
 			<label>主题</label>
@@ -24,7 +18,7 @@
 		</div>
 
 		<div ng-show="document.thematicAreas_CEN_ss">
-			<label>Thematic Areas</label>
+			<label>专题领域</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>
@@ -33,9 +27,7 @@
 		</div>
 
 		<div ng-show="document.url_ss">
-			<label>Document Link</label>
-			<span class="km-value"><a translation-url  ng-href="{{document.url_ss | lstring:locale}}" target="_">{{document.url_ss | lstring:locale}}</a></span>
-		</div>
+			<label>文档链接</label><span class="km-value"><a translation-url  ng-href="{{document.url_ss | lstring:locale}}" target="_">{{document.url_ss | lstring:locale}}</a></span></div>
 
 	</div>
     <div document-metadata  class="panel-footer"></div>

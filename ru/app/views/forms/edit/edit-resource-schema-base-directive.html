@@ -2,20 +2,12 @@
 	<div class="registerpage-content">
 
 		<div ng-show="msg" class="alert alert-success alert-dismissable">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button>
-			<strong>{{msg}}</strong>
-		</div>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
 
-		<div class="alert alert-danger" ng-show="hasError()">
-			<strong>Произошла ошибка...</strong>
-			<div>{{error}}</div>
-		</div>
-
-		<!--<div ng-show="isLoading()">
+		<div class="alert alert-danger" ng-show="hasError()"><strong>Произошла ошибка...</strong><div>{{error}}</div>
+		</div><!--<div ng-show="isLoading()">
 			<i class="fa fa-spinner fa-spin"></i> Loading...
-		</div>-->
-
-		<div ng-show="!isLoading() && status!='hidden'">
+		</div>--><div ng-show="!isLoading() && status!='hidden'">
 			<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" ></div>
 
 			<div km-document-validation ng-model="validationReport"></div>
@@ -29,7 +21,7 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="title" caption="Title">
+								<div class="km-control-group" required name="title" caption="Название">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -37,12 +29,12 @@
 
 						<div class="row">
 							<div class="col-xs-6">
-								<div class="km-control-group" required name="resourceTypes" caption="Type of resource">
+								<div class="km-control-group" required name="resourceTypes" caption="Тип материала">
                                     <div km-select multiple  name="resourceTypes" required ng-model="document.resourceTypes" items="options.resourceTypes()" show-description="true"></div>
 								</div>
 							</div>
 							<div class="col-xs-6" ng-show="isOtherSelected(document.resourceTypes)">
-								<div class="km-control-group" required name="resourceTypeName" caption="Name of other type of resource">
+								<div class="km-control-group" required name="resourceTypeName" caption="Название другого типа материала">
 									<div km-textbox-ml  required name="resourceTypeName" rows="1" ng-model="document.resourceTypeName" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -50,15 +42,15 @@
 
                         <div class="row" ng-if="isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="fileFormat" caption="Format/File type">
+								<div class="km-control-group" required name="fileFormat" caption="Формат/тип файла">
 									<div km-select  name="fileFormat" required ng-model="document.fileFormat" items="options.fileFormats()"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row" ng-if="isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" name="formatDetails" caption="Format details">
-									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. &ldquo;Requires Acrobat Reader for viewing&rdquo;).</div>
+								<div class="km-control-group" name="formatDetails" caption="Сведения о формате">
+									<div class="help-info">Сведения о формате могут использоваться для предоставления дополнительной информации, касающейся формата вложений, включая его характеристики (например, размер, количество страниц или продолжительность) или программное и аппаратное обеспечение или другое оборудование, необходимое для его отображения или использования (например, «Для просмотра необходимо наличие программы Acrobat Reader»).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages" ></div>
 								</div>
 							</div>
@@ -66,7 +58,7 @@
 
 						<div class="row">
 							<div class="col-md-12" ng-if="isResource">
-								<div class="km-control-group" required name="purpose" caption="Please identify the main purpose of the resource">
+								<div class="km-control-group" required name="purpose" caption="Укажите основную цель материала">
                                    <div km-select multiple  required name="purpose" ng-model="document.purpose" items="options.purposes()" show-description="true"></div>
 								</div>
 							</div>
@@ -74,7 +66,7 @@
 
 						<div class="row" ng-if="isResource && IsCapacityBuilding()">
 							<div class="col-md-12">
-								<div class="km-control-group" required="IsCapacityBuilding()" name="targetGroups" caption="Target group(s)/beneficiary(ies)">
+								<div class="km-control-group" required="IsCapacityBuilding()" name="targetGroups" caption="Целевая группа(-ы)/бенефициар(ы)">
 									<div km-term-check name="targetGroups" required="IsCapacityBuilding()" ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -82,19 +74,14 @@
 
 						<div class="row" ng-if="isResource && IsCapacityBuilding()">
 							<div class="col-md-12">
-								<div class="km-control-group" name="expertiseLevel" caption="Level of the content or   level of knowledge/expertise of the audience for which the resource is intended">
+								<div class="km-control-group" name="expertiseLevel" caption="Уровень содержания или уровень знаний/экспертных знаний аудитории, для которой предназначен материал">
 									<div km-select name="expertiseLevel" ng-model="document.expertiseLevel" items="options.expertiseLevels()"></div>
 								</div>
 							</div>
-						</div>
-
-						<!--//Authors or Authoring organization is madatory Error message -->
-						<label for="author_org" style="width:0px;height:0px;display:inline">
-							<span style="display:none">Please enter author(s) details or select authoring organizations</span>
-						</label>
+						</div><!--//Authors or Authoring organization is madatory Error message --><label for="author_org" style="width:0px;height:0px;display:inline"><span style="display:none">Введите сведения об авторе(-ах) или выберите организации, выступающие в качестве авторов</span></label>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="authors" caption="Author(s)">
+								<div class="km-control-group" required name="authors" caption="Автор(ы)">
 									<div class="help-info">Фамилия и имя лица, являющегося автором публикации или информационного материала.</div>
 									<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 								</div>
@@ -103,7 +90,7 @@
 									
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="organizations" caption="Authoring organisation(s) ">
+								<div class="km-control-group" name="organizations" caption="Организация(-и), выступающая(-ие) в качестве автора(-ов)">
 									<field-embed-contact multiple ng-model="document.organizations" organization-only locales="document.header.languages" caption="Add organizations »">
 								</div>
 							</div>
@@ -111,9 +98,8 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="publicationYear" caption="Publication year">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;
-										 <option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+								<div class="km-control-group" required name="publicationYear" caption="Год публикации">
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
 							</div>
@@ -122,7 +108,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" name="rights" caption="Права">
-									<div class="help-info">Information about rights held in and over the attached files, such as copyright holder, and availability for reproduction for educational or non-profit purposes.</div>
+									<div class="help-info">Информация о правах на прикрепленные файлы (например, о правообладателях) и возможности тиражирования в образовательных или некоммерческих целях.</div>
 									<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -131,7 +117,7 @@
 						<div class="row" ng-if="isResource">
 							<div class="col-xs-12" >
 								<div class="km-control-group" name="source" caption="Источник">
-									<div class="help-info">A reference to a document or resource from which the present resource is derived (e.g. an article from a journal). Для оригинальных документов допускается указать «оригинальный документ».</div>
+									<div class="help-info">Ссылка на документ или источник, из которого взят настоящий материал (например, журнальная статья). Для оригинальных документов допускается указать «оригинальный документ».</div>
 									<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -139,8 +125,8 @@
 						
 						<div class="row" ng-if="!isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" name="formatDetails" caption="Format details">
-									<div class="help-info">Format details may be used to provide further information relating to the format of the attachments, including its dimensions (e.g. size, number of pages or duration) or the software, hardware, or other equipment needed to display or operate it (e.g. &ldquo;Requires Acrobat Reader for viewing&rdquo;).</div>
+								<div class="km-control-group" name="formatDetails" caption="Сведения о формате">
+									<div class="help-info">Сведения о формате могут использоваться для предоставления дополнительной информации, касающейся формата вложений, включая его характеристики (например, размер, количество страниц или продолжительность) или программное и аппаратное обеспечение или другое оборудование, необходимое для его отображения или использования (например, «Для просмотра необходимо наличие программы Acrobat Reader»).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -148,12 +134,12 @@
 					</section>
 
 					<section>
-						<legend>Attached files, documents, or resources</legend>
+						<legend>Прикрепленные файлы, документы или материалы</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="resourceLinks" caption="Link to the resource(s)">
-									<div class="help-block">Please attach the relevant files so that they will be stored in the database for users to download. При наличии материалов в Интернете просьба также предоставить ссылку на них.</div>
+								<div class="km-control-group" required name="resourceLinks" caption="Ссылка на материал(ы)">
+									<div class="help-block">Просьба всегда прикреплять соответствующие файлы с целью их сохранения в базе данных для загрузки пользователями. При наличии материалов в Интернете просьба также предоставить ссылку на них.</div>
 									<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" extensions="options.documentLinksExt"
 									identifier="document.header.identifier"></div>
 								</div>
@@ -161,45 +147,47 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="cover" caption="Cover image(s)">
-									<div class="help-block">Only JPEG and PNG formats are supported.</div>
+								<div class="km-control-group" name="cover" caption="Изображение(-я) обложки">
+									<div class="help-block">Поддерживаются только форматы JPEG и PNG.</div>
 									<div km-link name="cover" ng-model="document.covers" allow-link="false" allow-file="true" mimeTypes="image/jpeg;image/png"
 									identifier="document.header.identifier"></div>
 								</div>
 							</div>
 						</div>
-					</section> <section>
-						<legend>Information on the content of attachments</legend>
+					</section>
+					<section>
+						<legend>Информация о содержании вложений</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group"  name="summary" caption="Summary or abstract (max 300 words)">
+								<div class="km-control-group"  name="summary" caption="Резюме или реферат (не более 300&nbsp;слов)">
 									<div km-textbox-ml ng-model="document.summary"  rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="regions" caption="Country(ies), Regional or Economic group(s) related to the resource">
+								<div class="km-control-group" name="regions" caption="Страна(-ы), региональная(-ые) или экономическая(-ие) группа(-ы), имеющие отношение к материалу">
 									<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple
-									placeholder="Select a country(ies) and/or region(s)..."></div>
+									placeholder="Выбрать страну(-ы) и/или регион(ы)..."></div>
 								</div>
 							</div>
 						</div>
 						<div class="row" ng-if="isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="aichiTargets" caption="Related Aichi Biodiversity Target(s)">
+								<div class="km-control-group" required name="aichiTargets" caption="Соответствующая(-ие) Айтинская(-ие) целевая(-ые) задача(-и) в области биоразнообразия">
 									<div km-term-check name="aichiTargets" required ng-model="document.aichiTargets" terms="options.aichiTargets()" binding-type="term[]"></div>
 								</div>
 							</div>
 						</div>
-					</section> <section>
+					</section>
+					<section>
 
-						<legend ng-if="IsCapacityBuilding() || IsLiterature() || isMcc">Keywords for facilitating online searches</legend>
+						<legend ng-if="IsCapacityBuilding() || IsLiterature() || isMcc">Ключевые слова, облегчающие поиск в сети</legend>
 
                         <div class="row" ng-if="isMcc">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="mccKeywords" required caption="Please select the relevant keywords for describing the content of  the code of conduct, guidelines and best practices and/or standards being submitted">
+								<div class="km-control-group" name="mccKeywords" required caption="Please select the relevant keywords for describing the content of the code of conduct, guidelines and best practices and/or standards being submitted">
 									<div km-term-check name="mccKeywords" required ng-model="document.mccKeywords" terms="options.mccKeywords()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -207,7 +195,7 @@
 
 						<div class="row" ng-if="(isResource && IsLiterature() && IsTarget16()) || !isResource">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="absSubjects" caption="Thematic areas(s)">
+								<div class="km-control-group" required name="absSubjects" caption="Тематическая(-ие) область(-и)">
 									<div km-term-check name="absSubjects" required ng-model="document.absSubjects" terms="options.absSubjects()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -215,8 +203,8 @@
 
 						<div class="row" ng-if="IsCapacityBuilding() && IsTarget16()">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="absKeyAreas" caption="Key areas and strategic measures for capacity-building and development">
-                                    <div class="help-info">The key areas are identified by the Strategic Framework for capacity-building and development to support the effective implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
+								<div class="km-control-group" required name="absKeyAreas" caption="Ключевые области и стратегические меры по созданию и развитию потенциала">
+                                    <div class="help-info">Ключевые области, определенные в стратегической структуре для создания и развития потенциала в поддержку эффективного осуществления Нагойского протокола (решение NP-1/8, приложение&nbsp;I).</div>
 									<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -225,15 +213,12 @@
 
 
 
-					<section>
-
-						<a translation-url  name="#AdditionalInformation"></a>
-						<legend>Дополнительная информация</legend>
+					<section><a translation-url  name="#AdditionalInformation"></a><legend>Дополнительная информация</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="address" caption="Any other relavent information">
-									<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+								<div class="km-control-group" name="address" caption="Любая другая актуальная информация">
+									<div class="help-block">Просьба использовать это поле для представления любой другой актуальной информации, которая, возможно, не была учтена в других разделах записи.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -247,7 +232,8 @@
 							</div>
 						</div>
 
-					</section> <section>
+					</section>
+					<section>
 						<legend>Примечания</legend>
 						<div class="row">
 							<div class="col-xs-12">
@@ -268,17 +254,10 @@
 
 			</form>
 
-			<div ng-show="tab=='review'" km-tab="review">
-
-				<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-					<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages"
-					ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-				</div>
+			<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 				<div view-resource ng-model="reviewDocument" locale="review.locale" allow-drafts="true" heading="{{heading}}" short-heading="{{shortHeading}}"></div>
-			</div>
-
-			<!-- <hr style="margin-top:20px;">
+			</div><!-- <hr style="margin-top:20px;">
 
         <div class="row" style="padding-top:20px;">
             <div class="col-xs-12">
@@ -286,8 +265,6 @@
                 <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
 
             </div>
-        </div> -->
-
-		</div>
+        </div> --></div>
 	</div>
 </div>

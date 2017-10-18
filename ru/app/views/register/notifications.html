@@ -2,25 +2,11 @@
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
 
-    <div smooth-scroll duration="100" offset="200"></div>
-    <span register-top-menu></span>
-
-    <div class="register-content card card-1-notrans">
+    <div smooth-scroll duration="100" offset="200"></div><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div class="register-content-header bg-darkgrey color-white">
             <div style="padding:10px 10px;">
-                <h3>Requests & Notifications 
-            <span class="helpinfoInline">
-                <i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i> 
-            </span>
-        </h3>
-
-                <!--help info---------------------------->
-                <div ng-if="showInfo" class="well well-help">
-                    In this page you will find all notifications coming from all clearing-house platforms (CBD CH, BCH and ABS-CH). The clearing-house has a system of internal notifications to deal with requests for publications, reminders to update records, or notifying
-                    that certain records might be expiring. This page will allow you to follow up on the status of your records and find what the pending requests for publications are, or when a request has been approved, recalled, or rejected in any
-                    of the clearing-house platforms.
-                </div>
+                <h3>Запросы и уведомления <span class="helpinfoInline"><i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i></span></h3><!--help info----------------------------><div ng-if="showInfo" class="well well-help">На этой странице размещаются все уведомления, поступающие со всех информационных платформ (МП-КБР, МПБ и МП-ДГРСИВ). В механизме посредничества имеется система внутренних уведомлений для обработки запросов на публикацию, напоминания о необходимости обновления записей или уведомления о возможном истечении срока действия некоторых записей. На этой странице вы можете отслеживать статус своих записей и установить, какие запросы на публикацию находятся на утверждении, или дату утверждения, отзыва или отклонения запроса на любой из информационных платформ.</div>
 
             </div>
         </div>
@@ -28,5 +14,4 @@
             <xuser-notifications-panel></xuser-notifications-panel>
         </div>
     </div>
-</div>
-<!-- controller -->
+</div><!-- controller -->

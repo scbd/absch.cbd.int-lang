@@ -1,14 +1,10 @@
-﻿<div ng-controller="AdminController"  id="RegisterPage">
-  
+﻿<div ng-controller="AdminController" id="RegisterPage" dir="rtl">
+
   <link href="/app/css/register.css" rel="stylesheet">
-  <link href="/app/css/record.css" rel="stylesheet">
-
-  <span register-top-menu></span>
-
-  <div class="register-content card card-1-notrans">
+  <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu dir="rtl"></span><div class="register-content card card-1-notrans">
     <div class="register-content-header bg-pink color-white">
       <div style="padding:1px 10px;">
-        <h3>ABSCH Admin </h3>
+        <h3>إدارة غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع</h3>
       </div>
     </div>
     <div class="register-content-content" ng-if="roles.isAbsAdministrator || roles.isAdministrator">
@@ -16,15 +12,53 @@
         <div class="col-md-12 cp-header">
           <table style="width:100%;">
             <tr>
-              <td><label>Current Realm: </label></td>
+              <td><label>المجال الحالي:</label></td>
               <td><span switch-realm></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <table class="table table-striped" style="width:100%">
+                  <tbody>
+
+                    <tr>
+                      <td>عرض قائمة السجلات التي أبلغ عنها المستخدمون</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/reported-records">إدارة السجلات المُبلًّغ عنها</a></td>
+                    </tr>
+                    <tr>
+                      <td>عرض حالة سجلات غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع في سير العمل</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/pending-requests">إدارة السجلات في سير العمل</a></td>
+                    </tr>
+                    <tr>
+                      <td>عرض إحصائيات سجلات غرفة تبادل المعلومات بشأن الحصول  على الموارد وتقاسم المنافع مع خيارات الرسم البياني وعدة فلاتر</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/report-counts">إنشاء تقارير بالإحصائيات</a></td>
+
+                    </tr>
+                    <tr>
+                      <td>عرض الدول التي لها أو ليس لها أدوار في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/user-role-report">تقرير أدوار المستخدمين</a></td>
+                    </tr>
+                    <tr>
+                      <td>عرض قائمة المستخدمين المشتركين بالبريد الإلكتروني</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/subscriptions">المشتركون</a></td>
+                    </tr>
+                    <tr>
+                      <td>عرض أخطاء البرامج الطرفية</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/error-logs">سجلات الأخطاء</a></td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </td>
             </tr>
           </table>
         </div>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/reported-records">Manage Reported Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/pending-requests">Manage Workflow Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/report-counts">Report counts</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/error-logs">Error Logs</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/subscriptions">Subscriptions</a>
+
+
+
+
 
       </div>
     </div>
   </div>
-</div>
-<!-- controller -->
+</div><!-- controller -->

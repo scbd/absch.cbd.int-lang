@@ -1,0 +1,44 @@
+﻿
+<div class="row" id="Presentation">
+    <div  class="col-xs-12" ng-class="{'col-xs-8':help}">
+
+    <div class="text-center slide-holder"><img class="slide img-rounded" src="{{slide}}.jpeg" ></div>
+
+    </div>
+    <div class="col-xs-4 well" ng-show="help">
+        <h3>Helpful links on access to and benefits sharing from traditional knowledge associated with genetic resources</h3>
+        <ul>
+
+            <li><a translation-url  href="/search?tour=start" target="_new">第5条Fair and Equitable Benefit-sharing</a><li><a translation-url  href="http://www.cbd.int/abs/text/articles/default.shtml?sec=abs-07" target="_new">第7条与遗传资源相关的传统知识的获取</a><li><a translation-url  href="http://www.cbd.int/abs/text/articles/default.shtml?sec=abs-12" target="_new">第12条遗传资源相关传统知识</a><li><a translation-url  href="/register/VLR/new" target="_new">Register a Community Protocol as a Reference Record.</a></ul>
+    </div>
+</div>
+
+
+<div class="row" id="Presentation">
+    <div  class="col-xs-9" >
+
+        <div class="title">Provider Country&apos;s CNA gets contacted by the User</div>
+
+        <div class="text">
+            <p>You get a extra long distance call from Wizards Kingdom.A young User wants to discuss access to magic Sopophorous beans for research and the development of a magic potion.</p>
+            <p>You know that Sopophorous beans are mainly grown on Elf tribal lands and used almost exclusively by the local Elf community.&nbsp;&nbsp;</p>
+
+        </div>
+        <div class="choices" >
+            <p><u class="color-red">YOU MUST CHOOSE:</u></p>
+
+            <div class="option" ng-class="{'option-selected':checkLastParam('cna_consult_ilc')}" ng-click="addParam('cna_consult_ilc');removeParam('cna_no_consult');removeParam('user_consult_ilc');"><i class="glyphicon" ng-class="{'glyphicon-unchecked':!checkLastParam('cna_consult_ilc'),'glyphicon-ok':checkLastParam('cna_consult_ilc')}"></i> Consult the Elves about access&nbsp;to the beans.</div>
+
+            <div class="option" ng-class="{'option-selected':checkLastParam('cna_no_consult')}" ng-click="addParam('cna_no_consult');removeParam('user_consult_ilc');removeParam('cna_consult_ilc');"><i class="glyphicon" ng-class="{'glyphicon-unchecked':!checkLastParam('cna_no_consult'),'glyphicon-ok':checkLastParam('cna_no_consult')}"></i> Do not consult the local Elf community and you negotiate PIC and MAT directly with the user.</div>
+
+            <div class="option" ng-class="{'option-selected':checkLastParam('user_consult_ilc')}" ng-click="checkLastParam('user_consult_ilc');removeParam('cna_consult_ilc');removeParam('cna_no_consult');"><i class="glyphicon" ng-class="{'glyphicon-unchecked':!hasParam('user_consult_ilc'),'glyphicon-ok':checkLastParam('user_consult_ilc')}"></i> You tell the user to talk to the local community representative about accessing the beans.</div>
+
+        </div>
+
+        <div class="continue"><a translation-url  class="btn btn-primary btn-lg" href="/help/presentations/sim/negotiatingPICMAT" ng-show="checkLastParam('user_consult_ilc') || checkLastParam('cna_no_consult') || checkLastParam('cna_consult_ilc')" >Continue</a> <a translation-url  class="btn btn-default btn-lg" href="" ng-show="!checkLastParam('user_consult_ilc') && !checkLastParam('cna_no_consult') && !checkLastParam('cna_consult_ilc')">Please make your choice</a></div>
+
+    </div>
+    <div class="col-xs-3 text-center" style="padding-top:30px;"><img src="/app/views/help/presentations/sim/characters/provider.png" /><div class="info">You are the Provider Country CNA</div>
+    </div>
+
+</div>

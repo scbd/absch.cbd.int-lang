@@ -1,39 +1,8 @@
-﻿<div class="register-content">
+﻿<div class="register-content" dir="rtl">
     <div class="register-content-header color-white" ng-class="{'bg-blue': type.schemaType != 'referenceRecords','bg-orange': type.schemaType == 'referenceRecords' }">
         <div style="padding:10px 10px;">
-            <h3>{{type.title}} <span class="color-darkgrey"> ({{type.abbreviation}})</span>
-
-        <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span>
-
-             <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span>
-
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span>
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span>
-
-
-            <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span>
-
-              <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'" ><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span>
-
-
-         </h3>
-
-
-            <script type="text/ng-template" trados-translation="true" id="defaultIntro">
+            <h3>{{type.title}} <span class="color-darkgrey">({{type.abbreviation}})</span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CNA'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCNAInfo = !showCNAInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='MSR'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showMSRInfo = !showMSRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='NDB'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showNDBInfo = !showNDBInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CP'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPInfo = !showCPInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CPC'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPCInfo = !showCPCInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='IRCC'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showIRCCInfo = !showIRCCInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='NR'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showNRInfo = !showNRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='VLR'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showVLRInfo = !showVLRInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='A19A20'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showA19A20Info = !showA19A20Info"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CPP'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCPPInfo = !showCPPInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CBI'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCBIInfo = !showCBIInfo"></i></span> <span class="helpinfoInline" ng-show="type.abbreviation ==='CON'"  dir="rtl"><i class="fa fa-info-circle helpicon pull-right" ng-click="showCONInfo = !showCONInfo"></i></span></h3> <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
+                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a> <!--CON----------------------------><script type="text/ng-template" trados-translation="true" id="defaultIntro">
                 <!--<h5> Instructions</h5>
            <div>Please fill in the submission form and complete all fields following the instructions given.
                 Certain fields are mandatory and indicated with an asterisk(*). The review of the form will highlight the mandatory fields that need
@@ -42,167 +11,76 @@
 		   </div>
            <br>
            <div>It is possible to introduce information one of the six official UN languages. Select languages using the button located at the top left of the page and for each submission field, a text boxes will
-                appear in the languages selected.</div><br>-->
-            </script>
+                appear in the languages selected.</div><br>--></script><div ng-if="showCONInfo" class="well well-help">
 
-
-
-            <a translation-url  class="pull-right well-help-close" ng-click="showCONInfo=false;showCNAInfo=false;showCPPInfo=false;showA19A20Info=false;showVLRInfo=false;showIRCCInfo=false;showCPCInfo=false;showCPCInfo=false;showNDBInfo=false;showMSRInfo=false;showCNAInfo=false;"
-                ng-show=" showCONInfo ||    showCNAInfo    || showCPPInfo    || showA19A20Info    || showVLRInfo    || showIRCCInfo    || showCPCInfo    || showCPCInfo    || showNDBInfo    || showMSRInfo    || showCNAInfo">&times;</a>
-
-            <!--CON---------------------------->
-            <div ng-if="showCONInfo" class="well well-help">
-
-                <h5> مقدمة</h5>
-                <div>Many common formats include the possibility to add contact details for both individuals and organisations. Through filling this form you can create a list of contacts which is shared and visible among all national users, similar to a national agenda, and that you can use in filling the common formats. When adding a contact to another common format, the list of contacts for your country will appear and you can select from it the relevant contact(s). In case that you want to include a new contact which is not currently in the list, you will need to save the form as a draft and go to the dashboard to create a new contact.</div>
-                <br>
-                <div>To avoid duplication in the submission of information, when you want to create contacts for several individuals working in the same organisation, you can first add the contact of the organisation, and then add the individual contact information and include a link to the record on the organisation.</div>
+                <h5>مقدمة</h5>
+                <div>تتيح النماذج القياسية إمكانية إضافة تفاصيل الاتصال الخاصة بالأفراد والمنظمات. من خلال تعبئة هذا النموذج، يمكنك إنشاء قائمة بجهات الاتصال لتكون مشتركة وظاهرة لكل المستخدمين الوطنيين، على غرار الأجندة الوطنية، ويمكنك استخدامها في تعبئة النماذج القياسية. عند إضافة جهة اتصال لنموذج قياسي آخر، ستظهر قائمة جهات الاتصال لبلدك، ويمكنك اختيار جهة (جهات) الاتصال المطلوبة من هذه القائمة. إذا كنت ترغب في إضافة جهة اتصال جديدة ليست في القائمة حاليًا، ينبغي أن تحفظ النموذج كمسودة وتنتقل إلى لوحة التحكم لإنشاء جهة اتصال جديدة.</div><br><div>لتجنب التكرار في إرسال المعلومات، عندما ترغب في إنشاء جهات اتصال لعدة أفراد يعملون في المنظمة نفسها، يمكنك إضافة معلومات الاتصال للمنظمة نفسها، ثم إضافة معلومات الاتصال الخاصة بكل فرد يعمل في هذه المنظمة مع وضع رابط للسجل الخاص بالمنظمة.</div>
 
                 <div ng-include="'defaultIntro'"></div>
 
-            </div>
-
-            <!--CNA---------------------------->
-            <div ng-if="showCNAInfo" class="well well-help">
+            </div><!--CNA----------------------------><div ng-if="showCNAInfo" class="well well-help">
 
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>Article 13 of the Nagoya Protocol requires the designation of one or more competent national authorities (CNA) on access and benefit-sharing. This information shall be made available to the ABS Clearing-House in accordance with paragraph 2 (b) of Article 14 of the Protocol. Where a Party designates more than one competent national authority, it must provide relevant information on the respective responsibilities of those authorities to the Secretariat along with its notification designating the authority(ies).&nbsp;</div>
-                <br>
-                <div>Article 13, paragraph 2, provides that competent national authorities shall, in accordance with applicable national legislative, administrative, or policy measures, be responsible for granting access or, as applicable, issuing written evidence that access requirements have been met and be responsible for advising on applicable procedures and requirements for obtaining prior informed consent and entering into mutually agreed terms.</div>
-            </div>
-
-            <!--MSR---------------------------->
-            <div ng-if="showMSRInfo" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>تنص المادة 13 من بروتوكول ناغويا على تعيين سلطة وطنية مختصة أو أكثر معنية بالحصول على الموارد وتقاسم المنافع. يجب إرسال هذه المعلومات لغرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع وفقًا للفقرة 2 (ب) من المادة 14 من البروتوكول. في الحالات التي يعين فيها طرف ما أكثر من سلطة وطنية مختصة، عليه أن يرسل المعلومات ذات الصلة عن مسؤوليات كل سلطة من هذه السلطات إلى الأمانة مع إخطار تعيين السلطة (السلطات).&nbsp;</div><br><div>تنص الفقرة 2 من المادة 13 على أن تكون السلطات الوطنية المختصة مسؤولة، وفقاً للتدابير التشريعية أو الإدارية أو&nbsp;السياساتية الوطنية الواجبة التطبيق، عن منح حق الحصول، أو عند الاقتضاء، إصدار دليل كتابي يفيد باستيفاء متطلبات الحصول ومسؤولة عن الإبلاغ عن الإجراءات والمتطلبات المنطبقة للحصول على الموافقة المسبقة عن علم وإبرام شروط متفق عليها بصورة متبادلة.</div>
+            </div><!--MSR----------------------------><div ng-if="showMSRInfo" class="well well-help">
 
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>Article 14 paragraph 2 (a) of the Nagoya Protocol provides that Parties shall make available to the ABS Clearing-House information on legislative, administrative and policy measures on access and benefit-sharing.</div>
-                <br>
-                <div>Access and benefit-sharing measures may include national or regional strategies, policies, legislation or regulations. They may also include measures undertaken at the subnational or community level. This form can also be used to make available additional explanatory information on how to meet ABS requirements.</div>
-                <br>
-                <div>Please submit a new form for each ABS measure. You will need to submit as many forms as the number of ABS measures that are available within your jurisdiction.</div>
-                <br>
-                <div>With a view to provide the most accurate overview of the national ABS legal framework, the ABS Clearing-House allows for the possibility of reflecting amendments to existing measures and linking different measures, for instance a regulation that implements legislation, or a guideline that provides further guidance on how to implement a given provision.</div>
-                <br>
-                <div>Information registered should be as clear and concise as possible while bearing in mind that the information should guide potential users to comply with the country&rsquo;s legal requirements. Including courtesy translation of the information, and explanatory information, flow charts, or step-by-step guides on how to apply for prior informed consent are very useful for reaching out to users and ensuring that they are aware of the national requirements for access.</div>
-            </div>
-
-            <!--NDB---------------------------->
-            <div ng-if="showNDBInfo" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>تلزم الفقرة 2 (أ) من المادة 14 من بروتوكول ناغويا الأطراف بإرسال أي معلومات مطلوبة عن التدابير التشريعية والإدارية والسياساتية بشأن الحصول على الموارد وتقاسم المنافع إلى إلى غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div><br><div>قد تتضمن تدابير الحصول على الموارد وتقاسم المنافع الاستراتيجيات الوطنية أو الإقليمية أو السياسات أو التشريعات أو اللوائح. وقد يتضمن ذلك تدابير متخذة على المستوى المجتمعي أو دون الوطني. يمكن استخدام هذا النموذج لإتاحة المعلومات التفسيرية الإضافية بشأن كيفية استيفاء متطلبات الحصول على الموارد وتقاسم المنافع.</div><br><div>يُرجى إرسال نموذج جديد لكل إجراء من تدابير الحصول على الموارد وتقاسم المنافع. ينبغي إرسال نماذج بعدد تدابير الحصول على الموارد الجينية وتقاسم المنافع المتاحة ضمن ولايتك القضائية.</div><br><div>بهدف إتاحة أدق معلومات ممكنة عن الإطار الوطني القانوني لغرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع، توفر غرفة تبادل المعلومات إمكانية مراجعة التعديلات على التدابير الحالية وربط التدابير المختلفة، على سبيل المثال، لائحة تنفيذية للتشريعات، أو توجيهات توفر الإرشادات حول كيفية تنفيذ بند معين.</div><br><div>يجب أن تكون المعلومات المسجلة واضحة ومختصرة بقدر الإمكان مع مراعاة أن توجه المعلومات المستخدمين المحتملين للامتثال للشروط القانونية للبلد. إضافة ترجمة مجانية للمعلومات، أو معلومات تفسيرية، أو رسوم تخطيطية، أو إرشادات تفصيلية حول كيفية التقدم بطلب للحصول على الموافقة المسبقة عن علم مفيد للغاية للوصول إلى المستخدمين وضمان إلمامهم بالشروط الوطنية للحصول على الموارد.</div>
+            </div><!--NDB----------------------------><div ng-if="showNDBInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-            <!--IRCC---------------------------->
-            <div ng-if="showIRCCInfo" class="well well-help">
+            </div><!--IRCC----------------------------><div ng-if="showIRCCInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>Parties requiring prior informed consent (PIC) are to provide for the issuance of a permit or its equivalent at the time of access as evidence of the decision to grant PIC and of the establishment of mutually agreed terms (MAT) (Article 6, paragraph 3(e)). This information is to be made available to the ABS Clearing-House in accordance with Article 14, paragraph 2(c).</div>
-                <br>
-                <div>Article 17, paragraph 2, provides that a permit or its equivalent issued in accordance with Article 6, paragraph 3(e), and made available to the ABS Clearing-House, shall constitute an internationally recognized certificate of compliance (IRCC).&nbsp;</div>
-                <br>
-                <div>Article 17, paragraph 3, further establishes that the internationally recognized certificate of compliance shall serve as evidence that the genetic resource which it covers has been accessed in accordance with PIC and that MAT have been established, as required by the domestic access and benefit sharing legislation or regulatory requirements of the Party providing prior informed consent.</div>
-                <br>
-                <div>Article 17, paragraph 4, provides that the internationally recognized certificate of compliance shall contain the following minimum information when it is not confidential:</div>
-                <br>
-                <ul>
-                    <li><span>Issuing authority;</span></li>
-                    <li><span>Date of issuance;</span></li>
-                    <li>The provider;</li>
-                    <li>Unique identifier of the certificate;</li>
-                    <li><span>The person or entity to whom prior informed consent was granted;</span></li>
-                    <li>Subject-matter or genetic resources covered by the certificate;</li>
-                    <li>Confirmation that mutually agreed terms were established;</li>
-                    <li>Confirmation that prior informed consent was obtained; and</li>
-                    <li><span>Commercial and/or non-commercial use.</span></li>
-                </ul>
-                <br>
-                <div>In accordance with the above, Parties are required to fill out the form. At a minimum, the mandatory fields should be filled out with the information contained in the permit (or its equivalent) issued at national level. If information to be included in a mandatory field is confidential, the field can be marked as confidential. Parties can also include additional information, including copies of the permit or its equivalent, if they so decide.&nbsp;</div>
-                <br>
-                <div>Once this information is published in the ABS Clearing-House, an internationally recognized certificate of compliance is issued/constituted. The ABS Clearing-House will then send a courtesy copy of the internationally recognized certificate by electronic means to:</div>
-                <br>
-                <ul>
-                    <li>The national focal point (NFP) and the competent national authority (CNA) or authorities of the country responsible for issuing the permits or its equivalent;&nbsp;</li>
-                    <li>The provider, if this information is not confidential; and</li>
-                    <li><span>The person or entity to whom prior informed consent was granted, if this information is not confidential.</span></li>
-                </ul>
-                <br>
-                <div>The internationally recognized certificate of compliance plays a key role in monitoring and enhancing transparency about the utilization of genetic resources along the value chain (research, development, innovation, pre-commercialization or commercialization).</div>
-            </div>
-
-
-            <!--CPC---------------------------->
-            <div ng-if="showCPCInfo" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>Parties requiring prior informed consent (PIC) are to provide for the issuance of a permit or its equivalent at the time of access as evidence of the decision to grant PIC and of the establishment of mutually agreed terms (MAT) (Article 6, paragraph 3(e)). يجب إرسال هذه المعلومات لغرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع وفقًا للفقرة 2 (ج) من المادة 14 من البروتوكول.</div><br><div>يشكل أي تصريح يصدر وفقاً للفقرة 3(ﻫ) من المادة 6، أو ما يعادله، ويتاح في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع، يشكل شهادة امتثال معترفاً بها دولياً.&nbsp;</div><br><div>تنص الفقرة 3 من المادة 17 أيضًا على أن شهادة الامتثال المعترف بها دوليًا تمثل دليلا على أن المورد الجيني الذي تشمله قد تم الحصول عليه وفقا للموافقة المسبقة عن علم، وبإبرام شروط متفق عليها بصورة متبادلة،
+حسبما ينص عليه التشريع المحلي أو المتطلبات التنظيمية للحصول  وتقاسم المنافع في الطرف الذي يقدم الموافقة المسبقة عن علم.</div><br><div>تنص الفقرة 4 من المادة 17 على أن تتضمن شهادة الامتثال المعترف بها دولياً المعلومات الأساسية التالية عندما لا تكون سرية:</div><br><ul>
+                    <li><span>اسم السلطة التي أصدرتها؛</span></li>
+                    <li><span>تاريخ الإصدار؛</span></li>
+                    <li>الجهة المقدمة؛</li>
+                    <li>الرمز الفريد لتعريف الشهادة؛</li>
+                    <li><span>الشخص أو الكيان الذي مُنحت له الموافقة المسبقة عن علم؛</span></li>
+                    <li>الموضوع أو الموارد الجينية التي تغطيها الشهادة؛</li>
+                    <li>تأكيد يفيد بإبرام الشروط المتفق عليها بصورة متبادلة؛</li>
+                    <li>(ح) تأكيد يفيد بالحصول على موافقة مسبقة عن علم؛</li>
+                    <li><span>الاستخدام التجاري و/أو الاستخدام غير التجاري.</span></li>
+                </ul><br><div>يجب على الأطراف تعبئة النموذج وفقًا لما سبق. ينبغي تعبئة الحقول الإلزامية على الأقل بالمعلومات التي يحتويها التصريح الذي تم إصداره على المستوى الوطني (أو ما يعادله). إذا كانت المعلومات التي سيتم تضمينها في الحقل الإلزامي سرية، ينبغي تمييز هذا الحقل بأنه سري. بإمكان الأطراف أيضًا، إذا شاؤوا ذلك، تضمين معلومات إضافية، تشمل نسخ التصريح أو ما يعادله.&nbsp;</div><br><div>عند نشر هذه المعلومات في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع، سيتم إصدار شهادة امتثال معترف بها دوليًا. سترسل غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع نسخة مجانية من شهادة الامتثال المعترف بها دوليًا بوسيلة إلكترونية إلى:</div><br><ul>
+                    <li>نقطة الاتصال الوطنية والسلطة الوطنيةالمختصة أو سلطات البلد المسؤول عن إصدار التصاريح أو ما يعادلها؛&nbsp;</li>
+                    <li>الجهة المقدمة، إذا لم تكن هذه المعلومات سرية</li>
+                    <li><span>والشخص أو الكيان الذي مُنحت له الموافقة المسبقة عن علم؛ ما لم تكن هذه المعلومات سرية.</span></li>
+                </ul><br><div>شهادة الامتثال المعترف بها دوليا لها دور محوري في مراقبة وتعزيز الشفافية بشأن استهخدام الموارد الجينية بجانب سلسلة القيمة (البحث، التطوير، الابتكار، ما قبل التسويق التجاري أو التسويق التجاري).</div>
+            </div><!--CPC----------------------------><div ng-if="showCPCInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>Checkpoints will collect and receive relevant information related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources (Article 17, paragraph 1 (a) (i)), including from the internationally recognized certificate of compliance, when such a certificate is available. In accordance with paragraph 1 (a) (iii) of Article 17 of the Nagoya Protocol, such information collected by the checkpoint needs to be provided to relevant national authorities, to the Party providing prior informed consent and to the ABS Clearing-House, as appropriate.</div>
-                <br>
-                <div>On the basis of the information collected or received by the checkpoint and provided by the national publishing authority to the ABS Clearing-House, a courtesy copy of the record will automatically be sent by electronic means to the following entities, as appropriate:&nbsp;</div>
-                <br>
-                <ul>
-                    <li>The designated national authority/ies as determined in the common format on checkpoints;&nbsp;</li>
+                <h5>مقدمة</h5>
+                <div>تقوم نقاط التفتيش بجمع أو استلام المعلومات المتصلة بالموافقة المسبقة عن علم، وبمصدر المورد الجيني، وبإبرام الشروط المتفق عليها بصورة متبادلة، وباستخدام الموارد الجينية أو أي مما سبق (المادة 17، الفقرة 1 (أ) (1)، بما في ذلك من شهادة الامتثال المعترف بها دوليًا عند توفر مثل هذه الشهادة. وفقًا للفقرة 1 (أ) (3) من المادة 17 من بروتوكول ناغويا، ينبغي تقديم هذه المعلومات التي تجمعها نقطة التفتيش للسلطات الوطنية المختصة، وإلى الطرف الذي يقدم الموافقة المسبقة عن علم وإلى غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع، حسب الاقتضاء.</div><br><div>على أساس المعلومات التي جمعتها أو تلقتها نقطة التفتيش وقدمتها سلطة النشر الوطنية لغرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع، سيتم إرسال نسخة مجانية من السجل تلقائيًا بوسيلة إلكترونية إلى الكيانات التالية، حسب الاقتضاء:&nbsp;</div><br><ul>
+                    <li>السلطة (السلطات) الوطنية المعينة كنقاط تفتيش كما هو موضح في النماذج القياسية؛&nbsp;</li>
                     <li>The national focal point (NFP) and the competent national authority/ies (CNA) of the country providing the genetic resource; and</li>
-                    <li>The person or entity to whom prior informed consent was granted, if this information is not confidential.</li>
-                </ul>
-                <br>
-                <div>This form facilitates the flow of information between checkpoints and all parties involved, allowing countries to monitor the utilization of genetic resources.</div>
-            </div>
-
-
-            <!--CP---------------------------->
-            <div ng-if="showCPInfo" class="well well-help">
+                    <li>والشخص أو الكيان الذي مُنحت له الموافقة المسبقة عن علم؛ ما لم تكن المعلومات سرية.</li>
+                </ul><br><div>يسهل هذا النموذج مسار المعلومات بين نقاط التفتيش وجميع الأطراف المعنية، بما يتيح للدول مراقبة استخدام الموارد الجينية.</div>
+            </div><!--CP----------------------------><div ng-if="showCPInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>The submission form is to be used for registering information on checkpoints designated under Article 17, paragraph 1 (a) of the Protocol. The role of checkpoints is to collect or receive, as appropriate, relevant information related to prior informed consent, to the source of the genetic resource, to the establishment of mutually agreed terms, and/or to the utilization of genetic resources (subparagraph i). Such information collected by the checkpoint needs to be provided to relevant national authorities, to the Party providing prior informed consent and to the ABS Clearing-House, as appropriate (subparagraph iii).</div>
-            </div>
-
-            <!--VLR---------------------------->
-            <div ng-if="showVLRInfo" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>يستخدم نموذج الإرسال في تسجيل المعلومات عن نقاط التفتيش المعينة تحت المادة 17، الفقرة 1 (أ) من البروتوكول. وظيفة نقاط التفتيش هو جمع أو استلام، حسب الحالة، المعلومات المتصلة بالموافقة المسبقة عن علم، ومصدر المورد الجيني، وإبرام الشروط المتفق عليها بصورة متبادلة، و/أو استخدام الموارد الجينية (الفقرة الفرعية 1). ينبغي تقديم هذه المعلومات التي تجمعها نقطة التفتيش للسلطات الوطنية المختصة، وإلى الطرف الذي يقدم الموافقة المسبقة عن علم وإلى غرفة
+تبادل المعلومات بشأن الحصول وتقاسم المنافع، حسب الاقتضاء (الفقرة الفرعية 3).</div>
+            </div><!--VLR----------------------------><div ng-if="showVLRInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>The Virtual Library of the ABS Clearing-House hosts a number of resources which are relevant to ABS and the Nagoya Protocol. This includes, among others, general literature on ABS and the Nagoya Protocol, awareness-raising materials, case studies, videos, capacity-building resources, etc.</div>
-                <br>
-                <div>The Virtual Library can be a space where knowledge, lessons learned and best practices are shared to support capacity-building for the effective implementation of the Nagoya Protocol.</div>
+                <h5>مقدمة</h5>
+                <div>تحتوي المكتبة الافتراضية  لغرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع  على عدد من الموارد ذات الصلة بالحصول على الموارد الجينية وتقاسم المنافع وبروتوكول ناغويا. ويتضمن ذلك، ضمن أمور أخرى، دراسات عامة بشأن الحصول على الموارد وتقاسم المنافع،  وبروتوكول ناغويا، ومواد تعزيز الوعي، ودراسات الحالة، ومقاطع الفيديو، وموارد بناء القدرات، وغير ذلك.</div><br><div>قد تكون المكتبة الافتراضية مساحة لتبادل المعرفة والدروس المستفادة وأفضل الممارسات لدعم بناء القدرات لتنفيذ بروتوكول ناغويا بكفاءة وفعالية.</div>
 
-            </div>
-
-            <!--A19A20---------------------------->
-            <div ng-if="showA19A20Info" class="well well-help">
-                <h5> مقدمة</h5>
-                <div>Articles 19 and 20 of the Protocol require each Party to encourage, as appropriate, the development, update and use of sectoral and cross-sectoral model contractual clauses for mutually agreed terms, as well as voluntary codes of conduct, guidelines and best practices and/or standards in relation to access and benefit-sharing. These tools can serve to promote legal certainty and transparency, and reduce transaction costs in the implementation of ABS requirements, while taking into account the practices of different sectors.</div>
-                <br>
-                <div>This common format is to be used for registering model contractual clauses for mutually agreed terms, as well as voluntary codes of conduct, guidelines and best practices and/or standards. </div>
-                <br>
-                <div>If this tool is developed by a Party to support implementation of domestic ABS requirements as part of a country&rsquo;s national ABS framework, please register that information using the common format for legislative, administrative or policy measures. This will allow the information to be displayed as part of the country profile and to be included in the list of national ABS measures. </div>
+            </div><!--A19A20----------------------------><div ng-if="showA19A20Info" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>تتطلب المادة 19 و20 من البروتوكول من كل طرف التشجيع، حسب الاقتضاء، على إعداد وتحديث واستخدام بنود تعاقدية نموذجية قطاعية ومتعددة القطاعات للشروط المتفق عليها بصورة متبادلة، بالإضافة إلى مدونات السلوك الطوعية والمبادئ التوجيهية وأفضل الممارسات والمعايير أو أي منها فيما يتعلق بالوصول وتقاسم المنافع. تسهم هذه الأدوات في تعزيز اليقين القانوني والشفافية، وتقلل تكاليف العمليات في تنفيذ شروط الحصول على الموارد الجينية وتقاسم المنافع، مع أخذ ممارسات القطاعات المختلفة في الاعتبار.</div><br><div>يستخدم هذا النموذج القياسي في تسجيل البنود التعاقدية النموذجية للشروط المتفق عليها، بالإضافة لمدونات السلوك الطوعية والمبادئة التوجيهية وأفضل الممارسات أو المعايير أو كليهما.</div><br><div>إذا قامت إحدى الدول الأطراف بإعداد هذه الأداة لدعم تنفيذ المتطلبات المحلية للحصول على الموارد ضمن الإطار الوطني للحصول على الموارد وتقاسم المنافع في هذا البلد، يرجى تسجيل هذه المعلومات باستخدام النموذج القياسي للتدابير التشريعية أو الإدارية أو السياساتية. يتيح ذلك عرض المعلومات في إطار معلومات البلد وتضمينها في قائمة التدابير الوطنية للحصول على الموارد وتقاسم المنافع.</div>
 
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-
-            <!--CPP---------------------------->
-            <div ng-if="showCPPInfo" class="well well-help">
-                <h5> مقدمة</h5>
-                <div>
-                    Article 12, paragraph 1, of the Nagoya Protocol provides that Parties, in implementing their obligations under the Protocol, shall in accordance with domestic law take into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures, as applicable, with respect to traditional knowledge associated with genetic resources. Furthermore, Parties are to endeavour to support, as appropriate, the development by indigenous and local communities of community protocols in relation to access to traditional knowledge associated with genetic resources and benefits arising out of the utilization of such knowledge (Article 12, paragraph 3, (a)).
-                </div>
-                <br>
-                <div>Providing information on how to access traditional knowledge associated with genetic resources helps other actors to better understand and respect community procedures and values.
-                </div>
-                <br>
-                <div>This common format is to be used for registering community protocols and procedures and customary laws. A Party may also decideto include this information as a legislative, administrative or policy measure, as part of a country&rsquo;s national ABS framework to also be displayed as part of the country profile. If this is the case, only publishing authorities duly designated by the country can publish community protocols and procedures and customary laws as a national record.
-                </div>
+            </div><!--CPP----------------------------><div ng-if="showCPPInfo" class="well well-help">
+                <h5>مقدمة</h5>
+                <div>تنص الفقرة 1 من المادة 12 من بروتوكول ناغويا على أن تراعي الأطراف في تنفيذ التزاماتها بموجب هذا البروتوكول، رهناً بالتشريع المحلي، القوانين العرفية للمجتمعات الأصلية والمحلية، وبروتوكولاتها وإجراءاتها المجتمعية، حسب الاقتضاء، فيما يتعلق بالمعارف التقليدية المرتبطة بالموارد الجينية. كما ينبغي أن تسعى الأطراف، حسب الاقتضاء، إلى دعم إعداد المجتمعات الأصلية والمحلية، لبروتوكولات مجتمعية فيما يتعلق بالحصول على المعارف التقليدية المرتبطة بالموارد 
+الجينية والتقاسم العادل والمنصف للمنافع الناشئة عن استخدام هذه المعارف (المادة 12، الفقرة 2 (أ)).</div><br><div>توفير معلومات حول كيفية الحصول على المعارف التقليدية المرتبطة بالموارد الوراثية يساعد الجهات الفاعلة الأخرى على تعزيز فهم إجراءات المجتمع وقيمه واحترامها.</div><br><div>يستخدم هذا النموذج القياسي في تسجيل بروتوكولات وإجراءات المجتمع والقوانين العرفية. قد يقرر أحد الأطراف تضمين هذه المعلومات كتدابير تشريعية أو إدارية أو سياساتية، كجزء من الإطار الوطني للبلد للحصول على الموارد وتقاسم المنافع الذي يتم عرضه على المعلومات الخاصة بالبلد. في هذه الحالة، يجوز فقط لسلطات النشر التي عينها البلد حسب الأصول نشر بروتوكولات وإجراءات مجتمعية وقوانين عرفية باعتبارها سجلاً وطنيًا.</div>
                 <div ng-include="'defaultIntro'"></div>
-            </div>
-
-            <!--CBI---------------------------->
-            <div ng-if="showCBIInfo" class="well well-help">
+            </div><!--CBI----------------------------><div ng-if="showCBIInfo" class="well well-help">
                 <div ng-include="'defaultIntro'"></div>
-                <h5> مقدمة</h5>
-                <div>Article 22 of the Nagoya Protocol provides that Parties shall cooperate in the capacity-building, capacity development and strengthening of human resources and institutional capacities to effectively implement the Protocol in developing country Parties, including existing global, regional, subregional and national institutions and organizations. In this context, Parties should also facilitate the involvement of indigenous and local communities and relevant stakeholders, including non-governmental organizations and the private sector.</div>
-                <br>
-                <div>Article 22, paragraph 6, provides that information on capacity-building and development initiatives at national, regional, international levels should be provided to the ABS Clearing-House with a view of promoting synergy and coordination on capacity-building and development for ABS.</div>
-                <br>
-                <div>Having all information on capacity-building projects and initiatives available in one database can provide opportunities for coordination among actors involved in capacity-building in the same geographical area or covering similar thematic issues and to learn from each other experiences. It can also help to identify and address gaps and overlaps in the coverage of capacity-building initiatives.</div>
+                <h5>مقدمة</h5>
+                <div>تطالب المادة 22 من بروتوكول ناغويا الأطراف بالتعاون في بناء القدرات، وتنمية القدرات، وتعزيز الموارد البشرية، والقدرات المؤسسية لتنفيذ هذا البروتوكول على نحو فعال في الأطراف من الدول النامية، بما في ذلك المؤسسات والمنظمات العالمية والإقليمية ودون الإقليمية والوطنية القائمة. وفي هذا السياق، ينبغي للأطراف أن تيسر مشاركة المجتمعات الأصلية والمحلية وأصحاب المصلحة المعنيين، بما فيهم المنظمات غير الحكومية، والقطاع الخاص.</div><br><div>وتشترط الفقرة 6 من المادة 22 تقديم المعلومات عن مبادرات بناء وتنمية القدرات المتخذة على المستويات الوطنية والإقليمية والدولية إلى غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع بهدف تعزيز أوجه التآزر والتنسيق بشأن بناء وتنمية القدرات المتعلقة بالحصول على الموارد وتقاسم المنافع.</div><br><div>إتاحة جميع المعلومات عن مشاريع ومبادرات بناء القدرات في قاعدة بيانات واحدة يوفر الفرص للتنسيق بين الأطراف المعنية في بناء القدرات في المنطقة الجغرافية نفسها أو تناول القضايا والمحاور نفسها والتعلم من خبرات وتجارب بعضهم البعض. كما يساعد إتاحة المعلومات في قاعدة بيانات واحدة في تحديد الثغرات والتداخلات في تغطية مبادرات بناء القدرات وعلاجها.</div>
 
             </div>
         </div>

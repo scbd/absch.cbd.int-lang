@@ -1,0 +1,2378 @@
+﻿[
+  {
+    "key": "Général",
+    "title": "Structures institutionnelles pour la mise en œuvre du Protocole",
+    "questions": [
+      {
+        "key": "Q003",
+        "section": "Général",
+        "number": "3",
+        "type": "option",
+        "title": "Votre pays a-t-il communiqué les informations disponibles au Centre d’échange sur l’APA, comme prévu par l’article 14.2?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Please provide a summary of the main difficulties and challenges encountered  and answer all the following questions.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q004",
+        "section": "Général",
+        "number": "4",
+        "type": "option",
+        "title": "Votre pays a-t-il pris les mesures législatives, administratives et politiques en matière d’APA?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés rencontrées dans la mise en œuvre de ces mesures.",
+            "type": "string"
+          },
+          {
+            "field": "additionalInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q005",
+        "section": "Général",
+        "number": "5",
+        "type": "option",
+        "title": "Votre pays a-t-il désigné un correspondant national, tel que prévu par l’article 13? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés qui ont entravé la désignation d’un correspondant national.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q006",
+        "section": "Général",
+        "number": "6",
+        "type": "option",
+        "title": "Votre pays a-t-il désigné un ou plusieurs points de contrôle, tel que prévu par l’article 13?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés qui ont entravé la désignation d’au moins une autorité nationale compétente",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q007",
+        "section": "Général",
+        "number": "7",
+        "type": "option",
+        "title": "Votre pays a-t-il mis à disposition sur le Centre d’échange sur l’APA les permis ou documents équivalents délivrés au moment de l’accès pour attester de la décision d’accorder le consentement préalable en connaissance de cause (CPCC) et de la conclusion de conditions convenues d’un commun accord (CCCA)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "Not applicable, since no access requirements are in place"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés entravant la communication de ces informations.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q008",
+        "section": "Général",
+        "number": "8",
+        "type": "option",
+        "title": "Votre pays met-il à disposition sur le Centre d’échange sur l’APA, les permis, ou leur équivalent, constituant des certificats de conformité reconnus à l’échelle internationale, en accord avec l’article 17.2?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "Not applicable, since no access requirements are in place"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q009",
+        "section": "Général",
+        "number": "9",
+        "type": "option",
+        "title": "Votre pays a-t-il désigné un ou plusieurs points de contrôle, tel que prévu par l’article 17?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés ayant entravé la désignation d’un ou plusieurs points de contrôle.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q010",
+        "section": "Général",
+        "number": "10",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés et défis.Veuillez fournir un résumé des principales difficultés et défis.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Accès",
+    "title": "ABS measures : Accès aux ressources génétiques (article 6)",
+    "questions": [
+      {
+        "key": "Q011",
+        "section": "Accès",
+        "number": "11",
+        "type": "option",
+        "title": "L’accès aux ressources génétiques est-il soumis au CPCC, comme prévu par l’article 6.1?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir des renseignements supplémentaires, y compris s’il existe un autre système en place concernant l’accès aux ressources génétiques..",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q012",
+        "section": "Accès",
+        "number": "12",
+        "type": "option",
+        "title": "Votre pays dispose-t-il de règles et de procédures équitables et non arbitraires relatives à l’accès aux ressources génétiques, comme prévu par l’article 6.3 b)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q013",
+        "section": "Accès",
+        "number": "13",
+        "type": "option",
+        "title": "Votre pays met-il à disposition des informations sur la manière de solliciter un CPCC, comme prévu par l’article 6.3 c)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q014",
+        "section": "Accès",
+        "number": "14",
+        "type": "option",
+        "title": "Votre pays fournit-il une décision écrite d’une autorité nationale compétente, qui soit rendue de façon claire et transparente, comme prévu par l’article 6.3 d)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q015",
+        "section": "Accès",
+        "number": "15",
+        "type": "option",
+        "title": "Votre pays délivre-t-il, au moment de l’accès aux ressources génétiques, un permis ou un document équivalent, comme prévu par l’article 6.3 e)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q016",
+        "section": "Accès",
+        "number": "16",
+        "type": "number",
+        "title": "Veuillez fournir le nombre de permis ou de leurs équivalents, mis à disposition via le Centre d’échange sur l’APA depuis l'entrée en vigueur du Protocole pour votre pays.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q017",
+        "section": "Accès",
+        "number": "17",
+        "type": "option",
+        "title": "Votre pays dispose-t-il de règles ou de procédures pour exiger et établir des CCCA, comme prévu par l’article 6.3 g)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q018",
+        "section": "Accès",
+        "number": "18",
+        "type": "option",
+        "title": "Avantages pour votre pays depuis l’entrée en vigueur du Protocole découlant de l’utilisation:",
+        "multiple": true,
+        "options": [
+          {
+            "value": "geneticResources",
+            "title": "Ressources génétiques"
+          },
+          {
+            "value": "geneticResources.monetary",
+            "title": "Avantages monétaires"
+          },
+          {
+            "value": "geneticResources.nonMonetary",
+            "title": "Avantages non-monétaires"
+          },
+          {
+            "value": "tk",
+            "title": "Connaissances traditionnelles associées aux ressources génétiques"
+          },
+          {
+            "value": "tk.monetary",
+            "title": "Avantages monétaires"
+          },
+          {
+            "value": "tk.nonMonetary",
+            "title": "Avantages non-monétaires"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q019",
+        "section": "Accès",
+        "number": "19",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés et défis.Veuillez fournir un résumé des principales difficultés et défis.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Partage des avantages",
+    "title": "ABS measures : Partage juste et équitable des avantages (article 5)",
+    "questions": [
+      {
+        "key": "Q020",
+        "section": "Partage des avantages",
+        "number": "20",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures administratives, législatives ou politiques pour mettre en œuvre l'article 5.1 qui prévoit que les avantages découlant de l'utilisation des ressources génétiques ainsi que des applications ultérieures et de la commercialisation, sont partagés avec la Partie qui fournit ces ressources, c’est-à-dire le pays d'origine de ces ressources ou une Partie ayant acquis les ressources génétiques conformément à la Convention, comme prévu à l'article 5.3? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q021",
+        "section": "Partage des avantages",
+        "number": "21",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures administratives, législatives ou politiques pour s'assurer que les avantages découlant de l'utilisation des ressources génétiques détenues par les communautés autochtones et locales, conformément à la législation nationale sur les droits convenus de ces communautés autochtones et locales sur ces ressources génétiques, soient partagés avec les communautés autochtones et locales concernées conformément à l'article 5.2? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q022",
+        "section": "Partage des avantages",
+        "number": "22",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures législatives, administratives ou politiques afin que les avantages découlant de l’utilisation des connaissances traditionnelles associées aux ressources génétiques soient partagés de manière juste et équitable avec les communautés autochtones et locales détentrices de ces connaissances, comme prévu par l’article 5.5?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q023",
+        "section": "Partage des avantages",
+        "number": "23",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés entravant la mise en place des mesures",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Compliance",
+    "title": "ABS measures : Respect de la législation ou des exigences internes relatives à l’APA (articles 15 et 16) et suivi de l’utilisation des ressources génétiques (article 17)",
+    "questions": [
+      {
+        "key": "Q024_a",
+        "section": "Compliance",
+        "number": "24,1",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures législatives, administratives ou politiques appropriées, efficaces et cohérentes afin de garantir que l’accès à des ressources génétiques utilisées sous sa juridiction ait été effectué en accord avec le CPCC et que des MAT aient été établis comme exigé par les législatives nationales sur l’APA de l’autre Partie, comme prévu par l’article 15.1?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q024_b",
+        "section": "Compliance",
+        "number": "24,2",
+        "type": "option",
+        "title": "Veuillez indiquer si votre pays a pris des mesures pour traiter les situations de non respect des mesures adoptées, comme prévu par l’article 15.2.",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des renseignements complémentaires sur les mesures prises, y compris si elles sont entrées en vigueur.",
+            "type": "string"
+          },
+          {
+            "field": "complianceInfo",
+            "title": "Veuillez fournir des renseignements supplémentaires sur les situations de non-conformité.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q024_c",
+        "section": "Compliance",
+        "number": "24,3",
+        "type": "option",
+        "title": "Y-a-t-il eu des situations spécifiques où votre pays a coopéré avec d’autres Parties à des cas de violation présumée des mesures APA, telles que prévues à l’article 15.3?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q025_a",
+        "section": "Compliance",
+        "number": "25,1",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures législatives, administratives ou politiques appropriées, efficaces et cohérentes afin de garantir que l’accès à des connaissances traditionnelles associées à des ressources génétiques utilisées sous sa juridiction ait fait l’objet d’un CPCC ou de l’approbation et de la participation des communautés autochtones et locales, et que des CCCA aient été établies conformément aux exigences réglementaires et législatives nationales sur l’APA de l’autre Partie où ces communautés autochtones et locales sont situées, comme prévu par l’article 16.1?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q025_b",
+        "section": "Compliance",
+        "number": "25,2",
+        "type": "option",
+        "title": "Veuillez indiquer si votre pays a pris des mesures pour traiter les situations de non respect des mesures adoptées, comme prévu par l’article 16.2.",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q025_c",
+        "section": "Compliance",
+        "number": "25,3",
+        "type": "option",
+        "title": "Votre pays a-t-il coopéré à des cas spécifiques de violation présumée des mesures APA, comme prévu par l’article 16.3?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q026_a",
+        "section": "Compliance",
+        "number": "26,1",
+        "type": "option",
+        "title": "Votre pays exige-t-il des utilisateurs de ressources génétiques qu’ils fournissent les informations pertinentes concernant l’obtention du CPCC, la source de la ressource génétique, l’existence de CCCA et/ou l’utilisation des ressources génétiques, le cas échéant, à un point de contrôle désigné, comme prévu par l’article 17.1 a) i) et ii)? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q026_b",
+        "section": "Compliance",
+        "number": "26,2",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures pour traiter les situations de non respect? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q027_a",
+        "section": "Compliance",
+        "number": "27,1",
+        "type": "option",
+        "title": "Has your country provided the information referred to in Article 17.1 (a)(i) to relevant national authorities, to the Party providing PIC and to the ABS Clearing-House as provided in Article 17.1 (a)(iii)",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Please provide a summary of the main difficulties and challenges",
+            "type": "string"
+          },
+          {
+            "field": "recordCounts",
+            "title": "Nombre de communiqués de points de contrôle disponibles dans le Centre d’échange sur l’APA, le cas échéant.",
+            "type": "number"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "fileLinks"
+          }
+        ]
+      },
+      {
+        "key": "Q027_b",
+        "section": "Compliance",
+        "number": "27,2",
+        "type": "option",
+        "title": "Votre pays a-t-il fait usage du communiqué de point de contrôle ?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q028",
+        "section": "Compliance",
+        "number": "28",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures pour encourager les utilisateurs et les fournisseurs à partager de l’information concernant la mise en œuvre de ces conditions, comme prévu par l’article 17.1 b)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "additionalInfo",
+            "title": "Veuillez fournir plus de renseignement sur la façon dont votre pays encourage l’utilisation d’outils et de systèmes de communication efficaces et économiques.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q029",
+        "section": "Compliance",
+        "number": "29",
+        "type": "option",
+        "title": "Votre pays encourage-t-il l’utilisation d’outils et de systèmes de communication efficaces et économiques, comme prévu par l’article 17.1 c)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q030",
+        "section": "Compliance",
+        "number": "30",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir des informations complémentaires.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ComplianceMat",
+    "title": "ABS measures :- Compliance with mutually agreed terms (MAT) (Article 18)",
+    "questions": [
+      {
+        "key": "Q031",
+        "section": "ComplianceMat",
+        "number": "31",
+        "type": "option",
+        "title": "Votre gouvernement encourage-t-il l’inclusion dans les CCCA de dispositions comme prévu par l’article 18.1 a) b) et c)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          },
+          {
+            "value": "false",
+            "title": "Sans objet"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q032",
+        "section": "ComplianceMat",
+        "number": "32",
+        "type": "option",
+        "title": "Votre pays veille-t-il à garantir la possibilité de recours dans son système juridique, conformément aux règles juridictionnelles applicables, en cas de différend concernant les CCCA, comme prévu par l’article 18.2? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q033_a",
+        "section": "ComplianceMat",
+        "number": "32,1",
+        "type": "list",
+        "title": "Votre pays a-t-il pris des mesures relatives aux points suivants, comme prévu par l’article 18.3? ",
+        "multiple": true
+      },
+      {
+        "key": "Q033_b",
+        "section": "ComplianceMat",
+        "number": "33,2",
+        "type": "option",
+        "title": "Accès à la justice?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q033_c",
+        "section": "ComplianceMat",
+        "number": "33,3",
+        "type": "option",
+        "title": "Utilisation de mécanismes de reconnaissance mutuelle et d’application des des jugements étrangers et des décisions arbitrales? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q034",
+        "section": "ComplianceMat",
+        "number": "34",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir des informations complémentaires.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "specialConsiderations",
+    "title": "Considérations spéciales (article 8)",
+    "questions": [
+      {
+        "key": "Q035",
+        "section": "specialConsiderations",
+        "number": "35",
+        "type": "header",
+        "title": "Lors de l’élaboration et de la mise en œuvre de la législation ou exigences réglementaires sur l’APA, votre pays a-t-il :",
+        "multiple": false
+      },
+      {
+        "key": "Q035_a",
+        "section": "specialConsiderations",
+        "number": "35,1",
+        "type": "option",
+        "title": "Créé les conditions pour promouvoir et encourager la recherche sur la conservation et l'utilisation durable de la diversité biologique, y compris par le biais de mesures simplifiées sur l’accès à des fins de recherche non commerciales, en tenant compte de la nécessité de répondre à un changement d'intention pour ce type de recherche  conformément à l'article 8(a)? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_b",
+        "section": "specialConsiderations",
+        "number": "35,2",
+        "type": "option",
+        "title": "Est-ce que cela prend dûment en considération les situations d’urgence actuelles ou imminentes qui menacent ou nuisent à la santé humaine, animale ou végétale, telles que définies dans l'article 8 (b)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_c",
+        "section": "specialConsiderations",
+        "number": "35,3",
+        "type": "option",
+        "title": "Pris en compte la nécessité d'un accès rapide aux ressources génétiques et au partage juste et équitable des avantages découlant de l'utilisation de ces dernières, y compris l'accès à des traitements abordables par les plus défavorisés, en particulier, dans les pays en développement conformément à l'article 8(b)? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_d",
+        "section": "specialConsiderations",
+        "number": "35,4",
+        "type": "option",
+        "title": "Tenu compte de l’importance des ressources génétiques pour l’alimentation et l’agriculture et du rôle spécial qu’elles jouent pour la sécurité alimentaire, comme prévu par l’article 8 c)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q036",
+        "section": "specialConsiderations",
+        "number": "36",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés entravant la mise en place des mesures.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "indigenousProvisions",
+    "title": "Dispositions relatives aux communautés autochtones et locales (articles 6, 7 et 12)",
+    "questions": [
+      {
+        "key": "Q037",
+        "section": "indigenousProvisions",
+        "number": "37",
+        "type": "option",
+        "title": "Votre pays compte-t-il des communautés autochtones et locales?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_a",
+        "section": "indigenousProvisions",
+        "number": "38,1",
+        "type": "option",
+        "title": "Les communautés autochtones et locales ont-elles le droit établi d’octroyer l’accès aux ressources génétiques dans le cadre de vos lois nationales? (article 6.2)",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_b",
+        "section": "indigenousProvisions",
+        "number": "38,2",
+        "type": "Texte",
+        "field": "furtherInfo",
+        "subTitle": "Texte libre",
+        "title": "Veuillez fournir des informations et références complémentaires sur les lois nationales établissant les droits des communautés autochtones et locales à accorder l'accès aux ressources génétiques.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_c",
+        "section": "indigenousProvisions",
+        "number": "38,3",
+        "type": "option",
+        "title": "Votre pays a-t-il établi des mesures pour s’assurer que le consentement préalable donné en connaissance de cause ou l’accord et la participation des communautés autochtones et locales soient obtenus comme prévu par l’article 6.2?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q038_d",
+        "section": "indigenousProvisions",
+        "number": "38,4",
+        "type": "option",
+        "title": "Votre pays a-t-il établi des critères et/ou procédés pour l’obtention du consentement ou accord préalable en connaissance de cause et participation des communautés autochtones et locales pour l’accès aux ressources génétiques, comme prévu par l’article 6.3(f)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q039",
+        "section": "indigenousProvisions",
+        "number": "39",
+        "type": "option",
+        "title": " Conformément à la législation nationale, votre pays a-t-il pris des mesures visant à assurer que l’accès aux connaissances traditionnelles associées aux ressources génétiques détenues par les communautés autochtones et locales de votre pays soit soumis au CPCC ou à l’accord et à la participation de ces communautés autochtones et locales, et que des CCCA soient établies, comme prévu par l’article 7?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q040",
+        "section": "indigenousProvisions",
+        "number": "40",
+        "type": "option",
+        "title": "Dans la mise en œuvre du Protocole, et conformément à la législation nationale, votre pays a-t-il tenu compte du droit coutumier des communautés autochtones et locales ainsi que de leurs protocoles et procédures, pour tout ce qui concerne les connaissances traditionnelles associées aux ressources génétiques, comme prévu par l’article 12.1?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q041",
+        "section": "indigenousProvisions",
+        "number": "41",
+        "type": "option",
+        "title": "Votre pays a-t-il établi des mécanismes pour informer les utilisateurs potentiels de connaissances traditionnelles associées aux ressources génétiques de leurs obligations, comme prévu par l’article 12.2?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q042",
+        "section": "indigenousProvisions",
+        "number": "42",
+        "type": "option",
+        "title": " Votre pays appui-t-il l’élaboration par les communautés autochtones et locales des outils suivants, comme prévu par l’article 12.3?",
+        "multiple": true,
+        "options": [
+          {
+            "value": "community",
+            "title": "Protocoles communautaires"
+          },
+          {
+            "value": "mat",
+            "title": "Conditions minimales pour la négociation de conditions convenues d’un commun accord"
+          },
+          {
+            "value": "mcc",
+            "title": "Clauses contractuelles types"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q043",
+        "section": "indigenousProvisions",
+        "number": "43",
+        "type": "option",
+        "title": "Votre pays s’efforce-t-il de ne pas limiter l’utilisation coutumière ou l’échange de ressources génétiques et de connaissances traditionnelles associées au sein des communautés autochtones et locales et entre elles, comme prévu par l’article 12.4?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q044",
+        "section": "indigenousProvisions",
+        "number": "44",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés entravant la mise en place de mesures relatives aux connaissances traditionnelles associées aux ressources génétiques",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "conservationSustainable",
+    "title": "Contribution à la conservation et à l'utilisation durable (article 9)",
+    "questions": [
+      {
+        "key": "Q045",
+        "section": "conservationSustainable",
+        "number": "45",
+        "type": "option",
+        "title": "Votre pays encourage-t-il les utilisateurs et les fournisseurs à affecter les avantages découlant de l’utilisation des ressources génétiques à la conservation de la diversité biologique et à l’utilisation durable de ses éléments constitutifs, comme prévu par l’article 9?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q046",
+        "section": "conservationSustainable",
+        "number": "46",
+        "type": "Texte",
+        "field": "furtherInfo",
+        "subTitle": "Veuillez fournir des informations complémentaires.",
+        "title": "Please indicate how the implementation of the Nagoya Protocol has contributed to conservation and sustainable use of biodiversity in your country:",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q047",
+        "section": "conservationSustainable",
+        "number": "47",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "transboundary",
+    "title": "Coopération transfrontières (article 11)",
+    "questions": [
+      {
+        "key": "Q048",
+        "section": "transboundary",
+        "number": "48",
+        "type": "option",
+        "title": "Votre pays s’efforce-t-il de coopérer, avec la participation des Communautés autochtones et locales, en vue d’appliquer le présent Protocole lorsque les mêmes ressources génétiques sont situées in situ sur le territoire de plus d’une Partie, comme prévu par l’article 11.1? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "ilcInfo",
+            "title": "Si votre pays compte des communautés autochtones et locales, veuillez fournir plus de précisions sur sa participation.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q049",
+        "section": "transboundary",
+        "number": "49",
+        "type": "option",
+        "title": "Votre pays s’efforce-t-il de coopérer en vue d’appliquer le présent Protocole, lorsque les mêmes connaissances traditionnelles associées à des ressources génétiques sont partagées par des communautés autochtones et locales différentes dans plusieurs Parties, comme prévu par l’article 11.2?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "Ne s’applique pas, car il n'y a pas de communautés autochtones et locales dans mon pays"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q050",
+        "section": "transboundary",
+        "number": "50",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "modelContractualClause",
+    "title": "Clauses contractuelles types, Codes de conduite, lignes directrices et bonnes pratiques et/ou normes (articles 19 et 20)",
+    "questions": [
+      {
+        "key": "Q051",
+        "section": "modelContractualClause",
+        "number": "51",
+        "type": "option",
+        "title": "Votre pays encourage-t-il l’élaboration, la mise à jour et l’utilisation de clauses contractuelles type pour les CCCA, comme prévu par l’article 19? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q052",
+        "section": "modelContractualClause",
+        "number": "52",
+        "type": "option",
+        "title": "Votre pays encourage-t-il l’élaboration, la mise à jour et l’utilisation de codes de conduite volontaires, de lignes directrices et bonnes pratiques et/ou normes, comme prévu par l’article 20? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q053",
+        "section": "modelContractualClause",
+        "number": "53",
+        "type": "Texte",
+        "field": "challengesInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "awarenessRaising",
+    "title": "Sensibilisation et capacités (articles 21 et 22)",
+    "questions": [
+      {
+        "key": "Q054_a",
+        "section": "awarenessRaising",
+        "number": "54,1",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures pour sensibiliser le public à l’importance des ressources génétiques et des connaissances traditionnelles associées aux ressources génétiques, et aux questions liées à l’accès et au partage des avantages, comme prévu par l’article 21?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q054_b",
+        "section": "awarenessRaising",
+        "number": "54,2",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures pour mettre en œuvre la stratégie de sensibilisation à l’APA du Protocole de Nagoya? Adopté en tant que décision NP-1/9",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q055_a",
+        "section": "awarenessRaising",
+        "number": "55,1",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures relatives à la création et au développement de capacités et au renforcement des ressources humaines et des capacités institutionnelles en vue de l’application effective du présent Protocole, comme prévu par l’article 22? ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q055_b",
+        "section": "awarenessRaising",
+        "number": "55,2",
+        "type": "option",
+        "title": "Votre pays a-t-il pris des mesures pour mettre en œuvre le cadre stratégique pour la création et le renforcement des capacités afin d’appuyer la mise en œuvre effective du Protocole de Nagoya sur l’APA?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q056",
+        "section": "awarenessRaising",
+        "number": "56",
+        "type": "option",
+        "title": "Votre pays a-t-il reçu un appui externe pour la création et le renforcement des capacités relativement à la mise en œuvre du Protocoles de Nagoya?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q057",
+        "section": "awarenessRaising",
+        "number": "57",
+        "type": "option",
+        "title": "Votre pays a-t-il fourni un appui externe pour la création et le renforcement des capacités relativement à la mise en œuvre du Protocoles de Nagoya?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q058",
+        "section": "awarenessRaising",
+        "number": "58",
+        "type": "Texte",
+        "field": "additionalInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "technology",
+    "title": "Transfert de technologie, collaboration et coopération (article 23)",
+    "questions": [
+      {
+        "key": "Q059",
+        "section": "technology",
+        "number": "59",
+        "type": "option",
+        "title": "Votre pays collabore-t-il et coopère-t-il aux programmes de recherche et de développement techniques et scientifiques, afin de réaliser l’objectif du présent Protocole, comme prévu par l’article 23?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "optional",
+    "title": "Informations complémentaires optionnels",
+    "questions": [
+      {
+        "key": "Q060",
+        "section": "optional",
+        "number": "60",
+        "type": "string",
+        "title": "Veuillez fournir un résumé des principales difficultés qui vous ont empêchés de devenir Partie au Protocole de Nagoya.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q061",
+        "section": "optional",
+        "number": "61",
+        "type": "option",
+        "title": "Votre pays a-t-il établi un mécanisme d’allocation budgétaire de fonds à la mise en œuvre du Protocole de Nagoya?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés qui se sont présentées.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_a",
+        "section": "optional",
+        "number": "62,1",
+        "type": "option",
+        "title": "Votre pays a-t-il fourni des ressources financières à d’autres Parties ou reçu des ressources financières d’autres Parties ou institutions financières aux fins de la mise en œuvre du Protocole, comme prévu à l’article 25?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "donor",
+            "title": "Oui, des ressources financières ont été fournies."
+          },
+          {
+            "value": "recipient",
+            "title": "Oui, des ressources financières ont été reçues."
+          },
+          {
+            "value": "recipient.parties",
+            "title": "D’autres Parties"
+          },
+          {
+            "value": "recipient.financialInstitutions",
+            "title": "D’institutions financières"
+          },
+          {
+            "value": "recipient.gef",
+            "title": "Du Fonds pour l’environnement mondial"
+          },
+          {
+            "value": "recipient.npImplementationFund",
+            "title": "Du Fonds de mise en œuvre du Protocole de Nagoya"
+          },
+          {
+            "value": "recipient.otherSources",
+            "title": "D’autres sources"
+          },
+          {
+            "value": "no",
+            "title": "Non"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_b",
+        "section": "optional",
+        "number": "62,2",
+        "type": "Texte",
+        "shortTitle": "Texte libre",
+        "field": "relevantInformation",
+        "title": "Veuillez partager les expériences relatives à la mobilisation des ressources en appui à la mise en œuvre du Protocole.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_c",
+        "section": "optional",
+        "number": "62,3",
+        "type": "Texte",
+        "shortTitle": "Texte libre",
+        "field": "relevantInformation",
+        "title": "Veuillez fournir des renseignements supplémentaires sur l'état des financements mobilisés à l'appui de la mise en œuvre du Protocole.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q063_a",
+        "section": "optional",
+        "number": "63,1",
+        "type": "option",
+        "title": "Votre pays dispose-t-il de personnel spécifique pour administrer les tâches directement liées à la mise en œuvre du Protocole de Nagoya?",
+        "subTitle": "La collecte de ces informations pourrait s’avérer utile pour l’évaluation de l’efficacité du Protocole de Nagoya au titre de l’article 31, Évaluation et examen, ainsi que pour mesurer les progrès et recenser les difficultés et les défis qui se sont présentés dans la mise en œuvre du Protocole de Nagoya.",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q063_b",
+        "section": "optional",
+        "number": "63,2",
+        "type": "option",
+        "title": "Veuillez indiquer le nombre de personnes dont il s’agit.",
+        "multiple": false,
+        "options": [
+          {
+            "value": "one",
+            "title": "One"
+          },
+          {
+            "value": "Moins de 5",
+            "title": "Moins de 5"
+          },
+          {
+            "value": "Moins de 10",
+            "title": "Moins de 10"
+          },
+          {
+            "value": "10 ou plus",
+            "title": "10 ou plus"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Veuillez fournir un résumé des principales difficultés qui se sont présentées.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Veuillez fournir des informations complémentaires.",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q064",
+        "section": "awarenessRaising",
+        "number": "64",
+        "type": "Texte",
+        "field": "furtherInfo",
+        "title": "Renseignements supplémentaires",
+        "subTitle": "Veuillez fournir un résumé des principales difficultés.",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "Veuillez sélectionner les dossiers pertinents du Centre d’échange sur l’APA.",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "Autres documents pertinents",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  }
+]

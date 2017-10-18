@@ -2,42 +2,27 @@
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;">
-
-                <span block-region activate="isLoading()" ng-if="isLoading()"></span>
-        <div class="registerpage-content">
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
             <div class="alert alert-success alert-dismissable" ng-show="msg">
-                <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button>
-                <strong>{{msg}}</strong>
+                <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
+
+            <div class="alert alert-danger" ng-show="hasError()"><strong>Se produjo un error...</strong><div>{{error}}</div>
             </div>
 
-            <div class="alert alert-danger" ng-show="hasError()">
-                <strong>Se produjo un error...</strong>
-                <div>{{error}}</div>
-            </div>
-
-            <div ng-show="isLoading()">
-                <i class="fa fa-spinner fa-spin"></i> Loading...
-            </div>
+            <div ng-show="isLoading()"><i class="fa fa-spinner fa-spin"></i> Cargando...</div>
 
             <div ng-show="!isLoading() && status!='hidden'">
 
                 <div document="getCleanDocument()" hide-timer="false" languages="document.header.languages" workflow-std-buttons/>
 
-                <div km-document-validation ng-model="validationReport"></div>
-
-                <!-- edit form -->
-                <form name="editForm" style="margin-top:10px">
-
-					<!-- <div km-tab="general"> -->
-                    <div ng-show="tab=='edit'" km-tab="edit">
+                <div km-document-validation ng-model="validationReport"></div><!-- edit form --><form name="editForm" style="margin-top:10px"><!-- <div km-tab="general"> --><div ng-show="tab=='edit'" km-tab="edit">
 						<legend>Informaci&oacute;n general</legend>
 
 						<div class="row">
 
 							<div class="col-md-12">
-								<div class="km-control-group" required name="title" caption="T&iacute;tulo">
+								<div class="km-control-group" required name="title" caption="Denominaci&oacute;n">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -45,8 +30,8 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="projectNumber" caption="Project number or identifier">
-                                    <div class="help-info">Please provide any project number, identifier or reference number, if applicable.</div>
+								<div class="km-control-group" name="projectNumber" caption="N&uacute;mero o identificador del proyecto">
+                                    <div class="help-info">S&iacute;rvase proporcionar un n&uacute;mero, identificador o n&uacute;mero de referencia del proyecto, si procede.</div>
 									<div km-textbox-ml name="projectNumber" ng-model="document.projectNumber" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -54,29 +39,29 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="geographicScope" caption="Geographic Scope">
-									<div km-select name="geographicScope" required ng-model="document.geographicScope.scope" placeholder="Please select one option" items="options.geographicScope()"></div>
+								<div class="km-control-group" required name="geographicScope" caption="Alcance geogr&aacute;fico">
+									<div km-select name="geographicScope" required ng-model="document.geographicScope.scope" placeholder="Por favor seleccione una opci&oacute;n" items="options.geographicScope()"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row" ng-show="document.geographicScope.scope">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="regionsOrCountries" caption="Geographical or political/economic group(s) and/or country(ies)">
-									<div km-select multiple required name="regionsOrCountries" ng-model="document.geographicScope.regionsOrCountries" placeholder="Please select one option" items="options.regions()"></div>
+								<div class="km-control-group" required name="regionsOrCountries" caption="Grupo(s) geogr&aacute;fico(s) o pol&iacute;tico/econ&oacute;mico y/o pa&iacute;s(es)">
+									<div km-select multiple required name="regionsOrCountries" ng-model="document.geographicScope.regionsOrCountries" placeholder="Por favor seleccione una opci&oacute;n" items="options.regions()"></div>
 								</div>
 							</div>
 						</div>
 
 						<div class="row" ng-show="isSubnational()">
 							<div class="col-md-12">
-								<div class="km-control-group" required="isSubnational()" name="jurisdiction" caption="Jusrisdiction">
+								<div class="km-control-group" required="isSubnational()" name="jurisdiction" caption="Jurisdicci&oacute;n">
 									<div km-textbox-ml required="isSubnational()" name="jurisdiction" ng-model="document.geographicScope.jurisdiction" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row" ng-show="isCommunity()">
 							<div class="col-md-12">
-								<div class="km-control-group" required="isCommunity()" name="community" caption="Community">
+								<div class="km-control-group" required="isCommunity()" name="community" caption="Comunidad">
 									<div km-textbox-ml required="isCommunity()" name="community" ng-model="document.geographicScope.community" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -84,16 +69,16 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="status" caption="Status of the document">
+								<div class="km-control-group" required name="status" caption="Estado del documento">
 									<div km-select name="status" required ng-model="document.status" id="documentStatus"
-									placeholder="Please select one option" items="options.status()"  show-description="true"></div>
+									placeholder="Por favor seleccione una opci&oacute;n" items="options.status()"  show-description="true"></div>
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group well well-sm" name="timeframe" required caption="Periodo de ejecuci&oacute;n">
+								<div class="km-control-group well well-sm" name="timeframe" required caption="Lapso">
 									<div class="row">
 									  	<div class="col-md-3">
 											<div class="km-control-group" name="startDate" caption="Fecha de inicio">
@@ -106,11 +91,11 @@
 											</div>
 										</div>
 										<div class="col-md-1 text-center">
-											<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > O </div>
+											<div class="km-control-group bold" name="enddate" style="margin-top:30px;" >O</div>
 										</div>
 										<div class="col-md-5">
-											<div class="km-control-group" name="duration" caption="Duration">
-												<div km-textbox-ml name="duration" ng-model="document.duration" placeholder="eg. 24 Months" locales="document.header.languages" ng-change="clearDates()"></div>
+											<div class="km-control-group" name="duration" caption="Duraci&oacute;n">
+												<div km-textbox-ml name="duration" ng-model="document.duration" placeholder="por ej., Meses" locales="document.header.languages" ng-change="clearDates()"></div>
 											</div>
 									  	</div>
 									</div>
@@ -120,14 +105,14 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="organizations" caption="Agency(ies) or organisation(s) implementing and/or executing the initiative">
-                                <div class="help-info">In some instances an agency could play both the implementing and executing roles. In those cases, please select both boxes.</div>
-								<div class="checkbox"><label><input type="checkbox" ng-model="document.isImplementedByAgencies">Implementing agency(ies) or organization(s)</label></div>
+								<div class="km-control-group" required name="organizations" caption="Organismo(s) u organizaci&oacute;n(es) que aplican o ejecutan la iniciativa">
+                                <div class="help-info">En algunas instancias un organismo podr&iacute;a desempe&ntilde;ar ambas funciones, la de aplicaci&oacute;n y ejecuci&oacute;n. En dichos casos, por favor seleccione ambas casillas.</div>
+								<div class="checkbox"><label><input type="checkbox" ng-model="document.isImplementedByAgencies">Organismo(s) u organizaci&oacute;n(es) de aplicaci&oacute;n</label></div>
 
                                 <div class="row" >
                                     <div class="col-md-12">
-                                        <div class="km-control-group" ng-show="document.isImplementedByAgencies" name="implementingAgencies" caption="Please select the implementing agency(ies) or organization(s)">
-                                            <div class="help-info">Implementing agency refers to the organisation or legal entity responsible for developing the initiative and overseeing its implementation, monitoring and evaluation, including making funding available, ensuring that fiduciary standards and quality assurance are applied, and preparation of the project completion reports. The implementing agency is ultimately the entity responsible for the completion of the initiative and is accountable to the donor.</div>
+                                        <div class="km-control-group" ng-show="document.isImplementedByAgencies" name="implementingAgencies" caption="Por favor, seleccione el/los organismo(s) o la/las organizaci&oacute;n(es) de aplicaci&oacute;n">
+                                            <div class="help-info">Organismo de aplicaci&oacute;n refiere a la organizaci&oacute;n o entidad jur&iacute;dica responsable de elaborar la iniciativa y supervisar su aplicaci&oacute;n, seguimiento y evaluaci&oacute;n, incluido poner a disposici&oacute;n financiaci&oacute;n, garantizar que se apliquen las normas fiduciarias y la garant&iacute;a de calidad, as&iacute; como de la preparaci&oacute;n de los informes de finalizaci&oacute;n del proyecto. En &uacute;ltima instancia, el organismo de aplicaci&oacute;n es la entidad responsable del completamiento de la iniciativa y de la rendici&oacute;n de cuentas ante el donante.</div>
 
 
                                             <field-embed-contact multiple ng-model="document.implementingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
@@ -135,22 +120,22 @@
                                     </div>
                                 </div>
 
-								<div class="checkbox"><label><input type="checkbox" ng-model="document.isExecutededByAgencies">Executing agency(ies) or organization(s)</label></div>
+								<div class="checkbox"><label><input type="checkbox" ng-model="document.isExecutededByAgencies">Organismo(s) u organizaci&oacute;n(es) de ejecuci&oacute;n</label></div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="km-control-group" ng-show="document.isExecutededByAgencies" name="executingAgencies" caption="Please select the executing agency(ies) or organization(s)">
-                                            <div class="help-info">Executing agency refers to the organisation/institution directly managing the initiative, including the day-to- day planning, coordination and execution of its activities, monitoring and reporting on the progress made, procuring and managing resources (staff, funds, equipment, etc.), and carrying out other project management functions.</div>
+                                        <div class="km-control-group" ng-show="document.isExecutededByAgencies" name="executingAgencies" caption="Por favor, seleccione el/los organismo(s) o la/las organizaci&oacute;n(es) de ejecuci&oacute;n">
+                                            <div class="help-info">El organismo de ejecuci&oacute;n refiere a la organizaci&oacute;n o instituci&oacute;n que gestiona directamente la iniciativa, incluida la planificaci&oacute;n, coordinaci&oacute;n y ejecuci&oacute;n cotidiana de las actividades, el seguimiento y la presentaci&oacute;n de informes sobre los progresos realizados, la obtenci&oacute;n y gesti&oacute;n de recursos (personal, fondos, equipamiento, etc.) y el cumplimiento de otras funciones de gesti&oacute;n del proyecto.</div>
 
                                             <field-embed-contact multiple ng-model="document.executingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
                                     </div>
                                 </div>
 
-								<div class="checkbox"><label><input type="checkbox" ng-model="document.isCollaboratededByPartners">Collaborating partner(s)</label></div>
+								<div class="checkbox"><label><input type="checkbox" ng-model="document.isCollaboratededByPartners">Asociado(s) en colaboraci&oacute;n</label></div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Please select the collaborating partner(s)">
-                                            <div class="help-info">Collaborating partners refer to entities or organizations making significant financial or other contribution to the initiative and/or actively supporting or collaborating in the implementation of the initiative.</div>
+                                        <div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Por favor, seleccione el/los asociado(s) en colaboraci&oacute;n">
+                                            <div class="help-info">Los asociados en colaboraci&oacute;n son las entidades u organizaciones que realizan contribuciones econ&oacute;micas o de otro tipo importantes para la iniciativa o que apoyan o colaboran activamente con la ejecuci&oacute;n de la iniciativa.</div>
                                              
                                             <field-embed-contact multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                         </div>
@@ -158,27 +143,18 @@
                                 </div>
                                 </div>
 							</div>
-						</div>
-
-
-                        <!-- <div class="row">
+						</div><!-- <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="contacts" caption="Contact person(s)"> -->
-
-                                     <!-- <div document-selector ng-model="document.contacts"
+                                <div class="km-control-group" name="contacts" caption="Contact person(s)"> --> <!-- <div document-selector ng-model="document.contacts"
                                                                         question="contacts"
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div> -->
-
-                                    <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> --> <!-- </div>
+                                                                        ></div> --> <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> --> <!-- </div>
                             </div>
-                        </div> -->
-
-						<div class="row">
+                        </div> --><div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="type" caption="Type of capacity-building initiative">
+								<div class="km-control-group" required name="type" caption="Tipo de iniciativa de creaci&oacute;n de capacidad">
                                     <div km-select name="type" required ng-model="document.type" items="options.cbiTypes()" show-description="true"></div>
 								</div>
 							</div>
@@ -187,7 +163,7 @@
 
 						<div class="row" ng-show="isPartofBroaderInitiative()">
 							<div class="col-md-12">
-								<div class="km-control-group" required="isPartofBroaderInitiative()" name="partOfBroaderInitiative" caption="Please provide further information on the broader project/programme/initiative">
+								<div class="km-control-group" required="isPartofBroaderInitiative()" name="partOfBroaderInitiative" caption="S&iacute;rvase proporcionar informaci&oacute;n adicional sobre el proyecto/programa/iniciativa">
 									<div km-textbox-ml required="isPartofBroaderInitiative()" rows="2" name="partOfBroaderInitiative" ng-model="document.typeInfo" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -195,8 +171,8 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="projectDocument" caption="Project document or document describing the initiative">
-									<div class="help-info">Por favor, siempre adjunte el/los documento(s) relevante(s) que ser&aacute;n almacenados en la base de datos para que los usuarios puedan descargarlos. When documents are available on the Internet, please also provide a link to them.</div>
+								<div class="km-control-group" required name="projectDocument" caption="Documento del proyecto o documento que describa la iniciativa">
+									<div class="help-info">Por favor, siempre adjunte el/los documento(s) pertinente(s) que ser&aacute;n almacenados en la base de datos para que los usuarios puedan descargarlos. Cuando los documentos est&aacute;n disponibles en Internet, por favor, tambi&eacute;n proporcione un enlace a ellos.</div>
 									<div km-link name="projectDocument" required ng-model="document.projectDocument" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 								</div>
 							</div>
@@ -206,7 +182,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="description" caption="Short description of  the initiative, including its goals and objectives">
+								<div class="km-control-group" required name="description" caption="Descripci&oacute;n breve de la iniciativa, incluidos sus metas y objetivos">
 									<div km-textbox-ml required ng-model="document.description" rows="3" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -214,7 +190,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="audience" caption="Target group(s)/beneficiary(ies)">
+								<div class="km-control-group" name="audience" caption="Grupo(s) de destinatarios/beneficiario(s)">
 									<div km-term-check name="audience" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -222,17 +198,17 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="categories" caption="Category(ies) of capacity-building activities">
+								<div class="km-control-group" required name="categories" caption="Categor&iacute;a(s) de las actividades de creaci&oacute;n de capacidad">
 									<div km-term-check show-description="true" name="categories" required ng-model="document.categories" terms="options.categories()" binding-type="term[]"></div>
 								</div>
 							</div>
 						</div>
 
-						<legend>Information on funding</legend>
+						<legend>Informaci&oacute;n sobre financiaci&oacute;n</legend>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="fundingSourceTypes" caption="Type(s) of funding source">
+								<div class="km-control-group" required name="fundingSourceTypes" caption="Tipo(s) de fuentes de financiaci&oacute;n">
                                     <div km-term-check show-description="true" name="fundingSourceTypes" required ng-model="document.fundingSourceTypes" terms="options.fundingSources()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -240,7 +216,7 @@
 						<div class="row" ng-show="isSelfFunding()">
 							<div class="col-md-12">
 
-								<div class="km-control-group" required="isSelfFunding()" name="selfFunding" caption="Please provide further information on funding">
+								<div class="km-control-group" required="isSelfFunding()" name="selfFunding" caption="S&iacute;rvase proporcionar informaci&oacute;n adicional sobre financiaci&oacute;n">
 									<div km-textbox-ml required="isSelfFunding()" rows="2" name="selfFunding" ng-model="document.selfFundingInfo" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -249,69 +225,53 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="corefundingsources" caption="Core funding-source(s)">
-
-                                      <!-- <div document-selector ng-model="document.coreFundingSources"
+                                <div class="km-control-group" name="corefundingsources" caption="Fuente(s) principal(es) de financiaci&oacute;n"><!-- <div document-selector ng-model="document.coreFundingSources"
                                                                         question="coreFundingSources"
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div> --> <field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
+                                                                        ></div> --><field-embed-contact multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="cofinancingsources" caption="Co-financing source(s)">
-
-                                      <!-- <div document-selector ng-model="document.coFinancingSources"
+                                <div class="km-control-group" name="cofinancingsources" caption="Fuente(s) de cofinanciaci&oacute;n"><!-- <div document-selector ng-model="document.coFinancingSources"
                                                                         question="coFinancingSources"
                                                                         schema="contact"
                                                                         government="document.government"
                                                                         filter="true"
-                                                                        ></div> -->
-
-                                    <field-embed-contact multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
+                                                                        ></div> --><field-embed-contact multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></field-embed-contact>
                                 </div>
                             </div>
                         </div>
 
 						<div class="row">
 							<div class="col-md-3">
-								<div class="km-control-group" name="totalBudget" caption="Total budget (amount, in US dollars)">
-                                     <div class="help-info">This may include in kind contributions expressed in monetary terms.</div>
-									<!-- <div km-textbox-ml name="totalBudget" ng-model="document.totalBudget" rows="1" locales="document.header.languages"></div> -->
-									<div class="input-group">
-									  <span class="input-group-addon">USD$</span>
-									  <input type="text" class="form-control" style="width:200px" required name="totalBudget" ng-model="document.totalBudget" />
+								<div class="km-control-group" name="totalBudget" caption="Presupuesto total (monto, en USD)">
+                                     <div class="help-info">Puede incluir contribuciones en especie expresadas en t&eacute;rminos monetarios.</div><!-- <div km-textbox-ml name="totalBudget" ng-model="document.totalBudget" rows="1" locales="document.header.languages"></div> --><div class="input-group"><span class="input-group-addon">USD$</span><input type="text" class="form-control" style="width:200px" required name="totalBudget" ng-model="document.totalBudget" />
 									</div>
 								</div>
 							</div>
 						</div>
 
 
-						<legend>Capacity-building outcomes</legend>
-                        <div class="help-info">This information can be provided once that there are some results (outputs, outcomes or impacts) or best practices and lessons learned from the ongoing or completed initiative.</div>
+						<legend>Resultados en materia de creaci&oacute;n de capacidad</legend>
+                        <div class="help-info">Esta informaci&oacute;n puede proporcionarse una vez que existan algunos resultados (realizaciones, efectos directos o impactos) o mejores pr&aacute;cticas y lecciones aprendidas de la iniciativa en curso o completada.</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="resultsAchievements" caption="Results: Main achievements">
-									<span class="help-info">Please provide a short summary of the main achievements of the initiative, including those related to advancing gender equality in achieving the objectives of the Convention and its Protocols, if applicable. (max 200 words)</span>
-									<div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
+								<div class="km-control-group" name="resultsAchievements" caption="Resultados: principales logros"><span class="help-info">S&iacute;rvase proporcionar un resumen breve de los principales logros de la iniciativa, incluidos los relacionados con la promoci&oacute;n de la igualdad de g&eacute;nero en el logro de los objetivos del Convenio y sus Protocolos, si procede. (m&aacute;x. 200 palabras)</span><div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="resultsOutputs" caption="Results: Main outputs">
-									<span class="help-info">Please attach/upload a copy of, or provide web link to, the relevant products (e.g. tools and materials) developed by the initiative and/or reports</span>
-									<div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
+								<div class="km-control-group" name="resultsOutputs" caption="Resultados: Principales realizaciones"><span class="help-info">S&iacute;rvase adjuntar/cargar una copia (o proporcione un enlace en Internet) de los principales productos (por ej., herramientas y materiales) elaborados por la iniciativa, o bien de los informes.</span><div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
 								</div>
 							</div>
-						</div>
-
-						<!-- <div class="row">
+						</div><!-- <div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="resultsReference" caption="Clearing-house record containing relevant information">
 									<div km-reference multiple name="resultsReference" ng-model="document.resultsReference" loader="loadRecords(identifier, 'organization')">
@@ -322,22 +282,18 @@
 									</div>
 								</div>
 							</div>
-						</div> -->
-
-						<div class="row">
+						</div> --><div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="bestPractices" caption="Best practices and lessons learned">
-									<span class="help-info">Please provide a short summary of the best practices and lessons learned (max 500 words)</span>
-									<div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
+								<div class="km-control-group" name="bestPractices" caption="Mejores pr&aacute;cticas y lecciones aprendidas"><span class="help-info">S&iacute;rvase proporcionar un breve resumen sobre las mejores pr&aacute;cticas y lecciones aprendidas (500 palabras)</span><div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 
-                        <legend>Information on the thematic coverage of the initiative</legend>
+                        <legend>Informaci&oacute;n sobre cobertura tem&aacute;tica de la iniciativa</legend>
 
                         <div class="row" >
 							<div class="col-md-12">
-								<div class="km-control-group" required name="aichiTargets" caption="Related Aichi Biodiversity Target(s)">
+								<div class="km-control-group" required name="aichiTargets" caption="Meta(s) de Aichi para la Diversidad Biol&oacute;gica relacionada(s)">
 									<div km-term-check name="aichiTargets" required ng-model="document.aichiTargets" terms="options.aichiTargets()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -345,21 +301,17 @@
 
 						<div class="row">
 							<div class="col-md-12">
-                               <div class="km-control-group" name="absKeyAreas" required caption="Key areas and strategic measures for capacity-building and development">
-									 <div class="help-info">The key areas have been identified by the Strategic Framework for capacity-building and development to support the effective implementation of the Nagoya Protocol (decision NP-1/8).</div>
+                               <div class="km-control-group" name="absKeyAreas" required caption="&Aacute;reas clave y medidas estrat&eacute;gicas para la creaci&oacute;n y el desarrollo de capacidad">
+									 <div class="help-info">Las &aacute;reas clave se han determinado en el marco estrat&eacute;gico para la creaci&oacute;n y el desarrollo de capacidad a fin de brindar asistencia para la aplicaci&oacute;n efectiva del Protocolo de Nagoya (decisi&oacute;n NP-1/8, anexo I).</div>
 									 <div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 								</div>
 							</div>
-						</div>
-
-
-						<a translation-url  name="#AdditionalInformation"></a>
-						<legend>Additional information</legend>
+						</div><a translation-url  name="#AdditionalInformation"></a><legend>Informaci&oacute;n adicional</legend>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="address" caption="Any other relavent information" >
-									<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+								<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente" >
+									<div class="help-info">Por favor, utilice este campo para proporcionar cualquier otra informaci&oacute;n pertinente que no se haya podido incluir en otro lugar del registro.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -367,7 +319,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="relevantDocuments" caption="Otros documentos relevantes">
+								<div class="km-control-group" name="relevantDocuments" caption="Otros documentos pertinentes">
 									<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
 								</div>
 							</div>
@@ -376,9 +328,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>Notes</legend>
-									<span class="help-info">El campo &quot;Notas&quot; es para referencia personal y s&oacute;lo puede verse mientras se edita el registro.</span>
-									<div km-notes name="notes" ng-model="document.notes"></div>
+									<legend>Notas</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>
 						</div>
@@ -387,11 +337,7 @@
 
 				</form>
 
-            	<div ng-show="tab=='review'" km-tab="review">
-
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-click="$parent.review.locale = locale" ng-repeat="locale in document.header.languages" type="button" value="{{locale | uppercase}}"/>
-                    </div>
+            	<div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div view-capacity-building-initiative ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                 </div>
 

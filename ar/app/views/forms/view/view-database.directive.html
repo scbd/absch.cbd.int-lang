@@ -1,25 +1,19 @@
-﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><h4>
-		 National Database or Website <span class="color-black"> (NDB) </span>
-		</h4></div>
+﻿<div id="Record" class="record panel panel-default" dir="rtl">
+	<div class="panel-heading bg-blue"><h4>قاعدة البيانات الوطنية أو الموقع الإلكتروني الوطني  <span class="color-black">(NDB)</span></h4></div>
 	<div class="record-body panel-body">
 
 
-
+<div record-options></div>
 <legend>معلومات عامة</legend>
-
+		
 		<div ng-show="document.government">
-			<label name="country">الدولة</label>
-			<div class="km-value">
-				{{document.government|term}} <span ng-party-status government="document.government" id="government"></span>
-			</div>
+			<label name="country">Country</label>
+			<div class="km-value">{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 			<div ng-show="document.title">
 			 	<label>Title</label>
-			 	<div class="km-value">
-			 	<strong>{{document.title | lstring:locale}}</strong>
-			 	</div>
+			 	<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		 	</div>
 
 
@@ -29,10 +23,8 @@
 		</div>
 
 		<div ng-show="document.website">
-			<label>URL of the website</label>
-			<div class="km-value">
-				<a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i>
-			</div>
+			<label>رابط موقع الويب</label>
+			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i></div>
 		</div>
 
 
@@ -45,10 +37,8 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>مواقع الانترنت أو مستندات مرفقة أخرى ذات صلة</label>
-				<div class="km-value" ng-repeat="item in document.relevantDocuments">
-					<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-				</div>
+				<label>عنوان لموقع إنترنت أو وثائق مرفقة أخرى ذات صلة</label>
+				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>
 

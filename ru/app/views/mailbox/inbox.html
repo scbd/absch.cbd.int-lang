@@ -2,19 +2,14 @@
 
 	<div class="container" ng-show="user.isAuthenticated">
 
-      <div class="col-xs-12"  style="padding-top:20px;">
-<!--		  ng-hide="user.isAuthenticated"-->
-
-			<h3>MailBox</h3>
+      <div class="col-xs-12"  style="padding-top:20px;"><!--		  ng-hide="user.isAuthenticated"--><h3>MailBox</h3>
 			<div class="row">
 				<div class="col-lg-2">
 					<div mailbox-menu on-selection="onMenuSelection(data)"></div>
 				</div>
 				<div class="col-lg-10">
 					<div mailbox-message-list ng-show="mailList" mail-folder="mailFolder"  on-selection="onMenuSelection(data)" on-deletion="onMailDelete(data)"></div>
-					<div mailbox-message ng-show="mailMessage" mail="mail" on-reply="onMailAction(data)" on-forward="onMailAction(data)" on-delete="onMailDelete(data)"></div>
-							<!--  -->
-					<div mailbox-compose ng-show="mailCompose" on-mail-composed="onMailComposed(data)"></div>
+					<div mailbox-message ng-show="mailMessage" mail="mail" on-reply="onMailAction(data)" on-forward="onMailAction(data)" on-delete="onMailDelete(data)"></div><!--  --><div mailbox-compose ng-show="mailCompose" on-mail-composed="onMailComposed(data)"></div>
 				</div>
 			</div>
 
@@ -230,7 +225,7 @@
   border: 0;
   box-shadow: none;
 }
-.box.box-solid[class*='bg'] > .box-header {
+.box.box-solid[class*=&apos;bg&apos;] > .box-header {
   color: #fff;
 }
 .box .box-group > .box {
@@ -279,7 +274,7 @@
 .box-header:after,
 .box-body:after,
 .box-footer:after {
-  content: " ";
+  content: &quot; &quot;;
   display: table;
 }
 .box-header:after,
@@ -318,7 +313,7 @@
   right: 10px;
   top: 5px;
 }
-.box-header > .box-tools [data-toggle="tooltip"] {
+.box-header > .box-tools [data-toggle=&quot;tooltip&quot;] {
   position: relative;
 }
 .box-header > .box-tools.pull-right .dropdown-menu {
