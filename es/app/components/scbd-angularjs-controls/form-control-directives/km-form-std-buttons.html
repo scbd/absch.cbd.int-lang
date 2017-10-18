@@ -1,11 +1,5 @@
-﻿<span style="text-align:left">
-
-	<span ng-hide="errors">
-
-		<input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Cancelar"/>
-		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Guardar"  ng-show="hideSave"/>
-
-	</span>
+﻿<span style="text-align:left"> <span ng-hide="errors"><input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Cancel"/>
+		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Save"  ng-show="hideSave"/></span>
 
     <!--Save Dialog-->
 	<div id="dialogSave" class="modal fade" data-backdrop="static">
@@ -31,10 +25,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-    <!--Cancel Dialog-->
-	<div id="dialogCancel" class="modal fade" data-backdrop="static">
+	</div><!--Cancel Dialog--><div id="dialogCancel" class="modal fade" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -43,15 +34,13 @@
 				</div>
 				<div class="modal-body">
 
-					<p>Si quiere cancelar los cambios que acaba de hacer en este borrador, puede guardar la versi&oacute;n anterior, la cual estar&aacute; disponible en la lista de borradores del Centro de Administraci&oacute;n. Usted o sus colegas pueden continuar editando el registro en la sesi&oacute;n actual o en una sesi&oacute;n posterior.</p>
+					<p>Si quiere cancelar los cambios que acaba de hacer en este borrador, puede mantener la versi&oacute;n anterior, la cual estar&aacute; disponible en la lista de borradores del Centro de Administraci&oacute;n. Usted o sus colegas pueden continuar editando el registro en la sesi&oacute;n actual o en una sesi&oacute;n posterior.</p>
 
 				</div>
 				<div class="modal-footer" style="margin-top:0">
 					<button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose" >Cancelar</button>
-					<button type="button" ng-click="close()"       class="btn btn-primary closeWithoutSaving" >Cerrar sin grabar</button>
+					<button type="button" ng-click="close()"       class="btn btn-primary closeWithoutSaving" >Cerrar sin guardar</button>
 				</div>
 			</div>
 		</div>
-	</div>
-
-</span>
+	</div></span>

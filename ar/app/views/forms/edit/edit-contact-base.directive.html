@@ -1,9 +1,5 @@
 ﻿<div dir="rtl">
-	<style>
-		input.ng-invalid-url, input.ng-invalid-email {
-		 background-color:#f0ad4e;
-		}
-	</style>
+	<style>input.ng-invalid-url, input.ng-invalid-email { background-color:#f0ad4e; }</style>
 
 	<div ng-show="document.type=='person'">
 
@@ -12,7 +8,7 @@
 		<div  class="row">
 
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="km-control-group" name="contact_prefix" caption="العنوان">
+				<div class="km-control-group" name="contact_prefix" caption="Title">
 					<div km-textbox-ml name="contact_prefix" ng-model="document.prefix" locales="locales"></div>
 				</div>
 			</div>
@@ -55,7 +51,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="km-control-group" name="contact_designation" caption="العنوان الوظيفي">
+				<div class="km-control-group" name="contact_designation" caption="Job Title">
 					<div km-textbox-ml name="contact_designation" ng-model="document.designation" locales="locales"></div>
 				</div>
 			</div>
@@ -73,10 +69,10 @@
 			</div>
 
 			<div class="col-md-5 col-xs-12">
-					<div class="km-control-group" name="contact_organizationAcronym" caption="الاسم المختصر" ng-required="!form.organization.$valid && document.type!='person'">
+					<div class="km-control-group" name="contact_organizationAcronym" caption="Acronym" ng-required="!form.organization.$valid && document.type!='person'">
 					<div class="help-info">اختصار الاسم الطويل</div>
-					<div  ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="مثال: SCBD" locales="locales"></div>
-					<div  ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="مثال: SCBD" locales="locales"></div>
+					<div  ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="example: SCBD" locales="locales"></div>
+					<div  ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="example: SCBD" locales="locales"></div>
 				</div>
 			</div>
 		</div>
@@ -89,7 +85,7 @@
 			</div>
 			<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
 				<div class="km-control-group" name="contact_organizationTypeName" caption="نوع منظمة أخرى">
-					<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="مثال: أمانة اتفاقية التنوع البيولوجي" locales="locales"></div>
+					<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="مثال: SCBD" locales="locales"></div>
 				</div>
 			</div>
 		</div>
@@ -101,7 +97,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="km-control-group" name="contact_address" caption="عنوان الشارع">
-					<div km-textbox-ml name="contact_address" ng-model="document.address" rows="2" placeholder="مثال: 413 St-Jacques Ouest, Suite 800" locales="locales"></div>
+					<div km-textbox-ml name="contact_address" ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="locales"></div>
 				</div>
 			</div>
 		</div>
@@ -109,13 +105,13 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="km-control-group" name="contact_city" caption="المدينة" required>
-					<div km-textbox-ml name="contact_city" ng-model="document.city" locales="locales" placeholder="مثال مونتريال"></div>
+					<div km-textbox-ml name="contact_city" ng-model="document.city" locales="locales" placeholder="example: Montreal"></div>
 				</div>
 			</div>
 
 			<div class="col-md-6">
 				<div class="km-control-group" name="contact_state" caption="الولاية أو المقاطعة">
-					<div km-textbox-ml name="contact_state" ng-model="document.state" locales="locales" placeholder="مثال كيبيك"></div>
+					<div km-textbox-ml name="contact_state" ng-model="document.state" locales="locales" placeholder="example: Quebec"></div>
 				</div>
 			</div>
 		</div>
@@ -129,7 +125,7 @@
 			</div>
 
 			<div class="col-md-6">
-				<div class="km-control-group" name="contact_country" ng-required="!form.contact_country.$valid" caption="عنوان الدولة">
+				<div class="km-control-group" name="contact_country" ng-required="!form.contact_country.$valid" caption="Country address">
 					<div km-select name="contact_country" ng-model="document.country" items="options.countries()"></div>
 				</div>
 			</div>
@@ -141,14 +137,14 @@
 	<div class="row">
 		<div class="col-md-6 col-xs-12">
 			<div class="km-control-group" name="contact_phones" caption="أرقام الهاتف">
-				<div class="help-info">يُرجى استخدام النسق التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+				<div class="help-info">Please use the following format: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
 				<div km-inputtext-list name="contact_phones" ng-model="document.phones"  placeholder="مثال: 2220 288 514 1+" ></div>
 			</div>
 		</div>
 
 		<div class="col-md-6 col-xs-12">
 			<div class="km-control-group" name="contact_faxes" caption="أرقام الفاكس">
-				<div class="help-info">يُرجى استخدام النسق التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+				<div class="help-info">Please use the following format: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
 				<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="مثال: 6588 288 514 1+"></div>
 			</div>
 		</div>

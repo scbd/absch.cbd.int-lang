@@ -4,12 +4,15 @@
 		<h4>نقطة التفتيش <span class="color-black">(CP)</span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
+
+		<div record-options></div>
+
 		 <div name="article17-1-a"></div>
 
 		<legend ng-if="document.government || document.name">معلومات عامة</legend>
 
 		<div ng-show="document.government">
-			<label name="country">البلد</label>
+			<label name="country">Country</label>
 			<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
@@ -40,9 +43,9 @@
 			</div>--></div>
 
 		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
-			<legend>تتسلم السلطة (السلطات) نسخًا مجانية من بيانات نقطة التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو حصلت عليها. </legend>
+			<legend>تتسلم السلطة (السلطات) نسخًا مجانية من بيانات نقطة التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو حصلت عليها.</legend>
 
-			<div class="help-info" style="padding-top:10px;">ستتلقى جميع السلطات الوطنية وجهات الاتصال المبينة أدناه نسخًا بالبريد الإلكتروني من بيانات نقاط التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو استلمتها ونشرتها. يُرجى ملاحظة أن السلطات الوطنية التي تقدم الموافقة المسبقة عن علم سوف تتلقى تلقائيًا نسخًا بالبريد الإلكتروني من جميع البيانات المنشورة لنقاط التفتيش.  لا تضمن غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع استلام رسائل البريد الإلكتروني أو قراءتها.</div>
+			<div class="help-info" style="padding-top:10px;">ستتلقى جميع السلطات الوطنية وجهات الاتصال المبينة أدناه نسخًا بالبريد الإلكتروني من بيانات نقاط التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو استلمتها ونشرتها. يُرجى ملاحظة أن السلطات الوطنية التي تقدم الموافقة المسبقة عن علم سوف تتلقى تلقائيًا نسخًا بالبريد الإلكتروني من جميع البيانات المنشورة لنقاط التفتيش. لا تضمن غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع استلام رسائل البريد الإلكتروني أو قراءتها.</div>
 			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">جميع السلطات الوطنية المختصة ({{document.government|term}})</a> تم اختيارها لكي تستلم تلقائيًا بالبريد الإلكتروني بيانات نقاط التفتيش التي نشرتها هذه النقطة.</div>
           
 			<div ng-show="document.contactsToInform">

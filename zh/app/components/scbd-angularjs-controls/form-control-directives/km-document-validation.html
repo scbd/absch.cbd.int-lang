@@ -1,22 +1,14 @@
 ﻿<div>
 
-	<div ng-hide="report || onLoad" class="alert alert-info">
-		<i class="fa fa-cog fa-spin"></i> 正在分析您的文档...
-	</div>
+	<div ng-hide="report || onLoad" class="alert alert-info"><i class="fa fa-cog fa-spin"></i> 正在分析您的文档...</div>
 
 	<div ng-show="report">
-		<div ng-show="isValid()" class="alert alert-success">
-			您的文档有效。
-		</div>
+		<div ng-show="isValid()" class="alert alert-success">您的文档有效。</div>
 
 
 		<div ng-show="hasErrors() && show" class="alert alert-warning"  >
-			<button type="button" class="close" ng-click="show=!show" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<strong>您的文档包含错误。</strong>
-			<ul>
-				<li ng-repeat="error in report.errors" title="{{error.parameters}}">
-					{{getTranslation(error.code, error.property, error.parameters)}} / <a href="#" ng-click="jumpTo(error.property)">{{getLabel(error.property)}}</a>
-				</li>
+			<button type="button" class="close" ng-click="show=!show" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>您的文档包含错误。</strong><ul>
+				<li ng-repeat="error in report.errors" title="{{error.parameters}}">{{getTranslation(error.code, error.property, error.parameters)}} / <a href="#" ng-click="jumpTo(error.property)">{{getLabel(error.property)}}</a></li>
 			</ul>
 		</div>
 

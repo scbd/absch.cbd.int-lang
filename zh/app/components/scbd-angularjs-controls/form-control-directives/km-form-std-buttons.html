@@ -1,11 +1,5 @@
-﻿<span style="text-align:left">
-
-	<span ng-hide="errors">
-
-		<input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="取消"/>
-		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="保存"  ng-show="hideSave"/>
-
-	</span>
+﻿<span style="text-align:left"> <span ng-hide="errors"><input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Cancel"/>
+		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Save"  ng-show="hideSave"/></span>
 
     <!--Save Dialog-->
 	<div id="dialogSave" class="modal fade" data-backdrop="static">
@@ -31,10 +25,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-    <!--Cancel Dialog-->
-	<div id="dialogCancel" class="modal fade" data-backdrop="static">
+	</div><!--Cancel Dialog--><div id="dialogCancel" class="modal fade" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -52,6 +43,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-</span>
+	</div></span>

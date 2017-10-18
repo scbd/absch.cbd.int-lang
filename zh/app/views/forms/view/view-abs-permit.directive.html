@@ -4,15 +4,16 @@
 	<div class="record-body panel-body">
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
 				<div class="text-center">
-					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">本证书<u>已撤销、不再有效</u></h1>
+					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">THIS CERTIFICATE HAS BEEN <u>REVOKED</u> AND IS NO LONGER VALID</h1>
 
-					<h1 ng-if="document.info.revision !== document.info.latestRevision">本证书已<u>更新。</u>新版本已生效，并且<u>此版本不再有效。</u></h1>
+					<h1 ng-if="document.info.revision !== document.info.latestRevision">THIS CERTIFICATE HAS BEEN <u>UPDATED</u>.新版本已生效，并且<u>此版本不再有效。</u></h1>
 
 					<p>请参阅修订历史，以获取更多信息。</p>
 				</div>
 			</div>
+			<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  class="hidden-print record-link-style" ng-if="document.info && document.info.revision === document.info.latestRevision" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> 下载</a></div>
 
-			<legend ng-if="document.government"><a translation-url   ng-if="document.info && document.info.revision === document.info.latestRevision" class="btn btn-default btn-small pull-right" style="background-color:#f5f5f5;" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> 下载一般信息</a></legend>
+			<legend ng-if="document.government">一般信息</legend>
 
 			<div ng-show="document.government">
 				<label>国家</label>

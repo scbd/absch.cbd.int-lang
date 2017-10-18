@@ -15,8 +15,8 @@
                 <tr ng-if="type=='radio' && model">
                     <td style="margin-bottom:15px;width:15px;"><a translation-url  class="btn btn-default" ng-click="removeDocument(model)" class="link color-red"><i class="fa fa-times"></i></a></td>
                     <td style="margin-bottom:20px;">
-                        <div ng-if="isContact(model) || isAuthority(model) || doc.schema_s== 'focalPoint'" view-contact-reference ng-model="model" locale="locale" class="km-value"></div>
-                        <div ng-if="!isContact(model) && !isAuthority(model) && doc.schema_s!= 'focalPoint'" view-default-reference ng-model="model.identifier" locale="locale"></div>
+                        <div ng-if="isContact(model) || isAuthority(model) || isFocalPoint(model)" view-contact-reference ng-model="model" locale="locale" class="km-value"></div>
+                        <div ng-if="!isContact(model) && !isAuthority(model) && !isFocalPoint(model)" view-default-reference ng-model="model.identifier" locale="locale"></div>
                     </td>
                 </tr>
             </table>
@@ -25,7 +25,7 @@
     </div><!-- Modal --> <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded bg-dropshadow" id="{{question}}">
             <div class="modal-header bg-grey ">
-                <h3>S&iacute;rvase seleccionar de la lista de registro(s) que se publica(n) a continuaci&oacute;n:</h3>
+                <h3>S&iacute;rvase seleccionar de la lista de registro(s) publicado(s) que se presenta a continuaci&oacute;n:</h3>
                 <div class="help-info">Si el registro todav&iacute;a no figura en la lista, s&iacute;rvase grabar el borrador actual e ir a el &apos;Tablero de control&apos; y crear un nuevo registro.</div>
                 <div ng-show="filter">
                     <input type="textbox" ng-model="keyword" placeholder="filtrar registros por palabras clave o identificador &uacute;nico" class="form-control">
@@ -49,7 +49,7 @@
 
             <div class="modal-footer bg-grey">
                 <div class="row">
-                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Grabar</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Cerrar</a></div>
+                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Guardar</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Cerrar</a></div>
                 </div>
             </div>
         </div>

@@ -4,9 +4,10 @@
 		<h4>检查站公报<span class="color-black">（CPC）</span></h4>
 	</div>
 	<div class="record-body panel-body">
+		<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  ng-if="showPdf"  class="hidden-print record-link-style"target="_blank" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> 下载</a></div>
 
     	   	<div ng-show="document.government || document.absCheckpoints">
-				<legend><a translation-url  ng-if="showPdf" class="pull-right btn btn-default" target="_blank" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> 下载一般信息</a></legend>
+				<legend>一般信息</legend>
 				<div ng-show="document.government">
 					<label>发布此检查站公报的国家</label>
 					<div class="km-value" >{{document.government|term:locale}} <span ng-party-status government="document.government" id="government"></span></div>
@@ -51,7 +52,7 @@
 						document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 						document.evidenceOfPIC || document.evidenceOfMAT ||
 						document.entityToWhomPICGranted || document.personsAtCheckpoint">
-				<legend>国际公认合规证书(IRCC)的详细信息</legend>
+				<legend>Information Collected or Received at the Checkpoint</legend>
 				<div ng-show="document.absIRCCs">
 					<label>与本公报相关的国际公认合规证书的参考编号</label>
 					<div class="km-value">
@@ -62,7 +63,7 @@
 						</ul>
 					</div>
 				</div>
-				<div ng-show="document.irccsNotAvailable" class="km-value">国际公认合规证书（IRCC）暂不可用</div>
+				<div ng-show="document.absIRCCsNotAvailable" class="km-value">国际公认合规证书（IRCC）暂不可用</div>
 				<div ng-show="document.sourceCountries || document.entityWhoGrantedPIC ||
 					document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 					document.evidenceOfPIC || document.evidenceOfMAT ||
@@ -195,7 +196,5 @@
 
 
 	</div>
-	<div class="panel-footer">
-        <div document-metadata ></div>
-    </div>
+	   <div document-metadata class="panel-footer" ></div>
 </div>

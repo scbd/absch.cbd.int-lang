@@ -3,6 +3,8 @@
 		<h4 ng-show="display('header')">关于获取和惠益分享的立法、行政和政策措施<span class="color-black">（MSR）</span></h4></div>
 	<div class="record-body panel-body">
 
+		<div record-options></div>
+
 		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">一般信息</legend>
 
 		<div ng-show="document.government">
@@ -11,7 +13,7 @@
 		</div>
 
 		<div ng-show="document.title">
-			<label>标题</label>
+			<label>Title</label>
 			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		</div>
 
@@ -80,7 +82,7 @@
 			<label>文档文本</label>
 			<div class="km-value">
 				<ul>
-					<li ng-repeat="item in document.documents"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}} </a><i ng-show="item.language">({{getTerm(item.language)|term:locale}}) </i><i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+					<li ng-repeat="item in document.documents"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
 		</div>
@@ -89,7 +91,7 @@
 			<label>翻译</label>
 			<div class="km-value">
 				<ul>
-					<li ng-repeat="item in document.documentTranslations"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}} </a><i ng-show="item.language">({{getTerm(item.language)|term:locale}}) </i><i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}}) </i><i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+					<li ng-repeat="item in document.documentTranslations"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
 		</div><!--<div ng-show="document.linkedMeasures">

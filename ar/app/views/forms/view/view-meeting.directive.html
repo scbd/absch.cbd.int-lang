@@ -1,12 +1,14 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-darkgrey"><h4>الاجتماعات</h4></div>
-	<div class="record-body panel-body"><!-- <div ng-show="document.symbol_s">
+	<div class="record-body panel-body">
+
+			<div record-options></div><br> <!-- <div ng-show="document.symbol_s">
 			<label>Symbol</label>
 			<span class="km-value">
 				{{document.symbol_s}}
 			</span>
 		</div> --><div ng-show="document.title_s">
-			<label>العنوان</label><span class="km-value">{{document.title_s}}</span></div>
+			<label>Title</label><span class="km-value">{{document.title_s}}</span></div>
 
 		<div ng-show="document.startDate_dt">
 			<label>تاريخ البدء</label><span class="km-value">{{document.startDate_dt | moment:&apos;utc&apos; | formatDate}}</span></div>

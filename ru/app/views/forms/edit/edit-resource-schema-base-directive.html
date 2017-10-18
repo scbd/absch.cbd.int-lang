@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" required name="publicationYear" caption="Год публикации">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;<option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
 							</div>
@@ -160,14 +160,14 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group"  name="summary" caption="Резюме или реферат (не более 300 слов)">
+								<div class="km-control-group"  name="summary" caption="Резюме или реферат (не более 300&nbsp;слов)">
 									<div km-textbox-ml ng-model="document.summary"  rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="regions" caption="Страна(ы), региональная(-ые) или экономическая(-ие) группа(-ы), имеющие отношение к материалу">
+								<div class="km-control-group" name="regions" caption="Страна(-ы), региональная(-ые) или экономическая(-ие) группа(-ы), имеющие отношение к материалу">
 									<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple
 									placeholder="Выбрать страну(-ы) и/или регион(ы)..."></div>
 								</div>
@@ -187,7 +187,7 @@
 
                         <div class="row" ng-if="isMcc">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="mccKeywords" required caption="Выберите соответствующие ключевые слова, описывающие содержание представляемых кода поведения, руководящих принципов и передовых методов и/или стандартов">
+								<div class="km-control-group" name="mccKeywords" required caption="Please select the relevant keywords for describing the content of the code of conduct, guidelines and best practices and/or standards being submitted">
 									<div km-term-check name="mccKeywords" required ng-model="document.mccKeywords" terms="options.mccKeywords()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -254,12 +254,7 @@
 
 			</form>
 
-			<div ng-show="tab=='review'" km-tab="review">
-
-				<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-					<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages"
-					ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-				</div>
+			<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 				<div view-resource ng-model="reviewDocument" locale="review.locale" allow-drafts="true" heading="{{heading}}" short-heading="{{shortHeading}}"></div>
 			</div><!-- <hr style="margin-top:20px;">

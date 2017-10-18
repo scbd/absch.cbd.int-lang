@@ -4,6 +4,9 @@
 		<h4>检查点<span class="color-black">（CP）</span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
+
+		<div record-options></div>
+
 		 <div name="article17-1-a"></div>
 
 		<legend ng-if="document.government || document.name">一般信息</legend>
@@ -43,7 +46,7 @@
 			<legend>免费收取此检查站收集或收到之信息的检查站公报的主管机关</legend>
 
 			<div class="help-info" style="padding-top:10px;">以下所示的所有国家当局和联络人将以电子邮件方式收取含此检查站收集或收到并发布之信息的检查站公报。请注意，提供事先知情同意书(PIC)的国家当局也将以电子邮件方式自动收到所有检查点已发布公报(CPC)。获取和惠益分享信息交换所不能保证电子邮件会被收到或阅读。</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">所有国家主管当局({{document.government|term}})已被选中自动以电子邮件方式接收此检查站发布的检查站公报。</a></div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities ({{document.government|term}})</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
           
 			<div ng-show="document.contactsToInform">
 				<div class="km-value" ng-repeat="authority in document.contactsToInform">

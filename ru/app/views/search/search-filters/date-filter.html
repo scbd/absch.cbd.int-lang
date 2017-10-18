@@ -1,8 +1,7 @@
 ﻿<div id="Search-Filter"  style="margin-bottom:30px;" >
-     <div>
-        <span class="country-heading">Published Date</span>
-         <p class="helpinfo"><i class="fa fa-info-circle helpicon"></i> Filter for record published within a date range</p>
-        <hr class="heading" />
+     <div><span class="country-heading">Дата публикации</span><hr class="heading" />
+         <p class="helpinfo"><i class="fa fa-info-circle helpicon"></i> Фильтр для записи, опубликованной в пределах диапазона дат</p>
+        
     </div>
     <div style="max-height:400px;">
         <div ng-repeat="doc in df_filters | filter:searchKeyword">
@@ -10,11 +9,11 @@
                 
                 <div class="row" style="margin-top:6px">
                     <div class="col-md-6">
-                        <div style="font-size:10px;font-weight:bold;text-transform: uppercase;">From</div>
+                        <div style="font-size:10px;font-weight:bold;text-transform: uppercase;">С</div>
                         <div class="km-date" ng-model="dateFilter.since"></div>
                     </div>
                     <div class="col-md-6">
-                        <div style="font-size:10px;font-weight:bold;text-transform: uppercase;">To</div>
+                        <div style="font-size:10px;font-weight:bold;text-transform: uppercase;">По</div>
                         <div class="km-date" ng-model="dateFilter.until"></div>
                     </div>
                 </div>

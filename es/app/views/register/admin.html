@@ -1,14 +1,10 @@
-﻿<div ng-controller="AdminController"  id="RegisterPage">
-  
+﻿<div ng-controller="AdminController" id="RegisterPage">
+
   <link href="/app/css/register.css" rel="stylesheet">
-  <link href="/app/css/record.css" rel="stylesheet">
-
-  <span register-top-menu></span>
-
-  <div class="register-content card card-1-notrans">
+  <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><div class="register-content card card-1-notrans">
     <div class="register-content-header bg-pink color-white">
       <div style="padding:1px 10px;">
-        <h3>ABSCH Admin </h3>
+        <h3>Administraci&oacute;n del Centro de Intercambio de Informaci&oacute;n sobre APB</h3>
       </div>
     </div>
     <div class="register-content-content" ng-if="roles.isAbsAdministrator || roles.isAdministrator">
@@ -16,15 +12,53 @@
         <div class="col-md-12 cp-header">
           <table style="width:100%;">
             <tr>
-              <td><label>Current Realm: </label></td>
+              <td><label>&Aacute;mbito actual:</label></td>
               <td><span switch-realm></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <table class="table table-striped" style="width:100%">
+                  <tbody>
+
+                    <tr>
+                      <td>Ver la lista de registros informados por usuarios</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/reported-records">Gestionar los registros informados</a></td>
+                    </tr>
+                    <tr>
+                      <td>Ver la situaci&oacute;n de los registros del flujo del trabajo del Centro de Intercambio de Informaci&oacute;n sobre APB</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/pending-requests">Gestionar los registros del flujo del trabajo</a></td>
+                    </tr>
+                    <tr>
+                      <td>Ver los recuentos del Centro de Intercambio de Informaci&oacute;n sobre APB con opciones de gr&aacute;ficos y filtros m&uacute;ltiples</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/report-counts">Informar recuentos</a></td>
+
+                    </tr>
+                    <tr>
+                      <td>Ver pa&iacute;ses con/sin funciones en el Centro de Intercambio de Informaci&oacute;n sobre APB</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/user-role-report">Informe de funciones de usuarios</a></td>
+                    </tr>
+                    <tr>
+                      <td>Ver la lista de usuarios que utilizan la suscripci&oacute;n al correo electr&oacute;nico.</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/subscriptions">Suscripciones</a></td>
+                    </tr>
+                    <tr>
+                      <td>Ver errores por parte del cliente</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/error-logs">Registros de errores</a></td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </td>
             </tr>
           </table>
         </div>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/reported-records">Manage Reported Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/pending-requests">Manage Workflow Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/report-counts">Report counts</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/error-logs">Error Logs</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/subscriptions">Subscriptions</a>
+
+
+
+
 
       </div>
     </div>
   </div>
-</div>
-<!-- controller -->
+</div><!-- controller -->

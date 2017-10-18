@@ -1,36 +1,26 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><label>
-		<span class="color-white"> </span>Промежуточный национальный доклад об осуществлении Нагойского протокола<span class="color-black"> </span>
-		</label>
+	<div class="panel-heading bg-blue"><label><span class="color-white">Interim National Report on the Implementation of the Nagoya Protocol</span> <span class="color-black">(NR)</span></label>
 	</div>
 	<div class="record-body panel-body">
 
-		<div class="panel panel-info">
+		<div record-options ></div><br><br><div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Страна</label>
+				<label>Общая информация</label>
 			</div>
 			<div class="panel-body">
+
 				<div>
-					<label>1. Страна</label>
+					<label>Страна</label>
 					<div class="km-value"  ng-show="document.government">{{document.government | term}}</div>
 					<div class="km-value"  ng-hide="document.government">Страна не указана</div>
 				</div>
-			</div>
-		</div>
 
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<label>2. Общая информация</label>
-			</div>
-			<div class="panel-body">
 				<div ng-show="document.title">
-					<label>Название данного национального доклада</label>
-					<div class="km-value">
-						<strong>{{document.address | lstring:locale}}</strong>
-					</div>
+					<label>1. Название данного национального доклада</label>
+					<div class="km-value"><strong>{{document.address | lstring:locale}}</strong></div>
 				</div>
 				<div>
-					<label>Контактное лицо</label>
+					<label>2. Контактное лицо</label>
 					<div class="km-value" view-contact-reference ng-model="document.contact" locale="locale"  ng-if="document.contact">
 					</div>
 					<div  class="km-value"  ng-if="!document.contact">Контакты не указаны</div>
@@ -53,7 +43,7 @@
 		                </div>
 						<div ng-show="document.question3.additionalInfo">
 							<label>Представьте дополнительную информацию</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question3.additionalInfo | lstring:locale}}</div>
 						</div>
 					</ul>
 				</div>
@@ -75,9 +65,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question4.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question4.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -101,9 +89,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question5.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question5.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -127,9 +113,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question6.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question6.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -138,9 +122,9 @@
 				</div>
 
 				<div>
-					<label>7. Разместила ли ваша страна в Механизме посредничества для регулирования ДГРСИВ разрешения или эквивалентные документы, выданные в момент осуществления доступа в качестве доказательства принятого решения о предоставлении предварительного обоснованного согласия (ПОС) и заключения взаимосогласованных условий (ВСУ)?</label>
+					<label>7. Представила ли ваша страна в Механизм посредничества для регулирования ДГРСИВ разрешения или эквивалентные документы, выданные в момент осуществления доступа в качестве доказательства принятого решения о предоставлении предварительного обоснованного согласия (ПОС) и заключения взаимосогласованных условий (ВСУ)?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">Не применимо, поскольку не разработаны требования, регулирующие доступ.</div>
+						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">Не применимо, поскольку отсутствуют требования, регулирующие доступ.</div>
 						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable) && (!document.question3.answer)">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question7.answer)}}</div>
 						<div ng-show="document.question7.challengesInfo || document.question3.answer">
 							<label>Кратко опишите основные трудности и проблемы, с которыми вы столкнулись при распространении данной информации.</label>
@@ -154,9 +138,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question7.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question7.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -165,9 +147,9 @@
 				</div>
 
 				<div>
-					<label>8. Разместила ли ваша страна в Механизме посредничества для регулирования ДГРСИВ разрешения или эквивалентные документы, имеющие силу международно признанного сертификата о соответствии требованиям в соответствии со статьей 17.2?</label>
+					<label>8. Представляла ли ваша страна в Механизм посредничества для регулирования ДГРСИВ разрешения или их эквиваленты, являющиеся международно признанным сертификатом о соответствии требованиям, как предусмотрено в статье 17.2?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question8.notApplicable">Не применимо, поскольку не разработаны требования, регулирующие доступ.</div>
+						<div class="km-value" ng-show="document.question8.notApplicable">Не применимо, поскольку отсутствуют требования, регулирующие доступ.</div>
 						<div class="km-value km-pre" ng-show="!document.question8.notApplicable">{{booleanToText(document.question8.answer)}}</div>
 		                <div ng-show="document.question8.furtherInfo">
 							<label>Используйте поле для ввода текста для представления дополнительной информации</label>
@@ -177,9 +159,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question8.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question8.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -203,9 +183,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question9.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question9.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -218,25 +196,21 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">Оставлено без дополнительной информации</div>
 						<div ng-show="document.question10.challengesInfo">
-							<label>Кратко опишите основные трудности и проблемы </label>
+							<label>Кратко опишите основные трудности и проблемы</label>
 							<div class="km-value">{{document.address | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question10.documentReferenceIDs && !documentReferenceIDsEmpty(document.question10.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question10.documentReferenceIDs">
-										<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question10.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question10.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question10.relevantDocuments">
-								<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question10.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -258,7 +232,7 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question11.answer)}}</div>
 								<div ng-show="document.question11.challengesInfo">
-									<label>Приведите дополнительную информацию, указав также, создана ли какая-либо другая система для доступа к генетическим ресурсам. </label>
+									<label>Приведите дополнительную информацию, указав также, создана ли какая-либо другая система для доступа к генетическим ресурсам.</label>
 									<div class="km-value">{{document.address | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.furtherInfo">
@@ -269,9 +243,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question11.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question11.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -291,9 +263,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question12.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question12.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -313,9 +283,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question13.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question13.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -335,9 +303,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question14.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question14.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -357,9 +323,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question15.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question15.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -370,7 +334,7 @@
 						<div>
 							<label>16. Укажите номер разрешений или эквивалентных документов, представленных через Механизм посредничества для регулирования ДГРСИВ после вступления в силу Протокола в вашей стране.</label>
 							<ul>
-								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty('permitsOnAbsCh')&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : Не применимо</div>
+								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty(&apos;permitsOnAbsCh&apos;)&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : Не применимо</div>
 
 								<div ng-show="document.question16.furtherInfo">
 									<label>Используйте поле для ввода текста для представления дополнительной информации</label>
@@ -380,9 +344,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question16.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question16.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -402,9 +364,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question17.documentReferenceIDs">
-												<a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question17.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -465,9 +425,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question18.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question18.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -480,25 +438,21 @@
 							<ul>
 								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">Оставлено без дополнительной информации</div>
 								<div ng-show="document.question19.challengesInfo">
-									<label>Кратко опишите основные трудности и проблемы </label>
+									<label>Кратко опишите основные трудности и проблемы</label>
 									<div class="km-value">{{document.address | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question19.documentReferenceIDs && !documentReferenceIDsEmpty(document.question19.documentReferenceIDs)">
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question19.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question19.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
 								</div>
 								<div ng-show="document.question19.relevantDocuments">
 				                	<label>Любые другие соответствующие документы</label>
-									<div class="km-value" ng-repeat="item in document.question19.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-									</div>
+									<div class="km-value" ng-repeat="item in document.question19.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 								</div>
 							</ul>
 						</div>
@@ -523,9 +477,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question20.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question20.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -534,7 +486,7 @@
 						</div>
 
 						<div>
-							<label>21. Приняты ли в вашей стране законодательные, административные или политические меры для обеспечения того, чтобы выгоды от использования генетических ресурсов, которые находятся в ведении коренных и местных общин в соответствии с положениями внутреннего законодательства, регулирующего установленные права данных коренных и местных общин на такие генетические ресурсы, совместно использовались с соответствующими общинами на основе, как это предусмотрено статьей&nbsp;5.2?</label>
+							<label>21. Has your country taken legislative, administrative or policy measures with the aim of ensuring that the benefits from the utilization of genetic resources held by indigenous and local communities, in accordance with domestic legislation regarding the established rights of these indigenous and local communities over these genetic resources, are shared with the indigenous and local communities concerned as provided in Article 5.2?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question21.answer)}}</div>
 								<div ng-show="document.question21.furtherInfo">
@@ -545,9 +497,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question21.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question21.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -556,7 +506,7 @@
 						</div>
 
 						<div>
-							<label>22. Приняты ли в вашей стране законодательные, административные или политические меры для обеспечения совместного использования на справедливой и равной основе выгод от применения традиционных знаний, связанных с генетическими ресурсами, с коренными и местными общинами, являющимися носителями таких знаний, как это предусмотрено статьей 5.5?</label>
+							<label>22. Has your country taken legislative, administrative or policy measures in order that benefits arising from the utilization of traditional knowledge associated with genetic resources are shared with indigenous and local communities holding such knowledge as provided in Article 5.5?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question22.answer)}}</div>
 								<div ng-show="document.question22.furtherInfo">
@@ -567,9 +517,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question22.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question22.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -589,18 +537,14 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question23.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question23.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
 								</div>
 								<div ng-show="document.question23.relevantDocuments">
 				                	<label>Любые другие соответствующие документы</label>
-									<div class="km-value" ng-repeat="item in document.question23.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-									</div>
+									<div class="km-value" ng-repeat="item in document.question23.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 								</div>
 							</ul>
 						</div>
@@ -635,8 +579,7 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
-				                            <label>Представьте дополнительную информацию
-				                            <div class="km-value">{{document.address | lstring:locale}}</div>
+				                            <label>Представьте дополнительную информацию<div class="km-value">{{document.address | lstring:locale}}</div>
 				                        </div>
 									</ul>
 								</div>
@@ -649,9 +592,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question24.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question24.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -660,7 +601,7 @@
 						</div>
 
 						<div>
-							<label>25. Приняты ли в вашей стране надлежащие эффективные и соразмерные законодательные, административные или политические меры по регулированию ДГРСИВ для обеспечения того, чтобы доступ к традиционным знаниям, связанным с генетическими ресурсами и  используемым в пределах юрисдикции вашей страны, осуществлялся в соответствии с предварительным обоснованным согласием или с согласия и при участии коренных и местных общин и чтобы были заключены взаимосогласованные условия в соответствии с внутренним законодательством о ДГРСИВ или регулятивными требованиями другой Стороны, в которой эти коренные и местные общины находятся, как это предусмотрено статьей 16.1?</label>
+							<label>25. Приняты ли в вашей стране надлежащие эффективные и соразмерные законодательные, административные или политические меры по регулированию ДГРСИВ для обеспечения того, чтобы доступ к традиционным знаниям, связанным с генетическими ресурсами и используемым в пределах юрисдикции вашей страны, осуществлялся в соответствии с предварительным обоснованным согласием или с согласия и при участии коренных и местных общин и чтобы были заключены взаимосогласованные условия в соответствии с внутренним законодательством о ДГРСИВ или регулятивными требованиями другой Стороны, в которой эти коренные и местные общины находятся, как это предусмотрено статьей 16.1?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question25.answer)}}</div>
 								<div ng-show="document.question25.answer">
@@ -686,9 +627,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question25.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question25.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -726,9 +665,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question26.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question26.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -737,14 +674,14 @@
 					    </div>
 
 					    <div>
-					    	<label>27. Представила ли ваша страна информацию, указанную в пункте a)  i) статьи 17.1, в соответствующие национальные органы власти, Стороне, дающей ПОС, и в Механизм посредничества для регулирования ДГРСИВ, как это предусмотрено в пункте a) iii) статьи 17.1?</label>
+					    	<label>27. Представила ли ваша страна информацию, указанную в пункте a) i) статьи 17.1, в соответствующие национальные органы власти, Стороне, дающей ПОС, и в Механизм посредничества для регулирования ДГРСИВ, как это предусмотрено в пункте a) iii) статьи 17.1?</label>
 					    	<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question27.answer)}}</div>
 				                <div ng-show="document.question27.answer">
 				                	<ul>
 					                    <div>
 							            	<label>Применяется ли в вашей стране практика выпуска коммюнике контрольных пунктов?</label>
-							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty('option')? document.question27.cpc.option : Не применимо </div>
+							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty(&apos;option&apos;)? document.question27.cpc.option : Не применимо</div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
 						                    <label>Представьте дополнительную информацию</label>
@@ -758,13 +695,11 @@
 				                </div>
 				                <div>
 				                	<label>Там где уместно, укажите число проверочных реляций в  Механизме посредничества для регулирования ДГРСИВ</label>
-				                	<div class="km-value">{{document.question27.hasOwnProperty('cpcsOnAbsChCount')&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
+				                	<div class="km-value">{{document.question27.hasOwnProperty(&apos;cpcsOnAbsChCount&apos;)&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
 				                	<label>Любые другие соответствующие документы</label>
-									<div class="km-value" ng-repeat="item in document.question27.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-									</div>
+									<div class="km-value" ng-repeat="item in document.question27.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 								</div>
 					    	</ul>
 					    </div>
@@ -781,9 +716,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question28.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question28.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -796,7 +729,7 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question29.answer)}}</div>
 								<div ng-show="document.question29.additionalInfo">
-									<label>Просьба представить дополнительную информацию о том, как ваша страна поощряет использование экономичных средств и систем коммуникации.</label>
+									<label>Please provide further information on how your country is encouraging the use of cost-effective communication tools and systems</label>
 									<div class="km-value">{{document.address | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.furtherInfo">
@@ -807,9 +740,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question29.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question29.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -829,18 +760,14 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question30.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question30.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
 								</div>
 								<div ng-show="document.question30.relevantDocuments">
 				                	<label>Любые другие соответствующие документы</label>
-									<div class="km-value" ng-repeat="item in document.question30.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-									</div>
+									<div class="km-value" ng-repeat="item in document.question30.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 								</div>
 							</ul>
 						</div>
@@ -855,7 +782,7 @@
 						<div>
 							<label>31. Поощряет ли ваша страна включение во взаимосогласованные условия положения об урегулировании споров, как это предусмотрено в пунктах а), b) и c) статьи 18.1?</label>
 							<ul>
-								<div class="km-value" ng-show="document.question31.notApplicable">Не применимо, поскольку не разработаны требования, регулирующие доступ.</div>
+								<div class="km-value" ng-show="document.question31.notApplicable">Не применимо ввиду отсутствия требований, регулирующих доступ</div>
 								<div class="km-value km-pre" ng-show="!document.question31.notApplicable">{{booleanToText(document.question31.answer)}}</div>
 								<div ng-show="document.question31.furtherInfo">
 									<label>Используйте поле для ввода текста для представления дополнительной информации</label>
@@ -865,9 +792,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question31.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question31.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -887,9 +812,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question32.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question32.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -916,9 +839,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question33.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question33.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -938,18 +859,14 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question34.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question34.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
 								</div>
 								<div ng-show="document.question34.relevantDocuments">
 				                	<label>Любые другие соответствующие документы</label>
-									<div class="km-value" ng-repeat="item in document.question34.relevantDocuments">
-										<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-									</div>
+									<div class="km-value" ng-repeat="item in document.question34.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 								</div>
 							</ul>
 						</div>
@@ -977,9 +894,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question35.research.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question35.research.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -994,9 +909,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question35.emergencies.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question35.emergencies.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1011,14 +924,12 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question35.access.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question35.access.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
-						<label>учитывается ли важность генетических ресурсов для производства продовольствия и ведения сельского хозяйства и их особая роль в создании продовольственной обеспеченности, как это предусмотрено статьей 8&nbsp;с)? </label>
+						<label>учитывается ли важность генетических ресурсов для производства продовольствия и ведения сельского хозяйства и их особая роль в создании продовольственной обеспеченности, как это предусмотрено статьей 8&nbsp;с)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
 							<label>Представьте дополнительную информацию</label>
@@ -1028,9 +939,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question35.importance.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question35.importance.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1050,18 +959,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question36.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question36.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question36.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question36.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question36.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1085,9 +990,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question37.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question37.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1110,9 +1013,7 @@
 			                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 										<div class="km-value">
 											<ul class="list">
-												<li ng-repeat="reference in document.question38.law.documentReferenceIDs">
-													<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-												</li>
+												<li ng-repeat="reference in document.question38.law.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 											</ul>
 
 										</div>
@@ -1146,9 +1047,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question38.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question38.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1168,9 +1067,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question39.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question39.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1190,9 +1087,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question40.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question40.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1212,9 +1107,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question41.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question41.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1239,9 +1132,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question42.community.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question42.community.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -1261,9 +1152,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question42.mat.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question42.mat.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -1283,9 +1172,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question42.mcc.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question42.mcc.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -1296,7 +1183,7 @@
 				</div>
 
 				<div>
-					<label>43. Старается ли ваша страна не ограничивать традиционного использования генетических ресурсов и связанных с ними традиционных знаний и традиционный обмен ими внутри и среди коренных и местных общин, как это предусмотрено статьей 12.4?</label>
+					<label>43. Has your country endeavoured not to restrict the customary use and exchange of genetic resources and associated traditional knowledge within and among indigenous and local communities as provided in Article 12.4?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question43.answer)}}</div>
 						<div ng-show="document.question43.furtherInfo">
@@ -1307,9 +1194,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question43.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question43.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1330,18 +1215,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question44.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question44.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question44.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question44.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question44.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1366,9 +1247,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question45.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question45.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1387,9 +1266,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question46.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question46.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1409,18 +1286,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question47.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question47.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question47.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question47.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question47.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1433,7 +1306,7 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>48. Стремится ли ваша страна сотрудничать при участии соответствующих коренных и местных общин в целях выполнения обязательств в рамках Протокола в случаях, когда аналогичные генетические ресурсы встречаются in- situ на территории более чем одной Стороны, как это предусмотрено статьей 11.1?</label>
+					<label>48. Is your country endeavouring to cooperate, with the involvement of indigenous and local communities concerned, with a view to implementing the Protocol in instances where the same genetic resources are found in situ within the territory of more than one Party as provided in Article 11.1?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question48.answer)}}</div>
 						<div ng-show="document.question48.ilcInfo">
@@ -1448,9 +1321,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question48.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question48.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1459,7 +1330,7 @@
 				</div>
 
 				<div>
-					<label>49. Стремится ли ваша страна сотрудничать в целях осуществления Протокола в тех случаях, когда аналогичные традиционные знания, связанные с генетическими ресурсами, являются достоянием одной или нескольких коренных и местных общин на территории нескольких Сторон, как это предусмотрено статьей 11.2?</label>
+					<label>49. Is your country endeavouring to cooperate with a view to implementing the Protocol in instances where the same traditional knowledge associated with genetic resources is shared by one or more indigenous and local communities in several Parties as provided in Article 11.2?</label>
 					<ul>
 						<div class="km-value" ng-show="document.question49.notApplicable">Не применимо, поскольку в стране нет коренных и местных общин</div>
 						<div class="km-value km-pre" ng-show="!document.question49.notApplicable">{{booleanToText(document.question49.answer)}}</div>
@@ -1471,9 +1342,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question49.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question49.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1493,18 +1362,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question50.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question50.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question50.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question50.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question50.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1528,9 +1393,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question51.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question51.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1549,9 +1412,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question52.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question52.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1570,18 +1431,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question53.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question53.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question53.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question53.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question53.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1599,7 +1456,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question54.answer)}}</div>
 						<div style="margin: 0 0 0 20px;" ng-show="document.question54.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>Приняты ли в вашей стране меры по   разработке и внедрению стратегии повышения  осведомленности для Нагойского протокола регулирования ДГРСИВ?</label>
+								<label>Приняты ли в вашей стране меры по разработке и внедрению стратегии повышения осведомленности для Нагойского протокола регулирования ДГРСИВ?</label>
 								<div class="km-value km-pre">{{document.question54.measures.answer | yesno}}</div>
 								<div ng-show="document.question54.measures.furtherInfo">
 									<label>Please provide a summary of the measures taken</label>
@@ -1609,9 +1466,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question54.measures.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question54.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -1626,9 +1481,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question54.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question54.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1642,7 +1495,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question55.answer)}}</div>
 						<div style="margin: 0 0 10px 20px;" ng-show="document.question55.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>Приняты ли в вашей стране меры по разработке и внедрению стратегии повышения осведомленности для Нагойского протокола регулирования ДГРСИВ? </label>
+								<label>Приняты ли в вашей стране меры по разработке и внедрению стратегии повышения осведомленности для Нагойского протокола регулирования ДГРСИВ?</label>
 								<div class="km-value km-pre">{{document.question55.measures.answer | yesno}}</div>
 								<div ng-show="document.question55.measures.furtherInfo">
 									<label>Please provide a summary of the measures taken</label>
@@ -1652,9 +1505,7 @@
 		                			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 									<div class="km-value">
 										<ul class="list">
-											<li ng-repeat="reference in document.question55.measures.documentReferenceIDs">
-												<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-											</li>
+											<li ng-repeat="reference in document.question55.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 										</ul>
 
 									</div>
@@ -1669,9 +1520,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question55.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question55.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1680,7 +1529,7 @@
 				</div>
 
 				<div>
-					<label>56. Получала ли ваша страна внешнюю поддержку для создания и развития потенциала для осуществления Нагойского протокола?  </label>
+					<label>56. Получала ли ваша страна внешнюю поддержку для создания и развития потенциала для осуществления Нагойского протокола?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
@@ -1691,9 +1540,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question56.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question56.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1702,7 +1549,7 @@
 				</div>
 
 				<div>
-					<label>57. Предоставляла ли ваша страна внешнюю поддержку для создания и развития потенциала для осуществления Нагойского протокола? </label>
+					<label>57. Предоставляла ли ваша страна внешнюю поддержку для создания и развития потенциала для осуществления Нагойского протокола?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
@@ -1713,9 +1560,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question57.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question57.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1735,18 +1580,14 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question58.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question58.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
 						</div>
 						<div ng-show="document.question58.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question58.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question58.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1775,9 +1616,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question59.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question59.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1803,9 +1642,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question60.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question60.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1833,9 +1670,7 @@
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question61.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question61.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1844,18 +1679,18 @@
 				</div>
 
 				<div>
-					<label>62. 62. a) Выделяла ли ваша страна финансовые ресурсы другой Стороне или получала финансовые ресурсы от другой Стороны или финансовых учреждений для целей осуществления Протокола, как это предусмотрено статьей 25?</label>
+					<label>62. Has your country made financial resources available to other Parties or received financial resources from other Parties or financial institutions for the purposes of implementation of the Protocol as provided in Article 25?</label>
 					<ul>
-						<label>Да, финансовые ресурсы выделялись</label>
+						<label>Financial resources have been made available</label>
 						<ul>
 							<div class="km-value km-pre">{{booleanToText(document.question62.donor.answer)}}</div>
 							<div ng-show="document.question62.donor.additionalInfo">
                             	<label>Представьте дополнительную информацию</label>
-								<div class="km-value">{{document.address | lstring:locale}}</div>
+								<div class="km-value">{{document.question62.donor.additionalInfo | lstring:locale}}</div>
 							</div>
 						</ul>
 
-						<label>Да, финансовые ресурсы были получены</label>
+						<label>Financial resources have been received</label>
 						<ul>
 							<div class="km-value km-pre">{{booleanToText(document.question62.recipient.answer)}}</div>
 							<ul>
@@ -1864,7 +1699,7 @@
 									<div class="km-value km-pre">{{booleanToText(document.question62.recipient.parties)}}</div>
 									<div ng-show="document.question62.recipient.partiesInfo">
                             			<label>Представьте дополнительную информацию</label>
-										<div class="km-value">{{document.address | lstring:locale}}</div>
+										<div class="km-value">{{document.question62.recipient.partiesInfo | lstring:locale}}</div>
 									</div>
 								</ul>
 
@@ -1887,7 +1722,7 @@
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.otherSources)}}</div>
 											<div ng-show="document.question62.recipient.otherSourcesInfo">
                             					<label>Представьте дополнительную информацию</label>
-												<div class="km-value">{{document.address | lstring:locale}}</div>
+												<div class="km-value">{{document.question62.recipient.otherSourcesInfo | lstring:locale}}</div>
 											</div>
 										</ul>
 									</ul>
@@ -1896,16 +1731,14 @@
 						</ul>
 
                         <div ng-show="document.question62.furtherInfo">
-                            <label>Use the text entry to provide further information, .including on the status of financial resources (total amount) mobilized donated or received for the purposes of implementation of the Protocol </label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+                            <label>Use the text entry to provide further information, .including on the status of financial resources (total amount) mobilized donated or received for the purposes of implementation of the Protocol</label>
+							<div class="km-value">{{document.question62.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question62.documentReferenceIDs && !documentReferenceIDsEmpty(document.question62.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question62.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question62.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1915,18 +1748,14 @@
 
 				<div>
 					<label>63. Предоставьте информацию об опыте мобилизации ресурсов в поддержку осуществления Протокола.</label>
-					<div class="km-value">{{document.address | lstring:locale}}</div>
-					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-					</div>
+					<div class="km-value">{{document.question62new.relevantInformation | lstring:locale}}</div>
+					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 
 				<div>
 					<label>64. Предоставьте информацию о положении дел с мобилизованными фондами в поддержку осуществления Протокола.</label>
-					<div class="km-value">{{document.address | lstring:locale}}</div>
-					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments">
-						<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-					</div>
+					<div class="km-value">{{document.question63new.relevantInformation | lstring:locale}}</div>
+					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 
 				<div>
@@ -1935,25 +1764,22 @@
 						<div class="km-value km-pre">{{booleanToText(document.question63.answer)}}</div>
                         <div ng-show="document.question63.answer">
                         	<ul>
-                        		<label>Укажите сколько</label><br />
-								<div class="km-value km-pre">{{document.question63.numberOfStaff}}</div>
+                        		<label>Укажите сколько</label><br /><div class="km-value km-pre">{{document.question63.numberOfStaff}}</div>
                         	</ul>
                         </div>
                         <div ng-show="document.question63.challengesInfo">
-                            <label>Кратко опишите основные трудности и проблемы, с которыми вы столкнулись.</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+                            <label>Please provide a summary of the main difficulties and challenges encountered</label>
+							<div class="km-value">{{document.question63.challengesInfo | lstring:locale}}</div>
                         </div>
                         <div ng-show="document.question63.furtherInfo">
                             <label>Используйте поле для ввода текста для представления дополнительной информации</label>
-							<div class="km-value">{{document.address | lstring:locale}}</div>
+							<div class="km-value">{{document.question63.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question63.documentReferenceIDs && !documentReferenceIDsEmpty(document.question63.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question63.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question63.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1964,14 +1790,12 @@
 				<div>
 					<label>66. Любая другая актуальная информация:</label>
 					<ul>
-						<div class="km-value">{{document.address | lstring:locale}}</div>
+						<div class="km-value">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
                 			<label>Идентификационные координаты, содержащие определяющую информацию для доступа в Механизм посредничества для регулирования ДГРСИВ</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="reference in document.question64.documentReferenceIDs">
-										<a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a>
-									</li>
+									<li ng-repeat="reference in document.question64.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
 								</ul>
 
 							</div>
@@ -1979,9 +1803,7 @@
 
 						<div ng-show="document.question64.relevantDocuments">
 		                	<label>Любые другие соответствующие документы</label>
-							<div class="km-value" ng-repeat="item in document.question64.relevantDocuments">
-								<a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-							</div>
+							<div class="km-value" ng-repeat="item in document.question64.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 						</div>
 					</ul>
 				</div>
@@ -1991,7 +1813,7 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Замечания о форме представления отчетности</label>
+				<label>Comments in the reporting format</label>
 			</div>
 			<div class="panel-body">
 				<div>

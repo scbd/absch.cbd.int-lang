@@ -120,7 +120,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="referenceToNationalPermit" caption="Дополнительные регистрационные номера или идентификаторы национальных документов "><span class="help-info">Предоставьте информацию об идентификаторах любых национальных документов, которые могут помочь пользователям в поиске или получении информации, касающейся разрешения или эквивалентного документа.</span><div km-rich-textbox ng-model="document.referenceToNationalPermit" rows="6" placeholder="" locales="document.header.languages" />
+                                    <div class="km-control-group" name="referenceToNationalPermit" caption="Дополнительные регистрационные номера или идентификаторы национальных документов"><span class="help-info">Предоставьте информацию об идентификаторах любых национальных документов, которые могут помочь пользователям в поиске или получении информации, касающейся разрешения или эквивалентного документа.</span><div km-rich-textbox ng-model="document.referenceToNationalPermit" rows="6" placeholder="" locales="document.header.languages" />
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                                 </div>
 
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="picDocuments" caption="Дополнительная информация о предварительном обоснованном согласии (ПОС) – Документы"><span class="help-info">Укажите (если применимо) ссылку на документы или загрузите документы</span><div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                    <div class="km-control-group" name="picDocuments" caption="Дополнительная информация о предварительном обоснованном согласии (ПОС) &ndash; Документы"><span class="help-info">Укажите (если применимо) ссылку на документы или загрузите документы</span><div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
@@ -212,13 +212,13 @@
                             <div class="row">
                                 <div class="col-xs-12">
 
-                                    <div class="km-control-group" name="matInformation" caption="Дополнительная информация о взаимосогласованных условиях (ВСУ) – Информация"><span class="help-info">Предоставьте (если применимо) любую информацию о ВСУ. Например, это может быть информация об условиях доступа и совместного использования выгод и другая соответствующая информация, включенная в ВСУ. Подробная информация может быть предоставлена в прикрепленном документе.</span><div km-rich-textbox name="matInformation" rows="4" ng-model="document.matInformation" locales="document.header.languages"></div>
+                                    <div class="km-control-group" name="matInformation" caption="Дополнительная информация о взаимосогласованных условиях (ВСУ)&nbsp;&ndash; Информация"><span class="help-info">Предоставьте (если применимо) любую информацию о ВСУ. Например, это может быть информация об условиях доступа и совместного использования выгод и другая соответствующая информация, включенная в ВСУ. Подробная информация может быть предоставлена в прикрепленном документе.</span><div km-rich-textbox name="matInformation" rows="4" ng-model="document.matInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
 
 
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="matDocuments" caption="Дополнительная информация о взаимосогласованных условиях (ВСУ) – Документы"><span class="help-info">Укажите (если применимо) ссылку на документы или загрузите документы</span><div km-link name="matDocuments" ng-model="document.matDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                    <div class="km-control-group" name="matDocuments" caption="Дополнительная информация о взаимосогласованных условиях (ВСУ)&nbsp;&ndash; Документы"><span class="help-info">Укажите (если применимо) ссылку на документы или загрузите документы</span><div km-link name="matDocuments" ng-model="document.matDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +235,7 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading"><span ng-class="{'confidential-text':document.subjectMatterConfidential}"><input type="checkbox" name="subjectMatterConfidential" ng-model="document.subjectMatterConfidential" watch-items>Данная информация является конфиденциальной</input></span></div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.subjectMatterConfidential}">
-                                            <div class="km-control-group" required name="subjectMatter" caption="Предмет выданного разрешения или эквивалентного документа или генетические ресурсы, на которые распространяется действие разрешения или эквивалентного документа"><span class="help-info">Предоставьте информацию о предмете выданного разрешения или генетических ресурсах, на которые распространяется его действие. Она может включать сведения о биоте любого таксономического ранга, которому может соответствовать таксономическое название.  Она также может включать данные о местонахождении коллекции материала. Кроме того, она также может использоваться для идентификации генетического ресурса посредством ссылки на контрольный образец или полевые записи в указанном архиве или коллекцию.</span><div ng-show="!document.subjectMatterConfidential">
+                                            <div class="km-control-group" required name="subjectMatter" caption="Предмет выданного разрешения или эквивалентного документа или генетические ресурсы, на которые распространяется действие разрешения или эквивалентного документа"><span class="help-info">Предоставьте информацию о предмете выданного разрешения или генетических ресурсах, на которые распространяется его действие. Она может включать сведения о биоте любого таксономического ранга, которому может соответствовать таксономическое название. Она также может включать данные о местонахождении коллекции материала. Кроме того, она также может использоваться для идентификации генетического ресурса посредством ссылки на контрольный образец или полевые записи в указанном архиве или коллекцию.</span><div ng-show="!document.subjectMatterConfidential">
                                                     <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
@@ -337,7 +337,7 @@
                             <legend>Документация</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="permitFiles" caption="Копия разрешения или эквивалентного документа или другой соответствующий документ, находящий в свободном доступе "><span class="help-info">Используйте данное поле для того, чтобы загрузить копию разрешения или эквивалентного документа или другой соответствующий документ (по желанию) или предоставьте ссылку на эквивалентный ему документ, размещенный на национальном веб-сайте. Включите краткое описание ссылки или вложения. Просьба заметить, что данная информация будет размещена в Механизме посредничества для регулирования ДГРСИВ, и поэтому не должна содержать конфиденциальных сведений или ссылки на информацию с ограниченным доступом.</span><div km-link name="permitFiles" ng-model="document.permitFiles" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                    <div class="km-control-group" name="permitFiles" caption="Копия разрешения или эквивалентного документа или другой соответствующий документ, находящий в свободном доступе"><span class="help-info">Используйте данное поле для того, чтобы загрузить копию разрешения или эквивалентного документа или другой соответствующий документ (по желанию) или предоставьте ссылку на эквивалентный ему документ, размещенный на национальном веб-сайте. Включите краткое описание ссылки или вложения. Просьба заметить, что данная информация будет размещена в Механизме посредничества для регулирования ДГРСИВ, и поэтому не должна содержать конфиденциальных сведений или ссылки на информацию с ограниченным доступом.</span><div km-link name="permitFiles" ng-model="document.permitFiles" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
@@ -356,7 +356,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="relevantInformation" caption="Дополнительная информация">
-                                        <div class="help-info">Просьба использовать это поле для представления любой другой актуальной информации, которая, возможно, не была учтена в других разделах записи.</div>
+                                        <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -385,12 +385,7 @@
                     </div>
                 </form>
 
-                <div class="row" ng-show="tab=='review'" km-tab="review">
-                    <div class="col-xs-12">
-
-                        <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                            <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                        </div>
+                <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
                         <div class="view-abs-permit" show-pdf="false" ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                     </div>
                 </div>

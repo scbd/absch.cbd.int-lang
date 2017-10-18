@@ -71,7 +71,7 @@
 
                                     <div class="col-xs-6">
                                         <div class="km-control-group" name="postalCode" caption="Почтовый индекс или Zip-код">
-                                            <div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="Пример: H2Y 1N9"></div>
+                                            <div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="пример: H2Y 1N9"></div>
                                         </div>
                                     </div>
 
@@ -175,7 +175,7 @@
                                                         </div>
 
                                                     <div class="km-control-group" name="responsibilities" caption="Краткое описание обязанностей КНО (не более 300 символов)." required>
-                                                        <div class="help-info">Пункт&nbsp;2 статьи&nbsp;13 гласит: «Компетентные национальные органы отвечают в соответствии с применимыми национальными законодательными, административными или политическими мерами за предоставление доступа или выдачу в соответствующих случаях письменного подтверждения того, что требования, регулирующие доступ, выполнены, и отвечают за консультирование по вопросам действующих процедур и требований, регулирующих получение предварительного обоснованного согласия и заключение взаимосогласованных условий». Помните, что цель данного раздела заключается в том, чтобы помочь пользователям понять обязанности, касающиеся доступа к генетическим ресурсам, а также предоставить ответ на вопрос о том,  кто предоставляет доступ и к чему. Описание обязанностей должно быть кратким и понятным.</div>
+                                                        <div class="help-info">Пункт&nbsp;2 статьи&nbsp;13 гласит: «Компетентные национальные органы отвечают в соответствии с применимыми национальными законодательными, административными или политическими мерами за предоставление доступа или выдачу в соответствующих случаях письменного подтверждения того, что требования, регулирующие доступ, выполнены, и отвечают за консультирование по вопросам действующих процедур и требований, регулирующих получение предварительного обоснованного согласия и заключение взаимосогласованных условий». Помните, что цель данного раздела заключается в том, чтобы помочь пользователям понять обязанности, касающиеся доступа к генетическим ресурсам, а также предоставить ответ на вопрос о том, кто предоставляет доступ и к чему. Описание обязанностей должно быть кратким и понятным.</div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -219,7 +219,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="relevantInformation" caption="Дополнительная информация">
-                                            <div class="help-info">Просьба использовать это поле для представления любой другой актуальной информации, которая, возможно, не была учтена в других разделах записи.</div>
+                                            <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
                                             <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -249,14 +249,8 @@
                     </form>
 
 
-                    <div ng-show="tab=='review'" km-tab="review">
-
-
-                        <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                            <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                        </div>
-
-                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
+                    <div ng-show="tab=='review'" km-tab="review" id="schemaView">
+                       <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                     </div><!--
         <hr style="margin-top:20px;">
 

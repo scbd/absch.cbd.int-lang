@@ -21,18 +21,18 @@
             <div class="col-xs-12">
                 <ul class="pagination" id="nrTabs" ng-click="setTab()">
                      <li class="active"><a translation-url  href="#part0" data-toggle="tab">Directrices</a></li>
-                    <li><a translation-url  href="#part1" data-toggle="tab">Parte 1</a></li>
-                    <li><a translation-url  href="#part2" data-toggle="tab">Parte 2</a></li>
-                    <li><a translation-url  href="#part3" data-toggle="tab">Parte 3</a></li>
-                    <li><a translation-url  href="#part4" data-toggle="tab">Parte 4</a></li>
-                    <li><a translation-url  href="#part5" data-toggle="tab">Parte 5</a></li>
-                    <li><a translation-url  href="#part6" data-toggle="tab">Parte 6</a></li>
-                    <li><a translation-url  href="#part7" data-toggle="tab">Parte 7</a></li>
-                    <li><a translation-url  href="#part8" data-toggle="tab">Parte 8</a></li>
-                    <li><a translation-url  href="#part9" data-toggle="tab">Parte 9</a></li>
-                    <li><a translation-url  href="#part10" data-toggle="tab">Parte 10</a></li>
-                    <li><a translation-url  href="#part11" data-toggle="tab">Parte 11</a></li>
-                    <li><a translation-url  href="#part12" data-toggle="tab">Parte 12</a></li>
+                    <li><a translation-url  href="#part1" data-toggle="tab">Part 1</a></li>
+                    <li><a translation-url  href="#part2" data-toggle="tab">Part 2</a></li>
+                    <li><a translation-url  href="#part3" data-toggle="tab">Part 3</a></li>
+                    <li><a translation-url  href="#part4" data-toggle="tab">Part 4</a></li>
+                    <li><a translation-url  href="#part5" data-toggle="tab">Part 5</a></li>
+                    <li><a translation-url  href="#part6" data-toggle="tab">Part 6</a></li>
+                    <li><a translation-url  href="#part7" data-toggle="tab">Part 7</a></li>
+                    <li><a translation-url  href="#part8" data-toggle="tab">Part 8</a></li>
+                    <li><a translation-url  href="#part9" data-toggle="tab">Part 9</a></li>
+                    <li><a translation-url  href="#part10" data-toggle="tab">Part 10</a></li>
+                    <li><a translation-url  href="#part11" data-toggle="tab">Part 11</a></li>
+                    <li><a translation-url  href="#part12" data-toggle="tab">Part 12</a></li>
                 </ul>
             </div>
         </div>
@@ -78,7 +78,7 @@
                             <legend>Informaci&oacute;n general</legend>
             				<div class="row">
             					<div class="col-xs-12">
-            						<div class="km-control-group" name="government" required  bold="true"  caption="1. Pa&iacute;s"><span class="help-inline color-blue bold" ng-if="userGovernment()">No puede cambiarse el pa&iacute;s.</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un pa&iacute;s"></div>
+            						<div class="km-control-group" name="government" required  bold="true"  caption="Pa&iacute;s"><span class="help-inline color-blue bold" ng-if="userGovernment()">No puede cambiarse el pa&iacute;s.</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un pa&iacute;s"></div>
             						</div>
             					</div>
             				</div>
@@ -87,7 +87,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="title" required caption="T&iacute;tulo de este informe nacional">
+                                        <div class="km-control-group" name="title" required caption="1. T&iacute;tulo de este informe nacional">
                                             <div class="help-info">Este campo funciona como el t&iacute;tulo del registro, por tanto, debe ser diferente y ayudar a identificar f&aacute;cilmente el registro en el Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios.</div>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="T&iacute;tulo de este informe nacional" locales="document.header.languages"></div>
                                         </div>
@@ -102,7 +102,7 @@
                                                                 ng-disabled="!document.government"
                                                                 question="contact"
                                                                 government="document.government"
-                                                                schema="(contact authority)"
+                                                                schema="(contact authority focalPoint)"
                                                                 filter="true" type="radio">
                                         </div>
                                     </div>
@@ -228,7 +228,7 @@
                                         </div>
                                         <div ng-disabled="document.question8.notApplicable" class="km-yes-no" name="question8" ng-model="document.question8.answer"></div>
                                     </div>
-                                    <div class="km-control-group" name="question8FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question8FurtherInfo" ng-model="document.question8.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question8FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question8FurtherInfo" ng-model="document.question8.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q8DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -249,7 +249,7 @@
                                     </div>
                                     <div class="km-control-group" name="question9Challenges" caption="">S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados al designar uno o m&aacute;s puntos de verificaci&oacute;n.<div km-textbox-ml rows=4 name="question9Challenges" ng-model="document.question9.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
-                                    <div class="km-control-group" name="question9FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question9FurtherInfo" ng-model="document.question9.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question9FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question9FurtherInfo" ng-model="document.question9.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q9DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -297,7 +297,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" name="question11FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question11FurtherInfo" ng-model="document.question11.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question11FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question11FurtherInfo" ng-model="document.question11.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q11DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -310,7 +310,7 @@
                                     </div>
                                     <div ng-hide="document.question11.answer || document.question11.answer===undefined" ng-class="{'confidential-text': !document.question11.answer}">No es necesario responder a las preguntas 12 a 17. <br /> <br /></div>
 
-                                    <div ng-show="document.question11.answer===undefined" ng-class="{'confidential-text': document.question11.answer===undefined}">S&iacute;rvase responder la pregunta 11 para saber si es necesario responder las preguntas 12 a 17. <br /> <br /></div>
+                                    <div ng-show="document.question11.answer===undefined" ng-class="{'confidential-text': document.question11.answer===undefined}">Please answer Question 11 to know if it is required to answer Question 12 to 17. <br /> <br /></div>
                                 </div>
                             </div>
 
@@ -690,14 +690,14 @@
                                             <div class="km-control-group" name="question27_cc" caption="¿Ha hecho su pa&iacute;s uso del comunicado del punto de verificaci&oacute;n?">
                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option1" value="Yes">S&iacute;</label>
                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option2" value="No">No</label>
-                                                <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option3" value="Other">Otro</label>
+                                                <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option" name="q27Options" id="q27Option3" value="Other">Other</label>
                                             </div>
-                                            <div class="km-control-group" name="question27_ccFurtherInfo">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=2 name="question27_ccFurtherInfo" ng-model="document.question27.cpc.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                            <div class="km-control-group" name="question27_ccFurtherInfo">Please provide further information<div km-textbox-ml rows=2 name="question27_ccFurtherInfo" ng-model="document.question27.cpc.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="km-control-group" name="question27Challenges" caption="">S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os<div km-textbox-ml rows=4 name="question27Challenges" ng-model="document.question27.challengesInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question27Challenges" caption="">Please provide a summary of the main difficulties and challenges<div km-textbox-ml rows=4 name="question27Challenges" ng-model="document.question27.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
                                     <div class="km-control-group row" name="question27_ccsOnAbsCh" caption="S&iacute;rvase proporcionar el n&uacute;mero de comunicados del punto de verificaci&oacute;n disponibles en el Centro de Intercambio de Informaci&oacute;n sobre APB, si procede">
                                         <input class="col-xs-2" type="number" name="ccsOnAbsCh" class="form-control text-right" ng-model="document.question27.cpcsOnAbsChCount" min="0" ng-init="document.question27.cpcsOnAbsChCount=0">
@@ -738,7 +738,7 @@
                                     <div ng-show="document.question29.answer" class="km-control-group" name="question29AdditionalInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; alentando su pa&iacute;s el uso de herramientas y sistemas de comunicaci&oacute;n eficientes en relaci&oacute;n con los costos.<div km-textbox-ml rows=2 name="question29AdditionalInfo" ng-model="document.question29.additionalInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
-                                    <div class="km-control-group" name="question29FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question29FurtherInfo" ng-model="document.question29.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question29FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question29FurtherInfo" ng-model="document.question29.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q29DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -782,7 +782,7 @@
                                         </div>
                                         <div ng-disabled="document.question31.notApplicable" class="km-yes-no" ng-required="!document.question31.notApplicable" name="question31" ng-model="document.question31.answer"></div>
                                     </div>
-                                    <div class="km-control-group" name="question31FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question31FurtherInfo" ng-model="document.question31.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question31FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question31FurtherInfo" ng-model="document.question31.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q31DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -974,14 +974,14 @@
                                     </div>
                                     <div ng-hide="document.question37.answer || document.question37.answer===undefined" ng-class="{'confidential-text': !document.question37.answer}">No es necesario responder a las preguntas 38 a 44. <br /> <br /></div>
 
-                                    <div ng-show="document.question37.answer===undefined" ng-class="{'confidential-text': document.question37.answer===undefined}">S&iacute;rvase responder a la pregunta 37 para saber si es necesario responder las preguntas 38 a 44. <br /> <br /></div>
+                                    <div ng-show="document.question37.answer===undefined" ng-class="{'confidential-text': document.question37.answer===undefined}">Please answer Question 37 to know if it is required to answer Question 38 to 44. <br /> <br /></div>
                                 </div>
                             </div>
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()" name="question38" bold="true" caption="38. ¿Tienen las comunidades ind&iacute;genas y locales el derecho establecido a otorgar acceso a recursos gen&eacute;ticos conforme a las leyes nacionales de su pa&iacute;s? (art&iacute;culo 6.2)">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question38" ng-model="document.question38.answer" ng-click="Q38Clear()"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}" name="question38" bold="true" caption="38. ¿Tienen las comunidades ind&iacute;genas y locales el derecho establecido a otorgar acceso a recursos gen&eacute;ticos conforme a las leyes nacionales de su pa&iacute;s? (art&iacute;culo 6.2)">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question38" ng-model="document.question38.answer" ng-click="Q38Clear()"></div>
                                     </div>
                                     <div class="row" ng-show="document.question38.answer">
                                         <div class="col-xs-10 col-xs-offset-1">
@@ -1029,8 +1029,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question39" caption="39. De conformidad con las leyes nacionales, ¿ha adoptado su pa&iacute;s medidas con miras a asegurar que se acceda a los conocimientos tradicionales asociados a recursos gen&eacute;ticos que est&aacute;n en posesi&oacute;n de comunidades ind&iacute;genas y locales con el CFP o la aprobaci&oacute;n y participaci&oacute;n de dichas comunidades ind&iacute;genas y locales, y que se hayan establecido CMA conforme a lo dispuesto en el art&iacute;culo 7?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question39" ng-model="document.question39.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question39" caption="39. De conformidad con las leyes nacionales, ¿ha adoptado su pa&iacute;s medidas con miras a asegurar que se acceda a los conocimientos tradicionales asociados a recursos gen&eacute;ticos que est&aacute;n en posesi&oacute;n de comunidades ind&iacute;genas y locales con el CFP o la aprobaci&oacute;n y participaci&oacute;n de dichas comunidades ind&iacute;genas y locales, y que se hayan establecido CMA conforme a lo dispuesto en el art&iacute;culo 7?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question39" ng-model="document.question39.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question39FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question39FurtherInfo" ng-model="document.question39.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1048,8 +1048,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question40" caption="40. Al aplicar el Protocolo, y conforme a las leyes nacionales, ¿ha tomado su pa&iacute;s en consideraci&oacute;n las leyes consuetudinarias, protocolos y procedimientos comunitarios con respecto a los conocimientos tradicionales asociados a recursos gen&eacute;ticos conforme a lo dispuesto en el art&iacute;culo 12.1?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question40" caption="40. Al aplicar el Protocolo, y conforme a las leyes nacionales, ¿ha tomado su pa&iacute;s en consideraci&oacute;n las leyes consuetudinarias, protocolos y procedimientos comunitarios con respecto a los conocimientos tradicionales asociados a recursos gen&eacute;ticos conforme a lo dispuesto en el art&iacute;culo 12.1?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question40FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question40FurtherInfo" ng-model="document.question40.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1067,8 +1067,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question41" caption="41. ¿Ha establecido su pa&iacute;s mecanismos para informar a los posibles usuarios de conocimientos tradicionales asociados a recursos gen&eacute;ticos acerca de sus obligaciones conforme a lo dispuesto en el art&iacute;culo 12.2?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question41" ng-model="document.question41.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question41" caption="41. ¿Ha establecido su pa&iacute;s mecanismos para informar a los posibles usuarios de conocimientos tradicionales asociados a recursos gen&eacute;ticos acerca de sus obligaciones conforme a lo dispuesto en el art&iacute;culo 12.2?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question41" ng-model="document.question41.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question41FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question41FurtherInfo" ng-model="document.question41.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1086,59 +1086,71 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()" bold="true"  name="question42" caption="42. ¿Est&aacute; su pa&iacute;s apoyando el desarrollo de las siguientes herramientas por parte de las comunidades ind&iacute;genas y locales conforme a lo dispuesto en el art&iacute;culo 12.3?"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}" bold="true"  name="question42" caption="42. ¿Est&aacute; su pa&iacute;s apoyando el desarrollo de las siguientes herramientas por parte de las comunidades ind&iacute;genas y locales conforme a lo dispuesto en el art&iacute;culo 12.3?"></div>
+                                    <div style="margin-left:25px;">
+                                        <div class="checkbox"> 
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                name="question42_1" ng-model="document.question42.community.answer"></div>
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_community" caption="Community Protocol">                                               
+                                            </div>    
+                                            <div ng-show="document.question42.community.answer" class="km-control-group" name="question42CommunityFurtherInfo" caption=""><br/>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de protocolos comunitarios.<div km-textbox-ml rows=3 name="question42CommunityFurtherInfo" ng-model="document.question42.community.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" type="checkbox" ng-change="Q42Clear()" ng-model="document.question42.community.answer">Protocolos comunitarios</label>
-                                    </div>
-                                    <div ng-show="document.question42.community.answer" class="km-control-group" name="question42CommunityFurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de protocolos comunitarios.<div km-textbox-ml rows=3 name="question42CommunityFurtherInfo" ng-model="document.question42.community.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsCommunity" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
+                                                    <div document-selector ng-model="document.question42.community.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42community"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                               
+                                        </div>
+                                        
+                                        <div class="checkbox">
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                    name="question42_2" ng-model="document.question42.mat.answer"> </div>                                                   
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_mat" caption="Requisitos m&iacute;nimos para las condiciones mutuamente acordadas">
+                                            </div>         
+                                            <div ng-show="document.question42.mat.answer" class="km-control-group" name="question42MATFurtherInfo" caption=""><br/>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de requisitos m&iacute;nimos para las condiciones mutuamente acordadas.<div km-textbox-ml rows=3 name="question42MATFurtherInfo" ng-model="document.question42.mat.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsCommunity" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
-                                            <div document-selector ng-model="document.question42.community.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42community"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsMat" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
+                                                    <div document-selector ng-model="document.question42.mat.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42mat"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" ng-change="Q42Clear()" type="checkbox" ng-model="document.question42.mat.answer">Requisitos m&iacute;nimos para las condiciones mutuamente acordadas</label>
-                                    </div>
-                                    <div ng-show="document.question42.mat.answer" class="km-control-group" name="question42MATFurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de requisitos m&iacute;nimos para las condiciones mutuamente acordadas.<div km-textbox-ml rows=3 name="question42MATFurtherInfo" ng-model="document.question42.mat.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                        <div class="checkbox">
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                name="question42_3" ng-model="document.question42.mcc.answer"></div>   
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_mcc" caption="Cl&aacute;usulas contractuales modelo">
+                                            </div>
+                                            <div ng-show="document.question42.mcc.answer" class="km-control-group" name="question42MCCFurtherInfo" caption="">Please provide further information on how your country is supporting the development of model contractual clauses<div km-textbox-ml rows="3" name="question42MCCFurtherInfo" ng-model="document.question42.mcc.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsMat" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
-                                            <div document-selector ng-model="document.question42.mat.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42mat"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsmcc" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
+                                                    <div document-selector ng-model="document.question42.mcc.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42mcc"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" type="checkbox" ng-change="Q42Clear()" ng-model="document.question42.mcc.answer">Cl&aacute;usulas contractuales modelo</label>
-                                    </div>
-                                    <div ng-show="document.question42.mcc.answer" class="km-control-group" name="question42MCCFurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de cl&aacute;usulas contractuales modelo.<div km-textbox-ml rows=3 name="question42MCCFurtherInfo" ng-model="document.question42.mcc.furtherInfo" locales="document.header.languages" placeholder=""></div>
-
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsmcc" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
-                                            <div document-selector ng-model="document.question42.mcc.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42mcc"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question43" caption="43. ¿Ha procurado su pa&iacute;s no restringir el uso e intercambio consuetudinario de recursos gen&eacute;ticos y conocimientos tradicionales asociados dentro de las comunidades ind&iacute;genas y locales y entre ellas conforme a lo dispuesto en el art&iacute;culo 12.4?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question43" ng-model="document.question43.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question43" caption="43. ¿Ha procurado su pa&iacute;s no restringir el uso e intercambio consuetudinario de recursos gen&eacute;ticos y conocimientos tradicionales asociados dentro de las comunidades ind&iacute;genas y locales y entre ellas conforme a lo dispuesto en el art&iacute;culo 12.4?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question43" ng-model="document.question43.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question43FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question43FurtherInfo" ng-model="document.question43.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1246,7 +1258,7 @@
                                     </div>
                                     <div class="km-control-group" name="question48ILCInfo" caption="">Si en su pa&iacute;s hay comunidades ind&iacute;genas y locales, s&iacute;rvase proporcionar m&aacute;s detalles sobre su participaci&oacute;n.<div km-textbox-ml rows=3 name="question48ILCInfo" ng-model="document.question48.ilcInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
-                                    <div class="km-control-group" name="question48FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question48FurtherInfo" ng-model="document.question48.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question48FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question48FurtherInfo" ng-model="document.question48.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q48DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -1268,7 +1280,7 @@
                                         </div>
                                         <div ng-disabled="document.question49.notApplicable" class="km-yes-no" name="question49" ng-model="document.question49.answer"></div>
                                     </div>
-                                    <div class="km-control-group" name="question49FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question49FurtherInfo" ng-model="document.question49.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question49FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question49FurtherInfo" ng-model="document.question49.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q49DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
                                         <div document-selector ng-model="document.question49.documentReferenceIDs"
@@ -1511,7 +1523,7 @@
                                     <div ng-show="document.question59.answer" class="km-control-group" name="question59AdditionalInfo" caption="">S&iacute;rvase proporcionar un resumen de las medidas adoptadas.<div km-textbox-ml rows=2 name="question59AdditionalInfo" ng-model="document.question59.additionalInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
-                                    <div class="km-control-group" name="question59FurtherInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question59FurtherInfo" ng-model="document.question59.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question59FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question59FurtherInfo" ng-model="document.question59.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q59DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -1572,7 +1584,7 @@
 
                                     <div class="checkbox">
                                         <label><input type="checkbox" ng-model="document.question62.donor.answer" ng-change="Q62ClearDonor()">S&iacute;, se han puesto a disposici&oacute;n recursos financieros</label>
-                                        <div ng-show="document.question62.donor.answer" class="km-control-group" name="question62DonorAdditionalInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=2 ng-model="document.question62.donor.additionalInfo" locales="document.header.languages" placeholder=""></div>
+                                        <div ng-show="document.question62.donor.answer" class="km-control-group" name="question62DonorAdditionalInfo" caption="">Please provide further information<div km-textbox-ml rows=2 ng-model="document.question62.donor.additionalInfo" locales="document.header.languages" placeholder=""></div>
                                         </div>
                                     </div>
 
@@ -1580,7 +1592,7 @@
                                         <label><input type="checkbox" ng-model="document.question62.recipient.answer" ng-change="Q62ClearRecipient()">S&iacute;, se han recibido recursos financieros</label>
                                         <div class="checkbox" ng-show="document.question62.recipient.answer">
                                             <label><input type="checkbox" ng-model="document.question62.recipient.parties" ng-change="Q62ClearRecipientFromParty()">De otras Partes</label>
-                                                <div ng-show="document.question62.recipient.parties"  class="km-control-group" name="question62DonorAdditionalInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=2 ng-model="document.question62.recipient.partiesInfo" locales="document.header.languages" placeholder="">
+                                                <div ng-show="document.question62.recipient.parties"  class="km-control-group" name="question62DonorAdditionalInfo" caption="">Please provide further information<div km-textbox-ml rows=2 ng-model="document.question62.recipient.partiesInfo" locales="document.header.languages" placeholder="">
                                                     </div>
                                                 </div>
                                         </div>
@@ -1594,7 +1606,7 @@
                                             </div>
                                             <div class="checkbox" ng-show="document.question62.recipient.financialInstitutions">
                                                 <label><input type="checkbox" ng-model="document.question62.recipient.otherSources" ng-change="Q62ClearRecipientFromOtherSources()">De otras fuentes</label>
-                                                    <div ng-show="document.question62.recipient.otherSources"   class="km-control-group" name="question62DonorAdditionalInfo" caption="">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=2 name="question62ReceiverotherSourcesInfo" ng-model="document.question62.recipient.otherSourcesInfo" locales="document.header.languages" placeholder=""></div>
+                                                    <div ng-show="document.question62.recipient.otherSources"   class="km-control-group" name="question62DonorAdditionalInfo" caption="">Please provide further information<div km-textbox-ml rows=2 name="question62ReceiverotherSourcesInfo" ng-model="document.question62.recipient.otherSourcesInfo" locales="document.header.languages" placeholder=""></div>
                                                     </div>
                                             </div>
                                         </div>
@@ -1649,7 +1661,7 @@
                                     <div class="km-control-group" name="question63Challenges" caption="">S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados.<div km-textbox-ml rows=4 name="question63Challenges" ng-model="document.question63.challengesInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
-                                    <div class="km-control-group" name="question63FurtherInfo" caption="">Use el campo de texto para proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=4 name="question63FurtherInfo" ng-model="document.question63.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question63FurtherInfo" caption="">Use the text entry to provide further information<div km-textbox-ml rows=4 name="question63FurtherInfo" ng-model="document.question63.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
 
                                     <div class="km-control-group" style="margin-bottom:20px;" name="q63DocRefs" caption="S&iacute;rvase seleccionar los registros del Centro de Intercambio de Informaci&oacute;n sobre APB pertinentes.">
@@ -1713,12 +1725,7 @@
 
             </div><!-- tab='edit' --></form>
 
-        <div ng-show="tab=='review'" km-tab="review">
-
-
-            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-            </div>
+        <div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
             <div view-abs-national-report ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 

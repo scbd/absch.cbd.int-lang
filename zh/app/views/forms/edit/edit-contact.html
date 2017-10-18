@@ -34,7 +34,7 @@
 									<legend name="contactType">联系人类型</legend>
 									<div class="km-control-group" name="notes">
 										<label class="radio-inline">
-											<input type="radio" ng-model="document.type" value="organization" name="editionContactType" />组织</label>
+											<input type="radio" ng-model="document.type" value="organization" name="editionContactType" />Organization</label>
 										<label class="radio-inline">
 											<input type="radio" ng-model="document.type" value="person" name="editionContactType" />个人</label>
 									</div>
@@ -42,12 +42,7 @@
 							</div>
 						</section>
 						<div>
-							<style>
-								input.ng-invalid-url,
-								input.ng-invalid-email {
-									background-color: #f0ad4e;
-								}
-							</style>
+							<style>input.ng-invalid-url, input.ng-invalid-email { background-color:#f0ad4e; }</style>
 
 							<div ng-show="document.type=='person'">
 
@@ -56,7 +51,7 @@
 								<div class="row">
 
 									<div class="col-md-4 col-sm-4 col-xs-12">
-										<div class="km-control-group" name="contact_prefix" caption="标题">
+										<div class="km-control-group" name="contact_prefix" caption="称谓">
 											<div km-textbox-ml name="contact_prefix" ng-model="document.prefix" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -82,7 +77,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_organization" caption="组织">
+										<div class="km-control-group" name="contact_organization" caption="Organization">
 											<div document-selector ng-model="document.contactOrganization" type="radio"
 		                                                                 question="contactOrganization"
 		                                                                 government="document.government"
@@ -109,7 +104,7 @@
 								<legend>组织信息</legend>
 								<div class="row">
 									<div class="col-md-7 col-xs-12">
-										<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="组织">
+										<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="Organization">
 											<div class="help-info">全名，无缩写</div>
 											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organization" ng-model="document.name" required locales="document.header.languages"></div>
 											<div ng-if="document.type=='organization' && document.header.schema=='contact'" km-textbox-ml name="contact_organization" ng-model="document.organization" locales="document.header.languages"></div>
@@ -117,7 +112,7 @@
 									</div>
 
 									<div class="col-md-5 col-xs-12">
-										<div class="km-control-group" name="contact_organizationAcronym" caption="缩写" ng-required="!form.organization.$valid && document.type!='person'">
+										<div class="km-control-group" name="contact_organizationAcronym" caption="Acronym" ng-required="!form.organization.$valid && document.type!='person'">
 											<div class="help-info">长名缩写</div>
 											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="例如：生物多样性公约秘书处" locales="document.header.languages"></div>
 											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="例如：生物多样性公约秘书处" locales="document.header.languages"></div>
@@ -127,7 +122,7 @@
 
 								<div class="row">
 									<div class="col-md-8">
-										<div class="km-control-group" name="contact_organizationType" caption="机构类型">
+										<div class="km-control-group" name="contact_organizationType" caption="组织类型">
 											<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 										</div>
 									</div>
@@ -153,12 +148,12 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_city" caption="城市" >
-											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="例如：蒙特利尔"></div>
+											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="例如：Montreal（蒙特利尔）"></div>
 										</div>
 									</div>
 
 									<div class="col-md-6">
-										<div class="km-control-group" name="contact_state" caption="州/省">
+										<div class="km-control-group" name="contact_state" caption="State or Province">
 											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="例如：Quebec（魁北克）"></div>
 										</div>
 									</div>
@@ -185,14 +180,14 @@
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_phones" caption="电话号码">
-										<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+										<div class="help-info">请使用以下格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="例如：+1 514.288.2220"></div>
 									</div>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_faxes" caption="传真号码">
-										<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+										<div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
 									</div>
 								</div>
@@ -229,11 +224,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 					<view-contact ng-model='reviewDocument' locale="review.locale"></view-contact>
 
 				</div>

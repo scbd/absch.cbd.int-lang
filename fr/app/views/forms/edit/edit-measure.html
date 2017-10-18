@@ -16,10 +16,10 @@
                             <legend name="formInfo" style="display:none"></legend>
                             <section>
                                 <legend>S&apos;agit-il d&rsquo;un amendement &agrave; une mesure l&eacute;gislative, administrative ou politique existante?</legend>
-                                <div class="help-info">Cette section est pertinente seulement lorsque la mesure en cours de soumission modifie une mesure existante. Si la mesure enregistr&eacute;e au Centre d&apos;&eacute;change APA est une modification d&apos;une mesure existante ou d&apos;une partie de celle-ci, assurez-vous que la mesure modifi&eacute;e est d&eacute;j&agrave; enregistr&eacute;e dans le Centre d&apos;&eacute;change afin de pouvoir fournir un lien vers le fichier existant. Cela permettra aux deux fichiers d&rsquo;&ecirc;tre publi&eacute;s ensemble. </div>
+                                <div class="help-info">Cette section est pertinente seulement lorsque la mesure en cours de soumission modifie une mesure existante. Si la mesure enregistr&eacute;e au Centre d&apos;&eacute;change APA est une modification d&apos;une mesure existante ou d&apos;une partie de celle-ci, assurez-vous que la mesure modifi&eacute;e est d&eacute;j&agrave; enregistr&eacute;e dans le Centre d&apos;&eacute;change afin de pouvoir fournir un lien vers le fichier existant. Cela permettra aux deux fichiers d&rsquo;&ecirc;tre publi&eacute;s ensemble.</div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="isAmendment" required caption="S'agit-il d’un amendement à une mesure législative, administrative ou politique existante?">
+                                        <div class="km-control-group" name="isAmendment" required caption="S&apos;agit-il d&rsquo;un amendement &agrave; une mesure l&eacute;gislative, administrative ou politique existante?">
                                             <div class="help-block"></div>
                                             <div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
                                         </div>
@@ -27,17 +27,17 @@
                                 </div><!-- IF NO SECTION --><div ng-class="{'disable':!document.isAmendment, 'bg-white':document.isAmendment}" class="well no-shadow" style="padding-top:0;padding-bottom:0;">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <h3 ng-show="!document.isAmendment" style="color:black!important;">Si non, l&rsquo;information suivante n&rsquo;est pas requise. </h3>
+                                            <h3 ng-show="!document.isAmendment" style="color:black!important;">Si non, l&rsquo;information suivante n&rsquo;est pas requise.</h3>
                                             <h3 ng-show="document.isAmendment==true" style="color:black!important;">Veuillez s&eacute;lectionner le fichier enregistr&eacute; pr&eacute;alablement devant &ecirc;tre modifi&eacute;.</h3>
 
                                             <div class="km-control-group">
-                                                <div class="km-control-group" name="amendedMeasures" caption="Liste de mesures modifiées">
-                                                    <div class="help-info">Veuillez indiquer si cette modification affecte une autre mesure d&eacute;j&agrave; enregistr&eacute;e en fournissant un lien de r&eacute;f&eacute;rence vers la mesure modifi&eacute;e. </div>
+                                                <div class="km-control-group" name="amendedMeasures" caption="Liste de mesures modifi&eacute;es">
+                                                    <div class="help-info">Veuillez indiquer si cette modification affecte une autre mesure d&eacute;j&agrave; enregistr&eacute;e en fournissant un lien de r&eacute;f&eacute;rence vers la mesure modifi&eacute;e.</div>
                                                     <div document-selector hide-self="document.header.identifier" ng-model="document.amendedMeasures" question="amendedMeasures" government="document.government" schema="measure"></div><!--<div km-select multiple name="amendedMeasures" ng-model="document.amendedMeasures"items="options.measures()" placeholder="Please select ..."></div>--></div>
                                             </div>
 
-                                            <div class="km-control-group" name="amendmentsDescription" caption="Résumé de la/des modification(s)">
-                                                <div class="help-info">Cela aidera les usagers &agrave; comprendre les liens entre ces deux mesures.  Le r&eacute;sum&eacute; doit &ecirc;tre aussi simple et concis que possible.</div>
+                                            <div class="km-control-group" name="amendmentsDescription" caption="R&eacute;sum&eacute; de la/des modification(s)">
+                                                <div class="help-info">Cela aidera les usagers &agrave; comprendre les liens entre ces deux mesures. Le r&eacute;sum&eacute; doit &ecirc;tre aussi simple et concis que possible.</div>
                                                 <div km-rich-textbox ng-model="document.amendmentsDescription" rows="4" locales="document.header.languages"></div>
                                             </div>
 
@@ -59,37 +59,37 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" required name="title" caption="(b) Les mesures APA (législatives administratives et de politique générale en matière d’accès et de partage des avantages">
+                                        <div class="km-control-group" required name="title" caption="(b) Les mesures APA (l&eacute;gislatives administratives et de politique g&eacute;n&eacute;rale en mati&egrave;re d&rsquo;acc&egrave;s et de partage des avantages">
                                             <div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div required class="km-control-group" name="status" caption="Statut légal de la mesure">
-                                            <div class="help-info">Parmi des exemples de mesures APA non juridiquement contraignantes sont les strat&eacute;gies nationales, les documents strat&eacute;giques, les lignes directrices, etc. Quand il s&apos;agit d&rsquo;une mesure non juridiquement contraignante APA, la date d&apos;adoption doit &ecirc;tre fournie. Une mesure est juridiquement contraignante lorsqu&rsquo;elle engendre des obligations et des droits qui sont ex&eacute;cutoire selon la loi.  Dans ce cas, la date d&rsquo;entr&eacute;e en vigueur de la mesure APA doit &ecirc;tre fournie. Les mesures contenu dans le format brouillon peuvent &eacute;galement &ecirc;tre incluses dans le Centre d&rsquo;&eacute;change dans le but de partager l&rsquo;information sur les progr&egrave;s accomplis dans la mise en oeuvre.  Une fois que le projet de mesure est adopte ou entre en vigueur, le statut de la mesure peut &ecirc;tre mise &agrave; jour sans avoir besoin d&rsquo;enregistrer &agrave; nouveau les informations existantes. Parfois les mesures ont une application limit&eacute;e dans le temps. Si vous introduisez ce type de mesure, il est demand&eacute; d&rsquo;inclure la date d&apos;expiration.  Inclure les mesures ayant &eacute;t&eacute; retir&eacute;es peuvent &ecirc;tre utiles pour assurer la s&eacute;curit&eacute; juridique sur les ressources g&eacute;n&eacute;tiques et les connaissances traditionnelles associ&eacute;es ayant &eacute;t&eacute; acc&eacute;d&eacute;es dans un cadre juridique ant&eacute;rieur. Si une mesure d&eacute;j&agrave; enregistr&eacute;e au Centre d&rsquo;&eacute;change APA est retir&eacute; ou ne s&rsquo;applique plus, vous devez simplement &eacute;diter la mesure et changer son statut pour «&nbsp;retir&eacute;&nbsp;», en indiquant la date &agrave; partir de laquelle la mesure n&apos;est plus applicable. </div>
-                                            <div style="width:250px;" afc-autocomplete required name="status" ng-model="document.status" source="options.statuses" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Sélectionnez le statut légal..."></div>
+                                        <div required class="km-control-group" name="status" caption="Statut l&eacute;gal de la mesure">
+                                            <div class="help-info">Parmi des exemples de mesures APA non juridiquement contraignantes sont les strat&eacute;gies nationales, les documents strat&eacute;giques, les lignes directrices, etc. Quand il s&apos;agit d&rsquo;une mesure non juridiquement contraignante APA, la date d&apos;adoption doit &ecirc;tre fournie. Une mesure est juridiquement contraignante lorsqu&rsquo;elle engendre des obligations et des droits qui sont ex&eacute;cutoire selon la loi. Dans ce cas, la date d&rsquo;entr&eacute;e en vigueur de la mesure APA doit &ecirc;tre fournie. Les mesures contenu dans le format brouillon peuvent &eacute;galement &ecirc;tre incluses dans le Centre d&rsquo;&eacute;change dans le but de partager l&rsquo;information sur les progr&egrave;s accomplis dans la mise en oeuvre. Une fois que le projet de mesure est adopte ou entre en vigueur, le statut de la mesure peut &ecirc;tre mise &agrave; jour sans avoir besoin d&rsquo;enregistrer &agrave; nouveau les informations existantes. Parfois les mesures ont une application limit&eacute;e dans le temps. Si vous introduisez ce type de mesure, il est demand&eacute; d&rsquo;inclure la date d&apos;expiration. Inclure les mesures ayant &eacute;t&eacute; retir&eacute;es peuvent &ecirc;tre utiles pour assurer la s&eacute;curit&eacute; juridique sur les ressources g&eacute;n&eacute;tiques et les connaissances traditionnelles associ&eacute;es ayant &eacute;t&eacute; acc&eacute;d&eacute;es dans un cadre juridique ant&eacute;rieur. Si une mesure d&eacute;j&agrave; enregistr&eacute;e au Centre d&rsquo;&eacute;change APA est retir&eacute; ou ne s&rsquo;applique plus, vous devez simplement &eacute;diter la mesure et changer son statut pour «&nbsp;retir&eacute;&nbsp;», en indiquant la date &agrave; partir de laquelle la mesure n&apos;est plus applicable.</div>
+                                            <div style="width:250px;" afc-autocomplete required name="status" ng-model="document.status" source="options.statuses" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="S&eacute;lectionnez le statut l&eacute;gal..."></div>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div class="col-xs-12">
                                         <div ng-show="isNotLegallyBinded()">
-                                            <div class="km-control-group" name="adoption" required caption="Ajoutez la date d’adoption">
+                                            <div class="km-control-group" name="adoption" required caption="Ajoutez la date d&rsquo;adoption">
                                                 <div km-date placeholder="AAAA-MM-JJ" name="adoption" required ng-model="document.adoption"></div>
                                             </div>
                                         </div>
                                         <div ng-show="isLegallyBinded()">
-                                            <div class="km-control-group" name="entryIntoForce" required caption="Ajoutez la date d’entrée en vigueur">
+                                            <div class="km-control-group" name="entryIntoForce" required caption="Ajoutez la date d&rsquo;entr&eacute;e en vigueur">
                                                 <div km-date placeholder="AAAA-MM-JJ" name="entryIntoForce" required ng-model="document.entryIntoForce"></div>
                                             </div>
                                         </div>
                                         <div ng-show="isRetired()">
-                                            <div class="km-control-group" name="retired" required caption="Fournissez la date à partir de laquelle la mesure n’est plus applicable">
+                                            <div class="km-control-group" name="retired" required caption="Fournissez la date &agrave; partir de laquelle la mesure n&rsquo;est plus applicable">
                                                 <div km-date placeholder="AAAA-MM-JJ" name="retired" required ng-model="document.retired">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div ng-show="isLegallyBinded() || isNotLegallyBinded()" class="km-control-group" name="limitedApplication" caption="Indiquez la date à partir de laquelle la mesure n’est plus en vigueur si cette mesure comporte une application limitée dans le temps">
+                                        <div ng-show="isLegallyBinded() || isNotLegallyBinded()" class="km-control-group" name="limitedApplication" caption="Indiquez la date &agrave; partir de laquelle la mesure n&rsquo;est plus en vigueur si cette mesure comporte une application limit&eacute;e dans le temps">
                                             <div km-date placeholder="AAAA-MM-JJ" name="limitedApplication" ng-model="document.limitedApplication"></div>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="row" ng-show="isTypeOther()">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" required name="otherTypeName" caption="Nom de de l'autre type de document/mesure">
+                                        <div class="km-control-group" required name="otherTypeName" caption="Nom de de l&apos;autre type de document/mesure">
                                             <div km-textbox-ml required ng-model="document.otherTypeName" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -116,10 +116,10 @@
                                 <div class="row">
 
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" required name="jurisdiction" caption="Domaine de juridiction ">
-                                            <div class="help-info">Veuillez sp&eacute;cifier l&rsquo;aire g&eacute;ographique d&apos;application de cette mesure APA. La mesure peut s&rsquo;appliquer aux &eacute;chelons r&eacute;gional, multilat&eacute;ral, national, f&eacute;d&eacute;ral, infra national ou &agrave; l&rsquo;&eacute;chelle communautaire.  Pour les mesures multilat&eacute;rales ou r&eacute;gionales, veuillez indiquer quels pays sont couverts par la mesure en s&eacute;lectionnant &agrave; partir du menu d&eacute;roulant l&rsquo;aire g&eacute;ographique pertinente ou le groupe politique ou &eacute;conomique.  La liste est exhaustive ; il est donc probable que le groupe sp&eacute;cifique auquel s&apos;applique la mesure soit d&eacute;j&agrave; r&eacute;pertori&eacute;. Cependant, il la mesure s&rsquo;applique &agrave; un groupe de pays qui n&apos;est pas couvert par les groupes existants, s&eacute;lectionnez chaque pays concern&eacute; par la mesure s&eacute;par&eacute;ment dans le menu d&eacute;roulant. </div>
+                                        <div class="km-control-group" required name="jurisdiction" caption="Domaine de juridiction">
+                                            <div class="help-info">Veuillez sp&eacute;cifier l&rsquo;aire g&eacute;ographique d&apos;application de cette mesure APA. La mesure peut s&rsquo;appliquer aux &eacute;chelons r&eacute;gional, multilat&eacute;ral, national, f&eacute;d&eacute;ral, infra national ou &agrave; l&rsquo;&eacute;chelle communautaire. Pour les mesures multilat&eacute;rales ou r&eacute;gionales, veuillez indiquer quels pays sont couverts par la mesure en s&eacute;lectionnant &agrave; partir du menu d&eacute;roulant l&rsquo;aire g&eacute;ographique pertinente ou le groupe politique ou &eacute;conomique. La liste est exhaustive ; il est donc probable que le groupe sp&eacute;cifique auquel s&apos;applique la mesure soit d&eacute;j&agrave; r&eacute;pertori&eacute;. Cependant, il la mesure s&rsquo;applique &agrave; un groupe de pays qui n&apos;est pas couvert par les groupes existants, s&eacute;lectionnez chaque pays concern&eacute; par la mesure s&eacute;par&eacute;ment dans le menu d&eacute;roulant.</div>
 
-                                            <div style="width:250px;" afc-autocomplete required name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Sélectionnez une aire de juridiction..."></div>
+                                            <div style="width:250px;" afc-autocomplete required name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="S&eacute;lectionnez une aire de juridiction..."></div>
                                             <div ng-if="isJurisdictionRegional()">
                                                 <div class="color-red" ng-if="!document.government.identifier">Veuillez d&rsquo;abord choisir un pays.</div>
                                             </div>
@@ -131,14 +131,14 @@
 
                                         <div ng-if="isJurisdictionRegional() && !canAddRegionalMeasure()">
                                             <div class="alert alert-warning">
-                                                <h4>Veuillez notez que les mesures r&eacute;gionales ou multilat&eacute;rales doivent &ecirc;tre enregistr&eacute;es seulement une fois au Centre d&rsquo;&eacute;change APA et que chacun des pays s&eacute;lectionn&eacute; concern&eacute; par la mesure verront la mesure s&rsquo;afficher en tant que partie de leur cadre de travail l&eacute;gal au sein de leur profil de pays.  Il est recommand&eacute; que le pays accepte d&rsquo;enregistrer la mesure au nom de l&apos;organisation r&eacute;gionale ou du groupe de pays qui partagent cette m&ecirc;me mesure.</h4>
+                                                <h4>Veuillez notez que les mesures r&eacute;gionales ou multilat&eacute;rales doivent &ecirc;tre enregistr&eacute;es seulement une fois au Centre d&rsquo;&eacute;change APA et que chacun des pays s&eacute;lectionn&eacute; concern&eacute; par la mesure verront la mesure s&rsquo;afficher en tant que partie de leur cadre de travail l&eacute;gal au sein de leur profil de pays. Il est recommand&eacute; que le pays accepte d&rsquo;enregistrer la mesure au nom de l&apos;organisation r&eacute;gionale ou du groupe de pays qui partagent cette m&ecirc;me mesure.</h4>
                                             </div>
                                         </div>
 
                                         <div ng-if="isJurisdictionRegional() && canAddRegionalMeasure()">
                                             <div class="help-info">Veuillez notez que les mesures r&eacute;gionales ou multilat&eacute;rales doivent &ecirc;tre enregistr&eacute;es seulement une fois au Centre d&rsquo;&eacute;change APA et que chacun des pays s&eacute;lectionn&eacute; concern&eacute; par la mesure verront la mesure s&rsquo;afficher en tant que partie de leur cadre de travail l&eacute;gal au sein de leur profil de pays. Il est recommand&eacute; que le pays accepte d&rsquo;enregistrer la mesure au nom de l&apos;organisation r&eacute;gionale ou du groupe de pays qui partagent cette m&ecirc;me mesure.</div>
 
-                                            <div class="km-control-group" required name="jurisdictionRegions" caption="Nom du/des pays et du/des groupe(s) politique(s) ou économique(s)">
+                                            <div class="km-control-group" required name="jurisdictionRegions" caption="Nom du/des pays et du/des groupe(s) politique(s) ou &eacute;conomique(s)">
                                                 <button type="button" class="btn btn-info">&Eacute;tats membres de l&rsquo;Union Europ&eacute;enne</button><!--<div  km-select required name="jurisdictionRegions" ng-model="document.jurisdictionRegions" items="options.regions()" multiple ></div>--></div>
                                         </div>
 
@@ -153,8 +153,8 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="description" caption="Courte description du document comprenant l'objectif et le champ d'application (300 mots maximum)">
-                                            <div class="help-info">La br&egrave;ve description du document incluant son objectif et sa port&eacute;e servira de bref r&eacute;sum&eacute; de la mesure.  Cette information sera publi&eacute;e dans le r&eacute;sum&eacute; du fichier ; il est donc important que la description soit claire et concise. </div>
+                                        <div class="km-control-group" name="description" caption="Courte description du document comprenant l&apos;objectif et le champ d&apos;application (300 mots maximum)">
+                                            <div class="help-info">La br&egrave;ve description du document incluant son objectif et sa port&eacute;e servira de bref r&eacute;sum&eacute; de la mesure. Cette information sera publi&eacute;e dans le r&eacute;sum&eacute; du fichier ; il est donc important que la description soit claire et concise.</div>
                                             <div km-rich-textbox ng-model="document.description" rows="4" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                         <div class="km-control-group" name="isModelContractualClause" caption="Est-ce que la mesure comporte des clauses contractuelles types?">
                                             <div km-yes-no required ng-model="document.isModelContractualClause" locales="document.header.languages"></div>
                                             <div ng-show="document.isModelContractualClause">
-                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Veuillez fournir des informations complémentaires.">
+                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Veuillez fournir des informations compl&eacute;mentaires.">
                                                     <div km-textbox-ml ng-model="document.modelContractualClauseDescription" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
@@ -189,7 +189,7 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="documentTranslations" caption="Traduction dans l’une des langues officielles de l’ONU.">
+                                        <div class="km-control-group" name="documentTranslations" caption="Traduction dans l&rsquo;une des langues officielles de l&rsquo;ONU.">
                                             <div km-link name="documentTranslations" ng-model="document.documentTranslations" extensions="options.documentTranslationsExt" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                         </div>
                                     </div>
@@ -197,8 +197,8 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="linkedMeasures" caption="Liens avec d’autres mesures">
-                                            <div class="help-info">Veuillez indiquer si il existe tout autre relation entre ce document, cette mesure et d&rsquo;autres lois, r&egrave;glements, directives ou mesures administratives ou politiques.  Par exemple, dans le cas o&ugrave; la mesure en cours de soumission met en oeuvre une loi existante.  Cette information aidera &agrave; rendre les informations disponibles pour le cadre de travail national.  Cette section du format vous permettra de lier les deux mesures dans le cas o&ugrave; elles sont reli&eacute;es, par exemple si la mesure en cours de soumission met en oeuvre une loi existante. Les deux mesures seront alors pr&eacute;sent&eacute;es ensemble </div><!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>--><div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
+                                        <div class="km-control-group" name="linkedMeasures" caption="Liens avec d&rsquo;autres mesures">
+                                            <div class="help-info">Veuillez indiquer si il existe tout autre relation entre ce document, cette mesure et d&rsquo;autres lois, r&egrave;glements, directives ou mesures administratives ou politiques. Par exemple, dans le cas o&ugrave; la mesure en cours de soumission met en oeuvre une loi existante. Cette information aidera &agrave; rendre les informations disponibles pour le cadre de travail national. Cette section du format vous permettra de lier les deux mesures dans le cas o&ugrave; elles sont reli&eacute;es, par exemple si la mesure en cours de soumission met en oeuvre une loi existante. Les deux mesures seront alors pr&eacute;sent&eacute;es ensemble</div><!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>--><div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
 
 
                                         </div>
@@ -207,7 +207,7 @@
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="linkedMeasuresDescription" caption="Veuillez décrire la relation entre els deux mesures">
+                                        <div class="km-control-group" name="linkedMeasuresDescription" caption="Veuillez d&eacute;crire la relation entre els deux mesures">
                                             <div km-rich-textbox ng-model="document.linkedMeasuresDescription" rows="4" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -233,7 +233,7 @@
                                 <legend>Coordonn&eacute;es du correspondant pour la r&eacute;glementation</legend>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" required name="authorities" caption="Coordonnées de l’institution">
+                                        <div class="km-control-group" required name="authorities" caption="Coordonn&eacute;es de l&rsquo;institution">
 
                                             <div document-selector ng-model="document.authorities" question="authorities" government="document.government" schema="(authority contact)"></div>
 
@@ -252,7 +252,7 @@
 
                                 <div ng-if="document.absMeasuresForDelete">
                                     <div class="alert alert-warning">
-                                        <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Le format pour sauvegarder les <i>&eacute;l&eacute;ments des mesures</i> a chang&eacute;. Ce fichier doit &ecirc;tre mis &agrave; jour annuellement. La liste ci-dessous  <i>&eacute;l&eacute;ments des mesures</i> provient de la version ant&eacute;rieure et sert &agrave; des fins de r&eacute;f&eacute;rence pour vous aider &agrave; mettre le fichier &agrave; jour. </strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                        <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Le format pour sauvegarder les <i>&eacute;l&eacute;ments des mesures</i> a chang&eacute;. Ce fichier doit &ecirc;tre mis &agrave; jour annuellement. La liste ci-dessous  <i>&eacute;l&eacute;ments des mesures</i> provient de la version ant&eacute;rieure et sert &agrave; des fins de r&eacute;f&eacute;rence pour vous aider &agrave; mettre le fichier &agrave; jour.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -262,9 +262,10 @@
                                                 <div class="km-control-group"  name="absMeasures" required caption="">
                                                     <div class="help-info"></div>
                                                     <div layout="row" style="margin-bottom:20px;">
-                                                         <div class="help-info" >Veuillez s&eacute;lectionner quels &eacute;l&eacute;ments sont inclus dans la mesure en cours d&rsquo;enregistrement et identifiez les articles ou sections pertinentes de la mesure pour chacun des &eacute;l&eacute;ments s&eacute;lectionn&eacute;s.  Cette information aidera &agrave; rendre les informations disponibles pour le cadre de travail national pour aider les usagers potentiels &agrave; comprendre l&apos;acc&egrave;s et le partage des avantages et le respect des exigences de votre pays.  Parfois, le contenu et les &eacute;l&eacute;ments de la mesure sont li&eacute;s aux objectifs et aux plans pour la mise en oeuvre nationale de l&rsquo;APA. Cela pourra etre le cas, par exemple, pour des strat&eacute;gies et plans d&apos;action APA.  Dans de tels cas, vous pourrez indiquer les &eacute;l&eacute;ments de la mesure qui ne sont pas applicables en cliquant sur la case &agrave; cocher ci-dessous.</div>
+                                                         <div class="help-info" >Veuillez s&eacute;lectionner quels &eacute;l&eacute;ments sont inclus dans la mesure en cours d&rsquo;enregistrement et identifiez les articles ou sections pertinentes de la mesure pour chacun des &eacute;l&eacute;ments s&eacute;lectionn&eacute;s. Cette information aidera &agrave; rendre les informations disponibles pour le cadre de travail national pour aider les usagers potentiels &agrave; comprendre l&apos;acc&egrave;s et le partage des avantages et le respect des exigences de votre pays. Parfois, le contenu et les &eacute;l&eacute;ments de la mesure sont li&eacute;s aux objectifs et aux plans pour la mise en oeuvre nationale de l&rsquo;APA. Cela pourra etre le cas, par exemple, pour des strat&eacute;gies et plans d&apos;action APA. Dans de tels cas, vous pourrez indiquer les &eacute;l&eacute;ments de la mesure qui ne sont pas applicables en cliquant sur la case &agrave; cocher ci-dessous.</div>
                                                     </div>
-                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"></div>
+                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"
+                                                        validation-report="validationReport"></div>
                                                 </div>
                                             </div>
 
@@ -300,7 +301,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-block">Le champ « Notes » sert &agrave; afficher les notes ou commentaires personnels et sera mi en cache lorsque le document est consult&eacute;. Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
+                                            <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. Ce champ est pas destin&eacute; &agrave; &ecirc;tre utilis&eacute; pour obtenir des informations confidentielles.</div>
                                             <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                         </div>
                                     </div>
@@ -310,12 +311,7 @@
                         </div>
                     </form>
 
-                    <div class="row" ng-show="tab=='review'" km-tab="review">
-                        <div class="col-xs-12">
-
-                            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                            </div>
+                    <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
 
                             <div view-measure ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                         </div>

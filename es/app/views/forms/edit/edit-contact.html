@@ -42,21 +42,16 @@
 							</div>
 						</section>
 						<div>
-							<style>
-								input.ng-invalid-url,
-								input.ng-invalid-email {
-									background-color: #f0ad4e;
-								}
-							</style>
+							<style>input.ng-invalid-url, input.ng-invalid-email { background-color: #f0ad4e; }</style>
 
 							<div ng-show="document.type=='person'">
 
-								<legend>Informaci&oacute;n Personal</legend>
+								<legend>Informaci&oacute;n personal</legend>
 
 								<div class="row">
 
 									<div class="col-md-4 col-sm-4 col-xs-12">
-										<div class="km-control-group" name="contact_prefix" caption="T&iacute;tulo">
+										<div class="km-control-group" name="contact_prefix" caption="Denominaci&oacute;n">
 											<div km-textbox-ml name="contact_prefix" ng-model="document.prefix" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -229,11 +224,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 					<view-contact ng-model='reviewDocument' locale="review.locale"></view-contact>
 
 				</div>

@@ -21,7 +21,7 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="title" caption="标题">
+								<div class="km-control-group" required name="title" caption="Title">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" required name="publicationYear" caption="公布年份">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;<option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
 							</div>
@@ -213,7 +213,7 @@
 
 
 
-					<section><a translation-url  name="#AdditionalInformation"></a><legend>附加信息</legend>
+					<section><a translation-url  name="#AdditionalInformation"></a><legend>Additional information</legend>
 
 						<div class="row">
 							<div class="col-xs-12">
@@ -254,12 +254,7 @@
 
 			</form>
 
-			<div ng-show="tab=='review'" km-tab="review">
-
-				<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-					<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages"
-					ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-				</div>
+			<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 				<div view-resource ng-model="reviewDocument" locale="review.locale" allow-drafts="true" heading="{{heading}}" short-heading="{{shortHeading}}"></div>
 			</div><!-- <hr style="margin-top:20px;">

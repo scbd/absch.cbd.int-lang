@@ -65,7 +65,7 @@
                                         <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable" watch-items>Международно признанный сертификат о соответствии требованиям (МПССТ) отсутствует</input></span></div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                             <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="Ссылки на международно признанный(-ые) сертификат(ы) о соответствии требованиям (МПССТ), имеющий(-ие) отношение к данному коммюнике">
-                                                  <div class="help-info">Здесь следует указать ссылку на МПССТ, если пользователь генетического ресурса представлял МПССТ контрольному пункту. Для поиска существующего соответствующего МПССТ используйте в текстовом поле различные фильтры или уникальный идентификатор. Если МПССТ отсутствует, необходимо выбрать вариант «Данная информация отсутствует», с тем чтобы активировать серое поле, расположенное ниже. </div>
+                                                  <div class="help-info">Здесь следует указать ссылку на МПССТ, если пользователь генетического ресурса представлял МПССТ контрольному пункту. Для поиска существующего соответствующего МПССТ используйте в текстовом поле различные фильтры или уникальный идентификатор. Если МПССТ отсутствует, необходимо выбрать вариант «Данная информация отсутствует», с тем чтобы активировать серое поле, расположенное ниже.</div>
                                                 <div document-selector ng-model="document.absIRCCs"
                                                                         question="absIRCCs"
                                                                         schema="absPermit"
@@ -259,7 +259,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="relevantInformation" caption="Дополнительная информация">
-                                        <div class="help-info">Просьба использовать это поле для представления любой другой актуальной информации, которая, возможно, не была учтена в других разделах записи.</div>
+                                        <div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>
                                 </div>
@@ -288,10 +288,7 @@
                     </div>
                 </form>
 
-                <div ng-show="tab=='review'" km-tab="review">
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                    </div>
+                <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div class="view-abs-checkpoint-communique" ng-model="reviewDocument" locale="review.locale" allow-drafts="true" show-pdf="false"></div>
                 </div>
 

@@ -21,7 +21,7 @@
 				<legend>تفاصيل موقع الويب أو قاعدة البيانات</legend>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="km-control-group" name="government" required caption="البلد">
+						<div class="km-control-group" name="government" required caption="Country">
               <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="title" required caption="اسم موقع الويب أو قاعدة البيانات">
-							<div class="help-info">يرجى إدخال اسم الموقع أو قاعدة البيانات كما تود أن يظهر في عنوان السجل.</div>
+							<div class="help-info">Please enter the name of the website or database as you would like it to appear in the title of the record.</div>
 							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="مثال: العنوان"></div>
 						</div>
 					</div>
@@ -59,7 +59,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-							<div class="help-info">يُرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم تذكر أو تستخدم في مكان آخر في هذا السجل.</div>
+							<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 							<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 						</div>
 					</div>
@@ -76,11 +76,11 @@
 
 				<section>
 
-				<legend>ملاحظات</legend>
+				<legend>ملاحظات Notes</legend>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="km-control-group" name="notes">
-							<div class="help-info">حقل &quot;ملاحظات&quot; لتدوين الملاحظات الشخصية أو التعليقات، وسوف يكون مخفيًا عند عرض السجل. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+							<div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
 							<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 						</div>
 					</div>
@@ -90,11 +90,7 @@
 			</div>
 		</form>
 
-		<div ng-show="tab=='review'" km-tab="review">
-
-            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-            </div>
+		<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
             <div view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 

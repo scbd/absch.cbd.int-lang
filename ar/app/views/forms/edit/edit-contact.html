@@ -15,7 +15,7 @@
 				<i class="fa fa-spinner fa-spin"></i> Loading...
 			</div>--><div ng-show="!isLoading() && status!='hidden'">
 				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
-				<p class="color-litegrey">يرجى ملاحظة أن نقاط الاتصال الوطنية ليس متاحة للجمهور في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع. ستظهر نقاط الاتصال الوطنية المنشورة فقط إذا كانت مرتبطة بسجلات وطنية أخرى منشورة.</p>
+				<p class="color-litegrey">يرجى ملاحظة أن نقاط الاتصال الوطنية ليس متاحة للجمهور في غرفة تبادل المعلومات للحصول وتقاسم المنافع. ستظهر نقاط الاتصال الوطنية المنشورة فقط إذا كانت مرتبطة بسجلات وطنية أخرى منشورة.</p>
 
 				<div km-document-validation ng-model="validationReport"></div>
 				<form name="editForm" class="editForm" style="margin-top:10px">
@@ -42,12 +42,7 @@
 							</div>
 						</section>
 						<div>
-							<style>
-								input.ng-invalid-url,
-								input.ng-invalid-email {
-									background-color: #f0ad4e;
-								}
-							</style>
+							<style>input.ng-invalid-url, input.ng-invalid-email { background-color: #f0ad4e; }</style>
 
 							<div ng-show="document.type=='person'">
 
@@ -56,7 +51,7 @@
 								<div class="row">
 
 									<div class="col-md-4 col-sm-4 col-xs-12">
-										<div class="km-control-group" name="contact_prefix" caption="اللقب">
+										<div class="km-control-group" name="contact_prefix" caption="Title">
 											<div km-textbox-ml name="contact_prefix" ng-model="document.prefix" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -99,7 +94,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_designation" caption="الوظيفة">
+										<div class="km-control-group" name="contact_designation" caption="Job Title">
 											<div km-textbox-ml name="contact_designation" ng-model="document.designation" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -117,10 +112,10 @@
 									</div>
 
 									<div class="col-md-5 col-xs-12">
-										<div class="km-control-group" name="contact_organizationAcronym" caption="الاسم المختصر للمنظمة" ng-required="!form.organization.$valid && document.type!='person'">
+										<div class="km-control-group" name="contact_organizationAcronym" caption="Acronym" ng-required="!form.organization.$valid && document.type!='person'">
 											<div class="help-info">اختصار الاسم الطويل</div>
-											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="مثال: SCBD" locales="document.header.languages"></div>
-											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="مثال: SCBD" locales="document.header.languages"></div>
+											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="example: SCBD" locales="document.header.languages"></div>
+											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="example: SCBD" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
@@ -145,7 +140,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="km-control-group" name="contact_address" caption="عنوان الشارع">
-											<div km-textbox-ml name="contact_address" ng-model="document.address" rows="2" placeholder="مثال: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
+											<div km-textbox-ml name="contact_address" ng-model="document.address" rows="2" placeholder="example: 413 St-Jacques Ouest, Suite 800" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
@@ -153,13 +148,13 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_city" caption="المدينة" >
-											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="مثال: Montreal"></div>
+											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="example: Montreal"></div>
 										</div>
 									</div>
 
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_state" caption="الولاية أو المقاطعة">
-											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="مثال: Quebec"></div>
+											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="example: Quebec"></div>
 										</div>
 									</div>
 								</div>
@@ -173,7 +168,7 @@
 									</div>
 
 									<div class="col-md-6">
-										<div class="km-control-group" name="contact_country" ng-required="!form.contact_country.$valid" caption="عنوان البلد">
+										<div class="km-control-group" name="contact_country" ng-required="!form.contact_country.$valid" caption="Country address">
 											<div km-select name="contact_country" ng-model="document.country" items="options.addressCountries()"></div>
 										</div>
 									</div>
@@ -185,14 +180,14 @@
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_phones" caption="أرقام الهاتف">
-										<div class="help-info">يرجى استخدم الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+										<div class="help-info">Please use the following format: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
 										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="مثال: 2220 288 514 1+"></div>
 									</div>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_faxes" caption="أرقام الفاكس">
-										<div class="help-info">يرجى استخدم الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+										<div class="help-info">Please use the following format: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
 										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="مثال: 6588 288 514 1+"></div>
 									</div>
 								</div>
@@ -207,7 +202,7 @@
 
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_websites" caption="عنوان موقع الانترنت">
-										<div km-inputtext-list name="contact_websites" type="url" ng-model="doc._urls" placeholder="مثلاً :  http://www.cbd.int"></div>
+										<div km-inputtext-list name="contact_websites" type="url" ng-model="doc._urls" placeholder="مثال: http://www.cbd.int"></div>
 									</div>
 								</div>
 							</div>
@@ -215,11 +210,11 @@
 
 						<section>
 
-							<legend>ملاحظات</legend>
+							<legend>ملاحظات Notes</legend>
 							<div class="row">
 								<div class="col-xs-12">
 									<div class="km-control-group" name="notes">
-										<div class="help-info">حقل &quot;ملاحظات&quot; لتدوين الملاحظات الشخصية أو التعليقات، وسوف يكون مخفيًا عند عرض السجل. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+										<div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
 										<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 									</div>
 								</div>
@@ -229,11 +224,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 					<view-contact ng-model='reviewDocument' locale="review.locale"></view-contact>
 
 				</div>

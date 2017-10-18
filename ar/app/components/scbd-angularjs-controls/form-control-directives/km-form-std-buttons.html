@@ -1,11 +1,5 @@
-﻿<span style="text-align:left">
-
-	<span ng-hide="errors">
-
-		<input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="إلغاء"/>
-		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="حفظ"  ng-show="hideSave"/>
-
-	</span>
+﻿<span style="text-align:left" dir="rtl"> <span ng-hide="errors" dir="rtl"><input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Cancel"/>
+		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Save"  ng-show="hideSave"/></span>
 
     <!--Save Dialog-->
 	<div id="dialogSave" class="modal fade" data-backdrop="static">
@@ -31,19 +25,16 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-    <!--Cancel Dialog-->
-	<div id="dialogCancel" class="modal fade" data-backdrop="static">
+	</div><!--Cancel Dialog--><div id="dialogCancel" class="modal fade" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" ng-click="closeDialog()" aria-hidden="true">×</button>
-					<h4>إلغاء التغييرات...</h4>
+					<h4>إلغاء التغييرات</h4>
 				</div>
 				<div class="modal-body">
 
-					<p>إذا كنت تريد إلغاء التغييرات التى أضفتها إلي المسودة, فيمكنك حفظ النسخة السابقة من هذه المسودة والتي ستكون متاحة في قائمة المسودات في مركز الإدارة. أنت أو أحد زملائك يمكنه إكمال التعديل لهذا السجل في هذه المرة أو في مرة لاحقة.</p>
+					<p>إذا كنت تريد إلغاء التغييرات التى أضفتها إلي هذه المسودة، يمكنك حفظ النسخة السابقة من المسودة، التي ستكون حينئذ متاحة في قائمة المسودات بمركز الإدارة. أنت أو أحد زملائك يمكنه إكمال التعديل لهذا السجل في هذه المرة أو في مرة لاحقة.</p>
 
 				</div>
 				<div class="modal-footer" style="margin-top:0">
@@ -52,6 +43,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-</span>
+	</div></span>

@@ -1,18 +1,14 @@
 ﻿<div>
-	<style>
-		input.ng-invalid-url, input.ng-invalid-email {
-		 background-color:#f0ad4e;
-		}
-	</style>
+	<style>input.ng-invalid-url, input.ng-invalid-email { background-color:#f0ad4e; }</style>
 
 	<div ng-show="document.type=='person'">
 
-		<legend>Informaci&oacute;n Personal</legend>
+		<legend>Informaci&oacute;n personal</legend>
 
 		<div  class="row">
 
 			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="km-control-group" name="contact_prefix" caption="T&iacute;tulo">
+				<div class="km-control-group" name="contact_prefix" caption="Denominaci&oacute;n">
 					<div km-textbox-ml name="contact_prefix" ng-model="document.prefix" locales="locales"></div>
 				</div>
 			</div>

@@ -165,7 +165,7 @@
                                         <div class="km-control-group" name="isModelContractualClause" caption="该措施是否包含示范合同条款？">
                                             <div km-yes-no required ng-model="document.isModelContractualClause" locales="document.header.languages"></div>
                                             <div ng-show="document.isModelContractualClause">
-                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="请提供进一步信息">
+                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Please provide further information">
                                                     <div km-textbox-ml ng-model="document.modelContractualClauseDescription" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
@@ -264,7 +264,8 @@
                                                     <div layout="row" style="margin-bottom:20px;">
                                                          <div class="help-info" >请选择所注册措施要包含哪些要素，并为每个选定要素查明该措施的相关文章或部分。此信息将协助显示有关国家法律框架的信息，帮助潜在用户了解贵国在获取、惠益分享和/或合规方面的要求。有时，措施的内容和要素涉及在国内实施获取和惠益分享的目标和计划。比如说，对于某些获取和惠益分享战略或行动计划来说情况就是这样的。在此类情况下，您可以通过单击上面的复选框，指明该措施的要素不适用。</div>
                                                     </div>
-                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"></div>
+                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"
+                                                        validation-report="validationReport"></div>
                                                 </div>
                                             </div>
 
@@ -276,7 +277,7 @@
 
 
                             <section>
-                                <legend>附加信息</legend>
+                                <legend>Additional information</legend>
 
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -300,7 +301,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                            <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                             <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                         </div>
                                     </div>
@@ -310,12 +311,7 @@
                         </div>
                     </form>
 
-                    <div class="row" ng-show="tab=='review'" km-tab="review">
-                        <div class="col-xs-12">
-
-                            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                            </div>
+                    <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
 
                             <div view-measure ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                         </div>

@@ -177,7 +177,7 @@
 
 
                             <section>
-                                <legend name="documentsDetails">Informaci&oacute;n de los documentos</legend>
+                                <legend name="documentsDetails">Informaci&oacute;n del documento</legend>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" required name="documents" caption="Texto del documento (en su idioma original)">
@@ -264,7 +264,8 @@
                                                     <div layout="row" style="margin-bottom:20px;">
                                                          <div class="help-info" >S&iacute;rvase seleccionar qu&eacute; elementos est&aacute;n incluidos en la medida que se est&aacute; registrando y determine los art&iacute;culos o secciones pertinentes de la medida para cada elemento seleccionado. Esta informaci&oacute;n brindar&aacute; asistencia para mostrar informaci&oacute;n sobre el marco jur&iacute;dico nacional y ayudar&aacute; a los eventuales usuarios a comprender el acceso, la participaci&oacute;n en los beneficios y o los requisitos de cumplimiento del pa&iacute;s. A veces, el contenido y los elementos de la medida est&aacute;n relacionados con los objetivos y planes de aplicaci&oacute;n del acceso y la participaci&oacute;n en los beneficios en el plano nacional. Este podr&iacute;a ser el caso, por ejemplo, de algunas estrategias o planes de acci&oacute;n en materia de APB. En esos casos, se podr&iacute;a indicar qu&eacute; elementos de la medida no corresponden, haciendo clic en la casilla de verificaci&oacute;n que se presenta a continuaci&oacute;n.</div>
                                                     </div>
-                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"></div>
+                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"
+                                                        validation-report="validationReport"></div>
                                                 </div>
                                             </div>
 
@@ -281,7 +282,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
-                                            <div class="help-block">Por favor, utilice este campo para proporcionar cualquier otra informaci&oacute;n pertinente que no se haya podido incluir en otro lugar del registro.</div>
+                                            <div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
                                             <div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -310,12 +311,7 @@
                         </div>
                     </form>
 
-                    <div class="row" ng-show="tab=='review'" km-tab="review">
-                        <div class="col-xs-12">
-
-                            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                            </div>
+                    <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
 
                             <div view-measure ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                         </div>

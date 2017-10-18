@@ -95,7 +95,7 @@
 										</div>
 										<div class="col-md-5">
 											<div class="km-control-group" name="duration" caption="Продолжительность">
-												<div km-textbox-ml name="duration" ng-model="document.duration" placeholder="например, 24 месяца" locales="document.header.languages" ng-change="clearDates()"></div>
+												<div km-textbox-ml name="duration" ng-model="document.duration" placeholder="например, 24&nbsp;месяца" locales="document.header.languages" ng-change="clearDates()"></div>
 											</div>
 									  	</div>
 									</div>
@@ -328,7 +328,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>Примечания</legend><span class="help-info">Поле «Примечания» включено для индивидуального пользования и становится видимым только при редактировании записи.</span><div km-notes name="notes" ng-model="document.notes"></div>
+									<legend>Примечания</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>
 						</div>
@@ -337,11 +337,7 @@
 
 				</form>
 
-            	<div ng-show="tab=='review'" km-tab="review">
-
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-click="$parent.review.locale = locale" ng-repeat="locale in document.header.languages" type="button" value="{{locale | uppercase}}"/>
-                    </div>
+            	<div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div view-capacity-building-initiative ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                 </div>
 

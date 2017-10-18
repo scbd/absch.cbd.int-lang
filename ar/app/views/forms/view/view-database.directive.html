@@ -3,16 +3,16 @@
 	<div class="record-body panel-body">
 
 
-
+<div record-options></div>
 <legend>معلومات عامة</legend>
-
+		
 		<div ng-show="document.government">
-			<label name="country">البلد</label>
+			<label name="country">Country</label>
 			<div class="km-value">{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 			<div ng-show="document.title">
-			 	<label>العنوان</label>
+			 	<label>Title</label>
 			 	<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		 	</div>
 

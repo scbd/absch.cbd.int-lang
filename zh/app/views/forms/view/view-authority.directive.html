@@ -2,21 +2,15 @@
 	<div class="panel-heading  bg-blue">
 		<h4>国家主管部门<span class="color-black">（CNA）</span></h4>
 	</div>
-	<style>
-		#Record p:empty, #Record div:empty{
-			display:none
-		}
-		
-	</style><!--$('#blaise div').filter(function() {
+	<style>#Record p:empty, #Record div:empty{ display:none }</style>
 
-  return $.trim($(this).text()) === ''
-
-}).remove()--><div class="record-body panel-body" help schema="viewCNA" ><!-- {{document.government|term}} --><div name="article-13-2"></div>
+	<div class="record-body panel-body" help schema="viewCNA" >
+		<div record-options></div><!-- {{document.government|term}} --><div name="article-13-2"></div>
 		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">一般信息</legend>
 
 		<div ng-show="document.government" >
 			<label name="country">国家</label>
-			<div class="km-value"><span>{{document.government|term}}</span> <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value"><span>{{document.government|term:locale}}</span> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-if="document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0 " >
@@ -100,7 +94,7 @@
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
 				<label>此国家主管部门覆盖的辖区</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ?  &apos;&apos; : &apos;, &apos;}} </span><span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ?&apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>

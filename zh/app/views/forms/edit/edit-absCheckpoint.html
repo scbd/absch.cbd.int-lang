@@ -90,7 +90,7 @@
                       <section>
 
                       <legend name="nationalAuthorities">接收指定检查站收集或收到之信息的国家主管部门</legend>
-                      <div class="help-info">根据《名古屋议定书》第 17 条第 1 款第 (a)（一）项和（三）项，检查点收集或接收的有关事先知情同意、遗传资源来源、设立共同商定条件和/或遗传资源利用的信息，包括来自国际公认合规证书（如有）的信息，需要视情向国家主管部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供。根据所提供的信息，获取和惠益分享信息交换所会发布公报，并自动向贵国指定的国家主管机关发送免费副本。<br><br>因此，以下部分中与国家主管机构相关的联系人将是接收指定检查站收集或收到的信息的机构（并通过检查站公报向获取和惠益分享信息交换所通报）。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。请说明您希望向贵国的哪个国家主管机构或联系人发送指定检查站收集或收到的信息。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。</div>
+                      <div class="help-info">根据《名古屋议定书》第 17 条第 1 款第 (a)（一）项和（三）项，检查点收集或接收的有关事先知情同意、遗传资源来源、设立共同商定条件和/或遗传资源利用的信息，包括来自国际公认合规证书（如有）的信息，需要视情向国家主管部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供。On the basis of the information provided, the ABS Clearing-House will issue a communiqu&eacute; and automatically send a courtesy copy to the designated national authority/ies of your country. <br><br> 因此，以下部分中与国家主管机构相关的联系人将是接收指定检查站收集或收到的信息的机构（并通过检查站公报向获取和惠益分享信息交换所通报）。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。请说明您希望向贵国的哪个国家主管机构或联系人发送指定检查站收集或收到的信息。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。</div>
                       
                       
                       
@@ -162,12 +162,7 @@
 
               </form>
 
-              <div ng-show="tab=='review'" km-tab="review">
-
-
-                  <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                      <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                  </div>
+              <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                   <div class="view-abs-checkpoint" ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
               </div>
               <hr><!--

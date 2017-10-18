@@ -22,7 +22,7 @@
 						<div class="row">
 
 							<div class="col-md-12">
-								<div class="km-control-group" required name="title" caption="T&iacute;tulo">
+								<div class="km-control-group" required name="title" caption="Denominaci&oacute;n">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -190,7 +190,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="audience" caption="Grupo(s) objeto/beneficiario(s)">
+								<div class="km-control-group" name="audience" caption="Grupo(s) de destinatarios/beneficiario(s)">
 									<div km-term-check name="audience" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -268,7 +268,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="resultsOutputs" caption="Resultados: principales realizaciones"><span class="help-info">S&iacute;rvase adjuntar/cargar una copia (o proporcione un enlace en Internet) de los principales productos (por ej., herramientas y materiales) elaborados por la iniciativa, o bien de los informes.</span><div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
+								<div class="km-control-group" name="resultsOutputs" caption="Resultados: Principales realizaciones"><span class="help-info">S&iacute;rvase adjuntar/cargar una copia (o proporcione un enlace en Internet) de los principales productos (por ej., herramientas y materiales) elaborados por la iniciativa, o bien de los informes.</span><div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
 								</div>
 							</div>
 						</div><!-- <div class="row">
@@ -328,7 +328,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>Notas</legend><span class="help-info">El campo &ldquo;Notas&rdquo; es para referencia personal y s&oacute;lo puede verse mientras se edita el registro.</span><div km-notes name="notes" ng-model="document.notes"></div>
+									<legend>Notas</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>
 						</div>
@@ -337,11 +337,7 @@
 
 				</form>
 
-            	<div ng-show="tab=='review'" km-tab="review">
-
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-click="$parent.review.locale = locale" ng-repeat="locale in document.header.languages" type="button" value="{{locale | uppercase}}"/>
-                    </div>
+            	<div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div view-capacity-building-initiative ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                 </div>
 

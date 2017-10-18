@@ -4,22 +4,15 @@
 			<tr ng-repeat="reference in references" >
 				<td>
 					<div ng-show="!reference.__loading && !reference.__errorCode">
-						<div><strong>{{reference.title | lstring}}</strong>
-							<div ng-bind-html="reference.summary | lstring"></div>
+						<div><strong>{{reference.title | lstring}}</strong><div ng-bind-html="reference.summary | lstring"></div>
 					</div>
 
-					<div ng-show="reference.__loading">
-						<i class="fa fa-spinner fa-spin"></i> Loading...
-					</div>
+					<div ng-show="reference.__loading"><i class="fa fa-spinner fa-spin"></i> chargement en cours...</div>
 
 					<div ng-show="reference.__errorCode">
 						<div ng-switch="reference.__errorCode">
-							<div ng-switch-when="404" class="alert alert-warning">
-								<strong>Record not found</strong> {{reference.identifier}}
-							</div>
-							<div ng-switch-default class="alert alert-danger">
-								<strong>Error loading record</strong> {{reference.identifier}}
-								<div>{{reference.__error}}<div>
+							<div ng-switch-when="404" class="alert alert-warning"><strong>Aucun fichier trouv&eacute;</strong> {{reference.identifier}}</div>
+							<div ng-switch-default class="alert alert-danger"><strong>Une erreur est survenue en t&eacute;l&eacute;chargeant le fichier</strong> {{reference.identifier}}<div>{{reference.__error}}<div>
 							</div>
 						</div>
 					</div>
@@ -31,17 +24,14 @@
 		</table>
 		</div>
 
-		<button type="button" class="btn btn-default" ng-show="multiple" ng-click="addReference()">Add a reference</button>
-		<button type="button" class="km-reference-select btn btn-default" ng-hide="multiple" ng-click="addReference()">Select a reference...</button>
-	</div>
-
-    <!--Reference Editor-->
-	<div id="editReference" class="modal fade" data-backdrop="true">
+		<button type="button" class="btn btn-default" ng-show="multiple" ng-click="addReference()">Ajouter une r&eacute;f&eacute;rence</button>
+		<button type="button" class="km-reference-select btn btn-default" ng-hide="multiple" ng-click="addReference()">S&eacute;lectionner une r&eacute;f&eacute;rence...</button>
+	</div><!--Reference Editor--><div id="editReference" class="modal fade" data-backdrop="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3>Select a reference</h3>
-					<h5>Type to filter, click or use arrow keys and spacebar to select, then click save or hit enter to save your changes.</h5>
+					<h3>S&eacute;lectionner une r&eacute;f&eacute;rence</h3>
+					<h5>Tapez pour filtrer, cliquez ou utilisez les touches de fl&egrave;ches et la barre d&rsquo;espacement pour s&eacute;lectionner, puis cliquez sur «&nbsp;enregistrer/sauvegarder&nbsp;» ou appuyez sur «&nbsp;entr&eacute;e&nbsp;» pour sauvegarder vos changements.</h5>
 				</div>
 				<div class="modal-body" style="max-height:400px;overflow-y:auto">
 
@@ -51,19 +41,16 @@
 								<input ng-keydown="keydown($event)" type="checkbox" ng-model="reference.__checked"/>
 							</td>
 							<td class="reference-summary-cell">
-								<div><strong>{{reference.title | lstring}}</strong>
-									<div ng-bind-html="reference.summary | lstring"></div>
+								<div><strong>{{reference.title | lstring}}</strong><div ng-bind-html="reference.summary | lstring"></div>
 							</td>
 						</tr>
 
 						<tr ng-show="editor.references.length==0">
-							<td colspan="2">No record.</td>
+							<td colspan="2">Aucun fichier</td>
 						</tr>
 
 						<tr ng-show="isLoading">
-							<td colspan="2">
-								Loading...
-							</td>
+							<td colspan="2">chargement en cours...</td>
 						</tr>
 					</table>
 
@@ -73,7 +60,7 @@
 					<div class="row">
 
 					<div class="col-sm-8">
-						<input ng-keydown="keydown($event)" class="km-reference-search form-control" type="text" ng-model="editor.search" placeholder="search" />
+						<input ng-keydown="keydown($event)" class="km-reference-search form-control" type="text" ng-model="editor.search" placeholder="Recherche" />
 					</div>
 
 					<div class="col-sm-4" style="text-align:right">

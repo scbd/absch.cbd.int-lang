@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                     <div class="legend2" >Informaci&oacute;n adicional sobre el asunto o el recurso gen&eacute;tico<span class="help-info"> Proporcionar detalles sobre el asunto o recurso gen&eacute;tico cubiertos por el permiso o su equivalente puede a&ntilde;adir certeza jur&iacute;dica.</span></div>
+                                     <div class="legend2" >Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span></div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="specimens" caption="Datos sobre el esp&eacute;cimen"><span class="help-info">Enlace al esp&eacute;cimen de muestra guardado en una instalaci&oacute;n apropiada</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
@@ -267,7 +267,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="Otra direcci&oacute;n de sitio web pertinente o documentos adjuntos">
+                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -288,10 +288,7 @@
                     </div>
                 </form>
 
-                <div ng-show="tab=='review'" km-tab="review">
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                    </div>
+                <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div class="view-abs-checkpoint-communique" ng-model="reviewDocument" locale="review.locale" allow-drafts="true" show-pdf="false"></div>
                 </div>
 

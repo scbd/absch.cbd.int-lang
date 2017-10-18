@@ -65,7 +65,7 @@
 
     					<div class="row">
     						<div class="col-md-12">
-    							<div class="km-control-group" required name="targetGroups" caption="Целевая группа(ы)/бенефициар(ы)">
+    							<div class="km-control-group" required name="targetGroups" caption="Целевая группа(-ы)/бенефициар(ы)">
     								<div km-term-check name="targetGroups" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
     							</div>
     						</div>
@@ -127,7 +127,7 @@
     					<div class="row">
     						<div class="col-md-12">
     							<div class="km-control-group" name="source" caption="Источник">
-    								<div class="help-info">Ссылка на источник, из которого взят данный материал (например, журнальная статья). Для оригинальных документов допускается указать «оригинальный документ».</div>
+    								<div class="help-info">A reference to a resource from which the present resource is derived (e.g. an article from a journal). Для оригинальных документов допускается указать «оригинальный документ».</div>
     								<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
     							</div>
     						</div>
@@ -201,7 +201,7 @@
     					<div class="row">
     						<div class="col-md-12">
     							<div class="km-control-group" name="notes">
-    								<legend>Примечания</legend><span class="help-info">Поле «Примечания» включено для индивидуального пользования и появляется только при редактировании записи.</span><div km-notes name="notes" ng-model="document.notes"></div>
+    								<legend>Примечания</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
     							</div>
     						</div>
     					</div>
@@ -209,11 +209,7 @@
 
 				</form>
 
-            	<div ng-show="tab=='review'" km-tab="review">
-
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-click="$parent.review.locale = locale" ng-repeat="locale in document.header.languages" type="button" value="{{locale | uppercase}}"/>
-                    </div>
+            	<div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div view-capacity-building-resource ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                 </div>
 

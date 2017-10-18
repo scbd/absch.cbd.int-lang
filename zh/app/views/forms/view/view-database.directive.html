@@ -3,16 +3,16 @@
 	<div class="record-body panel-body">
 
 
-
+<div record-options></div>
 <legend>一般信息</legend>
-
+		
 		<div ng-show="document.government">
 			<label name="country">国家</label>
 			<div class="km-value">{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 			<div ng-show="document.title">
-			 	<label>标题</label>
+			 	<label>Title</label>
 			 	<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		 	</div>
 
@@ -24,7 +24,7 @@
 
 		<div ng-show="document.website">
 			<label>网站 URL</label>
-			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}} </a><i ng-show="document.website.name">({{document.website.url}})</i></div>
+			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i></div>
 		</div>
 
 

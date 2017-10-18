@@ -15,8 +15,8 @@
                 <tr ng-if="type=='radio' && model">
                     <td style="margin-bottom:15px;width:15px;"><a translation-url  class="btn btn-default" ng-click="removeDocument(model)" class="link color-red"><i class="fa fa-times"></i></a></td>
                     <td style="margin-bottom:20px;">
-                        <div ng-if="isContact(model) || isAuthority(model) || doc.schema_s== 'focalPoint'" view-contact-reference ng-model="model" locale="locale" class="km-value"></div>
-                        <div ng-if="!isContact(model) && !isAuthority(model) && doc.schema_s!= 'focalPoint'" view-default-reference ng-model="model.identifier" locale="locale"></div>
+                        <div ng-if="isContact(model) || isAuthority(model) || isFocalPoint(model)" view-contact-reference ng-model="model" locale="locale" class="km-value"></div>
+                        <div ng-if="!isContact(model) && !isAuthority(model) && !isFocalPoint(model)" view-default-reference ng-model="model.identifier" locale="locale"></div>
                     </td>
                 </tr>
             </table>
@@ -43,13 +43,13 @@
                         </div>
                     </div>
                     <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> Загрузка ....</div>
-                    <div ng-if="rawDocuments.numFound===0">записей не найдено.</div>
+                    <div ng-if="rawDocuments.numFound===0">no records found.</div>
                 </div>
             </div>
 
             <div class="modal-footer bg-grey">
                 <div class="row">
-                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Сохранить</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Закрыть</a></div>
+                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;"  ng-click="saveDocuments()">Save</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Close</a></div>
                 </div>
             </div>
         </div>

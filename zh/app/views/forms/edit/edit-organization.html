@@ -24,14 +24,14 @@
 							</div>
 
 							<div class="col-md-4 col-xs-12">
-								<div class="km-control-group" name="acronym" required caption="缩写">
+								<div class="km-control-group" name="acronym" required caption="Acronym">
 									<div km-textbox-ml name="acronym" required ng-model="document.acronym" placeholder="文本条目" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-8">
-								<div class="km-control-group" name="contact_organizationType" caption="组织类型">
+								<div class="km-control-group" name="contact_organizationType" caption="Type of organization">
 									<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 							</div>
 
 							<div class="col-md-6 col-xs-12">
-								<div class="km-control-group" name="state" caption="州/省">
+								<div class="km-control-group" name="state" caption="State or Province">
 									<div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="例如：Quebec（魁北克）"></div>
 								</div>
 							</div>
@@ -83,14 +83,14 @@
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="phones" required caption="电话号码">
-									<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+									<div class="help-info">请使用以下格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 									<div km-inputtext-list required name="phones" ng-model="document.phones" placeholder="例如：+1 514.288.2220"></div>
 								</div>
 							</div>
 
 							<div class="col-md-6 col-xs-12">
 								<div class="km-control-group" name="faxes" caption="传真号码">
-									<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+									<div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 									<div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
 								</div>
 							</div>
@@ -123,11 +123,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 					<div view-organization ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 

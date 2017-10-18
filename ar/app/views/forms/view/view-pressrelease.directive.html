@@ -1,6 +1,8 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading  bg-darkgrey"><h4>بيان صحفي</h4></div>
-	<div class="record-body panel-body"><!-- <div ng-show="document.symbol_s">
+	<div class="record-body panel-body">
+
+			<div record-options ></div><br> <!-- <div ng-show="document.symbol_s">
 			<label>Symbol</label>
 			<span class="km-value">
 				{{document.symbol_s}}
@@ -11,7 +13,7 @@
 				{{document.date_s| formatDate}}
 			</span>
 		</div>--><div ng-show="document.title_EN_t">
-			<label>العنوان</label><span class="km-value">{{document.title_EN_t}}</span></div>
+			<label>Title</label><span class="km-value">{{document.title_EN_t}}</span></div>
 
 		<div ng-show="document.description_EN_t">
 			<label>الوصف</label><span class="km-value">{{document.description_EN_t}}</span></div><!-- <div ng-show="document.text_EN_txt">
@@ -29,7 +31,7 @@
 				</ul>
 			</div>
 		</div> --><div ng-show="document.thematicAreas_CEN_ss">
-			<label>مجالات المحاور</label>
+			<label>Thematic Areas</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>

@@ -2,21 +2,15 @@
 	<div class="panel-heading  bg-blue">
 		<h4>السلطة الوطنية المختصة <span class="color-black">(CNA)</span></h4>
 	</div>
-	<style>
-		#Record p:empty, #Record div:empty{
-			display:none
-		}
-		
-	</style><!--$('#blaise div').filter(function() {
+	<style>#Record p:empty, #Record div:empty{ display:none }</style>
 
-  return $.trim($(this).text()) === ''
-
-}).remove()--><div class="record-body panel-body" help schema="viewCNA" ><!-- {{document.government|term}} --><div name="article-13-2"></div>
+	<div class="record-body panel-body" help schema="viewCNA" >
+		<div record-options></div><!-- {{document.government|term}} --><div name="article-13-2"></div>
 		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">معلومات عامة</legend>
 
 		<div ng-show="document.government" >
-			<label name="country">البلد</label>
-			<div class="km-value"><span>{{document.government|term}}</span> <span ng-party-status government="document.government" id="government"></span></div>
+			<label name="country">Country</label>
+			<div class="km-value"><span>{{document.government|term:locale}}</span> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-if="document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0 " >

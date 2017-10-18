@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="government" required caption="البلد الذي أصدر هذا البيان الخاص بنقطة التفتيش ">
+                                        <div class="km-control-group" name="government" required caption="البلد الذي أصدر هذا البيان الخاص بنقطة التفتيش">
                                             <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                         <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable" watch-items>شهادة الامتثال المعترف بها دوليًا غير متاحة.</input></span></div>
                                         <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                             <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs" required caption="الروابط لشهادة/شهادات الامتثال المعترف بها دوليًا التي ترتبط بهذا البيان">
-                                                  <div class="help-info">يوضع المرجع  استخدم الفلاتر المختلفة أو معرف البيان في الحقل النصي للبحث عن شهادة الامتثال المعترف بها دوليًا الحالية المطلوبة. إذا لم تكن شهادة الامتثال المعترف بها دوليًا متاحة، ينبغي تحديد الخيار &quot;هذه المعلومات غير متاحة&quot;، وسيتم تنشيط المربع الرمادي أدناه.</div>
+                                                  <div class="help-info">يوضع المرجع استخدم الفلاتر المختلفة أو معرف البيان في الحقل النصي للبحث عن شهادة الامتثال المعترف بها دوليًا الحالية المطلوبة. إذا لم تكن شهادة الامتثال المعترف بها دوليًا متاحة، ينبغي تحديد الخيار &quot;هذه المعلومات غير متاحة&quot;، وسيتم تنشيط المربع الرمادي أدناه.</div>
                                                 <div document-selector ng-model="document.absIRCCs"
                                                                         question="absIRCCs"
                                                                         schema="absPermit"
@@ -113,21 +113,20 @@
                                      <div class="legend2" >معلومات إضافية حول موضوع أو مورد جيني  <span class="help-info">توفير التفاصيل حول الموضوع أو المورد الجيني الذي يغطيه التصريح أو أن ما يكافئه يمكنه أن يقدم ما يوفر مزيدًا من اليقين القانوني.</span></div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="specimens" caption="بيانات العينة"><span class="help-info">رابط لعينة قسيمة شراء محفوظة في منشأة ملائمة</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="specimens" caption="بيانات العينة"><span class="help-info">Link to a voucher specimen held in an appropriate facility</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="taxonomies" caption="التصنيف"><span class="help-info">رابط لسجل في قاعدة بيانات تصنيف خارجية، على سبيل المثال، GBIF، قائمة الحياة</span><div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="taxonomies" caption="التصنيف"><span class="help-info">Link to record in external taxonomy database, e.g. GBIF, Catalogue of Life</span><div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12" ng-class="{'warning':isInvalid('gisFiles')}">
                                             <div class="km-control-group">
-                                                <label class="control-label" for="gisFiles">الإحداثيات الجغرافية</label><span class="help-info">قاصرة على ملفات .geojson
-(<a translation-url  href="http://www.geojson.org/" target="_blank">http://www.geojson.org/</a>)</span><div km-link required name="gisFiles" ng-model="document.gisFiles" allow-link="false" identifier="document.header.identifier" mime-types="application/json"></div>
+                                                <label class="control-label" for="gisFiles">الإحداثيات الجغرافية</label><span class="help-info">Limited to .geojson files (<a translation-url  href="http://www.geojson.org/" target="_blank">http://www.geojson.org/</a>)</span><div km-link required name="gisFiles" ng-model="document.gisFiles" allow-link="false" identifier="document.header.identifier" mime-types="application/json"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +151,7 @@
                                     <div class="input-prepend input-append">
                                         <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lat | number:6}}"><span class="add-on">لات</span></div>
                                     <div class="input-prepend input-append">
-                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lng | number:6}}"><span class="add-on">طويل</span></div>
+                                        <input class="input-small" type="text" readonly value="{{document.gisMapCenter.lng | number:6}}"><span class="add-on">long</span></div>
                                     <div class="input-prepend input-append">
                                         <input class="input-small" type="text" readonly value="{{document.gisMapCenter.zoom | number:0}}"><span class="add-on">تقريب</span></div>
                                 </div>
@@ -225,7 +224,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="personsAtCheckpoint" caption="الشخص أو الكيان الذي يتيح المعلومات لنقطة التفتيش حول استخدام المورد الجيني">
-                                        <div class="help-info">تتيح هذه المعلومات لموفر المورد الجيني التحقق مما إذا كان الشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم هو الشخص أو الكيان نفسه الذي قدم دليلا على الشروط المتفق عليها بصورة متبادلة في نقطة التفتيش.  في حالة الاختلاف، بإمكان الموفرين التحقق من المعلومات والظروف المرتبطة بالنقل من خلال طرف خارجي.</div>
+                                        <div class="help-info">تتيح هذه المعلومات لموفر المورد الجيني التحقق مما إذا كان الشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم هو الشخص أو الكيان نفسه الذي قدم دليلا على الشروط المتفق عليها بصورة متبادلة في نقطة التفتيش. في حالة الاختلاف، بإمكان الموفرين التحقق من المعلومات والظروف المرتبطة بالنقل من خلال طرف خارجي.</div>
                                         <div document-selector ng-model="document.personsAtCheckpoint"
                                                                         question="personsAtCheckpoint"
                                                                         schema="(contact authority)"
@@ -239,7 +238,7 @@
                             <label>تاريخ جمع المعلومات أو تلقيها في نقطة التفتيش</label>
                             <div class="row" style="margin-bottom:20px;">
                                 <div class="col-xs-4">
-                                    <div km-date placeholder="السنة - الشهر - اليوم" required name="dateCollected" ng-model="document.dateCollected"></div>
+                                    <div km-date placeholder="YYYY-MM-DD" required name="dateCollected" ng-model="document.dateCollected"></div>
                                 </div>
                                 <div class="col-xs-1 bg-grey">
                                     <div style="font-size:16px;font-weight:bold;padding: 6px;text-align: center;" name="dateOR" caption="أو">أو</div>
@@ -268,19 +267,19 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="مواقع إنترنت أو مستندات مرفقة أخرى ذات صلة">
+                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section>
-                            <legend>ملاحظات</legend>
+                            <legend>ملاحظات Notes</legend>
 
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group" name="notes">
-                                        <div class="help-info">حقل &quot;ملاحظات&quot; لتدوين الملاحظات الشخصية أو التعليقات، وسوف يكون مخفيًا عند عرض السجل. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+                                        <div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                     </div>
                                 </div>
@@ -289,10 +288,7 @@
                     </div>
                 </form>
 
-                <div ng-show="tab=='review'" km-tab="review">
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                    </div>
+                <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div class="view-abs-checkpoint-communique" ng-model="reviewDocument" locale="review.locale" allow-drafts="true" show-pdf="false"></div>
                 </div>
 

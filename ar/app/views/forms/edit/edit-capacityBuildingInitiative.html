@@ -10,7 +10,7 @@
             <div class="alert alert-danger" ng-show="hasError()"><strong>حدث خطأ...</strong><div>{{error}}</div>
             </div>
 
-            <div ng-show="isLoading()"><i class="fa fa-spinner fa-spin"></i> التحميل</div>
+            <div ng-show="isLoading()"><i class="fa fa-spinner fa-spin"></i> Loading...</div>
 
             <div ng-show="!isLoading() && status!='hidden'">
 
@@ -106,7 +106,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" required name="organizations" caption="الوكالة (الوكالات) أو المنظمة (المنظمات) التى ترعى المبادرة أو تنفذها أو الاثنين معًا.">
-                                <div class="help-info">في بعض الحالات، تنهض الوكالة بمسؤولية رعاية المبادرة وتنفيذها. في هذه الحالة، يرجى تحديد كلا المربعين: </div>
+                                <div class="help-info">في بعض الحالات، تنهض الوكالة بمسؤولية رعاية المبادرة وتنفيذها. في هذه الحالة، يرجى تحديد كلا المربعين:</div>
 								<div class="checkbox"><label><input type="checkbox" ng-model="document.isImplementedByAgencies">الوكالة (الوكالات) أو المنظمة (المنظمات) الراعية</label></div>
 
                                 <div class="row" >
@@ -310,7 +310,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة" >
+								<div class="km-control-group" name="address" caption="Any other relavent information" >
 									<div class="help-info">يرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم تذكر أو تستخدم في مكان آخر في هذا السجل.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
@@ -328,7 +328,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>ملاحظات</legend><span class="help-info">الحقل &quot;ملاحظات&quot; للاستخدام الشخصي ويمكن رؤيته فقط أثناء تحرير السجل.</span><div km-notes name="notes" ng-model="document.notes"></div>
+									<legend>ملاحظات Notes</legend><span class="help-info">الحقل &quot;ملاحظات&quot; للاستخدام الشخصي ويظهر فقط أثناء تحرير السجل.</span><div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>
 						</div>
@@ -337,11 +337,7 @@
 
 				</form>
 
-            	<div ng-show="tab=='review'" km-tab="review">
-
-                    <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                        <input class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-click="$parent.review.locale = locale" ng-repeat="locale in document.header.languages" type="button" value="{{locale | uppercase}}"/>
-                    </div>
+            	<div ng-show="tab=='review'" km-tab="review" id="schemaView">
                     <div view-capacity-building-initiative ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                 </div>
 

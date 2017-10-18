@@ -5,31 +5,21 @@
 
         <div class="pull-left">
                 <div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">更换网页语言</div>
-                <div style="display:inline;" class="locale-header" id="MyLocale"></div>
-                &nbsp; | &nbsp; 
-                <div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">用其它语言提交</div>
-                <div style="display:inline;" km-form-languages ng-model="languages"  class="btn-thin"></div>
-                &nbsp; | &nbsp; 
-            <div style="display:inline">
-                <span ng-show="lastSaved && hideTimer=='false'" style="text-transform:uppercase;font-size:12px;font-weight: 500;padding-right:3px;"><span class="bg-yellow label" style="font-size:12px;"><i class="color-grey glyphicon glyphicon-time"></i><span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span> &nbsp; 最后保存于</span>
-            </div>
+                <div style="display:inline;" class="locale-header" id="MyLocale"></div>&nbsp; | &nbsp;<div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">用其它语言提交</div>
+                <div style="display:inline;" km-form-languages ng-model="languages"  class="btn-thin"></div>&nbsp; | &nbsp;<div style="display:inline"><span ng-show="lastSaved && hideTimer=='false'" style="text-transform:uppercase;font-size:12px;font-weight: 500;padding-right:3px;"><span class="bg-yellow label" style="font-size:12px;"><i class="color-grey glyphicon glyphicon-time"></i><span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span>&nbsp; since last save</span></div>
         </div>
 
         <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;" class="pull-right">
-            <li style="display: inline;"><button type="button" class="btn btn-warning " ng-click="close()" ng-disabled="loading">
-                <i class="glyphicon glyphicon-remove"></i> 关闭</button>
+            <li style="display: inline;"><button type="button" class="btn btn-warning " ng-click="close()" ng-disabled="loading"><i class="glyphicon glyphicon-remove"></i> 关闭</button>
             </li>
             <li style="display: inline;"  ng-show="security.canSaveDraft">
-                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">保存草稿 <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i>
-                  </button>
+                <button type="button" class="btn btn-default bg-draft" width="50px" ng-click="tab='draft';saveDraft()" ng-disabled="loading">保存草稿 <i ng-show="tab=='draft' && (loading || security==undefined)" class="fa fa-spinner fa-spin"></i></button>
             </li>
             <li style="display: inline;" ng-show="security.canSave">
-                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">发布 <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i>
-                    </button>
+                <button type="button" class="btn btn-danger bg-published " width="50px" ng-click="tab='publish';publish()" ng-disabled="loading">发布 <i ng-show="tab=='publish' && loading" class="fa fa-spinner fa-spin"></i></button>
             </li>
             <li style="display: inline;" ng-show="security.canSave!==undefined && (!security.canSave && security.canSaveDraft)">
-                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">请求发布 <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i>
-                    </button>
+                <button id="publish_button" type="button" class="btn btn-danger bg-request" ng-href="#" ng-click="tab='publishRequest';publishRequest()" ng-disabled="loading">请求发布 <i ng-show="tab=='publishRequest' && loading" class="fa fa-spinner fa-spin"></i></button>
             </li>
   
         </ul>
@@ -39,27 +29,18 @@
 
     <div class="col-xs-12" style="border-bottom:1px solid #eee;margin-bottom:0px;">
         <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;" class="pull-left">
-            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='edit'}">
-                <a translation-url  ng-click="tab='edit'" ng-disabled="loading || security==undefined">提交信息表</a>
-            </li>
-            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='review'}">
-                <a translation-url  ng-click="tab='review'" ng-disabled="loading || security==undefined">审查</a>
-            </li>
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='edit'}"><a translation-url  ng-click="tab='edit'" ng-disabled="loading || security==undefined">提交信息表</a></li>
+            <li class="tab" style="display: inline;" ng-class="{'tab-selected': tab=='review'}"><a translation-url  ng-click="tab='review'" ng-disabled="loading || security==undefined">Review</a></li>
                      
         </ul>
     </div>
 
-    <div style="display:none" id="msgDraftSaveMessage">
-        您的记录已存为草稿。
-    </div>
+    <div style="display:none" id="msgDraftSaveMessage">您的记录已存为草稿。</div>
 
     <div class="row" style="display:none" id="divShowError" ng-show="showError">
         <div class="col-xs-12">
             <div class="alert alert-danger" role="alert">
-                <button type="button" class="close" ng-click="showError=false">
-                    <span aria-hidden="true">&times;</span> <span class="sr-only">关闭</span>
-                </button> {{errorMessage}}
-            </div>
+                <button type="button" class="close" ng-click="showError=false"><span aria-hidden="true">&times;</span> <span class="sr-only">关闭</span></button>{{errorMessage}}</div>
 
         </div>
     </div>

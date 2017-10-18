@@ -51,8 +51,8 @@
                                 <legend>معلومات عامة</legend>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="km-control-group" name="government" required caption="الدولة">
-                                            <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد... "></div>
+                                        <div class="km-control-group" name="government" required caption="Country">
+                                            <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div required class="km-control-group" name="status" caption="الحالة القانونية للتدابير">
-                                            <div class="help-info">من أمثلة تدابير الحصول على الموارد وتقاسم المنافع غير الملزمة قانونًا الاستراتيجيات الوطنية، ووثائق السياسات والإرشادات وغير ذلك. ويجب ذكر تاريخ التطبيق في تدابير الحصول على الموارد وتقاسم المنافع غير الملزمة قانونًا. يصبح التدبير ملزم قانونًا إذا حدد التزامات وحقوق قابلة للتطبيق قانونًا. في هذه الحالة، يجب ذكر تاريخ سريان تدبير الحصول على الموارد وتقاسم المنافع.   يمكن تضمين مسودة تدابير في غرفة تبادل معلومات الحصول على الموارد وتقاسم المنافع بهدف تبادل المعلومات حول مدى التقدم في التنفيذ. بعد تطبيق مسودة التدبير أو سريانه، يمكن تحديث حالة التدبير دون الحاجة إلى تسجيل المعلومات مرة أخرى. في بعض الأحيان يكون تطبيق التدابير محددًا بوقت معين. إذا كنت ستطبيق هذا النوع من التدابير، فأنت مطالب بتحديد تاريخ انتهاء السريان. تضمين التدابير المنتهية قد يكون مفيدًا لتوفير اليقين القانوني بشأن الموارد الجينية والمعرفة التقليدية المصاحبة التي يمكن الوصول إليها تحت إطار قانوني سابق. إذا كان أحد التدابير المسجلة بالفعل في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع متوقفًا أو لم يعد مطبقًا، ستحتاج فقط لتعديل التدابير وتغيير حالتها إلى متقاعدة، مع توضيح تاريخ توقف سريان التدبير.</div>
+                                            <div class="help-info">من أمثلة تدابير الحصول على الموارد وتقاسم المنافع غير الملزمة قانونًا الاستراتيجيات الوطنية، ووثائق السياسات والإرشادات وغير ذلك. ويجب ذكر تاريخ التطبيق في تدابير الحصول على الموارد وتقاسم المنافع غير الملزمة قانونًا. يصبح التدبير ملزم قانونًا إذا حدد التزامات وحقوق قابلة للتطبيق قانونًا. في هذه الحالة، يجب ذكر تاريخ سريان تدبير الحصول على الموارد وتقاسم المنافع. يمكن تضمين مسودة تدابير في غرفة تبادل معلومات الحصول على الموارد وتقاسم المنافع بهدف تبادل المعلومات حول مدى التقدم في التنفيذ. بعد تطبيق مسودة التدبير أو سريانه، يمكن تحديث حالة التدبير دون الحاجة إلى تسجيل المعلومات مرة أخرى. في بعض الأحيان يكون تطبيق التدابير محددًا بوقت معين. إذا كنت ستطبيق هذا النوع من التدابير، فأنت مطالب بتحديد تاريخ انتهاء السريان. تضمين التدابير المنتهية قد يكون مفيدًا لتوفير اليقين القانوني بشأن الموارد الجينية والمعرفة التقليدية المصاحبة التي يمكن الوصول إليها تحت إطار قانوني سابق. إذا كان أحد التدابير المسجلة بالفعل في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع متوقفًا أو لم يعد مطبقًا، ستحتاج فقط لتعديل التدابير وتغيير حالتها إلى متقاعدة، مع توضيح تاريخ توقف سريان التدبير.</div>
                                             <div style="width:250px;" afc-autocomplete required name="status" ng-model="document.status" source="options.statuses" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="حدد الحالة القانونية.."></div>
                                         </div>
                                     </div>
@@ -79,18 +79,18 @@
                                             </div>
                                         </div>
                                         <div ng-show="isLegallyBinded()">
-                                            <div class="km-control-group" name="entryIntoForce" required caption="يرجى تحديد تاريخ السريان">
+                                            <div class="km-control-group" name="entryIntoForce" required caption="Please provide the date of entry into force">
                                                 <div km-date placeholder="يوم  - شهر - سنة" name="entryIntoForce" required ng-model="document.entryIntoForce"></div>
                                             </div>
                                         </div>
                                         <div ng-show="isRetired()">
                                             <div class="km-control-group" name="retired" required caption="يرجى تحديد تاريخ إيقاف تطبيق التدبير">
-                                                <div km-date placeholder="يوم  - شهر - سنة" name="retired" required ng-model="document.retired">
+                                                <div km-date placeholder="YYYY-MM-DD" name="retired" required ng-model="document.retired">
                                                 </div>
                                             </div>
                                         </div>
                                         <div ng-show="isLegallyBinded() || isNotLegallyBinded()" class="km-control-group" name="limitedApplication" caption="يرجى توضيح تاريخ توقف سريان التدبير إذا كان تطبيقه محدودًا بوقت معين.">
-                                            <div km-date placeholder="يوم  - شهر - سنة" name="limitedApplication" ng-model="document.limitedApplication"></div>
+                                            <div km-date placeholder="YYYY-MM-DD" name="limitedApplication" ng-model="document.limitedApplication"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
 
                                     <div class="col-xs-12">
                                         <div class="km-control-group" required name="jurisdiction" caption="منطقة الولاية القضائية">
-                                            <div class="help-info">يرجى تحديد المنطقة الجغرافية لتطبيق تدابير الحصول على الموارد وتقاسم المنافع يمكن تطبيق التدابير على المستوى الإقليمي أو متعدد الأطراف أو الوطني أو الاتحادي أو دون الوطني أو المجتمعي. بالنسبة للتدابير  متعددة الاطراف، يرجى توضيح البلاد التي يغطيها التدبير من خلال اختيار المجموعة الجغرافية  أو السياسية/الاقتصادية ذات الصلة من القائمة المنسدلة.  هذه القائمة شاملة؛ لهذا من المحتمل أن هذه المجموعة المحددة التي ينطبق عليها التدبير مدرجة بالفعل. إذا كان التدبير ينطبق على مجموعة من الدول لا تغطيها أي من المجموعات الحالية، حدد كل الدول المهتمة بالتدبير بشكل منفصل من القائمة المنسدلة.</div>
+                                            <div class="help-info">يرجى تحديد المنطقة الجغرافية لتطبيق تدابير الحصول على الموارد وتقاسم المنافع يمكن تطبيق التدابير على المستوى الإقليمي أو متعدد الأطراف أو الوطني أو الاتحادي أو دون الوطني أو المجتمعي. بالنسبة للتدابير  متعددة الاطراف، يرجى توضيح البلاد التي يغطيها التدبير من خلال اختيار المجموعة الجغرافية  أو السياسية/الاقتصادية ذات الصلة من القائمة المنسدلة. هذه القائمة شاملة؛ لهذا من المحتمل أن هذه المجموعة المحددة التي ينطبق عليها التدبير مدرجة بالفعل. إذا كان التدبير ينطبق على مجموعة من الدول لا تغطيها أي من المجموعات الحالية، حدد كل الدول المهتمة بالتدبير بشكل منفصل من القائمة المنسدلة.</div>
 
                                             <div style="width:250px;" afc-autocomplete required name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="حدد منطقة الولاية القضائية..."></div>
                                             <div ng-if="isJurisdictionRegional()">
@@ -138,7 +138,7 @@
                                         <div ng-if="isJurisdictionRegional() && canAddRegionalMeasure()">
                                             <div class="help-info">يرجى ملاحظة أنه ينبغي تسجيل التدابير الإقليمية أو متعددة الأطراف مرة واحدة فقط في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع، وأن كل من البلاد المحددة ضمن نطاق تغطية التدبير الإقليمي سيظهر التدبير كجزء من إطارها القانوني في صفحة المعلومات الخاصة بها. ينصح بأن يوافق بلد واحد على تسجيل التدابير بالنيابة عن المنظمة الإقليمية أو مجموعة البلاد التي تشترك في التدبير نفسه.</div>
 
-                                            <div class="km-control-group" required name="jurisdictionRegions" caption="">
+                                            <div class="km-control-group" required name="jurisdictionRegions" caption="اسم (أسماء) البلد و/أو المجموعة (المجموعات) الجغرافية أو السياسية/الاقتصادية">
                                                 <button type="button" class="btn btn-info">الدول الأعضاء فى الاتحاد الأوروبي</button><!--<div  km-select required name="jurisdictionRegions" ng-model="document.jurisdictionRegions" items="options.regions()" multiple ></div>--></div>
                                         </div>
 
@@ -198,7 +198,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="linkedMeasures" caption="العلاقة مع التدابير الأخرى">
-                                            <div class="help-info">يرجى توضيح إذا كانت هناك أي علاقة بين هذه الوثيقة/التدبير والقوانين أو اللوائح أو الإرشادات أو التدابير الإدارية أو السياساتية الأخرى. على سبيل المثال، إذا كان التدبير الجاري إرساله يقوم بتطبيق أحد القوانين الحالية. تساعد هذه المعلومات في عرض المعلومات بشأن الإطار القانوني الوطني.  يتيح لك هذا القسم من النموذج الربط بين تدبيرين إذا كانا مرتبطين، على سبيل المثال إذا كان التدبير الجاري إرساله يطبق قانونًا حاليًا. سيعرض التدبيران جنبًا إلى جنب</div><!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>--><div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
+                                            <div class="help-info">يرجى توضيح إذا كانت هناك أي علاقة بين هذه الوثيقة/التدبير والقوانين أو اللوائح أو الإرشادات أو التدابير الإدارية أو السياساتية الأخرى. على سبيل المثال، إذا كان التدبير الجاري إرساله يقوم بتطبيق أحد القوانين الحالية. تساعد هذه المعلومات في عرض المعلومات بشأن الإطار القانوني الوطني. يتيح لك هذا القسم من النموذج الربط بين تدبيرين إذا كانا مرتبطين، على سبيل المثال إذا كان التدبير الجاري إرساله يطبق قانونًا حاليًا. سيعرض التدبيران جنبًا إلى جنب</div><!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>--><div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
 
 
                                         </div>
@@ -264,7 +264,8 @@
                                                     <div layout="row" style="margin-bottom:20px;">
                                                          <div class="help-info" >يرجى تحديد العناصر التي يحتوي عليها التدبير الجاري تسجيله وتحديد المقالات أو الأقسام ذات الصلة لكل عنصر من العناصر المحددة. تساعدك هذه المعلومات في عرض المعلومات عن الإطار الوطني القانوني، وتساعد المستخدمين المحتملين على فهم متطلبات بلدك للحصول على الموارد الجينية أو تقاسم المنافع أو الامتثال أو جميع ذلك. في بعض الأحيان يرتبط محتوى وعناصر التدبير بأهداف وخطط تنفيذ الحصول على الموارد الجينية وتقاسم المنافع على المستوى المحلي. وقد يكون ذلك هو الحاصل، على سبيل المثال، مع بعض استراتيجيات أو خطط العمل للحصول على الموارد وتقاسم المنافع. في مثل هذه الحالات، ربما توضح أن عناصر التدريب غير سارية من خلال الضغط على مربع المراجعة أعلاه.</div>
                                                     </div>
-                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"></div>
+                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"
+                                                        validation-report="validationReport"></div>
                                                 </div>
                                             </div>
 
@@ -281,7 +282,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-                                            <div class="help-block">يُرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم يتم ذكرها أو تناولها في مكان آخر في هذا السجل.</div>
+                                            <div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
                                             <div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -296,11 +297,11 @@
                                 </div>
                             </section>
                             <section>
-                                <legend>ملاحظات</legend>
+                                <legend>ملاحظات Notes</legend>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-block">حقل &quot;ملاحظات&quot; هو لتدوين الملاحظات الشخصية أو التعليقات، وسوف تكون مخفية عند عرض السجل هذا المجال ليس المقصود إستخدامه للحصول على معلومات سرية.</div>
+                                            <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
                                             <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                         </div>
                                     </div>
@@ -310,12 +311,7 @@
                         </div>
                     </form>
 
-                    <div class="row" ng-show="tab=='review'" km-tab="review">
-                        <div class="col-xs-12">
-
-                            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                            </div>
+                    <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
 
                             <div view-measure ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                         </div>

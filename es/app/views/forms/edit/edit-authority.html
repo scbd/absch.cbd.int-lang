@@ -71,7 +71,7 @@
 
                                     <div class="col-xs-6">
                                         <div class="km-control-group" name="postalCode" caption="C&oacute;digo postal">
-                                            <div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="ejemplo: H2Y 1N9 "></div>
+                                            <div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="ejemplo: H2Y 1N9"></div>
                                         </div>
                                     </div>
 
@@ -228,7 +228,7 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="relevantDocuments" caption="Otra direcci&oacute;n de sitio web pertinente o documentos adjuntos">
+                                        <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
                                             <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                         </div>
                                     </div>
@@ -250,14 +250,8 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
                     </form>
 
 
-                    <div ng-show="tab=='review'" km-tab="review">
-
-
-                        <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                            <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                        </div>
-
-                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
+                    <div ng-show="tab=='review'" km-tab="review" id="schemaView">
+                       <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                     </div><!--
         <hr style="margin-top:20px;">
 

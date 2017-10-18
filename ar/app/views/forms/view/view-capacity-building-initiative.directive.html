@@ -4,8 +4,7 @@
 		<h4>مبادرة بناء القدرات <span class="color-black"> (CBI)</span></h4>
     </div>
 	<div class="record-body panel-body">
-        
-        <div ng-show="document.title">
+				<div record-options></div><br><div ng-show="document.title">
 			<label>العنوان</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
@@ -34,7 +33,7 @@
 			<label>المجتمع</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}}</span></div>
 
 		<div ng-show="document.status">
-			<label>حالة الوثيقة </label><span class="km-value">{{document.status | term:locale}}</span></div>
+			<label>حالة الوثيقة</label><span class="km-value">{{document.status | term:locale}}</span></div>
 
 		<div ng-show="(document.startDate && document.endDate) || document.duration">
 	  			<div class="row" ng-show="document.startDate && document.endDate">

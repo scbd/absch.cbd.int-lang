@@ -1,8 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>
-			Contacto <span class="color-black">(CON) </span>
-		</h4>
+		<h4>Contacto <span class="color-black"></span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -13,21 +11,15 @@
             <legend>Organizaci&oacute;n</legend>
 			<div ng-show="document.government">
 				<label>Gobierno</label>
-				<div class="km-value">
-					{{document.government | term}} <span ng-party-status government="document.government" id="government"></span>
-				</div>
+				<div class="km-value">{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
 			</div>
 			<div>
                 <label>Nombre</label>
-				<div class="km-value">
-					{{document.organization | lstring:locale}} <i ng-show="document.organizationAcronym">({{document.organizationAcronym | lstring:locale}})</i>
-				</div>
+				<div class="km-value">{{document.organization | lstring:locale}} <i ng-show="document.organizationAcronym">({{document.organizationAcronym | lstring:locale}})</i></div>
 			</div>
 			<div ng-show="document.organizationType">
 				<label>Tipo de organizaci&oacute;n</label>
-				<div class="km-value">
-					{{document.organizationType | term}}
-				</div>
+				<div class="km-value">{{document.organizationType | term}}</div>
 			</div>
 
 		</div>
@@ -37,31 +29,23 @@
              <legend>Persona</legend>
 			 <div ng-show="document.government">
   			   <label>Gobierno</label>
-  			   <div class="km-value">
-  				   {{document.government | term}} <span ng-party-status government="document.government" id="government"></span>
-  			   </div>
+  			   <div class="km-value">{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
   		   </div>
 
             <div>
 				<label>Nombre</label>
-				<div class="km-value">
-					{{document.prefix | lstring:locale}} {{document.firstName}} {{document.middleName}} {{document.lastName}}
-				</div>
+				<div class="km-value">{{document.prefix | lstring:locale}} {{document.firstName}} {{document.middleName}} {{document.lastName}}</div>
 			</div>
 
 
 			<div ng-show="document.designation">
-				<label>T&iacute;tulo</label>
-				<div class="km-value">
-					{{document.designation| lstring:locale}}
-				</div>
+				<label>Denominaci&oacute;n</label>
+				<div class="km-value">{{document.designation| lstring:locale}}</div>
 			</div>
 
             <div ng-show="document.department">
 				<label>Departamento / Divisi&oacute;n / Unidad</label>
-				<div class="km-value">
-					{{document.designation| lstring:locale}}
-				</div>
+				<div class="km-value">{{document.designation| lstring:locale}}</div>
 			</div>
 
             <div ng-show="document.contactOrganization">
@@ -75,9 +59,7 @@
 		<div ng-show="document.address || document.city || document.state || document.postalCode || document.country">
 			<label>Direcci&oacute;n</label>
 			<address class="km-value">
-				<div class="km-pre">{{document.address | lstring:locale}}</div>
-				{{document.city | lstring:locale}} <span ng-show="document.city">, </span> {{document.state | lstring:locale}} <br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}} <span ng-show="document.postalCode">, </span> <b>{{document.country|term}}</b>
-			</address>
+				<div class="km-pre">{{document.address | lstring:locale}}</div>{{document.city | lstring:locale}} <span ng-show="document.city">,</span> {{document.state | lstring:locale}} <br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}} <span ng-show="document.postalCode">,</span> <b>{{document.country|term}}</b></address>
 		</div>
         <div ng-show="document.phones" >
             <label>N&uacute;meros de tel&eacute;fono</label>
@@ -101,17 +83,14 @@
             <label>Correos electr&oacute;nicos</label>
             <div class="km-value">
 				<ul class="list">
-					<li ng-repeat="item in document.emails">
-						<a translation-url  ng-href="mailto:{{item}}">{{item}}</a></li>
+					<li ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}}</a></li>
 				</ul>
 			</div>
         </div>
 
         <div ng-show="document.websites">
             <label>Sitios web</label>
-            <div class="km-value" ng-repeat="item in document.websites">
-                <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-            </div>
+            <div class="km-value" ng-repeat="item in document.websites"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
         </div>
 
 		<div>
@@ -123,10 +102,8 @@
 				</div>
 
 				<div ng-show="document.relevantDocuments">
-					<label>Otras direcciones de p&aacute;ginas web o documentos adjuntos pertinentes</label>
-					<div class="km-value" ng-repeat="item in document.relevantDocuments">
-						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
-					</div>
+					<label>Other relevant website address or attached documents</label>
+					<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 			</div>
 

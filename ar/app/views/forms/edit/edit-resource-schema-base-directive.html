@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" required name="publicationYear" caption="سنة النشر">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;  <option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
 							</div>
@@ -167,7 +167,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="regions" caption="البلد(البلاد) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالمورد">
+								<div class="km-control-group" name="regions" caption="البلد (البلدان) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالمورد">
 									<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple
 									placeholder="حدد البلد/البلاد والمنطقة/المناطق أو الاثنين معًا..."></div>
 								</div>
@@ -195,7 +195,7 @@
 
 						<div class="row" ng-if="(isResource && IsLiterature() && IsTarget16()) || !isResource">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="absSubjects" caption="مجال (مجالات) الموضوع ">
+								<div class="km-control-group" required name="absSubjects" caption="مجال (مجالات) الموضوع">
 									<div km-term-check name="absSubjects" required ng-model="document.absSubjects" terms="options.absSubjects()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -217,8 +217,8 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-									<div class="help-block">يُرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم تذكر أو تستخدم في مكان آخر في هذا السجل.</div>
+								<div class="km-control-group" name="address" caption="Any other relavent information">
+									<div class="help-block">يرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم تذكر أو تستخدم في مكان آخر في هذا السجل.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -234,11 +234,11 @@
 
 					</section>
 					<section>
-						<legend>ملاحظات</legend>
+						<legend>ملاحظات Notes</legend>
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="km-control-group" name="notes">
-									<div class="help-block">حقل &quot;ملاحظات&quot; هو لتدوين الملاحظات الشخصية أو التعليقات، وسوف تكون مخفية عند عرض السجل هذا المجال ليس المقصود إستخدامه للحصول على معلومات سرية.</div>
+									<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
 									<textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
 								</div>
 							</div>
@@ -254,12 +254,7 @@
 
 			</form>
 
-			<div ng-show="tab=='review'" km-tab="review">
-
-				<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-					<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages"
-					ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-				</div>
+			<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
 				<div view-resource ng-model="reviewDocument" locale="review.locale" allow-drafts="true" heading="{{heading}}" short-heading="{{shortHeading}}"></div>
 			</div><!-- <hr style="margin-top:20px;">

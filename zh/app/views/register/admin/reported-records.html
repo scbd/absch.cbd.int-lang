@@ -1,10 +1,6 @@
 ﻿<div ng-controller="adminReportedRecordsCtrl" id="RegisterPage">
     <link href="/app/css/register.css" rel="stylesheet">
-    <link href="/app/css/record.css" rel="stylesheet">
-
-    <span register-top-menu></span>
-
-    <div class="register-content card card-1-notrans">
+    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
@@ -25,27 +21,17 @@
                 <div class="row table-striped" style="padding:10px;border-bottom:1px solid white;" 
                 ng-repeat="record in reportRecords | orderBy:'reportedOn':'desc'">
                     <div ng-click="record.showDoc=!record.showDoc;loadDocumentDetails(record.showDoc, record)">
-                        <div class="col-xs-2">
-                            {{record.schema|schemaName}}
-                        </div>
-                        <div class="col-xs-2">
-                            {{record.reportedBy}}
-                        </div>
-                        <div class="col-xs-2">
-                            <span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span>
-                        </div>
-                        <div class="col-xs-3">
-                            <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
-                        </div>
+                        <div class="col-xs-2">{{record.schema|schemaName}}</div>
+                        <div class="col-xs-2">{{record.reportedBy}}</div>
+                        <div class="col-xs-2"><span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span></div>
+                        <div class="col-xs-3"><span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
                         <div class="col-xs-3">
                             <input type="button" class="btn btn-primary" value="View Record" ng-click="record.showDoc=!record.showDoc;loadDocumentDetails(record.showDoc, record)" />
                             <input type="button" class="btn btn-primary" value="Add Comments" ng-click="addComments($event, record)" />
-                            <input type="button" class="btn btn-warning" value="删除" ng-click="delete($event, record)" />
+                            <input type="button" class="btn btn-warning" value="Delete" ng-click="delete($event, record)" />
                         </div>
                     </div>
-                    <div ng-if="record.history">
-                        <!--<div class="col-xs-1"></div>-->
-                        <table class="table table-striped" style="margin:auto;width:80%">
+                    <div ng-if="record.history"><!--<div class="col-xs-1"></div>--><table class="table table-striped" style="margin:auto;width:80%">
                             <thead class="row " style="padding:10px;border-bottom:1px solid white;">                
                                 <td>No.</td>
                                 <td>日期</td>
@@ -65,9 +51,7 @@
                                 <td>{{history.status}}</td>
                                 <td>{{history.comments||history.additionalInformation}}</td>
                             </tbody>
-                        </table>
-                        <!--<div class="col-xs-1"></div>-->
-                    </div>
+                        </table><!--<div class="col-xs-1"></div>--></div>
                     <div ng-if="record.showDoc">
                         <div style="padding:35px 0px 15px 0px!important;">
                             <record-loader class="card card-3" api="api.recordLoaderApi" show-details="false" hide-buttons="tdue" link-target="_new"></record-loader>
@@ -81,9 +65,7 @@
 
     <script type="text/ng-template" trados-translation="true" id="addCommentsDialog">
         <div class="modal-header">           
-            <h3 class="modal-title">
-               {{record.schema|schemaName}} :- {{record.reportedBy}}
-            </h3> 
+            <h3 class="modal-title">{{record.schema|schemaName}} :- {{record.reportedBy}}</h3> 
         </div>
 
         <div class="modal-body">
@@ -114,24 +96,14 @@
 
     <script type="text/ng-template" trados-translation="true" id="confirmDeleteDialog">
         <div class="modal-header">           
-            <h3 class="modal-title">
-              Confirm Delete?
-            </h3> 
+            <h3 class="modal-title">Confirm Delete?</h3> 
         </div>
 
         <div class="modal-body">             
-                <div class="col-xs-12 col-form-label">
-                   Schema :{{record.schema|schemaName}}
-                </div>
-                <div class="col-xs-12 col-form-label">
-                   Reported By :{{record.reportedBy}}
-                </div>
-                <div class="col-xs-12 col-form-label">
-                    Reported On :<span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span>
-                </div>
-                <div class="col-xs-12 col-form-label">
-                   Information :<span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}
-                </div>
+                <div class="col-xs-12 col-form-label">Schema :{{record.schema|schemaName}}</div>
+                <div class="col-xs-12 col-form-label">Reported By :{{record.reportedBy}}</div>
+                <div class="col-xs-12 col-form-label">Reported On :<span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
+                <div class="col-xs-12 col-form-label">Information :<span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">

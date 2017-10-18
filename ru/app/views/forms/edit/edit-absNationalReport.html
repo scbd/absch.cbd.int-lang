@@ -78,7 +78,7 @@
                             <legend>Общая информация</legend>
             				<div class="row">
             					<div class="col-xs-12">
-            						<div class="km-control-group" name="government" required  bold="true"  caption="1. Страна"><span class="help-inline color-blue bold" ng-if="userGovernment()">Название страны не подлежит изменению.</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Выберите страну..."></div>
+            						<div class="km-control-group" name="government" required  bold="true"  caption="Страна"><span class="help-inline color-blue bold" ng-if="userGovernment()">Название страны не подлежит изменению.</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Выберите страну..."></div>
             						</div>
             					</div>
             				</div>
@@ -87,7 +87,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="title" required caption="Название данного национального доклада">
+                                        <div class="km-control-group" name="title" required caption="1. Название данного национального доклада">
                                             <div class="help-info">Данное поле служит названием записи, поэтому оно должно быть уникальным и обеспечивать легкость идентификации записи в Механизме посредничества ДГРСИВ.</div>
                                             <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Название данного национального доклада" locales="document.header.languages"></div>
                                         </div>
@@ -102,7 +102,7 @@
                                                                 ng-disabled="!document.government"
                                                                 question="contact"
                                                                 government="document.government"
-                                                                schema="(contact authority)"
+                                                                schema="(contact authority focalPoint)"
                                                                 filter="true" type="radio">
                                         </div>
                                     </div>
@@ -335,7 +335,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question11.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="question13"  bold="true"  caption="13. Предоставляет ли ваша страна информацию о процедуре подачи заявки на получение предварительного обоснованного согласия, как это предусмотрено статьей 6.3 с)?">
+                                    <div class="km-control-group" required name="question13"  bold="true"  caption="13. Предоставляет ли ваша страна информацию о процедуре подачи заявки на получение предварительного обоснованного согласия, как это предусмотрено статьей 6.3&nbsp;с)?">
                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no" required name="question13" ng-model="document.question13.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question13FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!isQ11Yes(document.question11.answer)" km-textbox-ml rows=4 name="question13FurtherInfo" ng-model="document.question13.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -354,7 +354,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question11.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="question14"  bold="true"  caption="14. Обеспечивает ли ваша страна представление компетентным национальным органом четкого и прозрачного письменного решения, как это предусмотрено статьей 6.3 d)?">
+                                    <div class="km-control-group" required name="question14"  bold="true"  caption="14. Обеспечивает ли ваша страна представление компетентным национальным органом четкого и прозрачного письменного решения, как это предусмотрено статьей 6.3&nbsp;d)?">
                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no" required name="question14" ng-model="document.question14.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question14FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!isQ11Yes(document.question11.answer)" km-textbox-ml rows=4 name="question14FurtherInfo" ng-model="document.question14.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -373,7 +373,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question11.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="question15"  bold="true"  caption="15. Обеспечивает ли ваша страна выдачу в момент доступа разрешения или эквивалентного документа, как предусмотрено статьей 6.3 е)?">
+                                    <div class="km-control-group" required name="question15"  bold="true"  caption="15. Обеспечивает ли ваша страна выдачу в момент доступа разрешения или эквивалентного документа, как предусмотрено статьей&nbsp;6.3&nbsp;е)?">
                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no" required name="question15" ng-model="document.question15.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question15FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!isQ11Yes(document.question11.answer)" km-textbox-ml rows=4 name="question15FurtherInfo" ng-model="document.question15.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -417,7 +417,7 @@
 
                             <div class="row" ng-class="{'disable': !document.question11.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required  bold="true"  name="question17" caption="17. Введены ли в вашей стране четкие правила и процедуры требования и установления взаимосогласованных условий, предусмотренные статьей 6.3 g)?">
+                                    <div class="km-control-group" required  bold="true"  name="question17" caption="17. Введены ли в вашей стране четкие правила и процедуры требования и установления взаимосогласованных условий, предусмотренные статьей 6.3&nbsp;g)?">
                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no" required name="question17" ng-model="document.question17.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question17FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!isQ11Yes(document.question11.answer)" km-textbox-ml rows=4 name="question17FurtherInfo" ng-model="document.question17.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -504,7 +504,7 @@
                             <legend>Совместное использование выгод на справедливой и равной основе (статья 5)</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true"  required name="question20" caption="20. Приняты ли в вашей стране законодательные, административные или политические меры по осуществлению статьи 5.1, гласящей, что выгоды от применения генетических ресурсов, а также от последующих видов применения и коммерциализации совместно используются со Стороной, поставляющей такие ресурсы, которая является страной происхождения таких ресурсов или Стороной, которая приобрела генетические ресурсы в соответствии с положениями Конвенции, как это предусмотрено статьей 5.3?">
+                                    <div class="km-control-group"  bold="true"  required name="question20" caption="20. Приняты ли в вашей стране законодательные, административные или политические меры по осуществлению статьи&nbsp;5.1, гласящей, что выгоды от применения генетических ресурсов, а также от последующих видов применения и коммерциализации совместно используются со Стороной, поставляющей такие ресурсы, которая является страной происхождения таких ресурсов или Стороной, которая приобрела генетические ресурсы в соответствии с положениями Конвенции, как это предусмотрено статьей&nbsp;5.3?">
                                         <div class="km-yes-no" required name="question20" ng-model="document.question20.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question20FurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question20FurtherInfo" ng-model="document.question20.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -523,7 +523,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" required name="question21" caption="21. Приняты ли в вашей стране законодательные, административные или политические меры для обеспечения того, чтобы выгоды от использования генетических ресурсов, которые находятся в ведении коренных и местных общин в соответствии с положениями внутреннего законодательства, регулирующего установленные права данных коренных и местных общин на такие генетические ресурсы, совместно использовались с соответствующими общинами, как это предусмотрено статьей 5.2?">
+                                    <div class="km-control-group"  bold="true" required name="question21" caption="21. Has your country taken legislative, administrative or policy measures with the aim of ensuring that the benefits from the utilization of genetic resources held by indigenous and local communities, in accordance with domestic legislation regarding the established rights of these indigenous and local communities over these genetic resources, are shared with the indigenous and local communities concerned as provided in Article 5.2?">
                                         <div class="km-yes-no" required name="question21" ng-model="document.question21.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question21FurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question21FurtherInfo" ng-model="document.question21.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -542,7 +542,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group"  bold="true" required name="question22" caption="22. Приняты ли в вашей стране законодательные, административные или политические меры для обеспечения совместного использования выгод от применения традиционных знаний, связанных с генетическими ресурсами, с коренными и местными общинами, являющимися носителями таких знаний, как это предусмотрено статьей 5.5?">
+                                    <div class="km-control-group"  bold="true" required name="question22" caption="22. Has your country taken legislative, administrative or policy measures in order that benefits arising from the utilization of traditional knowledge associated with genetic resources are shared with indigenous and local communities holding such knowledge as provided in Article 5.5?">
                                         <div class="km-yes-no" required name="question22" ng-model="document.question22.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question22FurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question22FurtherInfo" ng-model="document.question22.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -867,7 +867,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="km-control-group"  bold="true"  required name="question35" caption="35. В процессе разработки и реализации требований законодательства и мер по регулированию ДГРСИВ в вашей стране:"></div>
-                                    <div class="km-control-group" required name="question35_research" caption="созданы ли условия для стимулирования и поощрения исследований, содействующих сохранению и устойчивому использованию биоразнообразия, в том числе путем применения упрощенных мер предоставления доступа к генетическим ресурсам для некоммерческих исследовательских целей, принимая во внимание необходимость решения вопроса об изменении целей таких исследований, как это предусмотрено статьей 8 а)?">
+                                    <div class="km-control-group" required name="question35_research" caption="созданы ли условия для стимулирования и поощрения исследований, содействующих сохранению и устойчивому использованию биоразнообразия, в том числе путем применения упрощенных мер предоставления доступа к генетическим ресурсам для некоммерческих исследовательских целей, принимая во внимание необходимость решения вопроса об изменении целей таких исследований, как это предусмотрено статьей 8&nbsp;а)?">
                                         <div class="km-yes-no" name="question35_research" ng-model="document.question35.research.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question35ResearchFurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question35ResearchFurtherInfo" ng-model="document.question35.research.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -882,7 +882,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group"  required name="question35_emergencies" caption="обращается ли надлежащее внимание на возникшие или надвигающиеся чрезвычайные ситуации, угрожающие или наносящие ущерб здоровью людей, животных или растений, как это предусмотрено статьей 8 b)?">
+                                    <div class="km-control-group"  required name="question35_emergencies" caption="обращается ли надлежащее внимание на возникшие или надвигающиеся чрезвычайные ситуации, угрожающие или наносящие ущерб здоровью людей, животных или растений, как это предусмотрено статьей 8&nbsp;b)?">
                                         <div class="km-yes-no" required name="question35_emergencies" ng-model="document.question35.emergencies.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question35EmergenciesFurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question35EmergenciesFurtherInfo" ng-model="document.question35.emergencies.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -896,7 +896,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" required name="question35_access" caption="принимаются ли во внимание необходимость ускоренных процедур доступа к генетическим ресурсам и ускоренных процедур совместного использования выгод от применения таких генетических ресурсов на справедливой и равной основе, включая возможности получения доступного обслуживания для нуждающихся, особенно в развивающихся странах, как это предусмотрено статьей 8 b)?">
+                                    <div class="km-control-group" required name="question35_access" caption="принимаются ли во внимание необходимость ускоренных процедур доступа к генетическим ресурсам и ускоренных процедур совместного использования выгод от применения таких генетических ресурсов на справедливой и равной основе, включая возможности получения доступного обслуживания для нуждающихся, особенно в развивающихся странах, как это предусмотрено статьей 8&nbsp;b)?">
                                         <div class="km-yes-no" required name="question35_access" ng-model="document.question35.access.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question35AccessFurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question35AccessFurtherInfo" ng-model="document.question35.access.furtherInfo" locales="document.header.languages" placeholder=""></div>
@@ -910,7 +910,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="km-control-group" required name="question35_importance" caption="учитывается ли важность генетических ресурсов для производства продовольствия и ведения сельского хозяйства и их особая роль в создании продовольственной обеспеченности, как это предусмотрено статьей 8 с)?">
+                                    <div class="km-control-group" required name="question35_importance" caption="учитывается ли важность генетических ресурсов для производства продовольствия и ведения сельского хозяйства и их особая роль в создании продовольственной обеспеченности, как это предусмотрено статьей 8&nbsp;с)?">
                                         <div class="km-yes-no" required name="question35_importance" ng-model="document.question35.importance.answer"></div>
                                     </div>
 
@@ -980,8 +980,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()" name="question38" bold="true" caption="38. Обладают ли коренные и местные общины установленным правом предоставлять доступ к генетическим ресурсам в соответствии с положениями внутригосударственного права? (Статья 6.2)">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question38" ng-model="document.question38.answer" ng-click="Q38Clear()"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}" name="question38" bold="true" caption="38. Обладают ли коренные и местные общины установленным правом предоставлять доступ к генетическим ресурсам в соответствии с положениями внутригосударственного права? (Статья 6.2)">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question38" ng-model="document.question38.answer" ng-click="Q38Clear()"></div>
                                     </div>
                                     <div class="row" ng-show="document.question38.answer">
                                         <div class="col-xs-10 col-xs-offset-1">
@@ -1004,7 +1004,7 @@
                                             <div class="km-control-group" name="question38AdditionalInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=2 name="question38MeasuresFurtherInfo" ng-model="document.question38.measures.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                             </div>
 
-                                            <div class="km-control-group" name="question38_pic" ng-required="document.question38.answer" caption="Разработаны ли в вашей стране критерии и/или процессы получения предварительного обоснованного согласия или разрешения коренных и местных общин на доступ к генетическим ресурсам и их участие в предоставлении такого доступа, как это предусмотрено статьей 6.3 f)?">
+                                            <div class="km-control-group" name="question38_pic" ng-required="document.question38.answer" caption="Разработаны ли в вашей стране критерии и/или процессы получения предварительного обоснованного согласия или разрешения коренных и местных общин на доступ к генетическим ресурсам и их участие в предоставлении такого доступа, как это предусмотрено статьей 6.3&nbsp;f)?">
                                                 <div class="km-yes-no" name="question38_pic" ng-required="document.question38.answer" ng-model="document.question38.pic.answer"></div>
                                             </div>
 
@@ -1029,8 +1029,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question39" caption="39. Приняты ли в соответствии с внутренним законодательством в вашей стране меры с целью обеспечения того, чтобы доступ к традиционным знаниям, связанным с генетическими ресурсами, носителями которых являются коренные и местные общины в вашей стране, осуществлялся с предварительного и обоснованного согласия или одобрения и при участии данных коренных и местных общин и чтобы были установлены взаимосогласованные условия, как это предусмотрено статьей 7?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question39" ng-model="document.question39.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question39" caption="39. Приняты ли в соответствии с внутренним законодательством в вашей стране меры с целью обеспечения того, чтобы доступ к традиционным знаниям, связанным с генетическими ресурсами, носителями которых являются коренные и местные общины в вашей стране, осуществлялся с предварительного и обоснованного согласия или одобрения и при участии данных коренных и местных общин и чтобы были установлены взаимосогласованные условия, как это предусмотрено статьей 7?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question39" ng-model="document.question39.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question39FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question39FurtherInfo" ng-model="document.question39.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1048,8 +1048,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question40" caption="40. Учитываются ли при осуществлении Протокола и в соответствии с внутренним законодательством нормы обычного права, общинные протоколы и процедуры коренных и местных общин в отношении традиционных знаний, связанных с генетическими ресурсами, как это предусмотрено статьей 12.1?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question40" caption="40. Учитываются ли при осуществлении Протокола и в соответствии с внутренним законодательством нормы обычного права, общинные протоколы и процедуры коренных и местных общин в отношении традиционных знаний, связанных с генетическими ресурсами, как это предусмотрено статьей 12.1?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question40FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question40FurtherInfo" ng-model="document.question40.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1067,8 +1067,8 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question41" caption="41. Внедрены ли в вашей стране механизмы для информирования потенциальных пользователей традиционных знаний, связанных с генетическими ресурсами, об их обязанностях, как это предусмотрено статьей 12.2?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question41" ng-model="document.question41.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question41" caption="41. Внедрены ли в вашей стране механизмы для информирования потенциальных пользователей традиционных знаний, связанных с генетическими ресурсами, об их обязанностях, как это предусмотрено статьей 12.2?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question41" ng-model="document.question41.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question41FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question41FurtherInfo" ng-model="document.question41.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1086,59 +1086,71 @@
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()" bold="true"  name="question42" caption="42. Оказывает ли ваша страна поддержку в разработке коренными и местными общинами следующих инструментов, предусмотренных статьей 12.3?"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}" bold="true"  name="question42" caption="42. Оказывает ли ваша страна поддержку в разработке коренными и местными общинами следующих инструментов, предусмотренных статьей 12.3?"></div>
+                                    <div style="margin-left:25px;">
+                                        <div class="checkbox"> 
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                name="question42_1" ng-model="document.question42.community.answer"></div>
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_community" caption="Community Protocol">                                               
+                                            </div>    
+                                            <div ng-show="document.question42.community.answer" class="km-control-group" name="question42CommunityFurtherInfo" caption=""><br/>Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке общинных протоколов.<div km-textbox-ml rows=3 name="question42CommunityFurtherInfo" ng-model="document.question42.community.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" type="checkbox" ng-change="Q42Clear()" ng-model="document.question42.community.answer">Общинные протоколы</label>
-                                    </div>
-                                    <div ng-show="document.question42.community.answer" class="km-control-group" name="question42CommunityFurtherInfo" caption="">Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке общинных протоколов.<div km-textbox-ml rows=3 name="question42CommunityFurtherInfo" ng-model="document.question42.community.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsCommunity" caption="Выберите соответствующие записи в МП-ДГРСИВ">
+                                                    <div document-selector ng-model="document.question42.community.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42community"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                               
+                                        </div>
+                                        
+                                        <div class="checkbox">
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                    name="question42_2" ng-model="document.question42.mat.answer"> </div>                                                   
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_mat" caption="Минимальные требования к взаимосогласованным условиям">
+                                            </div>         
+                                            <div ng-show="document.question42.mat.answer" class="km-control-group" name="question42MATFurtherInfo" caption=""><br/>Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке минимальных требований к взаимосогласованным условиям.<div km-textbox-ml rows=3 name="question42MATFurtherInfo" ng-model="document.question42.mat.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsCommunity" caption="Выберите соответствующие записи в МП-ДГРСИВ">
-                                            <div document-selector ng-model="document.question42.community.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42community"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsMat" caption="Выберите соответствующие записи в МП-ДГРСИВ">
+                                                    <div document-selector ng-model="document.question42.mat.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42mat"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" ng-change="Q42Clear()" type="checkbox" ng-model="document.question42.mat.answer">Минимальные требования к взаимосогласованным условиям</label>
-                                    </div>
-                                    <div ng-show="document.question42.mat.answer" class="km-control-group" name="question42MATFurtherInfo" caption="">Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке минимальных требований к взаимосогласованным условиям.<div km-textbox-ml rows=3 name="question42MATFurtherInfo" ng-model="document.question42.mat.furtherInfo" locales="document.header.languages" placeholder=""></div>
+                                        <div class="checkbox">
+                                            <div style="float: left" ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no"  ng-change="Q42Clear()"
+                                                name="question42_3" ng-model="document.question42.mcc.answer"></div>   
+                                            <div class="km-control-group" required="{{Q37IsYes()}}" name="question42_mcc" caption="Типовые договорные положения">
+                                            </div>
+                                            <div ng-show="document.question42.mcc.answer" class="km-control-group" name="question42MCCFurtherInfo" caption="">Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке типовых договорных положений.<div km-textbox-ml rows="3" name="question42MCCFurtherInfo" ng-model="document.question42.mcc.furtherInfo" locales="document.header.languages" placeholder=""></div>
 
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsMat" caption="Выберите соответствующие записи в МП-ДГРСИВ">
-                                            <div document-selector ng-model="document.question42.mat.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42mat"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsmcc" caption="Выберите соответствующие записи в МП-ДГРСИВ">
+                                                    <div document-selector ng-model="document.question42.mcc.documentReferenceIDs"
+                                                                            ng-disabled="!document.government || !Q37IsYes()"
+                                                                            question="question42mcc"
+                                                                            government="document.government"
+                                                                            schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="checkbox">
-                                        <label><input ng-disabled="!document.question37.answer" type="checkbox" ng-change="Q42Clear()" ng-model="document.question42.mcc.answer">Типовые договорные положения</label>
-                                    </div>
-                                    <div ng-show="document.question42.mcc.answer" class="km-control-group" name="question42MCCFurtherInfo" caption="">Представьте дополнительную информацию о том, как ваша страна оказывает поддержку в разработке типовых договорных положений.<div km-textbox-ml rows=3 name="question42MCCFurtherInfo" ng-model="document.question42.mcc.furtherInfo" locales="document.header.languages" placeholder=""></div>
-
-                                        <div class="km-control-group" style="margin-bottom:20px;" name="q42DocRefsmcc" caption="Выберите соответствующие записи в МП-ДГРСИВ">
-                                            <div document-selector ng-model="document.question42.mcc.documentReferenceIDs"
-                                                                    ng-disabled="!document.government || !Q37IsYes()"
-                                                                    question="question42mcc"
-                                                                    government="document.government"
-                                                                    schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"   filter="true">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" ng-required="Q37IsYes()"  bold="true" name="question43" caption="43. Старается ли ваша страна не ограничивать традиционное использование генетических ресурсов и связанных с ними традиционных знаний и традиционный обмен ими внутри и среди коренных и местных общин, как это предусмотрено статьей 12.4?">
-                                        <div ng-disabled="!document.question37.answer" ng-required="Q37IsYes()" class="km-yes-no" name="question43" ng-model="document.question43.answer"></div>
+                                    <div class="km-control-group" required="{{Q37IsYes()}}"  bold="true" name="question43" caption="43. Has your country endeavoured not to restrict the customary use and exchange of genetic resources and associated traditional knowledge within and among indigenous and local communities as provided in Article 12.4?">
+                                        <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}" class="km-yes-no" name="question43" ng-model="document.question43.answer"></div>
                                     </div>
                                     <div class="km-control-group" name="question43FurtherInfo" caption="">Представьте дополнительную информацию<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4 name="question43FurtherInfo" ng-model="document.question43.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1241,10 +1253,10 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required  bold="true" name="question48" caption="48. Стремится ли ваша страна сотрудничать при участии соответствующих коренных и местных общин в целях выполнения обязательств в рамках Протокола в случаях, когда аналогичные генетические ресурсы встречаются in-situ на территории более чем одной Стороны, как это предусмотрено статьей 11.1?">
+                                    <div class="km-control-group" required  bold="true" name="question48" caption="48. Is your country endeavouring to cooperate, with the involvement of indigenous and local communities concerned, with a view to implementing the Protocol in instances where the same genetic resources are found in situ within the territory of more than one Party as provided in Article 11.1?">
                                         <div class="km-yes-no" required name="question48" ng-model="document.question48.answer"></div>
                                     </div>
-                                    <div class="km-control-group" name="question48ILCInfo" caption="">Если в вашей стране есть коренные и местные общины, представьте дополнительную информацию об их участии.<div km-textbox-ml rows=3 name="question48ILCInfo" ng-model="document.question48.ilcInfo" locales="document.header.languages" placeholder=""></div>
+                                    <div class="km-control-group" name="question48ILCInfo" caption="">If your country has indigenous and local communities, please provide further detail of their involvement.<div km-textbox-ml rows=3 name="question48ILCInfo" ng-model="document.question48.ilcInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
                                     <div class="km-control-group" name="question48FurtherInfo" caption="">Представьте дополнительную информацию<div km-textbox-ml rows=4 name="question48FurtherInfo" ng-model="document.question48.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                     </div>
@@ -1262,7 +1274,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="question49" bold="true"  caption="49. Сотрудничает ли ваша страна в целях осуществления Протокола в тех случаях, когда аналогичные традиционные знания, связанные с генетическими ресурсами, являются достоянием одной или нескольких коренных и местных общин на территории нескольких Сторон, как это предусмотрено статьей 11.2?">
+                                    <div class="km-control-group" required name="question49" bold="true"  caption="49. Is your country endeavouring to cooperate with a view to implementing the Protocol in instances where the same traditional knowledge associated with genetic resources is shared by one or more indigenous and local communities in several Parties as provided in Article 11.2?">
                                         <div class="checkbox">
                                             <label><input type="checkbox" ng-model="document.question49.notApplicable" ng-change="Q49Clear()">Не применимо, поскольку в стране нет коренных и местных общин</label>
                                         </div>
@@ -1643,7 +1655,7 @@
                                     </div>
 
                                     <div ng-show="document.question63.answer" class="km-control-group" name="question63NumberOfStaff" caption="Укажите сколько">
-                                        <label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff" value="One">Один</label><br /><label><input type="radio" name="amendmentIntent"         ng-model="document.question63.numberOfStaff" value="Less than 5">Менее 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff" value="Less than 10">Менее 10</label><br /><label><input type="radio" name="amendmentIntent"         ng-model="document.question63.numberOfStaff" value="10 or more">10 или более</label>
+                                        <label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff" value="One">Один</label><br /><label><input type="radio" name="amendmentIntent"         ng-model="document.question63.numberOfStaff" value="Less than 5">Менее 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff" value="Less than 10">Less than 10</label><br /><label><input type="radio" name="amendmentIntent"         ng-model="document.question63.numberOfStaff" value="10 or more">10 или более</label>
                                     </div>
 
                                     <div class="km-control-group" name="question63Challenges" caption="">Кратко опишите основные трудности и проблемы, с которыми вы столкнулись.<div km-textbox-ml rows=4 name="question63Challenges" ng-model="document.question63.challengesInfo" locales="document.header.languages" placeholder=""></div>
@@ -1713,12 +1725,7 @@
 
             </div><!-- tab='edit' --></form>
 
-        <div ng-show="tab=='review'" km-tab="review">
-
-
-            <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-            </div>
+        <div ng-show="tab=='review'" km-tab="review" id="schemaView">
 
             <div view-abs-national-report ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
 

@@ -2,25 +2,11 @@
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
 
-    <div smooth-scroll duration="100" offset="200"></div>
-    <span register-top-menu></span>
-
-    <div class="register-content card card-1-notrans">
+    <div smooth-scroll duration="100" offset="200"></div><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div class="register-content-header bg-darkgrey color-white">
             <div style="padding:10px 10px;">
-                <h3>Requests & Notifications 
-            <span class="helpinfoInline">
-                <i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i> 
-            </span>
-        </h3>
-
-                <!--help info---------------------------->
-                <div ng-if="showInfo" class="well well-help">
-                    In this page you will find all notifications coming from all clearing-house platforms (CBD CH, BCH and ABS-CH). The clearing-house has a system of internal notifications to deal with requests for publications, reminders to update records, or notifying
-                    that certain records might be expiring. This page will allow you to follow up on the status of your records and find what the pending requests for publications are, or when a request has been approved, recalled, or rejected in any
-                    of the clearing-house platforms.
-                </div>
+                <h3>Demandes &amp; Notifications <span class="helpinfoInline"><i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i></span></h3><!--help info----------------------------><div ng-if="showInfo" class="well well-help">Sur cette page, vous trouverez toutes les notifications provenant de toutes les plateformes d&apos;&eacute;change (CE-CBD, CE-PRB et CE-APA). Le centre d&apos;&eacute;change dispose d&apos;un syst&egrave;me de notifications interne pour traiter les demandes de publication, les rappels pour mettre &agrave; jour les enregistrements ou pour avertir que certains documents pourraient expirer. Cette page vous permettra de suivre l&apos;&eacute;tat de vos fichiers et de d&eacute;terminer quelles sont les demandes de publications en attente ou lorsqu&apos;une demande a &eacute;t&eacute; approuv&eacute;e, rappel&eacute;e ou rejet&eacute;e sur l&apos;une des plateformes du centre d&apos;&eacute;change.</div>
 
             </div>
         </div>
@@ -28,5 +14,4 @@
             <xuser-notifications-panel></xuser-notifications-panel>
         </div>
     </div>
-</div>
-<!-- controller -->
+</div><!-- controller -->

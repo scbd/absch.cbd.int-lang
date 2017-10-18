@@ -1,28 +1,7 @@
 ﻿<div ng-controller="editAbsPermit">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
-    <style>
-        .dimmer-parent{
-            position: relative;
-        }
-        .blockRegion {
-            position: initial;
-            /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
-            margin: 1rem 0;
-            padding: 1em;
-            border-radius: .28571429rem;
-            /*border: 1px solid rgba(34,36,38,.15);*/
-        }
-        .dimmer {
-            border-radius: inherit!important;
-            position: absolute!important;
-            top: 0!important;
-            left: 0!important;
-            padding: 0;
-            margin: 0;
-        }
-
-    </style>
+    <style>.dimmer-parent{ position: relative; } .blockRegion { position: initial; /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/ margin: 1rem 0; padding: 1em; border-radius: .28571429rem; /*border: 1px solid rgba(34,36,38,.15);*/ } .dimmer { border-radius: inherit!important; position: absolute!important; top: 0!important; left: 0!important; padding: 0; margin: 0; }</style>
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
             <div class="alert alert-danger" ng-show="hasError()"><strong>Se produjo un error...</strong><div>{{error}}</div>
@@ -247,7 +226,7 @@
 
                             <div class="row" style="margin-top:20px;">
                                 <div class="col-xs-12">
-                                    <div class="legend2">Informaci&oacute;n adicional sobre el asunto o el recurso gen&eacute;tico<span class="help-info"> Proporcionar detalles sobre el asunto o el recurso gen&eacute;tico que cubre el permiso o su equivalente puede a&ntilde;adir certeza jur&iacute;dica.</span></div>
+                                    <div class="legend2">Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span></div>
                                     <div class="km-control-group" name="specimens" caption="Datos sobre el esp&eacute;cimen"><span class="help-info">Enlace al esp&eacute;cimen de muestra guardado en una instalaci&oacute;n apropiada</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -364,7 +343,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantDocuments" caption="Otra direcci&oacute;n de sitio web pertinente o documentos adjuntos">
+                                    <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
                                         <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
@@ -385,12 +364,7 @@
                     </div>
                 </form>
 
-                <div class="row" ng-show="tab=='review'" km-tab="review">
-                    <div class="col-xs-12">
-
-                        <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                            <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                        </div>
+                <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
                         <div class="view-abs-permit" show-pdf="false" ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                     </div>
                 </div>

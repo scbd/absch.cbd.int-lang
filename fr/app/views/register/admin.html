@@ -1,14 +1,10 @@
-﻿<div ng-controller="AdminController"  id="RegisterPage">
-  
+﻿<div ng-controller="AdminController" id="RegisterPage">
+
   <link href="/app/css/register.css" rel="stylesheet">
-  <link href="/app/css/record.css" rel="stylesheet">
-
-  <span register-top-menu></span>
-
-  <div class="register-content card card-1-notrans">
+  <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><div class="register-content card card-1-notrans">
     <div class="register-content-header bg-pink color-white">
       <div style="padding:1px 10px;">
-        <h3>ABSCH Admin </h3>
+        <h3>Admin CE-APA</h3>
       </div>
     </div>
     <div class="register-content-content" ng-if="roles.isAbsAdministrator || roles.isAdministrator">
@@ -16,15 +12,53 @@
         <div class="col-md-12 cp-header">
           <table style="width:100%;">
             <tr>
-              <td><label>Current Realm: </label></td>
+              <td><label>Domaine actuel :</label></td>
               <td><span switch-realm></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <table class="table table-striped" style="width:100%">
+                  <tbody>
+
+                    <tr>
+                      <td>Voir la liste de fichiers pr&eacute;sent&eacute;s par les usagers</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/reported-records">G&eacute;rer les fichiers pr&eacute;sent&eacute;s</a></td>
+                    </tr>
+                    <tr>
+                      <td>Voir le statut du flux des travaux des fichiers du CE-APA</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/pending-requests">G&eacute;rer le flux des travaux des fichiers</a></td>
+                    </tr>
+                    <tr>
+                      <td>Afficher le d&eacute;compte du CE-APA avec l&apos;option graphique et plusieurs filtres</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/report-counts">D&eacute;compte</a></td>
+
+                    </tr>
+                    <tr>
+                      <td>Voir les pays avec/sans responsabilit&eacute;s APA</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/user-role-report">Rapport sur le r&ocirc;le de l&rsquo;usager</a></td>
+                    </tr>
+                    <tr>
+                      <td>Voir la liste d&rsquo;usagers qui utilisent l&rsquo;inscription par courriel</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/subscriptions">Inscriptions</a></td>
+                    </tr>
+                    <tr>
+                      <td>Voir les erreurs des clients</td>
+                      <td><a translation-url class="btn btn-default" ng-href="/register/admin/error-logs">Registre des erreurs</a></td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </td>
             </tr>
           </table>
         </div>
-        <a translation-url  class="btn btn-default" ng-href="/register/admin/reported-records">Manage Reported Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/pending-requests">Manage Workflow Records</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/report-counts">Report counts</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/error-logs">Error Logs</a> <a translation-url  class="btn btn-default" ng-href="/register/admin/subscriptions">Subscriptions</a>
+
+
+
+
 
       </div>
     </div>
   </div>
-</div>
-<!-- controller -->
+</div><!-- controller -->

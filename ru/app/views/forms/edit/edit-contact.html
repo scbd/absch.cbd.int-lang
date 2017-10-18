@@ -120,7 +120,7 @@
 										<div class="km-control-group" name="contact_organizationAcronym" caption="Сокращение" ng-required="!form.organization.$valid && document.type!='person'">
 											<div class="help-info">Сокращение для длинного названия</div>
 											<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="пример: СКБР" locales="document.header.languages"></div>
-											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="Пример: СКБР" locales="document.header.languages"></div>
+											<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="пример: СКБР" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
@@ -133,7 +133,7 @@
 									</div>
 									<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
 										<div class="km-control-group" name="contact_organizationTypeName" caption="Другой тип организации">
-											<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="Пример: СКБР" locales="document.header.languages"></div>
+											<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: СКБР" locales="document.header.languages"></div>
 										</div>
 									</div>
 								</div>
@@ -159,7 +159,7 @@
 
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_state" caption="Штат или область">
-											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="Пример: Quebec"></div>
+											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="пример: Quebec"></div>
 										</div>
 									</div>
 								</div>
@@ -168,7 +168,7 @@
 
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_postalCode" caption="Почтовый индекс или Zip-код">
-											<div km-textbox-ml name="contact_postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="Пример: H2Y 1N9"></div>
+											<div km-textbox-ml name="contact_postalCode" ng-model="document.postalCode" locales="document.header.languages" placeholder="пример: H2Y 1N9"></div>
 										</div>
 									</div>
 
@@ -186,14 +186,14 @@
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_phones" caption="Номера телефонов">
 										<div class="help-info">Используйте следующий формат: + [код страны] [код города] [номер телефона] [добавочный номер, если необходимо].</div>
-										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="пример: +1 514.288.2220"></div>
+										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="example: +1 514.288.2220"></div>
 									</div>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_faxes" caption="Номера факсов">
 										<div class="help-info">Используйте следующий формат: + [код страны] [код города] [номер телефона] [добавочный номер, если необходимо].</div>
-										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="Пример: +1 514.288.6588"></div>
+										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="example: +1 514.288.6588"></div>
 									</div>
 								</div>
 							</div>
@@ -207,7 +207,7 @@
 
 								<div class="col-md-6 col-xs-12">
 									<div class="km-control-group" name="contact_websites" caption="Адреса веб-сайтов">
-										<div km-inputtext-list name="contact_websites" type="url" ng-model="doc._urls" placeholder="Пример: http://www.cbd.int"></div>
+										<div km-inputtext-list name="contact_websites" type="url" ng-model="doc._urls" placeholder="example: http://www.cbd.int"></div>
 									</div>
 								</div>
 							</div>
@@ -229,11 +229,7 @@
 					</div>
 				</form>
 
-				<div ng-show="tab=='review'" km-tab="review">
-
-					<div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-						<input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-					</div>
+				<div ng-show="tab=='review'" km-tab="review" id="schemaView">
 					<view-contact ng-model='reviewDocument' locale="review.locale"></view-contact>
 
 				</div>

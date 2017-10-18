@@ -37,11 +37,11 @@
                                 </div>
                                 <div class="col-md-4" ng-show="edition.contact.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
                                     <div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="مثال: أمانة اتفاقية التنوع البيولوجي" locales="locales"></div>
+                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="مثال: SCBD" locales="locales"></div>
                                     </div>
                                 </div>
                             </div>
-                            <legend>بيانات عنوان المنظمة</legend>
+                            <legend>إحداثيات المنظمة</legend>
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -83,14 +83,14 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="phones" required caption="Phone numbers">
-                                        <div class="help-info">يرجى استخدام الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+                                        <div class="help-info">يرجى استخدام الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
                                         <div km-inputtext-list required name="phones" ng-model="edition.contact.phones" placeholder="مثال: 2220 288 514 1+"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="faxes" caption="Fax Numbers">
-                                        <div class="help-info">يُرجى استخدام الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود الدولة]+</div>
+                                        <div class="help-info">يُرجى استخدام الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
                                         <div km-inputtext-list name="faxes" ng-model="edition.contact.faxes" placeholder="مثال: 6588 288 514 1+"></div>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                 <h3 class="color-litegrey">لا توجد أي منظمات. يرجى إضافة منظمة جديدة.</h3>
                             </div>
                             <input type="textbox" ng-model="search.keyword" placeholder="تصفية أسماء المنظمات" 
-                                class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">تم العثور على {{recordCount}} منظمة </span></div>
+                                class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">تم العثور على {{recordCount}} منظمة</span></div>
                         
                         <div class="col-xs-12 " infinite-scroll='loadExisting()' infinite-scroll-immediate-check='true' 
                             infinite-scroll-distance='1' infinite-scroll-disabled='loadingDocuments' 
@@ -129,12 +129,12 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <div ng-if="loadingDocuments"><i class="fa fa-spin fa-spinner"  style="margin-left:50%" /> يجري التحميل..</div>
+                            <div ng-if="loadingDocuments"><i class="fa fa-spin fa-spinner"  style="margin-left:50%" /> loading..</div>
                             <div style="clear:both;"></div>
                         </div>                        
                     </div>
                     <div ng-show="loading">
-                        <h4>يجري التحميل <i class="fa fa-spinner fa-spin"></i></h4>
+                        <h4>قيد التحميل <i class="fa fa-spinner fa-spin"></i></h4>
                     </div>
                 </div>
                 <div class="modal-footer bg-litegrey">

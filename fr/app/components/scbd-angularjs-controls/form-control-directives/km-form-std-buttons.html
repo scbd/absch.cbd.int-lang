@@ -1,11 +1,5 @@
-﻿<span style="text-align:left">
-
-	<span ng-hide="errors">
-
-		<input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Annuler"/>
-		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Sauvegarder"  ng-show="hideSave"/>
-
-	</span>
+﻿<span style="text-align:left"> <span ng-hide="errors"><input type="button" class="btn btn-warning" ng-click="showCancelDialog(true)" value="Cancel"/>
+		<input type="button" class="btn btn-primary" ng-click="showSaveDialog(true)" value="Save"  ng-show="hideSave"/></span>
 
     <!--Save Dialog-->
 	<div id="dialogSave" class="modal fade" data-backdrop="static">
@@ -17,9 +11,9 @@
 				</div>
 				<div class="modal-body">
 
-					<p>Si vous avez termin&eacute; de saisir l'ensemble des informations, vous pouvez soumettre le dossier pour publication.</p>
+					<p>Si vous avez termin&eacute; de saisir l&apos;ensemble des informations, vous pouvez soumettre le dossier pour publication.</p>
 
-					<p>If you are unable to complete entry of this record, you can save it as a draft, which will then be available in your list of drafts on the Management Centre. Vos coll&egrave;gues ou vous-m&ecirc;mes pourrez par la suite continuer &agrave; modifier le dossier au cours de cette m&ecirc;me session ou lors d'une session ult&eacute;rieure.</p>
+					<p>If you are unable to complete entry of this record, you can save it as a draft, which will then be available in your list of drafts on the Management Centre. Vos coll&egrave;gues ou vous-m&ecirc;mes pourrez par la suite continuer &agrave; modifier le dossier au cours de cette m&ecirc;me session ou lors d&apos;une session ult&eacute;rieure.</p>
 
 				</div>
 				<div class="modal-footer" style="margin-top:0">
@@ -31,10 +25,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-    <!--Cancel Dialog-->
-	<div id="dialogCancel" class="modal fade" data-backdrop="static">
+	</div><!--Cancel Dialog--><div id="dialogCancel" class="modal fade" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -43,7 +34,7 @@
 				</div>
 				<div class="modal-body">
 
-					<p>Si vous souhaitez annuler les modifications apport&eacute;es &agrave; ce dossier provisoire, vous pouvez conserver la version pr&eacute;c&eacute;dente du projet qui sera par la suite ins&eacute;r&eacute;e dans la liste des dossiers provisoires dans le Centre de Gestion. Vos coll&egrave;gues ou vous-m&ecirc;mes pourrez par la suite continuer &agrave; modifier le dossier au cours de cette m&ecirc;me session ou lors d'une session ult&eacute;rieure.</p>
+					<p>Si vous souhaitez annuler les modifications apport&eacute;es &agrave; ce dossier provisoire, vous pouvez conserver la version pr&eacute;c&eacute;dente du projet qui sera par la suite ins&eacute;r&eacute;e dans la liste des dossiers provisoires dans le Centre de Gestion. Vos coll&egrave;gues ou vous-m&ecirc;mes pourrez par la suite continuer &agrave; modifier le dossier au cours de cette m&ecirc;me session ou lors d&apos;une session ult&eacute;rieure.</p>
 
 				</div>
 				<div class="modal-footer" style="margin-top:0">
@@ -52,6 +43,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-</span>
+	</div></span>

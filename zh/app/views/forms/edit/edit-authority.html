@@ -56,12 +56,12 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="km-control-group" name="city" required caption="城市">
-                                            <div km-textbox-ml name="city" ng-model="document.city" required locales="document.header.languages" placeholder="例如：蒙特利尔"></div>
+                                            <div km-textbox-ml name="city" ng-model="document.city" required locales="document.header.languages" placeholder="例如：Montreal（蒙特利尔）"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="state" caption="州/省">
+                                        <div class="km-control-group" name="state" caption="State or Province">
                                             <div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages" placeholder="例如：Quebec（魁北克）"></div>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                     <div class="col-xs-12">
                                         <div class="km-control-group" ng-show="showResponsibleforAllMsg()" name="absResponsibleForAllNot" caption="贵国已有一个国家主管部门，请具体说明每个国家主管部门的职责范围。" />
 
-                                        <div class="km-control-group" name="absResponsibleForAll" required caption="这是贵国唯一指定的国家主管部门（CNA）吗？如为“否”，则请描述这个国家主管部门（CNA）的职责。">
+                                        <div class="km-control-group" name="absResponsibleForAll" required caption="这是贵国唯一指定的国家主管部门（CNA）吗？如为&ldquo;否&rdquo;，则请描述这个国家主管部门（CNA）的职责。">
 
                                             <div km-yes-no required ng-model="document.absResponsibleForAll" locales="document.header.languages"></div>
                                         </div>
@@ -249,14 +249,8 @@
                     </form>
 
 
-                    <div ng-show="tab=='review'" km-tab="review">
-
-
-                        <div class="btn-group" ng-show="reviewDocument.header.languages.length>1">
-                            <input type="button" class="btn" ng-class="{'active' : review.locale==locale, 'btn-info' : review.locale==locale}" ng-repeat="locale in document.header.languages" ng-click="$parent.review.locale = locale" value="{{locale | uppercase}}" />
-                        </div>
-
-                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
+                    <div ng-show="tab=='review'" km-tab="review" id="schemaView">
+                       <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
                     </div><!--
         <hr style="margin-top:20px;">
 

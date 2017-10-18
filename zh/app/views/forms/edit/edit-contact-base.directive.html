@@ -1,9 +1,5 @@
 ﻿<div>
-	<style>
-		input.ng-invalid-url, input.ng-invalid-email {
-		 background-color:#f0ad4e;
-		}
-	</style>
+	<style>input.ng-invalid-url, input.ng-invalid-email { background-color:#f0ad4e; }</style>
 
 	<div ng-show="document.type=='person'">
 
@@ -38,7 +34,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="km-control-group" name="contact_organization"  caption="组织"><!-- <div km-select name="contact_organization" ng-model="document.organization"
+				<div class="km-control-group" name="contact_organization"  caption="Organization"><!-- <div km-select name="contact_organization" ng-model="document.organization"
 						items="options.organization()" required></div> --><field-embed-contact ng-model="document.contactOrganization" locales="document.header.languages"
 					name="organization" caption="Link Organization »"
 					sub-filter="[{'type':'organization'}]"></field-embed-contact>
@@ -65,7 +61,7 @@
 		<legend>组织信息</legend>
 		<div class="row">
 			<div class="col-md-7 col-xs-12">
-				<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="组织">
+				<div class="km-control-group" name="contact_organization" ng-required="!form.organization.$valid && document.type!='person'" caption="Organization">
 					<div class="help-info">全名，无缩写</div>
 					<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organization" ng-model="document.name" required locales="locales"></div>
 					<div ng-if="document.type=='organization' && document.header.schema=='contact'" km-textbox-ml name="contact_organization" ng-model="document.organization"  locales="locales"></div>
@@ -73,7 +69,7 @@
 			</div>
 
 			<div class="col-md-5 col-xs-12">
-					<div class="km-control-group" name="contact_organizationAcronym" caption="缩写" ng-required="!form.organization.$valid && document.type!='person'">
+					<div class="km-control-group" name="contact_organizationAcronym" caption="Acronym" ng-required="!form.organization.$valid && document.type!='person'">
 					<div class="help-info">长名缩写</div>
 					<div  ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="例如：生物多样性公约秘书处" locales="locales"></div>
 					<div  ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="例如：生物多样性公约秘书处" locales="locales"></div>
@@ -114,7 +110,7 @@
 			</div>
 
 			<div class="col-md-6">
-				<div class="km-control-group" name="contact_state" caption="州/省">
+				<div class="km-control-group" name="contact_state" caption="State or Province">
 					<div km-textbox-ml name="contact_state" ng-model="document.state" locales="locales" placeholder="例如：Quebec（魁北克）"></div>
 				</div>
 			</div>
@@ -141,14 +137,14 @@
 	<div class="row">
 		<div class="col-md-6 col-xs-12">
 			<div class="km-control-group" name="contact_phones" caption="电话号码">
-				<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+				<div class="help-info">请使用以下格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 				<div km-inputtext-list name="contact_phones" ng-model="document.phones"  placeholder="例如：+1 514.288.2220" ></div>
 			</div>
 		</div>
 
 		<div class="col-md-6 col-xs-12">
 			<div class="km-control-group" name="contact_faxes" caption="传真号码">
-				<div class="help-info">请使用下列格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+				<div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
 				<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
 			</div>
 		</div>

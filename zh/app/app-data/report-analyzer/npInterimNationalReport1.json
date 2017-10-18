@@ -1,0 +1,2378 @@
+﻿[
+  {
+    "key": "一般信息",
+    "title": "议定书实施机构",
+    "questions": [
+      {
+        "key": "Q003",
+        "section": "一般信息",
+        "number": "3",
+        "type": "option",
+        "title": "贵国是否已按照第14.2条规定向获取和惠益分享信息交换所提供此等信息？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Please provide a summary of the main difficulties and challenges encountered  and answer all the following questions.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q004",
+        "section": "一般信息",
+        "number": "4",
+        "type": "option",
+        "title": "贵国是否已采取关于获取和惠益分享的立法、行政和政策措施？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供制定这些措施所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "additionalInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q005",
+        "section": "一般信息",
+        "number": "5",
+        "type": "option",
+        "title": "贵国是否已按照第13条规定指定一个国家联络点？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供指定一个国家联络点所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q006",
+        "section": "一般信息",
+        "number": "6",
+        "type": "option",
+        "title": "贵国是否已按照第13条规定指定一个或多个国家主管部门？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供指定一个或多个国家主管部门所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q007",
+        "section": "一般信息",
+        "number": "7",
+        "type": "option",
+        "title": "贵国是否已向获取和惠益分享信息交换所提供获取时签发的许可证或同等证照，作为事先知情同意决定和设立共同商定的条件的证据？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "不适用，因为目前没有获取要求"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供提供此等信息时所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q008",
+        "section": "一般信息",
+        "number": "8",
+        "type": "option",
+        "title": "贵国是否已按照第17.2条规定向获取和惠益分享信息交换所提供许可证或同等证照，作为国际公认的合规证书？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "不适用，因为目前没有获取要求"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q009",
+        "section": "一般信息",
+        "number": "9",
+        "type": "option",
+        "title": "贵国是否已按照第17条规定指定一个或多个检查点？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供指定一个或多个检查点所面临主要困难和挑战的摘要：",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q010",
+        "section": "一般信息",
+        "number": "10",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "获取",
+    "title": "ABS measures :遗传资源的获取（第6条）",
+    "questions": [
+      {
+        "key": "Q011",
+        "section": "获取",
+        "number": "11",
+        "type": "option",
+        "title": "遗传资源获取是否按照第6.1条规定获得事先知情同意？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "Please provide further information including indicating if there is any other system in place in relation to access to genetic resources.",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q012",
+        "section": "获取",
+        "number": "12",
+        "type": "option",
+        "title": "贵国是否按照第6.3(b)条规定设有关于遗传资源获取的公平、非任意性规则和程序？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q013",
+        "section": "获取",
+        "number": "13",
+        "type": "option",
+        "title": "贵国是否按照第6.3(c)条规定提供关于如何申请事先知情同意的信息？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q014",
+        "section": "获取",
+        "number": "14",
+        "type": "option",
+        "title": "贵国是否按照第6.3(d)条规定由国家主管部门签发明确且透明的书面决定？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q015",
+        "section": "获取",
+        "number": "15",
+        "type": "option",
+        "title": "贵国是否按照第6.3(e)条规定在获取时签发许可证或同等证照？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q016",
+        "section": "获取",
+        "number": "16",
+        "type": "number",
+        "title": "请提供自本议定书对贵国生效以来贵国通过获取和惠益分享信息交换所提供的许可证或同等证照的数量。",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q017",
+        "section": "获取",
+        "number": "17",
+        "type": "option",
+        "title": "贵国是否按照第6.3(g)条规定设有关于要求设立及如何设立共同商定的条件的规则和程序？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q018",
+        "section": "获取",
+        "number": "18",
+        "type": "option",
+        "title": "自本议定书对贵国生效以来贵国从利用遗传资源及相关传统知识中获得的惠益：",
+        "multiple": true,
+        "options": [
+          {
+            "value": "geneticResources",
+            "title": "遗传资源"
+          },
+          {
+            "value": "geneticResources.monetary",
+            "title": "Monetary benefits"
+          },
+          {
+            "value": "geneticResources.nonMonetary",
+            "title": "Non-monetary benefits"
+          },
+          {
+            "value": "tk",
+            "title": "Traditional knowledge associated with genetic resources"
+          },
+          {
+            "value": "tk.monetary",
+            "title": "Monetary benefits"
+          },
+          {
+            "value": "tk.nonMonetary",
+            "title": "Non-monetary benefits"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q019",
+        "section": "获取",
+        "number": "19",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "惠益分享",
+    "title": "ABS measures :公正和公平地分享惠益（第5条）",
+    "questions": [
+      {
+        "key": "Q020",
+        "section": "惠益分享",
+        "number": "20",
+        "type": "option",
+        "title": "第5.1条规定，对遗传资源的利用及随后的应用和商业化所产生的惠益应与提供该等资源的缔约方（即该等资源的原产国或已按照公约及第5.3条规定获取该等遗传资源的缔约方）分享。贵国是否已采取立法、行政或政策措施来落实此项规定？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q021",
+        "section": "惠益分享",
+        "number": "21",
+        "type": "option",
+        "title": "为确保按照第5.2条规定以及贵国认可土著和地方社区对其所持有遗传资源之权利的法律法规，与持有遗传资源的土著和地方社区分享利用其持有的遗传资源所产生的惠益，贵国是否已采取立法、行政或政策措施？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q022",
+        "section": "惠益分享",
+        "number": "22",
+        "type": "option",
+        "title": "为确保按照第5.5条规定与持有遗传资源相关传统知识的土著和地方社区分享利用其持有的遗传资源相关传统知识所产生的惠益，贵国是否已采取立法、行政或政策措施？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q023",
+        "section": "惠益分享",
+        "number": "23",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供落实措施所面临主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "Compliance",
+    "title": "ABS measures :遵循有关获取和惠益分享的国家立法或法规要求（第15条和第16条）和监控对遗传资源的利用（第17条）",
+    "questions": [
+      {
+        "key": "Q024_a",
+        "section": "Compliance",
+        "number": "24.1",
+        "type": "option",
+        "title": "为确保按照第15.1条规定在获取贵国管辖范围内利用的遗传资源时获得事先知情同意，并按照另一缔约方的获取和惠益分享国家立法或法规要求设立共同商定的条件，贵国是否已采取适当、有效、相称的立法、行政或政策措施？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q024_b",
+        "section": "Compliance",
+        "number": "24.2",
+        "type": "option",
+        "title": "请说明贵国是否已按照第15.2条规定采取措施解决不遵循上述措施的情况？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "请提供有关所采取措施的其他信息，包括其生效日期",
+            "type": "string"
+          },
+          {
+            "field": "complianceInfo",
+            "title": "请提供有关不合规案例的其他信息",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q024_c",
+        "section": "Compliance",
+        "number": "24.3",
+        "type": "option",
+        "title": "贵国是否有在被指违反第15.3条规定的获取和惠益分享措施的情况下配合其他缔约方的具体案例？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q025_a",
+        "section": "Compliance",
+        "number": "25.1",
+        "type": "option",
+        "title": "为确保按照第16.1条规定在获取贵国管辖范围内利用的遗传资源相关传统知识时获得土著和地方社区的事先知情同意或批准及参与，并按照该等土著和地方社区所属另一缔约方的获取和惠益分享国家立法或法规要求设立共同商定的条件，贵国是否已采取适当、有效、相称的立法、行政或政策措施？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q025_b",
+        "section": "Compliance",
+        "number": "25.2",
+        "type": "option",
+        "title": "请说明贵国是否已按照第16.2条规定采取措施解决不遵循上述措施的情况？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q025_c",
+        "section": "Compliance",
+        "number": "25.3",
+        "type": "option",
+        "title": "贵国是否有在被指违反第16.3条规定的获取和惠益分享措施的情况下给予配合的具体案例？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q026_a",
+        "section": "Compliance",
+        "number": "26.1",
+        "type": "option",
+        "title": "贵国是否已按照第17.1(a)(i)及(ii))条规定，要求遗传资源使用者酌情在指定检查点提供关于事先知情同意、遗传资源来源、设立共同商定的条件和/或利用遗传资源的信息？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q026_b",
+        "section": "Compliance",
+        "number": "26.2",
+        "type": "option",
+        "title": "贵国是否已采取措施解决违规情况？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q027_a",
+        "section": "Compliance",
+        "number": "27.1",
+        "type": "option",
+        "title": "Has your country provided the information referred to in Article 17.1 (a)(i) to relevant national authorities, to the Party providing PIC and to the ABS Clearing-House as provided in Article 17.1 (a)(iii)",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供主要困难和挑战的摘要",
+            "type": "string"
+          },
+          {
+            "field": "recordCounts",
+            "title": "请提供贵国在获取和惠益分享信息交换所提供的检查点公报的数量（如适用）。",
+            "type": "number"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "fileLinks"
+          }
+        ]
+      },
+      {
+        "key": "Q027_b",
+        "section": "Compliance",
+        "number": "27.2",
+        "type": "option",
+        "title": "贵国是否已利用检查点公报？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q028",
+        "section": "Compliance",
+        "number": "28",
+        "type": "option",
+        "title": "贵国是否已按照第17.1(b)条规定采取措施鼓励使用者和提供者在共同商定的条件中列明分享实施该等条件之相关信息的规定？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "additionalInfo",
+            "title": "请提供有关贵国如何鼓励使用经济高效的交流工具和系统的其他信息。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q029",
+        "section": "Compliance",
+        "number": "29",
+        "type": "option",
+        "title": "贵国是否正按照第17.1(c)条规定鼓励使用经济高效的交流工具和系统？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q030",
+        "section": "Compliance",
+        "number": "30",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "Please provide further information",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ComplianceMat",
+    "title": "ABS measures :- Compliance with mutually agreed terms (MAT) (Article 18)",
+    "questions": [
+      {
+        "key": "Q031",
+        "section": "ComplianceMat",
+        "number": "31",
+        "type": "option",
+        "title": "贵国是否正按照第18.1(a)、(b)及(c)条规定鼓励在共同商定的条件中列明涉及争端解决的规定？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          },
+          {
+            "value": "false",
+            "title": "Not applicable"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q032",
+        "section": "ComplianceMat",
+        "number": "32",
+        "type": "option",
+        "title": "贵国是否正按照第18.2条规定确保在就共同商定的条件发生争端时有机会依照贵国法律制度进行追索？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q033_a",
+        "section": "ComplianceMat",
+        "number": "32.1",
+        "type": "list",
+        "title": "贵国是否已按照第18.3条规定在以下方面采取措施？ ",
+        "multiple": true
+      },
+      {
+        "key": "Q033_b",
+        "section": "ComplianceMat",
+        "number": "33.2",
+        "type": "option",
+        "title": "司法援助？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q033_c",
+        "section": "ComplianceMat",
+        "number": "33.3",
+        "type": "option",
+        "title": "利用关于相互承认和执行外国判决和仲裁裁决的机制？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q034",
+        "section": "ComplianceMat",
+        "number": "34",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "Please provide further information",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "specialConsiderations",
+    "title": "特别考虑事项（第8条）",
+    "questions": [
+      {
+        "key": "Q035",
+        "section": "specialConsiderations",
+        "number": "35",
+        "type": "header",
+        "title": "在制定和实施获取和惠益分享立法或法规要求方面，贵国：",
+        "multiple": false
+      },
+      {
+        "key": "Q035_a",
+        "section": "specialConsiderations",
+        "number": "35.1",
+        "type": "option",
+        "title": "是否已按照第8(a)条规定创造条件以促进和鼓励有助于保护和可持续利用生物多样性的研究，包括对出于非商业研究目的之获取实行精简措施，同时考虑有必要解决该等研究改变目的之问题？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_b",
+        "section": "specialConsiderations",
+        "number": "35.2",
+        "type": "option",
+        "title": "是否已按照第8(b)条规定充分重视目前面临或即将发生的威胁或损害人类、动物或植物健康的紧急情况？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_c",
+        "section": "specialConsiderations",
+        "number": "35.3",
+        "type": "option",
+        "title": "是否已按照第8(b)条规定考虑有必要迅速有效地获取遗传资源并迅速有效地公平合理分享利用该等遗传资源所产生的惠益，包括有需要者获得可负担的治疗（尤其是在发展中国家）？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q035_d",
+        "section": "specialConsiderations",
+        "number": "35.4",
+        "type": "option",
+        "title": "Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q036",
+        "section": "specialConsiderations",
+        "number": "36",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供落实措施所面临主要困难和挑战的摘要。",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "indigenousProvisions",
+    "title": "与土著和地方社区相关的规定（第6条、第7条和第12条）",
+    "questions": [
+      {
+        "key": "Q037",
+        "section": "indigenousProvisions",
+        "number": "37",
+        "type": "option",
+        "title": "贵国是否有土著和地方社区？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_a",
+        "section": "indigenousProvisions",
+        "number": "38.1",
+        "type": "option",
+        "title": "贵国法律是否认可土著和地方社区拥有批准获取遗传资源的权利？（第6.2条）",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_b",
+        "section": "indigenousProvisions",
+        "number": "38.2",
+        "type": "text",
+        "field": "furtherInfo",
+        "subTitle": "自由文本",
+        "title": "请提供确立土著和地方社区同意获取遗传资源之权利的其他信息和国家法律引文",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q038_c",
+        "section": "indigenousProvisions",
+        "number": "38.3",
+        "type": "option",
+        "title": "为确保按照第6.2条规定获得土著和地方社区的事先知情同意或批准和参与，贵国这方面的措施是否已到位？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q038_d",
+        "section": "indigenousProvisions",
+        "number": "38.4",
+        "type": "option",
+        "title": "贵国是否已按照第6.3(f)条规定为获得土著和地方社区的事先知情同意或批准及参与以获取遗传资源设立标准和/或流程？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "Q039",
+        "section": "indigenousProvisions",
+        "number": "39",
+        "type": "option",
+        "title": " 为确保按照第7条规定在获取贵国境内土著和地方社区所持有的遗传资源相关传统知识时，获得此等土著和地方社区的事先知情同意或批准及参与并设立共同商定的条件，贵国是否已按照国家法律采取措施？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q040",
+        "section": "indigenousProvisions",
+        "number": "40",
+        "type": "option",
+        "title": "在实施本议定书时，贵国是否正按照国家法律及第12.1条规定考虑关于遗传资源相关传统知识的土著和地方社区习惯法、社区议定书和程序？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q041",
+        "section": "indigenousProvisions",
+        "number": "41",
+        "type": "option",
+        "title": "贵国是否已按照第12.2条规定建立让遗传资源相关传统知识的潜在使用者了解其义务的机制？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q042",
+        "section": "indigenousProvisions",
+        "number": "42",
+        "type": "option",
+        "title": " 贵国是否正按照第12.3条规定支持土著和地方社区制定以下工具？",
+        "multiple": true,
+        "options": [
+          {
+            "value": "community",
+            "title": "社区议定书"
+          },
+          {
+            "value": "mat",
+            "title": "共同商定的条件之最低要求"
+          },
+          {
+            "value": "mcc",
+            "title": "合同条款范文"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q043",
+        "section": "indigenousProvisions",
+        "number": "43",
+        "type": "option",
+        "title": "贵国是否已按照第12.4条规定尽力不限制土著和地方社区内部以及土著和地方社区之间对遗传资源及相关传统知识的习惯性利用和交换？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q044",
+        "section": "indigenousProvisions",
+        "number": "44",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供落实与遗传资源相关传统知识相关的措施所面临主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "conservationSustainable",
+    "title": "为保护和可持续利用做贡献（第9条）",
+    "questions": [
+      {
+        "key": "Q045",
+        "section": "conservationSustainable",
+        "number": "45",
+        "type": "option",
+        "title": "贵国是否正按照第9条规定鼓励使用者和提供者将利用遗传资源所产生的惠益用于生物多样性的保护和生物多样性组成部分的可持续利用?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q046",
+        "section": "conservationSustainable",
+        "number": "46",
+        "type": "text",
+        "field": "furtherInfo",
+        "subTitle": "Please provide further information",
+        "title": "请说明贵国实施名古屋议定书为保护和可持续利用生物多样性做出了哪些贡献：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q047",
+        "section": "conservationSustainable",
+        "number": "47",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "transboundary",
+    "title": "跨境合作（第11条）",
+    "questions": [
+      {
+        "key": "Q048",
+        "section": "transboundary",
+        "number": "48",
+        "type": "option",
+        "title": "为了在多个缔约方的领土范围内就地发现相同遗传资源的情况下实施本议定书，贵国是否正按照第11.1条规定在相关土著和地方社区的参与下全力合作？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "ilcInfo",
+            "title": "如果贵国有土著和地方社区，请提供有关其参与情况的其他信息。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q049",
+        "section": "transboundary",
+        "number": "49",
+        "type": "option",
+        "title": "为了在多个缔约方的一个或多个土著和地方社区持有相同遗传资源相关传统知识的情况下实施本议定书，贵国是否正按照第11.2条规定全力合作？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          },
+          {
+            "value": "false.notApplicable",
+            "title": "不适用，因为我的国家没有土著和地方社区"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q050",
+        "section": "transboundary",
+        "number": "50",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "modelContractualClause",
+    "title": "合同条款范文、行为准则、指导方针和最佳做法和/或标准（第19条和第20条）",
+    "questions": [
+      {
+        "key": "Q051",
+        "section": "modelContractualClause",
+        "number": "51",
+        "type": "option",
+        "title": "贵国是否正按照第19条规定鼓励制定、更新和使用共同商定的条件的合同条款范文？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q052",
+        "section": "modelContractualClause",
+        "number": "52",
+        "type": "option",
+        "title": "贵国是否正按照第20条规定鼓励制定、更新和使用行为准则、指导方针和最佳做法或标准？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q053",
+        "section": "modelContractualClause",
+        "number": "53",
+        "type": "text",
+        "field": "challengesInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "awarenessRaising",
+    "title": "意识培养和能力（第21条和第22条）",
+    "questions": [
+      {
+        "key": "Q054_a",
+        "section": "awarenessRaising",
+        "number": "54.1",
+        "type": "option",
+        "title": "贵国是否已按照第21条规定采取措施提高对遗传资源和相关传统知识及相关获取和惠益分享问题重要性的意识？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q054_b",
+        "section": "awarenessRaising",
+        "number": "54.2",
+        "type": "option",
+        "title": "贵国是否已采取措施实施名古屋获取和惠益分享议定书意识培养战略？作为决定NP-1/9通过",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q055_a",
+        "section": "awarenessRaising",
+        "number": "55.1",
+        "type": "option",
+        "title": "贵国是否已按照第22条规定采取措施建设、培养和加强人力资源与机构的能力以有效实施本议定书？ ",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q055_b",
+        "section": "awarenessRaising",
+        "number": "55.2",
+        "type": "option",
+        "title": "贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q056",
+        "section": "awarenessRaising",
+        "number": "56",
+        "type": "option",
+        "title": "在名古屋议定书实施能力建设和培养方面，贵国是否已获得外部支持？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q057",
+        "section": "awarenessRaising",
+        "number": "57",
+        "type": "option",
+        "title": "在名古屋议定书实施能力建设和培养方面，贵国是否已对外提供支持？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q058",
+        "section": "awarenessRaising",
+        "number": "58",
+        "type": "text",
+        "field": "additionalInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "technology",
+    "title": "技术转让、协作与合作（第23条）",
+    "questions": [
+      {
+        "key": "Q059",
+        "section": "technology",
+        "number": "59",
+        "type": "option",
+        "title": "贵国是否正按照第23条规定就技术与科学研究和开发计划进行协作与合作，以此作为实现本议定书目标的方式之一？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "optional",
+    "title": "可选其他信息",
+    "questions": [
+      {
+        "key": "Q060",
+        "section": "optional",
+        "number": "60",
+        "type": "string",
+        "title": "请提供成为名古屋议定书缔约方所面临主要困难和挑战的摘要。",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q061",
+        "section": "optional",
+        "number": "61",
+        "type": "option",
+        "title": "贵国是否已建立名古屋议定书实施资金的预算分配机制？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "challengesInfo",
+            "title": "请提供所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_a",
+        "section": "optional",
+        "number": "62.1",
+        "type": "option",
+        "title": "贵国是否已按照第25条规定出于本议定书实施之目的为其他缔约方提供资金或从其他缔约方或金融机构获得资金？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "donor",
+            "title": "是，已提供资金"
+          },
+          {
+            "value": "recipient",
+            "title": "是，已获得资金"
+          },
+          {
+            "value": "recipient.parties",
+            "title": "来自其他缔约方"
+          },
+          {
+            "value": "recipient.financialInstitutions",
+            "title": "来自金融机构"
+          },
+          {
+            "value": "recipient.gef",
+            "title": "来自全球环境基金"
+          },
+          {
+            "value": "recipient.npImplementationFund",
+            "title": "来自名古屋议定书实施基金"
+          },
+          {
+            "value": "recipient.otherSources",
+            "title": "来自其他来源"
+          },
+          {
+            "value": "no",
+            "title": "否"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_b",
+        "section": "optional",
+        "number": "62.2",
+        "type": "text",
+        "shortTitle": "自由文本",
+        "field": "relevantInformation",
+        "title": "请提供为支持本议定书实施进行资源动员的经验。",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q062_c",
+        "section": "optional",
+        "number": "62.3",
+        "type": "text",
+        "shortTitle": "自由文本",
+        "field": "relevantInformation",
+        "title": "请提供为支持本议定书实施进行资金动员的情况。",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q063_a",
+        "section": "optional",
+        "number": "63.1",
+        "type": "option",
+        "title": "贵国是否由特定工作人员管理与名古屋议定书直接相关的各项职能？",
+        "subTitle": "收集此信息可用于评估第31条下评估和审查方面的议定书成效，以及衡量议定书实施进展并查明所面临的困难和挑战。",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q063_b",
+        "section": "optional",
+        "number": "63.2",
+        "type": "option",
+        "title": "请说明此等工作人员的数量",
+        "multiple": false,
+        "options": [
+          {
+            "value": "one",
+            "title": "1人"
+          },
+          {
+            "value": "Less than 5",
+            "title": "Less than 5"
+          },
+          {
+            "value": "Less than 10",
+            "title": "Less than 10"
+          },
+          {
+            "value": "10 or more",
+            "title": "至少10人"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "field": "challengesInfo",
+            "title": "请提供所面临主要困难和挑战的摘要。",
+            "type": "string"
+          },
+          {
+            "field": "furtherInfo",
+            "title": "Please provide further information",
+            "type": "string"
+          },
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          }
+        ]
+      },
+      {
+        "key": "Q064",
+        "section": "awarenessRaising",
+        "number": "64",
+        "type": "text",
+        "field": "furtherInfo",
+        "title": "更多信息",
+        "subTitle": "请提供主要困难和挑战的摘要：",
+        "multiple": false,
+        "additionalInfo": [
+          {
+            "field": "documentReferenceIDs",
+            "title": "请选择相关获取和惠益分享信息交换所记录",
+            "type": "list"
+          },
+          {
+            "field": "relevantDocuments",
+            "title": "任何其他相关文件",
+            "type": "fileLinks"
+          }
+        ]
+      }
+    ]
+  }
+]
