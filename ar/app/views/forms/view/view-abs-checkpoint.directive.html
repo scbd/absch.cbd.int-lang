@@ -1,11 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default"  dir="rtl">
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4>نقطة التفتيش <span class="color-black">(CP)</span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
+		<h4><span dir="rtl">نقطة التفتيش <span class="color-black">(CP)</span></span></h4>	
+	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
 
-		<div record-options></div>
+		
+			<document-date></document-date>
 
 		 <div name="article17-1-a"></div>
 
@@ -13,7 +15,7 @@
 
 		<div ng-show="document.government">
 			<label name="country">Country</label>
-			<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		 <div ng-show="display('title') && document.name">
@@ -46,7 +48,7 @@
 			<legend>تتسلم السلطة (السلطات) نسخًا مجانية من بيانات نقطة التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو حصلت عليها.</legend>
 
 			<div class="help-info" style="padding-top:10px;">ستتلقى جميع السلطات الوطنية وجهات الاتصال المبينة أدناه نسخًا بالبريد الإلكتروني من بيانات نقاط التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو استلمتها ونشرتها. يُرجى ملاحظة أن السلطات الوطنية التي تقدم الموافقة المسبقة عن علم سوف تتلقى تلقائيًا نسخًا بالبريد الإلكتروني من جميع البيانات المنشورة لنقاط التفتيش. لا تضمن غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع استلام رسائل البريد الإلكتروني أو قراءتها.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">جميع السلطات الوطنية المختصة ({{document.government|term}})</a> تم اختيارها لكي تستلم تلقائيًا بالبريد الإلكتروني بيانات نقاط التفتيش التي نشرتها هذه النقطة.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>)</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
           
 			<div ng-show="document.contactsToInform">
 				<div class="km-value" ng-repeat="authority in document.contactsToInform">

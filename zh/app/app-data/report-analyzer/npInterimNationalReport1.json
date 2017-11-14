@@ -1102,17 +1102,17 @@
         ]
       },
       {
-        "key": "Q033_a",
+        "key": "Q033",
         "section": "ComplianceMat",
-        "number": "32.1",
-        "type": "list",
+        "number": "33",
+        "type": "header",
         "title": "贵国是否已按照第18.3条规定在以下方面采取措施？ ",
-        "multiple": true
+        "multiple": false
       },
       {
-        "key": "Q033_b",
+        "key": "Q033_a",
         "section": "ComplianceMat",
-        "number": "33.2",
+        "number": "33.1",
         "type": "option",
         "title": "司法援助？",
         "multiple": false,
@@ -1135,9 +1135,9 @@
         ]
       },
       {
-        "key": "Q033_c",
+        "key": "Q033_b",
         "section": "ComplianceMat",
-        "number": "33.3",
+        "number": "33.2",
         "type": "option",
         "title": "利用关于相互承认和执行外国判决和仲裁裁决的机制？ ",
         "multiple": false,

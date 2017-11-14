@@ -1,5 +1,13 @@
 ﻿<div dir="rtl">
-    <style>.navbar-nav>li { float: left; } .helpOn{color:#FFF} .helpOff{color:#333;} /*.helpinfo{display:{{showHelp ? block : none}};}*/ #PortalLinks1 .icon{margin-top:2px;}</style>
+    <style>
+            .navbar-nav>li {
+                float: left;
+            }
+            .helpOn{color:#FFF}
+            .helpOff{color:#333;}
+            /*.helpinfo{display:{{showHelp ? block : none}};}*/
+            #PortalLinks1 .icon{margin-top:2px;}
+    </style>
     <nav id="PortalLinks1" class="navbar navbar-links navbar-default navbar-static-top" >
         <div class="container-fluid container-links color-grey">
             <div class="navbar-header">
@@ -16,7 +24,8 @@
                     <li><a translation-url  ng-href="about"><i class="icon fa fa-question-circle  visible-xs "></i><span class="hidden-xs ">حول الغرفة</span></a></li>
                     <li><a translation-url  ng-href="search"><i class="icon fa fa-search visible-xs "></i><span class="hidden-xs ">بحث</span></a></li>
                     <li><a translation-url  ng-href="register"><i class="icon fa fa-pencil-square-o visible-xs"></i><span class="hidden-xs ">إرسال</span></a></li>
-                    <li><a translation-url  ng-href="countries"><i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs">معلومات الدول</span></a></li><!--<li class="last pull-right">
+                    <li><a translation-url  ng-href="countries"><i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs">معلومات الدول</span></a></li>
+                      <li><a translation-url  ng-href="reports"><i class="icon fa fa-bar-chart visible-xs"></i><span class="hidden-xs">التقارير الوطنية</span></a></li><!--<li class="last pull-right">
                         <a translation-url  ng-click="toggleHelp();"> <i class="fa fa-info-circle" ng-class="{'helpOn':showHelp ,'helpOff':!showHelp }"></i> </i>
                         </a>
                     </li>--><li class="pull-right" ng-if="training_env||development_env"><a translation-url  href="/forums" ng-class="{'link-active' : getClass('/forums')}"><i class="fa fa-comments"></i><span class="hidden-xs hidden-sm">&nbsp;المنتديات</span></a></li>

@@ -2,6 +2,9 @@
 	<div class="panel-heading bg-blue">
 		<h4>构成国际公认合规证书的许可证或同等证照<span class="color-black">（IRCC）</span></h4> </div>
 	<div class="record-body panel-body">
+
+		
+
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
 				<div class="text-center">
 					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">THIS CERTIFICATE HAS BEEN <u>REVOKED</u> AND IS NO LONGER VALID</h1>
@@ -11,13 +14,14 @@
 					<p>请参阅修订历史，以获取更多信息。</p>
 				</div>
 			</div>
-			<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  class="hidden-print record-link-style" ng-if="document.info && document.info.revision === document.info.latestRevision" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> 下载</a></div>
+			
+		<document-date></document-date>		
 
 			<legend ng-if="document.government">一般信息</legend>
 
 			<div ng-show="document.government">
 				<label>国家</label>
-				<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+				<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 			</div>
 
 

@@ -2,6 +2,9 @@
 	<div class="panel-heading bg-blue">
 		<h4>التصريح أو ما يعادله مما يشكل شهادة امتثال معترف بها دوليًا  <span class="color-black">(IRCC)</span></h4> </div>
 	<div class="record-body panel-body">
+
+		
+
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
 				<div class="text-center">
 					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">تم  <u>رفض</u> هذه الشهادة ولم تعد صالحة</h1>
@@ -11,13 +14,14 @@
 					<p>انظر تاريخ التعديلات لمعرفة المزيد من المعلومات.</p>
 				</div>
 			</div>
-			<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  class="hidden-print record-link-style" ng-if="document.info && document.info.revision === document.info.latestRevision" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> تنزيل</a></div>
+			
+		<document-date></document-date>		
 
 			<legend ng-if="document.government">معلومات عامة</legend>
 
 			<div ng-show="document.government">
 				<label>Country</label>
-				<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+				<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 			</div>
 
 

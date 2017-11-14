@@ -1,11 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4>检查点<span class="color-black">（CP）</span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
+		<h4><span>检查点<span class="color-black">（CP）</span></span></h4>	
+	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
 
-		<div record-options></div>
+		
+			<document-date></document-date>
 
 		 <div name="article17-1-a"></div>
 
@@ -13,7 +15,7 @@
 
 		<div ng-show="document.government">
 			<label name="country">国家</label>
-			<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		 <div ng-show="display('title') && document.name">
@@ -46,7 +48,7 @@
 			<legend>免费收取此检查站收集或收到之信息的检查站公报的主管机关</legend>
 
 			<div class="help-info" style="padding-top:10px;">以下所示的所有国家当局和联络人将以电子邮件方式收取含此检查站收集或收到并发布之信息的检查站公报。请注意，提供事先知情同意书(PIC)的国家当局也将以电子邮件方式自动收到所有检查点已发布公报(CPC)。获取和惠益分享信息交换所不能保证电子邮件会被收到或阅读。</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities ({{document.government|term}})</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>)</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
           
 			<div ng-show="document.contactsToInform">
 				<div class="km-value" ng-repeat="authority in document.contactsToInform">

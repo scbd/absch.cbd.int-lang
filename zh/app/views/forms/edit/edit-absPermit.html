@@ -1,7 +1,28 @@
 ﻿<div ng-controller="editAbsPermit">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
-    <style>.dimmer-parent{ position: relative; } .blockRegion { position: initial; /*box-shadow:0 1px 2px 0 rgba(34,36,38,.15);*/ margin:1rem 0; padding:1em; border-radius:.28571429rem; /*border:1px solid rgba(34,36,38,.15);*/ } .dimmer { border-radius: inherit!important; position: absolute!important; top:0!important; left:0!important; padding:0; margin:0; }</style>
+    <style>
+        .dimmer-parent{
+            position: relative;
+        }
+        .blockRegion {
+            position: initial;
+            /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
+            margin: 1rem 0;
+            padding: 1em;
+            border-radius: .28571429rem;
+            /*border: 1px solid rgba(34,36,38,.15);*/
+        }
+        .dimmer {
+            border-radius: inherit!important;
+            position: absolute!important;
+            top: 0!important;
+            left: 0!important;
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
             <div class="alert alert-danger" ng-show="hasError()"><strong>发生错误...</strong><div>{{error}}</div>
@@ -153,7 +174,7 @@
                                 </div>
 
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="picDocuments" caption="有关事先知情同意书（PIC）的补充信息&mdash;&mdash;文件"><span class="help-info">如适用，请提供链接或上传文档。</span><div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                    <div class="km-control-group" name="picDocuments" caption="有关事先知情同意书（PIC）的补充信息——文件"><span class="help-info">如适用，请提供链接或上传文档。</span><div km-link name="picDocuments" ng-model="document.picDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                     </div>
                                 </div>
                             </div>

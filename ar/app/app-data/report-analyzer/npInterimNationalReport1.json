@@ -1102,17 +1102,17 @@
         ]
       },
       {
-        "key": "Q033_a",
+        "key": "Q033",
         "section": "ComplianceMat",
-        "number": "32.1",
-        "type": "list",
+        "number": "33",
+        "type": "header",
         "title": "هل اتخذ بلدك تدابير تتعلق بالنقاط التالية على النحو المنصوص عليه في المادة 18-3؟ ",
-        "multiple": true
+        "multiple": false
       },
       {
-        "key": "Q033_b",
+        "key": "Q033_a",
         "section": "ComplianceMat",
-        "number": "33.2",
+        "number": "33.1",
         "type": "option",
         "title": "الوصول إلى العدالة؟",
         "multiple": false,
@@ -1135,9 +1135,9 @@
         ]
       },
       {
-        "key": "Q033_c",
+        "key": "Q033_b",
         "section": "ComplianceMat",
-        "number": "33.3",
+        "number": "33.2",
         "type": "option",
         "title": "استخدام آليات تتعلق بالاعتراف المتبادل وإنفاذ قرارات المحاكم والتحكيم الأجنبية؟ ",
         "multiple": false,

@@ -14,7 +14,39 @@
                 <li ng-class="{disabled: currentPage >= pageCount - 1}"><a translation-url  href ng-click="actionSetPage(currentPage+1)">التالية »</a></li>
                 <li ng-class="{disabled: currentPage == pageCount - 1 || pageCount ==0}"><a translation-url  href ng-click="actionSetPage(pageCount - 1)">الأخيرة »</a></li>
             </ul>
-            <style type="text/css">::selection { background: SeaGreen; color: White; } ::-moz-selection { background: SeaGreen; color: White; } .selectedText { position: relative; background-color: SeaGreen; color: #fff; line-height: 1.2em; } .popDiv { background: ForestGreen; color: white; padding: 6px; max-width: 250px; min-width: 100px; position: absolute; top: 18px; left: 0; border-radius: 4px; box-shadow: 2px 3px 4px #444; -webkit-animation: slideIn .5s; animation: slideIn .5s; }</style>
+            <style type="text/css">
+                ::selection {
+                    background: SeaGreen;
+                    color: White;
+                }
+
+                ::-moz-selection {
+                    background: SeaGreen;
+                    color: White;
+                }
+
+                .selectedText {
+                    position: relative;
+                    background-color: SeaGreen;
+                    color: #fff;
+                    line-height: 1.2em;
+                }
+
+                .popDiv {
+                    background: ForestGreen;
+                    color: white;
+                    padding: 6px;
+                    max-width: 250px;
+                    min-width: 100px;
+                    position: absolute;
+                    top: 18px;
+                    left: 0;
+                    border-radius: 4px;
+                    box-shadow: 2px 3px 4px #444;
+                    -webkit-animation: slideIn .5s;
+                    animation: slideIn .5s;
+                }
+            </style>
             <div class="clearfix"></div>
             <div ng-show="!documents" style="padding-left:50%"><i class="fa fa-spin fa-spinner fa-5x" style="margin:auto" /></div>
 

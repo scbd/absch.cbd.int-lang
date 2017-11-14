@@ -1,11 +1,15 @@
 ﻿<div class="about-section"  ng-controller="videosController" id="aboutPage" dir="rtl">
 
-<style>.ngdialog.ngdialog-theme-default .ngdialog-content { width: 80%; }</style>
+<style>
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+            width: 80%;
+    }
+</style>
 
   <link rel="stylesheet" ng-href="/app/css/about.css">
     <div class="container-fluid">
     <div class="row-fluid" >
-        <div class="col-sm-3 col-xs-12"><span left-menu navigate-on-click="true"></span></div>
+        <div class="col-sm-3 col-xs-12"><span left-menu navigate-on-click="true" dir="rtl"></span></div>
         <div class="col-sm-9 col-xs-12" >
             <h1 class="main">تسجيلات الفيديو</h1></br><div ng-repeat="video in videos" style="padding-bottom: 15px;">
                 <h1 ng-bind="video.heading"></h1>
