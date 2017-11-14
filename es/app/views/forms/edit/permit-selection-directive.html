@@ -12,7 +12,16 @@
     </div>
 
 
-<style media="screen">.dateBox{padding:0px;background-color:#fff;} .dateBox li, .uniqueId{ border: 1px solid transparent; border-radius: 4px; border-color: #ccc; } .datepicker{z-index:1151 !important;}</style>
+<style media="screen">
+    .dateBox{padding:0px;background-color:#fff;}
+    .dateBox li, .uniqueId{
+        border: 1px solid transparent;
+        border-radius: 4px;
+        border-color: #ccc;
+    }
+    .datepicker{z-index:1151 !important;}
+
+</style>
 
 
 
@@ -25,7 +34,7 @@
 
                     <div>
                             <div km-select multiple required name="queryGovernment" ng-model="queryGovernment" items="options.government()" placeholder="Gobierno"></div>
-                            <div km-select multiple required name="permitusage" ng-model="permitusage" items="options.usage()" placeholder="Prop&oacute;sito"></div>
+                            <div km-select multiple required name="permitusage" ng-model="permitusage" items="options.usage()" placeholder="Propósito"></div>
                             <div km-select multiple required name="permitkeywords" ng-model="permitkeywords" items="options.keywords()" placeholder="Palabras clave"></div><span  class="dateBox" search-filter-dates title='Fecha de otorgamiento del permiso' query='permitIssuanceDate' field="expiration_s"></span><div class="btn-group" >
                                 <button style="button" class="btn btn-default dropdown-toggle"  data-toggle="dropdown"><span>Enmiendas</span><span ng-show="amendmentIntent==0"  style="color:#428BCA">: Enmendado</span> <span ng-show="amendmentIntent==1"  style="color:#428BCA">: Revocado</span> <span ng-show="amendmentIntent==-1" style="color:#428BCA">: Ninguno</span> <span class="caret"></span></button>
                                 <ul class="dropdown-menu" style="max-height:400px;overflow-y:auto;text-align:left">
@@ -37,7 +46,7 @@
                             </ul>
                             </div>
                             <div class="btn-group uniqueId">
-                                <input type="textbox" ng-model="uniqueId" placeholder="Identificador &uacute;nico"  class="form-control" >
+                                <input type="textbox" ng-model="uniqueId" placeholder="Identificador único"  class="form-control" >
                             </div>
                         </div>
                 </div>

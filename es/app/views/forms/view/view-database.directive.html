@@ -3,12 +3,13 @@
 	<div class="record-body panel-body">
 
 
-<div record-options></div>
+			
+		<document-date></document-date>
 <legend>Informaci&oacute;n general</legend>
 		
 		<div ng-show="document.government">
 			<label name="country">Pa&iacute;s</label>
-			<div class="km-value">{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 			<div ng-show="document.title">

@@ -1,6 +1,14 @@
 ﻿<div class="row" style="margin:0;padding:0;" ng-hide="hideEverything">
     <div class="col-xs-12" style="margin-bottom:20px;">
-        <style>.active { position: absolute!important; top: 0!important; left: 0!important; padding: 0; margin: 0; }</style><!--<span block-region activate="isUpdating"></span>--> <span block-region activate="isUpdating"></span><div class="panel panel-danger">
+        <style>
+            .active {
+                position: absolute!important;
+                top: 0!important;
+                left: 0!important;
+                padding: 0;
+                margin: 0;
+            }
+        </style><!--<span block-region activate="isUpdating"></span>--> <span block-region activate="isUpdating"></span><div class="panel panel-danger">
 
             <div class="panel-heading bg-red">
                 <h3 style="padding:0;margin:0;" class="color-white"><span ng-if="workflow.type.name != 'delete-record'">Publication</span> <span ng-if="workflow.type.name == 'delete-record'">Suppression</span></h3>

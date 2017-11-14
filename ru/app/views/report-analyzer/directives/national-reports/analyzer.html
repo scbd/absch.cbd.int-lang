@@ -57,23 +57,23 @@
         .nr-analyzer .question .option.percentRow    .cell-value::after,
         .nr-analyzer .question .option.percentGlobal .cell-delta::after,
         .nr-analyzer .question .option.percentColumn .cell-delta::after,
-        .nr-analyzer .question .option.percentRow    .cell-delta::after { content: &apos;%&apos; }
+        .nr-analyzer .question .option.percentRow    .cell-delta::after { content: '%' }
 
 
         .nr-analyzer .cell-delta.inc    { color:#008000;white-space: nowrap;cursor:help}
         .nr-analyzer .cell-delta.dec    { color:#800000;white-space: nowrap;cursor:help}
         .nr-analyzer .cell-delta.stable { color:#808080;white-space: nowrap;cursor:help}
-        .nr-analyzer .cell-delta.inc::before { content: &apos;\25B2\0A+&apos; }
-        .nr-analyzer .cell-delta.dec::before { content: &apos;\25BC\0A&apos; }
-        .nr-analyzer .cell-delta.stable::before { content: &apos;\f0da\f0d9\0A&apos;; font-family: &apos;FontAwesome&apos; }
+        .nr-analyzer .cell-delta.inc::before { content: '\25B2\0A+' }
+        .nr-analyzer .cell-delta.dec::before { content: '\25BC\0A' }
+        .nr-analyzer .cell-delta.stable::before { content: '\f0da\f0d9\0A'; font-family: 'FontAwesome' }
         .nr-analyzer .compare {
             width: 25px;
             height: 25px;
             display: inline-block;
-            background-image: url(&apos;/app/views/report-analyzer/resources/compare-off.png&apos;);
+            background-image: url('/app/views/report-analyzer/resources/compare-off.png');
         }
         .nr-analyzer .compare:hover,
-        .nr-analyzer .compare.on  { background-image: url(&apos;/app/views/report-analyzer/resources/compare-on.png&apos;);  }
+        .nr-analyzer .compare.on  { background-image: url('/app/views/report-analyzer/resources/compare-on.png');  }
 
         .nr-analyzer .question.highlight {
             padding: 5px;
@@ -103,26 +103,33 @@
             background-color: #fff!important;
         }
         @media print{
-            #returnQuestions, #btnPrint, #btnClose{
-                display:none
+            #returnQuestions, #btnPrint, #btnClose, .analyzer-buttons{
+                display:none!important;
             }
         }
     </style>
 
-    <div ng-show="sections" style="margin-bottom:5px" id="nrAnalyzer">
+    <div class="pull-right" style="position:relative;top:-30px;"><a href="" ng-click="print('#secNrAnalyzer')" class="links" id="btnPrint"> <i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Распечатать</a></div>
+ 
+    <div class="clearfix"></div>
 
-        <button type="button" class="btn btn-default"  ng-click="showSettings();" id="returnQuestions">В« Return to Regions and Questions settings</button>
+    <div ng-show="sections" style="margin-bottom:5px" id="nrAnalyzer " class="analyzer-buttons">
 
-        <div id="sumTypeButton" class="btn-group" title="Change how numbers are calculated">
-            <button type="button" class="btn btn-primary" ng-click="showSumTypeSelector()">в€‘ <span ng-switch="sumType"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></button>
+        <button type="button" class="btn btn-default"  ng-click="showSettings();" id="returnQuestions">&Acirc;« Back to settings</button><!-- <h3 style="padding:0;margin:0; display:inline" ng-switch="selectedRegionsPreset" >
+                <span ng-switch-when="cbdRegions">Breakdown by CBD regions</span>
+                <span ng-switch-when="countries">Select countries</span>
+                <span ng-switch-when="regions">Select regions</span>
+                <span ng-switch-when="npParties">Breakdown by Nagoya Protocol Parties</span>
+                <span ng-switch-when="npNonParties">Breakdown by Nagoya Protocol Non-Parties</span>
+        </h3> --><div id="sumTypeButton" class="btn-group pull-right" title="Change how numbers are calculated">
+            <button type="button" class="btn btn-primary" ng-click="showSumTypeSelector()">&acirc;&circ;&lsquo; <span ng-switch="sumType"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></button>
+
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span> <span class="sr-only">Toggle Dropdown</span></button>
+
             <ul class="dropdown-menu">
                 <li ng-repeat="type in ::sumTypes"><a href="#" ng-click="setSumType(type)"><span ng-switch="type"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></a></li>
             </ul>
         </div>
-        <div class="btn-group pull-right">   
-            <button  ng-click="print('#secNrAnalyzer')" class="btn btn-primary record-link-style" id="btnPrint"><i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ</button><span ng-switch="selectedRegionsPreset" class="btn btn-info"><span ng-switch-when="cbdRegions">Breakdown by CBD regions</span><span ng-switch-when="countries">Select countries</span><span ng-switch-when="regions">Select regions</span><span ng-switch-when="npParties">Breakdown by Nagoya Protocol Parties</span><span ng-switch-when="npNonParties">Breakdown by Nagoya Protocol Non Parties</span></span></div>
-       
     </div>
 
     <div id="filterBox" class="filter panel panel-primary" ng-show="filter">
@@ -141,12 +148,10 @@
         <div class="panel-body">
             <div class="alert alert-info" style="margin-bottom:0px" ng-show="filter">
                 <p style="margin-bottom:10px"><b>Question {{filter.question.number}}</b><br/> {{filter.question.title|lstring}}</p>
-                <p><i>РґР°РЅ РѕС‚РІРµС‚:</i> <b>{{filter.option.title|lstring}}</b></p>
+                <p><i>дан ответ:</i> <b>{{filter.option.title|lstring}}</b></p>
             </div>
         </div>
-    </div>
-
-    <national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" previous-questions-mapping="previousQuestionsMapping" ng-repeat="section in sections"></national-report-analyzer-section><!-- SUM SELECTOR --><div class="modal fade" id="sumTypeDialog">
+    </div><br><national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" previous-questions-mapping="previousQuestionsMapping" ng-repeat="section in sections"></national-report-analyzer-section><!-- SUM SELECTOR --><div class="modal fade" id="sumTypeDialog">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -162,14 +167,14 @@
                                 <div class="panel-heading  text-center">
                                     <h2 style="color:inherit;margin:5px"><span ng-switch="type"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></h2>
                                 </div>
-                                <div class="panel-body hidden-xs highlight" style="height:195px;overflow-y:auto"><img ng-src="/app/views/report-analyzer/resources/{{type | kebabcase}}.png"><br/><div ng-switch="type" class="text-justify" style="margin-top:5px"><span ng-switch-when="sum">РћС‚РѕР±СЂР°Р¶Р°РµС‚ Р°Р±СЃРѕР»СЋС‚РЅРѕРµ С‡РёСЃР»Рѕ РѕС‚РІРµС‚РѕРІ, РїРѕР»СѓС‡РµРЅРЅС‹С… РґР»СЏ РґР°РЅРЅРѕРіРѕ СЃРѕС‡РµС‚Р°РЅРёСЏ СЃС‚СЂРѕРєРё (РѕС‚РІРµС‚С‹) Рё СЃС‚РѕР»Р±С†Р° (РіСЂСѓРїРїС‹).</span> <span ng-switch-when="percentRow">РћС‚РѕР±СЂР°Р¶Р°РµС‚ РїСЂРѕС†РµРЅС‚РЅРѕРµ РѕС‚РЅРѕС€РµРЅРёРµ РІРЅСѓС‚СЂРё СЂР°Р·Р»РёС‡РЅС‹С… РІС‹Р±СЂР°РЅРЅС‹С… РіСЂСѓРїРї (СЃС‚РѕР»Р±С†С‹). Р’ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ СЃСѓРјРјР° РІСЃРµС… Р·РЅР°С‡РµРЅРёР№ РІ СЃС‚СЂРѕРєРµ СЃРѕСЃС‚Р°РІР»СЏРµС‚ 100%.</span> <span ng-switch-when="percentColumn">РћС‚РѕР±СЂР°Р¶Р°РµС‚ РїСЂРѕС†РµРЅС‚РЅРѕРµ РѕС‚РЅРѕС€РµРЅРёРµ РІРЅСѓС‚СЂРё СЂР°Р·Р»РёС‡РЅС‹С… РїСЂРµРґРѕСЃС‚Р°РІР»РµРЅРЅС‹С… РѕС‚РІРµС‚РѕРІ (СЃС‚СЂРѕРєРё). Р’ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ СЃСѓРјРјР° РІСЃРµС… Р·РЅР°С‡РµРЅРёР№ РІ СЃС‚РѕР»Р±С†Рµ СЃРѕСЃС‚Р°РІР»СЏРµС‚ 100%.</span> <span ng-switch-when="percentGlobal">РћС‚РѕР±СЂР°Р¶Р°РµС‚ РїСЂРѕС†РµРЅС‚РЅРѕРµ СЃРѕРѕС‚РЅРѕС€РµРЅРёРµ РІРЅСѓС‚СЂРё РІСЃРµС… РїСЂРµРґРѕСЃС‚Р°РІР»РµРЅРЅС‹С… РѕС‚РІРµС‚РѕРІ (СЃС‚СЂРѕРєРё). Р’ РґР°РЅРЅРѕРј СЃР»СѓС‡Р°Рµ СЃСѓРјРјР° РІСЃРµС… Р·РЅР°С‡РµРЅРёР№ (СЃС‚СЂРѕРєРё Рё СЃС‚РѕР»Р±С†С‹) 100%.</span></div>
+                                <div class="panel-body hidden-xs highlight" style="height:195px;overflow-y:auto"><img ng-src="/app/views/report-analyzer/resources/{{type | kebabcase}}.png"><br/><div ng-switch="type" class="text-justify" style="margin-top:5px"><span ng-switch-when="sum">Отображает абсолютное число ответов, полученных для данного сочетания строки (ответы) и столбца (группы).</span> <span ng-switch-when="percentRow">Отображает процентное отношение внутри различных выбранных групп (столбцы). В данном случае сумма всех значений в строке составляет 100%.</span> <span ng-switch-when="percentColumn">Отображает процентное отношение внутри различных предоставленных ответов (строки). В данном случае сумма всех значений в столбце составляет 100%.</span> <span ng-switch-when="percentGlobal">Отображает процентное соотношение внутри всех предоставленных ответов (строки). В данном случае сумма всех значений (строки и столбцы) 100%.</span></div>
                                 </div>
                             </div></a></div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Р—Р°РєСЂС‹С‚СЊ</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
@@ -200,8 +205,8 @@
                 </div>
 
                 <div class="modal-footer">
-                        <button  ng-click="print('#textsDialog-model-content')" class="btn btn-primary record-link-style" id="btnPrint"><i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ</button>   
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="btnClose">Р—Р°РєСЂС‹С‚СЊ</button>
+                        <button  ng-click="print('#textsDialog-model-content')" class="btn btn-primary record-link-style" id="btnPrint"><i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Распечатать</button>   
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="btnClose">Закрыть</button>
                 </div>
             </div>
         </div>

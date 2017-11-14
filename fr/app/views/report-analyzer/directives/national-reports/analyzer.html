@@ -1,20 +1,135 @@
 <div class="nr-analyzer" >
-    <style>.nr-analyzer td[ng-click], .nr-analyzer th[ng-click] { cursor:pointer; } .nr-analyzer .question[disabled] { opacity:0.60 } .nr-analyzer .question table.table th { vertical-align: middle} .nr-analyzer .question table.table tr > td.region, .nr-analyzer .question table.table tr > td.country { border:1px solid #ddd } .nr-analyzer .question table.table tr:last-child > td { border-bottom:1px solid #ddd } .nr-analyzer .question table.table tr > td:last-child { border-bottom:none;border-top:none;border-right:none; } .nr-analyzer #filterBox.affix { top:50px;right:10px; max-width:600px;z-index: 100; } .nr-analyzer #sumTypeButton.affix { top:10px;right:10px;z-index: 100; } .nr-analyzer #textsDialog.modal .locale.selected { font-weight: bold; } .nr-analyzer tr.filter > td.filter > i { color:#777; } .nr-analyzer tr.filter.filter-on > td.filter > i { color:#337ab7; } .nr-analyzer tr > td.filter:hover > i { color:#337ab7; } .nr-analyzer tr > td.filter > i[disabled] { color:#ccc; } .nr-analyzer .panel.panel-collapse > .panel-heading { border-bottom: none; } .nr-analyzer .panel.panel-collapse > .panel-body { display: none; } .nr-analyzer .panel.sum:hover.panel-default { border-color: #bce8f1; } .nr-analyzer .panel.sum:hover.panel-default > .panel-body { background-color: #eee} .nr-analyzer .panel.sum:hover.panel-default > .panel-heading { color: #31708f; background-color: #d9edf7; border-color: #bce8f1; } .nr-analyzer tr.option.sum.first > td.region, .nr-analyzer tr.option.sum.first > td.country { border-top: solid 2px #777 !important; } .nr-analyzer tr.option.sum.last > td.region, .nr-analyzer tr.option.sum.last > td.country { border-bottom: solid 2px #777 !important; } .nr-analyzer tr.option.sum > td.region.first { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.sum > td:last-child { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentGlobal.first > td.region, .nr-analyzer tr.option.percentGlobal.first > td.country { border-top: solid 2px #777 !important; } .nr-analyzer tr.option.percentGlobal.last > td.region, .nr-analyzer tr.option.percentGlobal.last > td.country { border-bottom: solid 2px #777 !important; } .nr-analyzer tr.option.percentGlobal > td.region.first { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentGlobal > td:last-child { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentColumn.first > td.region, .nr-analyzer tr.option.percentColumn.first > td.country { border-top: solid 2px #777 !important; } .nr-analyzer tr.option.percentColumn.last > td.region, .nr-analyzer tr.option.percentColumn.last > td.country { border-bottom: solid 2px #777 !important; } .nr-analyzer tr.option.percentColumn > td.region.expanded { border-right: solid 1px #777 !important; } .nr-analyzer tr.option.percentColumn > td.region { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentColumn > td:last-child { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentRow > td.region, .nr-analyzer tr.option.percentRow > td.country { border-top: solid 2px #777 !important; border-bottom: solid 2px #777 !important; } .nr-analyzer tr.option.percentRow > td.region.first { border-left: solid 2px #777 !important; } .nr-analyzer tr.option.percentRow > td:last-child { border-left: solid 2px #777 !important; } .nr-analyzer .question .cell-percent::after, .nr-analyzer .question .option.percentGlobal .cell-value::after, .nr-analyzer .question .option.percentColumn .cell-value::after, .nr-analyzer .question .option.percentRow .cell-value::after, .nr-analyzer .question .option.percentGlobal .cell-delta::after, .nr-analyzer .question .option.percentColumn .cell-delta::after, .nr-analyzer .question .option.percentRow .cell-delta::after { content: &apos;%&apos; } .nr-analyzer .cell-delta.inc { color:#008000;white-space: nowrap;cursor:help} .nr-analyzer .cell-delta.dec { color:#800000;white-space: nowrap;cursor:help} .nr-analyzer .cell-delta.stable { color:#808080;white-space: nowrap;cursor:help} .nr-analyzer .cell-delta.inc::before { content: &apos;\25B2\0A+&apos; } .nr-analyzer .cell-delta.dec::before { content: &apos;\25BC\0A&apos; } .nr-analyzer .cell-delta.stable::before { content: &apos;\f0da\f0d9\0A&apos;; font-family: &apos;FontAwesome&apos; } .nr-analyzer .compare { width: 25px; height: 25px; display: inline-block; background-image: url(&apos;/app/views/report-analyzer/resources/compare-off.png&apos;); } .nr-analyzer .compare:hover, .nr-analyzer .compare.on { background-image: url(&apos;/app/views/report-analyzer/resources/compare-on.png&apos;); } .nr-analyzer .question.highlight { padding: 5px; border: 2px solid #dadada; border-radius: 7px; outline: none; border-color: #9ecaed; box-shadow: 0 0 10px #9ecaed; margin-top: -7px; margin-right: -7px; margin-left: -7px; } div.km-value{ background-color: #f5f5f5; border: 1px solid #c0c0c0; border-radius: 3px; padding: 5px 8px 5px 8px; margin-top: 1px; margin-bottom: 1px; display: block; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; } .table-hover:hover { background-color: #fff!important; } @media print{ #returnQuestions, #btnPrint, #btnClose{ display:none } }</style>
+    <style>
+        .nr-analyzer td[ng-click], .nr-analyzer th[ng-click] { cursor:pointer; }
+        .nr-analyzer .question[disabled] { opacity:0.60 }
+        .nr-analyzer .question table.table th { vertical-align: middle}
+        .nr-analyzer .question table.table tr > td.region,
+        .nr-analyzer .question table.table tr > td.country    { border:1px solid #ddd }
+        .nr-analyzer .question table.table tr:last-child > td { border-bottom:1px solid #ddd }
+        .nr-analyzer .question table.table tr > td:last-child { border-bottom:none;border-top:none;border-right:none; }
+        .nr-analyzer #filterBox.affix     { top:50px;right:10px; max-width:600px;z-index: 100; }
+        .nr-analyzer #sumTypeButton.affix { top:10px;right:10px;z-index: 100; }
+        .nr-analyzer #textsDialog.modal .locale.selected { font-weight: bold; }
+        .nr-analyzer tr.filter > td.filter > i { color:#777; }
+        .nr-analyzer tr.filter.filter-on > td.filter > i { color:#337ab7; }
+        .nr-analyzer tr > td.filter:hover > i { color:#337ab7; }
+        .nr-analyzer tr > td.filter > i[disabled] { color:#ccc; }
+        .nr-analyzer .panel.panel-collapse > .panel-heading { border-bottom: none; }
+        .nr-analyzer .panel.panel-collapse > .panel-body    { display: none; }
+        .nr-analyzer .panel.sum:hover.panel-default { border-color: #bce8f1; }
+        .nr-analyzer .panel.sum:hover.panel-default > .panel-body { background-color: #eee}
+        .nr-analyzer .panel.sum:hover.panel-default > .panel-heading {
+          color: #31708f;
+          background-color: #d9edf7;
+          border-color: #bce8f1;
+        }
 
-    <div ng-show="sections" style="margin-bottom:5px" id="nrAnalyzer">
+        .nr-analyzer tr.option.sum.first > td.region,
+        .nr-analyzer tr.option.sum.first > td.country      { border-top:    solid 2px #777  !important; }
+        .nr-analyzer tr.option.sum.last  > td.region,
+        .nr-analyzer tr.option.sum.last  > td.country      { border-bottom: solid 2px #777  !important; }
+        .nr-analyzer tr.option.sum       > td.region.first { border-left:   solid 2px #777  !important; }
+        .nr-analyzer tr.option.sum       > td:last-child   { border-left:   solid 2px #777  !important; }
 
-        <button type="button" class="btn btn-default"  ng-click="showSettings();" id="returnQuestions">« Return to Regions and Questions settings</button>
+        .nr-analyzer tr.option.percentGlobal.first > td.region,
+        .nr-analyzer tr.option.percentGlobal.first > td.country      { border-top:    solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentGlobal.last  > td.region,
+        .nr-analyzer tr.option.percentGlobal.last  > td.country      { border-bottom: solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentGlobal       > td.region.first { border-left:   solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentGlobal       > td:last-child   { border-left:   solid 2px #777  !important; }
 
-        <div id="sumTypeButton" class="btn-group" title="Change how numbers are calculated">
-            <button type="button" class="btn btn-primary" ng-click="showSumTypeSelector()">∑ <span ng-switch="sumType"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></button>
+        .nr-analyzer tr.option.percentColumn.first > td.region,
+        .nr-analyzer tr.option.percentColumn.first > td.country         { border-top:    solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentColumn.last  > td.region,
+        .nr-analyzer tr.option.percentColumn.last  > td.country         { border-bottom: solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentColumn       > td.region.expanded { border-right:  solid 1px #777  !important; }
+        .nr-analyzer tr.option.percentColumn       > td.region          { border-left:   solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentColumn       > td:last-child      { border-left:   solid 2px #777  !important; }
+
+        .nr-analyzer tr.option.percentRow > td.region,
+        .nr-analyzer tr.option.percentRow > td.country      { border-top:    solid 2px #777 !important; border-bottom: solid 2px #777  !important; }
+        .nr-analyzer tr.option.percentRow > td.region.first { border-left:   solid 2px #777 !important; }
+        .nr-analyzer tr.option.percentRow > td:last-child   { border-left:   solid 2px #777 !important; }
+
+        .nr-analyzer .question .cell-percent::after,
+        .nr-analyzer .question .option.percentGlobal .cell-value::after,
+        .nr-analyzer .question .option.percentColumn .cell-value::after,
+        .nr-analyzer .question .option.percentRow    .cell-value::after,
+        .nr-analyzer .question .option.percentGlobal .cell-delta::after,
+        .nr-analyzer .question .option.percentColumn .cell-delta::after,
+        .nr-analyzer .question .option.percentRow    .cell-delta::after { content: '%' }
+
+
+        .nr-analyzer .cell-delta.inc    { color:#008000;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.dec    { color:#800000;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.stable { color:#808080;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.inc::before { content: '\25B2\0A+' }
+        .nr-analyzer .cell-delta.dec::before { content: '\25BC\0A' }
+        .nr-analyzer .cell-delta.stable::before { content: '\f0da\f0d9\0A'; font-family: 'FontAwesome' }
+        .nr-analyzer .compare {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background-image: url('/app/views/report-analyzer/resources/compare-off.png');
+        }
+        .nr-analyzer .compare:hover,
+        .nr-analyzer .compare.on  { background-image: url('/app/views/report-analyzer/resources/compare-on.png');  }
+
+        .nr-analyzer .question.highlight {
+            padding: 5px;
+            border: 2px solid #dadada;
+            border-radius: 7px;
+            outline: none;
+            border-color: #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
+            margin-top: -7px;
+            margin-right: -7px;
+            margin-left: -7px;
+        }
+        div.km-value{
+            background-color: #f5f5f5;
+            border: 1px solid #c0c0c0;
+            border-radius: 3px;
+            padding: 5px 8px 5px 8px;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            display: block;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        .table-hover:hover {
+            background-color: #fff!important;
+        }
+        @media print{
+            #returnQuestions, #btnPrint, #btnClose, .analyzer-buttons{
+                display:none!important;
+            }
+        }
+    </style>
+
+    <div class="pull-right" style="position:relative;top:-30px;"><a href="" ng-click="print('#secNrAnalyzer')" class="links" id="btnPrint"> <i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Imprimer</a></div>
+ 
+    <div class="clearfix"></div>
+
+    <div ng-show="sections" style="margin-bottom:5px" id="nrAnalyzer " class="analyzer-buttons">
+
+        <button type="button" class="btn btn-default"  ng-click="showSettings();" id="returnQuestions">&Acirc;� Back to settings</button><!-- <h3 style="padding:0;margin:0; display:inline" ng-switch="selectedRegionsPreset" >
+                <span ng-switch-when="cbdRegions">Breakdown by CBD regions</span>
+                <span ng-switch-when="countries">Select countries</span>
+                <span ng-switch-when="regions">Select regions</span>
+                <span ng-switch-when="npParties">Breakdown by Nagoya Protocol Parties</span>
+                <span ng-switch-when="npNonParties">Breakdown by Nagoya Protocol Non-Parties</span>
+        </h3> --><div id="sumTypeButton" class="btn-group pull-right" title="Change how numbers are calculated">
+            <button type="button" class="btn btn-primary" ng-click="showSumTypeSelector()">&acirc;&circ;&lsquo; <span ng-switch="sumType"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></button>
+
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span> <span class="sr-only">Toggle Dropdown</span></button>
+
             <ul class="dropdown-menu">
                 <li ng-repeat="type in ::sumTypes"><a href="#" ng-click="setSumType(type)"><span ng-switch="type"><span ng-switch-when="sum">Count of responses</span><span ng-switch-when="percentRow">Percentage by row</span><span ng-switch-when="percentColumn">Percentage by column</span><span ng-switch-when="percentGlobal">Percentage overall</span></span></a></li>
             </ul>
         </div>
-        <div class="btn-group pull-right">   
-            <button  ng-click="print('#secNrAnalyzer')" class="btn btn-primary record-link-style" id="btnPrint"><i class="fa fa-spin fa-spinner" ng-if="printing" /> <i class="fa fa-print" aria-hidden="true" ng-if="!printing"></i> Imprimer</button><span ng-switch="selectedRegionsPreset" class="btn btn-info"><span ng-switch-when="cbdRegions">Breakdown by CBD regions</span><span ng-switch-when="countries">Select countries</span><span ng-switch-when="regions">Select regions</span><span ng-switch-when="npParties">Breakdown by Nagoya Protocol Parties</span><span ng-switch-when="npNonParties">Breakdown by Nagoya Protocol Non Parties</span></span></div>
-       
     </div>
 
     <div id="filterBox" class="filter panel panel-primary" ng-show="filter">
@@ -36,9 +151,7 @@
                 <p><i>est la suivante&nbsp;:</i> <b>{{filter.option.title|lstring}}</b></p>
             </div>
         </div>
-    </div>
-
-    <national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" previous-questions-mapping="previousQuestionsMapping" ng-repeat="section in sections"></national-report-analyzer-section><!-- SUM SELECTOR --><div class="modal fade" id="sumTypeDialog">
+    </div><br><national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" previous-questions-mapping="previousQuestionsMapping" ng-repeat="section in sections"></national-report-analyzer-section><!-- SUM SELECTOR --><div class="modal fade" id="sumTypeDialog">
         <div class="modal-dialog">
             <div class="modal-content">
 

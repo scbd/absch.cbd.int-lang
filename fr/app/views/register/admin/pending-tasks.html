@@ -15,7 +15,7 @@
               <legend>Filtres</legend>              
                 <div class="row">
                     <div class="col-xs-6">
-                        <div class="km-control-group" name="startDate" required caption="Date de d&eacute;but">
+                        <div class="km-control-group" name="startDate" required caption="Date de début">
                             <div km-date placeholder="AAAA-MM-JJ" required name="startDate" ng-model="filters.startDate"></div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filterType" binding-type="string" placeholder="Type de fichier" items="options.filterTypes()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filterStatus" binding-type="string" placeholder="Statut du fichier" items="options.filterStatus()"></div>
-                            <input type="text" ng-model="keywords" placeholder="Mot cl&eacute;" class="form-control keyword" style="width:250px;display:inline;">
+                            <input type="text" ng-model="keywords" placeholder="Mot clé" class="form-control keyword" style="width:250px;display:inline;">
                         </div>
                     </div>
                 </div><br> <br><div class="table " style="margin-top:15px;">

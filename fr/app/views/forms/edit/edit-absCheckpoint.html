@@ -35,7 +35,7 @@
                       </div>
                       <div class="row">
                           <div class="col-xs-12">
-                                  <div class="km-control-group" name="name" required caption="Nom du point de contr&ocirc;le">
+                                  <div class="km-control-group" name="name" required caption="Nom du point de contrôle">
                                       <div class="help-info">Gardez en t&ecirc;te que le nom du point de contr&ocirc;le aidera &agrave; identifier le fichier au Centre d&rsquo;&eacute;change APA.</div>
                                       <div km-textbox-ml ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                   </div>
@@ -49,7 +49,7 @@
                       <div class="help-info">Le paragraphe 1 (a) (i) de l&apos;article 17 pr&eacute;voit que les points de contr&ocirc;le d&eacute;sign&eacute;s recueillent ou re&ccedil;oivent des informations pertinentes relatives au consentement pr&eacute;alable en connaissance de cause, &agrave; la source de la ressource g&eacute;n&eacute;tique, &agrave; l&apos;&eacute;tablissement de termes convenus d&rsquo;un commun accord et/ou &agrave; l&apos;utilisation de ressources g&eacute;n&eacute;tiques, le cas &eacute;ch&eacute;ant, le sous-alin&eacute;a (iv) pr&eacute;voit que les points de contr&ocirc;le doivent comporter des fonctions pertinentes pour l&apos;utilisation des ressources g&eacute;n&eacute;tiques, ou la collecte d&apos;informations pertinentes, entre autres, &agrave; toutes les &eacute;tapes de recherche, de d&eacute;veloppement, d&apos;innovation, de pr&eacute;-commercialisation ou de commercialisation.</div>
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="responsibilities" caption="Br&egrave;ve description des responsabilit&eacute;s">
+                              <div class="km-control-group" required name="responsibilities" caption="Brève description des responsabilités">
                                      <div class="help-info">Une br&egrave;ve description des responsabilit&eacute;s du point de contr&ocirc;le aidera les utilisateurs des ressources g&eacute;n&eacute;tiques et d&apos;autres personnes &agrave; identifier et &agrave; clarifier le r&ocirc;le et le fonctionnement du point de contr&ocirc;le dans la collecte d&apos;informations pertinentes sur l&apos;utilisation des ressources, entre autres, dans n&apos;importe quelle &eacute;tape de recherche, de d&eacute;veloppement, d&apos;innovation, de pr&eacute;-commercialisation ou de commercialisation. (max. 300 caract&egrave;res)</div>
                                   <div km-rich-textbox name="responsibilities" rows="6" ng-model="document.responsibilities" locales="document.header.languages"></div>
                               </div>
@@ -72,14 +72,14 @@
                       </div>
                       <div class="row" ng-show="isCommunity()">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="jurisdictionName" caption="Nom du point de la communaut&eacute;">
+                              <div class="km-control-group" required name="jurisdictionName" caption="Nom du point de la communauté">
                                   <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                               </div>
                           </div>
                       </div>
                       <div class="row" ng-show="isOthers()">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="jurisdictionName" caption="Nom de d&rsquo;autres juridictions">
+                              <div class="km-control-group" required name="jurisdictionName" caption="Nom de d’autres juridictions">
                                   <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                               </div>
                           </div>
@@ -97,7 +97,7 @@
 
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" required name="informAllAuthorities" caption="Envoyez une copie du communiqu&eacute; &agrave; toutes les autorit&eacute;s nationales comp&eacute;tentes du pays.">
+                              <div class="km-control-group" required name="informAllAuthorities" caption="Envoyez une copie du communiqué à toutes les autorités nationales compétentes du pays.">
                                   <div class="km-yes-no" name="informAllAuthorities" ng-model="document.informAllAuthorities"></div>
                               </div>
                           </div>
@@ -116,7 +116,7 @@
                           </div>
                       </div> --><div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" name="contactsToInform" caption="Veuillez s&eacute;lectionnez tout autorit&eacute; nationale &agrave; qui vous d&eacute;sirez envoyer une copie du communiqu&eacute;.">
+                              <div class="km-control-group" name="contactsToInform" caption="Veuillez sélectionnez tout autorité nationale à qui vous désirez envoyer une copie du communiqué.">
                                   
                                   <div document-selector ng-model="document.contactsToInform"
                                                                question="contactsToInform"
@@ -131,7 +131,7 @@
                       <legend>Renseignements suppl&eacute;mentaires</legend>
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" name="relevantInformation" caption="Renseignements suppl&eacute;mentaires">
+                              <div class="km-control-group" name="relevantInformation" caption="Renseignements supplémentaires">
                                   <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le fichier.</div>
                                   <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                               </div>
@@ -140,7 +140,7 @@
 
                       <div class="row">
                           <div class="col-xs-12">
-                              <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pi&egrave;ces jointes">
+                              <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pièces jointes">
                                   <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                               </div>
                           </div>

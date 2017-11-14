@@ -1,16 +1,21 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading  bg-blue">
-		<h4>Autorit&eacute;s nationales comp&eacute;tentes <span class="color-black">(ACN)</span></h4>
+		<h4><span >Autorit&eacute;s nationales comp&eacute;tentes <span class="color-black">(ACN)</span></span></h4>
 	</div>
-	<style>#Record p:empty, #Record div:empty{ display:none }</style>
+	<style>
+		#Record p:empty, #Record div:empty{
+			display:none
+		}
+	</style>
 
 	<div class="record-body panel-body" help schema="viewCNA" >
-		<div record-options></div><!-- {{document.government|term}} --><div name="article-13-2"></div>
+		
+		<document-date></document-date><!-- <a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> --><div name="article-13-2"></div>
 		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">Informations g&eacute;n&eacute;rales</legend>
 
 		<div ng-show="document.government" >
 			<label name="country">Pays</label>
-			<div class="km-value"><span>{{document.government|term:locale}}</span> <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value"><span><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></span> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-if="document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0 " >

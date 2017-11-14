@@ -18,8 +18,8 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="government" required caption="Pa&iacute;s de emisi&oacute;n del comunicado del punto de verificaci&oacute;n">
-                                            <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un pa&iacute;s"></div>
+                                        <div class="km-control-group" name="government" required caption="País de emisión del comunicado del punto de verificación">
+                                            <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -28,9 +28,9 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="title" required caption="T&iacute;tulo de este comunicado del punto de verificaci&oacute;n">
+                                        <div class="km-control-group" name="title" required caption="Título de este comunicado del punto de verificación">
                                             <div class="help-info">Este campo funciona como el t&iacute;tulo del registro, por tanto, debe ser inconfundible y ayudar a identificar f&aacute;cilmente el registro en el Centro de Intercambio de Informaci&oacute;n sobre APB.</div>
-                                            <div km-textbox-ml ng-model="document.title" rows="1" placeholder="T&iacute;tulo de este comunicado del punto de verificaci&oacute;n" locales="document.header.languages"></div>
+                                            <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Título de este comunicado del punto de verificación" locales="document.header.languages"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="control-group">
-                                        <div class="km-control-group" name="absCheckpoints" required caption="Punto(s) de verificaci&oacute;n que recopilaron o recibieron la informaci&oacute;n">
+                                        <div class="km-control-group" name="absCheckpoints" required caption="Punto(s) de verificación que recopilaron o recibieron la información">
                                             <div class="help-info">En este campo, se pueden seleccionar en los registros existentes en el Centro de Intercambio de la Informaci&oacute;n sobre APB el registro o el/los punto(s) de verificaci&oacute;n que recopilaron o recibieron la informaci&oacute;n.</div>
 
                                              <div document-selector ng-model="document.absCheckpoints"
@@ -91,9 +91,9 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="control-group">
-                                            <div class="km-control-group" name="sourceCountries" required caption="Fuente del recurso gen&eacute;tico">
+                                            <div class="km-control-group" name="sourceCountries" required caption="Fuente del recurso genético">
                                                 <div class="help-info">Seleccione el/los pa&iacute;s(es) que es/son la fuente del recurso gen&eacute;tico. El/los pa&iacute;s(es) seleccionado(s) ser&aacute;n los que reciban el comunicado del punto de verificaci&oacute;n emitido a partir de la informaci&oacute;n registrada.</div>
-                                                <div km-select required name="sourceCountries" ng-model="document.sourceCountries" multiple items="options.countries()" placeholder="Seleccione un pa&iacute;s"></div>
+                                                <div km-select required name="sourceCountries" ng-model="document.sourceCountries" multiple items="options.countries()" placeholder="Seleccione un país"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                 <legend>Asunto o recurso gen&eacute;tico</legend>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="subjectMatter" required caption="Asunto o recursos gen&eacute;ticos pertinentes para la informaci&oacute;n recopilada o recibida">
+                                        <div class="km-control-group" name="subjectMatter" required caption="Asunto o recursos genéticos pertinentes para la información recopilada o recibida">
                                             <div class="help-info">S&iacute;rvase proporcionar detalles sobre el asunto o los recursos gen&eacute;ticos pertinentes para la informaci&oacute;n recopilada o recibida por el punto de verificaci&oacute;n. Esto podr&iacute;a incluir la biota y alg&uacute;n rango taxon&oacute;mico, que podr&iacute;a tener un nombre taxon&oacute;mico. Tambi&eacute;n podr&iacute;a incluir una localidad de recopilaci&oacute;n del material. Asimismo, tal vez sea posible identificar el recurso gen&eacute;tico haciendo referencia a un esp&eacute;cimen de muestra o a notas de campo en poder de un archivo o colecci&oacute;n identificados.</div>
                                             <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter" locales="document.header.languages"></div>
                                         </div>
@@ -113,13 +113,13 @@
                                      <div class="legend2" >Additional subject matter or genetic resource information <span class="help-info">Providing details about the subject matter or genetic resource covered by the permit or its equivalent can provide additional legal certainty.</span></div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="specimens" caption="Datos sobre el esp&eacute;cimen"><span class="help-info">Enlace al esp&eacute;cimen de muestra guardado en una instalaci&oacute;n apropiada</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="specimens" caption="Datos sobre el espécimen"><span class="help-info">Enlace al esp&eacute;cimen de muestra guardado en una instalaci&oacute;n apropiada</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="taxonomies" caption="Taxonom&iacute;a"><span class="help-info">Enlace al registro en una base de datos externa sobre taxonom&iacute;a, por ej., Infraestructura Mundial de Informaci&oacute;n en Biodiversidad (GBIF), Cat&aacute;logo de Vida</span><div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
+                                            <div class="km-control-group" name="taxonomies" caption="Taxonomía"><span class="help-info">Enlace al registro en una base de datos externa sobre taxonom&iacute;a, por ej., Infraestructura Mundial de Informaci&oacute;n en Biodiversidad (GBIF), Cat&aacute;logo de Vida</span><div km-link name="taxonomies" ng-model="document.taxonomies" allow-link="true" allow-file="false" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="keywords" caption="Palabra clave para describir el asunto o recurso(s) gen&eacute;tico(s) cubierto(s) por el permiso o su equivalente">
+                                            <div class="km-control-group" name="keywords" caption="Palabra clave para describir el asunto o recurso(s) genético(s) cubierto(s) por el permiso o su equivalente">
                                                  <div class="help-info"></div>
                                                 <div km-select multiple show-description="true" required name="keywords" ng-model="document.keywords" items="options.keywords()"></div>
                                             </div>
@@ -161,7 +161,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="evidenceOfPIC" caption="Referencia o evidencia en relaci&oacute;n con el consentimiento fundamentado previo (CFP)">
+                                        <div class="km-control-group" name="evidenceOfPIC" caption="Referencia o evidencia en relación con el consentimiento fundamentado previo (CFP)">
                                              <div class="help-info">Este campo es para proporcionar informaci&oacute;n sobre el CFP. Esta comprende informaci&oacute;n sobre todas las referencias o los identificadores nacionales que podr&iacute;an brindar ayuda a los pa&iacute;ses en la b&uacute;squeda y recuperaci&oacute;n de informaci&oacute;n relacionada con el CFP, o el permiso o su equivalente en los archivos nacionales.</div>
                                             <div km-rich-textbox name="evidenceOfPIC" rows="4" ng-model="document.evidenceOfPIC" locales="document.header.languages"></div>
                                         </div>
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="entityWhoGrantedPIC" caption="Persona o entidad que concedi&oacute; el consentimiento fundamentado previo (CFP)">
+                                        <div class="km-control-group" name="entityWhoGrantedPIC" caption="Persona o entidad que concedió el consentimiento fundamentado previo (CFP)">
                                              <div document-selector ng-model="document.entityWhoGrantedPIC" type="radio"
                                                                         question="entityWhoGrantedPIC"
                                                                         schema="(contact authority)"
@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                       <div class="km-control-group" name="entityToWhomPICGranted" caption="Persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo (CFP)"><span class="help-info">S&iacute;rvase proporcionar la informaci&oacute;n de contacto de la persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo.</span><div document-selector ng-model="document.entityToWhomPICGranted" type="radio"
+                                       <div class="km-control-group" name="entityToWhomPICGranted" caption="Persona o entidad a la que se otorgó el consentimiento fundamentado previo (CFP)"><span class="help-info">S&iacute;rvase proporcionar la informaci&oacute;n de contacto de la persona o entidad a la que se otorg&oacute; el consentimiento fundamentado previo.</span><div document-selector ng-model="document.entityToWhomPICGranted" type="radio"
                                                                         question="entityToWhomPICGranted"
                                                                         schema="(contact authority)"
                                                                         government="document.government"
@@ -202,7 +202,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12 col-md-3">
-                                        <div class="km-control-group" name="dateOfAccess" caption="Fecha de acceso a los recursos gen&eacute;ticos">
+                                        <div class="km-control-group" name="dateOfAccess" caption="Fecha de acceso a los recursos genéticos">
                                             <div km-date placeholder="AAAA-MM-DD" required name="dateOfAccess" ng-model="document.dateOfAccess"></div>
                                         </div>
                                     </div>
@@ -214,7 +214,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" required name="description" caption="Descripci&oacute;n breve de la informaci&oacute;n recopilada o recibida por el punto de verificaci&oacute;n pertinente para la utilizaci&oacute;n de los recursos gen&eacute;ticos, incluido el tipo de uso">
+                                    <div class="km-control-group" required name="description" caption="Descripción breve de la información recopilada o recibida por el punto de verificación pertinente para la utilización de los recursos genéticos, incluido el tipo de uso">
                                         <div class="help-info">Esta podr&iacute;a comprender informaci&oacute;n sobre utilizaci&oacute;n de recursos gen&eacute;ticos en, <i>inter alia</i>, cualquier etapa de investigaci&oacute;n, desarrollo, innovaci&oacute;n, precomercializaci&oacute;n o comercializaci&oacute;n. La informaci&oacute;n suministrada permitir&aacute; que el proveedor del recurso gen&eacute;tico verifique si el uso de dicho recurso gen&eacute;tico se ha realizado de conformidad con el CFP y las CMA y que se hayan participado los beneficios de conformidad con las CMA.</div>
                                         <div km-rich-textbox name="description" rows="4" ng-model="document.description" locales="document.header.languages"></div>
                                     </div>
@@ -223,7 +223,7 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="personsAtCheckpoint" caption="Persona o entidad que entrega informaci&oacute;n al punto de verificaci&oacute;n sobre la utilizaci&oacute;n del recurso gen&eacute;tico">
+                                    <div class="km-control-group" name="personsAtCheckpoint" caption="Persona o entidad que entrega información al punto de verificación sobre la utilización del recurso genético">
                                         <div class="help-info">Esta informaci&oacute;n permite que el proveedor del recurso gen&eacute;tico verifique si la persona o entidad a la que se otorg&oacute; el CFP es la misma persona o entidad que brind&oacute; evidencia del CFP y de las CMA en el punto de verificaci&oacute;n. En caso de discrepancia, los proveedores pueden verificar la informaci&oacute;n y las condiciones relacionadas con la transferencia a terceras partes.</div>
                                         <div document-selector ng-model="document.personsAtCheckpoint"
                                                                         question="personsAtCheckpoint"
@@ -258,7 +258,7 @@
                             <legend>Informaci&oacute;n adicional</legend>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="km-control-group" name="relevantInformation" caption="Informaci&oacute;n adicional">
+                                    <div class="km-control-group" name="relevantInformation" caption="Información adicional">
                                         <div class="help-info">Por favor, utilice este campo para facilitar cualquier otra informaci&oacute;n pertinente que no se haya incluido en otro lugar del registro.</div>
                                         <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                     </div>

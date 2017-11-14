@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
     <link rel="shortcut icon" href="ico/favicon.png"><!-- Bootstrap core CSS --><link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --><link href="../css/communiquePDF.css" rel="stylesheet">
-    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css"> <!--<script src="../libs/barcode-39.js/barcode-39.min.js"></script>-->     <script src="../libs/momentjs/min/moment.min.js"></script><script src="../libs/angular/angular.min.js"></script><script src="../libs/underscore/underscore-min.js"></script><script src="../libs/angular-sanitize/angular-sanitize.min.js"></script><script src="absCheckpointCommunique.js"></script><script src="absCommon.js"></script><style type="text/css">body { zoom: 0.53; /* using 0.55 or higher results in the elements not lining up correctly */ } .alert-danger{ color:#FFF!important; text-transform: uppercase; font-weight:bold; background-color: #C7532C!important; }</style>
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css"> <!--<script src="../libs/barcode-39.js/barcode-39.min.js"></script>-->     <script src="../libs/momentjs/min/moment.min.js"></script><script src="../libs/angular/angular.min.js"></script><script src="../libs/underscore/underscore-min.js"></script><script src="../libs/angular-sanitize/angular-sanitize.min.js"></script><script src="absCheckpointCommunique.js"></script><script src="absCommon.js"></script><style type="text/css">
+    body {
+            zoom: 0.53; /* using 0.55 or higher results in the elements not lining up correctly */
+        }
+    .alert-danger{
+        color:#FFF!important;
+        text-transform: uppercase;
+        font-weight:bold;
+        background-color: #C7532C!important;
+    }
+    </style>
 </head>
 
 <body>
@@ -18,15 +28,9 @@
             </div>
 
             <div class="row" style="padding-bottom:30px;">
-                <div class="col-xs-1">
-                </div>
-
-                <div class="col-xs-3" style="text-align:center;"><img style="width:60px;" src="../img/UNEP_logo.svg" /></div>
-                <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="../img/cbd-logo-print-black-en.png" /></div>
-                <div class="col-xs-3" style="text-align:center;"><img style="width:70px;padding-top:5px;" src="../img/Emblem_of_the_United_Nations.svg" /></div>
-
-                <div class="col-xs-1">
-                </div>
+                    <div class="col-xs-4" style="text-align:center;"><img style="max-width:120px;padding-top:10px" src="/app/img/UNEP_logo.svg" /></div>
+                        <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="/app/img/cbd-logo-black-en.svg" style="max-width:180px;" /></div>
+                        <div class="col-xs-4" style="text-align:center;"><img style="max-width:80px;padding-top:5px;" src="/app/img/Emblem_of_the_United_Nations.svg" /></div>
             </div>
 
             <div class="bg-blue text-center" style="padding:5px;">

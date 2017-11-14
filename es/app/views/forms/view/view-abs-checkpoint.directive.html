@@ -1,11 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4>Punto de verificaci&oacute;n <span class="color-black"></span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
+		<h4><span>Punto de verificaci&oacute;n <span class="color-black"></span></span></h4>	
+	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
 
-		<div record-options></div>
+		
+			<document-date></document-date>
 
 		 <div name="article17-1-a"></div>
 
@@ -13,7 +15,7 @@
 
 		<div ng-show="document.government">
 			<label name="country">Pa&iacute;s</label>
-			<div class="km-value" >{{document.government|term}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		 <div ng-show="display('title') && document.name">
@@ -46,7 +48,7 @@
 			<legend>Autoridad(es) que habr&aacute;n de recibir copias de cortes&iacute;a de los comunicados del punto de verificaci&oacute;n sobre la informaci&oacute;n recopilada o recibida originada en el punto de verificaci&oacute;n</legend>
 
 			<div class="help-info" style="padding-top:10px;">Todas las autoridades y contactos indicados a continuaci&oacute;n recibir&aacute;n copias por correo electr&oacute;nico de los comunicados del punto de verificaci&oacute;n que contengan informaci&oacute;n recopilada o recibida y publicada originada en ese punto de verificaci&oacute;n. S&iacute;rvase tomar nota de que las autoridades nacionales que proporcionaron un consentimiento fundamentado previo (CFP) autom&aacute;ticamente recibir&aacute;n copias por correo electr&oacute;nico de todos los comunicados del punto de verificaci&oacute;n. El Centro de Intercambio de Informaci&oacute;n sobre APB no puede garantizar que los correos electr&oacute;nicos hayan sido recibidos o le&iacute;dos.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">Todas las autoridades nacionales competentes ({{document.government|term}})</a> han sido seleccionadas para recibir autom&aacute;ticamente por correo electr&oacute;nico los comunicados del punto de verificaci&oacute;n publicados que hayan surgido de dicho punto de verificaci&oacute;n.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>)</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
           
 			<div ng-show="document.contactsToInform">
 				<div class="km-value" ng-repeat="authority in document.contactsToInform">

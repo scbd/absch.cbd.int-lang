@@ -23,7 +23,7 @@
                                     <div class="pull-left">                                       
                                         <div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Statut de la Partie" items="options.filterPartyStatus()"></div>
                                         <div km-select ng-model="filters.filterType" binding-type="string" placeholder="Filtre" items="options.filterTypes()"></div>
-                                        <div km-select ng-model="filters.role" binding-type="string" placeholder="R&ocirc;les" items="options.filterRoles()"></div>
+                                        <div km-select ng-model="filters.role" binding-type="string" placeholder="Rôles" items="options.filterRoles()"></div>
                                     </div>
                                     <div class="pull-right">
                                         <input type="button" class="btn btn-primary" ng-click="loadRecords()" value="Filter" ng-disabled="!filters.partyStatus || !filters.filterType || !filters.role">

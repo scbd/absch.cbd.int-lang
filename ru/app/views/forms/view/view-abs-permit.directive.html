@@ -2,6 +2,9 @@
 	<div class="panel-heading bg-blue">
 		<h4>Разрешение или эквивалентный документ, являющийся международно признанным сертификатом о соответствии требованиям <span class="color-black">(МПССТ)</span></h4> </div>
 	<div class="record-body panel-body">
+
+		
+
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
 				<div class="text-center">
 					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">ДАННЫЙ СЕРТИФИКАТ <u>ОТОЗВАН</u> И УТРАТИЛ СВОЕ ДЕЙСТВИЕ</h1>
@@ -11,13 +14,14 @@
 					<p>Дополнительную информацию см. в журнале изменений.</p>
 				</div>
 			</div>
-			<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  class="hidden-print record-link-style" ng-if="document.info && document.info.revision === document.info.latestRevision" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> Загрузить</a></div>
+			
+		<document-date></document-date>		
 
 			<legend ng-if="document.government">Общая информация</legend>
 
 			<div ng-show="document.government">
 				<label>Страна</label>
-				<div class="km-value" >{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
+				<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 			</div>
 
 

@@ -1,6 +1,27 @@
 ﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
 	<link href="/app/css/register.css" rel="stylesheet">
-	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style>.table>tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; }</style>
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style>
+		.table>tbody:hover {
+			background-color: #f2dede;
+			;
+		}
+		
+		.hyphenate {
+			/* Careful, this breaks the word wherever it is without a hyphen */
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			/* Adds a hyphen where the word breaks */
+			-webkit-hyphens: auto;
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+		.message_body{
+			max-width: 1759px;
+			margin-right: 15px!important;
+    		margin-left: 15px!important;
+		}
+	</style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-pink color-white">
@@ -21,7 +42,7 @@
 						</div>
 					</div>
 					<div class="col-xs-6">
-						<div class="km-control-group" name="endDate" caption="Fecha de finalizaci&oacute;n">
+						<div class="km-control-group" name="endDate" caption="Fecha de finalización">
 							<div km-date placeholder="AAAA-MM-DD" name="endDate" ng-model="filters.endDate"></div>
 						</div>
 					</div>

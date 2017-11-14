@@ -22,7 +22,7 @@
                     <option value="countries">Select countries</option>
                     <option value="regions">Select regions</option>
                     <option value="npParties">Breakdown by Nagoya Protocol Parties</option>
-                    <option value="npNonParties">Breakdown by Nagoya Protocol Non Parties</option>
+                    <option value="npNonParties">Breakdown by Nagoya Protocol Non-Parties</option>
                 </select>
             </td>
         </tr>
@@ -33,7 +33,7 @@
             </td>
             <td>
 
-                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">No countries or regions selected.</div>
+                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">No countries or regions selected</div>
 
                 <ul ng-if="selectedRegions.length" class="list-unstyled">
                     <li ng-repeat="c in selectedRegions"><span ng-if="selectedRegionsPreset!='npParties' && selectedRegionsPreset!='npNonParties'"><i class="fa fa-times" ng-click="removeRegions(c)" ng-show="selectedRegionsPreset!='cbdRegions'"></i> {{regionsMap[c].title|lstring}}</span> <span ng-if="selectedRegionsPreset!='npParties' || selectedRegionsPreset!='npNonParties'">{{npCountries[c].title|lstring}}</span></li>
@@ -46,7 +46,7 @@
             <td>
                 <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="allSectionsClicked()" >
             </td>
-            <th class="Title" colspan="4" ng-click="allSelected=!allSelected; allSectionsClicked();">All questions and/or sections of the report.</th>
+            <th class="Title" colspan="4" ng-click="allSelected=!allSelected; allSectionsClicked();">Все вопросы и/или разделы доклада</th>
         </tr>
 
         <tr ng-repeat-start="section in sections">

@@ -19,13 +19,13 @@
                             <div class="row">
                                 <div class="col-md-8 col-xs-12">
                                     <div class="km-control-group" name="name" required caption="Name of the organization">
-                                        <div km-textbox-ml name="name" required ng-model="edition.contact.name" placeholder="Entr&eacute;e de texte" locales="edition.contact.header.languages"></div>
+                                        <div km-textbox-ml name="name" required ng-model="edition.contact.name" placeholder="Entrée de texte" locales="edition.contact.header.languages"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 col-xs-12">
                                     <div class="km-control-group" name="acronym" required caption="Acronym">
-                                        <div km-textbox-ml name="acronym" required ng-model="edition.contact.acronym" placeholder="Entr&eacute;e de texte" locales="edition.contact.header.languages"></div>
+                                        <div km-textbox-ml name="acronym" required ng-model="edition.contact.acronym" placeholder="Entrée de texte" locales="edition.contact.header.languages"></div>
                                     </div>
                                 </div>
                             </div>
@@ -54,13 +54,13 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="city" required caption="City">
-                                        <div km-textbox-ml required name="city" ng-model="edition.contact.city" locales="edition.contact.header.languages" placeholder="exemple: Montr&eacute;al :"></div>
+                                        <div km-textbox-ml required name="city" ng-model="edition.contact.city" locales="edition.contact.header.languages" placeholder="exemple: Montréal :"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="state" caption="State or Province">
-                                        <div km-textbox-ml name="state" ng-model="edition.contact.state" locales="edition.contact.header.languages" placeholder="exemple: Qu&eacute;bec"></div>
+                                        <div km-textbox-ml name="state" ng-model="edition.contact.state" locales="edition.contact.header.languages" placeholder="exemple: Québec"></div>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                             <div ng-if="!loading && existingContacts && existingContacts.length==0" style="padding:0 10px;">
                                 <h3 class="color-litegrey">Aucune organisation trouv&eacute;e Veuille ajouter une nouvelle organisation</h3>
                             </div>
-                            <input type="textbox" ng-model="search.keyword" placeholder="Filtrer les noms d&rsquo;organisations" 
+                            <input type="textbox" ng-model="search.keyword" placeholder="Filtrer les noms d’organisations" 
                                 class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">Organisaiton trouv&eacute;e</span></div>
                         
                         <div class="col-xs-12 " infinite-scroll='loadExisting()' infinite-scroll-immediate-check='true' 

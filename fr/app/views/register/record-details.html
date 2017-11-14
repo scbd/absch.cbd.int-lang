@@ -39,7 +39,7 @@
                             </div>
 
                             <div ng-show="isPublished(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note&nbsp;: Any pending draft will also be deleted">Fichier non publi&eacute; ou supprim&eacute;</button><em>Fichier publi&eacute; {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
+                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note : Any pending draft will also be deleted">Fichier non publi&eacute; ou supprim&eacute;</button><em>Fichier publi&eacute; {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.summary|lstring"></p>
                             </div>
 

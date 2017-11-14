@@ -1,5 +1,91 @@
 ﻿<div>
-    <style>ul li { list-style: none; } #measureMatrix { padding-left: 0px } .measureChecked { /*font-weight: bold;*/ } .boldText { font-weight: bold; } .normalText { font-weight: normal!important; } .paddingleft0 { /*background-color: #eee;*/ } .bg-main { background-color: #eee; } .btn-sm { font-size: 10px; } .whiteBG { background-color: white; } .btop { border-top: 1px solid #ddd; } .spacing30 { margin-left: 30px!important; } .padding-left-120 { padding-left: 120px!important; } #scopeTableRow #filterText { display: none; } #scopeAddRow td, #scopeAddRow tr { border: 0!important; } .matrix-btn { float: left; font-size: 12px!important; border: 0!important; } #measureMatrix label { margin-bottom: 0px; } .measure-matrix-error span, span.measure-matrix-error{ color:#a94442; } /* .measure-matrix-error .form-control, */ .measure-matrix-error .form-control.ng-invalid{ border-color : #a94442; } .measure-matrix-error .others tr:last-child .form-control.ng-invalid{ border : 1px solid #ccc; } .measure-matrix-error .others tr:last-child span{ color : 1px solid #ccc; } #measureMatrix .table-hover tr, .table-hover:hover { background-color: #fff; } #measureMatrix .table-hover>tbody>tr:hover{ background-color: #f5f5f5; }</style>
+    <style>
+        ul li {
+            list-style: none;
+        }
+        
+        #measureMatrix {
+            padding-left: 0px
+        }
+        
+        .measureChecked {
+            /*font-weight: bold;*/
+        }
+        
+        .boldText {
+            font-weight: bold;
+        }
+        
+        .normalText {
+            font-weight: normal!important;
+        }
+        
+        .paddingleft0 {
+            /*background-color: #eee;*/
+        }
+        
+        .bg-main {
+            background-color: #eee;
+        }
+        
+        .btn-sm {
+            font-size: 10px;
+        }
+        
+        .whiteBG {
+            background-color: white;
+        }
+        
+        .btop {
+            border-top: 1px solid #ddd;
+        }
+        
+        .spacing30 {
+            margin-left: 30px!important;
+        }
+        
+        .padding-left-120 {
+            padding-left: 120px!important;
+        }
+        
+        #scopeTableRow #filterText {
+            display: none;
+        }
+        
+        #scopeAddRow td,
+        #scopeAddRow tr {
+            border: 0!important;
+        }
+        
+        .matrix-btn {
+            float: left;
+            font-size: 12px!important;
+            border: 0!important;
+        }
+        
+        #measureMatrix label {
+            margin-bottom: 0px;
+        }
+        .measure-matrix-error span, span.measure-matrix-error{
+            color:#a94442;
+        }
+         /* .measure-matrix-error .form-control,   */
+        .measure-matrix-error .form-control.ng-invalid{
+            border-color : #a94442;
+        }
+        .measure-matrix-error .others tr:last-child .form-control.ng-invalid{
+            border : 1px solid #ccc;
+        }
+        .measure-matrix-error .others tr:last-child span{
+            color : 1px solid #ccc;
+        }
+        #measureMatrix .table-hover tr, .table-hover:hover {
+            background-color: #fff;
+        }
+        #measureMatrix .table-hover>tbody>tr:hover{
+            background-color: #f5f5f5;
+        }
+    </style>
     <div id="measureMatrix">
         <div>
             <table style="width:100%" cellspacing="0" cellpadding="0">
@@ -48,7 +134,7 @@
                                         <table class="table" style="padding:0;margin:0 0 15px 0;width:auto!important; border:0;">
                                             <tr>
                                                 <td style="border:0;">
-                                                    <div km-select multiple name="grTypes" ng-model="geneticResource.types" items="options.grTypes()" placeholder="Veuillez s&eacute;lectionner les types de ressources g&eacute;n&eacute;tiques" api="grTypesApi" show-description="true"></div><span class="bold" style="margin: 0 10px;">Trouv&eacute; dans...</span><div km-select multiple name="grArea" ng-model="geneticResource.areas" items="options.grAreas()" placeholder="Veuillez s&eacute;lectionner les zones d&rsquo;acc&egrave;s" api="grAreasApi" show-description="true"></div>
+                                                    <div km-select multiple name="grTypes" ng-model="geneticResource.types" items="options.grTypes()" placeholder="Veuillez sélectionner les types de ressources génétiques" api="grTypesApi" show-description="true"></div><span class="bold" style="margin: 0 10px;">Trouv&eacute; dans...</span><div km-select multiple name="grArea" ng-model="geneticResource.areas" items="options.grAreas()" placeholder="Veuillez sélectionner les zones d’accès" api="grAreasApi" show-description="true"></div>
 
                                                 </td>
                                                 <td style="border:0;">
@@ -204,7 +290,7 @@
             <tr ng-repeat="element in otherElements">
                 <td ng-show="otherElements.length > 1" class="text-center" style="vertical-align:middle;width:30px;"><i class="fa fa-remove color-red" style="cursor:pointer" ng-if="otherElements.length > 1 && !$last" ng-click="deleteOtherElement(element, otherElements)" /></td>
                 <td>
-                    <div style="max-width:300px" km-textbox-ml ng-model="element.name" locales="locales" required="true" placeholder="Autre &eacute;l&eacute;ment" ng-change="appendEmptyOther(otherElements)">
+                    <div style="max-width:300px" km-textbox-ml ng-model="element.name" locales="locales" required="true" placeholder="Autre élément" ng-change="appendEmptyOther(otherElements)">
                     </div>
                 </td>
                 <td>

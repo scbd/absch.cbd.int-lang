@@ -2,6 +2,9 @@
 	<div class="panel-heading bg-blue">
 		<h4>Permis ou leur &eacute;quivalent constituant un certificat de conformit&eacute; internationalement reconnu <span class="color-black">(CCIR)</span></h4> </div>
 	<div class="record-body panel-body">
+
+		
+
 			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
 				<div class="text-center">
 					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">LE CERTIFICAT A &Eacute;T&Eacute; <u>R&Eacute;VOQU&Eacute;</u> ET N&apos;EST PLUS VALIDE</h1>
@@ -11,13 +14,14 @@
 					<p>Voir l&rsquo;historique des  amendements pour plus d&rsquo;informations.</p>
 				</div>
 			</div>
-			<div record-options></div><span style="color:#ddd"  class="pull-right">&nbsp; | &nbsp;</span><div class="pull-right"><a translation-url  class="hidden-print record-link-style" ng-if="document.info && document.info.revision === document.info.latestRevision" target="_new" ng-href="/database/record/{{document | uniqueID}}"><i class="fa fa-file-pdf-o"></i> T&eacute;l&eacute;charger</a></div>
+			
+		<document-date></document-date>		
 
 			<legend ng-if="document.government">Informations g&eacute;n&eacute;rales</legend>
 
 			<div ng-show="document.government">
 				<label>Pays</label>
-				<div class="km-value" >{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
+				<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 			</div>
 
 

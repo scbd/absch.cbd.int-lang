@@ -1,6 +1,6 @@
 ﻿<div id="SubmitPage" ng-controller="registerRecordList">
     <link href="/app/css/register.css" rel="stylesheet">
-    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span> <br><div class="card card-1-notrans"><span record-type-header></span><div class="register-content-content">
+    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span> <br><div class="card card-1-notrans bg-white"><span record-type-header></span><div class="register-content-content">
             <div ng-show="msg" class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
             <div class="row">
@@ -10,7 +10,7 @@
                         <button type="button" ng-click="statusFilter=isRequest" class="filterbtn btn btn-danger"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isRequest}"></i> Demandes <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isRequest).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isPublished" class="filterbtn btn btn-success"><i  class="fa fa-2 fa-square"  ng-class="{'fa-check-square':statusFilter==isPublished}"></i> Publi&eacute; <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isPublished).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isDraft" class="filterbtn btn btn-draft"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isDraft}"></i> Brouillons <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isDraft).length}}</span></button>
-                        <input type="text" ng-model="keywords" placeholder="Mot cl&eacute;" class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
+                        <input type="text" ng-model="keywords" placeholder="Mot clé" class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
                     </div>
 
                 </div>
@@ -68,8 +68,8 @@
                         <td>
                             <div class="btn-group document_buttons btn-group-sm" style="width:100px;" ng-show="record.workflowActivityStatus!='pending'">
                                 <button ng-show="showAddButton()" title="Dupliquer" type="button" class="btn btn-default" ng-click="askDuplicate(record)"><i class="fa fa-files-o"></i></button>
-                                <button title="Verrouill&eacute; pour l&rsquo;&eacute;dition" ng-show="!record.revoked && isRequest(record) && showAddButton()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-lock"></i></button>
-                                <button title="Demande d&rsquo;annulation" ng-show="!record.revoked && isRequest(record) && showAddButton() && isMyRecord(record)" type="button" class="btn btn-default" ng-click="askRecallWorkflowRequest(record)"><i class="fa fa-undo"></i></button><a translation-url  title="Modifier" ng-show="!record.revoked && !isRequest(record) && showAddButton()" type="button" class="btn btn-default" href="/register/{{record.type|urlSchemaShortName}}/{{record.identifier}}/edit"><i class="fa fa-edit"></i></a><button title="Supprimer" ng-show="!record.revoked && !isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
+                                <button title="Verrouillé pour l’édition" ng-show="!record.revoked && isRequest(record) && showAddButton()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-lock"></i></button>
+                                <button title="Demande d’annulation" ng-show="!record.revoked && isRequest(record) && showAddButton() && isMyRecord(record)" type="button" class="btn btn-default" ng-click="askRecallWorkflowRequest(record)"><i class="fa fa-undo"></i></button><a translation-url  title="Modifier" ng-show="!record.revoked && !isRequest(record) && showAddButton()" type="button" class="btn btn-default" href="/register/{{record.type|urlSchemaShortName}}/{{record.identifier}}/edit"><i class="fa fa-edit"></i></a><button title="Supprimer" ng-show="!record.revoked && !isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -152,7 +152,7 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note&nbsp;: Any pending draft will also be deleted"><span ng-if="!security.canDelete">Demander la suppression de ce fichier</span> <span ng-if="security.canDelete">Supprimer le fichier</span></button> 
+                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note : Any pending draft will also be deleted"><span ng-if="!security.canDelete">Demander la suppression de ce fichier</span> <span ng-if="security.canDelete">Supprimer le fichier</span></button> 
                                 </div>
                             </div>
                         </div>
