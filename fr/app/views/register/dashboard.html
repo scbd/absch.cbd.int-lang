@@ -1,7 +1,21 @@
 ﻿<div ng-controller="DashboardController" id="RegisterPage">
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
-    <style>.popover { margin-top: 3px; background-color: #d9534f !important; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .2); } .popover.right > .arrow { border-right-color: #999; border-right-color: rgba(0, 0, 0, .25); } .popover.right > .arrow:after { border-right-color: #d9534f; }</style><span register-top-menu></span><div class="register-content card card-1-notrans">
+    <style>
+        .popover {
+            margin-top: 3px;            
+            background-color: #d9534f !important;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .2);
+            }
+            .popover.right > .arrow {            
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
+            }
+            .popover.right > .arrow:after {            
+            border-right-color: #d9534f;
+            }
+    </style><span register-top-menu></span><div class="register-content card card-1-notrans">
         <div class="register-content-header bg-darkgrey color-white">
             <div style="padding:10px 10px;">
                 <h3>Tableau de bord <span class="helpinfoInline"><i class="fa fa-info-circle helpicon pull-right" ng-click="showInfo = !showInfo"></i></span></h3><!--help info----------------------------><div ng-if="showInfo" class="well well-help">

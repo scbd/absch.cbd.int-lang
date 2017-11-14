@@ -1,8 +1,57 @@
 ﻿<div ng-controller="CountryListController">
-	<style>table { border-collapse: collapse; } .tableContainer { margin: auto; } .fixed { top: 0; position: fixed; } .scrollMore { margin-top: 600px; } .up { cursor: pointer; } .table-hover > tbody > tr:hover > td { background-color: #FFF; } .letter { color: #999; } .letter-active { font-weight: bold; color: #111!important; } .evenly-spaced { display: flex; justify-content: space-between; } .zero { background-color: #DDD!important; } @media (max-width: 992px) { .sm-small { font-size: 10px; } }</style>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		
+		.tableContainer {
+			margin: auto;
+		}
+		
+		.fixed {
+			top: 0;
+			position: fixed;
+		}
+		
+		.scrollMore {
+			margin-top: 600px;
+		}
+		
+		.up {
+			cursor: pointer;
+		}
+		
+		.table-hover > tbody > tr:hover > td {
+			background-color: #FFF;
+		}
+		
+		.letter {
+			color: #999;
+		}
+		
+		.letter-active {
+			font-weight: bold;
+			color: #111!important;
+		}
+		
+		.evenly-spaced {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.zero {
+			background-color: #DDD!important;
+		}
+		
+		@media (max-width: 992px) {
+			.sm-small {
+				font-size: 10px;
+			}
+		}
+	</style>
 
 
-	<div id="Jumbotron" class="bg-texture-green color-black  hidden-xs" style="border-top:1px solid #555;border-bottom:2px solid #ddd;position:relative;height: 400px;" block-region activate="loadingMap"><span country-map></span></div>
+	<div id="Jumbotron" class="bg-texture-green color-black  hidden-xs" style="border-top:1px solid #555;border-bottom:2px solid #ddd;position:relative;height: 353px;" block-region activate="loadingMap"><span country-map></span></div>
 	<div block-region activate="loading" block-text=" Loading country details">
 		<div style="height:0px;width:0px;" ng-if="readyForExport">
 			<table id="forExport" style="height:0px;width:0px">
@@ -16,7 +65,7 @@
 						<th>IRCC</th>
 						<th>CP</th>
 						<th>CPC</th>
-						<th>NP</th>
+						<th>NR</th>
 					</tr>
 					<tr ng-repeat="country in list = (countries | filter:keyword | filter: hasStatus | orderBy:sortTermFilter:orderList) track by country.name.en">
 						<td>{{country.name|lstring:locale}}</td>
@@ -28,7 +77,7 @@
 						<td>{{country.schemas.absPermit ? country.schemas.absPermit : &quot;0&quot;}}</td>
 						<td>{{country.schemas.absCheckpoint ? country.schemas.absCheckpoint : &quot;0&quot;}}</td>
 						<td>{{country.schemas.absCheckpointCommunique ? country.schemas.absCheckpointCommunique : &quot;0&quot;}}</td>
-						<td>{{country.schemas.nationalreport ? country.schemas.nationalreport : &quot;0&quot;}}</td>		
+						<td>{{country.schemas.absNationalReport ? country.schemas.absNationalReport : &quot;0&quot;}}</td>		
 					<tr>
 
 			</table>	
@@ -55,7 +104,7 @@
                         <li><a translation-url  href="#" ng-click="sortTable('IRCC')">{{ &quot;IRCC&quot; | mapSchema |schemaNamePlural}} <!--<span class="badge">{{headerCount.absPermit}}</span>--></a></li>
                         <li><a translation-url  href="#" ng-click="sortTable('CPC')">{{ &quot;CPC&quot; | mapSchema | schemaNamePlural}} <!--<span class="badge">{{headerCount.absCheckpoint}}</span>--></a></li>
                         <li><a translation-url  href="#" ng-click="sortTable('CP')">{{ &quot;CP&quot; | mapSchema |schemaNamePlural}} <!--<span class="badge">{{headerCount.absCheckpointCommunique}}</span>--></a></li>
-                        <li><a translation-url  href="#" ng-click="sortTable('NR')">{{ &quot;NR&quot; | mapSchema |schemaNamePlural}} <!--<span class="badge">{{headerCount.nationalReport}}</span>--></a></li>
+                        <li><a translation-url  href="#" ng-click="sortTable('NR')">{{ &quot;NR&quot; | mapSchema |schemaNamePlural}} <!--<span class="badge">{{headerCount.absNationalReport}}</span>--></a></li>
                     </ul>
                     </div>
 
@@ -97,7 +146,7 @@
 				<div><span style="cursor:pointer;" ng-click="sortTable('CP')" data-toggle="tooltip" title="Points de contr&ocirc;le" data-container="body"><span id="cpCount" class="bold color-black">CP&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br> <span class="badge bg-black">{{total.absCheckpoint}}</span></span></div>
 				<div><span style="cursor:pointer;" ng-click="sortTable('CPC')" data-toggle="tooltip" title="Communiqu&eacute;s des points de contr&ocirc;le" data-container="body"><span id="cpcCount" class="bold color-black">CPC&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br> <span class="badge bg-black">{{total.absCheckpointCommunique}}</span></span></div>
 				<div><span style="cursor:pointer;" ng-click="sortTable('NR')" data-toggle="tooltip" title="Rapport national int&eacute;rimaire sur la mise en &oelig;uvre du Protocole de Nagoya"
-						data-container="body"><span id="nrCount" class="bold color-black">NR&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br> <span class="badge bg-black">{{total.nationalReport}}</span></span></div>
+						data-container="body"><span id="nrCount" class="bold color-black">NR&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br> <span class="badge bg-black">{{total.absNationalReport}}</span></span></div>
 			</div>
 		</div><!--end row--><div class="row linkWhite" style="margin:0;border-bottom:2px solid #DDD;padding:5px 0 10px 0;" ng-click="gotoCountryProfile(country.code)"
 			ng-repeat="country in list = (countries | filter:keyword | filter: hasStatus | orderBy:sortTermFilter:orderList) track by country.name.en">
@@ -109,7 +158,7 @@
 				<div style="margin-left:35px;text-transform:uppercase;font-weight:500;"><span ng-if="!country.isNPParty && !country.isNPInbetweenParty" class="color-grey" style="font-size:10px;margin-right:10px;">Non-Party</span> <span ng-if="country.isNPParty" class="color-party" style="font-size:10px;margin-right:10px;">Party to the Nagoya Protocol</span> <span ng-if="country.isNPInbetweenParty" class="color-inbetween" style="font-size:10px;margin-right:10px;">Ratified, not yet Party</span> <span ng-if="country.isNPSignatory" style="font-size:10px;margin-right:10px;">Signatory</span> <span ng-if="country.entryIntoForce" class="color-grey" style="font-size:10px;margin-right:20px;">Entry into force: {{country.entryIntoForce|formatDate}}</span></div>
 			</div>
 
-			<div class="col-md-6 evenly-spaced center-text xs-small sm-small hidden-xs" style="white-space:nowrap;margin-top:5px;"><span class="color-litegrey" style="margin-right:5px;">NFP <span class="label label-default"  ng-class="{'zero':!country.schemas.focalPoint, 'bg-green':country.schemas.focalPoint}" >{{country.schemas.focalPoint ? country.schemas.focalPoint : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CNA <span class="label label-default"  ng-class="{'zero':!country.schemas.authority, 'bg-green':country.schemas.authority}">{{country.schemas.authority ? country.schemas.authority : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">MSR <span class="label label-default"  ng-class="{'zero':!country.schemas.measure, 'bg-green':country.schemas.measure}">{{country.schemas.measure ? country.schemas.measure : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">NDB <span class="label label-default"  ng-class="{'zero':!country.schemas.database, 'bg-green':country.schemas.database}">{{country.schemas.database ? country.schemas.database : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">IRCC <span class="label label-default" ng-class="{'zero':!country.schemas.absPermit, 'bg-green':country.schemas.absPermit}">{{country.schemas.absPermit ? country.schemas.absPermit : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CP <span class="label label-default"   ng-class="{'zero':!country.schemas.absCheckpoint, 'bg-green':country.schemas.absCheckpoint}">{{country.schemas.absCheckpoint ? country.schemas.absCheckpoint : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CPC <span class="label label-default"  ng-class="{'zero':!country.schemas.absCheckpointCommunique, 'bg-green':country.schemas.absCheckpointCommunique}">{{country.schemas.absCheckpointCommunique ? country.schemas.absCheckpointCommunique : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:0px;">NR <span class="label label-default"  ng-class="{'zero':!country.schemas.nationalreport, 'bg-green':country.schemas.nationalreport}">{{country.schemas.nationalreport ? country.schemas.nationalreport : &quot;0&quot;}}</span></span></div>
+			<div class="col-md-6 evenly-spaced center-text xs-small sm-small hidden-xs" style="white-space:nowrap;margin-top:5px;"><span class="color-litegrey" style="margin-right:5px;">NFP <span class="label label-default"  ng-class="{'zero':!country.schemas.focalPoint, 'bg-green':country.schemas.focalPoint}" >{{country.schemas.focalPoint ? country.schemas.focalPoint : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CNA <span class="label label-default"  ng-class="{'zero':!country.schemas.authority, 'bg-green':country.schemas.authority}">{{country.schemas.authority ? country.schemas.authority : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">MSR <span class="label label-default"  ng-class="{'zero':!country.schemas.measure, 'bg-green':country.schemas.measure}">{{country.schemas.measure ? country.schemas.measure : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">NDB <span class="label label-default"  ng-class="{'zero':!country.schemas.database, 'bg-green':country.schemas.database}">{{country.schemas.database ? country.schemas.database : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">IRCC <span class="label label-default" ng-class="{'zero':!country.schemas.absPermit, 'bg-green':country.schemas.absPermit}">{{country.schemas.absPermit ? country.schemas.absPermit : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CP <span class="label label-default"   ng-class="{'zero':!country.schemas.absCheckpoint, 'bg-green':country.schemas.absCheckpoint}">{{country.schemas.absCheckpoint ? country.schemas.absCheckpoint : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:5px;">CPC <span class="label label-default"  ng-class="{'zero':!country.schemas.absCheckpointCommunique, 'bg-green':country.schemas.absCheckpointCommunique}">{{country.schemas.absCheckpointCommunique ? country.schemas.absCheckpointCommunique : &quot;0&quot;}}</span></span> <span class="color-litegrey" style="margin-right:0px;">NR <span class="label label-default"  ng-class="{'zero':!country.schemas.absNationalReport, 'bg-green':country.schemas.absNationalReport}">{{country.schemas.absNationalReport ? country.schemas.absNationalReport : &quot;0&quot;}}</span></span></div>
 		</div>
 
 

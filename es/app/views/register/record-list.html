@@ -1,6 +1,6 @@
 ﻿<div id="SubmitPage" ng-controller="registerRecordList">
     <link href="/app/css/register.css" rel="stylesheet">
-    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span> <br><div class="card card-1-notrans"><span record-type-header></span><div class="register-content-content">
+    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span> <br><div class="card card-1-notrans bg-white"><span record-type-header></span><div class="register-content-content">
             <div ng-show="msg" class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
             <div class="row">
@@ -152,7 +152,7 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Nota: tambi&eacute;n se borrar&aacute; cualquier borrador pendiente"><span ng-if="!security.canDelete">Solicitar borrar este registro</span> <span ng-if="security.canDelete">Borrar el registro</span></button> 
+                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Nota: también se borrará cualquier borrador pendiente"><span ng-if="!security.canDelete">Solicitar borrar este registro</span> <span ng-if="security.canDelete">Borrar el registro</span></button> 
                                 </div>
                             </div>
                         </div>

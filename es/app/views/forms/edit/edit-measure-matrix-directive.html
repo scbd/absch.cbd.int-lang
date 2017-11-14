@@ -1,5 +1,91 @@
 ﻿<div>
-    <style>ul li { list-style: none; } #measureMatrix { padding-left: 0px } .measureChecked { /*font-weight: bold;*/ } .boldText { font-weight: bold; } .normalText { font-weight: normal!important; } .paddingleft0 { /*background-color: #eee;*/ } .bg-main { background-color: #eee; } .btn-sm { font-size: 10px; } .whiteBG { background-color: white; } .btop { border-top: 1px solid #ddd; } .spacing30 { margin-left: 30px!important; } .padding-left-120 { padding-left: 120px!important; } #scopeTableRow #filterText { display: none; } #scopeAddRow td, #scopeAddRow tr { border: 0!important; } .matrix-btn { float: left; font-size: 12px!important; border: 0!important; } #measureMatrix label { margin-bottom: 0px; } .measure-matrix-error span, span.measure-matrix-error{ color:#a94442; } /* .measure-matrix-error .form-control, */ .measure-matrix-error .form-control.ng-invalid{ border-color : #a94442; } .measure-matrix-error .others tr:last-child .form-control.ng-invalid{ border : 1px solid #ccc; } .measure-matrix-error .others tr:last-child span{ color : 1px solid #ccc; } #measureMatrix .table-hover tr, .table-hover:hover { background-color: #fff; } #measureMatrix .table-hover>tbody>tr:hover{ background-color: #f5f5f5; }</style>
+    <style>
+        ul li {
+            list-style: none;
+        }
+        
+        #measureMatrix {
+            padding-left: 0px
+        }
+        
+        .measureChecked {
+            /*font-weight: bold;*/
+        }
+        
+        .boldText {
+            font-weight: bold;
+        }
+        
+        .normalText {
+            font-weight: normal!important;
+        }
+        
+        .paddingleft0 {
+            /*background-color: #eee;*/
+        }
+        
+        .bg-main {
+            background-color: #eee;
+        }
+        
+        .btn-sm {
+            font-size: 10px;
+        }
+        
+        .whiteBG {
+            background-color: white;
+        }
+        
+        .btop {
+            border-top: 1px solid #ddd;
+        }
+        
+        .spacing30 {
+            margin-left: 30px!important;
+        }
+        
+        .padding-left-120 {
+            padding-left: 120px!important;
+        }
+        
+        #scopeTableRow #filterText {
+            display: none;
+        }
+        
+        #scopeAddRow td,
+        #scopeAddRow tr {
+            border: 0!important;
+        }
+        
+        .matrix-btn {
+            float: left;
+            font-size: 12px!important;
+            border: 0!important;
+        }
+        
+        #measureMatrix label {
+            margin-bottom: 0px;
+        }
+        .measure-matrix-error span, span.measure-matrix-error{
+            color:#a94442;
+        }
+         /* .measure-matrix-error .form-control,   */
+        .measure-matrix-error .form-control.ng-invalid{
+            border-color : #a94442;
+        }
+        .measure-matrix-error .others tr:last-child .form-control.ng-invalid{
+            border : 1px solid #ccc;
+        }
+        .measure-matrix-error .others tr:last-child span{
+            color : 1px solid #ccc;
+        }
+        #measureMatrix .table-hover tr, .table-hover:hover {
+            background-color: #fff;
+        }
+        #measureMatrix .table-hover>tbody>tr:hover{
+            background-color: #f5f5f5;
+        }
+    </style>
     <div id="measureMatrix">
         <div>
             <table style="width:100%" cellspacing="0" cellpadding="0">
@@ -48,7 +134,7 @@
                                         <table class="table" style="padding:0;margin:0 0 15px 0;width:auto!important; border:0;">
                                             <tr>
                                                 <td style="border:0;">
-                                                    <div km-select multiple name="grTypes" ng-model="geneticResource.types" items="options.grTypes()" placeholder="Seleccione tipos de recursos gen&eacute;ticos" api="grTypesApi" show-description="true"></div><span class="bold" style="margin: 0 10px;">encontrado en</span><div km-select multiple name="grArea" ng-model="geneticResource.areas" items="options.grAreas()" placeholder="S&iacute;rvase seleccionar zonas de acceso" api="grAreasApi" show-description="true"></div>
+                                                    <div km-select multiple name="grTypes" ng-model="geneticResource.types" items="options.grTypes()" placeholder="Seleccione tipos de recursos genéticos" api="grTypesApi" show-description="true"></div><span class="bold" style="margin: 0 10px;">encontrado en</span><div km-select multiple name="grArea" ng-model="geneticResource.areas" items="options.grAreas()" placeholder="Sírvase seleccionar zonas de acceso" api="grAreasApi" show-description="true"></div>
 
                                                 </td>
                                                 <td style="border:0;">
@@ -65,7 +151,7 @@
                                                     <td style="vertical-align:middle"><span class="bold" style="margin: 0 20px;" ng-show="element.types && element.areas"><i>encontrado en</i></span></td>
                                                     <td style="vertical-align:middle"><span ng-repeat="area in element.areas">{{area|term:locale}} <span ng-if="!$last">,</span></span></td>
                                                     <td class="text-right" style="width:253px;text-align:right;vertical-align:middle">
-                                                        <div class="pull-right" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="por ej.: Art&iacute;culo 14.2 o Secci&oacute;n I">
+                                                        <div class="pull-right" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="por ej.: Artículo 14.2 o Sección I">
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -100,7 +186,7 @@
                                 <td style="width:250px;text-align:right;vertical-align:middle">
                                     <label for="sec_B8A150E054154AD3AD97856ABD485E90" style="width:0px;height:0px;display:inline"><span style="display:none" >Por favor, ingrese todas las referencias a art&iacute;culos pertinentes relacionados con conocimientos tradicionales asociados a recursos gen&eacute;ticos.</span></label>
                                     <div ng-show="identifiers['B8A150E054154AD3AD97856ABD485E90']" km-textbox-ml name="sec_B8A150E054154AD3AD97856ABD485E90"
-                                    ng-model="sections['B8A150E054154AD3AD97856ABD485E90']" locales="locales" required="identifiers['B8A150E054154AD3AD97856ABD485E90']" placeholder="por ej.: Art&iacute;culo 14.2 o Secci&oacute;n I">
+                                    ng-model="sections['B8A150E054154AD3AD97856ABD485E90']" locales="locales" required="identifiers['B8A150E054154AD3AD97856ABD485E90']" placeholder="por ej.: Artículo 14.2 o Sección I">
                                     </div>
                                 </td>
                             </tr>
@@ -125,7 +211,7 @@
                                 </td>
                                 <td style="width:250px;text-align:right;vertical-align:middle" id="sec_2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD">
                                     <label for="sec_2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD" style="width:0px;height:0px;display:inline"><span style="display:none">Por favor, ingrese todas las referencias a art&iacute;culos pertinentes relacionados con disposiciones sobre alcance temporal.</span></label>
-                                    <div ng-show="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" km-textbox-ml ng-model="sections['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" locales="locales" required="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" placeholder="por ej.: Art&iacute;culo 14.2 o Secci&oacute;n I">
+                                    <div ng-show="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" km-textbox-ml ng-model="sections['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" locales="locales" required="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" placeholder="por ej.: Artículo 14.2 o Sección I">
                                     </div>
                                 </td>
                             </tr>
@@ -183,7 +269,7 @@
                     <td style="width:250px;text-align:right;vertical-align:middle" id="sec_{{term.identifier}}">
                         <label for="sec_{{term.identifier}}" style="width:0px;height:0px;display:inline"><span style="display:none">{{term.title||term.name | lstring:locale}} Por favor, ingrese todas las referencias a los art&iacute;culos pertinentes.</span></label>
                         <div ng-show="term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')<0 && ((identifiers[term.identifier] && (term.narrowerTerms.length||0) == 0) || (scopeOfMeasureTerm == term.identifier && identifiers[term.identifier]==false))" km-textbox-ml
-                            ng-model="sections[term.identifier]" required locales="locales" required="identifiers[term.identifier]" placeholder="por ej.: Art&iacute;culo 14.2 o Secci&oacute;n I"></div>
+                            ng-model="sections[term.identifier]" required locales="locales" required="identifiers[term.identifier]" placeholder="por ej.: Artículo 14.2 o Sección I"></div>
                     </td><!--ng-class="{'required':!sections[term.identifier]}"--></tr>
 
                 <tr ng-if="term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')>=0 && identifiers[term.identifier]">
@@ -208,7 +294,7 @@
                     </div>
                 </td>
                 <td>
-                    <div class="pull-right" style="max-width:250px;width:250px" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="por ej.: Art&iacute;culo 14.2 o Secci&oacute;n I" ng-change="appendEmptyOther(otherElements)">
+                    <div class="pull-right" style="max-width:250px;width:250px" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="por ej.: Artículo 14.2 o Sección I" ng-change="appendEmptyOther(otherElements)">
                     </div>
                 </td>
             </tr>

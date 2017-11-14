@@ -1,5 +1,13 @@
 ﻿<div>
-    <style>.navbar-nav>li { float: left; } .helpOn{color:#FFF} .helpOff{color:#333;} /*.helpinfo{display:{{showHelp ? block : none}};}*/ #PortalLinks1 .icon{margin-top:2px;}</style>
+    <style>
+            .navbar-nav>li {
+                float: left;
+            }
+            .helpOn{color:#FFF}
+            .helpOff{color:#333;}
+            /*.helpinfo{display:{{showHelp ? block : none}};}*/
+            #PortalLinks1 .icon{margin-top:2px;}
+    </style>
     <nav id="PortalLinks1" class="navbar navbar-links navbar-default navbar-static-top" >
         <div class="container-fluid container-links color-grey">
             <div class="navbar-header">
@@ -12,11 +20,12 @@
                     <div class="bold color-orange1 hidden-xs" ng-if="!production_env">
                         <span ng-show="development_env"> DEVELOPMENT</span>
                         <span ng-show="training_env"> TRAINING</span>
-                    </div> --><li ><a translation-url  ng-href="."><strong class="color-white visible-xs ">Centro de Intercambio de Informaci&oacute;n sobre APB</strong><strong class="color-white visible-sm visible-md visible-lg"><i class="fa fa-home"></i></strong></a></li>
-                    <li><a translation-url  ng-href="about"><i class="icon fa fa-question-circle  visible-xs "></i><span class="hidden-xs ">Acerca del Centro de Intercambio de Informaci&oacute;n sobre APB</span></a></li>
+                    </div> --><li ><a translation-url  ng-href="."><strong class="color-white visible-xs ">CII-APB</strong><strong class="color-white visible-sm visible-md visible-lg"><i class="fa fa-home"></i></strong></a></li>
+                    <li><a translation-url  ng-href="about"><i class="icon fa fa-question-circle  visible-xs "></i><span class="hidden-xs ">Acerca del CII-APB</span></a></li>
                     <li><a translation-url  ng-href="search"><i class="icon fa fa-search visible-xs "></i><span class="hidden-xs ">Buscar</span></a></li>
-                    <li><a translation-url  ng-href="register"><i class="icon fa fa-pencil-square-o visible-xs"></i><span class="hidden-xs ">Submit</span></a></li>
-                    <li><a translation-url  ng-href="countries"><i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs">Perfiles de pa&iacute;ses</span></a></li><!--<li class="last pull-right">
+                    <li><a translation-url  ng-href="register"><i class="icon fa fa-pencil-square-o visible-xs"></i><span class="hidden-xs ">Enviar</span></a></li>
+                    <li><a translation-url  ng-href="countries"><i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs">Perfiles de pa&iacute;ses</span></a></li>
+                      <li><a translation-url  ng-href="reports"><i class="icon fa fa-bar-chart visible-xs"></i><span class="hidden-xs">Informes nacionales</span></a></li><!--<li class="last pull-right">
                         <a translation-url  ng-click="toggleHelp();"> <i class="fa fa-info-circle" ng-class="{'helpOn':showHelp ,'helpOff':!showHelp }"></i> </i>
                         </a>
                     </li>--><li class="pull-right" ng-if="training_env||development_env"><a translation-url  href="/forums" ng-class="{'link-active' : getClass('/forums')}"><i class="fa fa-comments"></i><span class="hidden-xs hidden-sm">&nbsp;Foros</span></a></li>

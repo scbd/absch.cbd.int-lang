@@ -42,7 +42,12 @@
 							</div>
 						</section>
 						<div>
-							<style>input.ng-invalid-url, input.ng-invalid-email { background-color: #f0ad4e; }</style>
+							<style>
+								input.ng-invalid-url,
+								input.ng-invalid-email {
+									background-color: #f0ad4e;
+								}
+							</style>
 
 							<div ng-show="document.type=='person'">
 
@@ -57,13 +62,13 @@
 									</div>
 
 									<div class="col-md-8 col-sm-8 col-xs-12">
-										<div class="km-control-group" name="contact_firstName" ng-required="!form.contact_firstNameX.$valid" caption="Pr&eacute;nom" required>
+										<div class="km-control-group" name="contact_firstName" ng-required="!form.contact_firstNameX.$valid" caption="Prénom" required>
 											<input type="text" class="form-control" name="contact_firstNameX" ng-model="document.firstName" ng-required="document.type=='person'" />
 										</div>
 									</div>
 
 									<div class="col-md-4 col-sm-4 col-xs-12">
-										<div class="km-control-group" name="contact_middleName" caption="Deuxi&egrave;me pr&eacute;nom">
+										<div class="km-control-group" name="contact_middleName" caption="Deuxième prénom">
 											<input type="text" class="form-control" name="contact_middleName" ng-model="document.middleName" />
 										</div>
 									</div>
@@ -87,7 +92,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="km-control-group" name="contact_department" caption="Section / division / unit&eacute;">
+										<div class="km-control-group" name="contact_department" caption="Section / division / unité">
 											<div km-textbox-ml name="contact_department" ng-model="document.department" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -122,12 +127,12 @@
 
 								<div class="row">
 									<div class="col-md-8">
-										<div class="km-control-group" name="contact_organizationType" caption="Type d&apos;organisation">
+										<div class="km-control-group" name="contact_organizationType" caption="Type d'organisation">
 											<div km-select name="contact_organizationType" ng-model="document.organizationType" items="options.organizationTypes()"></div>
 										</div>
 									</div>
 									<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
-										<div class="km-control-group" name="contact_organizationTypeName" caption="Autre type d&rsquo;organisation">
+										<div class="km-control-group" name="contact_organizationTypeName" caption="Autre type d’organisation">
 											<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="exemple: SCDB" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -148,13 +153,13 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="km-control-group" name="contact_city" caption="Ville" >
-											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="exemple: Montr&eacute;al :"></div>
+											<div km-textbox-ml name="contact_city" ng-model="document.city" locales="document.header.languages" placeholder="exemple: Montréal :"></div>
 										</div>
 									</div>
 
 									<div class="col-md-6">
-										<div class="km-control-group" name="contact_state" caption="&Eacute;tat ou province">
-											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="exemple: Qu&eacute;bec"></div>
+										<div class="km-control-group" name="contact_state" caption="État ou province">
+											<div km-textbox-ml name="contact_state" ng-model="document.state" locales="document.header.languages" placeholder="exemple: Québec"></div>
 										</div>
 									</div>
 								</div>
@@ -179,14 +184,14 @@
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_phones" caption="Num&eacute;ros de t&eacute;l&eacute;phone">
+									<div class="km-control-group" name="contact_phones" caption="Numéros de téléphone">
 										<div class="help-info">Veuillez utiliser le format suivant&nbsp;: + (code du pays) (code de la ville) (num&eacute;ro de t&eacute;l&eacute;phone) (poste, s&apos;il y a lieu&nbsp;.</div>
 										<div km-inputtext-list name="contact_phones" ng-model="document.phones" placeholder="exemple: +1 514.288.2220"></div>
 									</div>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_faxes" caption="T&eacute;l&eacute;copieur&nbsp;:">
+									<div class="km-control-group" name="contact_faxes" caption="Télécopieur :">
 										<div class="help-info">Veuillez utiliser le format suivant&nbsp;: + (code du pays) (code de la ville) (num&eacute;ro de t&eacute;l&eacute;phone) (poste, s&apos;il y a lieu&nbsp;.</div>
 										<div km-inputtext-list name="contact_faxes" ng-model="document.faxes" placeholder="exemple: +1 514.288.6588"></div>
 									</div>
@@ -195,7 +200,7 @@
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_emails" caption="courriels&nbsp;:" required>
+									<div class="km-control-group" name="contact_emails" caption="courriels :" required>
 										<div km-inputtext-list name="contact_emails" type="email" ng-model="document.emails" placeholder="exemple: secretariat@cbd.int"></div>
 									</div>
 								</div>

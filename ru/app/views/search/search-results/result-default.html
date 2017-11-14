@@ -1,4 +1,8 @@
-﻿<div style="padding:0!important;margin:0 0 20px 0!important;"><a translation-url  ng-show="showDoc" style="z-index:999999;width:100%;padding:0!important;margin:0!important;" ng-click="showDoc=false"><span class="pull-right bold" aria-hidden="true" style="z-index:999999;color:#FFF;font-size:20px;padding-right:10px;position:relative;top:3px;cursor:pointer;">&times;</span></a><div ng-if="showDoc" style="padding:5px 0px 10px 0px!important;margin:0 0 0 0!important;">
+﻿<div style="padding:0!important;margin:0 0 20px 0!important;">
+
+        <div class="pull-right" style="padding-right:15px;position:relative;top:5px;"  ng-show="showDoc" ><span style="color:#ddd" >|</span> &nbsp; <a translation-url class="bold"  style="position:relative;top:2px;color:#FFF;font-size:20px;cursor:pointer;z-index:99999999;width:100%;" ng-click="showDoc=false">&times;</a></div>
+
+    <div ng-if="showDoc" style="padding:5px 0px 10px 0px!important;margin:0 0 0 0!important;">
         <record-loader class="card card-3" api="api.recordLoaderApi" show-details="false" hide-buttons="true" link-target="_new"></record-loader>
     </div>
     <div id="record1" class="recordDefault card card-1" style="padding:0!important;margin:0!important;">
@@ -19,7 +23,7 @@
                     <li class="hidden-xs" ng-if="doc.rec_meta2 && doc.schema_s !=='absPermit' && type != referenceRecords" id="meta2"><span ng-if="doc.schema_s ==='absCheckpointCommunique'" style="color:#666!important;">ИСТОЧНИК:</span> <span ng-repeat="meta in doc.rec_meta2">{{meta}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></li>
                     <li class="hidden-xs" ng-if="doc.rec_meta3 && type != referenceRecords" id="meta3"><span ng-repeat="meta in doc.rec_meta3" ng-class="{'color-red':meta==='Revoked'}">{{meta}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></li>
 
-                    <li ng-if="doc.schema_s !=='meeting'"><span class="last-span">{{doc.rec_date | formatDate}}</span></li>
+                    <li ng-if="doc.schema_s !=='meeting'"><span class="last-span" ng-if="type!='scbdRecords'">{{doc.rec_date | formatDate}}</span> <span class="last-span" ng-if="type=='scbdRecords'">{{doc.rec_creationDate | formatDate}}</span></li>
                      <li ng-if="doc.schema_s =='meeting'"><span class="last-span">{{doc.startDate_dt | moment:&apos;utc&apos; | formatDate}} - {{doc.endDate_dt | moment:&apos;utc&apos; | formatDate}} | {{doc.eventCity_s}} | {{doc.eventCountry_EN_t}}</span></li>
                 </ul>
             </div>

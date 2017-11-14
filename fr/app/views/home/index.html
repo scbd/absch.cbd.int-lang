@@ -4,30 +4,30 @@
     <div smooth-scroll duration="100" offset="200"></div>
 
 
-    <div id="Jumbotron" style="border-top:1px solid #555;border-bottom:2px solid #ddd;">
+    <div id="Jumbotron" style="border-top:1px solid #555;border-bottom:2px solid #ddd;" >
        <home-map></home-map>
     </div>
 
-    <div style="padding:20px">
-
-        <div class="container-fluid" style="padding:0;">
+    <div>
+        
+        <div class="container-fluid">
             <home-country-dashboard></home-country-dashboard>
         </div>
 
         <div class="container-fluid" style="margin-top:50px;">
-            <h3 style="padding-bottom:0;margin-bottom:0;">&Agrave; propos du Protocole</h3>
-            <div style="padding-left:15px;border-top:1px solid #BBB;"></div>
+            <h4 style="padding-bottom:5px;margin-bottom:0;">&Agrave; propos du Protocole</h4>
+            <div style="border-top:1px solid #DDD;"></div>
             <div class="row" style="padding-top:20px;">
                 <div class="col-md-8">
-                    <div class="home-col">Le Protocole de Nagoya sur l&apos;acc&egrave;s aux ressources g&eacute;n&eacute;tiques et le partage juste et &eacute;quitable des avantages d&eacute;coulant de leur utilisation &agrave; la Convention sur la diversit&eacute; biologique est un accord international visant &agrave; partager les avantages d&eacute;coulant de l&apos;utilisation des ressources g&eacute;n&eacute;tiques d&apos;une mani&egrave;re juste et &eacute;quitable, notamment gr&acirc;ce &agrave; un acc&egrave;s satisfaisant aux ressources g&eacute;n&eacute;tiques et &agrave; un transfert appropri&eacute; des technologies pertinentes, compte tenu de tous les droits sur ces ressources et technologies et gr&acirc;ce &agrave; un financement ad&eacute;quat, contribuant ainsi &agrave; la conservation de la diversit&eacute; biologique et &agrave; l&rsquo;utilisation durable de ses &eacute;l&eacute;ments constitutifs. <a translation-url  href="http://www.cbd.int/abs"><i class="fa fa-forward"></i> Pour en savoir davantage : www.cbd.int/abs</a></div><br></div>
+                    <div class="home-col">Le Protocole de Nagoya sur l&apos;acc&egrave;s aux ressources g&eacute;n&eacute;tiques et le partage juste et &eacute;quitable des avantages d&eacute;coulant de leur utilisation &agrave; la Convention sur la diversit&eacute; biologique est un accord international visant &agrave; partager les avantages d&eacute;coulant de l&apos;utilisation des ressources g&eacute;n&eacute;tiques d&apos;une mani&egrave;re juste et &eacute;quitable, notamment gr&acirc;ce &agrave; un acc&egrave;s satisfaisant aux ressources g&eacute;n&eacute;tiques et &agrave; un transfert appropri&eacute; des technologies pertinentes, compte tenu de tous les droits sur ces ressources et technologies et gr&acirc;ce &agrave; un financement ad&eacute;quat, contribuant ainsi &agrave; la conservation de la diversit&eacute; biologique et &agrave; l&rsquo;utilisation durable de ses &eacute;l&eacute;ments constitutifs. <a translation-url  href="http://www.cbd.int/abs"><i class="fa fa-chevron-circle-right"></i> Pour en savoir davantage : www.cbd.int/abs</a></div><br></div>
 
                 <div class="col-md-4">
                     <div class="home-col">
-                        <div class="text-center" ng-show="entryintoforce">
+                        <div class="text-center " ng-show="entryintoforce">
                             <div class="row" >
-                                <div  class="col-xs-4 bg-green"><span class="color-white" style="font-weight:bold; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{yearsSinceEntry}}</span> <br> <span style="color:#EEE;text-transform: uppercase;font-weight:bold;font-size:14px;">ann&eacute;e<span ng-if="yearsSinceEntry > 1">s</span></span></div>
-                                <div  class="col-xs-4 bg-green" style="border-left:3px solid #eee;; border-right:3px solid #eee;"><span class="color-white" style="font-weight:bold; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{monthsSinceEntry}}</span> <br> <span style="color:#EEE;text-transform: uppercase;font-weight:bold;font-size:14px;">mois<span ng-if="monthsSinceEntry > 1"></span></span></div>
-                                <div  class="col-xs-4 bg-green"><span class="color-white" style="font-weight:bold; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{daysSinceEntry}}</span> <br> <span style="color:#EEE;text-transform: uppercase;font-weight:bold;font-size:14px;">jour<span ng-if="daysSinceEntry > 1">s</span></span></div>
+                                <div  class="col-xs-4 bg-green"><span class="color-white" style="font-weight:550; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{yearsSinceEntry}}</span> <br> <span style="color:#ddd;text-transform: uppercase;font-weight:bold;font-size:14px;">ann&eacute;e<span ng-if="yearsSinceEntry != 1">s</span></span></div>
+                                <div  class="col-xs-4 bg-green" style="border-left:3px solid #eee;; border-right:3px solid #eee;"><span class="color-white" style="font-weight:550; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{monthsSinceEntry}}</span> <br> <span style="color:#ddd;text-transform: uppercase;font-weight:bold;font-size:14px;">mois<span ng-if="monthsSinceEntry != 1"></span></span></div>
+                                <div  class="col-xs-4 bg-green" ><span class="color-white" style="font-weight:550; font-size:32px;text-shadow: 0 1px 2px rgba(0, 0, 0, .6);">{{daysSinceEntry}}</span> <br> <span style="color:#ddd;text-transform: uppercase;font-weight:bold;font-size:14px;">jour<span ng-if="daysSinceEntry != 1">s</span></span></div>
                             </div>
                             <div style="color:#666;text-transform:uppercase;font-weight:bold;font-size:14px;">Depuis l&apos;entr&eacute;e en vigueur du Protocole</div>
                         </div>

@@ -21,7 +21,7 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="title" caption="Denominaci&oacute;n">
+								<div class="km-control-group" required name="title" caption="Denominación">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -49,7 +49,7 @@
 						</div>
 						<div class="row" ng-if="isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" name="formatDetails" caption="Informaci&oacute;n acerca de los formatos">
+								<div class="km-control-group" name="formatDetails" caption="Información acerca de los formatos">
 									<div class="help-info">La informaci&oacute;n acerca de los formatos puede ser utilizada para aportar m&aacute;s informaci&oacute;n relacionada con el formato de los adjuntos, incluidas sus dimensiones (por ejemplo, tama&ntilde;o, n&uacute;mero de p&aacute;ginas o duraci&oacute;n) o el software, hardware u otro equipo necesario para que puedan verse o funcionar (por ejemplo, &quot;Se requiere Acrobat Reader para su visualizaci&oacute;n&quot;).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages" ></div>
 								</div>
@@ -58,7 +58,7 @@
 
 						<div class="row">
 							<div class="col-md-12" ng-if="isResource">
-								<div class="km-control-group" required name="purpose" caption="S&iacute;rvase indicar el prop&oacute;sito principal del recurso">
+								<div class="km-control-group" required name="purpose" caption="Sírvase indicar el propósito principal del recurso">
                                    <div km-select multiple  required name="purpose" ng-model="document.purpose" items="options.purposes()" show-description="true"></div>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 
 						<div class="row" ng-if="isResource && IsCapacityBuilding()">
 							<div class="col-md-12">
-								<div class="km-control-group" name="expertiseLevel" caption="Nivel del contenido o nivel de conocimientos/conocimientos especializados del p&uacute;blico destinatario del recurso">
+								<div class="km-control-group" name="expertiseLevel" caption="Nivel del contenido o nivel de conocimientos/conocimientos especializados del público destinatario del recurso">
 									<div km-select name="expertiseLevel" ng-model="document.expertiseLevel" items="options.expertiseLevels()"></div>
 								</div>
 							</div>
@@ -90,7 +90,7 @@
 									
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="organizations" caption="Organizaci&oacute;n(es) a cargo de la autor&iacute;a">
+								<div class="km-control-group" name="organizations" caption="Organización(es) a cargo de la autoría">
 									<field-embed-contact multiple ng-model="document.organizations" organization-only locales="document.header.languages" caption="Add organizations »">
 								</div>
 							</div>
@@ -98,8 +98,8 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="publicationYear" caption="A&ntilde;o de publicaci&oacute;n">
-									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+								<div class="km-control-group" required name="publicationYear" caption="Año de publicación">
+									<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear" convert-to-number>&gt;<option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 									</select>
 								</div>
 							</div>
@@ -125,7 +125,7 @@
 						
 						<div class="row" ng-if="!isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" name="formatDetails" caption="Informaci&oacute;n acerca de los formatos">
+								<div class="km-control-group" name="formatDetails" caption="Información acerca de los formatos">
 									<div class="help-info">La informaci&oacute;n acerca de los formatos puede ser utilizada para aportar m&aacute;s informaci&oacute;n relacionada con el formato de los adjuntos, incluidas sus dimensiones (por ejemplo, tama&ntilde;o, n&uacute;mero de p&aacute;ginas o duraci&oacute;n) o el software, hardware u otro equipo necesario para que puedan verse o funcionar (por ejemplo, &quot;Se requiere Acrobat Reader para su visualizaci&oacute;n&quot;).</div>
 									<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 								</div>
@@ -160,14 +160,14 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group"  name="summary" caption="Resumen (m&aacute;ximo 300 palabras)">
+								<div class="km-control-group"  name="summary" caption="Resumen (máximo 300 palabras)">
 									<div km-textbox-ml ng-model="document.summary"  rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="regions" caption="Pa&iacute;s(es), grupo(s) regional(es) o econ&oacute;mico(s) relacionado(s) con el recurso">
+								<div class="km-control-group" name="regions" caption="País(es), grupo(s) regional(es) o económico(s) relacionado(s) con el recurso">
 									<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple
 									placeholder="Select a country(ies) and/or region(s)..."></div>
 								</div>
@@ -175,7 +175,7 @@
 						</div>
 						<div class="row" ng-if="isResource">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="aichiTargets" caption="Meta(s) de Aichi para la Diversidad Biol&oacute;gica relacionada(s)">
+								<div class="km-control-group" required name="aichiTargets" caption="Meta(s) de Aichi para la Diversidad Biológica relacionada(s)">
 									<div km-term-check name="aichiTargets" required ng-model="document.aichiTargets" terms="options.aichiTargets()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -187,7 +187,7 @@
 
                         <div class="row" ng-if="isMcc">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="mccKeywords" required caption="S&iacute;rvase seleccionar las palabras clave pertinentes para describir el contenido del c&oacute;digo de conducta, las directrices y las mejores pr&aacute;cticas y/o est&aacute;ndares que habr&aacute;n de presentarse">
+								<div class="km-control-group" name="mccKeywords" required caption="Sírvase seleccionar las palabras clave pertinentes para describir el contenido del código de conducta, las directrices y las mejores prácticas y/o estándares que habrán de presentarse">
 									<div km-term-check name="mccKeywords" required ng-model="document.mccKeywords" terms="options.mccKeywords()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -195,7 +195,7 @@
 
 						<div class="row" ng-if="(isResource && IsLiterature() && IsTarget16()) || !isResource">
 							<div class="col-xs-12">
-								<div class="km-control-group" required name="absSubjects" caption="&Aacute;rea(s) tem&aacute;tica(s)">
+								<div class="km-control-group" required name="absSubjects" caption="Área(s) temática(s)">
 									<div km-term-check name="absSubjects" required ng-model="document.absSubjects" terms="options.absSubjects()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -203,7 +203,7 @@
 
 						<div class="row" ng-if="IsCapacityBuilding() && IsTarget16()">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="absKeyAreas" caption="&Aacute;reas clave y medidas estrat&eacute;gicas para la creaci&oacute;n y el desarrollo de capacidad">
+								<div class="km-control-group" required name="absKeyAreas" caption="Áreas clave y medidas estratégicas para la creación y el desarrollo de capacidad">
                                     <div class="help-info">Las &aacute;reas clave se determinan en el marco estrat&eacute;gico para la creaci&oacute;n y el desarrollo de capacidad a fin de brindar asistencia para la aplicaci&oacute;n efectiva del Protocolo de Nagoya (decisi&oacute;n NP-1/8, anexo I)</div>
 									<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 								</div>
@@ -217,7 +217,7 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
+								<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
 									<div class="help-block">Por favor, utilice este campo para proporcionar cualquier otra informaci&oacute;n pertinente que no se haya podido incluir en otro lugar del registro.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>

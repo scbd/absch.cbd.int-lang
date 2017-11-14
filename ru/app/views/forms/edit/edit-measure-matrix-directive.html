@@ -151,7 +151,7 @@
                                                     <td style="vertical-align:middle"><span class="bold" style="margin: 0 20px;" ng-show="element.types && element.areas"><i>найдено в</i></span></td>
                                                     <td style="vertical-align:middle"><span ng-repeat="area in element.areas">{{area|term:locale}} <span ng-if="!$last">,</span></span></td>
                                                     <td class="text-right" style="width:253px;text-align:right;vertical-align:middle">
-                                                        <div class="pull-right" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="например: статья&nbsp;14.2 или раздел I">
+                                                        <div class="pull-right" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="например: статья 14.2 или раздел I">
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -186,7 +186,7 @@
                                 <td style="width:250px;text-align:right;vertical-align:middle">
                                     <label for="sec_B8A150E054154AD3AD97856ABD485E90" style="width:0px;height:0px;display:inline"><span style="display:none" >Укажите все ссылки на соответствующие статьи, имеющие отношение к традиционным знаниям, связанным с генетическими ресурсами.</span></label>
                                     <div ng-show="identifiers['B8A150E054154AD3AD97856ABD485E90']" km-textbox-ml name="sec_B8A150E054154AD3AD97856ABD485E90"
-                                    ng-model="sections['B8A150E054154AD3AD97856ABD485E90']" locales="locales" required="identifiers['B8A150E054154AD3AD97856ABD485E90']" placeholder="например: статья&nbsp;14.2 или раздел I">
+                                    ng-model="sections['B8A150E054154AD3AD97856ABD485E90']" locales="locales" required="identifiers['B8A150E054154AD3AD97856ABD485E90']" placeholder="например: статья 14.2 или раздел I">
                                     </div>
                                 </td>
                             </tr>
@@ -211,7 +211,7 @@
                                 </td>
                                 <td style="width:250px;text-align:right;vertical-align:middle" id="sec_2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD">
                                     <label for="sec_2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD" style="width:0px;height:0px;display:inline"><span style="display:none">Укажите все ссылки на соответствующие статьи, имеющие отношение к положениям, касающимся временного промежутка, в течение которого применяется мера.</span></label>
-                                    <div ng-show="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" km-textbox-ml ng-model="sections['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" locales="locales" required="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" placeholder="например: статья&nbsp;14.2 или раздел I">
+                                    <div ng-show="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" km-textbox-ml ng-model="sections['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" locales="locales" required="identifiers['2A8B467A-5FC5-41C5-8D7B-71B78E3AFEDD']" placeholder="например: статья 14.2 или раздел I">
                                     </div>
                                 </td>
                             </tr>
@@ -269,7 +269,7 @@
                     <td style="width:250px;text-align:right;vertical-align:middle" id="sec_{{term.identifier}}">
                         <label for="sec_{{term.identifier}}" style="width:0px;height:0px;display:inline"><span style="display:none">{{term.title||term.name | lstring:locale}} Укажите все ссылки на соответствующие статьи.</span></label>
                         <div ng-show="term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')<0 && ((identifiers[term.identifier] && (term.narrowerTerms.length||0) == 0) || (scopeOfMeasureTerm == term.identifier && identifiers[term.identifier]==false))" km-textbox-ml
-                            ng-model="sections[term.identifier]" required locales="locales" required="identifiers[term.identifier]" placeholder="например: статья&nbsp;14.2 или раздел I"></div>
+                            ng-model="sections[term.identifier]" required locales="locales" required="identifiers[term.identifier]" placeholder="например: статья 14.2 или раздел I"></div>
                     </td><!--ng-class="{'required':!sections[term.identifier]}"--></tr>
 
                 <tr ng-if="term.identifier.indexOf('5B6177DD-5E5E-434E-8CB7-D63D67D5EBED')>=0 && identifiers[term.identifier]">
@@ -294,7 +294,7 @@
                     </div>
                 </td>
                 <td>
-                    <div class="pull-right" style="max-width:250px;width:250px" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="например: статья&nbsp;14.2 или раздел I" ng-change="appendEmptyOther(otherElements)">
+                    <div class="pull-right" style="max-width:250px;width:250px" km-textbox-ml ng-model="element.section" locales="locales" required="true" placeholder="например: статья 14.2 или раздел I" ng-change="appendEmptyOther(otherElements)">
                     </div>
                 </td>
             </tr>

@@ -1,4 +1,143 @@
-﻿<div ng-controller="userPreferencesCtrl" id="PreferncesPage"><span register-top-menu></span><style>#PreferncesPage .block { margin-bottom: 30px; background-color: #fff; -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.01); box-shadow: 0 2px rgba(0, 0, 0, 0.01); } #PreferncesPage .block>.nav-tabs { background-color: #eee; border-bottom: none; } #PreferncesPage .nav-tabs.nav-justified { width: 100%; border-bottom: 0; } #PreferncesPage .push-20 { margin-bottom: 20px !important; } #PreferncesPage .block>.nav-tabs>li { margin-bottom: 0; } #PreferncesPage .block>.nav-tabs>li.active>a, #PreferncesPage .block>.nav-tabs>li.active>a:hover, #PreferncesPage .block>.nav-tabs>li.active>a:focus { color: #646464; background-color: #fff; border-color: transparent; } #PreferncesPage .block>.nav-tabs.nav-justified>li>a { margin-bottom: 0; } #PreferncesPage .block>.nav-tabs>li { margin-bottom: 0; } #PreferncesPage .block .block-content.tab-content { overflow: hidden; } #PreferncesPage .block-content { margin: 0 auto; padding: 20px 20px 1px; max-width: 100%; overflow-x: visible; -webkit-transition: opacity .2s ease-out; transition: opacity .2s ease-out; } #PreferncesPage .block-content.block-content-full { padding-bottom: 20px; } #PreferncesPage .bg-gray-lighter { background-color: #eee; } #PreferncesPage .text-center { text-align: center; } #PreferncesPage .block>.nav-tabs.nav-justified>li>a { margin-bottom: 0; } #PreferncesPage .block>.nav-tabs>li>a { margin-right: 0; padding-top: 12px; padding-bottom: 12px; color: #646464; font-weight: 600; border: 1px solid transparent; border-radius: 0; } #PreferncesPage .user-details { position: relative; padding: 0; } #PreferncesPage .user-details .user-image { position: relative; z-index: 1; width: 100%; text-align: center; } #PreferncesPage .user-image img { clear: both; margin: auto; position: relative; } #PreferncesPage .user-details .user-info-block { width: 100%; top: 55px; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px; } #PreferncesPage .user-info-block { position: static; } #PreferncesPage .user-image { position: absolute!important; } #PreferncesPage .user-details { position: relative; } #PreferncesPage .user-info-block { margin-top: 4%; background-color: black; } #PreferncesPage .user-info-block .user-heading { width: 100%; text-align: center; margin: 10px 0 0; } #PreferncesPage .user-info-block .navigation { float: left; width: 100%; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #428BCA; border-top: 1px solid #428BCA; }</style>
+﻿<div ng-controller="userPreferencesCtrl" id="PreferncesPage"><span register-top-menu></span><style>
+		#PreferncesPage .block {
+			margin-bottom: 30px;
+			background-color: #fff;
+			-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.01);
+			box-shadow: 0 2px rgba(0, 0, 0, 0.01);
+		}
+		
+		#PreferncesPage .block>.nav-tabs {
+			background-color: #eee;
+			border-bottom: none;
+		}
+		
+		#PreferncesPage .nav-tabs.nav-justified {
+			width: 100%;
+			border-bottom: 0;
+		}
+		
+		#PreferncesPage .push-20 {
+			margin-bottom: 20px !important;
+		}
+		
+		#PreferncesPage .block>.nav-tabs>li {
+			margin-bottom: 0;
+		}
+		
+		#PreferncesPage .block>.nav-tabs>li.active>a,
+		#PreferncesPage .block>.nav-tabs>li.active>a:hover,
+		#PreferncesPage .block>.nav-tabs>li.active>a:focus {
+			color: #646464;
+			background-color: #fff;
+			border-color: transparent;
+		}
+		
+		#PreferncesPage .block>.nav-tabs.nav-justified>li>a {
+			margin-bottom: 0;
+		}
+		
+		#PreferncesPage .block>.nav-tabs>li {
+			margin-bottom: 0;
+		}
+		
+		#PreferncesPage .block .block-content.tab-content {
+			overflow: hidden;
+		}
+		
+		#PreferncesPage .block-content {
+			margin: 0 auto;
+			padding: 20px 20px 1px;
+			max-width: 100%;
+			overflow-x: visible;
+			-webkit-transition: opacity .2s ease-out;
+			transition: opacity .2s ease-out;
+		}
+		
+		#PreferncesPage .block-content.block-content-full {
+			padding-bottom: 20px;
+		}
+		
+		#PreferncesPage .bg-gray-lighter {
+			background-color: #eee;
+		}
+		
+		#PreferncesPage .text-center {
+			text-align: center;
+		}
+		
+		#PreferncesPage .block>.nav-tabs.nav-justified>li>a {
+			margin-bottom: 0;
+		}
+		
+		#PreferncesPage .block>.nav-tabs>li>a {
+			margin-right: 0;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			color: #646464;
+			font-weight: 600;
+			border: 1px solid transparent;
+			border-radius: 0;
+		}
+		
+		#PreferncesPage .user-details {
+			position: relative;
+			padding: 0;
+		}
+		
+		#PreferncesPage .user-details .user-image {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			text-align: center;
+		}
+		
+		#PreferncesPage .user-image img {
+			clear: both;
+			margin: auto;
+			position: relative;
+		}
+		
+		#PreferncesPage .user-details .user-info-block {
+			width: 100%;
+			top: 55px;
+			background: rgb(255, 255, 255);
+			z-index: 0;
+			padding-top: 35px;
+		}
+		
+		#PreferncesPage .user-info-block {
+			position: static;
+		}
+		
+		#PreferncesPage .user-image {
+			position: absolute!important;
+		}
+		
+		#PreferncesPage .user-details {
+			position: relative;
+		}
+		
+		#PreferncesPage .user-info-block {
+			margin-top: 4%;
+			background-color: black;
+		}
+		
+		#PreferncesPage .user-info-block .user-heading {
+			width: 100%;
+			text-align: center;
+			margin: 10px 0 0;
+		}
+		
+		#PreferncesPage .user-info-block .navigation {
+			float: left;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border-bottom: 1px solid #428BCA;
+			border-top: 1px solid #428BCA;
+		}
+	</style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-darkgrey color-white">

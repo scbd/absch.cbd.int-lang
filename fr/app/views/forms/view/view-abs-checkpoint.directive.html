@@ -1,11 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4>Points de contr&ocirc;le <span class="color-black">(PC)</span> <!--<span style="text-transform:uppercase;">ABSCH-CP-{{document.government.identifier}}-{{document.info.documentID}}</span> --></h4> </div>
+		<h4><span>Points de contr&ocirc;le <span class="color-black">(PC)</span></span></h4>	
+	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
 
-		<div record-options></div>
+		
+			<document-date></document-date>
 
 		 <div name="article17-1-a"></div>
 
@@ -13,7 +15,7 @@
 
 		<div ng-show="document.government">
 			<label name="country">Pays</label>
-			<div class="km-value" >{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		 <div ng-show="display('title') && document.name">
@@ -46,7 +48,7 @@
 			<legend>Autorit&eacute; (s) devant recevoir des copies de courtoisie des communiqu&eacute;s sur les informations collect&eacute;es ou re&ccedil;ues par ce point de contr&ocirc;le.</legend>
 
 			<div class="help-info" style="padding-top:10px;">Toutes les autorit&eacute;s nationales et tous les contacts indiqu&eacute;s ci-dessous recevront par courrier &eacute;lectronique des communiqu&eacute;s des points de contr&ocirc;le contenant les informations collect&eacute;es ou re&ccedil;ues et publi&eacute;es par ce point de contr&ocirc;le. Veuillez noter que les autorit&eacute;s nationales fournissant le consentement pr&eacute;alable en connaissance de cause recevront automatiquement des copies &eacute;lectroniques de tous les communiqu&eacute;s des points de contr&ocirc;le publi&eacute;s. Le CE-APA ne peut pas garantir que les emails ont &eacute;t&eacute; re&ccedil;us ou lus.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">Toutes les autorit&eacute;s nationales comp&eacute;tentes ({{document.government | term}})</a> ont &eacute;t&eacute; s&eacute;lectionn&eacute;es pour recevoir automatiquement les communiqu&eacute;s par courrier &eacute;lectronique publi&eacute;s par ce point de contr&ocirc;le.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new">All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>)</a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
           
 			<div ng-show="document.contactsToInform">
 				<div class="km-value" ng-repeat="authority in document.contactsToInform">

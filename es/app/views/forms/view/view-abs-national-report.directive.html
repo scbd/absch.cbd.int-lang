@@ -3,7 +3,8 @@
 	</div>
 	<div class="record-body panel-body">
 
-		<div record-options ></div><br><br><div class="panel panel-info">
+			
+		<document-date></document-date><br><br><div class="panel panel-info">
 			<div class="panel-heading">
 				<label>Informaci&oacute;n general</label>
 			</div>
@@ -11,7 +12,7 @@
 
 				<div>
 					<label>Pa&iacute;s</label>
-					<div class="km-value"  ng-show="document.government">{{document.government|term}}</div>
+					<div class="km-value"  ng-show="document.government"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></div>
 					<div class="km-value"  ng-hide="document.government">Ning&uacute;n pa&iacute;s seleccionado</div>
 				</div>
 
@@ -39,11 +40,11 @@
 						<div class="km-value km-pre">{{booleanToText(document.question3.answer)}}</div>
 		               	<div  ng-show="document.question3.challengesInfo" >
 		                        <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados y responda las siguientes preguntas.</label>
-		                        <div class="km-value">{{document.question3.challengesInfo | lstring:locale}}</div>
+		                        <div class="km-value pre-wrap">{{document.question3.challengesInfo | lstring:locale}}</div>
 		                </div>
 						<div ng-show="document.question3.additionalInfo">
 							<label>S&iacute;rvase proporcionar informaci&oacute;n adicional.</label>
-							<div class="km-value">{{document.question3.additionalInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question3.additionalInfo | lstring:locale}}</div>
 						</div>
 					</ul>
 				</div>
@@ -51,15 +52,15 @@
 				<div>
 					<label>4. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica sobre APB?</label>
 					<ul>
-						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question4.answer)}}</div>
+						<div class="km-value km-pre" >{{booleanToText(document.question4.answer)}}</div>
 						
-						<div ng-show="document.question4.challengesInfo || document.question3.answer">
+						<div ng-show="document.question4.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados al adoptar esas medidas.</label>
-							<div class="km-value">{{document.question4.challengesInfo | lstring:locale}} &nbsp;</div>
+							<div class="km-value pre-wrap">{{document.question4.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question4.additionalInfo">
 							<label>S&iacute;rvase proporcionar informaci&oacute;n adicional.</label>
-							<div class="km-value">{{document.question4.additionalInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question4.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question4.documentReferenceIDs && !documentReferenceIDsEmpty(document.question4.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -76,14 +77,14 @@
 				<div>
 					<label>5. ¿Ha designado su pa&iacute;s un puntos focal nacional conforme a lo dispuesto en el art&iacute;culo 13?</label>
 					<ul>
-						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question5.answer)}}</div>
-						<div ng-show="document.question5.challengesInfo || document.question3.answer">
+						<div class="km-value km-pre">{{booleanToText(document.question5.answer)}}</div>
+						<div ng-show="document.question5.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar un punto focal nacional.</label>
-							<div class="km-value">{{document.question5.challengesInfo | lstring:locale}} &nbsp;</div>
+							<div class="km-value pre-wrap">{{document.question5.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question5.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question5.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question5.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question5.documentReferenceIDs && !documentReferenceIDsEmpty(document.question5.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -100,14 +101,14 @@
 				<div>
 					<label>6. ¿Ha designado su pa&iacute;s una o m&aacute;s autoridades nacionales competentes conforme a lo dispuesto en el art&iacute;culo 13?</label>
 					<ul>
-						<div class="km-value km-pre" ng-hide="document.question3.answer">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question6.answer)}}</div>
-						<div ng-show="document.question6.challengesInfo || document.question3.answer">
+						<div class="km-value km-pre">{{booleanToText(document.question6.answer)}}</div>
+						<div ng-show="document.question6.challengesInfo">
 		                	<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar una o m&aacute;s autoridades nacionales competentes.</label>
-							<div class="km-value">{{document.question6.challengesInfo | lstring:locale}} &nbsp;</div>
+							<div class="km-value pre-wrap">{{document.question6.challengesInfo | lstring:locale}} &nbsp;</div>
 		                </div>
 		                <div ng-show="document.question6.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question6.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question6.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question6.documentReferenceIDs && !documentReferenceIDsEmpty(document.question6.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -124,15 +125,15 @@
 				<div>
 					<label>7. ¿Ha dado su pa&iacute;s a conocer en el Centro de Intercambio de Informaci&oacute;n sobre APB permisos o sus equivalentes emitidos en el momento del acceso como prueba de la decisi&oacute;n de otorgar el consentimiento fundamentado previo (CFP) y del establecimiento de condiciones mutuamente acordadas (CMA)?</label>
 					<ul>
-						<div class="km-value" ng-show="document.question7.notApplicable && (!document.question3.answer)">No procede, ya que no se han establecido requisitos para el acceso.</div>
-						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable) && (!document.question3.answer)">{{conditionalBooleanToText((document.question3.answer===undefined || document.question3.answer),document.question7.answer)}}</div>
-						<div ng-show="document.question7.challengesInfo || document.question3.answer">
+						<div class="km-value" ng-show="document.question7.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
+						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable)">{{booleanToText(document.question7.answer)}}</div>
+						<div ng-show="document.question7.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados al dar a conocer esta informaci&oacute;n.</label>
-							<div class="km-value">{{document.question7.challengesInfo | lstring:locale}} &nbsp;</div>
+							<div class="km-value pre-wrap">{{document.question7.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question7.furtherInfo">
 							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional.</label>
-							<div class="km-value">{{document.question7.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question7.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question7.documentReferenceIDs && !documentReferenceIDsEmpty(document.question7.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -153,7 +154,7 @@
 						<div class="km-value km-pre" ng-show="!document.question8.notApplicable">{{booleanToText(document.question8.answer)}}</div>
 		                <div ng-show="document.question8.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question8.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question8.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question8.documentReferenceIDs && !documentReferenceIDsEmpty(document.question8.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -173,11 +174,11 @@
 						<div class="km-value km-pre">{{booleanToText(document.question9.answer)}}</div>
 						<div  ng-show="document.question9.challengesInfo">
 		                	<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar uno o m&aacute;s puntos de control</label>
-							<div class="km-value">{{document.question9.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question9.challengesInfo | lstring:locale}}</div>
 		                </div>
 		                <div ng-show="document.question9.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question9.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question9.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question9.documentReferenceIDs && !documentReferenceIDsEmpty(document.question9.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -197,7 +198,7 @@
 						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question10.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-							<div class="km-value">{{document.question10.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question10.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question10.documentReferenceIDs && !documentReferenceIDsEmpty(document.question10.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -233,11 +234,11 @@
 								<div class="km-value km-pre">{{booleanToText(document.question11.answer)}}</div>
 								<div ng-show="document.question11.challengesInfo">
 									<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n, incluyendo si hay alg&uacute;n otro sistema en funcionamiento en relaci&oacute;n con el acceso a recursos gen&eacute;ticos.</label>
-									<div class="km-value">{{document.question11.challengesInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question11.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question11.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question11.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.documentReferenceIDs && !documentReferenceIDsEmpty(document.question11.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -257,7 +258,7 @@
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question12.answer)}}</div>
 								<div ng-show="document.question12.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question12.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question12.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question12.documentReferenceIDs && !documentReferenceIDsEmpty(document.question12.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -277,7 +278,7 @@
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question13.answer)}}</div>
 								<div ng-show="document.question13.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question13.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question13.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question13.documentReferenceIDs && !documentReferenceIDsEmpty(document.question13.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -297,7 +298,7 @@
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question14.answer)}}</div>
 								<div ng-show="document.question14.furtherInfo">
 									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional.</label>
-									<div class="km-value">{{document.question14.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question14.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question14.documentReferenceIDs && !documentReferenceIDsEmpty(document.question14.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -317,7 +318,7 @@
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question15.answer)}}</div>
 								<div ng-show="document.question15.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question15.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question15.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question15.documentReferenceIDs && !documentReferenceIDsEmpty(document.question15.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -338,7 +339,7 @@
 
 								<div ng-show="document.question16.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question16.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question16.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question16.documentReferenceIDs && !documentReferenceIDsEmpty(document.question16.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -358,7 +359,7 @@
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question17.answer)}}</div>
 								<div ng-show="document.question17.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question17.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question17.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question17.documentReferenceIDs && !documentReferenceIDsEmpty(document.question17.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -375,51 +376,53 @@
 						<div>
 							<label>18. Beneficios que la utilizaci&oacute;n de los recursos siguientes ha aportado desde la entrada en vigor del Protocolo en su pa&iacute;s:</label>
 							<ul>
-								<div>
+								<div ng-if="!document.question18.geneticResources.answer && !document.question18.tk.answer" >
+									<div class="km-value km-pre">No selection made</div>
+								</div>
+								<div ng-if="document.question18.geneticResources.answer">
 									<label>Recursos gen&eacute;ticos</label>
 									<ul>
-										<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.answer)}}</div>
-										<label>Beneficios monetarios</label>
-										<ul>
+										<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.answer)}}</div>										
+										<ul ng-if="document.question18.geneticResources.monetary">
+											<label>Beneficios monetarios</label>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.monetary)}}</div>
 											<div ng-show="document.question18.geneticResources.monetaryInfo">
-												<div class="km-value">{{document.question18.geneticResources.monetaryInfo | lstring:locale}}</div>
+												<div class="km-value pre-wrap">{{document.question18.geneticResources.monetaryInfo | lstring:locale}}</div>
 											</div>
 										</ul>
-
-										<label>Beneficios no monetarios</label>
-										<ul>
+										<ul ng-if="document.question18.geneticResources.nonMonetary">
+											<label>Beneficios no monetarios</label>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.geneticResources.nonMonetary)}}</div>
 											<div ng-show="document.question18.geneticResources.nonMonetaryInfo">
-												<div class="km-value">{{document.question18.geneticResources.nonMonetaryInfo | lstring:locale}}</div>
+												<div class="km-value pre-wrap">{{document.question18.geneticResources.nonMonetaryInfo | lstring:locale}}</div>
 											</div>
 										</ul>
 									</ul>
 								</div>
-								<div>
+								<div ng-if="document.question18.tk.answer">
 									<label>Conocimientos tradicionales asociados a recursos gen&eacute;ticos</label>
 									<ul>
 										<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.answer)}}</div>
-										<label>Beneficios monetarios</label>
-										<ul>
+										<ul ng-if="document.question18.tk.monetary">
+											<label>Beneficios monetarios</label>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.monetary)}}</div>
 											<div ng-show="document.question18.tk.monetaryInfo">
-												<div class="km-value">{{document.question18.tk.monetaryInfo | lstring:locale}}</div>
+												<div class="km-value pre-wrap">{{document.question18.tk.monetaryInfo | lstring:locale}}</div>
 											</div>
 										</ul>
 
-										<label>Beneficios no monetarios</label>
-										<ul>
+										<ul ng-if="document.question18.tk.nonMonetary">
+											<label>Beneficios no monetarios</label>
 											<div class="km-value km-pre">{{q18BooleanToText(document.question18.tk.nonMonetary)}}</div>
 											<div ng-show="document.question18.tk.nonMonetaryInfo">
-												<div class="km-value">{{document.question18.tk.nonMonetaryInfo | lstring:locale}}</div>
+												<div class="km-value pre-wrap">{{document.question18.tk.nonMonetaryInfo | lstring:locale}}</div>
 											</div>
 										</ul>
 									</ul>
 								</div>
 					            <div ng-show="document.question18.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question18.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question18.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question18.documentReferenceIDs && !documentReferenceIDsEmpty(document.question18.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -439,7 +442,7 @@
 								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 								<div ng-show="document.question19.challengesInfo">
 									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-									<div class="km-value">{{document.question19.challengesInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question19.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question19.documentReferenceIDs && !documentReferenceIDsEmpty(document.question19.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -471,7 +474,7 @@
 								<div class="km-value km-pre">{{booleanToText(document.question20.answer)}}</div>
 								<div ng-show="document.question20.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question20.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question20.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question20.documentReferenceIDs && !documentReferenceIDsEmpty(document.question20.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -491,7 +494,7 @@
 								<div class="km-value km-pre">{{booleanToText(document.question21.answer)}}</div>
 								<div ng-show="document.question21.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question21.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question21.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question21.documentReferenceIDs && !documentReferenceIDsEmpty(document.question21.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -511,7 +514,7 @@
 								<div class="km-value km-pre">{{booleanToText(document.question22.answer)}}</div>
 								<div ng-show="document.question22.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question22.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question22.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question22.documentReferenceIDs && !documentReferenceIDsEmpty(document.question22.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -531,7 +534,7 @@
 								<div class="km-value" ng-show="!document.question23.challengesInfo && !document.question23.relevantDocuments && (!document.question23.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question23.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 								<div ng-show="document.question23.challengesInfo">
 									<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
-									<div class="km-value">{{document.question23.challengesInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question23.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question23.documentReferenceIDs && !documentReferenceIDsEmpty(document.question23.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -567,11 +570,11 @@
 										<div class="km-value km-pre">{{booleanToText(document.question24.measures.answer)}}</div>
 										<div ng-show="document.question24.measures.furtherInfo">
 				                            <label>Please provide further information on the measures taken, including when they entered into force</label>
-				                            <div class="km-value">{{document.question24.measures.furtherInfo | lstring:locale}}</div>
+				                            <div class="km-value pre-wrap">{{document.question24.measures.furtherInfo | lstring:locale}}</div>
 				                        </div>
 										<div ng-show="document.question24.measures.complianceInfo">
 											<label>Please provide further information on cases of non-compliance</label>
-											<div class="km-value">{{document.question24.measures.complianceInfo | lstring:locale}}</div>
+											<div class="km-value pre-wrap">{{document.question24.measures.complianceInfo | lstring:locale}}</div>
 										</div>
 									</ul>
 
@@ -579,14 +582,14 @@
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
-				                            <label>Please provide further information/label><div class="km-value">{{document.question24.violation.furtherInfo | lstring:locale}}</div>
+				                            <label>Please provide further information/label&gt;<div class="km-value pre-wrap">{{document.question24.violation.furtherInfo | lstring:locale}}</div>
 				                        </div>
 									</ul>
 								</div>
 
 								<div ng-show="document.question24.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question24.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question24.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question24.documentReferenceIDs && !documentReferenceIDsEmpty(document.question24.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -615,13 +618,13 @@
 										<div class="km-value km-pre">{{booleanToText(document.question25.violation.answer)}}</div>
 										<div ng-show="document.question25.violation.furtherInfo">
 				                            <label>Please provide further information</label>
-				                            <div class="km-value">{{document.question25.violation.furtherInfo | lstring:locale}}</div>
+				                            <div class="km-value pre-wrap">{{document.question25.violation.furtherInfo | lstring:locale}}</div>
 				                        </div>
 									</ul>
 								</div>
 								<div ng-show="document.question25.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question25.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question25.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question25.documentReferenceIDs && !documentReferenceIDsEmpty(document.question25.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -643,7 +646,7 @@
 									<ul>
 										<div ng-show="document.question26.additionalInfo">
 											<label>Please provide further information</label>
-											<div class="km-value">{{document.question26.additionalInfo | lstring:locale}}</div>
+											<div class="km-value pre-wrap">{{document.question26.additionalInfo | lstring:locale}}</div>
 										</div>
 										<label>¿Ha adoptado su pa&iacute;s medidas para abordar las situaciones de incumplimiento?</label>
 										<div class="km-value km-pre">{{booleanToText(document.question26.violation.answer)}}</div>
@@ -651,7 +654,7 @@
 											<ul>
 												<div ng-show="document.question26.violation.additionalInfo">
 						                            <label>Please provide further information</label>
-						                            <div class="km-value">{{document.question26.violation.additionalInfo | lstring:locale}}</div>
+						                            <div class="km-value pre-wrap">{{document.question26.violation.additionalInfo | lstring:locale}}</div>
 						                        </div>
 											</ul>
 										</div>
@@ -659,7 +662,7 @@
 								</div>
 								<div ng-show="document.question26.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question26.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question26.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question26.documentReferenceIDs && !documentReferenceIDsEmpty(document.question26.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -685,15 +688,15 @@
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
 						                    <label>Please provide further information</label>
-						                    <div class="km-value">{{document.question27.cpc.furtherInfo | lstring:locale}}</div>
+						                    <div class="km-value pre-wrap">{{document.question27.cpc.furtherInfo | lstring:locale}}</div>
 						                </div>
 				                	</ul>
 				                </div>
 				                <div ng-show="document.question27.challengesInfo">
 				                    <label>Please provide a summary of the main difficulties and challenges</label>
-				                    <div class="km-value">{{document.question27.challengesInfo | lstring:locale}}</div>
+				                    <div class="km-value pre-wrap">{{document.question27.challengesInfo | lstring:locale}}</div>
 				                </div>
-				                <div>
+				                <div ng-if="document.question27.cpcsOnAbsChCount >= 0">
 				                	<label>S&iacute;rvase proporcionar el n&uacute;mero de comunicados del punto de verificaci&oacute;n que hay disponibles en el Centro de Intercambio de Informaci&oacute;n sobre APB, si procede:</label>
 				                	<div class="km-value">{{document.question27.hasOwnProperty(&apos;cpcsOnAbsChCount&apos;)&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
@@ -710,7 +713,7 @@
 								<div class="km-value km-pre">{{booleanToText(document.question28.answer)}}</div>
 								<div ng-show="document.question28.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question28.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question28.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question28.documentReferenceIDs && !documentReferenceIDsEmpty(document.question28.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -730,11 +733,11 @@
 								<div class="km-value km-pre">{{booleanToText(document.question29.answer)}}</div>
 								<div ng-show="document.question29.additionalInfo">
 									<label>Please provide further information on how your country is encouraging the use of cost-effective communication tools and systems</label>
-									<div class="km-value">{{document.question29.additionalInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question29.additionalInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question29.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question29.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.documentReferenceIDs && !documentReferenceIDsEmpty(document.question29.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -754,7 +757,7 @@
 								<div class="km-value" ng-show="!document.question30.challengesInfo && !document.question30.relevantDocuments && (!document.question30.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question30.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 								<div ng-show="document.question30.challengesInfo">
 									<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
-									<div class="km-value">{{document.question30.challengesInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question30.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question30.documentReferenceIDs && !documentReferenceIDsEmpty(document.question30.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -786,7 +789,7 @@
 								<div class="km-value km-pre" ng-show="!document.question31.notApplicable">{{booleanToText(document.question31.answer)}}</div>
 								<div ng-show="document.question31.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question31.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question31.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question31.documentReferenceIDs && !documentReferenceIDsEmpty(document.question31.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -806,7 +809,7 @@
 								<div class="km-value km-pre">{{booleanToText(document.question32.answer)}}</div>
 								<div ng-show="document.question32.furtherInfo">
 									<label>Use the text entry to provide further information</label>
-									<div class="km-value">{{document.question32.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question32.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question32.documentReferenceIDs && !documentReferenceIDsEmpty(document.question32.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -827,13 +830,13 @@
 								<div class="km-value km-pre">{{booleanToText(document.question33.justice.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
 									<label>Please provide further information</label>
-									<div class="km-value">{{document.question33.justice.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question33.justice.furtherInfo | lstring:locale}}</div>
 								</div>
 								<label>¿Utilizaci&oacute;n de mecanismos respecto al reconocimiento mutuo y la aplicaci&oacute;n de sentencias extranjeras y laudos arbitrales?</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.mechanisms.answer)}}</div>
-								<div ng-show="document.question33.justice.furtherInfo">
+								<div ng-show="document.question33.mechanisms.furtherInfo">
 									<label>Please provide further information</label>
-									<div class="km-value">{{document.question33.mechanisms.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question33.mechanisms.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question33.documentReferenceIDs && !documentReferenceIDsEmpty(document.question33.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -853,7 +856,7 @@
 								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 								<div ng-show="document.question34.challengesInfo">
 									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-									<div class="km-value">{{document.question34.challengesInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question34.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question34.documentReferenceIDs && !documentReferenceIDsEmpty(document.question34.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -888,7 +891,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question35.research.answer)}}</div>
 						<div ng-show="document.question35.research.furtherInfo">
 							<label>Please provide further information</label>
-							<div class="km-value">{{document.question35.research.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question35.research.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.research.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.research.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -903,7 +906,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question35.emergencies.answer)}}</div>
 						<div ng-show="document.question35.emergencies.furtherInfo">
 							<label>Please provide further information</label>
-							<div class="km-value">{{document.question35.emergencies.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question35.emergencies.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.emergencies.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.emergencies.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -918,7 +921,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question35.access.answer)}}</div>
 						<div ng-show="document.question35.access.furtherInfo">
 							<label>Please provide further information</label>
-							<div class="km-value">{{document.question35.access.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question35.access.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.access.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.access.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -933,7 +936,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
 							<label>Please provide further information</label>
-							<div class="km-value">{{document.question35.importance.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question35.importance.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.importance.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.importance.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -953,7 +956,7 @@
 						<div class="km-value" ng-show="!document.question36.challengesInfo && !document.question36.relevantDocuments && (!document.question36.documentReferenceIDs || documentReferenceIDsEmpty(document.question36.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question36.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
-							<div class="km-value">{{document.question36.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question36.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question36.documentReferenceIDs && !documentReferenceIDsEmpty(document.question36.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -984,7 +987,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question37.answer)}}</div>
 						<div ng-show="document.question37.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question37.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question37.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question37.documentReferenceIDs && !documentReferenceIDsEmpty(document.question37.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1007,7 +1010,7 @@
 								<div>
 									<div ng-show="document.question38.law.furtherInfo">
 										<label>S&iacute;rvase proporcionar informaci&oacute;n adicional y la referencia de la ley nacional que establece los derechos de las comunidades ind&iacute;genas y locales a otorgar acceso a recursos gen&eacute;ticos.</label>
-										<div class="km-value">{{document.question38.law.furtherInfo | lstring:locale}}</div>
+										<div class="km-value pre-wrap">{{document.question38.law.furtherInfo | lstring:locale}}</div>
 									</div>
 									<div ng-show="document.question38.law.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.law.documentReferenceIDs)">
 			                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1025,7 +1028,7 @@
 									<div class="km-value km-pre">{{booleanToText(document.question38.measures.answer)}}</div>
 									<div ng-show="document.question38.measures.furtherInfo">
 										<label>Please provide further information</label>
-										<div class="km-value">{{document.question38.measures.furtherInfo | lstring:locale}}</div>
+										<div class="km-value pre-wrap">{{document.question38.measures.furtherInfo | lstring:locale}}</div>
 									</div>
 								</div>
 
@@ -1034,14 +1037,14 @@
 									<div class="km-value km-pre">{{booleanToText(document.question38.pic.answer)}}</div>
 									<div ng-show="document.question38.pic.furtherInfo">
 										<label>Please provide further information</label>
-										<div class="km-value">{{document.question38.pic.furtherInfo | lstring:locale}}</div>
+										<div class="km-value pre-wrap">{{document.question38.pic.furtherInfo | lstring:locale}}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div ng-show="document.question38.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question38.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question38.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question38.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1061,7 +1064,7 @@
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question39.answer)}}</div>
 						<div ng-show="document.question39.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question39.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question39.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question39.documentReferenceIDs && !documentReferenceIDsEmpty(document.question39.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1081,7 +1084,7 @@
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question40.answer)}}</div>
 						<div ng-show="document.question40.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question40.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question40.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question40.documentReferenceIDs && !documentReferenceIDsEmpty(document.question40.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1101,7 +1104,7 @@
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question41.answer)}}</div>
 						<div ng-show="document.question41.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question41.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question41.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question41.documentReferenceIDs && !documentReferenceIDsEmpty(document.question41.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1126,7 +1129,7 @@
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.community.answer)}}</div>
 								<div ng-show="document.question42.community.furtherInfo">
 			                    	<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s el desarrollo de protocolos comunitarios.</label>
-			                    	<div class="km-value">{{document.question42.community.furtherInfo | lstring:locale}}</div>
+			                    	<div class="km-value pre-wrap">{{document.question42.community.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.community.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.community.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1146,7 +1149,7 @@
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mat.answer)}}</div>
 			                    <div ng-show="document.question42.mat.furtherInfo">
 			                    	<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s el desarrollo de requisitos m&iacute;nimos en las condiciones mutuamente acordadas.</label>
-			                    	<div ng-show="document.question42.mat.furtherInfo" class="km-value">{{document.question42.mat.furtherInfo | lstring:locale}}</div>
+			                    	<div ng-show="document.question42.mat.furtherInfo" class="km-value pre-wrap">{{document.question42.mat.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mat.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mat.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1166,7 +1169,7 @@
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mcc.answer)}}</div>
 								<div ng-show="document.question42.mcc.furtherInfo">
 			                    	<label>Please provide further information on how your country is supporting the development of model contractual clauses</label>
-			                    	<div class="km-value">{{document.question42.mcc.furtherInfo | lstring:locale}}</div>
+			                    	<div class="km-value pre-wrap">{{document.question42.mcc.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mcc.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mcc.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1188,7 +1191,7 @@
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question43.answer)}}</div>
 						<div ng-show="document.question43.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question43.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question43.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question43.documentReferenceIDs && !documentReferenceIDsEmpty(document.question43.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1209,7 +1212,7 @@
 						<div class="km-value" ng-show="document.question37.answer && !document.question44.challengesInfo && !document.question44.relevantDocuments && (!document.question44.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question44.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question44.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir medidas en relaci&oacute;n con conocimientos tradicionales asociados a recursos gen&eacute;ticos.</label>
-							<div class="km-value">{{document.question44.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question44.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question44.documentReferenceIDs && !documentReferenceIDsEmpty(document.question44.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1241,7 +1244,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question45.answer)}}</div>
 						<div ng-show="document.question45.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question45.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question45.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question45.documentReferenceIDs && !documentReferenceIDsEmpty(document.question45.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1260,7 +1263,7 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question46.furtherInfo && (!document.question46.documentReferenceIDs || documentReferenceIDsEmpty(document.question46.documentReferenceIDs))">No answer provided</div>
 						<div ng-show="document.question46.furtherInfo">
-							<div class="km-value">{{document.question46.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question46.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question46.documentReferenceIDs && !documentReferenceIDsEmpty(document.question46.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1280,7 +1283,7 @@
 						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question47.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-							<div class="km-value">{{document.question47.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question47.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question47.documentReferenceIDs && !documentReferenceIDsEmpty(document.question47.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1311,11 +1314,11 @@
 						<div class="km-value km-pre">{{booleanToText(document.question48.answer)}}</div>
 						<div ng-show="document.question48.ilcInfo">
 							<label>Si en su pa&iacute;s hay comunidades ind&iacute;genas y locales, s&iacute;rvase proporcionar m&aacute;s detalles sobre su participaci&oacute;n.</label>
-							<div class="km-value">{{document.question48.ilcInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question48.ilcInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question48.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question48.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.documentReferenceIDs && !documentReferenceIDsEmpty(document.question48.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1336,7 +1339,7 @@
 						<div class="km-value km-pre" ng-show="!document.question49.notApplicable">{{booleanToText(document.question49.answer)}}</div>
 		                <div ng-show="document.question49.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question49.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question49.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question49.documentReferenceIDs && !documentReferenceIDsEmpty(document.question49.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1356,7 +1359,7 @@
 						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question50.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-							<div class="km-value">{{document.question50.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question50.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question50.documentReferenceIDs && !documentReferenceIDsEmpty(document.question50.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1387,7 +1390,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question51.answer)}}</div>
 						<div ng-show="document.question51.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question51.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question51.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question51.documentReferenceIDs && !documentReferenceIDsEmpty(document.question51.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1406,7 +1409,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question52.answer)}}</div>
 						<div ng-show="document.question52.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question52.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question52.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question52.documentReferenceIDs && !documentReferenceIDsEmpty(document.question52.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1425,7 +1428,7 @@
 						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question53.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-							<div class="km-value">{{document.question53.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question53.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question53.documentReferenceIDs && !documentReferenceIDsEmpty(document.question53.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1460,7 +1463,7 @@
 								<div class="km-value km-pre">{{document.question54.measures.answer | yesno}}</div>
 								<div ng-show="document.question54.measures.furtherInfo">
 									<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
-									<div class="km-value">{{document.question54.measures.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question54.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question54.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.measures.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1475,7 +1478,7 @@
 						</div>
 						<div ng-show="document.question54.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question54.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question54.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question54.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1499,7 +1502,7 @@
 								<div class="km-value km-pre">{{document.question55.measures.answer | yesno}}</div>
 								<div ng-show="document.question55.measures.furtherInfo">
 									<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
-									<div class="km-value">{{document.question55.measures.furtherInfo | lstring:locale}}</div>
+									<div class="km-value pre-wrap">{{document.question55.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question55.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.measures.documentReferenceIDs)">
 		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1514,7 +1517,7 @@
 						</div>
 						<div ng-show="document.question55.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question55.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question55.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question55.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1534,7 +1537,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question56.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question56.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question56.documentReferenceIDs && !documentReferenceIDsEmpty(document.question56.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1554,7 +1557,7 @@
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question57.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question57.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question57.documentReferenceIDs && !documentReferenceIDsEmpty(document.question57.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1574,7 +1577,7 @@
 						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question58.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
-							<div class="km-value">{{document.question58.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question58.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question58.documentReferenceIDs && !documentReferenceIDsEmpty(document.question58.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1606,11 +1609,11 @@
 						<div class="km-value km-pre">{{booleanToText(document.question59.answer)}}</div>
 						<div ng-show="document.question59.additionalInfo">
 							<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
-							<div class="km-value">{{document.question59.additionalInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question59.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.furtherInfo">
 							<label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question59.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question59.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.documentReferenceIDs && !documentReferenceIDsEmpty(document.question59.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1636,7 +1639,7 @@
 					<ul>
 						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
 						<div ng-show="document.question60.challengesInfo">
-							<div class="km-value">{{document.question60.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question60.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question60.documentReferenceIDs && !documentReferenceIDsEmpty(document.question60.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1656,15 +1659,15 @@
 						<div class="km-value km-pre">{{booleanToText(document.question61.answer)}}</div>
 						<div ng-show="document.question61.additionalInfo">
 							<label>Please provide further information</label>
-							<div class="km-value">{{document.question61.additionalInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question61.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.challengesInfo">
 							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados.</label>
-							<div class="km-value">{{document.question61.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question61.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.furtherInfo">
 							<label>Use el campo de texto para proporcionar m&aacute;s informaci&oacute;n, incluyendo sobre las experiencias adquiridas sobre la movilizaci&oacute;n de recursos para apoyar la implementaci&oacute;n del Protocolo de Nagoya y el estado de los fondos movilizados (nivel de gastos nacionales, o la cantidad de los fondos  y de las tendencias en la financiaci&oacute;n  asignada para la aplicaci&oacute;n del Protocolo de Nagoya y el d&eacute;ficit de financiaci&oacute;n).</label>
-							<div class="km-value">{{document.question61.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question61.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.documentReferenceIDs && !documentReferenceIDsEmpty(document.question61.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1679,60 +1682,65 @@
 				</div>
 
 				<div>
-					<label>62. ¿Ha proporcionado su pa&iacute;s a otras Partes o recibido de otras Partes o instituciones financieras recursos financieros para fines de aplicaci&oacute;n del Protocolo conforme a lo dispuesto en el art&iacute;culo 25?</label>
+					<label>62. a) ¿Ha proporcionado su pa&iacute;s a otras Partes o recibido de otras Partes o instituciones financieras recursos financieros para fines de aplicaci&oacute;n del Protocolo conforme a lo dispuesto en el art&iacute;culo 25?</label>
 					<ul>
-						<label>Se han proporcionado recursos financieros.</label>
-						<ul>
+						<ul ng-if="!document.question62.donor.answer && !document.question62.recipient.answer && !document.question62.no">
+							<div class="km-value km-pre">No selection made</div>
+						</ul>
+						<ul ng-if="document.question62.donor.answer">
+							<label>Se han proporcionado recursos financieros.</label>
 							<div class="km-value km-pre">{{booleanToText(document.question62.donor.answer)}}</div>
 							<div ng-show="document.question62.donor.additionalInfo">
                             	<label>Please provide further information</label>
-								<div class="km-value">{{document.question62.donor.additionalInfo | lstring:locale}}</div>
+								<div class="km-value pre-wrap">{{document.question62.donor.additionalInfo | lstring:locale}}</div>
 							</div>
 						</ul>
 
-						<label>Se han recibido recursos financieros.</label>
-						<ul>
+						<ul ng-if="document.question62.recipient.answer">
+							<label>Se han recibido recursos financieros.</label>
 							<div class="km-value km-pre">{{booleanToText(document.question62.recipient.answer)}}</div>
 							<ul>
-								<label>De otras Partes</label>
-								<ul>
+								<ul ng-if="document.question62.recipient.parties">
+									<label>De otras Partes</label>
 									<div class="km-value km-pre">{{booleanToText(document.question62.recipient.parties)}}</div>
 									<div ng-show="document.question62.recipient.partiesInfo">
                             			<label>Please provide further information</label>
-										<div class="km-value">{{document.question62.recipient.partiesInfo | lstring:locale}}</div>
+										<div class="km-value pre-wrap">{{document.question62.recipient.partiesInfo | lstring:locale}}</div>
 									</div>
 								</ul>
 
-								<label>De instituciones financieras</label>
-								<ul>
+								<ul ng-if="document.question62.recipient.financialInstitutions">
+									<label>De instituciones financieras</label>
 									<div class="km-value km-pre">{{booleanToText(document.question62.recipient.financialInstitutions)}}</div>
 									<ul>
-										<label>Del Fondo para el Medio Ambiente Mundial</label>
-										<ul>
+										<ul ng-if="document.question62.recipient.gef">
+											<label>Del Fondo para el Medio Ambiente Mundial</label>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.gef)}}</div>
 										</ul>
 
-										<label>Del Fondo para la Aplicaci&oacute;n del Protocolo de Nagoya</label>
-										<ul>
+										<ul ng-if="document.question62.recipient.npImplementationFund">
+											<label>Del Fondo para la Aplicaci&oacute;n del Protocolo de Nagoya</label>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.npImplementationFund)}}</div>
 										</ul>
 
-										<label>De otras fuentes</label>
-										<ul>
+										<ul ng-if="document.question62.recipient.otherSources">
+											<label>De otras fuentes</label>
 											<div class="km-value km-pre">{{booleanToText(document.question62.recipient.otherSources)}}</div>
 											<div ng-show="document.question62.recipient.otherSourcesInfo">
                             					<label>Please provide further information</label>
-												<div class="km-value">{{document.question62.recipient.otherSourcesInfo | lstring:locale}}</div>
+												<div class="km-value pre-wrap">{{document.question62.recipient.otherSourcesInfo | lstring:locale}}</div>
 											</div>
 										</ul>
 									</ul>
 								</ul>
 							</ul>
 						</ul>
-
+						<ul ng-if="document.question62.no">
+							<div class="km-value km-pre">No</div>
+						</ul>
                         <div ng-show="document.question62.furtherInfo">
                             <label>Use el campo de texto para proporcionar m&aacute;s informaci&oacute;n, incluyendo sobre el estado de recursos financieros (cantidad total) movilizados, donados o recibidos  para la implementaci&oacute;n del Protocolo.</label>
-							<div class="km-value">{{document.question62.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question62.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question62.documentReferenceIDs && !documentReferenceIDsEmpty(document.question62.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1747,19 +1755,23 @@
 				</div>
 
 				<div>
-					<label>63. S&iacute;rvase proporcionar informaci&oacute;n sobre la movilizaci&oacute;n de recursos para apoyar la implementaci&oacute;n del Protocolo.</label>
-					<div class="km-value">{{document.question62new.relevantInformation | lstring:locale}}</div>
+					<label>62. b) Please provide information on experiences related to the mobilization of resources in support of the implementation of the Protocol.</label>
+					
+					<div class="km-value" ng-if="!document.question63new.relevantInformation && !document.question63new.relevantDocuments">No information provided</div>
+					<div class="km-value pre-wrap" ng-if="document.question63new.relevantInformation">{{document.question63new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question63new.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 
 				<div>
-					<label>64. S&iacute;rvase proporcionar informaci&oacute;n sobre el estado de los fondos movilizados para apoyar la implementaci&oacute;n del Protocolo.</label>
-					<div class="km-value">{{document.question63new.relevantInformation | lstring:locale}}</div>
+					<label>62. c) Please provide information on the status of funds mobilized in support of the implementation of the Protocol.</label>
+					<div class="km-value km-pre" 
+						ng-if="!document.question64new.relevantInformation && !document.question64new.relevantDocuments">No information provided</div>
+					<div class="km-value pre-wrap" ng-if="document.question64new.relevantInformation">{{document.question64new.relevantInformation | lstring:locale}}</div>
 					<div class="km-value" ng-repeat="item in document.question64new.relevantDocuments"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 
 				<div>
-					<label>65. ¿Dispone su pa&iacute;s de personal espec&iacute;fico para administrar funciones directamente relacionadas con la aplicaci&oacute;n del Protocolo de Nagoya ?</label>
+					<label>63. ¿Dispone su pa&iacute;s de personal espec&iacute;fico para administrar funciones directamente relacionadas con la aplicaci&oacute;n del Protocolo de Nagoya ?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question63.answer)}}</div>
                         <div ng-show="document.question63.answer">
@@ -1769,11 +1781,11 @@
                         </div>
                         <div ng-show="document.question63.challengesInfo">
                             <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados.</label>
-							<div class="km-value">{{document.question63.challengesInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question63.challengesInfo | lstring:locale}}</div>
                         </div>
                         <div ng-show="document.question63.furtherInfo">
                             <label>Use the text entry to provide further information</label>
-							<div class="km-value">{{document.question63.furtherInfo | lstring:locale}}</div>
+							<div class="km-value pre-wrap">{{document.question63.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question63.documentReferenceIDs && !documentReferenceIDsEmpty(document.question63.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
@@ -1788,9 +1800,9 @@
 				</div>
 
 				<div>
-					<label>66. Otra informaci&oacute;n pertinente:</label>
+					<label>64. Otra informaci&oacute;n pertinente:</label>
 					<ul>
-						<div class="km-value">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
+						<div class="km-value pre-wrap">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
                 			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
 							<div class="km-value">
@@ -1817,9 +1829,9 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>67. S&iacute;rvase brindar cualquier comentario que pueda tener sobre el formato de este informe.</label>
+					<label>66. S&iacute;rvase brindar cualquier comentario que pueda tener sobre el formato de este informe.</label>
 					<ul>
-						<div class="km-value">{{text(document.question65) | lstring:locale}}</div>
+						<div class="km-value pre-wrap">{{text(document.question65) | lstring:locale}}</div>
 					</ul>
 				</div>
 			</div>

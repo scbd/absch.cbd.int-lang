@@ -3,13 +3,14 @@
 		<h4 ng-show="display('header')">Mesures l&eacute;gislatives, administratives ou politiques sur l&rsquo;acc&egrave;s et le partage des avantages <span class="color-black">(mesures APA)</span></h4></div>
 	<div class="record-body panel-body">
 
-		<div record-options></div>
+			
+		<document-date></document-date>
 
 		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">Informations g&eacute;n&eacute;rales</legend>
 
 		<div ng-show="document.government">
 			<label name="country">Pays</label>
-			<div class="km-value">{{document.government|term:locale}} <span ng-party-status government="document.government" id="government"></span></div>
+			<div class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-show="document.title">
