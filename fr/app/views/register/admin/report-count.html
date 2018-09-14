@@ -104,7 +104,7 @@
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
-                <h3>Admin Report</h3>
+                <h3> Admin Report</h3>
             </div>
         </div>
         <div class="register-content-content" style="background:#d2d6de;">
@@ -114,7 +114,7 @@
                 <div class="alert alert-danger" ng-show="__error"><strong>Erreur : </strong>{{__error}}</div>
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Filtres</h3>
+                        <h3 class="box-title"> Filtres</h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
@@ -137,9 +137,9 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filters.countries" multiple binding-type="string" placeholder="Pays" items="options.filterCountries()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Statut de la Partie" items="options.filterPartyStatus()"></div>
-                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.regionalMeasures" />Inclure les mesures r&eacute;gionales virtuelles</label>
-                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeNFP" />Exclure le correspondant national</label>
-                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.cumulative" />Graphique cumulatif</label>
+                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.regionalMeasures" /> Inclure les mesures r&eacute;gionales virtuelles</label>
+                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeNFP" /> Exclure le correspondant national</label>
+                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.cumulative" /> Graphique cumulatif</label>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeTotalCount" />Exclure la ligne de d&eacute;compte total</label>
                                 </div>
                                 <div class="pull-right">
@@ -155,7 +155,7 @@
 
                         <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Enregistrements nationaux</h3>
+                                <h3 class="box-title"> Enregistrements nationaux</h3>
                             </div>
                             <div class="box-body">
                                 <div class="row-fluid center" id="National">                                
@@ -187,19 +187,19 @@
                                         <div class="col-xs-6">
                                             <div class="col-sm-6 col-md-4 flex" style="vertical-align:middle!important" ng-repeat="(key, schema) in nationalRecords"
                                             ng-hide="filters.excludeNFP && key=='focalPoint'"><a translation-url class="statsBox color-white" ng-href="/search/nationalRecords/?schema={{key}}"><div style="vertical-align:middle!important;"><span class="countryCount badge bg-white">{{nationalRecords.focalPoint.countryCount}}</span> &nbsp; <span class="countryText">Pays</span></div>
-                                                    <div class="havePublished label">- ont publi&eacute; <span class="color-white">{{nationalRecords.focalPoint.recordCount}}</span> -</div>
+                                                    <div class="havePublished label"> - ont publi&eacute; <span class="color-white">{{nationalRecords.focalPoint.recordCount}}</span> - </div>
                                                     <div class="recordText">{{key | schemaShortName}}</div></a></div>
                                            
                                             <div class="col-xs-12 " style="padding-top: 20px; text-align: left" >
                                                 <div class="box box-danger bg-aqua-active">  
                                                      <div class="box-header with-border">
-                                                        <h3 class="box-title">Inclure un sch&eacute;ma graphique</h3>
+                                                        <h3 class="box-title"> Inclure un sch&eacute;ma graphique</h3>
                                                     </div>                                                 
                                                     <div class="box-body">                                                        
-                                                        <label class="checkbox-inline" style="margin-left: 10px;"><input ng-disabled="!nationalChart"  class="flat-red" type="checkbox" ng-model="filters.includeAllSchemas"  ng-change="checkAll(nationalRecords, filters.includeAllSchemas)"/>Tous les sch&eacute;mas</label>
+                                                        <label class="checkbox-inline" style="margin-left: 10px;"><input ng-disabled="!nationalChart"  class="flat-red" type="checkbox" ng-model="filters.includeAllSchemas"  ng-change="checkAll(nationalRecords, filters.includeAllSchemas)"/> Tous les sch&eacute;mas</label>
                                                         <label class="checkbox-inline" ng-repeat="(key, schema) in nationalRecords"
                                                             ng-hide="filters.excludeNFP && key=='focalPoint'">
-                                                            <input ng-disabled="!nationalChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaShortName}}</label><span ng-if="!nationalChart"></br></br> *s&eacute;lection du sch&eacute;ma uniquement disponible en mode graphique, basculez sur le mode graphique pour l&rsquo;activer</span></div>
+                                                            <input ng-disabled="!nationalChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" /> {{key | schemaShortName}}</label><span ng-if="!nationalChart"></br></br> *s&eacute;lection du sch&eacute;ma uniquement disponible en mode graphique, basculez sur le mode graphique pour l&rsquo;activer</span></div>
                                                 </div>
                                                 
                                             </div>
@@ -215,7 +215,7 @@
 
                          <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Enregistrements de r&eacute;f&eacute;rence</h3>
+                                <h3 class="box-title">  Enregistrements de r&eacute;f&eacute;rence</h3>
                             </div>
                             <div class="box-body">
                                 <div class="row-fluid center" id="Reference">                                    
@@ -251,12 +251,12 @@
                                             <div class="col-xs-12 " style="padding-top: 20px; text-align: left" >
                                                 <div class="box box-danger bg-orange">  
                                                      <div class="box-header with-border">
-                                                        <h3 class="box-title">Inclure un sch&eacute;ma graphique</h3>
+                                                        <h3 class="box-title"> Inclure un sch&eacute;ma graphique</h3>
                                                     </div>                                                 
                                                     <div class="box-body">                                                        
-                                                        <label class="checkbox-inline" style="margin-left: 10px;"><input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="filters.includeAllReferenceSchemas"  ng-change="checkAll(referenceRecords, filters.includeAllReferenceSchemas)"/>Tous les sch&eacute;mas</label>
+                                                        <label class="checkbox-inline" style="margin-left: 10px;"><input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="filters.includeAllReferenceSchemas"  ng-change="checkAll(referenceRecords, filters.includeAllReferenceSchemas)"/> Tous les sch&eacute;mas</label>
                                                         <label class="checkbox-inline" ng-repeat="(key, schema) in referenceRecords">
-                                                            <input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaShortName}}</label><span ng-if="!nationalChart"></br></br> *s&eacute;lection du sch&eacute;ma uniquement disponible en mode graphique, basculez sur le mode graphique pour l&rsquo;activer</span></div>
+                                                            <input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" /> {{key | schemaShortName}}</label><span ng-if="!nationalChart"></br></br> *s&eacute;lection du sch&eacute;ma uniquement disponible en mode graphique, basculez sur le mode graphique pour l&rsquo;activer</span></div>
                                                 </div>
                                                 
                                             </div>
@@ -273,7 +273,7 @@
 
                          <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Combiner les graphiques</h3>
+                                <h3 class="box-title">  Combiner les graphiques</h3>
                             </div>
                             <div class="box-body">
                                 <div class="row-fluid center" id="Reference">                                    

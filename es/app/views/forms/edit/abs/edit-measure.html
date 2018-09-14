@@ -1,0 +1,323 @@
+﻿<div ng-controller="editMeasure">
+
+    <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
+
+    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
+            <div>
+                <div class="alert alert-danger" ng-show="hasError()"><strong>Se produjo un error...</strong><div>{{error}}</div>
+                </div>
+
+                <div ng-show="!isLoading() && status!='hidden'">
+                    <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
+                    <div km-document-validation ng-model="validationReport"></div>
+
+                    <form class="editForm" name="editForm" style="margin-top:10px">
+                        <div ng-show="tab=='edit'" km-tab="edit">
+                            <legend name="formInfo" style="display:none"></legend>
+                            <section>
+                                <legend>¿Se trata de una enmienda a una medida legislativa, administrativa o de pol&iacute;tica previa? </legend>
+                                <div class="help-info">Esta selecci&oacute;n solo es pertinente cuando la medida que se presenta enmienda una medida existente. Si la medida que se est&aacute; registrando en el Centro de Intercambio de Informaci&oacute;n sobre APB es una enmienda a una medida existente o parte de ella, verifique que la medida que se enmienda ya est&eacute; registrada en el Centro de Intercambio de Informaci&oacute;n sobre APB a fin de permitir proporcionar un enlace al registro anterior. Esto permitir&aacute; que ambos registros se muestren simult&aacute;neamente.</div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="km-control-group" name="isAmendment" required caption="¿Se trata de una enmienda a una medida legislativa, administrativa o de política previa? ">
+                                            <div class="help-block"></div>
+                                            <div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- IF NO SECTION --><div ng-class="{'disable':!document.isAmendment, 'bg-white':document.isAmendment}" class="well no-shadow" style="padding-top:0;padding-bottom:0;">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h3 ng-show="!document.isAmendment" style="color:black!important;">Si no fuera as&iacute;, no es preciso completar la informaci&oacute;n a continuaci&oacute;n.</h3>
+                                            <h3 ng-show="document.isAmendment==true" style="color:black!important;">S&iacute;rvase seleccionar el registro previo que se enmienda.</h3>
+
+                                            <div class="km-control-group">
+                                                <div class="km-control-group" name="amendedMeasures" caption="Lista de medidas enmendadas">
+                                                    <div class="help-info">S&iacute;rvase indicar si esta medida enmienda una registrada anteriormente proporcionando un enlace de referencia cruzada a la medida enmendada.</div>
+                                                    <div document-selector hide-self="document.header.identifier" ng-model="document.amendedMeasures" question="amendedMeasures" government="document.government" schema="measure"></div><!--<div km-select multiple name="amendedMeasures" ng-model="document.amendedMeasures"items="options.measures()" placeholder="Please select ..."></div>--></div>
+                                            </div>
+
+                                            <div class="km-control-group" name="amendmentsDescription" caption="Resumen de la(s) enmienda(s)">
+                                                <div class="help-info">Esto permitir&aacute; que los usuarios comprendan la relaci&oacute;n entre ambas medidas. El resumen debe ser lo m&aacute;s simple y conciso posible.</div>
+                                                <div km-rich-textbox ng-model="document.amendmentsDescription" rows="4" locales="document.header.languages"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section>
+                                <legend>Informaci&oacute;n general</legend>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="government" required caption="País">
+                                            <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" required name="title" caption="Título de las medidas legislativas, administrativas o de política sobre acceso y participación en los beneficios">
+                                            <div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div required class="km-control-group" name="status" caption="Situación jurídica de la medida">
+                                            <div class="help-info">Ejemplos de medidas sobre APB no jur&iacute;dicamente vinculantes son los documentos de pol&iacute;tica, las directrices, las estrategias nacionales, etc. En los casos de medidas sobre APB no jur&iacute;dicamente vinculantes, es preciso suministrar la fecha de adopci&oacute;n. Una medida es jur&iacute;dicamente vinculante cuando crea obligaciones y derechos que son compulsivos jur&iacute;dicamente. En este caso, es preciso suministrar la fecha de entrada en vigor de la medida sobre APB. Tambi&eacute;n es posible incluir en el Centro de Intercambio de Informaci&oacute;n sobre APB medidas en formularios borrador a fin de intercambiar informaci&oacute;n sobre los progresos en la aplicaci&oacute;n. Una vez que el proyecto de medida sea adoptado o entre en vigor, es posible actualizar el estado de la medida sin necesidad de volver a registrar la informaci&oacute;n existente. A veces, las medidas tienen una aplicabilidad limitada en el tiempo. Si se est&aacute;n introduciendo este tipo de medidas, es preciso indicar la fecha de caducidad. La inclusi&oacute;n de medidas retiradas puede ser &uacute;til para brindar certidumbre jur&iacute;dica sobre recursos gen&eacute;ticos y conocimientos tradicionales asociados a los que se haya accedido en un marco jur&iacute;dico previo. Si una medida ya registrada en el Centro de Intercambio de Informaci&oacute;n sobre APB es retirada o ya no es de aplicaci&oacute;n, lo &uacute;nico que es preciso hacer es editar la medida y cambiar su condici&oacute;n a medida retirada, indicando la fecha desde la cual la medida ya no es de aplicaci&oacute;n.</div>
+                                            <div style="width:250px;" afc-autocomplete required name="status" ng-model="document.status" source="options.statuses" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccionar la situación jurídica..."></div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-12">
+                                        <div ng-show="isNotLegallyBinded()">
+                                            <div class="km-control-group" name="adoption" required caption="Sírvase indicar la fecha de adopción">
+                                                <div km-date placeholder="AAAA-MM-DD" name="adoption" required ng-model="document.adoption"></div>
+                                            </div>
+                                        </div>
+                                        <div ng-show="isLegallyBinded()">
+                                            <div class="km-control-group" name="entryIntoForce" required caption="Sírvase indicar la fecha de entrada en vigor">
+                                                <div km-date placeholder="AAAA-MM-DD" name="entryIntoForce" required ng-model="document.entryIntoForce"></div>
+                                            </div>
+                                        </div>
+                                        <div ng-show="isRetired()">
+                                            <div class="km-control-group" name="retired" required caption="Sírvase indicar la fecha a partir de la cual la medida no se aplica más">
+                                                <div km-date placeholder="AAAA-MM-DD" name="retired" required ng-model="document.retired">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-show="isLegallyBinded() || isNotLegallyBinded()" class="km-control-group" name="limitedApplication" caption="Indicar la fecha en que la medida ya no se encuentra en vigor si su aplicación está limitada en el tiempo">
+                                            <div km-date placeholder="AAAA-MM-DD" name="limitedApplication" ng-model="document.limitedApplication"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" required name="type" caption="Tipo de documento/medida">
+                                            <div km-term-radio name="type" ng-model="document.type" terms="options.typeOfDocuments()" description="true" binding-type="term" ng-click="save()" required></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="isTypeOther()">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" required name="otherTypeName" caption="Nombre de otro tipo de documento/medida">
+                                            <div km-textbox-ml required ng-model="document.otherTypeName" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-12">
+                                        <div class="km-control-group" required name="jurisdiction" caption="Zona de jurisdicción">
+                                            <div class="help-info">S&iacute;rvase especificar la zona geogr&aacute;fica de aplicaci&oacute;n de la medida APB. La medida podr&iacute;a aplicarse en los &aacute;mbitos regional o multilateral, nacional o federal, subnacional o comunitario. En el caso de medidas multilaterales o regionales, s&iacute;rvase indicar qu&eacute; pa&iacute;ses abarca la medida seleccionando en el men&uacute; desplegable el grupo geogr&aacute;fico o pol&iacute;tico/econ&oacute;mico pertinente. Esta lista es extensiva, por consiguiente, es probable que el grupo concreto al que se aplica la medida ya figure en ella. No obstante, si la medida se aplica a un grupo de pa&iacute;ses que no est&eacute; incluido en ninguno de los grupos existentes, seleccione en el men&uacute; desplegable cada uno de los pa&iacute;ses concernidos por la medida por separado.</div>
+
+                                            <div style="width:250px;" afc-autocomplete required name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione una zona de jurisdicción..."></div>
+                                            <div ng-if="isJurisdictionRegional()">
+                                                <div class="color-red" ng-if="!document.government.identifier">Por favor, primero seleccione un pa&iacute;s.</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12">
+
+                                        <div ng-if="isJurisdictionRegional() && !canAddRegionalMeasure()">
+                                            <div class="alert alert-warning">
+                                                <h4>Tenga en consideraci&oacute;n que las medidas regionales o multilaterales solo tienen que registrarse una vez en el Centro de Intercambio de Informaci&oacute;n sobre APB y que cada uno de los pa&iacute;ses seleccionados como abarcados por la medida regional mostrar&aacute;n dicha medida como parte de su marco jur&iacute;dico en su perfil del pa&iacute;s. Se recomienda que un pa&iacute;s convenga en registrar la medida en nombre de la organizaci&oacute;n regional o el grupo de pa&iacute;ses que la comparten.</h4>
+                                            </div>
+                                        </div>
+
+                                        <div ng-if="isJurisdictionRegional() && canAddRegionalMeasure()">
+                                            <div class="help-info">Tenga en consideraci&oacute;n que las medidas regionales o multilaterales solo tienen que registrarse una vez en el Centro de Intercambio de Informaci&oacute;n sobre APB y que cada uno de los pa&iacute;ses seleccionados como abarcados por la medida regional mostrar&aacute;n dicha medida como parte de su marco jur&iacute;dico en su perfil del pa&iacute;s. Se recomienda que un pa&iacute;s convenga en registrar la medida en nombre de la organizaci&oacute;n regional o el grupo de pa&iacute;ses que la comparten.</div>
+                                            <div class="km-control-group" required name="jurisdictionRegions" caption="Nombre(s) del país y/o Grupo(s) geográfico o político/económico">
+                                                <button type="button" class="btn btn-info" ng-if="document.jurisdictionRegions && document.jurisdictionRegions.length >0">{{document.jurisdictionRegions[0]|term}}</button>
+                                            </div>
+                                        </div>
+
+                                        <div ng-show="isJurisdictionSubNationalOrCommunity()">
+                                            <div class="km-control-group" required name="jurisdictionName" caption="Nombre de jurisdicción subnacional/comunitaria/otra">
+                                                <div km-textbox-ml required ng-model="document.jurisdictionName" locales="document.header.languages"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="description" caption="Descripción breve del documento, que incluya objetivo y alcance (máx. 300 palabras)">
+                                            <div class="help-info">Se considera que la descripci&oacute;n breve del documento, que incluya objetivo y alcance, servir&aacute; como un resumen breve de la medida. Esta informaci&oacute;n se mostrar&aacute; en el resumen del registro, de manera que es importante que la descripci&oacute;n sea clara y concisa.</div>
+                                            <div km-rich-textbox ng-model="document.description" rows="4" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="isModelContractualClause" caption="¿La medida contiene cláusulas contractuales modelo?">
+                                            <div km-yes-no required ng-model="document.isModelContractualClause" locales="document.header.languages"></div>
+                                            <div ng-show="document.isModelContractualClause">
+                                                <div class="km-control-group" style="margin:10px;" name="modelContractualClauseDescription" caption="Sírvase proporcionar información adicional.">
+                                                    <div km-textbox-ml ng-model="document.modelContractualClauseDescription" locales="document.header.languages"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+
+
+                            <section>
+                                <legend name="documentsDetails">Informaci&oacute;n del documento</legend>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" required name="documents" caption="Texto del documento (en su idioma original)">
+                                            <div class="help-info">Se prefiere un adjunto. De lo contrario, proporcione la ubicaci&oacute;n del documento, es decir, la direcci&oacute;n de Internet, incluyendo la URL de la p&aacute;gina web (por ejemplo, http://absch.cbd.int/) y el nombre del sitio web (por ejemplo, &quot;Centro de Intercambio de Informaci&oacute;n sobre Acceso y Participaci&oacute;n en los Beneficios&quot;).</div>
+                                            <div km-link required name="documents" ng-model="document.documents" extensions="options.documentLinksExt" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="documentTranslations" caption="Traducción a uno de los idiomas oficiales de las Naciones Unidas.">
+                                            <div km-link name="documentTranslations" ng-model="document.documentTranslations" extensions="options.documentTranslationsExt" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="linkedMeasures" caption="Relación con otras medidas">
+                                            <div class="help-info">S&iacute;rvase indicar si hay alguna relaci&oacute;n entre este(a) documento/medida y otras leyes, regulaciones, directrices, medidas administrativas o de pol&iacute;tica. Por ejemplo, si la medida que se presenta es la aplicaci&oacute;n de una ley existente. Esta informaci&oacute;n brindar&aacute; asistencia para mostrar informaci&oacute;n sobre el marco jur&iacute;dico nacional. Esta secci&oacute;n del formulario permitir&aacute; establecer enlaces entre dos medidas en caso en que est&eacute;n relacionadas, por ejemplo, si la medida que se presenta es la aplicaci&oacute;n de una ley existente. Ambas medidas se mostrar&aacute;n juntas.</div><!--<div km-select multiple name="linkedMeasures" ng-model="document.linkedMeasures"items="options.measures()" placeholder="Please select ..."></div>--><div document-selector hide-self="document.header.identifier" ng-model="document.linkedMeasures" question="linkedMeasures" government="document.government" schema="measure"></div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="linkedMeasuresDescription" caption="Por favor, describa la relación ">
+                                            <div km-rich-textbox ng-model="document.linkedMeasuresDescription" rows="4" placeholder="" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- <hr>
+                                    <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="otherDocuments" caption="Any other relevant information">
+                                        <div km-link name="otherDocuments" ng-model="document.otherDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="otherInformation" caption="Short description">
+                                        <div km-textbox-ml ng-model="document.otherInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                            --></section>
+                            <section>
+                                <legend>Informaci&oacute;n de contacto de regulaci&oacute;n</legend>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" required name="authorities" caption="Institución de contacto">
+
+                                            <div document-selector ng-model="document.authorities" question="authorities" government="document.government" schema="(authority contact)"></div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <legend>
+                                    <label for="absMeasures"> Elementos de la medida</label>
+                                </legend>
+                               
+
+
+                                <div ng-if="document.absMeasuresForDelete">
+                                    <div class="alert alert-warning">
+                                        <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>El formato para grabar los <i>Elementos de las medidas</i> ha cambiado. Este registro tiene que actualizarse manualmente. La lista a continuaci&oacute;n de <i>Elementos de las medidas</i> pertenece a la versi&oacute;n anterior y se presenta para que sirva como referencia a fin de brindar asistencia para la actualizaci&oacute;n de este registro.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span> &nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><span ng-class="{'confidential-text':document.absMesasureNotApplicable}"><input type="checkbox" name="absMesasureNotApplicable" ng-model="document.absMesasureNotApplicable" watch-items> Elementos que no corresponden a esta medida.</input></span></div>
+                                            <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absMesasureNotApplicable}">
+                                                <div class="km-control-group"  name="absMeasures" required caption="">
+                                                    <div class="help-info"></div>
+                                                    <div layout="row" style="margin-bottom:20px;">
+                                                         <div class="help-info" >S&iacute;rvase seleccionar qu&eacute; elementos est&aacute;n incluidos en la medida que se est&aacute; registrando y determine los art&iacute;culos o secciones pertinentes de la medida para cada elemento seleccionado. Esta informaci&oacute;n brindar&aacute; asistencia para mostrar informaci&oacute;n sobre el marco jur&iacute;dico nacional y ayudar&aacute; a los eventuales usuarios a comprender el acceso, la participaci&oacute;n en los beneficios y o los requisitos de cumplimiento del pa&iacute;s. A veces, el contenido y los elementos de la medida est&aacute;n relacionados con los objetivos y planes de aplicaci&oacute;n del acceso y la participaci&oacute;n en los beneficios en el plano nacional. Este podr&iacute;a ser el caso, por ejemplo, de algunas estrategias o planes de acci&oacute;n en materia de APB. En esos casos, se podr&iacute;a indicar qu&eacute; elementos de la medida no corresponden, haciendo clic en la casilla de verificaci&oacute;n que se presenta a continuaci&oacute;n.</div>
+                                                    </div>
+                                                    <div edit-measure-matrix name="absMeasuresMatrix" required ng-model="document.absMeasures" locales="document.header.languages" document="document" ng-disabled="document.absMesasureNotApplicable"
+                                                        validation-report="validationReport"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <section>
+                                <legend>Informaci&oacute;n adicional</legend>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+                                            <div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+                                            <div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="relevantDocuments" caption="Otros documentos pertinentes">
+                                            <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <legend>Notas</legend>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="km-control-group" name="notes">
+                                            <div class="help-block">El campo &quot;Notas&quot; es para sus notas u observaciones personales y quedar&aacute; oculto al ver el registro. Este campo no est&aacute; destinado a ser usado para informaci&oacute;n confidencial.</div>
+                                            <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </form>
+
+                    <div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
+
+                            <div view-measure ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

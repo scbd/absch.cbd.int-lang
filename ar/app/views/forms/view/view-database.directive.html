@@ -1,5 +1,5 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
-	<div class="panel-heading bg-blue"><h4>قاعدة البيانات الوطنية أو الموقع الإلكتروني الوطني  <span class="color-black">(NDB)</span></h4></div>
+	<div class="panel-heading bg-blue"><h4>National Database or Website <span class="color-black" dir="rtl"> (NDB) </span></h4></div>
 	<div class="record-body panel-body">
 
 
@@ -8,7 +8,7 @@
 <legend>معلومات عامة</legend>
 		
 		<div ng-show="document.government">
-			<label name="country">Country</label>
+			<label name="country">الدولة</label>
 			<div class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
@@ -27,7 +27,13 @@
 			<label>رابط موقع الويب</label>
 			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i></div>
 		</div>
-
+		<div ng-show="document.websites && document.websites.length >0">
+			<label>رابط موقع الويب</label>
+			<div class="km-value">
+				<div ng-repeat="site in document.websites"><a translation-url  target="{{target}}" target="_new" ng-href="{{site.url}}">{{site.name||site.url}}</a> <i ng-show="site.name">({{site.url}})</i></div>
+			</div>
+		</div>
+	
 
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">

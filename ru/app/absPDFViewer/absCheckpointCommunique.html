@@ -5,11 +5,11 @@
     <meta name="description" content="Access and Benefit-Sharing Clearing-House">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
-    <link rel="shortcut icon" href="ico/favicon.png"><!-- Bootstrap core CSS --><link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --><link href="../css/communiquePDF.css" rel="stylesheet">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/app/css/template.css"><!-- Bootstrap core CSS --><link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --><link href="../css/communiquePDF.css" rel="stylesheet">
     <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css"> <!--<script src="../libs/barcode-39.js/barcode-39.min.js"></script>-->     <script src="../libs/momentjs/min/moment.min.js"></script><script src="../libs/angular/angular.min.js"></script><script src="../libs/underscore/underscore-min.js"></script><script src="../libs/angular-sanitize/angular-sanitize.min.js"></script><script src="absCheckpointCommunique.js"></script><script src="absCommon.js"></script><style type="text/css">
-    body {
-            zoom: 0.53; /* using 0.55 or higher results in the elements not lining up correctly */
-        }
+   
     .alert-danger{
         color:#FFF!important;
         text-transform: uppercase;
@@ -21,17 +21,14 @@
 
 <body>
     <div ng-app="ngapp" class="main-nav">
-        <div ng-controller="printPermit" style="width:1000px;"  >
+        <div ng-controller="printPermit">
             <div class="col-xs-12 alert alert-danger" ng-show="documentInfo.Realm && documentInfo.Realm.toUpperCase()!= 'ABS'">
                 <h4>Внимание!</h4>
                 <p>this pdf was generated from ABS-CH test website.<p>
             </div>
 
-            <div class="row" style="padding-bottom:30px;">
-                    <div class="col-xs-4" style="text-align:center;"><img style="max-width:120px;padding-top:10px" src="/app/img/UNEP_logo.svg" /></div>
-                        <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="/app/img/cbd-logo-black-en.svg" style="max-width:180px;" /></div>
-                        <div class="col-xs-4" style="text-align:center;"><img style="max-width:80px;padding-top:5px;" src="/app/img/Emblem_of_the_United_Nations.svg" /></div>
-            </div>
+            
+            <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'"></div>    
 
             <div class="bg-blue text-center" style="padding:5px;">
                 <h1>
@@ -183,7 +180,7 @@
                 </div>
                 <div class="col-xs-4">
                     <label>Information collected or received on:</label>
-                    <div class="text"><span ng-show="document.dateCollected">{{document.dateCollected}}</span> <span ng-show="document.dateCollectedFrom && !document.dateCollected">{{document.dateCollectedFrom}}</span> <span ng-show="document.dateCollectedTo && document.dateCollectedFrom">to {{document.dateCollectedTo}}</span></div>
+                    <div class="text"><span ng-show="document.dateCollected">{{document.dateCollected}}</span> <span ng-show="document.dateCollectedFrom && !document.dateCollected">{{document.dateCollectedFrom}}</span> <span ng-show="document.dateCollectedTo && document.dateCollectedFrom"> to {{document.dateCollectedTo}}</span></div>
                 </div>
 
                 <div class="clearfix"></div>

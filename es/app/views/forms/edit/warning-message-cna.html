@@ -1,7 +1,7 @@
 ﻿<div ng-show="showWarning">
     <div class="well" ng-if="responsibleCNA && responsibleCNA.numFound > 0">
         <h3 class="color-red">Ya se ha publicado una ANC, indicada como la &uacute;nica ANC designada de su pa&iacute;s.</h3>
-            <h5 class="color-red">Usted puede guardar borradores, sin embargo, no podr&aacute; publicar una nueva ANC antes de actualizar el siguiente registro:</h5>
+            <h5 class="color-red"> Usted puede guardar borradores, sin embargo, no podr&aacute; publicar una nueva ANC antes de actualizar el siguiente registro:</h5>
             <div id="search-new">
             <div ng-repeat="rec in responsibleCNA.docs">
                 <result-default doc='rec' type="nationalRecords"></result-default>

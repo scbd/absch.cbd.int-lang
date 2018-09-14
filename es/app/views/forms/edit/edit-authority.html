@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="name" required caption="Nombre de la Autoridad Nacional Competente">
-                                           <div class="help-info">Proporcione el nombre de la entidad responsable, por ej., Ministerio de Medio Ambiente. Tenga en cuenta que el nombre de la Autoridad Nacional Competente (ANC) ayudar&aacute; a identificar el registro en el Centro de Intercambio de Informaci&oacute;n sobre APB.</div>
+                                           <div class="help-info"> Proporcione el nombre de la entidad responsable, por ej., Ministerio de Medio Ambiente. Tenga en cuenta que el nombre de la Autoridad Nacional Competente (ANC) ayudar&aacute; a identificar el registro en el Centro de Intercambio de Informaci&oacute;n sobre APB.</div>
                                             <div km-textbox-ml name="name" required ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -86,12 +86,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="phones" required caption="Números de teléfono"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="ejemplo: +1 514.288.2220"></div>
+                                        <div class="km-control-group" name="phones" required caption="Números de teléfono">
+                                            <div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="ejemplo: +1 514.288.2220"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="faxes" caption="Números de fax"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="ejemplo: +1 514.288.6588"></div>
+                                        <div class="km-control-group" name="faxes" caption="Números de fax">
+                                            <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="ejemplo: +1 514.288.6588"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +106,8 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="websites" caption="Dirección del sitio web"><!--   <div class="help-info">Please provide the URL of the website (e.g http://absch.cbd.int/) and the name of the website (e.g. ‘Access and Benefit-sharing Clearing-House’).</div> --><div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
+                                        <div class="km-control-group" name="websites" caption="Dirección del sitio web">
+                                            <div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +179,7 @@
 
                                                     <div class="km-control-group" name="responsibilities" caption="Descripción breve de las responsabilidades de la ANC (máximo 300 caracteres)." required>
                                                         <div class="help-info">En el art&iacute;culo 13, p&aacute;rrafo 2, se establece que &quot;Con arreglo a las medidas legislativas, administrativas o de pol&iacute;tica correspondientes, las autoridades nacionales competentes estar&aacute;n encargadas de conceder el acceso o, seg&uacute;n proceda, de emitir una prueba por escrito de que se ha cumplido con los requisitos de acceso, y estar&aacute;n encargadas de asesorar 
-sobre los procedimientos y requisitos correspondientes para obtener el consentimiento fundamentado previo y concertar condiciones mutuamente acordadas&quot;. Recuerde que el prop&oacute;sito de esta secci&oacute;n es brindar asistencia a los usuarios para que comprendan las responsabilidades relacionadas con el acceso a recursos gen&eacute;ticos y que deber&iacute;a responder la siguiente pregunta: ¿Qui&eacute;n concede el acceso a qu&eacute;? La descripci&oacute;n de las responsabilidades deber&iacute;a ser breve y clara, a fin de que pueda comprenderse.</div>
+sobre los procedimientos y requisitos correspondientes para obtener el consentimiento fundamentado previo y concertar condiciones mutuamente acordadas&quot;. Recuerde que el prop&oacute;sito de esta secci&oacute;n es brindar asistencia a los usuarios para que comprendan las responsabilidades relacionadas con el acceso a recursos gen&eacute;ticos y que deber&iacute;a responder la siguiente pregunta: ¿Qui&eacute;n concede el acceso a qu&eacute;? La descripci&oacute;n de las responsabilidades deber&iacute;a ser breve y clara, a fin de que pueda comprenderse. </div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -228,7 +231,7 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="relevantDocuments" caption="Other relevant website address or attached documents">
+                                        <div class="km-control-group" name="relevantDocuments" caption="Otras direcciones de sitios web o documentos adjuntos pertinentes">
                                             <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                         </div>
                                     </div>
@@ -252,16 +255,9 @@ sobre los procedimientos y requisitos correspondientes para obtener el consentim
 
                     <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
-                    </div><!--
-        <hr style="margin-top:20px;">
+                    </div>
 
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-12">
-
-                <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
-
-            </div>
-        </div> --></div>
+                </div>
 
 
 

@@ -19,7 +19,7 @@
 
 		<div class="register-content-header bg-pink color-white">
 			<div style="padding:10px 10px;">
-				<h3>Estad&iacute;sticas de mi pa&iacute;s</h3>
+				<h3> Estad&iacute;sticas de mi pa&iacute;s</h3>
 			</div>
 		</div>
 		<div class="register-content-content  bg-color">
@@ -50,7 +50,7 @@
 
 										</div><!-- /.info-box-content --></div><!-- /.info-box --><div class="info-box" ng-class="{'bg-red' : !hasPublishingAuthority, 'bg-green': hasPublishingAuthority}"><span class="info-box-icon"><i class="fa" ng-class="{'fa-check-square-o' : hasPublishingAuthority, 'fa-times': !hasPublishingAuthority}"></i></span><div class="info-box-content"><span class="info-box-text">Autoridad publicadora</span> <span class="info-box-number" ng-if="!hasPublishingAuthority">0</span><div class="progress">
 												<div class="progress-bar" style="width: 0%" ng-style="{'width:100%' : hasPublishingAuthority}"></div>
-											</div><span class="progress-description"><span ng-if="!hasPublishingAuthority">No</span> se ha designado ninguna autoridad publicadora en el Centro de Intercambio de la Informaci&oacute;n sobre APB <a href="/register/national-users"  class="link-color">Hacer clic para agregar</a></span></div><!-- /.info-box-content --></div>
+											</div><span class="progress-description">You have <span ng-if="!hasPublishingAuthority">not </span> designated publishing authority in ABS-CH <a href="/register/national-users"  class="link-color"> Click to add</a></span></div><!-- /.info-box-content --></div>
 
 
 									<div class="info-box bg-red" ng-repeat="schema in schemas" ng-if="getDocumentsForUpdate(schema.schema).length>0||(schema.schema=='measure' && measureElementMissing && measureElementMissing.length > 0)"><span class="info-box-icon"><i class="fa fa-times"></i></span><div class="info-box-content">
@@ -114,7 +114,7 @@
 									</ul>
 								</div><!-- /.col --></div><!-- /.row --></div><!-- /.box-body --><div class="box-footer no-padding">
 							<ul class="nav nav-pills nav-stacked">
-								<li ng-repeat="schema in schemas"><a href="#">{{schema.label}} <span class="pull-right text-red"><i class="fa fa-search"></i> {{schema.value}}</span></a></li>
+								<li ng-repeat="schema in schemas"><a href="#"> {{schema.label}} <span class="pull-right text-red"><i class="fa fa-search"></i> {{schema.value}}</span></a></li>
 							</ul>
 						</div><!-- /.footer --></div>
 				</div>

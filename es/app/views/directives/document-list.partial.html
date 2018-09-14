@@ -6,8 +6,8 @@
             <link rel="stylesheet" href="/app/css/result.css">
 
             <ul class="pagination pull-right" ng-show='showPagination'>
-                <li class="disabled"><a translation-url  href>Encontrar {{documentCount}}</a></li>
-                <li class="disabled"><a translation-url  href>{{pageCount==0 ? 0 : currentPage+1 }} of {{pageCount}}</a></li>
+                <li class="disabled"><a translation-url  href>  Encontrar {{documentCount}}</a></li>
+                <li class="disabled"><a translation-url  href>  {{pageCount==0 ? 0 : currentPage+1 }} of {{pageCount}}</a></li>
                 <li ng-class="{disabled: currentPage == 0}"><a translation-url  href ng-click="actionSetPage(0)">Primero »</a></li>
                 <li ng-class="{disabled: currentPage == 0}"><a translation-url  href ng-click="actionSetPage(currentPage-1)">« Ant</a></li>
                 <li ng-repeat="n in range(pageCount)" ng-class="{active: n == currentPage}" ng-click="actionSetPage(n)"><a translation-url  href>{{n+1}}</a></li>
@@ -67,7 +67,7 @@
 
                             <div class="row textDescription" style="padding:10px;">
                                 <div class="col-xs-12">
-                                    <div ng-click="displayDetails = !displayDetails;load(document,displayDetails);"><i class="fa" ng-class="{'fa-caret-down':displayDetails, 'fa-caret-right':!displayDetails}" style="font-size:11px;color:#999;position:relative; top:-1px;font-size:14px;"></i> <span class="title text" id="help-record-title">{{document.title}}</span></div>
+                                    <div ng-click="displayDetails = !displayDetails;load(document,displayDetails);"><i class="fa" ng-class="{'fa-caret-down':displayDetails, 'fa-caret-right':!displayDetails}" style="font-size:11px;color:#999;position:relative; top:-1px;font-size:14px;"></i> <span class="title text" id="help-record-title">{{document.title}} </span></div>
 
                                     <div class="description" ng-hide="displayDetails" ng-click="displayDetails = !displayDetails;load(document,displayDetails);">{{document.description | truncate:700:&apos; ... more&apos;}}</div>
                                     <div class="metadetails" ng-hide="displayDetails"><!--<span ng-repeat="m in document.metadata">
@@ -75,7 +75,7 @@
                                             <span>--> <!--<span ng-show="document.Languages && document.metadata"> | </span>
                                                 <span ng-repeat="b in document.Languages">
                                                     {{b | term}} {{$last ? '' : ', '}}
-                                                </span>--> <span style="text-transform:uppercase;" ng-if="document.schema != 'focalPoint'"><span>{{document | uniqueID}}</span><span ng-if="document.meta1"><span>|</span><span >{{document.meta1}} <span ng-if="doc.ownerGovernment">registrado por {{document.ownerGovernment|term}}</span></span></span><span ng-if="document.meta2"><span>|</span><span >{{document.meta2}}</span></span><span ng-if="document.meta3"><span>|</span><span >{{document.meta3}}</span></span></span></div>
+                                                </span>--> <span style="text-transform:uppercase;" ng-if="document.schema != 'focalPoint'"><span> {{document | uniqueID}} </span><span ng-if="document.meta1"> <span> | </span> <span > {{document.meta1}} <span ng-if="doc.ownerGovernment">registered by {{document.ownerGovernment|term}}</span> </span></span><span ng-if="document.meta2"> <span> | </span> <span > {{document.meta2}} </span></span><span ng-if="document.meta3"> <span> | </span> <span > {{document.meta3}} </span></span></span></div>
 
                                     <div class="pull-right" ng-show="displayDetails" ng-click="displayDetails = !displayDetails;load(document,displayDetails);" style="z-index:100;padding-top:30px;padding-right:20px;cursor:pointer;"><i class="glyphicon glyphicon-remove-circle" style="font-size:20px;color:white;"></i></div>
                                     <div class="details" ng-if="displayDetails" record-loader document="document.data"></div>
@@ -91,7 +91,7 @@
             </div>
             <div class="clearfix"></div>
             <ul class="pagination pull-right" ng-show='showPagination'>
-                <li ng-class="disabled"><a translation-url  href>{{pageCount==0 ? 0 : currentPage+1 }} of {{pageCount}}</a></li>
+                <li ng-class="disabled"><a translation-url  href>  {{pageCount==0 ? 0 : currentPage+1 }} of {{pageCount}}</a></li>
                 <li ng-class="{disabled: currentPage == 0}"><a translation-url  href ng-click="actionSetPage(0)">Primero »</a></li>
                 <li ng-class="{disabled: currentPage == 0}"><a translation-url  href ng-click="actionSetPage(currentPage-1)">« Ant</a></li>
                 <li ng-repeat="n in range(pageCount)" ng-class="{active: n == currentPage}" ng-click="actionSetPage(n)"><a translation-url  href>{{n+1}}</a></li>
@@ -137,13 +137,13 @@
                             <div class="col-xs-12">
                                 <div class="row bg-grey" style="padding:8px 8px 0px 8px; border-radius: 3px;"><span  ng-class="{'color-grey': Permit==0, 'color-black': Permit > 0}"><!--<i class="material-icons color-grey" style="font-size:15pt;padding:0;margin:0;">
                                                  {{key | schemaIcon}}
-                                            </i>--><span style="font-weight:bold;padding:0;margin:0;position:relative;top:-5px;">{{key|schemaNamePlural}}</span><!--<a translation-url  style="padding:0;margin:0;position:relative;top:-5px;" ng-if="key=='measure'" href="/search/countries/{{country.code.toUpperCase()}}/measure-matrix" > ( <i class="fa fa-table"></i>  measures matrix) </a> --></span> <span class="pull-right badge bg-darkgrey">{{schema.length}}</span></div>
+                                            </i>--><span style="font-weight:bold;padding:0;margin:0;position:relative;top:-5px;">{{key|schemaNamePlural}} </span><!--<a translation-url  style="padding:0;margin:0;position:relative;top:-5px;" ng-if="key=='measure'" href="/search/countries/{{country.code.toUpperCase()}}/measure-matrix" > ( <i class="fa fa-table"></i>  measures matrix) </a> --></span> <span class="pull-right badge bg-darkgrey">{{schema.length}}</span></div>
                                 <div class="row">
                                     <div style="padding:10px; margin:0 10px;">
                                         <div class="row table-hover table-msr" ng-repeat="doc in schema track by doc.identifier_s | orderBy:['sort1', 'sort2', 'sort3']">
                                             <div class="row border"><!-- <a translation-url  nhref="/search/new/measurematrix/countries/{{country.code}}" class="">
                                                     <i class="fa fa-bar-chart"></i>
-                                                </a> --> <!--<a translation-url  ng-if="key=='measure'" href="/search/new/measurematrix/{{doc|uniqueIDWithoutRevision}}" class="pull-left"><i class="fa fa-bar-chart"></i>&nbsp;</a> --><div ng-click="doc.displayDetails = !doc.displayDetails;load(doc,doc.displayDetails)" style="cursor:pointer"><i class="fa fa-chevron-circle-up" ng-show="doc.displayDetails"></i> <i class="fa fa-chevron-circle-down" ng-show="!doc.displayDetails"></i> <span >{{doc.title}}</span> <span class="pull-right" style="font-size:10px;text-transform:uppercase;"> <span ng-if="doc.meta1"><span class="color-medgrey" >{{doc.meta1}} <span ng-if="doc.ownerGovernment">registrado por {{doc.ownerGovernment|term}}</span></span></span> <span ng-if="doc.meta2"><span ng-if="doc.meta1" style="color:#333!important;">&nbsp; | &nbsp;</span><span class="color-medgrey" >{{doc.meta2}}</span></span> <span ng-if="doc.meta3"><span ng-if="doc.meta1 || doc.meta2" style="color:#333!important;">&nbsp; | &nbsp;</span><span class="color-medgrey" >{{doc.meta3}}</span></span> <span ng-if="doc.schema != 'focalPoint'"><span <span ng-if="doc.meta1 || doc.meta2 || doc.meta3" style="color:#333!important;">&nbsp; | &nbsp;</span><span class="color-medgrey bold" >{{doc | uniqueID}}</span></span></span></div>
+                                                </a> --> <!--<a translation-url  ng-if="key=='measure'" href="/search/new/measurematrix/{{doc|uniqueIDWithoutRevision}}" class="pull-left"><i class="fa fa-bar-chart"></i>&nbsp;</a> --><div ng-click="doc.displayDetails = !doc.displayDetails;load(doc,doc.displayDetails)" style="cursor:pointer"><i class="fa fa-chevron-circle-up" ng-show="doc.displayDetails"></i> <i class="fa fa-chevron-circle-down" ng-show="!doc.displayDetails"></i> <span > {{doc.title}} </span> <span class="pull-right" style="font-size:10px;text-transform:uppercase;"> <span ng-if="doc.meta1"> <span class="color-medgrey" > {{doc.meta1}} <span ng-if="doc.ownerGovernment">registered by {{doc.ownerGovernment|term}}</span> </span></span> <span ng-if="doc.meta2"> <span ng-if="doc.meta1" style="color:#333!important;"> &nbsp; | &nbsp; </span> <span class="color-medgrey" > {{doc.meta2}} </span></span> <span ng-if="doc.meta3"> <span ng-if="doc.meta1 || doc.meta2" style="color:#333!important;"> &nbsp; | &nbsp; </span> <span class="color-medgrey" > {{doc.meta3}} </span></span> <span ng-if="doc.schema != 'focalPoint'"> <span <span ng-if="doc.meta1 || doc.meta2 || doc.meta3" style="color:#333!important;"> &nbsp; | &nbsp; </span> <span class="color-medgrey bold" > {{doc | uniqueID}} </span></span></span></div>
                                                 <div class="row" ng-if="doc.displayDetails"><i class="glyphicon glyphicon-remove-circle circle pull-right" style="position:relative;top:40px;z-index:100;font-size:20px;color:white;padding-right:30px!important;cursor:pointer" ng-click="doc.displayDetails=!doc.displayDetails;" ng-show="doc.displayDetails"></i><div class="col-xs-12 details document-show-hide" ng-show="doc.displayDetails" record-loader document="doc.data"></div>
                                                 </div>
                                             </div>

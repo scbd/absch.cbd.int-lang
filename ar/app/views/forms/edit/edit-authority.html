@@ -23,7 +23,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="government" required caption="Country">
+                                        <div class="km-control-group" name="government" required caption="الدولة">
                                             <div>
                                                 <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
                                             </div>
@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="name" required caption="اسم السلطة الوطنية المختصة">
-                                           <div class="help-info">اذكر اسم الجهة المسؤولة، مثل وزارة البيئة يُرجى العلم أن اسم السلطة الوطنية المختصة سيساعد في تحديد السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
+                                           <div class="help-info"> اذكر اسم الجهة المسؤولة، مثل وزارة البيئة يُرجى العلم أن اسم السلطة الوطنية المختصة سيساعد في تحديد السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
                                             <div km-textbox-ml name="name" required ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -86,12 +86,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="phones" required caption="أرقام الهاتف"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="example: 2220 288 514 1+"></div>
+                                        <div class="km-control-group" name="phones" required caption="أرقام الهاتف">
+                                            <div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="example: 2220 288 514 1+"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="faxes" caption="أرقام الفاكس"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="example: 6588 288 514 1+"></div>
+                                        <div class="km-control-group" name="faxes" caption="أرقام الفاكس">
+                                            <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="example: 6588 288 514 1+"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +106,8 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="websites" caption="عنوان موقع إنترنت"><!--   <div class="help-info">Please provide the URL of the website (e.g http://absch.cbd.int/) and the name of the website (e.g. ‘Access and Benefit-sharing Clearing-House’).</div> --><div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
+                                        <div class="km-control-group" name="websites" caption="عنوان موقع إنترنت">
+                                            <div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +178,7 @@
                                                         </div>
 
                                                     <div class="km-control-group" name="responsibilities" caption="وصف قصير لمسؤوليات السلطة الوطنية المختصة (300 حرف بحد أقصى)" required>
-                                                        <div class="help-info">تنص الفقرة 2 من المادة 13 على أن &quot;السلطات الوطنية المختصة مسؤولة، وفقاً للتدابير التشريعية أو الإدارية أو&nbsp;السياساتية الوطنية الواجبة التطبيق، عن منح حق الحصول، أو عند الاقتضاء، إصدار دليل كتابي يفيد باستيفاء متطلبات الحصول ومسؤولة عن الإبلاغ عن الإجراءات والمتطلبات المنطبقة للحصول على الموافقة المسبقة عن علم وإبرام شروط متفق عليها بصورة متبادلة&quot;. تذكر أن الغرض من هذا القسم هو مساعدة المستخدمين على فهم المسؤوليات التي تتعلق بالحصول على الموارد الجينية  وينبغي أن يجيب على السؤال: من يمنح الوصول لماذا؟ ينبغي أن يكون وصف المسؤوليات موجزًا وواضحًا.</div>
+                                                        <div class="help-info">تنص الفقرة 2 من المادة 13 على أن &quot;السلطات الوطنية المختصة مسؤولة، وفقاً للتدابير التشريعية أو الإدارية أو&nbsp;السياساتية الوطنية الواجبة التطبيق، عن منح حق الحصول، أو عند الاقتضاء، إصدار دليل كتابي يفيد باستيفاء متطلبات الحصول ومسؤولة عن الإبلاغ عن الإجراءات والمتطلبات المنطبقة للحصول على الموافقة المسبقة عن علم وإبرام شروط متفق عليها بصورة متبادلة&quot;. تذكر أن الغرض من هذا القسم هو مساعدة المستخدمين على فهم المسؤوليات التي تتعلق بالحصول على الموارد الجينية  وينبغي أن يجيب على السؤال: من يمنح الوصول لماذا؟ ينبغي أن يكون وصف المسؤوليات موجزًا وواضحًا. </div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -251,16 +254,9 @@
 
                     <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
-                    </div><!--
-        <hr style="margin-top:20px;">
+                    </div>
 
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-12">
-
-                <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
-
-            </div>
-        </div> --></div>
+                </div>
 
 
 

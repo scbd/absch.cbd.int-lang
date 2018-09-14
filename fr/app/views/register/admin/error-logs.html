@@ -26,7 +26,7 @@
 
 		<div class="register-content-header bg-pink color-white">
 			<div style="padding:10px 10px;">
-				<h3>Demandes en cours pour l&rsquo;Admin</h3>
+				<h3> Demandes en cours pour l&rsquo;Admin</h3>
 			</div>
 		</div>
 		<div class="register-content-content">
@@ -34,7 +34,7 @@
 			<legend name="formInfo" style="display:none"></legend><!--<div style="font-weight:bold;">Records which have been not approved since 12 weeks.</div>--><div class="registerpage-content">
 
 				<div class="alert alert-danger" ng-show="__error"><strong>Erreur : </strong>{{__error}}</div>
-				<legend>Filtres</legend>
+				<legend>Filtres </legend>
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="km-control-group" name="startDate" required caption="Date de début">
@@ -71,9 +71,9 @@
 									<tr>
 										<td>{{recordCount - $index}}</td>
 										<td><!--https://github.com/scbd/absch.cbd.int/releases/tag/2016.49.3--> <a target="_new" ng-href="https://github.com/scbd/absch.cbd.int/commit/{{getGitHash(error.appVersion)}}">{{error.appVersion|limitTo:20}}...</a></td>
-										<td>{{error.level}}</td>
+										<td> {{error.level}}</td>
 										<td>{{error.timestamp|formatDateWithTime}}</td>
-										<td>{{error.message|limitTo:100}}</td>
+										<td> {{error.message|limitTo:100}}</td>
 										<td>
 											<button type="button" class="btn btn-primary" ng-click="error.showDetails=!error.showDetails">Afficher les d&eacute;tails</button>
 										</td>

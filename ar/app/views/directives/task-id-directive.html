@@ -11,10 +11,10 @@
         </style><!--<span block-region activate="isUpdating"></span>--> <span block-region activate="isUpdating" dir="rtl"></span><div class="panel panel-danger">
 
             <div class="panel-heading bg-red">
-                <h3 style="padding:0;margin:0;" class="color-white"><span ng-if="workflow.type.name != 'delete-record'">النشر</span> <span ng-if="workflow.type.name == 'delete-record'">الحذف</span> الطلب معلق</h3>
+                <h3 style="padding:0;margin:0;" class="color-white"><span ng-if="workflow.type.name != 'delete-record'">Publishing </span> <span ng-if="workflow.type.name == 'delete-record'">Deletion </span> Request Pending</h3>
             </div>
 
-            <div class="panel-body">قام بالطلب: &nbsp; <span class="bold">{{workflow.createdBy_info.firstName + &apos; &apos; + workflow.createdBy_info.lastName}} <a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">({{workflow.createdBy_info.email}})</a><span class="unbold">on</span> {{workflow.createdOn | formatDateWithTime}}</span> <span ng-if="document.amendmentIntent == 1" class="bold color-red">طلب إلغاء هذا السجل.</span> <span ng-if="workflow.data.additionalInfo" class="bold"> </br> </br>معلومات إضافية قدمها الطالب :- <span class="unbold">{{workflow.data.additionalInfo}}</span></br> </br> </span><div ng-repeat="activity in workflow.activities|filter:isOpen|orderBy:'createdOn'" style="padding-top:20px;">
+            <div class="panel-body">قام بالطلب: &nbsp; <span class="bold">{{workflow.createdBy_info.firstName + &apos; &apos; + workflow.createdBy_info.lastName}} <a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">({{workflow.createdBy_info.email}})</a><span class="unbold"> on </span> {{workflow.createdOn | formatDateWithTime}} </span> <span ng-if="document.amendmentIntent == 1" class="bold color-red"> has requested to revoke this record.</span> <span ng-if="workflow.data.additionalInfo" class="bold"> </br> </br>معلومات إضافية قدمها الطالب :- <span class="unbold">{{workflow.data.additionalInfo}}</span></br> </br> </span><div ng-repeat="activity in workflow.activities|filter:isOpen|orderBy:'createdOn'" style="padding-top:20px;">
                     <div class="row row-centered" style="margin:0;padding:0;" id="buttonsDiv" ng-show="isAssignedToMe(activity)">
                         <div class="col-xs-4 text-center" ng-show="isAssignedToMe(activity) && activity.name != 'deleteRecord'">
                             <button type="button" class="btn btn-success bold" ng-click="updateActivity({ action : 'approve' })" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span class="hidden-xs">موافقة</span></button>
@@ -31,19 +31,19 @@
                     </div>
                     <div class="row" style="margin:0;padding:0;" ng-show="workFlowIsCreatedByMe()">
                         <div class="col-xs-12">
-                            <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span class="hidden-xs">إلغاء طلب النشر</span></button>
+                            <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span class="hidden-xs"> إلغاء طلب النشر</span></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="panel-footer" style="margin-top:10px;"><span>ستنتهي صلاحية  هذا الطلب في  <span class="color-red bold">{{workflow.daysToApproval}} يومًا</span></span></div>
+            <div class="panel-footer" style="margin-top:10px;"><span>ستنتهي صلاحية  هذا الطلب في  <span class="color-red bold">{{workflow.daysToApproval}} يومًا</span> </span></div>
         </div>
 
     </div>
 
     <div class="col-xs-12">
         <div ng-show="document" class="t-document">
-            <record-loader show-details="showDetails" class="shadow-z-2" hide-buttons="true" link-target="_self"></record-loader>
+            <record-loader show-details="showDetails" class="shadow-z-2" hide-buttons="true" link-target="_self" document="document"></record-loader>
         </div>
     </div>
     <script type="text/ng-template" trados-translation="true" id="rejectWorkflowRequestModalTemplate">
@@ -82,7 +82,7 @@
             <h3 class="modal-title">حذف التأكيد</h3>
         </div>
         <div class="modal-body bg-white" dir="rtl">
-           <h2 class="color-red">هل تريد حقًا حذف هذا السجل؟</h2>{{document}}</div>
+           <h2 class="color-red"> هل تريد حقًا حذف هذا السجل؟</h2>{{document}}</div>
         <div class="modal-footer" dir="rtl">
             <button type="button" class="btn btn-danger bold pull-left" ng-click="updateActivity()" ng-disabled="isUpdating"><span class="hidden-xs" dir="rtl">حذف السجل</span></button>
             <button type="button" class="btn btn-default" ng-click="closeConfirmation()" ng-disabled="isUpdating"><span class="hidden-xs">إغلاق</span></button>

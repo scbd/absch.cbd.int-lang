@@ -22,7 +22,7 @@
 						<div class="row">
 
 							<div class="col-md-12">
-								<div class="km-control-group" required name="title" caption="العنوان">
+								<div class="km-control-group" required name="title" caption="1. Title">
 									<div km-textbox-ml required ng-model="document.title" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -30,7 +30,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="projectNumber" caption="رقم أو معرف المشروع">
+								<div class="km-control-group" name="projectNumber" caption="2. رقم أو معرف المشروع">
                                     <div class="help-info">يرجى ذكر رقم أي مشروع أو معرف أو رقم مرجعي، حسب التوفر.</div>
 									<div km-textbox-ml name="projectNumber" ng-model="document.projectNumber" locales="document.header.languages"></div>
 								</div>
@@ -39,17 +39,33 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="geographicScope" caption="النطاق الجغرافي">
-									<div km-select name="geographicScope" required ng-model="document.geographicScope.scope" placeholder="يرجى اختيار خيار واحد" items="options.geographicScope()"></div>
+								<div class="km-control-group" required name="geographicScope" caption="3. النطاق الجغرافي">
+									<div km-select name="geographicScope" required ng-model="document.geographicScope.scope"
+									 placeholder="يرجى اختيار خيار واحد" items="options.geographicScope()" ng-change="clearGeographicSelection()"></div>
 								</div>
 							</div>
 						</div>
-						<div class="row" ng-show="document.geographicScope.scope">
-							<div class="col-md-12">
-								<div class="km-control-group" required name="regionsOrCountries" caption="المجموعة (المجموعات) الجغرافية أو السياسية/الاقتصادية و/أو الدول (الدول)">
-									<div km-select multiple required name="regionsOrCountries" ng-model="document.geographicScope.regionsOrCountries" placeholder="يرجى اختيار خيار واحد" items="options.regions()"></div>
-								</div>
-							</div>
+						<div class="row" ng-show="document.geographicScope.scope && (isGlobalOrRegional() || isNational())">
+							
+								<div class="col-md-12">
+								<div class="km-control-group well well-sm" name="regionsOrCountries"
+								required caption="Geographical or political/economic group(s) or Country(ies)" style="padding:10px;">
+									<div class="row">
+										<div class="col-md-5" ng-show="!isNational()"><!-- document.geographicScope.regionsOrCountries --><div class="km-control-group"  name="regions" 
+											caption="Geographical or political/economic group(s)">
+												<div km-select multiple required name="geographicalRegions" 
+												ng-model="document.geographicScope.regions" placeholder="يرجى اختيار خيار واحد" 
+												items="options.regions()"></div>
+											</div>
+										</div>
+										<div class="col-md-2" ng-hide="!isGlobalOrRegional()">And / Or</div>
+										<div class="col-md-5">
+											<div class="km-control-group"  name="countries" caption="البلد (البلدان)">
+												<div km-select multiple required name="geographicalCountries" ng-model="document.geographicScope.countries" placeholder="يرجى اختيار خيار واحد" items="options.countries()"></div>
+											</div>
+										</div>
+									</div>
+								</div></div>
 						</div>
 
 						<div class="row" ng-show="isSubnational()">
@@ -69,7 +85,32 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="status" caption="حالة الوثيقة :">
+								<div class="km-control-group" required name="capacityBuildingType" caption="4. نوع مبادرة بناء القدرات">
+									<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4. Atleast one question should be answered yes</span></label>
+									<div style="padding-left:20px" class="well">
+										<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme? ">
+											<div class="km-yes-no" required name="isProjectProgramme" ng-model="document.capacityBuildingType.isProjectProgramme"></div>
+										</div>
+										<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?">
+											<div class="km-yes-no" required name="isBroaderProjectPart" ng-model="document.capacityBuildingType.isBroaderProjectPart"></div>
+										</div>
+										<div class="km-control-group" name="broaderProjects" caption="Please identify the broader project" ng-show="document.capacityBuildingType.isBroaderProjectPart">
+												
+											<div document-selector ng-model="document.capacityBuildingType.broaderProjects"
+																			question="capacityBuildingInitiative"
+																			schema="capacityBuildingInitiative" filter="true" skip-government="true"></div>
+										</div>
+										<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme? ">
+											<div class="km-yes-no" required name="isStandaloneProject" ng-model="document.capacityBuildingType.isStandaloneProject"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="km-control-group" required name="status" caption="5. Status of the document">
 									<div km-select name="status" required ng-model="document.status" id="documentStatus"
 									placeholder="يرجى اختيار خيار واحد" items="options.status()"  show-description="true"></div>
 								</div>
@@ -78,26 +119,39 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group well well-sm" name="timeframe" required caption="الجدول الزمنى">
-									<div class="row">
-									  	<div class="col-md-3">
-											<div class="km-control-group" name="startDate" caption="تاريخ البدء">
-												<div km-date name="startDate" ng-model="document.startDate" ng-change="clearDuration()"></div>
+								<div class="km-control-group" name="timeframe" required caption="6. الجدول الزمنى">
+									<div class=" well well-sm">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="km-control-group" name="startDate" caption="تاريخ البدء">
+													<div km-date name="startDate" ng-model="document.startDate" ng-change="clearDuration()"></div>
+												</div>
 											</div>
-									  	</div>
-										<div class="col-md-3">
-											<div class="km-control-group" name="endDate" caption="تاريخ الانتهاء">
-												<div km-date name="endDate" ng-model="document.endDate" ng-change="clearDuration()"></div>
+											<div class="col-md-3">
+												<div class="km-control-group" name="endDate" caption="تاريخ الانتهاء">
+													<div km-date name="endDate" ng-model="document.endDate" ng-change="clearDuration()"></div>
+												</div>
+											</div>
+											<div class="col-md-1 text-center" ng-show="!document.status || isProposedOrApproved()">
+												<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > أو </div>
+											</div>
+											<div class="col-md-5">
+												<div class="km-control-group" name="duration" caption="المدة" ng-show="!document.status || isProposedOrApproved()">
+													<label for="durationPeriod" style="width:0px;height:0px;display:inline"><span style="display:none">6. Please enter duration in number for eg. 24</span></label>
+													<label for="durationText" style="width:0px;height:0px;display:inline"><span style="display:none">6. Please identify whether the duration is expressed in years, months or days</span></label>
+													<input type="number" name="durationPeriod" ng-model="document.durationPeriod"
+													minlength="1" placeholder="eg. 24" ng-change="clearDates()" class="form-control"
+													style="display:inline-block;width:100px"/>
+													<select name="durationText" ng-model="document.durationText"  class="form-control"
+													style="display:inline-block;width:100px" placeholder="eg. Months">
+														<option value=""></option>	
+														<option value="days">الأيام</option>
+														<option value="months">الأشهر</option>
+														<option value="years">Years</option>
+													</select>
+												</div>
 											</div>
 										</div>
-										<div class="col-md-1 text-center">
-											<div class="km-control-group bold" name="enddate" style="margin-top:30px;" >أو</div>
-										</div>
-										<div class="col-md-5">
-											<div class="km-control-group" name="duration" caption="المدة">
-												<div km-textbox-ml name="duration" ng-model="document.duration" placeholder="آخر 24 شهر" locales="document.header.languages" ng-change="clearDates()"></div>
-											</div>
-									  	</div>
 									</div>
 								</div>
 							</div>
@@ -105,7 +159,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="organizations" caption="الوكالة (الوكالات) أو المنظمة (المنظمات) التى ترعى المبادرة أو تنفذها أو الاثنين معًا.">
+								<div class="km-control-group" required name="organizations" caption="7. الوكالة (الوكالات) أو المنظمة (المنظمات) التى ترعى المبادرة أو تنفذها أو الاثنين معًا.">
                                 <div class="help-info">في بعض الحالات، تنهض الوكالة بمسؤولية رعاية المبادرة وتنفيذها. في هذه الحالة، يرجى تحديد كلا المربعين:</div>
 								<div class="checkbox"><label><input type="checkbox" ng-model="document.isImplementedByAgencies">الوكالة (الوكالات) أو المنظمة (المنظمات) الراعية</label></div>
 
@@ -143,35 +197,25 @@
                                 </div>
                                 </div>
 							</div>
-						</div><!-- <div class="row">
+						</div>
+
+
+                        <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="contacts" caption="Contact person(s)"> --> <!-- <div document-selector ng-model="document.contacts"
+                                <div class="km-control-group" name="contacts" caption="8. مسؤول (مسؤولو) الاتصال">
+
+                                     <div document-selector ng-model="document.contacts"
                                                                         question="contacts"
-                                                                        schema="contact"
-                                                                        government="document.government"
-                                                                        filter="true"
-                                                                        ></div> --> <!-- <field-embed-contact multiple ng-model="document.contacts" locales="document.header.languages" caption="{{'Add a contact »'}}"></field-embed-contact> --> <!-- </div>
+                                                                        schema="((schema_s:contact AND type_s:person))"
+																		filter="true" skip-government="true"></div><!-- (focalpoint authority) OR  --></div>
                             </div>
-                        </div> --><div class="row">
-							<div class="col-md-12">
-								<div class="km-control-group" required name="type" caption="نوع مبادرة بناء القدرات">
-                                    <div km-select name="type" required ng-model="document.type" items="options.cbiTypes()" show-description="true"></div>
-								</div>
-							</div>
-						</div>
+                        </div>
 
 
-						<div class="row" ng-show="isPartofBroaderInitiative()">
-							<div class="col-md-12">
-								<div class="km-control-group" required="isPartofBroaderInitiative()" name="partOfBroaderInitiative" caption="يرجى توفير معلومات أخرى حول المشروع/البرنامج/المبادرة بصورة واسعة">
-									<div km-textbox-ml required="isPartofBroaderInitiative()" rows="2" name="partOfBroaderInitiative" ng-model="document.typeInfo" placeholder="" locales="document.header.languages"></div>
-								</div>
-							</div>
-						</div>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="projectDocument" caption="وثيقة المشروع أو الوثيقة التي تصف المبادرة">
+								<div class="km-control-group" required name="projectDocument" caption="9. وثيقة المشروع أو الوثيقة التي تصف المبادرة">
 									<div class="help-info">يرجى دائما إرفاق المستند (المستندات) ذات الصلة التي سيتم تخزينها في قاعدة البيانات حتى يتمكن المستخدمون من تنزيلها. إذا كانت الوثائق متاحة على الإنترنت، يرجى أيضًا وضع رابط لها.</div>
 									<div km-link name="projectDocument" required ng-model="document.projectDocument" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 								</div>
@@ -182,7 +226,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="description" caption="وصف مختصر للمبادرة، بما في ذلك الأهداف والغايات">
+								<div class="km-control-group" required name="description" caption="10. وصف مختصر للمبادرة، بما في ذلك الأهداف والغايات">
 									<div km-textbox-ml required ng-model="document.description" rows="3" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -190,7 +234,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="audience" caption="المجموعة (المجموعات)/المستفيد (المستفيدين)">
+								<div class="km-control-group" name="audience" caption="11. المجموعة (المجموعات)/المستفيد (المستفيدين)">
 									<div km-term-check name="audience" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -198,7 +242,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="categories" caption="فئة (فئات) أنشطة بناء القدرات">
+								<div class="km-control-group" required name="categories" caption="12. فئة (فئات) أنشطة بناء القدرات">
 									<div km-term-check show-description="true" name="categories" required ng-model="document.categories" terms="options.categories()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -208,7 +252,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" required name="fundingSourceTypes" caption="نوع (أنواع) مصدر التمويل">
+								<div class="km-control-group" required name="fundingSourceTypes" caption="13. نوع (أنواع) مصدر التمويل">
                                     <div km-term-check show-description="true" name="fundingSourceTypes" required ng-model="document.fundingSourceTypes" terms="options.fundingSources()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -225,7 +269,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="corefundingsources" caption="مصدر (مصادر) التمويل الأساسية"><!-- <div document-selector ng-model="document.coreFundingSources"
+                                <div class="km-control-group" name="corefundingsources" caption="14. مصدر (مصادر) التمويل الأساسية"><!-- <div document-selector ng-model="document.coreFundingSources"
                                                                         question="coreFundingSources"
                                                                         schema="contact"
                                                                         government="document.government"
@@ -237,7 +281,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="km-control-group" name="cofinancingsources" caption="مصدر (مصادر) التمويل المشترك"><!-- <div document-selector ng-model="document.coFinancingSources"
+                                <div class="km-control-group" name="cofinancingsources" caption="15. مصدر (مصادر) التمويل المشترك"><!-- <div document-selector ng-model="document.coFinancingSources"
                                                                         question="coFinancingSources"
                                                                         schema="contact"
                                                                         government="document.government"
@@ -249,7 +293,7 @@
 
 						<div class="row">
 							<div class="col-md-3">
-								<div class="km-control-group" name="totalBudget" caption="إجمالي الميزانية (المبلغ بالدولار الأمريكي)">
+								<div class="km-control-group" name="totalBudget" caption="16. إجمالي الميزانية (المبلغ بالدولار الأمريكي)">
                                      <div class="help-info">وقد يشمل ذلك المساهمات العينية المعبر عنها نقدًا.</div><!-- <div km-textbox-ml name="totalBudget" ng-model="document.totalBudget" rows="1" locales="document.header.languages"></div> --><div class="input-group"><span class="input-group-addon">دولار أمريكي</span><input type="text" class="form-control" style="width:200px" required name="totalBudget" ng-model="document.totalBudget" />
 									</div>
 								</div>
@@ -259,17 +303,21 @@
 
 						<legend>نتائج بناء القدرات</legend>
                         <div class="help-info">يمكن إضافة هذه المعلمات بعد وجود نتائج (مخرجات أو نتائج أو آثار) أو أفضل الممارسات والدروس المستفادة من المبادرة المستمرة أو المكتملة.</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="km-control-group" name="resultsAchievements" caption="النتائج الإنجازات الرئيسية"><span class="help-info">يرجى إضافة ملخص قصير للإنجازات الرئيسية للمبادرة، إن وجدت، بما في ذلك تلك المرتبطة بتعزيز المساواة بين الجنسين في تحقيق أهداف الاتفاقية والبروتوكولات المنبثقة عنها. (بحد أقصى 200 كلمة)</span><div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
+						<div class="well">
+							<div class="km-control-group" name="totalBudget" caption="17. النتائج">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="km-control-group" name="resultsAchievements" caption="Results: الإنجازات الرئيسية"><span class="help-info">يرجى إضافة ملخص قصير للإنجازات الرئيسية للمبادرة، إن وجدت، بما في ذلك تلك المرتبطة بتعزيز المساواة بين الجنسين في تحقيق أهداف الاتفاقية والبروتوكولات المنبثقة عنها. (بحد أقصى 200 كلمة)</span><div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-md-12">
-								<div class="km-control-group" name="resultsOutputs" caption="النتائج: المخرجات الرئيسية"><span class="help-info">يرجى إرفاق/تحميل نسخة من، أو وضع رابط، للمنتجات ذات الصلة (الأدوات والمواد) التي أثمرتها المبادرة و/أو التقارير.</span><div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
-								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="km-control-group" name="resultsOutputs" caption="النتائج: المخرجات الرئيسية"><span class="help-info">يرجى إرفاق/تحميل نسخة من، أو وضع رابط، للمنتجات ذات الصلة (الأدوات والمواد) التي أثمرتها المبادرة و/أو التقارير.</span><div km-link name="resultsOutputs" ng-model="document.resultsOutputs" allow-link="true" allow-file="true" identifier="document.header.identifier" ></div>
+										</div>
+									</div>
+								</div>								
 							</div>
 						</div><!-- <div class="row">
 							<div class="col-md-12">
@@ -284,7 +332,7 @@
 							</div>
 						</div> --><div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="bestPractices" caption="تحديد أفضل الممارسات والدروس المستفادة."><span class="help-info">يرجى إضافة ملخص قصير لأفضل الممارسات والدروس المستفادة (بحد أقصى 500 كلمة)</span><div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
+								<div class="km-control-group" name="bestPractices" caption="18. تحديد أفضل الممارسات والدروس المستفادة."><span class="help-info">يرجى إضافة ملخص قصير لأفضل الممارسات والدروس المستفادة (بحد أقصى 500 كلمة)</span><div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
 								</div>
 							</div>
 						</div>
@@ -293,7 +341,7 @@
 
                         <div class="row" >
 							<div class="col-md-12">
-								<div class="km-control-group" required name="aichiTargets" caption="أهداف أيتشي للتنوع البيولوجي 2020">
+								<div class="km-control-group" required name="aichiTargets" caption="19. أهداف أيتشي للتنوع البيولوجي 2020">
 									<div km-term-check name="aichiTargets" required ng-model="document.aichiTargets" terms="options.aichiTargets()" binding-type="term[]"></div>
 								</div>
 							</div>
@@ -301,17 +349,17 @@
 
 						<div class="row">
 							<div class="col-md-12">
-                               <div class="km-control-group" name="absKeyAreas" required caption="المجالات الرئيسية والتدابير الاستراتيجية لبناء القدرات وتطويرها">
+                               <div class="km-control-group" name="absKeyAreas" required caption="20. المجالات الرئيسية والتدابير الاستراتيجية لبناء القدرات وتطويرها">
 									 <div class="help-info">المجالات الرئيسية محددة في الإطار الاستراتيجي لبناء وتطوير القدرات من أجل دعم التنفيذ الفعال لبروتوكول ناغويا (القرار NP-1/8).</div>
 									 <div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 								</div>
 							</div>
-						</div><a translation-url  name="#AdditionalInformation"></a><legend>معلومات إضافية</legend>
+						</div><a translation-url  name="#AdditionalInformation"></a><legend>21. معلومات إضافية</legend>
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="km-control-group" name="address" caption="Any other relavent information" >
-									<div class="help-info">يرجى استخدام هذا الحقل فى إضافة أى معلومات أخرى ذات صلة لم تذكر أو تستخدم في مكان آخر في هذا السجل.</div>
+								<div class="km-control-group" name="address" caption=" أى معلومات أخرى ذات صلة" >
+									<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 									<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 								</div>
 							</div>
@@ -328,7 +376,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="km-control-group" name="notes">
-									<legend>ملاحظات Notes</legend><span class="help-info">الحقل &quot;ملاحظات&quot; للاستخدام الشخصي ويظهر فقط أثناء تحرير السجل.</span><div km-notes name="notes" ng-model="document.notes"></div>
+									<legend>22. Notes</legend><span class="help-info">الحقل &quot;ملاحظات&quot; للاستخدام الشخصي ويظهر فقط أثناء تحرير السجل.</span><div km-notes name="notes" ng-model="document.notes"></div>
 								</div>
 							</div>
 						</div>

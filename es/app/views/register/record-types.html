@@ -1,0 +1,25 @@
+﻿<div id="SubmitPage">
+    
+    <div class="container">
+        
+        <h1>BCH Information Submission</h1>
+    
+        <h2>Crear Registros Nacionales</h2>
+        <p>La inclusi&oacute;n de registros en esta categor&iacute;a se limita al Centro de Intercambio de Puntos Focales Nacionales de Bioseguridad (CIISB-PFN) y Usuarios Nacionales Autorizados (UNA). All records submitted by NAUs will be forwarded to the BCH-NFP for review and validation prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.national" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">Submit</a></div>
+        </div>
+        
+        <h2>Crear Registros de Referencia</h2>
+        <p>Los registros en esta categor&iacute;a pueden ser presentados por todos los usuarios registrados. These records will be subject to review and validation by the Secretariat prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.reference" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">Submit</a></div>
+        </div>
+    </div>
+</div>

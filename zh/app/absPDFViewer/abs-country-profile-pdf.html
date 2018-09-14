@@ -19,9 +19,7 @@
     <script src="absCommon.js"></script>
     <script src="abs-country-profile-pdf.js"></script>
     <style>
-        body {
-            zoom: 0.53; /* using 0.55 or higher results in the elements not lining up correctly */
-        }
+       
         a[href]:after {
             content: '';
         }
@@ -82,13 +80,10 @@
 
 <body>
     <div ng-app="ngapp" class="main-nav">
-        <div ng-controller="printCountryProfile" style="width:1000px;">
+        <div ng-controller="printCountryProfile" >
 
-            <div class="row" style="padding-bottom:30px;">
-                    <div class="col-xs-4" style="text-align:center;"><img style="max-width:120px;padding-top:10px" src="/app/img/UNEP_logo.svg" /></div>
-                        <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="/app/img/cbd-logo-black-en.svg" style="max-width:180px;" /></div>
-                        <div class="col-xs-4" style="text-align:center;"><img style="max-width:80px;padding-top:5px;" src="/app/img/Emblem_of_the_United_Nations.svg" /></div>
-            </div>
+          
+            <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'"></div>    
             <div class="row">
                 <div class="col-xs-12" style="margin:auto;text-align:center;">
                     <h1><span class="color-lightblue">{{title(schema)}}</span></h1>
@@ -108,7 +103,7 @@
                                 <td style="width:120px;padding-right:20px;">
                                     <div style="height:100px;" class="flag-icon-background  flag-icon-{{code.toLowerCase()}}"></div>
                                 </td>
-                                <td><span class="country-name" style="font-size:300%;">{{country.name.en}}</span><h3 style="margin:0;padding:0;padding-top:5px;"><span style="vertical-align:top;margin-right:5px" class="label label-default" ng-show="!isRatified(country) || isInbetweenParty(country)">Non-Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country) && !isInbetweenParty(country)">Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-info" ng-show="isSignatory(country) && !isRatified(country)">Signatory</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country)">Date of {{country.treaties.XXVII8b.instrument}} {{(country.treaties.XXVII8b.deposit ? country.treaties.XXVII8b.deposit :&apos;- - - - - -&apos;) | formatDate}}</span> <span style="vertical-align:top;margin-right:5px" class="label label-success" ng-show="isRatified(country)">Date of Entry into force {{country.treaties.XXVII8b.party| formatDate}}</span></h3>
+                                <td><span class="country-name" style="font-size:300%;">{{country.name.en}}</span><h3 style="margin:0;padding:0;padding-top:5px;"><span style="vertical-align:top;margin-right:5px" class="label label-default" ng-show="!isRatified(country) || isInbetweenParty(country)">Non-Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country) && !isInbetweenParty(country)">Party</span> <span style="vertical-align:top;margin-right:5px" class="label label-info" ng-show="isSignatory(country) && !isRatified(country)">Signatory</span> <span style="vertical-align:top;margin-right:5px" class="label label-primary" ng-show="isRatified(country)">Date of {{country.treaties.XXVII8b.instrument}} {{(country.treaties.XXVII8b.deposit ? country.treaties.XXVII8b.deposit :&apos;- - - - - -&apos;) | formatDate}} </span> <span style="vertical-align:top;margin-right:5px" class="label label-success" ng-show="isRatified(country)">Date of Entry into force {{country.treaties.XXVII8b.party| formatDate}}</span></h3>
                                 </td>
                             </tr>
                         </table>
@@ -120,7 +115,7 @@
                             <div class="clearfix"></div>
 
                             <div class="row sectionHeader">
-                                <h3>National Contacts and Information</h3>
+                                <h3>Contacts and Information</h3>
                             </div>
                             <div class="row fullBorder"><br/><div ng-repeat="contact in absch_nfp|filter:isContactInformation|filter:filterSchema|orderBy:'schema_s':false">
                                     <div ng-class="{'row': ($index)%3==0}"> </div>

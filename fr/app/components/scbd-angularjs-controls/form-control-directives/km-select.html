@@ -8,7 +8,7 @@
 	</div><span><div class="btn-group" >
 			<button style="button" class="btn btn-default dropdown-toggle" ng-click="autoInit()" ng-class="{disabled:ngDisabledFn(), 'btn-info' : hasSelectedItems() }" data-toggle="dropdown">{{getTitle(displayCount, true)}} <span class="caret"></span></button>
 			<ul class="dropdown-menu" style="max-height:400px;overflow-y:auto;text-align:left">
-				<li ng-hide="!!rootItems"><a href><i class="fa fa-spinner fa-spin"></i><em>Loading...</em></a></li>
+				<li ng-hide="!!rootItems"><a href><i class="fa fa-spinner fa-spin"></i> <em>Loading...</em></a></li>
 				<li ng-show="rootItems.length==0"><a href><em>Rien &agrave; s&eacute;lectionner ...</em></a></li>
 				<li ng-show="!!rootItems && (getMinimum()==0 || allowOther == 'true')" style="padding:2px 20px;" id="filterText">
 					<input type="textbox"  ng-show="getMinimum()==0 && rootItems.length!=0" ng-model="filterText" style="width:95% !important" class="form-control" /><i title="Clear search text" ng-show="filterText" ng-click="filterText='';" class="glyphicon glyphicon-remove" style="height:1px !important;width:1px !important;cursor:pointer"></i><button class="btn btn-xs btn-default" ng-show="hasSelectedItems()"type ="button" ng-click="clearSelection()" ng-disabled="!hasSelectedItems()">Effacer la s&eacute;lection</button>

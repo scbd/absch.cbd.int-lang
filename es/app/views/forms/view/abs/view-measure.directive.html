@@ -1,0 +1,188 @@
+﻿<div id="Record" class="record panel panel-default">
+	<div class="panel-heading bg-blue">
+		<h4 ng-show="display('header')">Legislative, administrative or policy measures on access and benefit-sharing <span class="color-black"> (MSR) </span></h4></div>
+	<div class="record-body panel-body">
+
+			
+		<document-date></document-date>
+
+		<legend ng-if="document.government || document.title || document.description || document.jurisdiction || document.jurisdictionRegions || document.status || document.adoption">Informaci&oacute;n general</legend>
+
+		<div ng-show="document.government">
+			<label name="country">Pa&iacute;s</label>
+			<div class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
+		</div>
+
+		<div ng-show="document.title">
+			<label>Denominaci&oacute;n</label>
+			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
+		</div>
+
+		<div ng-show="document.description">
+			<label>Breve descripci&oacute;n</label>
+			<div class="km-value km-pre" ng-bind-html="document.description | lstring:locale"></div>
+		</div>
+
+		<div ng-show="document.jurisdiction">
+			<label>Jurisdicci&oacute;n(es)</label>
+			<div class="km-value">{{document.jurisdiction|term:locale}} <span ng-if="document.jurisdictionName ">({{document.jurisdictionName | lstring:locale}})</span></div>
+		</div>
+
+
+		<div ng-show="document.jurisdictionRegions">
+			<label>Nombre del pa&iacute;s y/o grupo(s) geogr&aacute;fico o pol&iacute;tico/econ&oacute;mico</label>
+			<div class="km-value">
+				<ul>
+					<li ng-repeat="term in document.jurisdictionRegions">{{term|term:locale}}</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div ng-show="document.status">
+			<label>Situaci&oacute;n actual de la medida</label>
+			<div class="km-value">{{document.status|term:locale}}</div>
+		</div>
+
+		<div ng-show="document.adoption">
+			<label>Fecha de adopci&oacute;n</label>
+			<div class="km-value">{{document.adoption | formatDate}}</div>
+		</div>
+
+		<div ng-show="document.entryIntoForce">
+			<label>Fecha de entrada en vigor</label>
+			<div class="km-value">{{document.entryIntoForce | formatDate}}</div>
+		</div>
+
+		<div ng-show="document.retired">
+			<label>Fecha de retirada</label>
+			<div class="km-value">{{document.retired | formatDate}}</div>
+		</div>
+
+		<div ng-show="document.limitedApplication">
+			<label>Fecha en que la medida dej&oacute; de estar en vigor</label>
+			<div class="km-value">{{document.limitedApplication | formatDate}}</div>
+		</div>
+
+
+		<div ng-show="document.type">
+			<label>Tipo de documento/medida</label>
+			<div class="km-value">{{document.type|term:locale}}</div>
+		</div>
+
+		<div ng-show="document.isModelContractualClause">
+			<label>La medida contiene cl&aacute;usulas contractuales modelo</label>
+			<div class="km-value" ng-if="document.modelContractualClauseDescription">{{document.modelContractualClauseDescription|lstring:locale}}</div>
+		</div>
+		<div ng-show="document.registeredMeasuresDescription">
+			<div class="km-value km-pre">{{document.registeredMeasuresDescription | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.documents">
+			<legend>Informaci&oacute;n del documento</legend>
+			<label>Texto del documento</label>
+			<div class="km-value">
+				<ul>
+					<li ng-repeat="item in document.documents"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+				</ul>
+			</div>
+		</div>
+
+		<div ng-show="document.documentTranslations">
+			<label>Traducci&oacute;n</label>
+			<div class="km-value">
+				<ul>
+					<li ng-repeat="item in document.documentTranslations"><a translation-url  target="_blank" ng-href="{{item.url}}"><i class="fa fa-external-link-square" aria-hidden="true"></i> {{item.name||item.url}}</a> <i ng-show="item.language">({{getTerm(item.language)|term:locale}})</i> <i ng-show="item.translationType">({{getTerm(item.translationType)|term:locale}})</i> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+				</ul>
+			</div>
+		</div><!--<div ng-show="document.linkedMeasures">
+			<label>Related measures</label>
+			<div class="km-value">
+				<ul>
+					<li ng-repeat="item in document.linkedMeasures">
+						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
+					</li>
+				</ul>
+			</div>
+		</div>--><div ng-show="document.amendedMeasures || document.amendmentsDescription">
+			<legend>Enmiendas</legend>
+			<div ng-show="document.amendedMeasures">
+				<label>En esta medida se enmienda lo siguiente:</label>
+
+				<div class="km-value">
+					<ul>
+						<li ng-repeat="item in document.amendedMeasures">
+							<div view-default-reference ng-model="item.identifier" locale="locale"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div ng-show="document.amendmentsDescription">
+				<label>Resumen de las enmiendas</label>
+				<div class="km-value km-pre" ng-bind-html="document.amendmentsDescription | lstring:review.locale"></div>
+			</div>
+
+		</div>
+
+		<div ng-show="document.authorities ">
+			<legend>Informaci&oacute;n de contacto de regulaci&oacute;n</legend>
+			<div ng-repeat="item in document.authorities">
+				<div view-contact-reference ng-model="item" locale="locale" class="km-value"></div>
+			</div>
+		</div>
+
+		<div ng-show="document.measureAmendedBy && document.measureAmendedBy.length>0">
+			<legend>Enmiendas</legend>
+			<label>Esta medida ha sido enmendada por:</label>
+			<div class="km-value">
+				<ul>
+					<li ng-repeat="item in document.measureAmendedBy">
+						<div view-default-reference ng-model="item.identifier_s" locale="locale"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div ng-show="(document.linkedMeasures && document.linkedMeasures.length>0) || document.linkedMeasuresDescription">
+			<legend>Relaciones</legend>			
+			<div class="km-value" ng-show="document.linkedMeasures && document.linkedMeasures.length>0">
+				<label>Esta medida se relaciona con:</label>
+				<ul>
+					<li ng-repeat="item in document.linkedMeasures">
+						<div view-default-reference ng-model="item.identifier" locale="locale"></div>
+					</li>
+				</ul>
+			</div>
+			<div ng-show="document.linkedMeasuresDescription">
+				<label>Descripci&oacute;n de las relaciones</label>
+				<div class="km-value km-pre" ng-bind-html="document.linkedMeasuresDescription | lstring:review.locale"></div>
+			</div>
+		</div>
+		<div ng-if="document.absMesasureNotApplicable">
+			<legend>Elementos de la medida</legend><span class="km-value confidential-text">Elementos que no corresponden a esta medida.</span></div>
+		<div ng-if="document.absMeasures">
+			<div measure-matrix-elements name="absMeasures" type="single" ng-model="document.absMeasures" 
+			locale="locale" document="document" api="measureMatrixApi">
+			</div>
+		</div>
+
+		<div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>Informaci&oacute;n adicional</legend>
+
+			<div ng-show="document.relevantInformation">
+				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+			</div>
+
+			<div ng-show="document.relevantDocuments">
+				<label>Otras direcciones de sitios web o documentos adjuntos pertinentes</label>
+				<div class="km-value">
+					<ul>
+						<li ng-repeat="item in document.relevantDocuments"><i class="fa fa-external-link-square" aria-hidden="true"></i> <a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div document-metadata class="panel-footer"></div>
+</div>

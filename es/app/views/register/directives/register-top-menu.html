@@ -37,13 +37,13 @@
         }
     </style>
 
-    <h1 style="padding:0 0 5px 0;margin:0;border-bottom:1px solid #ddd;">Centro de gesti&oacute;n de registros del Centro de Intercambio de Informaci&oacute;n sobre APB</h1>
+    <h1 style="padding:0 0 5px 0;margin:0;border-bottom:1px solid #ddd;">Centro de gesti&oacute;n de registros del Centro de Intercambio de Informaci&oacute;n sobre APB </h1>
     
     <div class="menu-tabs" style="margin-top:10px;">
-        <ul><!--<li style="text-transform:uppercase;padding-left:3px;padding-right:5px;color:#bbb;" ng-click="showFilters=null">search filters</li>--><li><a translation-url  href="/register/dashboard" ng-class="{'tabactivated':path.indexOf('dashboard') > 0}">Tablero de control</a></li>
-            <li><a translation-url  href="/register/notifications" ng-class="{'tabactivated':path.indexOf('notifications') > 0}">Solicitudes y notificaciones</a></li>
-            <li ng-if="user.government || roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  ng-class="{'tabactivated':path.indexOf('national-users')>0}" href="/register/national-users">Gesti&oacute;n de usuarios</a></li>
-            <li><a translation-url  href="/register/user-preferences" ng-class="{'tabactivated':path.indexOf('user-preferences') > 0}">Preferences</a></li>
+        <ul><!--<li style="text-transform:uppercase;padding-left:3px;padding-right:5px;color:#bbb;" ng-click="showFilters=null">search filters</li>--><li> <a translation-url  href="/register/dashboard" ng-class="{'tabactivated':path.indexOf('dashboard') > 0}"> Tablero de control </a> </li>
+            <li> <a translation-url  href="/register/notifications" ng-class="{'tabactivated':path.indexOf('notifications') > 0}"><span ng-if="isABS">Requests &amp; Notifications </span><span ng-if="isBCH">Alerts </span></a></li>
+            <li ng-if="user.government || roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  ng-class="{'tabactivated':path.indexOf('national-users')>0}" href="/register/national-users"> Gesti&oacute;n de usuarios</a> </li>
+            <li> <a translation-url  href="/register/user-preferences" ng-class="{'tabactivated':path.indexOf('user-preferences') > 0}"> Preferences </a> </li>
             <li ng-if="roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  href="/register/admin" class="bg-pink linkDark"><span class="color-white ">ADMIN del <span class="hidden-xs hidden-sm">Centro de Intercambio de Informaci&oacute;n sobre APB</span></a></span></li><!--<li ng-if="user.government || roles.isAbsAdministrator || roles.isAdministrator"><a translation-url  ng-class="{'tabactivated':path.indexOf('stats')>0}" href="/register/stats"> Country Statistics <span class="label label-danger">New</span></a> </li>--></ul>
     </div>
 

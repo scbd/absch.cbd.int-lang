@@ -65,7 +65,7 @@
 
     <script type="text/ng-template" trados-translation="true" id="addCommentsDialog">
         <div class="modal-header">           
-            <h3 class="modal-title">{{record.schema|schemaName}} :- {{record.reportedBy}}</h3> 
+            <h3 class="modal-title">{{record.schema|schemaName}} : - {{record.reportedBy}}</h3> 
         </div>
 
         <div class="modal-body">
@@ -100,10 +100,10 @@
         </div>
 
         <div class="modal-body">             
-                <div class="col-xs-12 col-form-label">Schema :{{record.schema|schemaName}}</div>
-                <div class="col-xs-12 col-form-label">Reported By :{{record.reportedBy}}</div>
-                <div class="col-xs-12 col-form-label">Reported On :<span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
-                <div class="col-xs-12 col-form-label">Information :<span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
+                <div class="col-xs-12 col-form-label">Schema : {{record.schema|schemaName}}</div>
+                <div class="col-xs-12 col-form-label">Reported By : {{record.reportedBy}}</div>
+                <div class="col-xs-12 col-form-label">Reported On : <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
+                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">

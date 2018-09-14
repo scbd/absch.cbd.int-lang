@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-md-4" ng-show="edition.contact.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
                                     <div class="km-control-group" name="contact_organizationTypeName" caption="Other organization type">
-                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="例如：生物多样性公约秘书处" locales="locales"></div>
+                                        <div km-textbox-ml name="contact_organizationTypeName" ng-model="edition.contact.organizationType.customValue" placeholder="例如： 生物多样性公约秘书处" locales="locales"></div>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="km-control-group" name="address" caption="Address">
-                                        <div km-textbox-ml ng-model="edition.contact.address" rows="2" placeholder="例如：413 St-Jacques Ouest, Suite 800" locales="edition.contact.header.languages"></div>
+                                        <div km-textbox-ml ng-model="edition.contact.address" rows="2" placeholder="例如： 413 St-Jacques Ouest, Suite 800" locales="edition.contact.header.languages"></div>
                                     </div>
                                 </div>
                             </div>
@@ -54,13 +54,13 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="city" required caption="City">
-                                        <div km-textbox-ml required name="city" ng-model="edition.contact.city" locales="edition.contact.header.languages" placeholder="例如：Montreal（蒙特利尔）"></div>
+                                        <div km-textbox-ml required name="city" ng-model="edition.contact.city" locales="edition.contact.header.languages" placeholder="例如： Montreal（蒙特利尔）"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="state" caption="State or Province">
-                                        <div km-textbox-ml name="state" ng-model="edition.contact.state" locales="edition.contact.header.languages" placeholder="例如：Quebec（魁北克）"></div>
+                                        <div km-textbox-ml name="state" ng-model="edition.contact.state" locales="edition.contact.header.languages" placeholder="例如： Quebec（魁北克）"></div>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="postalCode" caption="Postal Code or Zip">
-                                        <div km-textbox-ml name="postalCode" ng-model="edition.contact.postalCode" locales="edition.contact.header.languages" placeholder="例如：H2Y 1N9"></div>
+                                        <div km-textbox-ml name="postalCode" ng-model="edition.contact.postalCode" locales="edition.contact.header.languages" placeholder="例如： H2Y 1N9"></div>
                                     </div>
                                 </div>
 
@@ -83,15 +83,15 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="phones" required caption="Phone numbers">
-                                        <div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
-                                        <div km-inputtext-list required name="phones" ng-model="edition.contact.phones" placeholder="例如：+1 514.288.2220"></div>
+                                        <div class="help-info">Please use the following format: + [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+                                        <div km-inputtext-list required name="phones" ng-model="edition.contact.phones" placeholder="例如： +1 514.288.2220"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12">
                                     <div class="km-control-group" name="faxes" caption="Fax Numbers">
-                                        <div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
-                                        <div km-inputtext-list name="faxes" ng-model="edition.contact.faxes" placeholder="例如：+1 514.288.6588"></div>
+                                        <div class="help-info">Please use the following format: + [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+                                        <div km-inputtext-list name="faxes" ng-model="edition.contact.faxes" placeholder="例如： +1 514.288.6588"></div>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                     <div ng-show="showExisting"  class="row clearfix" >
                         <div class="col-xs-12">
                             <div ng-if="!loading && existingContacts && existingContacts.length==0" style="padding:0 10px;">
-                                <h3 class="color-litegrey">未找到组织。请添加新组织。</h3>
+                                <h3 class="color-litegrey">未找到组织。 请添加新组织。</h3>
                             </div>
                             <input type="textbox" ng-model="search.keyword" placeholder="筛选组织名称" 
                                 class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">{{recordCount}} 组织已找到</span></div>

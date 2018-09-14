@@ -1,0 +1,380 @@
+﻿<div ng-controller="editBiosafetyDecision">
+
+	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
+
+	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
+			<div>
+				<div class="alert alert-danger" ng-show="hasError()"><strong>发生错误...</strong><div>{{error}}</div>
+				</div>
+
+				<div ng-show="!isLoading() && status!='hidden'">
+					<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
+					<div km-document-validation ng-model="validationReport"></div>
+
+					<form class="editForm" name="editForm" style="margin-top:10px">
+						<div ng-show="tab=='edit'" km-tab="edit">
+							
+							<section>
+								<div class="well no-shadow bg-white">
+								<legend>一般信息</legend>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="government" required caption="国家提交决定或通讯往来">
+												<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries"
+													filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="请选择一个国家..."></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="authorities" caption="负责作出决定或进行通讯的的国家主管机构">											
+												<div document-selector ng-model="document.authorities" question="authorities"
+													government="document.government" schema="(authority)"></div>			
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" required name="title" caption="Title / Reference number of the decision / communication">
+												<div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="date" caption="作出决定的日期">
+												<div km-date placeholder="YYYY-MM-DD" name="date" required ng-model="document.date"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="takenPriorEntryIntoForce" required caption="此决定是否是在议定书生效之前所作出的？">
+												<div km-yes-no required ng-model="document.takenPriorEntryIntoForce" locales="document.header.languages"></div>
+											</div>
+									</div>
+									</div>
+									
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="jurisdictions" caption="辖区">
+												<div class="help-info">如果辖区不同于国家名称，则请提供适用法律、法规、准则或协议所属的辖区。示例：国家：Denmark, Jurisdiction:&ldquo;法罗群岛和格陵兰属于例外领土&rdquo;。</div>
+												<div km-select multiple name="jurisdictions" ng-model="document.jurisdictions" items="options.countries()"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row" ng-if="document.jurisdictions && document.jurisdictions.length>0">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="jurisdictionsDetails" caption="Jurisdiction(s) details">
+												<div km-textbox-ml ng-model="document.jurisdictionsDetails" rows="1" locales="document.header.languages" placeholder="jurisdiction details"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="isAmendment" required caption="这是否是对以前决定/通讯往来的修改？">
+												<div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row" ng-if="document.isAmendment">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="amendedDecision" caption="Indicate the BCH decision amended" required>											
+												<div document-selector ng-model="document.amendedDecisions" question="amendedDecision"
+													government="document.government" schema="(biosafetyDecision)"></div>			
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="km-control-group" required name="amendmentReason" caption="Provide reasons for the amendment">
+												<div km-textbox-ml name="amendmentReason" required ng-model="document.amendmentReason" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+								<div class="well no-shadow bg-white">
+								<label for="decisionTypes" style="width:0px;height:0px;display:inline"><span style="display:none">Subject of the decision / notification / communication</span></label>
+								<legend>Subject of the decision / notification / communication</legend>								
+								<div class="row">
+									<div class="col-xs-12">
+										<div block-region activate="decisions.otherDecisions.identifier" skip-loading-icon="true" >
+											<div class="km-control-group" name="commonDecisions" required caption="Common decisions">
+													<div km-term-check required ng-model="decisions.commonDecisions" locales="document.header.languages"
+													terms="options.commonDecisions()"  binding-type="term[]" ng-change="onCommonDecisionChanged()"  ></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div block-region activate="decisions.commonDecisions.length > 0" skip-loading-icon="true" >
+											<div class="km-control-group" name="otherDecisions" required caption="Other decisions, notifications and communications">
+												
+												<div km-term-radio required ng-model="decisions.otherDecisions" locales="document.header.languages"
+													terms="options.otherDecisions()" binding-type="term" show-other="true"></div>
+											</div>		
+										</div>		
+									</div>
+								</div></div>
+							</section>
+
+							<section ng-if="isLmoDecisionForIntentionalIntroduction">
+								<div class="well no-shadow bg-white">
+									<legend>LMOs for intentional introduction into the environment</legend>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="addressesTransboundaryMovement" required caption="Was the decision triggered by a request for a transboundary movement of LMOs into your country?">
+												<div km-yes-no required ng-model="document.addressesTransboundaryMovement" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>		
+									<div class="row well no-shadow bg-white" ng-if="document.addressesTransboundaryMovement" style="margin-left:1%">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="intentionDecisions" required caption="Type of decision">												
+												<div km-term-radio required ng-model="decisions.intentionDecisions" locales="document.header.languages"
+													terms="options.intentionDecisions()"  binding-type="term" ></div>
+											</div>									
+										</div>
+										<div class="col-sm-12">
+											<div class="km-control-group" name="receiptDate"  caption="收到通知的日期" style="width:40%">
+												<div km-date placeholder="YYYY-MM-DD" name="receiptDate" required ng-model="document.receiptDate"></div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="km-control-group" name="receiptAcknowledgementDate"  caption="将承认收到此通知的收条发送给通知人的日期" style="width:40%">
+												<div km-date placeholder="YYYY-MM-DD" name="receiptAcknowledgementDate" required ng-model="document.receiptAcknowledgementDate"></div>
+											</div>
+										</div>
+										<div class="col-sm-12">
+											<div class="km-control-group" name="communicationDate"  caption="与通知人就该决定进行沟通的日期。" style="width:40%">
+												<div km-date placeholder="YYYY-MM-DD" name="communicationDate" required ng-model="document.communicationDate"></div>
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="km-control-group" name="exporters" caption="Please provide Exporter’s contact details">											
+												<div document-selector ng-model="document.exporters" question="exporters"
+													government="document.government" schema="(contact)"></div>			
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant's contact details">											
+												<div document-selector ng-model="document.importers" question="importers"
+													government="document.government" schema="(contact)"></div>			
+											</div>
+										</div>
+									</div>
+									<div class="row well no-shadow bg-white" ng-if="document.addressesTransboundaryMovement==false"  style="margin-left:1%">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="appliesToTransboundaryMovement" required caption="Does the decision apply to transboundary movements of LMO(s) into your country?">
+												<div km-yes-no required ng-model="document.appliesToTransboundaryMovement" locales="document.header.languages"></div>
+											</div>
+										</div>
+										<div class="col-xs-12">
+											<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+												<div document-selector ng-model="document.importers" question="importers"
+													government="document.government" schema="(contact)"></div>			
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="involvesFieldTrial" caption="该决定是否涉及现场试验？">
+												<div km-yes-no required ng-model="document.involvesFieldTrial" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="involvesCommercialRelease"  caption="Does the decision allow commercial release?">
+												<div km-yes-no required ng-model="document.involvesCommercialRelease" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="appliesToSubsequentIntroductions" required caption="该决定是否适用于其后将同样的改性活生物体引入环境中？">
+												<div km-yes-no required ng-model="document.appliesToSubsequentIntroductions" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>							
+								</div>
+							</section>
+							<section ng-if="isLmoDecisionForDirectUse">
+								<div class="well no-shadow bg-white">
+									<legend>LMOs for direct use as food or feed, or for processing (LMOs-FFPs)</legend>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="decisionLMOFFPSubject" required caption="Subject of the decision">
+												<div class="km-value">
+															<div km-term-check required ng-model="document.decisionLMOFFPSubject" locales="document.header.languages"
+													terms="options.decisionLMOFFPSubject()"  binding-type="term[]"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="appliesToTransboundaryMovement" required 
+											caption="决定是否是在缺乏国内监管框架和符合条款11.6的条件下作出的？">
+												<div km-yes-no required ng-model="document.appliesToTransboundaryMovement" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row" ng-if="isLmoDecisionForIntentionalIntroduction">
+										<div class="col-xs-12">
+											<div class="alert alert-danger"><strong>Note:</strong> The first two categories in the field Subject of the decision / communication at the top of this page have been selected indicating that this record refers to a decision addressing LMOs for both Intentional introduction into the environment (Articles 7-10) AND LMOs-FFPs (Article 11).Accordingly, the fields below, Type of decision and contact details of the importer/exporter or applicant, are therefore not active because the information has already been provided.Should this not be the case, please create two different records, one for intentional introduction into the environment and one for the LMOs-FFPs.</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div block-region activate="isLmoDecisionForIntentionalIntroduction" skip-loading-icon="true">
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="km-control-group" name="directUseDecisions" required caption="Type of decision">
+															<div class="km-value">
+																<div km-term-check required ng-model="decisions.directUseDecisions" locales="document.header.languages"
+																terms="options.directUseDecisions()"  binding-type="term[]"></div>
+															</div>
+														</div>											
+													</div>
+												</div>
+												<div class="col-xs-12" ng-if="'0D0BEEF4-54E4-44C1-ABB2-B89DC145E0B3'">
+													<div class="km-control-group" name="exporters"  caption="Please provide Exporter’s contact details">											
+														<div document-selector ng-model="document.exporters" question="exporters"
+															government="document.government" schema="(contact)"></div>			
+													</div>
+												</div>
+												<div class="col-xs-12">
+													<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant's contact details">											
+														<div document-selector ng-model="document.importers" question="importers"
+															government="document.government" schema="(contact)"></div>			
+													</div>
+												</div>
+												<div class="col-xs-12">
+													<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+														<div document-selector ng-model="document.importers" question="importers"
+															government="document.government" schema="(contact)"></div>			
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section ng-if="isLmoDecisionForIntentionalIntroduction">
+								<div class="well no-shadow bg-white">
+									<legend>决定所导致的结果</legend>
+									<div class="row">
+										<div class="col-xs-12" >
+											<div class="km-control-group" name="decisionResult" required caption="决定所导致的结果">												
+												<div km-term-radio required ng-model="document.decisionResult" locales="document.header.languages"
+													terms="options.decisionResult()" binding-type="term"></div>
+											</div>		
+										</div>		
+									</div>
+								</div>
+							</section>
+							<section ng-if="isLmoDecisionForIntentionalIntroduction">
+								<div class="well no-shadow bg-white">
+									<legend>LMO &amp; risk assessment</legend>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="modifiedOrganisms" required caption="改性活生物体识别">											
+												<div document-selector ng-model="document.modifiedOrganisms" question="modifiedOrganisms"
+													government="document.government" schema="(modifiedOrganisms)"></div>			
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="riskAssessments" required caption="风险评估">											
+												<div document-selector ng-model="document.riskAssessments" question="riskAssessments"
+													government="document.government" schema="(riskAssessments)"></div>			
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section ng-if="isLmoDecisionForIntentionalIntroduction">
+								<div class="well no-shadow bg-white">
+									<legend>Decision and/or other relevant document(s)</legend>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="documents" required caption="Document (attached file)">
+												<div km-link name="documents" ng-model="document.documents" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+
+							<section>
+								<div class="well no-shadow bg-white">
+									<legend>确认或更新信息的时间表</legend>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="expires" required caption="是否要求在提交日期两年之后对此信息进行确认或更新？">												
+												<div km-yes-no required ng-model="document.expires" locales="document.header.languages"></div>
+											</div>	
+										</div>
+									</div>
+								</div>
+							</section>
+	
+							<section>
+								<div class="well no-shadow bg-white">
+									<legend>Additional information</legend>
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="address" caption="其它相关信息">
+												<div class="help-block">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
+												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="km-control-group" name="relevantDocuments" caption="任何其他相关文件">
+												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section>
+								<legend>备注</legend>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="km-control-group" name="notes">
+											<div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+						<div>
+							<pre>{{document|json}}</pre>
+						</div>
+					</form>
+
+					<div class="row" ng-show="tab=='review'" km-tab="review" id="schemaView">
+
+						<div view-biosafety-decision ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

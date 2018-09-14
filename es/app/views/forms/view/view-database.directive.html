@@ -1,5 +1,5 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><h4>Sitio web o base de datos nacionales <span class="color-black"></span></h4></div>
+	<div class="panel-heading bg-blue"><h4>National Database or Website <span class="color-black"> (NDB) </span></h4></div>
 	<div class="record-body panel-body">
 
 
@@ -27,11 +27,17 @@
 			<label>URL del sitio web</label>
 			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i></div>
 		</div>
-
+		<div ng-show="document.websites && document.websites.length >0">
+			<label>URL del sitio web</label>
+			<div class="km-value">
+				<div ng-repeat="site in document.websites"><a translation-url  target="{{target}}" target="_new" ng-href="{{site.url}}">{{site.name||site.url}}</a> <i ng-show="site.name">({{site.url}})</i></div>
+			</div>
+		</div>
+	
 
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>

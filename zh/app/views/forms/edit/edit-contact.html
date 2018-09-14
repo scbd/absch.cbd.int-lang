@@ -14,15 +14,13 @@
 			</div><!--<div ng-show="isLoading()">
 				<i class="fa fa-spinner fa-spin"></i> Loading...
 			</div>--><div ng-show="!isLoading() && status!='hidden'">
-				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
-				<p class="color-litegrey">请注意，国家联系人未在获取和惠益分享信息交换所中作为独立记录公开提供。仅当与其他公开的国家记录相关联时才显示所公布的国家联系人。</p>
-
-				<div km-document-validation ng-model="validationReport"></div>
+				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" /><!-- <p class="color-litegrey">Please note that contacts are not publically available in the ABSCH as stand-alone records.
+	Published contacts will only be display if they are linked to other published records.</p> --><div km-document-validation ng-model="validationReport"></div>
 				<form name="editForm" class="editForm" style="margin-top:10px">
 					<div ng-show="tab=='edit'" km-tab="edit">
 						<legend name="formInfo" style="display:none"></legend>
 						<section>
-							<div class="row">
+							<div class="row" ng-if="isNationalUser">
 								<div class="col-sm-12">
 									<div class="km-control-group" name="government" required caption="政府">
 										<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="请选择一个国家..."></div>
@@ -62,7 +60,7 @@
 									</div>
 
 									<div class="col-md-8 col-sm-8 col-xs-12">
-										<div class="km-control-group" name="contact_firstName" ng-required="!form.contact_firstNameX.$valid" caption="名字" required>
+										<div class="km-control-group" name="firstName" ng-required="!form.contact_firstNameX.$valid" caption="名字" required>
 											<input type="text" class="form-control" name="contact_firstNameX" ng-model="document.firstName" ng-required="document.type=='person'" />
 										</div>
 									</div>
@@ -200,7 +198,7 @@
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_emails" caption="电子邮箱" required>
+									<div class="km-control-group" name="emails" caption="电子邮箱" required>
 										<div km-inputtext-list name="contact_emails" type="email" ng-model="document.emails" placeholder="示例：secretariat@cbd.int"></div>
 									</div>
 								</div>

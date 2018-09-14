@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="name" required caption="国家主管机关名称">
-                                           <div class="help-info">提供负责实体的名称，如环境部。请记住国家主管部门名称将有助于查明获取和惠益分享信息交换所的记录。</div>
+                                           <div class="help-info"> 提供负责实体的名称，如环境部。请记住国家主管部门名称将有助于查明获取和惠益分享信息交换所的记录。</div>
                                             <div km-textbox-ml name="name" required ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -86,12 +86,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="phones" required caption="电话号码"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="例如：+1 514.288.2220"></div>
+                                        <div class="km-control-group" name="phones" required caption="电话号码">
+                                            <div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="例如：+1 514.288.2220"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="faxes" caption="传真号码"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
+                                        <div class="km-control-group" name="faxes" caption="传真号码">
+                                            <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +106,8 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="websites" caption="网址"><!--   <div class="help-info">Please provide the URL of the website (e.g http://absch.cbd.int/) and the name of the website (e.g. ‘Access and Benefit-sharing Clearing-House’).</div> --><div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
+                                        <div class="km-control-group" name="websites" caption="网址">
+                                            <div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +178,7 @@
                                                         </div>
 
                                                     <div class="km-control-group" name="responsibilities" caption="国家主管部门责任简述（最多 300 个字符）。" required>
-                                                        <div class="help-info">第13条第2款规定，&ldquo;国家主管部门应依照适用的国家立法、行政或政策措施，负责批准获取或酌情签发符合获取要求的书面证明，并负责就获得事先知情同意和设立共同商定条件的适用程序与要求提供建议。&rdquo;请记住，本部分旨在帮助用户理解与获取遗传资源相关的责任，并回答以下问题：由谁批准获取？可获取哪些资源？对责任的描述应该简短易懂。</div>
+                                                        <div class="help-info">第13条第2款规定，&ldquo;国家主管部门应依照适用的国家立法、行政或政策措施，负责批准获取或酌情签发符合获取要求的书面证明，并负责就获得事先知情同意和设立共同商定条件的适用程序与要求提供建议。&rdquo;请记住，本部分旨在帮助用户理解与获取遗传资源相关的责任，并回答以下问题：由谁批准获取？可获取哪些资源？对责任的描述应该简短易懂。 </div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -251,16 +254,9 @@
 
                     <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
-                    </div><!--
-        <hr style="margin-top:20px;">
+                    </div>
 
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-12">
-
-                <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
-
-            </div>
-        </div> --></div>
+                </div>
 
 
 

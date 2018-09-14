@@ -40,7 +40,7 @@
     <div class="row" style="display:none" id="divShowError" ng-show="showError">
         <div class="col-xs-12">
             <div class="alert alert-danger" role="alert">
-                <button type="button" class="close" ng-click="showError=false"><span aria-hidden="true">&times;</span> <span class="sr-only">Fermer</span></button>{{errorMessage}}</div>
+                <button type="button" class="close" ng-click="showError=false"><span aria-hidden="true">&times;</span> <span class="sr-only">Fermer</span></button> {{errorMessage}}</div>
 
         </div>
     </div>
@@ -71,12 +71,29 @@
                     <h2>Requ&ecirc;te de publication</h2>
                 </div>
                 <div class="modal-body">
-                    <p>Souhaitez-vous ajouter des informations compl&eacute;mentaires pour l&apos;autorit&eacute; de la publication?</p>
+                    <p>Would you like to add additional information for the publishing request?</p>
                     <textarea class="form-control" rows="5" name="info" ng-model="InfoDoc.additionalInfo"></textarea>
                 </div>
                 <div class="modal-footer" style="margin-top:0">
                     <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">Annuler</button>
                     <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">Envoyer la demande</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divWorkflowDraft" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-red color-white">
+                    <h2>Edit Publishing Request</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Editing and saving as draft a publishing request will cancel the publishing request and send it back to draft mode. <br/>Are you sure you want to continue?</p>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" class="btn btn-default" ng-click="closeWorkflowDraftDialog(false)">Non</button>
+                    <button type="button" id="continueWorkflowDraftRequest" class="btn btn-primary pull-left" ng-disabled="loading">Oui</button>
                 </div>
             </div>
         </div>

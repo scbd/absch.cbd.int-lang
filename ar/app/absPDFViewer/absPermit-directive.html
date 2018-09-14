@@ -5,295 +5,295 @@
         <h4>تحذير!</h4>
         <p>this pdf was generated from ABS-CH test website.<p>
     </div>
-    <div class="row" style="padding-bottom:30px;">
-            <div class="col-xs-4" style="text-align:center;"><img style="max-width:120px;padding-top:10px" src="/app/img/UNEP_logo.svg" /></div>
-                <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="/app/img/cbd-logo-black-en.svg" style="max-width:180px;" /></div>
-                <div class="col-xs-4" style="text-align:center;"><img style="max-width:80px;padding-top:5px;" src="/app/img/Emblem_of_the_United_Nations.svg" /></div>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-12 bg-green" >
-            <h1 class="color-litegreen  text-center" style="padding:0;">
+    <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'"></div>
+
+    <div class="row" style="margin-right:10px">
+        <div class="col-xs-12 bg-green">
+            <h1 class="color-litegreen  text-center" style="padding:0;font-size:20;">
                 <div class="color-white">{{documentInfo |uniqueID:true}}</div>Internationally recognized certificate of compliance constituted from information on the permit or its equivalent made available to the Access and Benefit-sharing Clearing-House</h1>
         </div>
 
     </div>
 
     <div class="row">
-        <div class="col-xs-12 " >In accordance with Article 17, paragraph 2, of the Nagoya Protocol on Access and Benefit-sharing, a permit or its equivalent issued in accordance with Article 6, paragraph 3 (e) and made available to the Access and Benefit-sharing Clearing-House, shall constitute an internationally recognized certificate of compliance.</div>
+        <div class="col-xs-12 ">In accordance with Article 17, paragraph 2, of the Nagoya Protocol on Access and Benefit-sharing, a permit or its equivalent issued in accordance with Article 6, paragraph 3 (e) and made available to the Access and Benefit-sharing Clearing-House, shall constitute an internationally recognized certificate of compliance.</div>
     </div>
 
-    <div class="alert alert-danger" ng-show="versions && versions[0].body.amendmentIntent==1">
-        <div class="text-center">
-            <h1 class="color-white">THIS CERTIFICATE HAS BEEN REVOKED AND IS NO LONGER VALID</h1>
-            <p>انظر تاريخ التعديلات لمعرفة المزيد من المعلومات.</p>
-        </div>
-    </div>
-
-    <legend>معلومات عامة</legend>
-    <div class="row top-border bg-litegreen">
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>Issuing country</label>
-            <div class="text">{{document.government|term |uppercase}}</div>
-        </div>
-
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>Verification link (view latest version)</label>
-            <div class="text"><a href="https://absch.cbd.int/database/{{documentInfo | uniqueID}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()== 'ABS'">https://absch.cbd.int/database/{{documentInfo|uniqueID:false}}</a> <a href="https://training-absch.cbd.int/database/{{documentInfo | uniqueID}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()=='ABS-TRG'">https://training-absch.cbd.int/database/{{documentInfo|uniqueID:false}}</a> <a href="https://absch.cbddev.xyz/database/{{documentInfo | uniqueID}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()== 'ABS-DEV'">https://absch.cbddev.xyz/database/{{documentInfo|uniqueID:false}}</a></div>
-        </div>
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>ABS-CH Unique Identifier (UID)</label>
-            <div class="text">{{documentInfo|uniqueID:true}}</div>
-        </div>
-    </div>
-
-    <legend>سلطة الإصدار</legend>
-    <div class="row top-border bg-litegreen">
-         <div class="col-xs-12">
-            <div class="text">
-                <div view-contact-reference ng-model="document.absCNA" locale="locale"></div>
+    <div class="row" style="margin-right:10px">
+        <div class="col-xs-12 ">
+            <div class="alert alert-danger" ng-show="versions && versions[0].body.amendmentIntent==1">
+                <div class="text-center">
+                    <h1 class="color-white">THIS CERTIFICATE HAS BEEN REVOKED AND IS NO LONGER VALID</h1>
+                    <p>انظر تاريخ التعديلات لمعرفة المزيد من المعلومات.</p>
+                </div>
             </div>
-          </div>
-    </div>
 
-    <legend>تفاصيل التصريح أو ما يعادله</legend>
-    <div class="row top-border bg-litegreen">
+            <legend>معلومات عامة</legend>
+            <div class="row top-border bg-litegreen">
 
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>الرقم المرجعي للتصريح أو ما يعادله</label>
-            <div class="text">{{document.title| lstring:locale}}</div>
-        </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Issuing country</label>
+                    <div class="text">{{document.government|term |uppercase}}</div>
+                </div>
 
-        <div class="col-xs-12" ng-if="document.referenceToNationalPermit">
-            <label>المراجع أو المعرفات الوطنية الإضافية</label>
-            <div class="text" ng-bind-html="renderHtml(document.referenceToNationalPermit)"></div>
-        </div>
 
-        <div class="clearfix"></div>
-        <div class="col-xs-6">
-             <div ng-show="document.dateOfIssuance">
-					<label>تاريخ إصدار التصريح أو ما يعادله</label>
-					<div class="text">{{document.dateOfIssuance | formatDate}}</div>
-				</div>
-        </div>
-        <div class="col-xs-6">
-            <div ng-show="document.dateOfExpiry">
-    				<label>تاريخ انتهاء التصريح أو ما يعادله</label>
-    				<div class="text">{{document.dateOfExpiry | formatDate}}</div>
-    			</div>
-        </div><!--<div class="col-xs-12" ng-if="document.referenceToNationalPermit">
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Verification link (view latest version)</label>
+                    <div class="text"><a href="https://absch.cbd.int/database/{{documentInfo | uniqueIDWithoutRevision}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()== 'ABS'">https://absch.cbd.int/database/{{documentInfo|uniqueIDWithoutRevision}}</a> <a href="https://training-absch.cbd.int/database/{{documentInfo | uniqueIDWithoutRevision}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()=='ABS-TRG'">https://training-absch.cbd.int/database/{{documentInfo|uniqueIDWithoutRevision}}</a> <a href="https://absch.cbddev.xyz/database/{{documentInfo | uniqueIDWithoutRevision}}" ng-if="documentInfo.Realm && documentInfo.Realm.toUpperCase()== 'ABS-DEV'">https://absch.cbddev.xyz/database/{{documentInfo|uniqueIDWithoutRevision}}</a></div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>ABS-CH Unique Identifier (UID)</label>
+                    <div class="text"> {{documentInfo|uniqueID:true}} </div>
+                </div>
+            </div>
+
+            <legend>سلطة الإصدار</legend>
+            <div class="row top-border bg-litegreen">
+                <div class="col-xs-12">
+                    <div class="text">
+                        <div view-contact-reference ng-model="document.absCNA" locale="locale"></div>
+                    </div>
+                </div>
+            </div>
+
+            <legend>تفاصيل التصريح أو ما يعادله</legend>
+            <div class="row top-border bg-litegreen">
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>الرقم المرجعي للتصريح أو ما يعادله</label>
+                    <div class="text">{{document.title| lstring:locale}}</div>
+                </div>
+
+                <div class="col-xs-12" ng-if="document.referenceToNationalPermit">
+                    <label>المراجع أو المعرفات الوطنية الإضافية</label>
+                    <div class="text" ng-bind-html="renderHtml(document.referenceToNationalPermit)"></div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-6">
+                    <div ng-show="document.dateOfIssuance">
+                        <label>تاريخ إصدار التصريح أو ما يعادله</label>
+                        <div class="text">{{document.dateOfIssuance | formatDate}}</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div ng-show="document.dateOfExpiry">
+                        <label>تاريخ انتهاء التصريح أو ما يعادله</label>
+                        <div class="text">{{document.dateOfExpiry | formatDate}}</div>
+                    </div>
+                </div><!--<div class="col-xs-12" ng-if="document.referenceToNationalPermit">
             <label>Reference to other internationally recognized certificate(s) of compliance that relate(s) to this permit</label>
             <div class="text" ng-bind-html="renderHtml(document.referenceToNationalPermit)"></div>
         </div>--><div ng-show="document.relatedIRCCs">
-                <label>Unique identifier(s) of related internationally recognized certificate(s) of compliance</label>
-                <div class="text" ng-repeat="item in document.relatedIRCCs"><span view-default-reference ng-model="item.identifier" locale="locale"></span></div>
+                    <label>Unique identifier(s) of related internationally recognized certificate(s) of compliance</label>
+                    <div class="text" ng-repeat="item in document.relatedIRCCs"><span view-default-reference ng-model="item.identifier" locale="locale"></span></div>
+                </div>
+
             </div>
 
-      </div>
+            <legend>معلومات الموافقة المسبقة عن علم</legend>
+            <div class="row top-border bg-litegreen">
 
-       <legend>معلومات الموافقة المسبقة عن علم</legend>
-          <div class="row top-border bg-litegreen">
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Confirmation that prior informed consent (PIC) obtained or granted </label>
+                    <div class="text"> نعم</div>
+                </div>
 
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>Confirmation that prior informed consent (PIC) obtained or granted</label>
-            <div class="text">نعم</div>
-        </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Provider <span class="help-block">The person or entity that holds the right to grant access to the genetic resources in accordance with domestic legislation.</span></label>
+                    <div class="text" ng-show="!document.providersConfidential" ng-repeat="provider in document.providers">
+                        <div view-contact-reference ng-model="provider" locale="locale"></div>
+                    </div>
+                    <div ng-show="document.providersConfidential">
+                        <div class="text confidential">معلومات سرية</div>
+                    </div>
+                </div>
 
-          <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>Provider <span class="help-block">The person or entity that holds the right to grant access to the genetic resources in accordance with domestic legislation.</span></label>
-            <div class="text" ng-show="!document.providersConfidential" ng-repeat="provider in document.providers">
-                <div view-contact-reference ng-model="provider" locale="locale"></div>
-            </div>
-            <div ng-show="document.providersConfidential">
-                <div class="text confidential">معلومات سرية</div>
-            </div>
-        </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Entity to whom PIC was granted </label>
+                    <div class="text" ng-repeat="consent in document.entitiesToWhomPICGranted" ng-show="!document.entitiesToWhomPICGrantedConfidential">
+                        <div view-contact-reference ng-model="consent" locale="locale"></div>
+                    </div>
+                    <div ng-show="document.entitiesToWhomPICGrantedConfidential">
+                        <div class="text confidential">معلومات سرية</div>
+                    </div>
+                </div>
 
-        <div class="clearfix"></div>
-         <div class="col-xs-12">
-            <label>Entity to whom PIC was granted</label>
-            <div class="text" ng-repeat="consent in document.entitiesToWhomPICGranted" ng-show="!document.entitiesToWhomPICGrantedConfidential">
-                <div view-contact-reference ng-model="consent" locale="locale"></div>
-            </div>
-            <div ng-show="document.entitiesToWhomPICGrantedConfidential">
-                <div class="text confidential">معلومات سرية</div>
-            </div>
-        </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <div ng-show="document.picInformation">
+                        <label>معلومات إضافية عن الموافقة المسبقة عن علم</label>
+                        <div class="text" ng-bind-html="document.picInformation | lstring:locale"></div>
+                    </div>
+                </div>
 
-         <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <div ng-show="document.picInformation">
-                <label>معلومات إضافية عن الموافقة المسبقة عن علم</label>
-                <div class="text" ng-bind-html="document.picInformation | lstring:locale"></div>
-            </div>
-        </div>
-
-         <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <div ng-show="document.picDocuments">
-                <label>وثائق أو روابط إضافية عن الموافقة المسبقة عن علم</label>
-                <div class="text">
-                    <ul style="list-style-type: none;padding-left:3px;">
-                        <li ng-repeat="item in document.picDocuments"><a target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
-                    </ul>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <div ng-show="document.picDocuments">
+                        <label>وثائق أو روابط إضافية عن الموافقة المسبقة عن علم</label>
+                        <div class="text">
+                            <ul style="list-style-type: none;padding-left:3px;">
+                                <li ng-repeat="item in document.picDocuments"><a target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-      </div>
 
 
 
 
 
- <legend>معلومات الشروط المتفق عليها بصورة متبادلة</legend>
-   <div class="row top-border bg-litegreen">
+            <legend>معلومات الشروط المتفق عليها بصورة متبادلة</legend>
+            <div class="row top-border bg-litegreen">
 
-        <div class="col-xs-12">
-            <label>Confirmation that mutually agreed terms (MAT) have been established</label>
-            <div class="text">نعم</div>
-        </div>
+                <div class="col-xs-12">
+                    <label>Confirmation that mutually agreed terms (MAT) have been established </label>
+                    <div class="text"> نعم </div>
+                </div>
 
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <div ng-show="document.matEstablished">
-                <label>معلومات إضافية حول الشروط المتفق عليها بصورة متبادلة</label>
-                <div class="text" ng-bind-html="document.matInformation | lstring:locale"></div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <div ng-show="document.matEstablished">
+                        <label>معلومات إضافية حول الشروط المتفق عليها بصورة متبادلة</label>
+                        <div class="text" ng-bind-html="document.matInformation | lstring:locale"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <div ng-show="document.matDocuments">
+                        <label>وثائق أو روابط إضافية حول الشروط المتفق عليها بصورة متبادلة</label>
+                        <div class="text">
+                            <ul style="list-style-type: none;padding-left:3px;">
+                                <li ng-repeat="item in document.matDocuments"><a target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <div ng-show="document.matDocuments">
-                <label>وثائق أو روابط إضافية حول الشروط المتفق عليها بصورة متبادلة</label>
+            <legend>Subject-matter</legend>
+            <div class="row top-border bg-litegreen">
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <label>Subject-matter or genetic resources covered:</label>
+                    <div class="text" ng-show="!document.subjectMatterConfidential"><span ng-bind-html="renderHtml(document.subjectMatter)"></span></div>
+                    <div ng-show="document.subjectMatterConfidential">
+                        <div class="text confidential">معلومات سرية</div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12" ng-show="document.specimens || document.taxonomies || document.gisFiles ">
+                    <label>Additional Genetic Resources Information Links:</label>
                     <div class="text">
-                    <ul style="list-style-type: none;padding-left:3px;">
-                        <li ng-repeat="item in document.matDocuments"><a target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
-                    </ul>
+                        <div class="inner-label" ng-show="document.specimens">Specmin data:</div>
+                        <ul>
+                            <li ng-repeat="item in document.specimens"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+                        </ul>
+
+                        <div class="inner-label" ng-show="document.taxonomies">Taxomony data</div>
+                        <ul>
+                            <li ng-repeat="item in document.taxonomies"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+                        </ul>
+                        <div class="inner-label" ng-show="document.gisFiles">geographic coordinate data</div>
+                        <ul>
+                            <li ng-repeat="item in document.gisFiles"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <legend>Subject-matter</legend>
-    <div class="row top-border bg-litegreen">
+            <legend>معلومات عن استخدام المورد (الموارد) الجينية</legend>
+            <div class="row top-border bg-litegreen">
 
-        <div class="clearfix"></div>
-        <div class="col-xs-12">
-            <label>Subject-matter or genetic resources covered:</label>
-            <div class="text" ng-show="!document.subjectMatterConfidential"><span ng-bind-html="renderHtml(document.subjectMatter)"></span></div>
-            <div ng-show="document.subjectMatterConfidential">
-                <div class="text confidential">معلومات سرية</div>
+                <div class="col-xs-12">
+                    <label>نوع الاستخدام المسموح به في التصريح أو ما يعادله</label>
+                    <div class="text" ng-class="{'confidential':document.usagesConfidential}"><span ng-show="!document.usagesConfidential" ng-repeat="term in document.usages">{{term|term}}{{$last ? &apos;&apos; : &apos; and &apos;}}</span> <span ng-show="document.usagesConfidential">Confidential information</span></div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12" ng-if="document.usagesDescription">
+                    <label>Specific uses covered by the permit or its equivalent or use restrictions:</label>
+                    <div class="text"><span ng-bind-html="renderHtml(document.usagesDescription)"></span></div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-xs-12" ng-if="document.thirdPartyTransferCondition">
+                    <label>Conditions for third party transfer:</label>
+                    <div class="text" ng-bind-html="renderHtml(document.thirdPartyTransferCondition)"></div>
+                </div>
+            </div>
+
+            <div ng-if="document.permitDescription || document.permitFiles">
+                <legend>Documents and Additional information</legend>
+                <div class="row top-border bg-litegreen">
+                    <div class="col-xs-12">
+                        <label>Copy of permit or its equivalent, or other relevant open-access document:</label>
+                        <div class="text"><span ng-bind-html="renderHtml(document.permitDescription)"></span></div>
+                        <ul style="list-style-type: none;" class="text" class="text" ng-show="document.permitFiles">
+                            <li ng-repeat="item in document.permitFiles"><strong>{{item.name}}</strong> (https://absch.cbd.int/{{item.url}}) </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="document.relevantInformation || document.relevantDocuments">
+                <div class="clearfix"></div>
+                <div class="col-xs-12" ng-show="document.relevantInformation || document.relevantDocuments">
+                    <label>Additional information and links:</label>
+                    <div class="text">
+                        <div ng-bind-html="renderHtml(document.relevantInformation)"></div>
+                    </div>
+                    <ul style="list-style-type: none;" class="text" class="text" ng-show="document.relevantDocuments">
+                        <li ng-repeat="item in document.relevantDocuments"><strong>{{item.name}}</strong> (https://absch.cbd.int/{{item.url}}) </span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div><!-- <div ng-show="versions && false"> --><legend>Amendment History</legend>
+            <div class="row top-border bg-litegreen">
+
+                <div class="col-xs-2">
+                    <label>Date</label>
+                </div>
+                <div class="col-xs-2">
+                    <label>خطوات مقترحة</label>
+                </div>
+
+                <div class="col-xs-4">
+                    <label>Comment</label>
+                </div>
+                <div class="col-xs-4">
+                    <label>المعرف الفريد</label>
+                </div>
+
+                <div ng-repeat="document in versions | orderBy:'updatedOn':true" class="history-text">
+                    <div class="clearfix"></div>
+                    <hr style="border-color:#FFF;margin:3;padding:3;">
+                    <div class="col-xs-2 history-text-date"><strong>{{document.createdOn |formatDateWithTime}}</strong></div>
+                    <div class="col-xs-2"><span ng-show="document.body.amendmentIntent==1"><span class="bold color-red"> REVOKED</span></span> <span ng-show="((versions.length>1 && document.body.amendmentIntent!=1 && document.revision < versions.length))"><span class="bold color-green"> OLD VERSION</span></span> <span ng-show="versions.length==1 || (versions.length>1 && versions.length == document.revision && document.body.amendmentIntent!=1)"><span class="bold color-green"> CURRENT VERSION</span></span></div>
+                    <div class="col-xs-4"><span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <span ng-show="document.body.amendmentIntent==undefined">Permit information published to the ABS clearing-house and certificate constituted.</span></div>
+                    <div class="col-xs-4">{{document | uniqueID}}</div>
+                </div>
+            </div><!-- </div> --><legend>معلومات إضافية</legend>
+            <div class="row top-border">
+                <div class="clearfix"></div>
+                <div class="col-xs-8" style="font-size:12px;">ينبغي توجيه أي استفسارات أو أسئلة حول التصريح أو ما يعادله مما يمثل شهادة امتثال معترف بها دوليًا  إلى السلطة الوطنية المختصة التي أصدرت التصريح أو ما يعادله. Additional information about the permit or its equivalent may be available in the Access and Benefit-Sharing Clearing House ( <a href="https://absch.cbd.int/">https://absch.cbd.int/</a>). <br> <br> يمكنكم توجيه أي استفسارات أو أسئلة حول بروتوكول ناغويا بشأن الحصول على الموارد وتقاسم المنافع أو آلية عمل غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع إلى الأمانة العامة لاتفاقية التنوع البيولوجي.</div>
+                <div class="col-xs-4" style="font-size:12px;"><strong>Secretariat of the Convention on Biological Diversity</strong> <br/> 413 rue Saint-Jacques, suite 800 <br/> Montreal, Qu&eacute;bec, H2Y 1N9 <br/> Canada <br/> فاكس: +1 514 288-6588 <br/> البريد الإلكتروني: <a href="mailto:secretariat@cbd.int" style="color:white;">secretariat@cbd.int</a></div>
             </div>
         </div>
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12" ng-show="document.specimens || document.taxonomies || document.gisFiles ">
-            <label>Additional Genetic Resources Information Links:</label>
-            <div class="text">
-                <div class="inner-label" ng-show="document.specimens">Specmin data:</div>
-                <ul>
-                    <li ng-repeat="item in document.specimens"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
-                </ul>
-
-                <div class="inner-label" ng-show="document.taxonomies">Taxomony data</div>
-                <ul>
-                    <li ng-repeat="item in document.taxonomies"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
-                </ul>
-                <div class="inner-label" ng-show="document.gisFiles">geographic coordinate data</div>
-                <ul>
-                    <li ng-repeat="item in document.gisFiles"><a target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
-                </ul>
-            </div>
-        </div>
     </div>
-
-    <legend>معلومات عن استخدام المورد (الموارد) الجينية</legend>
-    <div class="row top-border bg-litegreen">
-
-        <div class="col-xs-12">
-            <label>نوع الاستخدام المسموح به في التصريح أو ما يعادله</label>
-            <div class="text" ng-class="{'confidential':document.usagesConfidential}"><span ng-show="!document.usagesConfidential" ng-repeat="term in document.usages">{{term|term}}{{$last ? &apos;&apos; : &apos; and &apos;}}</span> <span ng-show="document.usagesConfidential" >Confidential information</span></div>
-        </div>
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12" ng-if="document.usagesDescription">
-            <label>Specific uses covered by the permit or its equivalent or use restrictions:</label>
-            <div class="text"><span ng-bind-html="renderHtml(document.usagesDescription)"></span></div>
-        </div>
-
-        <div class="clearfix"></div>
-        <div class="col-xs-12" ng-if="document.thirdPartyTransferCondition">
-            <label>Conditions for third party transfer:</label>
-            <div class="text" ng-bind-html="renderHtml(document.thirdPartyTransferCondition)"></div>
-        </div>
-    </div>
-
-    <div ng-if="document.permitDescription || document.permitFiles">
-    <legend>Documents and Additional information</legend>
-    <div class="row top-border bg-litegreen">
-        <div class="col-xs-12">
-            <label>Copy of permit or its equivalent, or other relevant open-access document:</label>
-            <div class="text"><span ng-bind-html="renderHtml(document.permitDescription)"></span></div>
-            <ul style="list-style-type: none;" class="text" class="text" ng-show="document.permitFiles">
-                <li ng-repeat="item in document.permitFiles"><strong>{{item.name}}</strong> (https://absch.cbd.int/{{item.url}})</span>
-                </li>
-            </ul>
-        </div>
-       </div>
-  </div>
-<div ng-if="document.relevantInformation || document.relevantDocuments">
-        <div class="clearfix"></div>
-        <div class="col-xs-12" ng-show="document.relevantInformation || document.relevantDocuments">
-            <label>Additional information and links:</label>
-            <div class="text">
-                <div ng-bind-html="renderHtml(document.relevantInformation)"></div>
-            </div>
-            <ul style="list-style-type: none;" class="text" class="text" ng-show="document.relevantDocuments">
-                <li ng-repeat="item in document.relevantDocuments"><strong>{{item.name}}</strong> (https://absch.cbd.int/{{item.url}})</span>
-                </li>
-            </ul>
-
-        </div>
-  </div><!-- <div ng-show="versions && false"> --><legend>Amendment History</legend>
-    <div class="row top-border bg-litegreen">
-
-        <div class="col-xs-2">
-            <label>Date</label>
-        </div>
-        <div class="col-xs-2">
-            <label>Action</label>
-        </div>
-
-        <div class="col-xs-4">
-            <label>Comment</label>
-        </div>
-        <div class="col-xs-4">
-            <label>المعرف الفريد</label>
-        </div>
-
-        <div ng-repeat="document in versions | orderBy:'updatedOn':true" class="history-text">
-            <div class="clearfix"></div>
-            <hr style="border-color:#FFF;margin:3;padding:3;">
-            <div class="col-xs-2 history-text-date"><strong>{{document.createdOn |formatDateWithTime}}</strong></div>
-            <div class="col-xs-2"><span ng-show="document.body.amendmentIntent==1"><span class="bold color-red">REVOKED</span></span> <span ng-show="((versions.length>1 && document.body.amendmentIntent!=1 && document.revision < versions.length))"><span class="bold color-green">OLD VERSION</span></span> <span ng-show="versions.length==1 || (versions.length>1 && versions.length == document.revision && document.body.amendmentIntent!=1)"><span class="bold color-green">CURRENT VERSION</span></span></div>
-            <div class="col-xs-4"><span ng-bind-html="document.body.amendmentDescription| lstring:locale"></span> <span ng-show="document.body.amendmentIntent==undefined">Permit information published to the ABS clearing-house and certificate constituted.</span></div>
-             <div class="col-xs-4">{{document | uniqueID}}</div>
-        </div>
-    </div><!-- </div> --><legend>معلومات إضافية</legend>
-    <div class="row top-border">
-        <div class="clearfix"></div>
-        <div class="col-xs-8" style="font-size:12px;">ينبغي توجيه أي استفسارات أو أسئلة حول التصريح أو ما يعادله مما يمثل شهادة امتثال معترف بها دوليًا  إلى السلطة الوطنية المختصة التي أصدرت التصريح أو ما يعادله. يمكن الاطلاع على معلومات إضافية عن التصريح أو ما يعادله في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع  (<a href="https://absch.cbd.int/">https://absch.cbd.int/</a>). <br> <br> يمكنكم توجيه أي استفسارات أو أسئلة حول بروتوكول ناغويا بشأن الحصول على الموارد وتقاسم المنافع أو آلية عمل غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع إلى الأمانة العامة لاتفاقية التنوع البيولوجي.</div>
-        <div class="col-xs-4" style="font-size:12px;"><strong>Secretariat of the Convention on Biological Diversity</strong> <br/> 413 rue Saint-Jacques, suite 800 <br/> Montreal, Qu&eacute;bec, H2Y 1N9 <br/> Canada <br/> فاكس: +1 514 288-6588 <br/> البريد الإلكتروني: <a href="mailto:secretariat@cbd.int" style="color:white;">secretariat@cbd.int</a></div>
-    </div>
-
 
 </div>

@@ -6,7 +6,7 @@
         <div class="pull-left">
                 <div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">更换网页语言</div>
                 <div style="display:inline;" class="locale-header" id="MyLocale"></div>&nbsp; | &nbsp;<div style="display:inline;text-transform: uppercase;font-weight: 500;font-size:12px;">用其它语言提交</div>
-                <div style="display:inline;" km-form-languages ng-model="languages"  class="btn-thin"></div>&nbsp; | &nbsp;<div style="display:inline"><span ng-show="lastSaved && hideTimer=='false'" style="text-transform:uppercase;font-size:12px;font-weight: 500;padding-right:3px;"><span class="bg-yellow label" style="font-size:12px;"><i class="color-grey glyphicon glyphicon-time"></i><span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span>&nbsp; since last save</span></div>
+                <div style="display:inline;" km-form-languages ng-model="languages"  class="btn-thin"></div>&nbsp; | &nbsp;<div style="display:inline"><span ng-show="lastSaved && hideTimer=='false'" style="text-transform:uppercase;font-size:12px;font-weight: 500;padding-right:3px;"><span class="bg-yellow label" style="font-size:12px;"><i class="color-grey glyphicon glyphicon-time"></i><span class="color-blue" style="padding:3px;">{{lastSaved}}</span></span> &nbsp; 最后保存于</span></div>
         </div>
 
         <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;" class="pull-right">
@@ -40,7 +40,7 @@
     <div class="row" style="display:none" id="divShowError" ng-show="showError">
         <div class="col-xs-12">
             <div class="alert alert-danger" role="alert">
-                <button type="button" class="close" ng-click="showError=false"><span aria-hidden="true">&times;</span> <span class="sr-only">关闭</span></button>{{errorMessage}}</div>
+                <button type="button" class="close" ng-click="showError=false"><span aria-hidden="true">&times;</span> <span class="sr-only">关闭</span></button> {{errorMessage}}</div>
 
         </div>
     </div>
@@ -71,12 +71,29 @@
                     <h2>发布请求</h2>
                 </div>
                 <div class="modal-body">
-                    <p>您想要为发布机构添加其他信息吗？</p>
+                    <p>Would you like to add additional information for the publishing request?</p>
                     <textarea class="form-control" rows="5" name="info" ng-model="InfoDoc.additionalInfo"></textarea>
                 </div>
                 <div class="modal-footer" style="margin-top:0">
                     <button type="button" class="btn btn-default" ng-click="closeAddInfoDialog(false)">取消</button>
                     <button type="button" id="continueRequest" class="btn btn-primary pull-left" ng-disabled="loading">发送请求</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divWorkflowDraft" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-red color-white">
+                    <h2>Edit Publishing Request</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Editing and saving as draft a publishing request will cancel the publishing request and send it back to draft mode.<br/>Are you sure you want to continue?</p>
+                </div>
+                <div class="modal-footer" style="margin-top:0">
+                    <button type="button" class="btn btn-default" ng-click="closeWorkflowDraftDialog(false)">否</button>
+                    <button type="button" id="continueWorkflowDraftRequest" class="btn btn-primary pull-left" ng-disabled="loading">是</button>
                 </div>
             </div>
         </div>

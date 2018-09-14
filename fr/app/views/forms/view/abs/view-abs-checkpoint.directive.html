@@ -1,0 +1,84 @@
+﻿<div id="Record" class="record panel panel-default" >
+
+	<div class="panel-heading bg-blue" ng-show="display('header')">
+		<h4><span>Checkpoint <span class="color-black"> (CP) </span> </span></h4>	
+	</div>
+
+	<div class="record-body panel-body" help schema="ViewCP" >
+
+		
+			<document-date></document-date>
+
+		 <div name="article17-1-a"></div>
+
+		<legend ng-if="document.government || document.name">Informations g&eacute;n&eacute;rales</legend>
+
+		<div ng-show="document.government">
+			<label name="country">Pays</label>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
+		</div>
+
+		 <div ng-show="display('title') && document.name">
+		 <label>Nom du point de contr&ocirc;le</label>
+		 	<div class="km-value"><strong>{{document.name | lstring:locale}}</strong></div>
+		 </div>
+
+
+
+		<div ng-show="document.responsibilities || document.jurisdiction ||
+			document.jurisdictionName">
+			<legend name="Responsibilities">Responsabilit&eacute;s de spoints de contr&ocirc;le</legend>
+			<div ng-show="document.responsibilities"><!--<label>Short description of responsibilities</label>--><div class="km-value km-pre" ng-bind-html="document.responsibilities|lstring:locale"></div>
+			</div>
+			<div ng-show="document.jurisdiction">
+				<label>Domaine de juridiction</label>
+				<div class="km-value">
+					<ul class="list">
+						<li>{{document.jurisdiction|term}} <span ng-if="isSubNational() ||isCommunity() || isOthers()">({{document.jurisdictionName | lstring:locale}})</span></li>
+					</ul>
+				</div>
+			</div><!--<div ng-show="document.jurisdictionName">
+				<label ng-show="isSubNational()">Name of the sub-national jurisdiction</label>
+				<label ng-show="isCommunity()">Name of the community jurisdiction</label>
+				<label ng-show="isOthers()">Other jurisdiction</label>
+				<div class="km-value">{{document.jurisdictionName | lstring:locale}}</div>
+			</div>--></div>
+
+		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
+			<legend>Autorit&eacute; (s) devant recevoir des copies de courtoisie des communiqu&eacute;s sur les informations collect&eacute;es ou re&ccedil;ues par ce point de contr&ocirc;le.</legend>
+
+			<div class="help-info" style="padding-top:10px;">Toutes les autorit&eacute;s nationales et tous les contacts indiqu&eacute;s ci-dessous recevront par courrier &eacute;lectronique des communiqu&eacute;s des points de contr&ocirc;le contenant les informations collect&eacute;es ou re&ccedil;ues et publi&eacute;es par ce point de contr&ocirc;le. Veuillez noter que les autorit&eacute;s nationales fournissant le consentement pr&eacute;alable en connaissance de cause recevront automatiquement des copies &eacute;lectroniques de tous les communiqu&eacute;s des points de contr&ocirc;le publi&eacute;s. Le CE-APA ne peut pas garantir que les emails ont &eacute;t&eacute; re&ccedil;us ou lus.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new"> All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>) </a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+          
+			<div ng-show="document.contactsToInform">
+				<div class="km-value" ng-repeat="authority in document.contactsToInform">
+                    <div view-contact-reference ng-model="authority" locale="locale"></div>
+				</div>
+			</div><!--<div ng-show="document.contactsToInform" class="row">
+				<div ng-repeat="contact in document.contactsToInform">
+					<div class="col-xs-12">
+						<div view-contact-reference ng-model="contact" locale="locale" class="well"></div>
+					</div>
+				</div>
+			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >Aucune autorit&eacute; suppl&eacute;mentaire n&apos;a &eacute;t&eacute; s&eacute;lectionn&eacute;e pour recevoir les copies automatiques par courrier &eacute;lectronique des communiqu&eacute;s publi&eacute;s par ce point de contr&ocirc;le. </span></div>
+
+		</div>
+
+		<div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>Renseignements suppl&eacute;mentaires</legend>
+
+			<div ng-show="document.relevantInformation">
+				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+			</div>
+
+			<div ng-show="document.relevantDocuments">
+				<label>Autres sites Internet ou fichiers en pi&egrave;ces jointes</label>
+				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+			</div>
+		</div>
+
+	</div>
+	
+	 <div document-metadata class="panel-footer"></div>
+
+</div>

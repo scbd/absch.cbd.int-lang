@@ -11,10 +11,10 @@
         </style><!--<span block-region activate="isUpdating"></span>--> <span block-region activate="isUpdating"></span><div class="panel panel-danger">
 
             <div class="panel-heading bg-red">
-                <h3 style="padding:0;margin:0;" class="color-white"><span ng-if="workflow.type.name != 'delete-record'">Publicar</span> <span ng-if="workflow.type.name == 'delete-record'">Supresi&oacute;n</span> Solicitud pendiente</h3>
+                <h3 style="padding:0;margin:0;" class="color-white"><span ng-if="workflow.type.name != 'delete-record'">Publishing </span> <span ng-if="workflow.type.name == 'delete-record'">Deletion </span> Request Pending</h3>
             </div>
 
-            <div class="panel-body">Solicitado por: &nbsp; <span class="bold">{{workflow.createdBy_info.firstName + &apos; &apos; + workflow.createdBy_info.lastName}} <a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">({{workflow.createdBy_info.email}})</a><span class="unbold">el</span> {{workflow.createdOn | formatDateWithTime}}</span> <span ng-if="document.amendmentIntent == 1" class="bold color-red">ha solicitado revocar este registro.</span> <span ng-if="workflow.data.additionalInfo" class="bold"> </br> </br>Informaci&oacute;n adicional suministrada por el solicitante :- <span class="unbold">{{workflow.data.additionalInfo}}</span></br> </br> </span><div ng-repeat="activity in workflow.activities|filter:isOpen|orderBy:'createdOn'" style="padding-top:20px;">
+            <div class="panel-body">Solicitado por: &nbsp; <span class="bold">{{workflow.createdBy_info.firstName + &apos; &apos; + workflow.createdBy_info.lastName}} <a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">({{workflow.createdBy_info.email}})</a><span class="unbold"> on </span> {{workflow.createdOn | formatDateWithTime}} </span> <span ng-if="document.amendmentIntent == 1" class="bold color-red"> has requested to revoke this record.</span> <span ng-if="workflow.data.additionalInfo" class="bold"> </br> </br>Informaci&oacute;n adicional suministrada por el solicitante :- <span class="unbold">{{workflow.data.additionalInfo}}</span></br> </br> </span><div ng-repeat="activity in workflow.activities|filter:isOpen|orderBy:'createdOn'" style="padding-top:20px;">
                     <div class="row row-centered" style="margin:0;padding:0;" id="buttonsDiv" ng-show="isAssignedToMe(activity)">
                         <div class="col-xs-4 text-center" ng-show="isAssignedToMe(activity) && activity.name != 'deleteRecord'">
                             <button type="button" class="btn btn-success bold" ng-click="updateActivity({ action : 'approve' })" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span class="hidden-xs">APROBAR</span></button>
@@ -31,19 +31,19 @@
                     </div>
                     <div class="row" style="margin:0;padding:0;" ng-show="workFlowIsCreatedByMe()">
                         <div class="col-xs-12">
-                            <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span class="hidden-xs">Cancelar solicitud de publicaci&oacute;n</span></button>
+                            <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span class="hidden-xs"> Cancelar solicitud de publicaci&oacute;n</span></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="panel-footer" style="margin-top:10px;"><span>Esta solicitud expirar&aacute; autom&aacute;ticamente en <span class="color-red bold">{{workflow.daysToApproval}} d&iacute;as</span></span></div>
+            <div class="panel-footer" style="margin-top:10px;"><span>Esta solicitud expirar&aacute; autom&aacute;ticamente en <span class="color-red bold">{{workflow.daysToApproval}} d&iacute;as</span> </span></div>
         </div>
 
     </div>
 
     <div class="col-xs-12">
         <div ng-show="document" class="t-document">
-            <record-loader show-details="showDetails" class="shadow-z-2" hide-buttons="true" link-target="_self"></record-loader>
+            <record-loader show-details="showDetails" class="shadow-z-2" hide-buttons="true" link-target="_self" document="document"></record-loader>
         </div>
     </div>
     <script type="text/ng-template" trados-translation="true" id="rejectWorkflowRequestModalTemplate">
@@ -82,7 +82,7 @@
             <h3 class="modal-title">Borrar conformaci&oacute;n</h3>
         </div>
         <div class="modal-body bg-white">
-           <h2 class="color-red">¿Est&aacute; seguro de que quiere borrar este registro?</h2>{{document}}</div>
+           <h2 class="color-red"> ¿Est&aacute; seguro de que quiere borrar este registro?</h2>{{document}}</div>
         <div class="modal-footer">
             <button type="button" class="btn btn-danger bold pull-left" ng-click="updateActivity()" ng-disabled="isUpdating"><span class="hidden-xs">Borrar registro</span></button>
             <button type="button" class="btn btn-default" ng-click="closeConfirmation()" ng-disabled="isUpdating"><span class="hidden-xs">Cerrar</span></button>

@@ -1,13 +1,13 @@
 ﻿
 <div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-orange">
-		<h4>{{document.header.schema| schemaName }} <span class="color-black">({{document.header.schema|schemaShortName}})</span></h4>
+		<h4>{{document.header.schema| schemaName }} <span class="color-black"> ({{document.header.schema|schemaShortName}})</span></h4>
 
 	</div>
 	<div class="record-body panel-body">
 
 			
-		<document-date></document-date><br><div ng-show="document.title">
+		<document-date></document-date> <br><div ng-show="document.title">
 			<label>Title</label>
 			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		</div>
@@ -138,7 +138,7 @@
 
 		<div ng-show="document.absSubjects || document.mccKeywords || document.keywords">
 
-			<label>مجال (مجالات) المحاور والكلمات المفتاحية لتيسير البحث على الإنترنت</label>
+			<label> مجال (مجالات) المحاور والكلمات المفتاحية لتيسير البحث على الإنترنت</label>
 			<div class="km-value" ng-show="document.absSubjects || document.mccKeywords">
 				<ul>
 					<li ng-repeat="term in document.absSubjects">{{term|term}}</li>

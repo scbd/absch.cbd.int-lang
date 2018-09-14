@@ -14,17 +14,15 @@
 			</div><!--<div ng-show="isLoading()">
 				<i class="fa fa-spinner fa-spin"></i> Loading...
 			</div>--><div ng-show="!isLoading() && status!='hidden'">
-				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" />
-				<p class="color-litegrey">يرجى ملاحظة أن نقاط الاتصال الوطنية ليس متاحة للجمهور في غرفة تبادل المعلومات للحصول وتقاسم المنافع. ستظهر نقاط الاتصال الوطنية المنشورة فقط إذا كانت مرتبطة بسجلات وطنية أخرى منشورة.</p>
-
-				<div km-document-validation ng-model="validationReport"></div>
+				<div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" /><!-- <p class="color-litegrey">Please note that contacts are not publically available in the ABSCH as stand-alone records.
+	Published contacts will only be display if they are linked to other published records.</p> --><div km-document-validation ng-model="validationReport"></div>
 				<form name="editForm" class="editForm" style="margin-top:10px">
 					<div ng-show="tab=='edit'" km-tab="edit">
 						<legend name="formInfo" style="display:none"></legend>
 						<section>
-							<div class="row">
+							<div class="row" ng-if="isNationalUser">
 								<div class="col-sm-12">
-									<div class="km-control-group" name="government" required caption="الحكومة">
+									<div class="km-control-group" name="government" required caption="Government">
 										<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
 									</div>
 								</div>
@@ -62,7 +60,7 @@
 									</div>
 
 									<div class="col-md-8 col-sm-8 col-xs-12">
-										<div class="km-control-group" name="contact_firstName" ng-required="!form.contact_firstNameX.$valid" caption="الاسم الأول:" required>
+										<div class="km-control-group" name="firstName" ng-required="!form.contact_firstNameX.$valid" caption="الاسم الأول:" required>
 											<input type="text" class="form-control" name="contact_firstNameX" ng-model="document.firstName" ng-required="document.type=='person'" />
 										</div>
 									</div>
@@ -200,7 +198,7 @@
 
 							<div class="row">
 								<div class="col-md-6 col-xs-12">
-									<div class="km-control-group" name="contact_emails" caption="البريد الإلكتروني" required>
+									<div class="km-control-group" name="emails" caption="البريد الإلكتروني" required>
 										<div km-inputtext-list name="contact_emails" type="email" ng-model="document.emails" placeholder="مثال: secretariat@cbd.int"></div>
 									</div>
 								</div>

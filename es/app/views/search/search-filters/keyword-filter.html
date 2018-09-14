@@ -8,7 +8,7 @@
 </style>
     <div ng-repeat="(key,related) in relatedKeywords">   
         <div style="margin-bottom:30px;" >
-        <div ng-if="relatedkeywords.length"><span class="country-heading">Palabras clave relacionadas con: <span class="color-darkgrey">{{searchFilters[key].name}}</span></span><hr class="heading" />
+        <div ng-if="relatedkeywords.length"><span class="country-heading"> Palabras clave relacionadas con: <span class="color-darkgrey">{{searchFilters[key].name}}</span> </span><hr class="heading" />
         </div>
             <div ng-repeat="doc in relatedkeywords = (related | filter:searchKeyword | orderBy:'parent' )" >
                 <div ng-if="doc.parent != relatedkeywords[$index-1].parent && $index > 0" style="margin-top:10px;"></div>

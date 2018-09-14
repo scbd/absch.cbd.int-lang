@@ -1,0 +1,25 @@
+﻿<div id="SubmitPage">
+    
+    <div class="container">
+        
+        <h1>BCH Information Submission</h1>
+    
+        <h2>登记国家记录</h2>
+        <p>此类记录仅限由生物安全信息交换所的国家联络点(BCH-NFP)和国家授权用户(NAU)提交。All records submitted by NAUs will be forwarded to the BCH-NFP for review and validation prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.national" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">提交</a></div>
+        </div>
+        
+        <h2>登记参考记录</h2>
+        <p>此类记录可由所有注册用户提交。These records will be subject to review and validation by the Secretariat prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.reference" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">提交</a></div>
+        </div>
+    </div>
+</div>

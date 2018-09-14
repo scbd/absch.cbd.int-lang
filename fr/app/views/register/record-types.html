@@ -1,0 +1,25 @@
+﻿<div id="SubmitPage">
+    
+    <div class="container">
+        
+        <h1>BCH Information Submission</h1>
+    
+        <h2>Enregistrement de dossiers nationaux</h2>
+        <p>Seuls les utilisateurs nationaux autoris&eacute;s et les correspondants nationaux du Centre d&apos;&eacute;change pour la pr&eacute;vention des risques biotechnologiques (CN-CEPRB) sont autoris&eacute;s &agrave; soumettre des dossiers dans cette cat&eacute;gorie. All records submitted by NAUs will be forwarded to the BCH-NFP for review and validation prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.national" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">Soumettre</a></div>
+        </div>
+        
+        <h2>Enregistrement de dossiers de r&eacute;f&eacute;rence</h2>
+        <p>Les dossiers figurant dans cette cat&eacute;gorie peuvent &ecirc;tre soumis par tout utilisateur inscrit quel qu&apos;il soit. These records will be subject to review and validation by the Secretariat prior to publication (see FAQs).</p>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.reference" >
+                <h3 style="font-size:auto">{{::s.title}}</h3>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema}}/new" class="btn btn-default" style="width:100%">Soumettre</a></div>
+        </div>
+    </div>
+</div>

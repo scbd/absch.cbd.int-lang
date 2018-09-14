@@ -1,0 +1,275 @@
+﻿<div id="Record" class="record panel panel-default">
+	<div class="panel-heading bg-blue">
+		<h4>Permit or its equivalent constituting an internationally recognized certificate of compliance <span class="color-black"> (IRCC) </span></h4> </div>
+	<div class="record-body panel-body">
+
+		
+
+			<div class="alert alert-danger" ng-show="!loading && document && (document.amendmentIntent==1 || showRevokedMessage || document.info.revision !== document.info.latestRevision)">
+				<div class="text-center">
+					<h1 ng-if="document.amendmentIntent==1 || showRevokedMessage">LE CERTIFICAT A &Eacute;T&Eacute; <u>R&Eacute;VOQU&Eacute;</u> ET N&apos;EST PLUS VALIDE</h1>
+
+					<h1 ng-if="document.info.revision !== document.info.latestRevision">CE CERTIFICAT A &Eacute;T&Eacute; <u>MIS &Agrave; JOUR</u>. UNE NOUVELLE VERSION A &Eacute;T&Eacute; &Eacute;LABOR&Eacute;E ET <u>CETTE VERSION N&rsquo;EST PLUS DISPONIBLE.</u></h1>
+
+					<p>Voir l&rsquo;historique des  amendements pour plus d&rsquo;informations.</p>
+				</div>
+			</div>
+			
+		<document-date></document-date>		
+
+			<legend ng-if="document.government">Informations g&eacute;n&eacute;rales</legend>
+
+			<div ng-show="document.government">
+				<label>Pays</label>
+				<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
+			</div>
+
+
+			<div ng-show="document.government || document.updateReasons">
+				<div ng-show="showPdf && document">
+					<label>Identifiant unique CE-APA</label>
+					<div class="km-value">{{document | uniqueID}}</div>
+				</div>
+
+        	     <div ng-show="document.relatedIRCCs">
+					<label>Num&eacute;ro(s) de r&eacute;f&eacute;rence des autres certificats de conformit&eacute; reconnus &agrave; l&rsquo;&eacute;chelle internationale en lien avec ce permis.</label>
+					<div class="km-value">
+						<ul>
+							<li ng-repeat="item in document.relatedIRCCs">
+                            <div view-default-reference ng-model="item.identifier" locale="locale"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div ng-show="document.updateReasons">
+					<label>Fournissez un r&eacute;sum&eacute; de la raison qui motive la mise &agrave; jour du fichier</label>
+					<div class="km-value km-pre">{{document.updateReasons | lstring:locale}}</div>
+				</div>
+			</div>
+
+			<div ng-show="document.absCNA">
+				<label>Autorit&eacute; de d&eacute;livrance (autorit&eacute; responsable de l&rsquo;&eacute;mission de ce permis)</label>
+				<div class="km-value">
+					<div view-contact-reference ng-model="document.absCNA" locale="locale"></div>
+				</div>
+			</div>
+			<div ng-show="document.referenceToNationalPermit || document.title ||
+				document.dateOfIssuance || document.providers || document.entitiesToWhomPICGranted ||
+				document.subjectMatter || document.subjectMatterConfidential || document.picGranted ||
+				document.picInformation || document.picDocuments ||
+				document.specimens || document.taxonomies || document.gisFiles">
+				<legend>D&eacute;tails du permis ou son &eacute;quivalent</legend>
+
+
+			<div ng-show="document.title">
+			 	<label> Num&eacute;ro de r&eacute;f&eacute;rence du permis ou son &eacute;quivalent</label>
+			 	<div class="km-value">{{document.title | lstring:locale}}</div>
+		 	</div>
+
+				<div ng-show="document.referenceToNationalPermit">
+					<label>R&eacute;f&eacute;rences ou identificateurs nationaux suppl&eacute;mentaires</label>
+					<div class="km-value km-pre"ng-bind-html="document.referenceToNationalPermit | lstring:locale"></div>
+				</div>
+
+				<div ng-show="document.dateOfIssuance">
+					<label>La date de d&eacute;livrance du permis ou son &eacute;quivalent</label>
+					<div class="km-value">{{document.dateOfIssuance | formatDate }}</div>
+				</div>
+
+    			<div ng-show="document.dateOfExpiry">
+    				<label>La date de d&eacute;livrance du permis ou son &eacute;quivalent</label>
+    				<div class="km-value">{{document.dateOfExpiry | formatDate }}</div>
+    			</div>
+
+
+<legend>Information sur le consentement pr&eacute;alable en connaissance de cause (CPCC)</legend>
+
+				<div ng-show="document.picGranted!=undefined">
+					<label>Confirmation que le consentement pr&eacute;alable en connaissance de cause a
+&eacute;t&eacute; obtenu ou accord&eacute;;</label>
+					<div class="km-value" ng-show="document.picGranted">Oui</div>
+					<div class="km-value" ng-show="!document.picGranted">Non</div>
+				</div>
+
+				<div ng-show="document.providers || document.providersConfidential">
+					<label>Le fournisseur (la personne ou l&apos;entit&eacute; qui d&eacute;tient le droit d&apos;accorder l&apos;acc&egrave;s aux ressources g&eacute;n&eacute;tiques conform&eacute;ment &agrave; la l&eacute;gislation nationale)</span>
+					</label>
+					<div class="km-value" ng-show="!document.providersConfidential" ng-repeat="provider in document.providers">
+						<div view-contact-reference ng-model="provider" locale="locale"></div>
+					</div>
+					<div ng-show="document.providersConfidential">
+						<div class="km-value km-pre confidential">Informations confidentielles</div>
+					</div>
+				</div>
+
+				<div ng-show="document.entitiesToWhomPICGranted || document.entitiesToWhomPICGrantedConfidential">
+					<label>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; accord&eacute;</label>
+						<div class="km-value" ng-repeat="consent in document.entitiesToWhomPICGranted" ng-show="!document.entitiesToWhomPICGrantedConfidential">
+			                 <div view-contact-reference ng-model="consent" locale="locale"></div>
+						</div>
+						<div ng-show="document.entitiesToWhomPICGrantedConfidential">
+							<div class="km-value km-pre confidential">Informations confidentielles</div>
+						</div>
+				</div>
+
+
+				<div ng-show="document.picInformation">
+					<label>Information suppl&eacute;mentaire sur le consentement pr&eacute;alable en connaissance de cause</label>
+					<div class="km-value km-pre" ng-bind-html="document.picInformation | lstring:locale"></div>
+				</div>
+				<div ng-show="document.picDocuments">
+					<label>Documents ou liens suppl&eacute;mentaires sur le consentement pr&eacute;alable en connaissance de cause</label><!-- <div class="km-value" ng-repeat="item in document.picDocuments">
+						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
+						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+					</div> --><div class="km-value">
+						<ul style="list-style-type: none;padding-left:3px;">
+							<li ng-repeat="item in document.picDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					</div>
+				</div>
+
+
+<legend>Information sur les conditions convenues d&rsquo;un commun accord</legend>
+                <div ng-show="document.matEstablished!=undefined">
+    				<label>La confirmation que des conditions convenues d&rsquo;un commun accord ont &eacute;t&eacute;
+&eacute;tablies</label>
+    				<div class="km-value" ng-show="document.matEstablished">Oui</div>
+    				<div class="km-value" ng-show="!document.matEstablished">Non</div>
+    				<div ng-show="document.matInformation">
+    					<label>Informations suppl&eacute;mentaires sur les conditions convenues d&rsquo;un commun accord</label>
+    					<div class="km-value km-pre"ng-bind-html="document.matInformation | lstring:locale"></div>
+    				</div>
+    				<div ng-show="document.matDocuments">
+    					<label>Documents suppl&eacute;mentaires sur les conditions convenues d&rsquo;un commun accord</label><!-- <div class="km-value" ng-repeat="item in document.matDocuments">
+    						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
+    						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+    					</div> --><div class="km-value">
+    						<ul style="list-style-type: none;padding-left:3px;">
+    							<li ng-repeat="item in document.matDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+    						</ul>
+    					</div>
+
+    				</div>
+    			</div>
+
+<legend>Objet ou ressource g&eacute;n&eacute;tique(s) </legend>
+				<div ng-show="document.subjectMatter">
+					<label>Le sujet ou les ressources g&eacute;n&eacute;tiques auxquels se rapporte le certificat</label>
+					<div class="km-value km-pre"ng-bind-html="document.subjectMatter | lstring:locale"></div>
+				</div>
+
+				<div ng-show="document.subjectMatterConfidential">
+					<label>Le sujet ou les ressources g&eacute;n&eacute;tiques auxquels se rapporte le certificat</label>
+					<div class="km-value km-pre confidential">Informations confidentielles</div>
+				</div>
+
+				<div ng-show="document.specimens || document.taxonomies || document.gisFiles"><!--<legend>Optional additional subject matter details</legend>--><div ng-show="document.specimens">
+						<label>Donn&eacute;es sur l&rsquo;&eacute;chantillon</label><!-- <div class="km-value" ng-repeat="item in document.specimens">
+							<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
+							<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						</div> --><div class="km-value">
+						  <ul>
+							<li ng-repeat="item in document.specimens"><a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					    </div>
+
+					</div>
+					<div ng-show="document.taxonomies">
+						<label>Donn&eacute;es taxonomiques</label>
+                        <div class="km-value">
+						  <ul>
+							<li ng-repeat="item in document.taxonomies"><a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					    </div>
+
+
+					</div>
+					<div ng-show="document.gisFiles">
+						<label>Coordonn&eacute;es g&eacute;ographiques</label><!-- <div class="km-value" ng-repeat="item in document.gisFiles">
+							<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
+							<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+						</div> --><div class="km-value">
+						  <ul style="list-style-type: none;padding-left:3px;">
+							<li ng-repeat="item in document.gisFiles"><a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					    </div>
+
+						<div class="leaflet" center="gisMapCenter" layers="gisMapLayers"></div><br /> <br /></div>
+				</div>
+			</div>
+
+		<legend ng-if="document.usages || document.usagesDescription || document.usagesConfidential || document.thirdPartyTransferCondition">Information sur l&rsquo;utilisation de la ou des ressource (s) g&eacute;n&eacute;tique(s). </legend>
+			<div ng-if="document.usages">
+				<label>Type d&rsquo;utilisation permis par le permis ou son &eacute;quivalent</label>
+				<div class="km-value" ng-if="document.usages && !document.usagesConfidential">
+					<ul class="list">
+						<li ng-repeat="term in document.usages">{{term|term}}</li>
+					</ul>
+				</div>
+            </div>
+            <div ng-if="document.usagesConfidential">
+                <label>Type d&rsquo;utilisation permis par le permis ou son &eacute;quivalent</label>
+                <div class="km-value km-pre confidential">Informations confidentielles</div>
+            </div>
+
+
+			<div ng-show="document.usagesDescription">
+				<label>De l&rsquo;information suppl&eacute;mentaire sur les utilisations sp&eacute;cifiques couvertes par le permis ou son &eacute;quivalent ainsi que les restrictions d&rsquo;usage.</label>
+				<div class="km-value km-pre"ng-bind-html="document.usagesDescription | lstring:locale"></div>
+			</div>
+			<div ng-show="document.thirdPartyTransferCondition">
+				<label>Conditions de transfert vers une tiers partie</label>
+				<div class="km-value km-pre"ng-bind-html="document.thirdPartyTransferCondition | lstring:locale"></div>
+			</div>
+
+	<div ng-if="document.permitFiles || document.permitDescription"  >
+		<legend >Documentation </legend>
+
+			<div ng-show="document.permitFiles">
+				<label>Copie du permis ou de son &eacute;quivalent, ou de tout autre document pertinent non confidentiel</label>
+                    <div class="km-value">
+						<ul style="list-style-type: none;padding-left:3px;">
+							<li ng-repeat="item in document.permitFiles"><a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					</div>
+			</div>
+			<div ng-show="document.permitDescription">
+				<label>Br&egrave;ve description de la documentation en pi&egrave;ce jointe</label>
+				<div class="km-value km-pre"ng-bind-html="document.permitDescription | lstring:review.local"></div>
+			</div>
+		</div>
+
+
+			<div ng-show="document.relevantInformation||document.relevantDocuments">
+				<legend>Renseignements suppl&eacute;mentaires</legend>
+
+				<div ng-show="document.relevantInformation">
+					<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+				</div>
+
+				<div ng-show="document.relevantDocuments">
+					<label>Other relevant website address or attached documents</label><!-- <div class="km-value" ng-repeat="item in document.relevantDocuments">
+						<a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a>
+						<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
+					</div> --><div class="km-value">
+						<ul style="list-style-type: none;padding-left:3px;">
+							<li ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}"><i class="fa fa-file"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+
+            <div>
+                <legend>Historique des amendements</legend>
+                <div view-history document-id="document.header.identifier" public-view="true"></div>
+             </div>
+
+
+	</div>
+
+        <div document-metadata class="panel-footer"></div>
+
+</div>

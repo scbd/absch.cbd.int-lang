@@ -1,5 +1,6 @@
 ﻿<div dir="rtl">
-    <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'" ng-if="printMode"></div>    
+    <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'" ng-if="printMode"></div>
+    
     <div id="recordContent">
         <div smooth-scroll duration="100" offset="200" scroll-if="{{!$root.stopSmoothScroll}}"></div>
         <div block-region activate="loading"></div>
@@ -22,27 +23,39 @@
                         <h3 style="margin:0 0 20px 0;padding:0;">معلومات السجل</h3>
                         <table style="width:100%!important;">
                             <tr>
-                                <td><label>المعرف الفريد:</label></td>
+                                <td>
+                                    <label> المعرف الفريد: </label>
+                                </td>
                                 <td class="bold">{{internalDocument | uniqueID}}</td>
                             </tr>
                             <tr>
-                                <td><label>الحالة الحالية:</label></td>
-                                <td class="bold"><span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">مسودة</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">منشور</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ مغلق: الطلب {{workflowRequestType}} مُعلق]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">محذوف</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">مرفوض</span></span></td>
+                                <td>
+                                    <label> الحالة الحالية: </label>
+                                </td>
+                                <td class="bold"><span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">مسودة</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">منشور</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ مغلق: Pending {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">DELETED</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> REVOKED</span></span></td>
                             </tr>
                             <tr>
-                                <td><label>نوع السجل:</label></td>
+                                <td>
+                                    <label> نوع السجل: </label>
+                                </td>
                                 <td class="bold">{{internalDocumentInfo.metadata.schema | schemaName}}</td>
                             </tr>
                             <tr ng-if="docInfo.revision > 0">
-                                <td><label>إصدارات السجل:</label></td>
+                                <td>
+                                    <label> إصدارات السجل: </label>
+                                </td>
                                 <td class="bold">{{internalDocumentInfo.revision}}</td>
                             </tr>
                             <tr ng-if="docInfo.metadata.government">
-                                <td><label>مالك السجل:</label></td>
-                                <td class="bold">{{getUserCountry(internalDocumentInfo.metadata.government)}}</td>
+                                <td>
+                                    <label> مالك السجل: </label>
+                                </td>
+                                <td class="bold"> {{getUserCountry(internalDocumentInfo.metadata.government)}}</td>
                             </tr>
                             <tr>
-                                <td><label>التاريخ:</label></td>
+                                <td>
+                                    <label> التاريخ:</label>
+                                </td>
                                 <td>
                                     <div view-history document-id="internalDocumentInfo.identifier"></div>
                                 </td>
@@ -62,13 +75,13 @@
 
         <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
             <div><a translation-url title="تعديل" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
-                    class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> تعديل</a><button title="حذف" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}"
+                    class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> تعديل </a><button title="حذف" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}"
                     type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>
-        
-        <div class="pull-right" style="padding-right:10px;position:relative;top:7px;color:#FFF;"  >
-                <div record-options></div>
+
+        <div class="pull-right" style="padding-right:10px;position:relative;top:7px;color:#FFF;">
+            <div record-options></div>
         </div>
 
         <div id="schemaView" ng-show="internalDocument"></div>

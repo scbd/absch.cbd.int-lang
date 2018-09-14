@@ -10,13 +10,13 @@
                         <button type="button" ng-click="statusFilter=isRequest" class="filterbtn btn btn-danger"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isRequest}"></i> طلبات <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isRequest).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isPublished" class="filterbtn btn btn-success"><i  class="fa fa-2 fa-square"  ng-class="{'fa-check-square':statusFilter==isPublished}"></i> منشورة <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isPublished).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isDraft" class="filterbtn btn btn-draft"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isDraft}"></i> مسودات <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isDraft).length}}</span></button>
-                        <input type="text" ng-model="keywords" placeholder="كلمة مفتاحية" class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
+                        <input type="text" ng-model="keywords" placeholder=" كلمة مفتاحية " class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
                     </div>
 
                 </div>
                 <div class="col-xs-4 " ng-show="showAddButton()">
                     <div class="btn-group-sm pull-right"><!--<a translation-url  ng-href="#" class="btn btn-sm btn-primary" ng-click="showReference(schema);">
-                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-primary color-white" ng-click="refreshList(schema);" style="color:#fff;"><i class="fa fa-refresh"></i> تجديد</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i> إضافة جديد</a></div>
+                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-primary color-white" ng-click="refreshList(schema);" style="color:#fff;"><i class="fa fa-refresh"></i> تجديد</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i> إضافة جديد </a></div>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                     <td colspan="6" style="text-align:center;padding:30px;"><i class="fa fa-spin fa-cog" /> التحميل</td>
                 </tr>
                 <tr ng-cloak ng-show="!loading && filteredRecords.length <= 0">
-                    <td colspan="6" style="text-align:center;padding:30px;"><strong>لا توجد أي سجلات</strong></td>
+                    <td colspan="6" style="text-align:center;padding:30px;"> <strong>لا توجد أي سجلات</strong></td>
                 </tr>
 
                 <tbody ng-repeat="record in (filteredRecords = (records | filter:schemaFilter | filter:statusFilter | filter:keywords | orderBy:orderBy))">
@@ -59,10 +59,10 @@
                         </td>
                         <td><span ng-if="record.workflowActivityStatus == 'pending'" ><div class="btn btn-primary color-white" ><i class="fa fa-spin fa-spinner"/> قيد المعالجة...</div></span><div ng-show="record.workflowActivityStatus!='pending'">
 
-                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold">منشور</div>
-                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold">مسودة:</div><span class="color-red bold" ng-show="record.revoked">مرفوض</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">قيد الموافقة</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">قيد الموافقة</div>
+                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold"> منشور </div>
+                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold"> مسودة: </div><span class="color-red bold" ng-show="record.revoked">مرفوض</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">قيد الموافقة</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">قيد الموافقة</div>
                                 <div ng-show="!record.revoked && isRequest(record) && record.isUpdating">
-                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Processing...</strong></a></div>
+                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Processing... </strong></a></div>
                                 </div>
                         </td>
                         <td>
@@ -82,7 +82,7 @@
                                 <table class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <td>حقل</td>
+                                            <td> حقل </td>
                                             <td>المراجعة الحالية للحقل</td>
                                             <td>مرجعة السجل المرجعي</td>
                                             <td></td>
@@ -111,13 +111,13 @@
                         <div ng-show="isDraft(recordToDelete)" class="well" style="font-size:14px;">
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;color:#999;border-bottom:1px solid #ddd;margin-bottom:10px;">مسودة سجل</div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">اللقب:</div> <div class="col-xs-10" style="font-weight:bold">{{recordToDelete.workingDocumentTitle|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">اللقب:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.workingDocumentTitle|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">المعرف الفريد:</div> <div class="col-xs-10" style="font-weight:bold"><i>مسودة</i></div>
+                                <div class="col-xs-2" class="small color-litegrey">المعرف الفريد:</div> <div class="col-xs-10" style="font-weight:bold"> <i>مسودة</i></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">ملخص:</div> <div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">ملخص:</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
                              </div>
                             <div class="row" style="margin-top:10px;"> 
                                 <div class="col-xs-12"> <button type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">سجل منشور</button></div>
@@ -130,13 +130,13 @@
                                  <div class="col-xs-12 bold">لا يُسمح سوى بإجراء الرفض للسجلات المنشورة لشهادات الامتثال المعترف بها دوليًا. شهادة الامتثال المعترف بها دوليا المرفوضة لن تكون صالحة وستظل منشورة في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع لأغراض التتبع والشفافية. سيتم تمييز شهادات الامتثال المعترف بها دوليا المرفوضة كمرفوضة في نتائج البحث وعند عرض السجل.</div>
                               </div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">اللقب:</div> <div class="col-xs-10" style="font-weight:bold">{{recordToDelete.title|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">اللقب:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.title|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">المعرف الفريد:</div> <div class="col-xs-10" style="font-weight:bold"><a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
+                                <div class="col-xs-2" class="small color-litegrey">المعرف الفريد:</div> <div class="col-xs-10" style="font-weight:bold"> <a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">ملخص:</div> <div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.summary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">ملخص:</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.summary|lstring"></span></div>
                              </div>
 
                               <div class="row" ng-show="isIRCC"> 
@@ -152,7 +152,7 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: أي مسودة معلقة ستحذف أيضًا"><span ng-if="!security.canDelete">طلب حذف هذا السجل</span> <span ng-if="security.canDelete">حذف السجل</span></button> 
+                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note: أي مسودة معلقة ستحذف أيضًا"><span ng-if="!security.canDelete">طلب حذف هذا السجل</span> <span ng-if="security.canDelete">حذف السجل </span></button> 
                                 </div>
                             </div>
                         </div>

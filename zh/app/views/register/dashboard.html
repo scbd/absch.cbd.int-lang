@@ -1,20 +1,25 @@
-﻿<div ng-controller="DashboardController" id="RegisterPage">
+﻿<div id="RegisterPage">
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
     <style>
         .popover {
-            margin-top: 3px;            
+            margin-top: 3px;
             background-color: #d9534f !important;
             border: 1px solid #ccc;
             border: 1px solid rgba(0, 0, 0, .2);
-            }
-            .popover.right > .arrow {            
+        }
+
+        .popover.right>.arrow {
             border-right-color: #999;
             border-right-color: rgba(0, 0, 0, .25);
-            }
-            .popover.right > .arrow:after {            
+        }
+
+        .popover.right>.arrow:after {
             border-right-color: #d9534f;
-            }
+        }
+        .cursor{
+            cursor: pointer;
+        }
     </style><span register-top-menu></span><div class="register-content card card-1-notrans">
         <div class="register-content-header bg-darkgrey color-white">
             <div style="padding:10px 10px;">
@@ -27,67 +32,68 @@
             </div>
         </div>
         <div class="register-content-content">
-
             <div class="row well" style="margin:0 0 30px 0">
+                <h4 style="padding:3px;margin-top:0;border-bottom:1px solid #ddd;">&nbsp; 欢迎<span class="color-black bold">{{user.name}}</span> <i class="pull-right fa fa-chevron-circle-down cursor" ng-show="!showProfileInfo" aria-hidden="true" ng-click="showProfileInfo=true"></i> <i class="pull-right fa fa-chevron-circle-up cursor"   ng-show="showProfileInfo" aria-hidden="true" ng-click="showProfileInfo=false"></i></h4>
+                <div class="row" ng-if="showProfileInfo">
+                    <div class="col-md-5 cp-header">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>姓名：</label>
+                                </td>
+                                <td><strong>{{user.name}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>主要邮箱：</label>
+                                </td>
+                                <td><strong>{{user.email}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>归属国家：</label>
+                                </td>
+                                <td ng-if="user.government"><a translation-url href="/countries/{{user.government | uppercase}}"><strong>{{userCountry|term}}</strong></a></td>
+                                <td ng-if="!user.government"><strong>无</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-5 cp-header">
+                        <table>
+                            <td>
+                                <label>角色：</label>
+                            </td>
+                            <td><span class="comma" ng-if="roles.isAbsNationalFocalPoint"><strong>ABS National Focal Point </strong><span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point is responsible for liason with the Secretariat as well as to designate themselves or another user as the Publishing Authority (PA) for the ABSCH."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsPublishingAuthority"><strong>National Publishing Authority (PA)</strong><span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip" data-html="true" data-title="Each country can designate only one PA for the ABSCH.The PA&apos;s job is to make information publically available on the ABSCH by verifing and publishing records.PAs can also designate National Authorized Users (NAUs) who are allowed to submit draft records for their country."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser"><strong>National Authorized User (NAU)</strong><span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point has the responsiblity to designate themselves or another user as the Publishing Authority (PA) as well as be the liason with the Secretariat."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isUser"><strong>Regular User</strong><span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="Regular users can create draft reference records and request their publication from the SCBD."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">ABSCH Admin</strong></span> <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">Admin</strong></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>更新个人资料：</label>
+                                </td>
+                                <td><a translation-url href="https://accounts.cbd.int/profile" target="_new"><strong>accounts.cbd.int/profile</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>更新密码：</label>
+                                </td>
+                                <td><a translation-url href="https://accounts.cbd.int/password" target="_new"><strong>accounts.cbd.int/password</strong></a></td>
 
-               
-
-                <h4 style="padding:3px;margin-top:0;border-bottom:1px solid #ddd;">&nbsp; 欢迎<span class="color-black bold">{{user.name}}</span></h4>                
-               
-                <div class="col-md-5 cp-header">
-                    <table>
-                        <tr>
-                            <td>
-                                <label>姓名：</label>
-                            </td>
-                            <td><strong>{{user.name}}</strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>主要邮箱：</label>
-                            </td>
-                            <td><strong>{{user.email}}</strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>归属国家：</label>
-                            </td>
-                            <td ng-if="user.government"><a translation-url  href="/countries/{{user.government | uppercase}}"><strong>{{userCountry|term}}</strong></a></td>
-                            <td ng-if="!user.government"><strong>无</strong></td>
-                        </tr>
-                    </table>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-5 cp-header">
-                    <table>
-                        <td>
-                            <label>角色：</label>
-                        </td>
-                        <td><span class="comma" ng-if="roles.isAbsNationalFocalPoint"><strong>ABS National Focal Point</strong><span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point is responsible for liason with the Secretariat as well as to designate themselves or another user as the Publishing Authority (PA) for the ABSCH." data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsPublishingAuthority"><strong>National Publishing Authority (PA)</strong><span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip" data-html="true" data-title="Each country can designate only one PA for the ABSCH.The PA&apos;s job is to make information publically available on the ABSCH by verifing and publishing records.PAs can also designate National Authorized Users (NAUs) who are allowed to submit draft records for their country." data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser"><strong>National Authorized User (NAU)</strong><span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="The ABS National Focal Point has the responsiblity to designate themselves or another user as the Publishing Authority (PA) as well as be the liason with the Secretariat." data-container="body"></span></span> <span class="comma" ng-if="roles.isUser"><strong>Regular User</strong><span  class="helpinfoInline fa fa-info-circle" data-toggle="tooltip" data-html="true" data-title="Regular users can create draft reference records and request their publication from the SCBD." data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">ABSCH Admin</strong></span> <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">Admin</strong></span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>更新个人资料：</label>
-                            </td>
-                            <td><a translation-url  href="https://accounts.cbd.int/profile" target="_new"><strong>accounts.cbd.int/profile</strong></a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>更新密码：</label>
-                            </td>
-                            <td><a translation-url  href="https://accounts.cbd.int/password" target="_new"><strong>accounts.cbd.int/password</strong></a></td>
-                      
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div id="SubmitPage">
+            </div>            
+            <top-records filter="workingDocumentLock/lockedOn ne null" title="Pending Requests" top="1" view-all-url="/register/pending-requests"></top-records><br/><div id="SubmitPage">
                 <h4 class="visible-xs" style="padding:3px;margin-top:0;border-bottom:1px solid #ddd;">记录概述<div class="row bg-white" style="font-size:12px;padding:5x 0;margin:0;"><span class="pull-right"><span class="label label-danger">&nbsp;</span> 请求</span> <span class="pull-right">&nbsp;&nbsp;<span class="label label-default">&nbsp;</span>记录草案&nbsp;</span> <span class="pull-right"><span class="label label-success">&nbsp;</span>已发布记录</span></div>
-           </h4>
+                </h4>
 
                 <div class="row hidden-xs" style="padding:0;margin:0 0 10px 0;border-bottom:1px solid #ddd;">
                     <div class="col-sm-6 col-md-9">
-                        <h4 style="padding:0;margin:0;">记录概述</h4></div>
+                        <h4 style="padding:0;margin:0;">记录概述</h4>
+                    </div>
                     <div class="col-sm-2 col-md-1 text-right bold"><span class="label label-success"></span> 已发布</div>
                     <div class="col-sm-2 col-md-1 text-right bold"><span class="label label-default"></span> 草案</div>
                     <div class="col-sm-2 col-md-1 text-right bold"><span class="label label-danger"></span> 请求</div>
@@ -95,107 +101,57 @@
                 </div>
 
 
+                <div id="menuPlaceholder" ng-if="roles.isUser">
+                    <div class="row  bg-grey" style="padding:0;margin:0 0 5px 0;">
+                        <div class="col-xs-12 bold">Contacts (People and Organizations) <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip" data-html="true" data-title="Published contacts (a person or organization) can be referenced in other records.However, contacts can not be created from others records.You will need to have your contacts published before they are available to be included in other records."
+                                data-container="body"></span></div>
+                    </div>
+                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px">
+                        <div class="col-xs-9 col-sm-6 col-md-9" ng-click="gotoList($event,'contact')"><span ng-click="showTopRecords($event,'contact')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-chevron-circle-down cursor" ng-class="{'fa-chevron-circle-down':!topRecords['contact'], 'fa-chevron-circle-up':topRecords['contact']}"
+                                 aria-hidden="true"></i></span> <span ng-click="gotoNew($event,'contact')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'contact')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-list"></i></span> 联系人（CON）</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/CON/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('contact','publish')===0}">{{facets(&apos;contact&apos;,&apos;publish&apos;)}}</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/CON/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('contact','draft') - facets('contact','request')===0}">{{facets(&apos;contact&apos;,&apos;draft&apos;) - facets(&apos;contact&apos;,&apos;request&apos;)}}</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/CON/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('contact','request')===0}">{{facets(&apos;contact&apos;,&apos;request&apos;)}}</a></div>
+                        <div ng-if="topRecords['contact']" class="col-xs-12">
+                            <top-records schema="contact" top="10" style="padding-top:5px;" show-schema-name="false"></top-records>
+                        </div>
+                    </div>
 
+                </div>
 
                 <div id="menuPlaceholder" ng-if="isNationalUser">
-                    <div class="row  bg-grey" style="padding:0;margin:0 0 5px 0;">
-                        <div class="col-xs-12 bold">全国联系人（人员和组织） <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip" data-html="true" 
-                            data-title="Published contacts (a person or organization) can be referenced in other national records.However, contacts can not be created from others records.You will need to have your national contacts published before they are available to be included in other national records."
-                            data-container="body"></span></div>
-                    </div>
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px">
-                        <div class="col-xs-9 col-sm-6 col-md-9" ng-click="gotoList($event,'contact')"><span ng-click="gotoNew($event,'contact')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'contact')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 联系人（CON）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CON/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('contact','publish')===0}">{{facets(&apos;contact&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CON/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('contact','draft') - facets('contact','request')===0}">{{facets(&apos;contact&apos;,&apos;draft&apos;) - facets(&apos;contact&apos;,&apos;request&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CON/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('contact','request')===0}">{{facets(&apos;contact&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
 
                     <div class="row  bg-grey" style="padding:0;margin:20px 0 5px 0;">
-                        <div class="col-xs-12 bold"><span class="color-blue">国家记录</span> <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip" data-html="true" data-title="National records contain information that is typically required to be reported as part of a Party&rsquo;s obligations under the Nagoya Protocol on Access and Benefit-sharing and must be validated by the ABS-CH Publishing Authority prior to being made available in the ABS Clearing-House." data-container="body"></span></div>
+                        <div class="col-xs-12 bold"><span class="color-blue">国家记录</span> <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip" data-html="true" data-title="National records contain information that is typically required to be reported as part of a Party&rsquo;s obligations under the Nagoya Protocol on Access and Benefit-sharing and must be validated by the ABS-CH Publishing Authority prior to being made available in the ABS Clearing-House."
+                                data-container="body"></span></div>
                     </div>
-
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px">
-                        <div class="col-xs-9 col-sm-6 col-md-9" ng-click="gotoList($event,'authority')"><span ng-click="gotoNew($event,'authority')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'authority')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 国家主管部门（CNA）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CNA/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('authority','publish')===0}">{{facets(&apos;authority&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CNA/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('authority','draft')===0}">{{facets(&apos;authority&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CNA/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('authority','request')===0}">{{facets(&apos;authority&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'measure')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'measure')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url ng-click="gotoList($event,'measure')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 关于<span class="hidden-sm">获取和惠益分享</span>的立法、行政和政策措施（MSR）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/MSR/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('measure','publish')===0}">{{facets(&apos;measure&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/MSR/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('measure','draft')===0}">{{facets(&apos;measure&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/MSR/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('measure','request')===0}">{{facets(&apos;measure&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'database')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'database')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'database')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 国家级网站或数据库（NDB）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NDB/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('database','publish')===0}">{{facets(&apos;database&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NDB/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('database','draft')===0}">{{facets(&apos;database&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NDB/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('database','request')===0}">{{facets(&apos;database&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'absPermit')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'absPermit')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'absPermit')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> <span class="hidden-sm">构成国际认可合规证书</span>的许可证或同等文件（IRCC）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/IRCC/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('absPermit','publish')===0}">{{facets(&apos;absPermit&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/IRCC/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('absPermit','draft')===0}">{{facets(&apos;absPermit&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/IRCC/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('absPermit','request')===0}">{{facets(&apos;absPermit&apos;,&apos;request&apos;)}}</a></div>
-
-                    </div>
-
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'absCheckpoint')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'absCheckpoint')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'absCheckpoint')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 检查点（CP）</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CP/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('absCheckpoint','publish')===0}">{{facets(&apos;absCheckpoint&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CP/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('absCheckpoint','draft')===0}">{{facets(&apos;absCheckpoint&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CP/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('absCheckpoint','request')===0}">{{facets(&apos;absCheckpoint&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
-
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'absCheckpointCommunique')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'absCheckpointCommunique')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'absCheckpointCommunique')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> Information for the Checkpoint Communiqu&eacute; (CPC)</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPC/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('absCheckpointCommunique','publish')===0}">{{facets(&apos;absCheckpointCommunique&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPC/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('absCheckpointCommunique','draft')===0}">{{facets(&apos;absCheckpointCommunique&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPC/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('absCheckpointCommunique','request')===0}">{{facets(&apos;absCheckpointCommunique&apos;,&apos;request&apos;)}}</a></div>
-
-                    </div>
-
-
-                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'absNationalReport')">
-                        <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'absNationalReport')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'absNationalReport')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> <span class="hidden-sm">《名古屋议定书（NR）》</span>执行情况中期国家报告</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NR/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('absNationalReport','publish')===0}">{{facets(&apos;absNationalReport&apos;,&apos;publish&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NR/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('absNationalReport','draft')===0}">{{facets(&apos;absNationalReport&apos;,&apos;draft&apos;)}}</a></div>
-                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/NR/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('absNationalReport','request')===0}">{{facets(&apos;absNationalReport&apos;,&apos;request&apos;)}}</a></div>
-                    </div>
-
+                    <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-repeat="schema in nationalSchemas">
+                        <div class="col-xs-9 col-sm-6 col-md-9" ng-click="gotoList($event,schema)"><span ng-click="showTopRecords($event,schema)" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-chevron-circle-down cursor" ng-class="{'fa-chevron-circle-down':!topRecords[schema], 'fa-chevron-circle-up':topRecords[schema]}"
+                                 aria-hidden="true"></i></span> <span ng-click="gotoNew($event,schema)" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,schema)" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-list"></i></span> {{schema|schemaName}} ({{schema|urlSchemaShortName}})</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/published" class="label label-success" ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,&apos;publish&apos;)}}</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets(schema,'draft')===0}">{{facets(schema,&apos;draft&apos;)}}</a></div>
+                        <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,&apos;request&apos;)}}</a></div>
+                        <div ng-if="topRecords[schema]" class="col-xs-12">
+                            <top-records schema="{{schema}}" top="10" style="padding-top:5px;" show-schema-name="false"></top-records>
+                        </div>
+                    </div> 
                 </div>
 
                 <div class="row  bg-grey" style="padding:0;margin:20px 0 5px 0;">
                     <div class="col-xs-12 bold"><span class="color-orange">参考记录</span> <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip" data-html="true" data-title="Reference records contain information relevant to the Protocol (but not reported as part of a Party&rsquo;s obligations under the Protocol).This information can be made available to the ABS Clearing-House by any registered user (including representatives of Governments, indigenous and local communities, academia, nongovernmental organizations, research institutions, business representatives, etc.).All reference records are validated by the Secretariat prior to being made available in the ABS Clearing-House." data-container="body"></span></div>
                 </div>
-                <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'resource')">
-                    <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'resource')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'resource')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 虚拟图书馆（VLR）&mdash;&mdash;参考材料、文献和能力建设资源</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/VLR/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('resource','publish')===0}">{{facets(&apos;resource&apos;,&apos;publish&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/VLR/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('resource','draft')===0}">{{facets(&apos;resource&apos;,&apos;draft&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/VLR/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('resource','request')===0}">{{facets(&apos;resource&apos;,&apos;request&apos;)}}</a></div>
-                </div>
-                <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'capacityBuildingInitiative')">
-                    <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'capacityBuildingInitiative')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'capacityBuildingInitiative')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 能力建设倡议（CBI）</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CBI/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('capacityBuildingInitiative','publish')===0}">{{facets(&apos;capacityBuildingInitiative&apos;,&apos;publish&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CBI/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('capacityBuildingInitiative','draft')===0}">{{facets(&apos;capacityBuildingInitiative&apos;,&apos;draft&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CBI/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('capacityBuildingInitiative','request')===0}">{{facets(&apos;capacityBuildingInitiative&apos;,&apos;request&apos;)}}</a></div>
-                </div>
-
-                <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'modelContractualClause')">
-                    <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'modelContractualClause')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'modelContractualClause')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 合同条款范文、行为准则、指导方针和最佳做法和/或标准（第19条和第20条）</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/A19A20/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('modelContractualClause','publish')===0}">{{facets(&apos;modelContractualClause&apos;,&apos;publish&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/A19A20/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('modelContractualClause','draft')===0}">{{facets(&apos;modelContractualClause&apos;,&apos;draft&apos;) }}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/A19A20/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('modelContractualClause','request')===0}">{{facets(&apos;modelContractualClause&apos;,&apos;request&apos;)}}</a></div>
-                </div>
-
-                <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-click="gotoList($event,'communityProtocol')">
-                    <div class="col-xs-9 col-sm-6 col-md-9"><span ng-click="gotoNew($event,'communityProtocol')" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,'communityProtocol')" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ><i class="fa fa-list"></i></span> 社区协议和程序法和习惯法（CPP）</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPP/status/published" class="label label-success" ng-class="{'bg-litegrey': facets('communityProtocol','publish')===0}">{{facets(&apos;communityProtocol&apos;,&apos;publish&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPP/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets('communityProtocol','draft')===0}">{{facets(&apos;communityProtocol&apos;,&apos;draft&apos;)}}</a></div>
-                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url  ng-href="/register/CPP/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets('communityProtocol','request')===0}">{{facets(&apos;communityProtocol&apos;,&apos;request&apos;)}}</a></div>
-                </div>
 
 
+                <div class="row link1" style="padding:0;margin:0 -3px 5px -3px" ng-repeat="schema in referenceSchemas">
+                    <div class="col-xs-9 col-sm-6 col-md-9" ng-click="gotoList($event,schema)"><span ng-click="showTopRecords($event,schema)" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-chevron-circle-down cursor" ng-class="{'fa-chevron-circle-down':!topRecords[schema], 'fa-chevron-circle-up':topRecords[schema]}"
+                                aria-hidden="true"></i></span> <span ng-click="gotoNew($event,schema)" class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;" ng-if="schema!='organization'"><i class="fa fa-plus"></i></span> <span  class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;color: lightgray!important;" ng-if="schema=='organization'" ng-disabled="schema=='organization'"><i class="fa fa-plus"></i></span> <a translation-url href="#" ng-click="gotoList($event,schema)" class="color-darkgrey" style="font-weight:500;"><span class="label color-blue bg-litegrey linkDark" style="margin: 0 0 0 1px;"><i class="fa fa-list"></i></span> {{schema|schemaName}} ({{schema|urlSchemaShortName}})</a></div>
+                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/published" class="label label-success" ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,&apos;publish&apos;)}}</a></div>
+                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/drafts" class="label label-default" ng-class="{'bg-litegrey': facets(schema,'draft')===0}">{{facets(schema,&apos;draft&apos;)}}</a></div>
+                    <div class="col-xs-1 col-sm-2 col-md-1 text-right"><a translation-url ng-href="/register/{{schema|urlSchemaShortName}}/status/requests" class="label label-danger" ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,&apos;request&apos;)}}</a></div>
+                    <div ng-if="topRecords[schema]" class="col-xs-12">
+                        <top-records schema="{{schema}}" top="10" style="padding-top:5px;" show-schema-name="false"></top-records>
+                    </div>
+                </div>
             </div>
 
         </div>

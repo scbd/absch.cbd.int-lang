@@ -102,7 +102,7 @@
 		</style>
 		<div class="row">
 			<div class="col-sm-12 well">
-				<h1>Measure Matrix</h1>
+				<h1> Measure Matrix</h1>
 			</div>
 
 			<div class="well col-sm-12">
@@ -141,7 +141,7 @@
 									<div class="row">
 	                                    <div style="padding:10px; margin:0 10px;">
 	                                        <div class="row table-hover table-msr" ng-repeat="measure in jurisdiction.measures">
-	                                            <div class="row border" ng-click="measure.displayDetails = !measure.displayDetails;" style="cursor:pointer"><i class="fa fa-chevron-circle-up" ng-show="measure.displayDetails"></i> <i class="fa fa-chevron-circle-down" ng-show="!measure.displayDetails"></i> <span>&nbsp;{{measure.title_t}}</span> | {{measure.status_EN_t}} | {{measure.type_EN_t}} | {{measure.jurisdiction_EN_t}} | <span ng-show="measure.adoption_dt">Adopted on</span> <span ng-show="measure.entryIntoForce_dt">Entry into force on</span> <span ng-show="measure.retired_dt">Retired on</span> {{(measure.adoption_dt ||measure.entryIntoForce_dt || measure.retired_dt)|formatDate}} <span ng-show="measure.limitedApplication_dt">- {{measure.limitedApplication_dt|formatDate}}</span></div>
+	                                            <div class="row border" ng-click="measure.displayDetails = !measure.displayDetails;" style="cursor:pointer"><i class="fa fa-chevron-circle-up" ng-show="measure.displayDetails"></i> <i class="fa fa-chevron-circle-down" ng-show="!measure.displayDetails"></i> <span>&nbsp;{{measure.title_t}}</span> | {{measure.status_EN_t}} | {{measure.type_EN_t}} | {{measure.jurisdiction_EN_t}} | <span ng-show="measure.adoption_dt">Adopted on </span> <span ng-show="measure.entryIntoForce_dt">Entry into force on </span> <span ng-show="measure.retired_dt">Retired on </span> {{(measure.adoption_dt ||measure.entryIntoForce_dt || measure.retired_dt)|formatDate}} <span ng-show="measure.limitedApplication_dt"> - {{measure.limitedApplication_dt|formatDate}}</span></div>
 												<div class="row" ng-if="measure.displayDetails">													
                                                     <div class="col-xs-12 details document-show-hide" record-loader document="measure.document"></div>
                                                 </div>

@@ -5,7 +5,9 @@
     <meta name="description" content="Access and Benefit-Sharing Clearing-House">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
-    <link rel="shortcut icon" href="ico/favicon.png"><!-- Bootstrap core CSS --><link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --><link href="/app/css/profile-map.css" rel="stylesheet">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/app/css/template.css"><!-- Bootstrap core CSS --><link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --><link href="/app/css/profile-map.css" rel="stylesheet">
 
     <link href="../css/permitPDF.css" rel="stylesheet">
     <script src="../libs/underscore/underscore.js"></script>
@@ -13,10 +15,7 @@
     <script src="../libs/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="abs-contacts-pdf.js"></script>
     <script src="absCommon.js"></script>
-    <style>
-        body {
-            zoom: 0.53; /* using 0.55 or higher results in the elements not lining up correctly */
-        }
+    <style>        
         a[href]:after {
             content: '';
         }
@@ -25,13 +24,9 @@
 
 <body>
     <div ng-app="ngapp" class="main-nav">
-        <div ng-controller="printContacts" style="width:1000px;">
+        <div ng-controller="printContacts">
 
-            <div class="row" style="padding-bottom:30px;">
-                    <div class="col-xs-4" style="text-align:center;"><img style="max-width:120px;padding-top:10px" src="/app/img/UNEP_logo.svg" /></div>
-                        <div class="col-xs-4" style="text-align:center;padding-top:5px;"><img src="/app/img/cbd-logo-black-en.svg" style="max-width:180px;" /></div>
-                        <div class="col-xs-4" style="text-align:center;"><img style="max-width:80px;padding-top:5px;" src="/app/img/Emblem_of_the_United_Nations.svg" /></div>
-            </div>
+            <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'"></div>    
             <div class="row">
                 <div class="col-xs-12 bg-green" >
                     <h1 class="color-litegreen  text-center" style="padding:0;">{{title(schema)}}</h1>
@@ -55,12 +50,12 @@
                             </div>
                             <div class="panel-body"><a ng-href="/database/{{schema}}/{{contact.documentId}}">{{contact.title_t}}</a><div ng-show="contact.description_t" ng-bind-html="contact.description_t"></div>
                                 <ul ng-show="contact.telephones || contact.telephone_ss || contact.fax_ss" style="list-style-type: none;padding:0;margin:0;"><!-- <i class="fa fa-phone-square"></i><i class="fa fa-phone-square"></i><i class="fa fa-fax"></i>
-                                            <i class="fa fa-envelope-o"></i> --><li ng-show="contact.telephone_ss" ng-repeat="item in contact.telephone_ss">{{item}}</li>
-                                    <li ng-show="contact.telephones" ng-repeat="item in contact.telephones">{{item}}</li>
-                                    <li ng-show="contact.fax_ss" ng-repeat="item in contact.fax_ss">{{item}}</li>
+                                            <i class="fa fa-envelope-o"></i> --><li ng-show="contact.telephone_ss" ng-repeat="item in contact.telephone_ss"> {{item}}</li>
+                                    <li ng-show="contact.telephones" ng-repeat="item in contact.telephones"> {{item}}</li>
+                                    <li ng-show="contact.fax_ss" ng-repeat="item in contact.fax_ss"> {{item}}</li>
                                 </ul>
                                 <ul ng-show="contact.emails || contact.email_ss" style="list-style-type: none;padding:0;margin:0;">
-                                    <li ng-repeat="item in contact.emails || contact.email_ss"><a ng-href="mailto:{{item}}">{{item}}</a></li>
+                                    <li ng-repeat="item in contact.emails || contact.email_ss"><a ng-href="mailto:{{item}}"> {{item}}</a></li>
                                 </ul>
                             </div>
                         </div>

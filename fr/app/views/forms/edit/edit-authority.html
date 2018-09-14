@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="name" required caption="Nom de l'autorité nationale compétente">
-                                           <div class="help-info">Fournissez le nom de l&rsquo;entit&eacute; responsable par ex. : Minist&egrave;re de l&rsquo;Environnement Gardez en t&ecirc;te que le nom de l&rsquo;autorit&eacute; nationale comp&eacute;tente vous aidera &agrave; identifier le fichier au Centre d&rsquo;&eacute;change APA.</div>
+                                           <div class="help-info"> Fournissez le nom de l&rsquo;entit&eacute; responsable par ex. : Minist&egrave;re de l&rsquo;Environnement Gardez en t&ecirc;te que le nom de l&rsquo;autorit&eacute; nationale comp&eacute;tente vous aidera &agrave; identifier le fichier au Centre d&rsquo;&eacute;change APA.</div>
                                             <div km-textbox-ml name="name" required ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -86,12 +86,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="phones" required caption="Numéros de téléphone"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="exemple: +1 514.288.2220"></div>
+                                        <div class="km-control-group" name="phones" required caption="Numéros de téléphone">
+                                            <div km-inputtext-list name="phones" ng-model="document.phones" required placeholder="exemple: +1 514.288.2220"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="faxes" caption="Télécopieur :"><!-- <div class="help-info">Please use the following format: +[country code] [city code] [telephone number] [extension, if necessary].</div> --><div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="exemple: +1 514.288.6588"></div>
+                                        <div class="km-control-group" name="faxes" caption="Télécopieur :">
+                                            <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="exemple: +1 514.288.6588"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +106,8 @@
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <div class="km-control-group" name="websites" caption="Adresse du site Web"><!--   <div class="help-info">Please provide the URL of the website (e.g http://absch.cbd.int/) and the name of the website (e.g. ‘Access and Benefit-sharing Clearing-House’).</div> --><div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
+                                        <div class="km-control-group" name="websites" caption="Adresse du site Web">
+                                            <div km-link name="websites" ng-model="document.websites" allow-link="true" allow-file="false"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +178,7 @@
                                                         </div>
 
                                                     <div class="km-control-group" name="responsibilities" caption="Brève description des responsabilités de l’ANC (maximum 300 caractères)." required>
-                                                        <div class="help-info">Le paragraphe 2 de l&rsquo;Article 13, pr&eacute;voit &agrave; ce que les autorités nationales compétentes, en conformité avec les mesures législatives et administratives ainsi que les politiques nationales applicables, sont chargées d&rsquo;accorder l&rsquo;accès ou, s&rsquo;il y a lieu, de délivrer une preuve écrite que les conditions d&rsquo;accès ont été respectées, et de fournir des conseils sur les procédures et les conditions d&rsquo;obtention du consentement préalable donné en connaissance de cause et de conclusion de conditions convenues d&rsquo;un commun accord ». Rappelez-vous que la raison d&rsquo;&ecirc;tre de cette section est d&rsquo;aider les usagers &agrave; comprendre les responsabilit&eacute;s relatives &agrave; l&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques en r&eacute;pondant &agrave; la question : Qui accorde un acc&egrave;s et pour quoi? La description des responsabilit&eacute; doit &ecirc;tre br&egrave;ve et facile &agrave; comprendre.</div>
+                                                        <div class="help-info">Le paragraphe 2 de l&rsquo;Article 13, pr&eacute;voit &agrave; ce que les autorités nationales compétentes, en conformité avec les mesures législatives et administratives ainsi que les politiques nationales applicables, sont chargées d&rsquo;accorder l&rsquo;accès ou, s&rsquo;il y a lieu, de délivrer une preuve écrite que les conditions d&rsquo;accès ont été respectées, et de fournir des conseils sur les procédures et les conditions d&rsquo;obtention du consentement préalable donné en connaissance de cause et de conclusion de conditions convenues d&rsquo;un commun accord ». Rappelez-vous que la raison d&rsquo;&ecirc;tre de cette section est d&rsquo;aider les usagers &agrave; comprendre les responsabilit&eacute;s relatives &agrave; l&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques en r&eacute;pondant &agrave; la question : Qui accorde un acc&egrave;s et pour quoi? La description des responsabilit&eacute; doit &ecirc;tre br&egrave;ve et facile &agrave; comprendre. </div>
                                                         <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities" rows="6" placeholder="" locales="document.header.languages" required></div>
                                                     </div>
                                                 </div>
@@ -251,16 +254,9 @@
 
                     <div ng-show="tab=='review'" km-tab="review" id="schemaView">
                        <div view-authority ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
-                    </div><!--
-        <hr style="margin-top:20px;">
+                    </div>
 
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-12">
-
-                <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
-
-            </div>
-        </div> --></div>
+                </div>
 
 
 
