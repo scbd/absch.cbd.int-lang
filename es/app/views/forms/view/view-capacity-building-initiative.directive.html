@@ -91,21 +91,21 @@
 			<div ng-show="document.isImplementedByAgencies && document.implementingAgencies">
 			  	<label>Organismo(s) u organizaci&oacute;n(es) de aplicaci&oacute;n</label>
 				<div class="km-value" ng-repeat="contact in document.implementingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.isImplementedByAgencies && document.executingAgencies">
 			  	<label>Organismo(s) u organizaci&oacute;n(es) de ejecuci&oacute;n</label>
 				<div class="km-value" ng-repeat="contact in document.executingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.collaboratingPartners && document.collaboratingPartners">
 				<label>Asociado(s) en colaboraci&oacute;n</label>
 				<div class="km-value" ng-repeat="contact in document.collaboratingPartners">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
@@ -162,14 +162,14 @@
 		<div ng-show="document.coreFundingSources">
 			<label>Fuente(s) principal(es) de financiaci&oacute;n</label>
 			<div class="km-value" ng-repeat="contact in document.coreFundingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="document.coFinancingSources">
 			<label>Fuente(s) de cofinanciaci&oacute;n</label>
 			<div class="km-value" ng-repeat="contact in document.coFinancingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 

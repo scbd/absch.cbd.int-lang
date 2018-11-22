@@ -1,0 +1,62 @@
+﻿<div  class="container-fluid">
+        <div ng-if="infoBlockUrl" ng-include="infoBlockUrl"></div>
+        <div class="panel panel-default">
+                
+                <div class="panel-heading">
+                    <h3 class="panel-title">Общий обзор </h3>
+                </div>
+    
+                <div class="panel-body">
+                    <table class="table" cellspacing="0" cellpadding="0" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th>Report</th>
+                                <th style="text-align:center;" class="hidden-xs">Year </th>
+                                <th style="text-align:center;">Parties </th>
+                                <th style="text-align:center;" class="hidden-xs">Non-Parties </th>
+                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace(&apos;CBD - &apos;, &apos;&apos;)}} </th>
+                                <th style="text-align:center;">Доклады</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="activeReport in reportData ">
+                                <td><span style="margin-right:10px;">{{activeReport.title}}</span> <span style="display:inline-block;" ng-if="activeReport.offlineFormats && activeReport.offlineFormats.length>0"><i class="fa fa-file-word-o" aria-hidden="true"></i>  | <span ng-repeat="format in activeReport.offlineFormats"><a ng-href="{{format.url}}" target="_new">{{format.lang}}</a><i ng-if="!$last">|</i></span></span></td>
+                                <td style="text-align:center;" class="hidden-xs">{{activeReport.year}}</td>
+                                <td style="text-align:center;">{{activeReport.interimNationalReportByPartiesCount}} </td>
+                                <td style="text-align:center;" class="hidden-xs">{{activeReport.interimNationalReportByNonPartiesCount}} </td>
+                                <td style="text-align:center;" class="hidden-xs" ng-repeat="region in activeReport.regionMapping">{{region.count}} </td>
+                                <td style="text-align:center;"><!-- <a href="/search/nationalRecords?schema=absNationalReport"> --> <b>{{activeReport.interimNationalReportByPartiesCount + activeReport.interimNationalReportByNonPartiesCount}}</b> <!-- </a> --></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><br><div class="register-content-content" style="padding:5px;">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:99%">
+                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" ng-click="analyze()">Анализировать »</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-body" ng-if="reportData">
+                    <national-report-questions-selector report-type="$parent.selectedReportType" questions="$parent.selectedQuestions" 
+                    regions="$parent.selectedRegions" regions-preset="$parent.selectedRegionsPreset"
+                    regions-preset-filter="$parent.selectedRegionsPresetFilter"
+                    report-data="reportData"></national-report-questions-selector>
+                </div>
+
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-primary" ng-click="analyze()">Анализировать »</button>
+                </div>
+
+            </div>
+        </div>
+
+
+</div>

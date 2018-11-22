@@ -91,21 +91,21 @@
 			<div ng-show="document.isImplementedByAgencies && document.implementingAgencies">
 			  	<label>实施机构或组织</label>
 				<div class="km-value" ng-repeat="contact in document.implementingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.isImplementedByAgencies && document.executingAgencies">
 			  	<label>执行机构或组织</label>
 				<div class="km-value" ng-repeat="contact in document.executingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.collaboratingPartners && document.collaboratingPartners">
 				<label>合作伙伴</label>
 				<div class="km-value" ng-repeat="contact in document.collaboratingPartners">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
@@ -162,14 +162,14 @@
 		<div ng-show="document.coreFundingSources">
 			<label>核心资金来源</label>
 			<div class="km-value" ng-repeat="contact in document.coreFundingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="document.coFinancingSources">
 			<label>共同出资来源</label>
 			<div class="km-value" ng-repeat="contact in document.coFinancingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 

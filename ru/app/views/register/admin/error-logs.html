@@ -1,0 +1,102 @@
+﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
+	<link href="/app/css/register.css" rel="stylesheet">
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style>
+		.table>tbody:hover {
+			background-color: #f2dede;
+			;
+		}
+		
+		.hyphenate {
+			/* Careful, this breaks the word wherever it is without a hyphen */
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			/* Adds a hyphen where the word breaks */
+			-webkit-hyphens: auto;
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+		.message_body{
+			max-width: 1759px;
+			margin-right: 15px!important;
+    		margin-left: 15px!important;
+		}
+	</style>
+	<div class="register-content card card-1-notrans">
+
+		<div class="register-content-header bg-pink color-white">
+			<div style="padding:10px 10px;">
+				<h3> Необработанные административные запросы</h3>
+			</div>
+		</div>
+		<div class="register-content-content">
+
+			<legend name="formInfo" style="display:none"></legend><!--<div style="font-weight:bold;">Records which have been not approved since 12 weeks.</div>--><div class="registerpage-content">
+
+				<div class="alert alert-danger" ng-show="__error"><strong>Ошибка: </strong>{{__error}}</div>
+				<legend>Фильтры </legend>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="km-control-group" name="startDate" required caption="Дата начала">
+							<div km-date placeholder="ГГГГ-ММ-ДД" required name="startDate" ng-model="filters.startDate"></div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="km-control-group" name="endDate" caption="Дата завершения">
+							<div km-date placeholder="ГГГГ-ММ-ДД" name="endDate" ng-model="filters.endDate"></div>
+						</div>
+					</div>
+				</div><!--<div class="row">
+                    <div class="col-xs-12">
+                        <div class="pull-left">                            
+                            <input type="text" ng-model="keywords" placeholder=" keyword " class="form-control keyword" style="width:250px;display:inline;">
+                        </div>
+                    </div>
+                </div>--> <br> <br><div class="row">
+					<div class="col-xs-12">
+						<div class="table-responsive " style="margin-top:15px;">
+
+							<table class="table table-bordered " infinite-scroll="loadErrors()" infinite-scroll-busy="loadingErrors" infinite-scroll-distance="0">
+								<thead>
+									<tr>
+										<th>№</th>
+										<th>Версия приложения</th>
+										<th>Уровень</th>
+										<th>Дата</th>
+										<th>Сообщение</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody ng-repeat="error  in errors">
+									<tr>
+										<td>{{recordCount - $index}}</td>
+										<td><!--https://github.com/scbd/absch.cbd.int/releases/tag/2016.49.3--> <a target="_new" ng-href="https://github.com/scbd/absch.cbd.int/commit/{{getGitHash(error.appVersion)}}">{{error.appVersion|limitTo:20}}...</a></td>
+										<td> {{error.level}}</td>
+										<td>{{error.timestamp|formatDateWithTime}}</td>
+										<td> {{error.message|limitTo:100}}</td>
+										<td>
+											<button type="button" class="btn btn-primary" ng-click="error.showDetails=!error.showDetails">Показать сведения</button>
+										</td>
+									</tr>
+									<tr ng-if="error.showDetails">
+										<td colspan="6">
+											<div class="message_body"><span class=""><b>URL-адрес:</b> {{error.url}}<br> </span><br> <span class=""><b>Пользователь:</b><a ng-if="error.user != 1" ng-href="https://accounts.cbd.int/admin/users/{{error.user}}">{{error.user}}</a><span ng-if="error.user == 1">Анонимный</span></span><br><br> <span class=""><b>пользователь Агент:</b> {{error.userAgent.trim()}}<br> </span><br><p class="hyphenate"><b>Сообщение:</b> {{error.message.trim()}}</p><br><pre class="special_formatting ">													
+														<p class="language-html pull-left hyphenate" data-lang="html" style="margin:0px" ng-bind-html="error.stack">
+														</p>
+													</pre>
+											</div>
+
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="alert alert-success" ng-show="errors.length==0">Нет вопросов, требующих вашего внимания</div>
+							<div style="margin-left:50%" ng-show="loadingErrors"><i class="fa fa-spin fa-spinner" /> Загрузка ....</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

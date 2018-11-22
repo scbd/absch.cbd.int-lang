@@ -16,7 +16,7 @@
 
 		<div ng-show="document.title">
 			<label>Titre de l&apos;&eacute;valuation des risques</label>
-			<div class="km-value">
+			<div>
 				<km-value-ml value="document.title" locales="locale"></km-value-ml>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
@@ -36,28 +36,31 @@
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<div ng-show="document.organizations">
+		<div ng-show="document.contacts || document.organizations">
 			<label>Contact details of the main responsible risk assessor</label>
 			<div class="km-value">
 				<ul class="list">
+					<li ng-repeat="item in document.contacts" >						
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
+					</li>
 					<li ng-repeat="item in document.organizations" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
 		</div>
 
 		<legend>D&eacute;tails de l&apos;&eacute;valuation des risques</legend>
-		<div ng-show="document.contacts">
+		<div ng-show="document.modifiedOrganisms">
 			<label>Organisme vivant modifi&eacute;</label>
 			<div class="km-value">
 				<ul class="list">
-					<li ng-repeat="item in document.contacts" >						
+					<li ng-repeat="item in document.modifiedOrganisms" >						
 						<view-lmo-reference ng-model='item.identifier' locale="locale"></view-lmo-reference>
 					</li>
 				</ul>
@@ -79,63 +82,65 @@
 		<legend>D&eacute;tails de l&apos;&eacute;valuation des risques</legend>
 		<div ng-show="document.adverseEffects">
 			<label>Potential adverse effects identified in the risk assessment</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffects" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffects" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsLikelihood">
 			<label>Probabilit&eacute; de r&eacute;alisation des effets d&eacute;favorables possibles</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsLikelihood" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsLikelihood" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsConsequence">
 			<label>Cons&eacute;quences possibles :	</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsConsequence" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsConsequence" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsOverallRisk">
 			<label>Estimation of the overall risk</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsOverallRisk" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsOverallRisk" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsRecommendation">
 			<label>Recommandations</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsRecommendation" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsRecommendation" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.riskManagementStrategies">
 			<label>Besoin de renseignements suppl&eacute;mentaires sur certaines pr&eacute;occupations particuli&egrave;res</label>
-			<div class="km-value">
-				<km-value-ml value="document.riskManagementStrategies" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.riskManagementStrategies" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.receivingEnvironment">
 			<label>Milieux r&eacute;cepteurs envisag&eacute;s</label>
-			<div class="km-value">
-				<km-value-ml value="document.receivingEnvironment" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml html  value="document.receivingEnvironment" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.detectionMethod">
 			<label>M&eacute;thodes propos&eacute;es pour la d&eacute;tection et l&apos;identification des OVM</label>
-			<div class="km-value">
-				<km-value-ml value="document.detectionMethod" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml html value="document.detectionMethod" locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Renseignements suppl&eacute;mentaires</legend>
+			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
-				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+				<km-value-ml html value="document.relevantInformation" locales="locale"></km-value-ml>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
-				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+				<label>Autres sites Web pertinents ou documents en pi&egrave;ce jointe</label>
+				<div class="km-value" >
+					<div ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+				</div>
 			</div>
 		</div>
 		

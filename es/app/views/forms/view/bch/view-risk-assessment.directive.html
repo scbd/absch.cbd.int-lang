@@ -16,7 +16,7 @@
 
 		<div ng-show="document.title">
 			<label>Title of risk assessment</label>
-			<div class="km-value">
+			<div>
 				<km-value-ml value="document.title" locales="locale"></km-value-ml>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
@@ -36,28 +36,31 @@
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<div ng-show="document.organizations">
+		<div ng-show="document.contacts || document.organizations">
 			<label>Datos de contacto del principal responsable evaluador del riesgo</label>
 			<div class="km-value">
 				<ul class="list">
+					<li ng-repeat="item in document.contacts" >						
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
+					</li>
 					<li ng-repeat="item in document.organizations" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
 		</div>
 
 		<legend>Detalles de la evaluaci&oacute;n del riesgo</legend>
-		<div ng-show="document.contacts">
+		<div ng-show="document.modifiedOrganisms">
 			<label>Organismos vivos modificados</label>
 			<div class="km-value">
 				<ul class="list">
-					<li ng-repeat="item in document.contacts" >						
+					<li ng-repeat="item in document.modifiedOrganisms" >						
 						<view-lmo-reference ng-model='item.identifier' locale="locale"></view-lmo-reference>
 					</li>
 				</ul>
@@ -79,50 +82,50 @@
 		<legend>Detalles de la evaluaci&oacute;n del riesgo</legend>
 		<div ng-show="document.adverseEffects">
 			<label>Posibles efectos adversos identificados en la evaluaci&oacute;n del riesgo</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffects" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffects" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsLikelihood">
 			<label>Probabilidad de que los efectos adversos potenciales se realicen</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsLikelihood" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsLikelihood" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsConsequence">
 			<label>Posibles consecuencias:	</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsConsequence" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsConsequence" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsOverallRisk">
 			<label>Estimaci&oacute;n del riesgo global</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsOverallRisk" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsOverallRisk" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.adverseEffectsRecommendation">
 			<label>Recommendation(s)</label>
-			<div class="km-value">
-				<km-value-ml value="document.adverseEffectsRecommendation" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.adverseEffectsRecommendation" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.riskManagementStrategies">
 			<label>Necesidad(es) de ampliar la informaci&oacute;n sobre cuestiones espec&iacute;ficas de inter&eacute;s</label>
-			<div class="km-value">
-				<km-value-ml value="document.riskManagementStrategies" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml  html value="document.riskManagementStrategies" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.receivingEnvironment">
 			<label>Ambiente(s) receptor(es) considerado(s)</label>
-			<div class="km-value">
-				<km-value-ml value="document.receivingEnvironment" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml html  value="document.receivingEnvironment" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.detectionMethod">
 			<label>OVM, m&eacute;todos de detecci&oacute;n e identificaci&oacute;n propuestos</label>
-			<div class="km-value">
-				<km-value-ml value="document.detectionMethod" locales="locale"></km-value-ml>
+			<div>
+				<km-value-ml html value="document.detectionMethod" locales="locale"></km-value-ml>
 			</div>
 		</div>
 
@@ -130,12 +133,14 @@
 			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
-				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+				<km-value-ml html value="document.relevantInformation" locales="locale"></km-value-ml>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
 				<label>Otras direcciones de sitios web o documentos adjuntos pertinentes</label>
-				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+				<div class="km-value" >
+					<div ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+				</div>
 			</div>
 		</div>
 		

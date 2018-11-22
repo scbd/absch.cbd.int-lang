@@ -1,0 +1,141 @@
+﻿<div id="editOrganizationDiv"><span block-region activate="status=='loading'" ng-if="status=='loading'" update-parent-position="true"></span><div class="registerpage-content">
+
+        <div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+            tab="tab" validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
+            on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
+            on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
+            data-container="{{container}}" is-dialog="{{isDialog}}">
+            <edit-form>
+                <form name="editForm" class="editForm" style="margin-top:10px"><br><div class="row">
+                            <div class="col-xs-12">
+                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                    <div class="indent">
+                                        <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <legend>一般信息</legend>
+                    <div class="row">
+                        <div class="col-xs-12" >
+                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                <div class="indent">
+                                    <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-xs-12">
+                            <div class="km-control-group" name="name" required caption="组织名称">
+                                <div km-textbox-ml name="name" required ng-model="document.name" placeholder="文本条目"
+                                    locales="document.header.languages"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-xs-12">
+                            <div class="km-control-group" name="acronym" required caption="Acronym">
+                                <div km-textbox-ml name="acronym" required ng-model="document.acronym"
+                                    placeholder="文本条目" locales="document.header.languages"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="km-control-group" name="contact_organizationType" caption="Type of organization">
+                                <div km-select name="contact_organizationType" ng-model="document.organizationType"
+                                    items="options.organizationTypes()"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
+                            <div class="km-control-group" name="contact_organizationTypeName" caption="其他组织类型">
+                                <div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue"
+                                    placeholder="例如：生物多样性公约秘书处" locales="locales"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <legend>组织协调</legend>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="km-control-group" name="address" caption="地址">
+                                <div km-textbox-ml ng-model="document.address" rows="2" placeholder="例如：413 St-Jacques Ouest, Suite 800"
+                                    locales="document.header.languages"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="city" required caption="城市">
+                                <div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages"
+                                    placeholder="例如：Montreal（蒙特利尔）"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="state" caption="State or Province">
+                                <div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages"
+                                    placeholder="例如：Quebec（魁北克）"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="postalCode" caption="邮编">
+                                <div km-textbox-ml name="postalCode" ng-model="document.postalCode" locales="document.header.languages"
+                                    placeholder="例如：H2Y 1N9"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="country" required caption="国家">
+                                <div km-select required name="country" ng-model="document.country" items="options.countries()"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="phones" required caption="电话号码">
+                                <div class="help-info">请使用以下格式：+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+                                <div km-inputtext-list required name="phones" ng-model="document.phones"
+                                    placeholder="例如：+1 514.288.2220"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="faxes" caption="传真号码">
+                                <div class="help-info">Please use the following format:+ [国家码] [城市码] [电话号码] [分机号码（如需）]。</div>
+                                <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="例如：+1 514.288.6588"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="emails" required caption="电子邮箱">
+                                <div km-inputtext-list required name="emails" ng-model="document.emails"
+                                    placeholder="示例：secretariat@cbd.int"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="km-control-group" name="websites" caption="网址">
+                                <div km-link name="websites" ng-model="document.websites" allow-link="true"
+                                    allow-file="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </edit-form>
+            <review-form>
+                <view-organization ng-model='document' locale="review.locale"></view-organization>
+            </review-form>
+        </div>
+    </div>
+
+</div>

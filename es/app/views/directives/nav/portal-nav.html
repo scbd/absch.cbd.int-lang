@@ -24,7 +24,13 @@
                     <li><a translation-url  ng-href="about"> <i class="icon fa fa-question-circle  visible-xs "></i><span class="hidden-xs "> Acerca del Centro de Intercambio de Informaci&oacute;n sobre APB</span></a></li>
                     <li><a translation-url  ng-href="search"> <i class="icon fa fa-search visible-xs "></i><span class="hidden-xs "> Buscar</span></a></li>
                     <li><a translation-url  ng-href="register"> <i class="icon fa fa-pencil-square-o visible-xs"></i><span class="hidden-xs "> Submit</span></a></li>
-                    <li><a translation-url  ng-href="countries"> <i class="icon fa fa-globe visible-xs"></i><span class="hidden-xs"> Perfiles de pa&iacute;ses </span></a></li>
+                    <li><a href="#" class="hidden-xs dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                        ng-class="{'active-menu' : activeMenu == 'countryProfile'}" ng-click="activeMenu='countryProfile'"><span  ng-href="countries">Perfiles de pa&iacute;ses <span class="caret"></span></span></a> <a ng-href="countries" class="visible-xs"> <i class="icon fa fa-globe "></i></a><ul class="dropdown-menu hidden-xs"  style="padding:10px;max-height:380px;overflow-y:scroll; border:0;margin-top:11px;"><br><li style="border:0!important;"> <a style="color:#111!important;font-size:16px;" ng-href="countries"> Overview - List all countries </a></li>
+                            <hr>
+                            <li  style="border:0!important;" ng-repeat="c in list = (countries | orderBy:'name' ) track by c.name.en" ><a style="color:#666!important;font-size:14px;" href="/countries/{{c.code}}#" ><span class="bold" ng-class="{'color-party': c.isNPParty, 'color-grey':!c.isNPParty, 'color-inbetween': c.isNPInbetweenParty}">{{c.name | lstring:locale}}</span></a></li>
+                        </ul>
+                    </li>
+
                       <li><a translation-url  ng-href="reports"> <i class="icon fa fa-bar-chart visible-xs"></i><span class="hidden-xs"> Informes nacionales </span></a></li><!--<li class="last pull-right">
                         <a translation-url  ng-click="toggleHelp();"> <i class="fa fa-info-circle" ng-class="{'helpOn':showHelp ,'helpOff':!showHelp }"></i> </i>
                         </a>

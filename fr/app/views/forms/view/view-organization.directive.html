@@ -29,7 +29,7 @@
 		</div>
 
 		<div ng-show="document.emails">
-			<label>courriels&nbsp;:</label>
+			<label>Emails</label>
 			<div  class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}},</a></li>
@@ -38,7 +38,7 @@
 		</div>
 
 		<div ng-show="document.websites">
-			<label>Sites Web connexes</label>
+			<label>Sites Web</label>
 			<div class="km-value" ng-repeat="item in document.websites"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 		</div>
 

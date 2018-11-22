@@ -1,6 +1,16 @@
 ﻿<div id="SubmitPage" ng-controller="registerRecordList">
     <link href="/app/css/register.css" rel="stylesheet">
-    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span> <br><div class="card card-1-notrans bg-white"><span record-type-header></span><div class="register-content-content">
+    <link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><div class="card card-1-notrans bg-white">
+        
+            <div>
+                <div class="register-content-header" style="margin-top:20px;" ng-class="{'bg-blue': schemaType != 'referenceRecords','bg-orange': schemaType == 'referenceRecords' }">
+                         <div style="padding:5px 5px;">
+                            <h3 style="padding: 0 5px 0 5px; margin: 0; font-weight: normal;"><a href="/register" class="color-white">{{schema|mapSchema|schemaName}} ({{schema | schemaShortName }})  </a> <span class="helpinfoInline"  ><a href="/register"><i class="glyphicon glyphicon-remove pull-right color-white"></i></a></span></h3>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="register-content-content">
             <div ng-show="msg" class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
             <div class="row">
@@ -16,7 +26,7 @@
                 </div>
                 <div class="col-xs-4 " ng-show="showAddButton()">
                     <div class="btn-group-sm pull-right"><!--<a translation-url  ng-href="#" class="btn btn-sm btn-primary" ng-click="showReference(schema);">
-                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-primary color-white" ng-click="refreshList(schema);" style="color:#fff;"><i class="fa fa-refresh"></i> Actualiser</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i>Ajouter un &eacute;l&eacute;ment </a></div>
+                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-default" ng-click="refreshList(schema);"><i class="fa fa-refresh"></i> Actualiser</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary bold" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i>Ajouter un &eacute;l&eacute;ment </a></div>
                 </div>
             </div>
 

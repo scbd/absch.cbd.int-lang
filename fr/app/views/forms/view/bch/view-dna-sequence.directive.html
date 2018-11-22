@@ -20,7 +20,12 @@
 		</div>
 		<div ng-show="document.synonymNames">
 			<label>Alternate Genetic Element Name (synonyms)</label>
-			<km-value-ml value="document.synonymNames" locales="locale"></km-value-ml>
+			<ul class="list" style="padding-left:0px">
+				<li ng-repeat="synonym in document.synonymNames" style="padding-bottom:5px;">
+					<km-value-ml value="synonym" locales="locale"></km-value-ml>
+				</li>
+			</ul>
+			
 		</div>
 		<div ng-show="document.abbreviation">
 			<label>Abbreviation</label>
@@ -32,7 +37,10 @@
 		</div>
 
 		<div ng-show="document.isSynthetic!=undefined">
-			<label>Est-ce que le g&egrave;ne ou la s&eacute;quence d&apos;ADN est une mol&eacute;cule synth&eacute;tique?</label><span ng-if="document.isSynthetic">Yes</span> <span ng-if="!document.isSynthetic">No</span></div>
+			<label>Est-ce que le g&egrave;ne ou la s&eacute;quence d&apos;ADN est une mol&eacute;cule synth&eacute;tique?</label>
+			<div class="km-value" ng-if="document.isSynthetic">Oui</div>
+			<div class="km-value" ng-if="!document.isSynthetic">Non</div>
+		</div>
 	
 		<legend>Organisme donneur</legend>
 
@@ -46,7 +54,7 @@
 		<div ng-show="document.donorOrganismCollectionPoint">
 			<label>Point de collecte de l&apos;organisme donneur</label>
 			<div class="km-value">
-				<km-value-ml value="document.donorOrganismCollectionPoint" locales="locale"></km-value-ml>
+				<km-value-ml value="document.donorOrganismCollectionPoint"  html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
@@ -63,7 +71,7 @@
 		<div ng-show="document.biologicalFunction">
 			<label>Fonction biologique</label>
 			<div class="km-value">
-				<km-value-ml value="document.biologicalFunction" locales="locale"></km-value-ml>
+				<km-value-ml value="document.biologicalFunction" html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
@@ -76,20 +84,17 @@
 			</div>
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Renseignements suppl&eacute;mentaires</legend>
+			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
-				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+				<km-value-ml value="document.relevantInformation" html locales="locale"></km-value-ml>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Autres sites Web pertinents ou documents en pi&egrave;ce jointe</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>
-		<div class="km-value">
-				<pre>{{document|json}}</pre>
-			</div>
 	</div>
 	<div document-metadata class="panel-footer"></div>
 </div>

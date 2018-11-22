@@ -74,7 +74,7 @@
 
                         </tr>
                         <tr ng-if="!users">
-                            <td colspan="4"><i class="fa fa-cog fa-spin fa-fw"></i> chargement en cours...</td>
+                            <td colspan="4"><i class="fa fa-cog fa-spin fa-fw"></i> Loading...</td>
                         </tr>
                         <tr ng-if="!!users">
                             <td colspan="3">{{(users | filter:defaultFilter | filter:searchText).length}} of {{users.length}} | <a translation-url  href="#" ng-show="!$parent.showAll" ng-click="$parent.showAll=true;$parent.searchText={}">Afficher plus <i class="fa fa-caret-down"></i></a> <a translation-url  href="#" ng-show=" $parent.showAll" ng-click="$parent.showAll=false;$parent.searchText={}">Afficher moins <i class="fa fa-caret-up"></i></a></td>

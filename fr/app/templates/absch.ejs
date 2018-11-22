@@ -8,7 +8,7 @@
     <meta name="description" content="Access and Benefit-Sharing Clearing-House">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
-    <link rel="shortcut icon" href="/app/img/favicon.png"><!-- Bootstrap core CSS --><link rel="stylesheet" type="text/css" href="/app/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="/app/img/favicon.png"><!-- Bootstrap core CSS --><link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/bootstrap@3.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- Custom styles for this template --><link rel="stylesheet" type="text/css" href="/app/css/template.css"><!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]--> <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -80,7 +80,7 @@
     <div class="device-size visible-lg" size="lg" style="height:0px;width:0px"></div>
     <div id="divHeader"></div>
 
-    <div class="container-full page-content" style="min-height:1000px;" ng-class="{'training-bg':!production_env}">
+    <div class="container-full page-content" style="min-height:650px;" ng-class="{'training-bg':!production_env}">
         <ng-view autoscroll="true"></ng-view>
     </div>
 
@@ -90,30 +90,18 @@
             </div>
     </div>
     <div id="divFooter"></div><!-- Bootstrap core JavaScript
-    ================================================== --> <!-- Placed at the end of the document so the pages load faster --> <!-- Slaask. need to be placed just before require.JS script tag --><script src="https://cdn.slaask.com/chat.js"></script>
-    <script>
-        //patch slaask to works with requireJS
-        window._slaask.createScriptTag = function (url) {
-            var t = {};
-            require([url], function() { t.onload(); });
-            return t;
-        };
-    </script>
-    
+    ================================================== --><script src="https://cdn.cbd.int/requirejs@2.2.0/require.js" data-main="/app/boot.js?v=<%=appVersion%>"></script>    
     <script>window.appTemplate = 'templates/absch'</script>
-   
-    <script src="/app/libs/requirejs/require.js" data-main="/app/boot.js?v=<%=appVersion%>"></script>
-    <script src="/app/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
-    <link rel="stylesheet" href="/app/libs/outdated-browser/outdatedbrowser/outdatedbrowser.min.css">
+    <script src="https://cdn.cbd.int/outdated-browser@1.0.2/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.cbd.int/outdated-browser@1.0.2/outdatedbrowser/outdatedbrowser.min.css">
     <div id="outdated"></div>
 
     <link rel="stylesheet" href="/app/css/help-controls.css">
     <link rel="stylesheet" type="text/css" href="/app/css/chm.css" >
     <link rel="stylesheet" type="text/css" href="/app/css/colors.css" >
-    <link rel="stylesheet" type="text/css" href="/app/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/app/libs/bootstrap-datepicker/css/datepicker.css" >
-    <link rel="stylesheet" type="text/css" href="/app/libs/angular-loading-bar/src/loading-bar.css" >
-    <link rel="stylesheet" type="text/css" href="/app/libs/angular-toastr/dist/angular-toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/font-awesome@4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/bootstrap-datepicker@1.8.0/dist/css/bootstrap-datepicker.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdn.cbd.int/angular-toastr@1.5.0/dist/angular-toastr.min.css" />
     <link rel="stylesheet" type="text/css" href="/app/css/km.css">
     
     <script async src='https://www.google-analytics.com/analytics.js'></script>

@@ -1,113 +1,114 @@
-﻿<div ng-controller="editDatabase" >
+﻿<div ng-controller="editDatabase">
 
-    <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
+	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
-    <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
+	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
-    <div ng-show="msg" class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="msg=''">&times;</button><strong>{{msg}}</strong></div>
+			<div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
+					<form name="editForm" class="editForm" style="margin-top:10px">
+						<div ng-show="tab=='edit'" km-tab="edit">
+							<legend name="formInfo" style="display:none"></legend>
+							<div class="row">
+								<div class="col-xs-12" >
+									<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+										<div class="indent">
+											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<section><br><div class="row">
+										<div class="col-xs-12">
+											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+												<div class="indent">
+													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<legend>网站或数据详细信息 </legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="government" required caption="国家">
+											<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
+											 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="请选择一个国家..."></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="title" required caption="网站或数据库名称">
+											<div class="help-info">请输入您想要在记录标题中显示的网站或数据库名称。</div>
+											<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages"
+											 placeholder="例如：标题"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="description" required caption="描述">
+											<div class="help-info">请输入有关国家网站或数据库的简短描述，如其功能或所提供的信息。</div>
+											<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages"
+											 placeholder="例如：描述"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="website" required caption="网址">
+											<div class="help-info">请提供网站的完整网址（如：http://bch.cbd.int）</div>
+											<input type="url" ng-model="document.website.url" required class="form-control" placeholder="例如：http://www.cbd.int" />
+										</div>
+									</div>
+								</div>
+							</section>
 
-    <div class="alert alert-danger" ng-show="hasError()"><strong>发生错误...</strong><div>{{error}}</div>
-    </div><!--<div ng-show="isLoading()">
-        <i class="fa fa-spinner fa-spin"></i> Loading...
-    </div>--><div ng-show="!isLoading() && status!='hidden'">
-    <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages"  hide-timer="false"/>
+							<section>
 
-            <div km-document-validation ng-model="validationReport"></div>
-		<form name="editForm" class="editForm" style="margin-top:10px">
-			<div ng-show="tab=='edit'" km-tab="edit">
-				<legend name="formInfo" style="display:none"></legend>
-				<section>
-				<legend>网站或数据详细信息 </legend>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="government" required caption="国家">
-              <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="请选择一个国家..."></div>
+								<legend>Additional information</legend>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="address" caption="其它相关信息">
+											<div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
+											<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="relevantDocuments" caption="任何其他相关文件">
+											<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
+											 identifier="document.header.identifier"></div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+
+								<legend>备注</legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="notes">
+											<div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
+										</div>
+									</div>
+								</div>
+							</section>
+
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="title" required caption="网站或数据库名称">
-							<div class="help-info">请输入您想要在记录标题中显示的网站或数据库名称。</div>
-							<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages" placeholder="例如：标题"></div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="description" required caption="描述">
-							<div class="help-info">请输入有关国家网站或数据库的简短描述，如其功能或所提供的信息。</div>
-							<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages" placeholder="例如：描述"></div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="website" required caption="网址">
-							<div class="help-info">请提供网站的完整网址（如：http://bch.cbd.int）</div>
-							<input type="url" ng-model="document.website.url" required class="form-control" placeholder="例如：http://www.cbd.int" />
-						</div>
-					</div>
-				</div>
-				</section>
+					</form>
+				</edit-form>
+				<review-form>
+					<view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true">
+						</view->
+				</review-form><!-- <publish-form></publish-form> --> <!-- use when you wan to display more than publish buttons --></div>
 
-				<section>
+		</div>
+	</div>
 
-				<legend>Additional information</legend>
-
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="address" caption="其它相关信息">
-							<div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
-							<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="relevantDocuments" caption="任何其他相关文件">
-							<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
-						</div>
-					</div>
-				</div>
-				</section>
-
-				<section>
-
-				<legend>备注</legend>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="km-control-group" name="notes">
-							<div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
-							<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
-						</div>
-					</div>
-				</div>
-				</section>
-
-			</div>
-		</form>
-
-		<div ng-show="tab=='review'" km-tab="review" id="schemaView">
-
-            <div view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></div>
-
-		</div><!-- <hr style="margin-top:20px;">
-
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-12">
-
-                <div workflow-std-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="true"/>
-
-
-            </div>
-        </div> --></div>
-  </div>
-</div>
-
-</div>
-
-</div>
 </div>

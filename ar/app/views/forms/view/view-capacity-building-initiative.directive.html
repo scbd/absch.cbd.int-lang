@@ -91,21 +91,21 @@
 			<div ng-show="document.isImplementedByAgencies && document.implementingAgencies">
 			  	<label>الوكالة (الوكالات) أو المنظمة (المنظمات) الراعية</label>
 				<div class="km-value" ng-repeat="contact in document.implementingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.isImplementedByAgencies && document.executingAgencies">
 			  	<label>الوكالة (الوكالات) أو المنظمة (المنظمات) المنفذة</label>
 				<div class="km-value" ng-repeat="contact in document.executingAgencies">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.collaboratingPartners && document.collaboratingPartners">
 				<label>شريك (شركاء) التعاون</label>
 				<div class="km-value" ng-repeat="contact in document.collaboratingPartners">
-					<div view-contact-reference ng-model="contact" locale="locale"></div>
+					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
@@ -162,14 +162,14 @@
 		<div ng-show="document.coreFundingSources">
 			<label>مصدر (مصادر) التمويل الأساسية</label>
 			<div class="km-value" ng-repeat="contact in document.coreFundingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="document.coFinancingSources">
 			<label>مصدر (مصادر) التمويل المشترك</label>
 			<div class="km-value" ng-repeat="contact in document.coFinancingSources">
-				<div view-contact-reference ng-model="contact" locale="locale"></div>
+				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 

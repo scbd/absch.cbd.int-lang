@@ -5,6 +5,6 @@
 
 	<div ng-show="document.phones">T&eacute;l&eacute;phone&nbsp;: <span ng-repeat="item in document.phones">{{item}}<span ng-show="!$last">, </span></span></div>
 	<div ng-show="document.faxes">T&eacute;l&eacute;copieur&nbsp;: <span ng-repeat="item in document.faxes">{{item}}<span ng-show="!$last">, </span></span></div>
-	<div ng-show="document.emails">courriels&nbsp;: <span ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}}</a><span ng-show="!$last">, </span></span></div>
+	<div ng-show="document.emails">Courriels&nbsp;: <span ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}}</a><span ng-show="!$last">, </span></span></div>
 	<div ng-show="document.websites">Sites Web : <span ng-repeat="item in document.websites"><a translation-url  ng-href="{{item.url}}">{{item.name||item.url}}</a><span ng-show="!$last">, </span></span></div>
 </div>

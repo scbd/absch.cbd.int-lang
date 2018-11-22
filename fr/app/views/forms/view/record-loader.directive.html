@@ -20,47 +20,13 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="well">
-                        <h3 style="margin:0 0 20px 0;padding:0;">Information sur le fichier</h3>
-                        <table style="width:100%!important;">
-                            <tr>
-                                <td>
-                                    <label> Identifiant unique : </label>
-                                </td>
-                                <td class="bold">{{document | uniqueID}}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label> Statut actuel ; </label>
-                                </td>
-                                <td class="bold"><span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">BROUILLON</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Verrouil&eacute;: Pending {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">DELETED</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> REVOKED</span></span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label> Type de fichier : </label>
-                                </td>
-                                <td class="bold">{{internalDocumentInfo.metadata.schema | schemaName}}</td>
-                            </tr>
-                            <tr ng-if="docInfo.revision > 0">
-                                <td>
-                                    <label> Versions enregistr&eacute;es : </label>
-                                </td>
-                                <td class="bold">{{internalDocumentInfo.revision}}</td>
-                            </tr>
-                            <tr ng-if="docInfo.metadata.government">
-                                <td>
-                                    <label> Auteur du fichier : </label>
-                                </td>
-                                <td class="bold"> {{getUserCountry(internalDocumentInfo.metadata.government)}}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label> Historique :</label>
-                                </td>
-                                <td>
-                                    <div view-history document-id="internalDocumentInfo.identifier"></div>
-                                </td>
-                            </tr>
-                        </table>
+                        <h3 style="margin:0 0 10px 0;padding:0;border-bottom:1px solid #999;">Information sur le fichier</h3>
+                        <div><span style="font-size:12px">Type : </span> {{internalDocumentInfo.metadata.schema | schemaName}} </div>
+                        <div><span style="font-size:12px">Statut : </span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">BROUILLON</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Verrouil&eacute;: En cours {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">SUPPRIM&Eacute;</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">R&Eacute;VOQU&Eacute;</span></span></div>
+                        <div><span style="font-size:12px">Historique : </span><div view-history document-id="internalDocumentInfo.identifier"></div>
+                        </div>
+
+                       
                     </div>
                 </div>
             </div>
