@@ -63,15 +63,8 @@
     
                                         </div>
     
-                                        <div class="tab-pane" id="part1"><br><div class="row">
-                                                    <div class="col-xs-12">
-                                                        <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
-                                                            <div class="indent">
-                                                                <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <div class="tab-pane" id="part1">
+                                                
                                             <legend>Informaci&oacute;n general</legend>
                                             <div class="row">
                                                 <div class="col-xs-12" >
@@ -831,7 +824,7 @@
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
                                                                         name="q27Options" id="q27Option3" value="Other">Other</label>
                                                             </div>
-                                                            <div class="km-control-group" name="question27_ccFurtherInfo">S&iacute;rvase proporcionar informaci&oacute;n adicional.<div km-textbox-ml rows=2 name="question27_ccFurtherInfo"
+                                                            <div class="km-control-group" name="question27_ccFurtherInfo">Please provide further information<div km-textbox-ml rows=2 name="question27_ccFurtherInfo"
                                                                     ng-model="document.question27.cpc.furtherInfo" locales="document.header.languages"
                                                                     placeholder=""></div>
                                                             </div>
@@ -1193,7 +1186,7 @@
                                                                     placeholder=""></div>
     
                                                                 <div class="km-control-group" style="margin-bottom:20px;"
-                                                                    name="q38LawDocRefs" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                    name="q38LawDocRefs" caption="Please select the relevant ABSCH records">
                                                                     <div document-selector ng-model="document.question38.law.documentReferenceIDs"
                                                                         ng-disabled="!document.government" question="question38Law"
                                                                         government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1331,7 +1324,7 @@
                                                                     locales="document.header.languages" placeholder=""></div>
     
                                                                 <div class="km-control-group" style="margin-bottom:20px;"
-                                                                    name="q42DocRefsCommunity" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                    name="q42DocRefsCommunity" caption="Please select the relevant ABSCH records">
                                                                     <div document-selector ng-model="document.question42.community.documentReferenceIDs"
                                                                         ng-disabled="!document.government || !Q37IsYes()"
                                                                         question="question42community" government="document.government"
@@ -1357,7 +1350,7 @@
                                                                     placeholder=""></div>
     
                                                                 <div class="km-control-group" style="margin-bottom:20px;"
-                                                                    name="q42DocRefsMat" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                    name="q42DocRefsMat" caption="Please select the relevant ABSCH records">
                                                                     <div document-selector ng-model="document.question42.mat.documentReferenceIDs"
                                                                         ng-disabled="!document.government || !Q37IsYes()"
                                                                         question="question42mat" government="document.government"
@@ -1381,7 +1374,7 @@
                                                                     placeholder=""></div>
     
                                                                 <div class="km-control-group" style="margin-bottom:20px;"
-                                                                    name="q42DocRefsmcc" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                    name="q42DocRefsmcc" caption="Please select the relevant ABSCH records">
                                                                     <div document-selector ng-model="document.question42.mcc.documentReferenceIDs"
                                                                         ng-disabled="!document.government || !Q37IsYes()"
                                                                         question="question42mcc" government="document.government"
@@ -1427,7 +1420,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q44DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question44.documentReferenceIDs"
                                                             ng-disabled="!document.government || !Q37IsYes()" question="question44"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1476,7 +1469,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q46DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question46.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question46"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1680,7 +1673,7 @@
                                                             </div>
     
                                                             <div ng-show="document.question54.measures.answer" class="km-control-group"
-                                                                style="margin-bottom:20px;" name="q54DocRefs" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                style="margin-bottom:20px;" name="q54DocRefs" caption="Please select the relevant ABSCH records">
                                                                 <div document-selector ng-model="document.question54.measures.documentReferenceIDs"
                                                                     ng-disabled="!document.government" question="question54measures"
                                                                     government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1726,7 +1719,7 @@
                                                             </div>
     
                                                             <div ng-show="document.question55.measures.answer" class="km-control-group"
-                                                                style="margin-bottom:20px;" name="q55DocRefs" caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                                style="margin-bottom:20px;" name="q55DocRefs" caption="Please select the relevant ABSCH records">
                                                                 <div document-selector ng-model="document.question55.measures.documentReferenceIDs"
                                                                     ng-disabled="!document.government" question="question55measures"
                                                                     government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1853,7 +1846,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q60DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question60.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question60"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1879,7 +1872,7 @@
                                             Use the text entry to provide further information, including on  experiences gained in relation to mobilization of resources to support the implementation of the Nagoya Protocol and the status of funds mobilized (level of domestic expenditures, or the amount of and trends in  funding allocated, for the  implementation of the Protocol and the funding gap)<Text entry>
                                             <div km-textbox-ml rows=4 name="question61FurtherInfo" ng-model="document.question61.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                         </div>--><div class="km-control-group" style="margin-bottom:20px;" name="q61DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question61.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question61"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -1943,7 +1936,7 @@
                                             Use the text entry to provide further information, including on the status of financial resources (total amount) mobilized donated or received for the purposes of implementation of the Protocol
                                             <div km-textbox-ml rows=4 name="question62FurtherInfo" ng-model="document.question62.furtherInfo" locales="document.header.languages" placeholder=""></div>
                                         </div>--><div class="km-control-group" style="margin-bottom:20px;" name="q62DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question62.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question62"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -2004,7 +1997,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q63DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question63.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question63"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
@@ -2023,7 +2016,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q64DocRefs"
-                                                        caption="Sírvase seleccionar los registros del Centro de Intercambio de Información sobre APB pertinentes.">
+                                                        caption="Please select the relevant ABSCH records">
                                                         <div document-selector ng-model="document.question64.documentReferenceIDs"
                                                             ng-disabled="!document.government" question="question64"
                                                             government="document.government" schema="(absPermit absCheckpoint absCheckpointCommunique authority measure database focalPoint)"
