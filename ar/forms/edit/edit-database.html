@@ -1,0 +1,106 @@
+﻿<div ng-controller="editDatabase" dir="rtl">
+
+	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
+
+	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
+
+			<div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
+					<form name="editForm" class="editForm" style="margin-top:10px">
+						<div ng-show="tab=='edit'" km-tab="edit">
+							<legend name="formInfo" style="display:none"></legend>
+							<div class="row">
+								<div class="col-xs-12" >
+									<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+										<div class="indent">
+											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<section>
+
+								<legend>تفاصيل موقع الويب أو قاعدة البيانات </legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="government" required caption="Country">
+											<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
+											 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="title" required caption="اسم موقع الويب أو قاعدة البيانات">
+											<div class="help-info">Please enter the name of the website or database as you would like it to appear in the title of the record.</div>
+											<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages"
+											 placeholder="مثال: العنوان"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="description" required caption="الوصف">
+											<div class="help-info">يُرجى إدخال وصف قصير لموقع الويب أو قاعدة الويب الوطنية يتضمن الوظيفة أو المعلومات المتاحة في الموقع أو قاعدة البيانات.</div>
+											<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages"
+											 placeholder="مثال: الوصف"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="website" required caption="عنوان موقع الإنترنت">
+											<div class="help-info">يرجى ذكر الرابط الكامل لموقع الويب (مثال: http://www.cbd.int).</div>
+											<input type="url" ng-model="document.website.url" required class="form-control" placeholder="مثال: http://www.cbd.int" />
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+
+								<legend>معلومات إضافية</legend>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
+											<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+											<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="relevantDocuments" caption="أي وثائق أخرى ذات صلة">
+											<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
+											 identifier="document.header.identifier"></div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+
+								<legend>ملاحظات</legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="notes">
+											<div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</form>
+				</edit-form>
+				<review-form>
+					<view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true">
+						</view->
+				</review-form><!-- <publish-form></publish-form> --> <!-- use when you wan to display more than publish buttons --></div>
+
+		</div>
+	</div>
+
+</div>

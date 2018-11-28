@@ -1,0 +1,178 @@
+﻿<div id="Record" class="record panel panel-default" dir="rtl">
+	<div class="panel-heading bg-orange" ng-show="display('header')">
+
+		<h4>مورد بناء القدرات<span class="color-black" dir="rtl"> (CBR) </span></h4>
+    </div>
+	<div class="record-body panel-body">
+
+			
+		<document-date></document-date> <br><div ng-show="document.title">
+			<label>العنوان</label>
+			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.resourceTypes">
+			<label>نوع المورد</label>
+            <div class="km-value">
+			<ul class="list">
+				<li ng-repeat="resourceType in document.resourceTypes">{{resourceType | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.fileFormat">
+			<label>نوع الصيغة/الملف</label>
+			<div class="km-value">{{document.fileFormat | term:locale}} </div>
+		</div>
+
+		<div ng-show="document.formatDetails">
+			<label>تفاصيل الصيغة</label>
+			<div class="km-value km-pre">{{document.formatDetails | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.purpose">
+			<label>يرجى تحديد الغرض الرئيسي للمورد</label>
+			<div class="km-value">
+            <ul class="list">
+				<li ng-repeat="term in document.purpose">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.targetGroups">
+			<label>المجموعة (المجموعات) \ الجهات المستفيدة  الرئيسية المستهدفة</label>
+            <div class="km-value">
+                <ul class="list">
+                    <li ng-repeat="term in document.targetGroups">{{term | term:locale}}</li>
+                </ul>
+            </div>
+		</div>
+
+		<div ng-show="document.expertiseLevel">
+			<label>مستوى المحتوى أو مستوى المعرفة/الخبرة للجمهور الذي يستهدفه المورد</label>
+			<div class="km-value">{{document.expertiseLevel | term:locale}} </div>
+		</div>
+
+		<div ng-show="document.authors">
+			<label>المؤلف (المؤلفون)</label>
+			<div class="km-value km-pre">{{document.authors | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.organizations">
+			<label>المنظمة (المنظمات) المشاركة في نشر هذا المورد</label>
+			<div class="km-value" ng-repeat="contact in document.organizations">
+				<div view-contact-reference ng-model="contact" locale="locale"></div>
+			</div>
+		</div>
+
+		<div ng-show="document.publicationYear">
+			<label>سنة النشر</label>
+			<div class="km-value">{{document.publicationYear}}</div>
+		</div>
+
+		<div ng-show="document.rights">
+			<label>الحقوق</label>
+			<div class="km-value km-pre">{{document.rights | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.source">
+			<label>المصدر</label>
+			<div class="km-value km-pre">{{document.source | lstring:locale}}</div>
+		</div>
+
+		<legend ng-show="document.resourceLinks || document.covers">الوصول للمورد</legend>
+
+		<div ng-show="document.resourceLinks">
+			<label>رابط للمورد (الموارد)</label>
+			<div class="km-value" ng-repeat="item in document.resourceLinks"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+		</div>
+
+		<div ng-show="document.covers">
+			<label >صورة/صور الغلاف</label>
+			<div class="km-value"><a translation-url  ng-repeat="link in document.covers" ng-href="{{link.url}}" target="{{target}}"> <img class="img-polaroid" ng-src="{{link.url}}" alt="{{link.name}}" style="max-height: 150px; max-width: 150px" /> </a></div>
+		</div>
+
+		<legend ng-show="document.summary || document.regions">معلومات عن محتوى المورد</legend>
+
+		<div ng-show="document.summary">
+			<label>ملخص</label>
+			<div class="km-value km-pre">{{document.summary | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.regions">
+			<label>البلد (البلاد) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالمورد</label>
+			<div class="km-value">
+            <ul class="list">
+				<li ng-repeat="term in document.regions | orderBy:name">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+
+		<div ng-show="document.cbdSubjects || document.aichiTargets">
+
+			<legend>الموضوعات وأهداف أيتشي للتنوع البيولوجي التي يشملها المورد</legend>
+
+			<div ng-show="document.cbdSubjects">
+				<label>الموضوع/القضية</label>
+					<div class="km-value">
+						<ul class="list">
+							<li ng-repeat="term in document.cbdSubjects">{{term | term:locale}}</li>
+						</ul>
+					</div>
+			</div>
+
+			<div ng-show="document.aichiTargets">
+				<div ng-show="document.aichiTargets">
+					<label>أهداف أيتشي للتنوع البيولوجي 2020</label>
+					<div class="km-value">
+                     <ul class="list">
+						<li ng-repeat="term in document.aichiTargets">{{term | term:locale}}</li>
+					</ul>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="document.absKeyAreas">
+			<legend>غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع</legend>
+
+			<label>المجالات الرئيسية والتدابير الاستراتيجية لبناء القدرات وتطويرها</label>
+			<div class="km-value">
+              <ul class="list">
+				<li ng-repeat="term in document.absKeyAreas">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.bchSubjects">
+
+			<legend>بروتوكول قرطاجنة للسلامة الأحيائية</legend>
+
+			<div ng-show="document.bchSubjects">
+				<label>مجال (مجالات) الموضوع</label>
+				<div class="km-value">
+                <ul class="list">
+					<li ng-repeat="term in document.bchSubjects">{{term | term:locale}}</li>
+				</ul>
+			</div>
+            </div>
+		</div>
+
+		<div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>معلومات إضافية</legend>
+
+			<div ng-show="document.relevantInformation">
+				<div class="km-value km-pre" ng-bind-html="document.relevantInformation | lstring:locale | markdown"></div>
+			</div>
+
+			<div ng-show="document.relevantDocuments">
+				<label>عنوان لموقع إنترنت أو وثائق مرفقة أخرى ذات صلة</label>
+				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+			</div>
+		</div>
+</div>
+
+	<div document-metadata  class="panel-footer"></div>
+
+</div>

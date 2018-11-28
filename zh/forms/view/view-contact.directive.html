@@ -1,0 +1,115 @@
+﻿<div id="Record" class="record panel panel-default">
+	<div class="panel-heading bg-blue">
+		<h4>联系人<span class="color-black">(CON) </span></h4>
+	</div>
+	<div class="record-body panel-body">
+
+			<document-date></document-date>
+		<div ng-show="document.type=='organization'">
+
+
+
+            <legend>机构</legend>
+			<div ng-show="document.government">
+				<label>政府</label>
+				<div class="km-value">{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
+			</div>
+			<div>
+                <label>名称</label>
+				<div class="km-value">{{document.organization | lstring:locale}} <i ng-show="document.organizationAcronym">({{document.organizationAcronym | lstring:locale}})</i></div>
+			</div>
+			<div ng-show="document.organizationType">
+				<label>机构类型</label>
+				<div class="km-value">{{document.organizationType | term}}</div>
+			</div>
+
+		</div>
+
+
+		<div ng-show="document.type=='person'">
+             <legend>个人</legend>
+			 <div ng-show="document.government">
+  			   <label>政府</label>
+  			   <div class="km-value">{{document.government | term}} <span ng-party-status government="document.government" id="government"></span></div>
+  		   </div>
+
+            <div>
+				<label>名称</label>
+				<div class="km-value">{{document.prefix | lstring:locale}} {{document.firstName}} {{document.middleName}} {{document.lastName}}</div>
+			</div>
+
+
+			<div ng-show="document.designation">
+				<label>职位</label>
+				<div class="km-value">{{document.designation| lstring:locale}}</div>
+			</div>
+
+            <div ng-show="document.department">
+				<label>部门/分支机构/单位</label>
+				<div class="km-value">{{document.department| lstring:locale}}</div>
+			</div>
+
+            <div ng-show="document.contactOrganization">
+				<legend>机构</legend>
+				<div class="km-value">
+					<view-contact-reference ng-model='document.contactOrganization' locale="document.header.languages"></view-contact-reference>
+				</div>
+			</div>
+
+		</div>
+		<div ng-show="document.address || document.city || document.state || document.postalCode || document.country">
+			<label>地址</label>
+			<address class="km-value">
+				<div class="km-pre">{{document.address | lstring:locale}}</div>{{document.city | lstring:locale}} <span ng-show="document.city">, </span> {{document.state | lstring:locale}} <br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}} <span ng-show="document.postalCode">, </span> <b>{{document.country|term}}</b></address>
+		</div>
+        <div ng-show="document.phones" >
+            <label>电话号码</label>
+            	<div class="km-value">
+					<ul class="list">
+						<li ng-repeat="item in document.phones">{{item}}</li>
+					</ul>
+				</div>
+        </div>
+
+        <div ng-show="document.faxes">
+            <label>传真号码</label>
+            	<div class="km-value">
+					<ul class="list">
+						<li ng-repeat="item in document.faxes">{{item}}</li>
+					</ul>
+				</div>
+        </div>
+
+        <div ng-show="document.emails">
+            <label>电子邮箱</label>
+            <div class="km-value">
+				<ul class="list">
+					<li ng-repeat="item in document.emails"><a translation-url  ng-href="mailto:{{item}}">{{item}}</a></li>
+				</ul>
+			</div>
+        </div>
+
+        <div ng-show="document.websites">
+            <label>网址</label>
+            <div class="km-value" ng-repeat="item in document.websites"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+        </div>
+
+		<div>
+			<div ng-show="document.relevantInformation||document.relevantDocuments">
+				<legend>更多信息</legend>
+
+				<div ng-show="document.relevantInformation">
+					<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>
+				</div>
+
+				<div ng-show="document.relevantDocuments">
+					<label>Other relevant website address or attached documents</label>
+					<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>

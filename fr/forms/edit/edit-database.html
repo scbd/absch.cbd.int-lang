@@ -1,0 +1,106 @@
+﻿<div ng-controller="editDatabase">
+
+	<div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
+
+	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
+
+			<div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
+					<form name="editForm" class="editForm" style="margin-top:10px">
+						<div ng-show="tab=='edit'" km-tab="edit">
+							<legend name="formInfo" style="display:none"></legend>
+							<div class="row">
+								<div class="col-xs-12" >
+									<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+										<div class="indent">
+											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<section>
+
+								<legend>Nom du site Web ou de la base de donn&eacute;es </legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="government" required caption="Pays">
+											<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
+											 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Veuillez choisir un pays..."></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="title" required caption="Nom du site Web ou de la base de données">
+											<div class="help-info">Veuillez entrer le nom du site Web ou de la base de donn&eacute;es tel que vous voudriez le voir dans le titre du dossier.</div>
+											<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages"
+											 placeholder="exemple: Le titre"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="description" required caption="Description">
+											<div class="help-info">Fournissez une courte description de la base de donn&eacute;es ou du site Web national, telle que sa fonction ou l&apos;information qu&apos;il publie.</div>
+											<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages"
+											 placeholder="exemple: La description"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="website" required caption="Adresse du site Web">
+											<div class="help-info">Veuillez joindre au document l&apos;adresse URL compl&egrave;te (http://www.cbd.int).</div>
+											<input type="url" ng-model="document.website.url" required class="form-control" placeholder="exemple: http://www.cbd.int" />
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+
+								<legend>Information suppl&eacute;mentaire</legend>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="address" caption="Any other relevant information">
+											<div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le dossier.</div>
+											<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="relevantDocuments" caption="Autres documents pertinents">
+											<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
+											 identifier="document.header.identifier"></div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section>
+
+								<legend>Notes</legend>
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="km-control-group" name="notes">
+											<div class="help-info">Le champ «Notes» est destin&eacute; &agrave; vos notes ou commentaires personnels et sera masqu&eacute; lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
+											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</form>
+				</edit-form>
+				<review-form>
+					<view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true">
+						</view->
+				</review-form><!-- <publish-form></publish-form> --> <!-- use when you wan to display more than publish buttons --></div>
+
+		</div>
+	</div>
+
+</div>

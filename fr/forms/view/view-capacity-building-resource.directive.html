@@ -1,0 +1,178 @@
+﻿<div id="Record" class="record panel panel-default">
+	<div class="panel-heading bg-orange" ng-show="display('header')">
+
+		<h4>Ressource pour le renforcement des capacit&eacute;s <span class="color-black">(IRC) </span></h4>
+    </div>
+	<div class="record-body panel-body">
+
+			
+		<document-date></document-date> <br><div ng-show="document.title">
+			<label>Titre</label>
+			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.resourceTypes">
+			<label>Type de ressource</label>
+            <div class="km-value">
+			<ul class="list">
+				<li ng-repeat="resourceType in document.resourceTypes">{{document.type | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.fileFormat">
+			<label>Format/type de fichier</label>
+			<div class="km-value">{{document.fileFormat | term:locale}} </div>
+		</div>
+
+		<div ng-show="document.formatDetails">
+			<label>D&eacute;tails du format</label>
+			<div class="km-value km-pre">{{document.formatDetails | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.purpose">
+			<label>Veuillez identifier l&rsquo;utilit&eacute; de la ressource</label>
+			<div class="km-value">
+            <ul class="list">
+				<li ng-repeat="term in document.purpose">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.targetGroups">
+			<label>Groupe(s) cible(s) / b&eacute;n&eacute;ficiaires principaux</label>
+            <div class="km-value">
+                <ul class="list">
+                    <li ng-repeat="term in document.targetGroups">{{term | term:locale}}</li>
+                </ul>
+            </div>
+		</div>
+
+		<div ng-show="document.expertiseLevel">
+			<label>Niveau de contenu ou niveau d&rsquo;expertise/connaissances de l&apos;audience &agrave; laquelle se destine la ressources</label>
+			<div class="km-value">{{document.expertiseLevel | term:locale}} </div>
+		</div>
+
+		<div ng-show="document.authors">
+			<label>Auteur(s)*&nbsp;:</label>
+			<div class="km-value km-pre">{{document.authors | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.organizations">
+			<label>Organisation(s) impliqu&eacute;e(s) dans la publication de cette ressource</label>
+			<div class="km-value" ng-repeat="contact in document.organizations">
+				<div view-contact-reference ng-model="contact" locale="locale"></div>
+			</div>
+		</div>
+
+		<div ng-show="document.publicationYear">
+			<label>Ann&eacute;e de publication</label>
+			<div class="km-value">{{document.publicationYear}}</div>
+		</div>
+
+		<div ng-show="document.rights">
+			<label>Droits</label>
+			<div class="km-value km-pre">{{document.rights | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.source">
+			<label>Source</label>
+			<div class="km-value km-pre">{{document.source | lstring:locale}}</div>
+		</div>
+
+		<legend ng-show="document.resourceLinks || document.covers">Acc&egrave;s &agrave; la ressource</legend>
+
+		<div ng-show="document.resourceLinks">
+			<label>Lien &agrave; la ressource</label>
+			<div class="km-value" ng-repeat="item in document.resourceLinks"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+		</div>
+
+		<div ng-show="document.covers">
+			<label >Image de couverture</label>
+			<div class="km-value"><a translation-url  ng-repeat="link in document.covers" ng-href="{{link.url}}" target="{{target}}"> <img class="img-polaroid" ng-src="{{link.url}}" alt="{{link.name}}" style="max-height: 150px; max-width: 150px" /> </a></div>
+		</div>
+
+		<legend ng-show="document.summary || document.regions">Information sur le contenu de la ressource</legend>
+
+		<div ng-show="document.summary">
+			<label>R&eacute;sum&eacute;</label>
+			<div class="km-value km-pre">{{document.summary | lstring:locale}}</div>
+		</div>
+
+		<div ng-show="document.regions">
+			<label>Pays ou groupe(s) r&eacute;gional (aux) ou &eacute;conomique(s) li&eacute;s &agrave; la ressources</label>
+			<div class="km-value">
+            <ul class="list">
+				<li ng-repeat="term in document.regions | orderBy:name">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+
+		<div ng-show="document.cbdSubjects || document.aichiTargets">
+
+			<legend>Aires th&eacute;matiques et Objectifs d&rsquo;Aichi abord&eacute;s par cette ressource</legend>
+
+			<div ng-show="document.cbdSubjects">
+				<label>Sujet/Th&egrave;me/Question</label>
+					<div class="km-value">
+						<ul class="list">
+							<li ng-repeat="term in document.cbdSubjects">{{term | term:locale}}</li>
+						</ul>
+					</div>
+			</div>
+
+			<div ng-show="document.aichiTargets">
+				<div ng-show="document.aichiTargets">
+					<label>Objectifs d&apos;Aichi pour la biodiversit&eacute; en lien avec ce th&egrave;me(s)</label>
+					<div class="km-value">
+                     <ul class="list">
+						<li ng-repeat="term in document.aichiTargets">{{term | term:locale}}</li>
+					</ul>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="document.absKeyAreas">
+			<legend>Centre d&rsquo;&eacute;change d&apos;information sur l&rsquo;acc&egrave;s et le partage des avantages</legend>
+
+			<label>Domaines cl&eacute;s et mesures strat&eacute;giques pour le renforcement et le d&eacute;veloppement des capacit&eacute;s</label>
+			<div class="km-value">
+              <ul class="list">
+				<li ng-repeat="term in document.absKeyAreas">{{term | term:locale}}</li>
+			</ul>
+            </div>
+		</div>
+
+		<div ng-show="document.bchSubjects">
+
+			<legend>Protocole de Cartagena sur la pr&eacute;vention des risques biotechnologiques</legend>
+
+			<div ng-show="document.bchSubjects">
+				<label>Domaines th&eacute;matiques</label>
+				<div class="km-value">
+                <ul class="list">
+					<li ng-repeat="term in document.bchSubjects">{{term | term:locale}}</li>
+				</ul>
+			</div>
+            </div>
+		</div>
+
+		<div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>Additional Information</legend>
+
+			<div ng-show="document.relevantInformation">
+				<div class="km-value km-pre" ng-bind-html="document.relevantInformation | lstring:locale | markdown"></div>
+			</div>
+
+			<div ng-show="document.relevantDocuments">
+				<label>Autres sites Web pertinents ou documents en pi&egrave;ce jointe</label>
+				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+			</div>
+		</div>
+</div>
+
+	<div document-metadata  class="panel-footer"></div>
+
+</div>

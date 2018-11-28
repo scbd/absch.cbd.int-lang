@@ -1,0 +1,84 @@
+﻿<div id="Record" class="record panel panel-default" >
+
+	<div class="panel-heading bg-blue" ng-show="display('header')">
+		<h4><span>Checkpoint <span class="color-black"> (CP) </span> </span></h4>	
+	</div>
+
+	<div class="record-body panel-body" help schema="ViewCP" >
+
+		
+			<document-date></document-date>
+
+		 <div name="article17-1-a"></div>
+
+		<legend ng-if="document.government || document.name">一般信息</legend>
+
+		<div ng-show="document.government">
+			<label name="country">国家</label>
+			<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
+		</div>
+
+		 <div ng-show="display('title') && document.name">
+		 <label>检查点名称</label>
+		 	<div class="km-value"><strong>{{document.name | lstring:locale}}</strong></div>
+		 </div>
+
+
+
+		<div ng-show="document.responsibilities || document.jurisdiction ||
+			document.jurisdictionName">
+			<legend name="Responsibilities">检查点职责</legend>
+			<div ng-show="document.responsibilities"><!--<label>Short description of responsibilities</label>--><div class="km-value km-pre" ng-bind-html="document.responsibilities|lstring:locale"></div>
+			</div>
+			<div ng-show="document.jurisdiction">
+				<label>辖区</label>
+				<div class="km-value">
+					<ul class="list">
+						<li>{{document.jurisdiction|term}} <span ng-if="isSubNational() ||isCommunity() || isOthers()">({{document.jurisdictionName | lstring:locale}})</span></li>
+					</ul>
+				</div>
+			</div><!--<div ng-show="document.jurisdictionName">
+				<label ng-show="isSubNational()">Name of the sub-national jurisdiction</label>
+				<label ng-show="isCommunity()">Name of the community jurisdiction</label>
+				<label ng-show="isOthers()">Other jurisdiction</label>
+				<div class="km-value">{{document.jurisdictionName | lstring:locale}}</div>
+			</div>--></div>
+
+		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
+			<legend>免费收取此检查站收集或收到之信息的检查站公报的主管机关</legend>
+
+			<div class="help-info" style="padding-top:10px;">以下所示的所有国家当局和联络人将以电子邮件方式收取含此检查站收集或收到并发布之信息的检查站公报。请注意，提供事先知情同意书(PIC)的国家当局也将以电子邮件方式自动收到所有检查点已发布公报(CPC)。获取和惠益分享信息交换所不能保证电子邮件会被收到或阅读。</div>
+			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new"> All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>) </a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+          
+			<div ng-show="document.contactsToInform">
+				<div class="km-value" ng-repeat="authority in document.contactsToInform">
+                    <div view-contact-reference ng-model="authority" locale="locale"></div>
+				</div>
+			</div><!--<div ng-show="document.contactsToInform" class="row">
+				<div ng-repeat="contact in document.contactsToInform">
+					<div class="col-xs-12">
+						<div view-contact-reference ng-model="contact" locale="locale" class="well"></div>
+					</div>
+				</div>
+			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >未选任何其他当局以电子邮件方式自动接收此检查站发布的检查站公报。 </span></div>
+
+		</div>
+
+		<div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>更多信息</legend>
+
+			<div ng-show="document.relevantInformation">
+				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
+			</div>
+
+			<div ng-show="document.relevantDocuments">
+				<label>其他相关链接或附件</label>
+				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
+			</div>
+		</div>
+
+	</div>
+	
+	 <div document-metadata class="panel-footer"></div>
+
+</div>

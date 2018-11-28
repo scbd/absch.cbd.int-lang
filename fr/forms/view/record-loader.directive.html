@@ -1,0 +1,57 @@
+﻿<div>
+    <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'" ng-if="printMode"></div>
+    
+    <div id="recordContent">
+        <div smooth-scroll duration="100" offset="200" scroll-if="{{!$root.stopSmoothScroll}}"></div>
+        <div block-region activate="loading"></div>
+
+        <div class="alert alert-danger text-center" ng-show="error" ng-if="error"><strong>Une erreur est survenue...</strong><div>{{error}}</div>
+        </div>
+        <div class="jumbotron" style="background-color:white;" role="alert" ng-if="documentSuccess">
+            <h2>Merci de t&eacute;l&eacute;charger ce document {{documentUID}}.</h2>
+            <p>Si le document n&rsquo;a pas &eacute;t&eacute; t&eacute;l&eacute;charg&eacute;, essayez de cliquer <a translation-url href="{{documentUrl}}" class="alert-link">ici...</a></p></br> </br> </br> </br> Cette fen&ecirc;tre se fermera automatiquement dans {{timeLaspe}} secondes.</div>
+
+        <div class="jumbotron" style="background-color:white;" role="alert" ng-if="documentError">
+            <h2>Merci de t&eacute;l&eacute;charger ce document {{documentUID}}.</h2>
+            <p>Le document n&rsquo;existe pas. Si vous croyez que ce fichier devrait &ecirc;tre rendu disponibles, veuillez nous le signaler &agrave; <a translation-url href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a>.</p>
+        </div>
+
+        <div id="RecordDetails" ng-if="showDetails">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <h3 style="margin:0 0 10px 0;padding:0;border-bottom:1px solid #999;">Information sur le fichier</h3>
+                        <div><span style="font-size:12px">Type : </span> {{internalDocumentInfo.metadata.schema | schemaName}} </div>
+                        <div><span style="font-size:12px">Statut : </span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">BROUILLON</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Verrouil&eacute;: En cours {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">SUPPRIM&Eacute;</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">R&Eacute;VOQU&Eacute;</span></span></div>
+                        <div><span style="font-size:12px">Historique : </span><div view-history document-id="internalDocumentInfo.identifier"></div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alert alert-danger" role="alert" ng-show="internalDocumentInfo.latestRevision != internalDocumentInfo.revision && revisionNo != 'draft'">
+            <h3>Ce document a &eacute;t&eacute; mis &agrave; jour. Il ne s&rsquo;agit pas de la derni&egrave;re version publi&eacute;e. <a translation-url ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}"
+                    target="new">Cliquez ici pour voir la derni&egrave;re version du fichier.</a></h3>
+        </div>
+
+
+        <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
+            <div><a translation-url title="Modifier" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
+                    class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Modifier </a><button title="Supprimer" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}"
+                    type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+
+        <div class="pull-right" style="padding-right:10px;position:relative;top:7px;color:#FFF;">
+            <div record-options></div>
+        </div>
+
+        <div id="schemaView" ng-show="internalDocument"></div>
+    </div>
+    <div id="printContentFooter" ng-if="printMode" ng-include="'/app/views/forms/view/print-footer.html'"></div>
+
+</div>
