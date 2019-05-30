@@ -1,15 +1,14 @@
 [
-   
    {
       "key": "General",
-      "title": "Party to the Cartagena Protocol on Biosafety",
+      "title": "طرف لبروتوكول قرطاجنة للسلامة الأحيائية",
       "questions": [
          {
             "key": "Q012_party",
             "section": "General",
             "number": "11",
             "type": "option",
-            "title": "Is your country a Party to the Cartagena Protocol on Biosafety (CPB)?",
+            "title": "هل تقع دولتك ضمن أطراف بروتوكول قرطاجنة للسلامة الإحيائية (CPB)؟",
             "multiple": false,
             "options": [
                {
@@ -45,7 +44,7 @@
             "section": "General",
             "number": "12",
             "type": "option",
-            "title": "If your country is not a Party to the Cartagena Protocol on Biosafety (CPB), is there any national process in place towards becoming a Party?",
+            "title": "إذا لم يكن بلدك أحد الأطراف في بروتوكول قرطاجنة للسلامة الأحيائية؟ هل هناك عملية وطنية قائمة كي يصبح البلد طرفا فيه؟",
             "multiple": false,
             "options": [
                {
@@ -63,7 +62,7 @@
             "section": "General",
             "number": "13",
             "type": "lstring",
-            "title": "Here you may provide further details",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل",
             "multiple": false
          }
       ]
@@ -71,35 +70,35 @@
    {
       "key": "Article2",
       "title": "المادة 2 - أحكام عامة",
-      "description": "<i></i>",
+      "description": "<i>تقتضي المادة 2 من كل طرف اتخاذ التدابير القانونية والإدارية وغيرها من التدابير اللازمة والمناسبة لتنفيذ التزاماته بموجب البروتوكول</i>",
       "questions": [
          {
             "key": "Q014",
             "section": "Article2",
             "number": "14",
             "type": "option",
-            "title": "Has your country introduced the necessary national measures for the implementation of the Protocol?",
+            "title": "هل أدخل بلدك التدابير الوطنية الضرورية لتنفيذ البروتوكول؟",
             "multiple": false,
             "options": [
                {
                   "value": "implementation.fullInPlace",
-                  "title": "National measures are fully in place"
+                  "title": "توجد تدابير وطنية كاملة"
                },
                {
                   "value": "implementation.partiallyInPlace",
-                  "title": "National measures are partially in place"
+                  "title": "توجد تدابير وطنية جزئية"
                },
                {
                   "value": "implementation.temporaryMeasures",
-                  "title": "Only temporary measures have been introduced"
+                  "title": "لم توضع إلا تدابير مؤقتة فقط"
                },
                {
                   "value": "implementation.draftMeasures",
-                  "title": "Only draft measures exist"
+                  "title": "لا يوجد إلا مشروع تدابير"
                },
                {
                   "value": "implementation.none",
-                  "title": "No measures have yet been taken"
+                  "title": "لم تتخذ تدابير بعد"
                }
             ],
             "mandatory": true
@@ -109,28 +108,28 @@
             "section": "Article2",
             "number": "15",
             "type": "option",
-            "title": "Which specific instruments are in place for the implementation of national biosafety measures? (select all that apply)",
+            "title": "ما هي الأدوات القائمة لتنفيذ التدابير الوطنية للسلامة الأحيائية؟ (اختر كل ما ينطبق)",
             "multiple": true,
             "options": [
                {
                   "value": "instrument.nationalBiosafetyLaws",
-                  "title": "One or more national biosafety laws"
+                  "title": "قانون وطني واحد أو أكثر بشأن السلامة الأحيائية"
                },
                {
                   "value": "instrument.nationalBiosafetyRegulations",
-                  "title": "واحدة أو أكثر من اللوائح الوطنية للسلامة الأحيائية"
+                  "title": "لائحة وطنية واحدة أو أكثر بشأن السلامة الأحيائية"
                },
                {
                   "value": "instrument.biosafetyGuidelines",
-                  "title": "One or more sets of biosafety guidelines"
+                  "title": "مجموعة واحدة أو أكثر من المبادئ التوجيهية بشأن السلامة الأحيائية"
                },
                {
                   "value": "instrument.indirectLaws",
-                  "title": "القوانين أو اللوائح أو المبادئ التوجيهية الأخرى التي لا تنطبق مباشرة على السلامة الأحيائية"
+                  "title": "القوانين أو اللوائح أو المبادئ التوجيهية الأخرى التي تطبق على السلامة الأحيائية على نحو غير مباشر"
                },
                {
                   "value": "instrument.none",
-                  "title": "No instruments are in place"
+                  "title": "لا توجد أدوات قائمة"
                }
             ]
          },
@@ -139,7 +138,7 @@
             "section": "Article2",
             "number": "16",
             "type": "option",
-            "title": "Has your country undertaken initiatives to mainstream biosafety into national biodiversity strategies and action plans, other policies, or legislation?",
+            "title": "هل اضطلع بلدك بمبادرات لتعميم السلامة الأحيائية في الاستراتيجيات وخطط العمل الوطنية للتنوع البيولوجي، أو السياسات أو التشريعات الأخرى؟",
             "multiple": false,
             "options": [
                {
@@ -153,7 +152,7 @@
                },
                {
                   "value": "false.other",
-                  "title": "مقررات أخرى",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ]
@@ -163,7 +162,7 @@
             "section": "Article2",
             "number": "17",
             "type": "option",
-            "title": "Has your country established a mechanism for budget allocations for the operation of its national biosafety measures?",
+            "title": "هل أنشأ بلدك آلية لتخصيص أموال من الميزانية لتفعيل تدابيره الوطنية للسلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -172,7 +171,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -186,7 +185,7 @@
             "section": "Article2",
             "number": "18",
             "type": "option",
-            "title": "Does your country have permanent staff to administer functions directly related to biosafety?",
+            "title": "هل لدى بلدك موظفون دائمون لإدارة الوظائف المتعلقة مباشرة بالسلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -214,16 +213,16 @@
             "section": "Article2",
             "number": "19",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 18, how many permanent staff members are in place whose functions are directly related to  biosafety ? ",
+            "title": "إذا كانت إجابتك <i> نعم</i> على السؤال 18، ما هو عدد الموظفين الدائمين الذين تتعلق وظائفهم بصورة مباشرة بالسلامة الأحيائية؟ ",
             "multiple": false,
             "options": [
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -243,7 +242,7 @@
             "section": "Article2",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -261,7 +260,7 @@
             "section": "Article2",
             "number": "20",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 2 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 2 في بلدك",
             "multiple": false
          }
       ]
@@ -275,7 +274,7 @@
             "section": "Article5",
             "number": "21",
             "type": "option",
-            "title": "Does your country regulate the transboundary movement, handling or use of living modified organisms (LMOs) which are pharmaceuticals to humans?",
+            "title": "هل ينظم بلدك الحركة العابرة للحدود للكائنات الحية المحورة ومناولتها أو استخدامها والتي تعتبر مستحضرات صيدلانية للبشر؟",
             "multiple": false,
             "options": [
                {
@@ -284,7 +283,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -299,14 +298,14 @@
             "section": "Article5",
             "number": "22",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 5 in your country:",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 5 في بلدك:",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article6",
-      "title": "Article 6 – Transit and Contained use",
+      "title": "المادة 6- المرور العابر والاستخدام المعزول",
       "questions": [
          {
             "key": "Q023",
@@ -322,7 +321,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -356,7 +355,7 @@
             "section": "Article6",
             "number": "25",
             "type": "option",
-            "title": "Has your country taken a decision concerning the import of LMOs for contained use?",
+            "title": "هل اتخذ بلدك قرارا بشأن استيراد الكائنات الحية المحورة للاستخدام المعزول؟",
             "multiple": false,
             "options": [
                {
@@ -374,21 +373,21 @@
             "section": "Article6",
             "number": "26",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 6 in your country:",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 6 في بلدك:",
             "multiple": false
          }
       ]
    },
    {
       "key": "Articles7-10",
-      "title": "الفقرة 7 إلى 10 - إجراء الاتفاق المسبق وإدخال الكائنات الحية المحورة عن عمد إلى البيئة",
+      "title": "المواد 7 إلى 10 - الاتفاق المسبق عن علم وإدخال الكائنات الحية المحورة عن عمد في البيئة",
       "questions": [
          {
             "key": "Q027",
             "section": "Articles7-10",
             "number": "27",
             "type": "option",
-            "title": "Has your country established legal requirements for exporters under its jurisdiction to notify in writing the competent national authority of the Party of import prior to the intentional transboundary movement of an LMO that falls within the scope of the AIA procedure?",
+            "title": "هل وضع بلدك متطلبات قانونية للمصدرين بموجب ولايته القضائية بإبلاغ السلطة الوطنية المختصة لطرف الاستيراد قبل الحركة العابرة للحدود عن عمد للكائنات الحية المحورة التي تقع في إطار إجراء الاتفاق المسبق عن علم؟",
             "multiple": false,
             "options": [
                {
@@ -397,7 +396,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -412,7 +411,7 @@
             "section": "Articles7-10",
             "number": "28",
             "type": "option",
-            "title": "When acting as the Party of export, has your country established legal requirements for the accuracy of information contained in the notification provided by the exporter?",
+            "title": "عند قيام بلدك بالعمل كطرف التصدير، هل وضع متطلبات قانونية بشأن دقة المعلومات الواردة في الإخطار المقدم من المُصدر؟",
             "multiple": false,
             "options": [
                {
@@ -421,7 +420,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -430,7 +429,7 @@
                },
                {
                   "value": "false.notApplicable",
-                  "title": "Not applicable (Party currently not exporting LMOs)"
+                  "title": "لا ينطبق (الطرف لا يقوم حاليا بتصدير الكائنات الحية المحورة)"
                }
             ],
             "mandatory": true
@@ -440,7 +439,7 @@
             "section": "Articles7-10",
             "number": "29",
             "type": "option",
-            "title": "In the current reporting period, has your country received a notification regarding intentional transboundary movements of LMOs for intentional introduction into the environment?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل استلم بلدك إخطارا يتعلق بالحركة العابرة للحدود عن عمد للكائنات الحية المحورة لإدخالها عن عمد في البيئة؟",
             "multiple": false,
             "options": [
                {
@@ -485,7 +484,7 @@
             "section": "Articles7-10",
             "number": "30",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 29, did the notification(s) contain complete information (at a minimum the information specified in Annex I to the Cartagena Protocol on Biosafety)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 29، هل اشتمل الإخطار (الإخطارات) على معلومات كاملة (كحد أدنى المعلومات المحددة في المرفق الأول ببروتوكول قرطاجنة للسلامة الأحيائية)؟",
             "multiple": false,
             "options": [
                {
@@ -508,7 +507,7 @@
             "section": "Articles7-10",
             "number": "31",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 29, has your country acknowledged receipt of the notification(s) to the notifier within ninety days of receipt?",
+            "title": "إذا كانت إجابتك  <i>نعم</i>  على السؤال 29، هل أقر بلدك للمخطر باستلام الإخطار (الإخطارات) خلال تسعين يوما من الاستلام؟",
             "multiple": false,
             "options": [
                {
@@ -531,20 +530,20 @@
             "section": "Articles7-10",
             "number": "32",
             "type": "sub-section",
-            "title": "If you answered <i>Yes</i> to question 29, has your country informed of its decision(s)",
+            "title": "إذا كانت إجابتك<i>نعم</i> على السؤال 29، هل أبلغ بلدك قراره (قراراته) إلى",
             "multiple": false,
             "questions": [
                {
                   "key": "Q032_a",
                   "section": "Articles7-10",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
-                  "title": "The notifier?",
+                  "title": "المخطر",
                   "multiple": false,
                   "options": [
                      {
                         "value": "true",
-                        "title": "Yes, always"
+                        "title": "نعم، دائما"
                      },
                      {
                         "value": "true.some",
@@ -560,14 +559,14 @@
                {
                   "key": "Q032_b",
                   "section": "Articles7-10",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
-                  "title": "The Biosafety Clearing-House (BCH)?",
+                  "title": "غرفة تبادل معلومات السلامة الأحيائية",
                   "multiple": false,
                   "options": [
                      {
                         "value": "true",
-                        "title": "Yes, always"
+                        "title": "نعم، دائما"
                      },
                      {
                         "value": "true.some",
@@ -587,7 +586,7 @@
             "section": "Articles7-10",
             "number": "33",
             "type": "option",
-            "title": "In the current reporting period, has your country taken a decision in response to the notification(s) regarding intentional transboundary movements of LMOs for intentional introduction into the environment?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل اتخذ بلدك قرارا استجابة لإخطار (إخطارات) فيما يتعلق بالحركة العابرة للحدود عن عمد للكائنات الحية المحورة لإدخالها عن عمد في البيئة؟",
             "multiple": false,
             "options": [
                {
@@ -624,20 +623,20 @@
             "section": "Articles7-10",
             "number": "34",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 33, how many LMOs has your country approved for import for intentional introduction into the environment?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 33، كم عدد الكائنات الحية المحورة التي وافق بلدك على استيرادها لإدخالها عن عمد في البيئة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -661,12 +660,12 @@
             "section": "Articles7-10",
             "number": "35",
             "type": "option",
-            "title": "If you answered <i>under question 34<i> that <i>LMOs were approved</i>, have all these LMOs actually been imported into your country?",
+            "title": "إذا كانت إجابتك <i>على السؤال 34<i> أنه <i>تمت الموافقة على كائنات حية محورة</i>،هل تم بالفعل استيراد كل هذه الكائنات الحية المحورة إلى بلدك؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -684,32 +683,32 @@
             "section": "Articles7-10",
             "number": "36",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 33, what percentage of your country’s decisions fall into the following categories? (select all that apply)",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 33، ما هي النسبة المئوية من قرارات بلدك التي تقع في الفئات التالية؟ (اختر كل ما ينطبق)",
             "multiple": true,
             "options": [
                {
                   "value": "3B9ECE67-B35C-40FF-8C06-4EA5FF762899",
-                  "title": "الموافقة غير المشروطة على استيراد/استعمال الكائن الحي المحور (الكائنات الحية المحورة)",
+                  "title": "الموافقة على استيراد/استخدام الكائنات الحية المحورة بدون شروط",
                   "type": "int"
                },
                {
                   "value": "3EFF4792-A896-4DC7-9945-04FE9C8B5B4F",
-                  "title": "الموافقة المشروطة على استيراد/استعمال الكائن الحي المحور (الكائنات الحية المحورة)",
+                  "title": "الموافقة على استيراد/استخدام الكائنات الحية المحورة بشروط",
                   "type": "int"
                },
                {
                   "value": "6DD1B161-4CDB-4900-BD31-DBB97E86B2AE",
-                  "title": "حظر استيراد/استعمال الكائن الحي المحور (الكائنات الحية المحورة)",
+                  "title": "حظر استيراد/استخدام الكائنات الحية المحورة طلب معلومات إضافية",
                   "type": "int"
                },
                {
                   "value": "8D91ACEE-C6B3-4204-8FE6-00AE424013FF",
-                  "title": "طلب معلومات إضافية ذات صلة",
+                  "title": "طلب معلومات إضافية",
                   "type": "int"
                },
                {
                   "value": "19F9F13E-195E-45B5-88DD-058A07E0D6F6",
-                  "title": "إبلاغ المخطر بتمديد فترة إيصال القرار",
+                  "title": "إبلاغ المخطر بأنه تم تمديد فترة إرسال القرار",
                   "type": "int"
                }
             ],
@@ -731,12 +730,12 @@
             "section": "Articles7-10",
             "number": "37",
             "type": "option",
-            "title": "If you answered <i>under question 36</i> that your country has taken a decision to <i>approve the import with conditions</i> or to <i>prohibit the import</i>, were the reasons provided?",
+            "title": "إذا كانت إجابتك <i>على السؤال 36</i> أن بلدك اتخذ قرارا  <i>بالموافقة على الاستيراد بشروط أو حظر الاستيراد</i>، هل قدمت الأسباب؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -754,21 +753,21 @@
             "section": "Articles7-10",
             "number": "38",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Articles 7 to 10 in your country, including measures in case of lack of scientific certainty on potential adverse effects of LMOs for intentional introduction to the environment",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المواد من 7 إلى 10 في بلدك، بما في ذلك التدابير في حالة عدم وجود يقين علمي بشأن الآثار الضارة المحتملة للكائنات الحية المحورة لإدخالها عن عمد في البيئة",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article11",
-      "title": "الفقرة 11 - الإجراءات المتخذة بشأن الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو أعلاف أو للتجهيز",
+      "title": "المادة 11 - إجراء بشأن الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز",
       "questions": [
          {
             "key": "Q039",
             "section": "Article11",
             "number": "39",
             "type": "option",
-            "title": "Does your country have law(s), regulation(s) or administrative measures for decision-making regarding domestic use, including placing on the market, of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing?",
+            "title": "هل لدى بلدك قانونا (قوانين) أو لائحة (لوائح) أو تدابير إدارية لصنع القرار المتعلق بالاستخدام المحلي للكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز، بما في ذلك طرحها في الأسواق؟",
             "multiple": false,
             "options": [
                {
@@ -787,7 +786,7 @@
             "section": "Article11",
             "number": "40",
             "type": "option",
-            "title": "Has your country established legal requirements for the accuracy of information to be provided by the applicant regarding the domestic use, including placing on the market, of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing?",
+            "title": "هل وضع بلدك متطلبات قانونية بشأن دقة المعلومات التي يتعين أن يقدمها الطالب فيما يتعلق بالاستخدام المحلي للكائنات الحية المحورة التي قد تخضع للحركة العابرة للحدود والمراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز، بما في ذلك طرحها في الأسواق؟",
             "multiple": false,
             "options": [
                {
@@ -796,7 +795,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -811,20 +810,20 @@
             "section": "Article11",
             "number": "41",
             "type": "option",
-            "title": "In the current reporting period, how many decisions has your country taken <u>regarding domestic use</u>, including placing on the market, of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، ما هو عدد القرارات التي اتخذها بلدك <u>فيما يتعلق بالاستخدام المحلي</u> للكائنات الحية المحورة التي قد تخضع للحركة العابرة للحدود والمراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز، بما في ذلك طرحها في الأسواق؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -838,7 +837,7 @@
             "section": "Article11",
             "number": "42",
             "type": "option",
-            "title": "Does your country have law(s), regulation(s) or administrative measures for decision-making regarding the import of LMOs for direct use as food or feed, or for processing?",
+            "title": "هل لدى بلدك قانونا (قوانين) أو لائحة (لوائح) أو تدابير إدارية لصنع القرار المتعلق باستيراد الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز؟",
             "multiple": false,
             "options": [
                {
@@ -857,20 +856,20 @@
             "section": "Article11",
             "number": "43",
             "type": "option",
-            "title": "In the current reporting period, how many decisions has your country taken <u>regarding the import</u> of LMOs for direct use as food or feed, or for processing?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، ما هو عدد القرارات التي اتخذها بلدك <u>فيما يتعلق باستيراد</u> الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -884,7 +883,7 @@
             "section": "Article11",
             "number": "44",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 11 in your country, including measures in case of lack of scientific certainty on potential adverse effects of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 11 في بلدك، بما في ذلك التدابير في حالة عدم وجود يقين علمي بشأن الآثار الضارة المحتملة للكائنات الحية المحورة التي قد تكون عرضة للحركة العابرة للحدود لاستخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز",
             "multiple": false
          }
       ]
@@ -898,7 +897,7 @@
             "section": "Article12",
             "number": "45",
             "type": "option",
-            "title": "Has your country established a mechanism for the review and change of a decision regarding an intentional transboundary movement of LMOs?",
+            "title": "هل أنشأ بلدك آلية لاستعراض وتغيير أي قرار يتعلق بالحركة العابرة للحدود عن عمد للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -907,7 +906,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -921,7 +920,7 @@
             "section": "Article12",
             "number": "46",
             "type": "option",
-            "title": "In the current reporting period, has your country reviewed and/or changed a decision regarding an intentional transboundary movement of an LMO?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل سبق أن استعرض/غير بلدك قرارا يتعلق بالحركة العابرة للحدود عن عمد للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -966,16 +965,16 @@
             "section": "Article12",
             "number": "47",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 46, how many decisions were reviewed and/or changed?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 46، ما هو عدد القرارات التي تم استعرضها و/أو غيرها؟",
             "multiple": false,
             "options": [
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -989,7 +988,7 @@
             "section": "Article12",
             "number": "48",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 46, were any of the reviews triggered by a request from the Party of export or the notifier?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 46، هل كانت أي من الاستعراضات ناتجة عن طلب من طرف التصدير أو المخطر؟",
             "multiple": false,
             "options": [
                {
@@ -1018,12 +1017,12 @@
             "section": "Article12",
             "number": "49",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 48, did your country provide a response within ninety days setting out the reasons for the decision?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 48، هل قدم بلدك ردا في غضون تسعين يوما موضحا أسباب القرار؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -1041,7 +1040,7 @@
             "section": "Article12",
             "number": "50",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 46, were any of the reviews initiated by your country as the Party of import?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 46، هل بدأ أي من الاستعراضات بلدك بوصفه طرف الاستيراد؟",
             "multiple": false,
             "options": [
                {
@@ -1080,20 +1079,20 @@
             "section": "Articles12",
             "number": "51",
             "type": "sub-section",
-            "title": "If you answered <i>Yes</i> to question 50, did your country, within thirty days, set out the reasons for the decision and inform",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 50، هل أوضح بلدك، في غضون ثلاثين يوما، أسباب القرار وأخبر",
             "multiple": false,
             "questions": [
                {
                   "key": "Q051_a",
                   "section": "Article12",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
-                  "title": "The notifier",
+                  "title": "المخطر",
                   "multiple": false,
                   "options": [
                      {
                         "value": "true",
-                        "title": "Yes, always"
+                        "title": "نعم، دائما"
                      },
                      {
                         "value": "true.some",
@@ -1109,14 +1108,14 @@
                {
                   "key": "Q051_b",
                   "section": "Article12",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
-                  "title": "The BCH?",
+                  "title": "غرفة تبادل معلومات السلامة الأحيائية",
                   "multiple": false,
                   "options": [
                      {
                         "value": "true",
-                        "title": "Yes, always"
+                        "title": "نعم، دائما"
                      },
                      {
                         "value": "true.some",
@@ -1136,21 +1135,21 @@
             "section": "Article12",
             "number": "52",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 12 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 12 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article13",
-      "title": "Article 13 – Simplified procedure",
+      "title": "المادة 13 - الإجراء المبسط",
       "questions": [
          {
             "key": "Q053",
             "section": "Article13",
             "number": "53",
             "type": "option",
-            "title": "Has your country established a mechanism for the application of the simplified procedure regarding an intentional transboundary movement of LMOs?",
+            "title": "هل أنشأ بلدك آلية لتطبيق الإجراء المبسط فيما يتعلق بالحركة العابرة للحدود عن عمد للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -1159,7 +1158,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -1173,7 +1172,7 @@
             "section": "Article13",
             "number": "54",
             "type": "option",
-            "title": "In the current reporting period, has your country applied the simplified procedure?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل طبق بلدك الإجراء المبسط؟",
             "multiple": false,
             "options": [
                {
@@ -1210,16 +1209,16 @@
             "section": "Article13",
             "number": "55",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 54, for how many LMOs has your country applied the simplified procedure?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 54، كم عدد الكائنات الحية المحورة التي طبق عليها بلدك الإجراء المبسط؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 5"
+                  "title": "1 إلى 5"
                },
                {
                   "value": "5+",
@@ -1233,16 +1232,16 @@
             "section": "Article13",
             "number": "56",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 54, has your country informed the Parties through the BCH of the cases where the simplified procedure was applied?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 54، هل أبلغ بلدك الأطراف من خلال غرفة تبادل معلومات السلامة الأحيائية بالحالات التي طُبق فيها الإجراء المبسط؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "نعم"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent"
+                  "title": "في بعض الحالات فقط"
                },
                {
                   "value": "false",
@@ -1256,7 +1255,7 @@
             "section": "Article13",
             "number": "57",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 13 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 13 في بلدك",
             "multiple": false
          }
       ]
@@ -1270,20 +1269,20 @@
             "section": "Article14",
             "number": "58",
             "type": "option",
-            "title": "How many bilateral, regional or multilateral agreements or arrangements relevant to biosafety has your country established with other Parties/non-Parties?",
+            "title": "كم عدد الاتفاقات أو الترتيبات الثنائية أو الإقليمية أو المتعددة الأطراف المتعلقة بالسلامة الأحيائية التي ابرمها بلدك مع الأطراف الأخرى/غير الأطراف؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -1307,7 +1306,7 @@
             "section": "Article14",
             "number": "59",
             "type": "lstring",
-            "title": "If you answered <i>under question 58</i> that <i>agreements or arrangements were established</i>, please provide a brief description of their scope and objective",
+            "title": "إذا كانت إجابتك <i>على السؤال 59 أن تم إبرام اتفاقات أو ترتيبات</i>، يرجى تقديم وصف مختصر عن نطاقها وهدفها",
             "multiple": false,
             "mandatory": true
          },
@@ -1316,21 +1315,21 @@
             "section": "Article14",
             "number": "60",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 14 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 14 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article15_16",
-      "title": "Articles 15 & 16 – Risk Assessment and Risk Management",
+      "title": "المادتان 15 و16 - تقييم المخاطر وإدارة المخاطر",
       "questions": [
          {
             "key": "Q061",
             "section": "Article15_16",
             "number": "61",
             "type": "option",
-            "title": "Does the domestic regulatory framework of your country require risk assessments of LMOs to be conducted?",
+            "title": "هل يتطلب الإطار التنظيمي الداخلي لبلدك إجراء تقييمات مخاطر للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -1359,28 +1358,28 @@
             "section": "Article15_16",
             "number": "62",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 61, with regard to which LMOs does the requirement apply (select all that apply)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 61، ما هي الكائنات الحية المحورة التي تنطبق عليها المتطلبات (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "014054D1-2B72-7ABD-E615-D0A374590A95",
-                  "title": "For imports of LMOs for intentional introduction into the environment"
+                  "title": "للواردات من الكائنات الحية المحورة المراد إدخالها عن عمد في البيئة"
                },
                {
                   "value": "94C9FDC9-49C0-7F7C-9A36-90571DBA6442",
-                  "title": "For imports of LMOs intended for direct use as food or feed, or for processing"
+                  "title": "للواردات من الكائنات الحية المحورة المراد استخدامها كأغذية أو كأعلاف أو للتجهيز"
                },
                {
                   "value": "29B97F6B-066E-BE64-0FA3-66060DEE737D",
-                  "title": "For decisions regarding domestic use, including placing on the market, of LMOs that may be subject to transboundary movements for direct use as food or feed, or for processing"
+                  "title": "للقرارات المتعلقة بالاستخدام المحلي للكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز، بما في ذلك طرحها في الأسواق"
                },
                {
                   "value": "2314EDF6-3B1D-D44D-253D-18B14EFC5C67",
-                  "title": "For imports of LMOs for contained use"
+                  "title": "للواردات من الكائنات الحية المحورة للاستخدام المعزول"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -1391,7 +1390,7 @@
             "section": "Article15_16",
             "number": "63",
             "type": "option",
-            "title": "Has your country established a mechanism to conduct risk assessments prior to taking decisions regarding LMOs?",
+            "title": "هل أنشأ بلدك آلية لإجراء تقييمات المخاطر قبل اتخاذ قرارات تتعلق بالكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -1400,7 +1399,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -1424,7 +1423,7 @@
             "section": "Article15_16",
             "number": "64",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 63, does the mechanism include procedures to identify and/or train national experts to conduct risk assessments?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 63، هل تتضمن الآلية إجراءات لتحديد و/أو تدريب الخبراء الوطنيين لإجراء تقييمات المخاطر؟",
             "multiple": false,
             "options": [
                {
@@ -1442,39 +1441,39 @@
             "section": "Article15_16",
             "number": "",
             "type": "legend",
-            "title": "<i></i>"
+            "title": "<i>بناء القدرات في مجال تقييم المخاطر أو إدارة المخاطر</i>"
          },
          {
             "key": "Q065",
             "section": "Articles12",
             "number": "65",
             "type": "sub-section",
-            "title": "How many people in your country have been trained in risk assessment, risk management and monitoring of LMOs?",
+            "title": "ما هو عدد الأشخاص في بلدك الذين تم تدريبهم على تقييم مخاطر الكائنات الحية المحورة وإدارتها ورصدها؟",
             "multiple": false,
             "questions": [
                {
                   "key": "Q065_a",
                   "section": "Article15_16",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
                   "title": "تقييم المخاطر:",
                   "multiple": false,
                   "options": [
                      {
                         "value": "0",
-                        "title": "None"
+                        "title": "لا يوجد"
                      },
                      {
                         "value": "1+",
-                        "title": "1 to 9"
+                        "title": "1 إلى 9"
                      },
                      {
                         "value": "10+",
-                        "title": "10 to 49"
+                        "title": "10 إلى 49"
                      },
                      {
                         "value": "50+",
-                        "title": "50 to 99"
+                        "title": "50 إلى 99"
                      },
                      {
                         "value": "100+",
@@ -1499,7 +1498,7 @@
                   "section": "Article15_16",
                   "number": "",
                   "type": "option",
-                  "title": "Is this number adequate",
+                  "title": "هل هذا العدد كاف",
                   "multiple": false,
                   "options": [
                      {
@@ -1515,26 +1514,26 @@
                {
                   "key": "Q065_b",
                   "section": "Article15_16",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
                   "title": "إدارة المخاطر",
                   "multiple": false,
                   "options": [
                      {
                         "value": "0",
-                        "title": "None"
+                        "title": "لا يوجد"
                      },
                      {
                         "value": "1+",
-                        "title": "1 to 9"
+                        "title": "1 إلى 9"
                      },
                      {
                         "value": "10+",
-                        "title": "10 to 49"
+                        "title": "10 إلى 49"
                      },
                      {
                         "value": "50+",
-                        "title": "50 to 99"
+                        "title": "50 إلى 99"
                      },
                      {
                         "value": "100+",
@@ -1559,7 +1558,7 @@
                   "section": "Article2",
                   "number": "",
                   "type": "option",
-                  "title": "Is this number adequate",
+                  "title": "هل هذا العدد كاف",
                   "multiple": false,
                   "options": [
                      {
@@ -1575,26 +1574,26 @@
                {
                   "key": "Q065_c",
                   "section": "Article15_16",
-                  "number": "-",
+                  "number": "‌ج",
                   "type": "option",
                   "title": "الرصد:",
                   "multiple": false,
                   "options": [
                      {
                         "value": "0",
-                        "title": "None"
+                        "title": "لا يوجد"
                      },
                      {
                         "value": "1+",
-                        "title": "1 to 9"
+                        "title": "1 إلى 9"
                      },
                      {
                         "value": "10+",
-                        "title": "10 to 49"
+                        "title": "10 إلى 49"
                      },
                      {
                         "value": "50+",
-                        "title": "50 to 99"
+                        "title": "50 إلى 99"
                      },
                      {
                         "value": "100+",
@@ -1619,7 +1618,7 @@
                   "section": "Article2",
                   "number": "",
                   "type": "option",
-                  "title": "Is this number adequate",
+                  "title": "هل هذا العدد كاف",
                   "multiple": false,
                   "options": [
                      {
@@ -1639,7 +1638,7 @@
             "section": "Article15_16",
             "number": "66",
             "type": "option",
-            "title": "هل يستخدم بلدك مواد تدريبية و/أو إرشادات تقنية للتدريب على تقييم وإدارة مخاطر الكائنات الحية المحورة؟(3)",
+            "title": "هل يستخدم بلدك مواد تدريبية و/أو  إرشادات تقنية للتدريب على تقييم مخاطر وإدارة مخاطر الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -1676,7 +1675,7 @@
             "section": "Article15_16",
             "number": "67",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 66, is your country using the “Manual on Risk Assessment of LMOs” (developed by the CBD Secretariat) for training in risk assessment?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 66، هل يستخدم بلدك \"دليل تقييم مخاطر الكائنات الحية المحورة\" (الذي أعدته أمانة اتفاقية التنوع البيولوجي) للتدريب على تقييم المخاطر؟",
             "multiple": false,
             "options": [
                {
@@ -1695,7 +1694,7 @@
             "section": "Article15_16",
             "number": "68",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 66, is your country using the “Guidance on Risk Assessment of LMOs” (developed by the Online Forum and the AHTEG on Risk Assessment and Risk Management) for training in risk assessment?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 66، هل يستخدم بلدك \"دليل تقييم مخاطر الكائنات الحية المحورة\" (الذي أعده المنتدى الإلكتروني وفريق الخبراء التقنيين المخصص لتقييم المخاطر وإدارة المخاطر) للتدريب على تقييم المخاطر؟",
             "multiple": false,
             "options": [
                {
@@ -1714,7 +1713,7 @@
             "section": "Article15_16",
             "number": "69",
             "type": "option",
-            "title": "Does your country have specific needs for further guidance on specific topics of risk assessment of LMOs?",
+            "title": "هل لدى بلدك احتياجات خاصة لمزيد من الإرشاد بشأن موضوعات محددة لتقييم مخاطر الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -1734,15 +1733,15 @@
             "section": "Article15_16",
             "number": "70",
             "type": "sub-section",
-            "title": "Does your country have the capacity to detect, identify, assess the risk of and/or monitor living modified organisms or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity, taking into account risks to human health?",
+            "title": "هل لدى بلدك القدرة على كشف وتحديد وتقييم مخاطر و/أو رصد الكائنات الحية المحورة أو السمات المحددة التي قد يكون لها آثار ضارة على حفظ التنوع البيولوجي واستخدامه المستدام، مع الأخذ في الاعتبار المخاطر على الصحة البشرية؟",
             "multiple": false,
             "questions": [
                {
                   "key": "Q070_a",
                   "section": "Article15_16",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
-                  "title": "Detect",
+                  "title": "الكشف",
                   "multiple": false,
                   "options": [
                      {
@@ -1758,9 +1757,9 @@
                {
                   "key": "Q070_b",
                   "section": "Article15_16",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
-                  "title": "Identify",
+                  "title": "التحديد",
                   "multiple": false,
                   "options": [
                      {
@@ -1776,9 +1775,9 @@
                {
                   "key": "Q070_c",
                   "section": "Article15_16",
-                  "number": "-",
+                  "number": "‌ج",
                   "type": "option",
-                  "title": "Assess the risk",
+                  "title": "تقييم المخاطر",
                   "multiple": false,
                   "options": [
                      {
@@ -1794,9 +1793,9 @@
                {
                   "key": "Q070_d",
                   "section": "Article15_16",
-                  "number": "d",
+                  "number": "د",
                   "type": "option",
-                  "title": "Monitor",
+                  "title": "الرصد",
                   "multiple": false,
                   "options": [
                      {
@@ -1816,20 +1815,20 @@
             "section": "Article15_16",
             "number": "",
             "type": "legend",
-            "title": "<i></i>"
+            "title": "<i>إجراء تقييم المخاطر أو إدارة المخاط</i>"
          },
          {
             "key": "Q071",
             "section": "Article15_16",
             "number": "71",
             "type": "sub-section",
-            "title": "هل اعتمد بلدك أو استخدم أي وثائق إرشادية لأغراض إجراء تقييم أو إدارة المخاطر، أو تقييم التقارير المتعلقة بتقييم المخاطر المقدمة من المُخطرين؟(3)",
+            "title": "هل اعتمد بلدك أو استخدم أي وثائق إرشادية لغرض إجراء تقييم المخاطر أو إدارة المخاطر، أو لتقييم تقارير تقييم المخاطر المقدمة من المخطرين؟",
             "multiple": false,
             "questions": [
                {
                   "key": "Q071_a",
                   "section": "Article15_16",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
                   "title": "تقييم المخاطر",
                   "multiple": false,
@@ -1855,7 +1854,7 @@
                {
                   "key": "Q071_b",
                   "section": "Article15_16",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
                   "title": "إدارة المخاطر",
                   "multiple": false,
@@ -1885,7 +1884,7 @@
             "section": "Article15_16",
             "number": "72",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 71, is your country using the “Guidance on Risk Assessment of LMOs” (developed by the Online Forum and the AHTEG on Risk Assessment and Risk Management) for conducting  risk assessment or risk management, or for evaluating risk assessment reports submitted by notifiers?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 71، هل يستخدم بلدك \"الإرشاد بشأن تقييم مخاطر الكائنات الحية المحورة\" (الذي أعده المنتدى الإلكتروني وفريق الخبراء التقنيين المخصص لتقييم المخاطر وإدارة المخاطر) لإجراء تقييم المخاطر أو إدارة المخاطر، أو لتقييم تقارير تقييم المخاطر المقدمة من المخطرين؟",
             "multiple": false,
             "options": [
                {
@@ -1904,7 +1903,7 @@
             "section": "Article15_16",
             "number": "73",
             "type": "option",
-            "title": "Has your country adopted common approaches or methodologies to risk assessment in coordination with other countries?",
+            "title": "هل اعتمد بلدك نُهجا أو منهجيات مشتركة لتقييم المخاطر بالتنسيق مع دول أخرى؟",
             "multiple": false,
             "options": [
                {
@@ -1923,7 +1922,7 @@
             "section": "Article15_16",
             "number": "74",
             "type": "option",
-            "title": "Has your country cooperated with other Parties with a view to identifying LMOs or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity?",
+            "title": "هل تعاون بلدك مع أطراف أخرى بغية تحديد الكائنات الحية المحورة أو السمات المحددة التي يمكن أن تكون لها آثار ضارة على حفظ التنوع البيولوجي واستخدامه المستدام؟",
             "multiple": false,
             "options": [
                {
@@ -1942,7 +1941,7 @@
             "section": "Article15_16",
             "number": "75",
             "type": "option",
-            "title": "In the current reporting period, has your country conducted any kind of risk assessment of LMOs, including for contained use, field trials, commercial purposes, direct use as food, feed, or for processing?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل أجرى بلدك أي نوع من أنواع تقييم مخاطر الكائنات الحية المحورة، بما في ذلك للاستخدام المعزول، أو التجارب الميدانية، أو الأغراض التجارية، أو الاستخدام المباشر كأغذية أو كأعلاف أو للتجهيز؟",
             "multiple": false,
             "options": [
                {
@@ -1987,20 +1986,20 @@
             "section": "Article15_16",
             "number": "76",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 75, how many risk assessments were conducted?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 75، كم عدد تقييمات المخاطر التي أجريت؟",
             "multiple": false,
             "options": [
                {
                   "value": "1+",
-                  "title": "1 to 9"
+                  "title": "1 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
-                  "title": "50 to 99"
+                  "title": "50 إلى 99"
                },
                {
                   "value": "100+",
@@ -2013,36 +2012,36 @@
             "section": "Article15_16",
             "number": "77",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 75, please indicate the scope of the risk assessments (select all that apply):",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 75، يرجى الإشارة إلى نطاق تقييمات المخاطر (اختر كل ما ينطبق)",
             "multiple": true,
             "options": [
                {
                   "value": "42A3DCAE-5FD8-4218-941D-DF11D4AE65FA",
-                  "title": "LMOs for contained use (in accordance with Article 3)"
+                  "title": "الكائنات الحية المحورة للاستخدام المعزول (وفقا للمادة 3)"
                },
                {
                   "value": "D6B59E8A-D82C-4516-917A-A745ACDA5931",
-                  "title": "LMOs for intentional introduction into the environment for experimental testing or field trials"
+                  "title": "الكائنات الحية المحورة المراد إدخالها عن عمد في البيئة للاختبار التجريبي أو التجارب الميدانية"
                },
                {
                   "value": "015737FC-ABC2-460C-A099-06A1B01E649A",
-                  "title": "LMOs for intentional introduction into the environment for commercial purposes"
+                  "title": "الكائنات الحية المحورة المراد إدخالها عن عمد في البيئة للأغراض التجارية"
                },
                {
                   "value": "91BEAF12-ABE1-4294-AD3B-507935894C78",
-                  "title": "LMOs for direct use as food"
+                  "title": "الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية"
                },
                {
                   "value": "1D96153B-1625-44E4-AD5E-D26429044B29",
-                  "title": "الكائنات الحية المحورة المراد استخدامها مباشرة كعلف"
+                  "title": "الكائنات الحية المحورة المراد استخدامها مباشرة كأعلاف"
                },
                {
                   "value": "6430E4F4-9E5F-48BE-B4ED-9E1A4FED981E",
-                  "title": "الكائنات الحية المحورة المراد استخدامها بغرض التجهيز"
+                  "title": "الكائنات الحية المحورة المراد استخدامها مباشرة للتجهيز"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ]
@@ -2052,12 +2051,12 @@
             "section": "Article15_16",
             "number": "78",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 75, were risk assessments conducted for all decisions taken on LMOs for intentional introduction into the environment or on domestic use of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 75، هل أجريت تقييمات المخاطر لجميع القرارات المتخذة بشأن الكائنات الحية المحورة للإدخال عن عمد في البيئة أو بشأن الاستخدام المحلي للكائنات الحية المحورة التي قد تخضع لحركة عابرة للحدود لاستخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز ؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -2075,7 +2074,7 @@
             "section": "Article15_16",
             "number": "79",
             "type": "option",
-            "title": "Has your country established appropriate mechanisms, measures and strategies to regulate and manage risks identified in the risk assessment of LMOs?",
+            "title": "هل وضع بلدك آليات وتدابير واستراتيجيات مناسبة لتنظيم وإدارة  المخاطر المحددة في تقييمات مخاطر الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -2094,7 +2093,7 @@
             "section": "Article15_16",
             "number": "80",
             "type": "option",
-            "title": "Has your country taken appropriate measures to prevent unintentional transboundary movements of LMOs, including such measures as requiring a risk assessment to be carried out prior to the first release of a LMO?",
+            "title": "هل اتخذ بلدك تدابير مناسبة لمنع الحركات العابرة للحدود عن غير عمد للكائنات الحية المحورة، بما في ذلك تدابير مثل اشتراط إجراء تقييم للمخاطر قبل أول إطلاق لكائن حي محور؟",
             "multiple": false,
             "options": [
                {
@@ -2112,7 +2111,7 @@
             "section": "Article15_16",
             "number": "81",
             "type": "option",
-            "title": "Has your country taken measures to ensure that any LMO, whether imported or locally developed, undergoes an appropriate period of observation that is commensurate with its life-cycle or generation time before it is put to its intended use?",
+            "title": "هل اتخذ بلدك تدابير لضمان أن يخضع أي كائن حي محور، سواء كان مستوردا أو مطورا محليا، إلى فترة ملاحظة ملائمة تتناسب مع دورة حياته أو فترة إنتاجه قبل بدء استخدامه المنشود؟",
             "multiple": false,
             "options": [
                {
@@ -2121,7 +2120,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2136,7 +2135,7 @@
             "section": "Article15_16",
             "number": "82",
             "type": "option",
-            "title": "Has your country established a mechanism for monitoring potential effects of LMOs released into the environment?",
+            "title": "هل أنشأ بلدك آلية لرصد الآثار المحتملة للكائنات الحية المحورة التي تطلق في البيئة؟",
             "multiple": false,
             "options": [
                {
@@ -2145,7 +2144,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2159,7 +2158,7 @@
             "section": "Article15_16",
             "number": "83",
             "type": "option",
-            "title": "Does your country have the necessary infrastructure (e.g. laboratory facilities) for monitoring or managing LMOs?",
+            "title": "هل لدى بلدك البنية التحتية (مثل مرافق المختبرات) اللازمة لرصد أو إدارة الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -2185,15 +2184,15 @@
    },
    {
       "key": "Article17",
-      "title": "Article 17 – Unintentional transboundary movements<sup>2</sup>  and emergency measures",
-      "footnote": "<sup>2</sup> In accordance with the operational definition adopted in decision CP-VIII/16, “‘Unintentional transboundary movement’ is a transboundary movement of a living modified organism that has inadvertently crossed the national borders of a Party where the living modified organism was released, and the requirements of Article 17 of the Protocol apply to such transboundary movements only if the living modified organism involved is likely to have significant adverse effects on the conservation and sustainable use of biological diversity, taking also into account risks to human health, in the affected or potentially affected States.”",
+      "title": "المادة 17 - الحركات العابرة للحدود عن غير عمد<sup>2</sup>  وتدابير الطوارئ",
+      "footnote": "<sup>2</sup> وفقا للتعريف التشغيلي المعتمد في المقرر CP VIII/16 فإن، \" النقل غير المقصود عبر الحدود\" هو نقل عبر الحدود لكائن حي محور عبر الحدود الوطنية لطرف ما دون قصد، حيث تم إطلاق الكائن الحي المحور، ولا تنطبق متطلبات المادة 17 من البروتوكول على عمليات النقل عبر الحدود هذه إلا إذا كان الكائن الحي المحور المعني يُحتمل أن تكون له آثار ضارة كبيرة على حفظ التنوع البيولوجي واستخدامه المستدام، مع مراعاة أيضا المخاطر على صحة الإنسان، وذلك في الدول المتضررة أو التي يحتمل أن تتضرر.\"",
       "questions": [
          {
             "key": "Q085",
             "section": "Article17",
             "number": "85",
             "type": "option",
-            "title": "Has your country established measures to notify affected or potentially affected States, the Biosafety Clearing-House and, where appropriate, relevant international organizations in case of a release under its jurisdiction that leads, or may lead, to an unintentional transboundary movement?",
+            "title": "هل وضع بلدك تدابير لإخطار الدول المتأثرة أو المحتمل أن تكون متأثرة، وغرفة تبادل معلومات السلامة الأحيائية، وعند الاقتضاء، المنظمات الدولية ذات الصلة في حالة إطلاق في ولايتها القضائية يؤدي إلى، أو قد يؤدي إلى، حركة عابرة للحدود عن غير عمد؟",
             "multiple": false,
             "options": [
                {
@@ -2202,7 +2201,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2217,20 +2216,20 @@
             "section": "Article17",
             "number": "86",
             "type": "option",
-            "title": "In the current reporting period, how many releases of LMOs occurred under your country’s jurisdiction that led, or may have led, to an unintentional transboundary movement?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، كم عدد إطلاقات الكائنات الحية المحورة التي حدثت في الولاية القضائية لبلدك والتي أدت، أو قد تكون قد أدت، إلى حركة عابرة للحدود عن غير عمد؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -2253,12 +2252,12 @@
             "section": "Article17",
             "number": "87",
             "type": "option",
-            "title": "If you answered <i>under question 86</i> that a <i>release occurred</i>, has your country notified affected or potentially affected States, the Biosafety Clearing-House and, where appropriate, relevant international organizations?",
+            "title": "إذا كانت إجابتك <i>على السؤال رقم 86</i> هي أن <i>لإطلاق حدث</i>ا، هل أخطر بلدك الدول المتأثرة أو المحتمل أن تكون متأثرة، وغرفة تبادل معلومات السلامة الأحيائية، والمنظمات الدولية ذات الصلة، عند الاقتضاء؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -2276,7 +2275,7 @@
             "section": "Article17",
             "number": "88",
             "type": "option",
-            "title": "Does your country have the capacity to take appropriate response measures in response to unintentional transboundary movements?",
+            "title": "هل لدى بلدك القدرة على اتخاذ تدابير الاستجابة المناسبة للحركات العابرة للحدود عن غير عمد؟",
             "multiple": false,
             "options": [
                {
@@ -2295,20 +2294,20 @@
             "section": "Article17",
             "number": "89",
             "type": "option",
-            "title": "In the current reporting period, how many times has your country become aware of an unintentional transboundary movement into its territory?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، كم عدد المرات التي أصبح فيها بلدك على علم بحركة عابرة للحدود عن غير عمد في أراضيه؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -2322,7 +2321,7 @@
             "section": "Article17",
             "number": "90",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 17 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 17 في بلدك",
             "multiple": false
          }
       ]
@@ -2336,7 +2335,7 @@
             "section": "Article18",
             "number": "91",
             "type": "option",
-            "title": "Has your country taken measures to require that <i>LMOs that are subject to transboundary movement</i> are handled, packaged and transported under conditions of safety, taking into account relevant international rules and standards?",
+            "title": "هل اتخذ بلدك تدابير تشترط مناولة وتعبئة ونقل <i>الكائنات الحية المحورة الخاضعة للحركة العابرة للحدود</i> بموجب شروط السلامة مع مراعاة القواعد والمعايير الدولية ذات الصلة؟",
             "multiple": false,
             "options": [
                {
@@ -2345,7 +2344,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2367,7 +2366,7 @@
             "section": "Article18",
             "number": "92",
             "type": "option",
-            "title": "Has your country taken measures to require that documentation accompanying LMOs-FFP, <i>in cases where the identity of the LMOs <u>is not known</u></i>, clearly identifies that they <i>may contain LMOs</i> and are not intended for intentional introduction into the environment, as well as a contact point for further information?",
+            "title": "هل اتخذ بلدك تدابير تشترط أن تشير بوضوح الوثائق المصاحبة للكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز،  <i>في الحالات التي تكون فيها هوية الكائنات الحية المحورة</i> ، أنها <i>قد تحتوي على كائنات حية محورة</i>  وهي غير معدة للإدخال عن عمد في البيئة، فضلا عن نقطة اتصال للحصول على المزيد من المعلومات؟",
             "multiple": false,
             "options": [
                {
@@ -2376,7 +2375,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2398,7 +2397,7 @@
             "section": "Article18",
             "number": "93",
             "type": "option",
-            "title": "Has your country taken measures to require that documentation accompanying LMOs-FFP, <i>in cases where the identity of the LMOs <u>is known</u></i>, clearly identifies that they <i>contain LMOs</i> and are not intended for intentional introduction into the environment, as well as a contact point for further information?",
+            "title": "هل اتخذ بلدك تدابير تشترط أن تشير بوضوح الوثائق المصاحبة للكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز، أنه <i>في الحالات التي تكون فيها هوية الكائنات الحية المحورة<u>معروفة</u></i> أنها <i>تحتوي على كائنات حية محورة</i> وهي غير معدة للإدخال عن عمد في البيئة، فضلا عن نقطة اتصال للحصول على المزيد من المعلومات؟",
             "multiple": false,
             "options": [
                {
@@ -2407,7 +2406,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2429,20 +2428,20 @@
             "section": "Article18",
             "number": "94",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question(s) 91, 92 and/or 93, what type of documentation accompanying LMOs does your country require?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال (الأسئلة) 91 و/أو 92 و/أو 93، ما هو نوع الوثائق التي يقتضيها بلدك لمصاحبة الكائنات الحية المحورة ؟",
             "multiple": false,
             "options": [
                {
                   "value": "lmoSpecific",
-                  "title": "Documentation specific for LMOs"
+                  "title": "وثيقة خاصة بالكائنات الحية المحورة"
                },
                {
                   "value": "nonLmoSpecific",
-                  "title": "As part of other documentation (not specific for LMOs)"
+                  "title": "كجزء من وثيقة أخرى (غير مخصصة للكائنات الحية المحورة)"
                },
                {
                   "value": "other",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -2453,7 +2452,7 @@
             "section": "Article18",
             "number": "95",
             "type": "option",
-            "title": "Has your country taken measures to require that documentation accompanying LMOs <i>that are destined for contained use clearly identifies</i> them as <i>LMOs</i> and specifies any requirements for the safe handling, storage, transport and use, the contact point for further information, including the name and address of the individual and institution to whom the LMO are consigned?",
+            "title": "هل اتخذ بلدك تدابير تشترط أن تشير الوثائق المصاحبة <i>للكائنات الحية المحورة المعدة للاستخدام المعزول بوضوح إلى أنها كائنات حية محورة</i> وتحدد أي شروط لسلامة المناولة والتخزين والنقل والاستخدام ونقطة الاتصال للحصول على المزيد من المعلومات، بما في ذلك اسم وعنوان الشخص أو المؤسسة التي ستشحن إليها الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -2462,7 +2461,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2487,20 +2486,20 @@
             "section": "Article18",
             "number": "96",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 95, what type of documentation does your country require for the identification of LMOs that are destined for contained use?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 95، ما نوع الوثائق التي يقتضيها بلدك لتحديد الكائنات الحية المحورة الموجهة للاستخدام المعزول؟",
             "multiple": false,
             "options": [
                {
                   "value": "lmoSpecific",
-                  "title": "Documentation specific for LMOs"
+                  "title": "وثيقة خاصة بالكائنات الحية المحورة"
                },
                {
                   "value": "nonLmoSpecific",
-                  "title": "As part of other documentation (not specific for LMOs)"
+                  "title": "كجزء من وثيقة أخرى (غير مخصصة للكائنات الحية المحورة)"
                },
                {
                   "value": "other",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -2511,7 +2510,7 @@
             "section": "Article18",
             "number": "97",
             "type": "option",
-            "title": "Has your country taken measures to require that documentation accompanying <i>LMOs that are intended for intentional introduction into the environment of the Party of import</i> clearly identifies them as <i>living modified organisms</i>; specifies the identity and relevant traits and/or characteristics, any requirements for the safe handling, storage, transport and use, the contact point for further information and, as appropriate, the name and address of the importer and exporter; and contains a declaration that the movement is in conformity with the requirements of this Protocol applicable to the exporter?",
+            "title": "هل اتخذ بلدك تدابير تشترط أن تشير الوثائق المصاحبة <i>للكائنات الحية المحورة المراد إدخالها عن عمد في بيئة طرف الاستيراد بوضوح إلى أنها كائنات حية محورة</i>، وتحدد هويتها والسمات و/أو الخصائص ذات الصلة، وأي متطلبات بشأن سلامة المناولة والتخزين والنقل والاستخدام، ونقطة الاتصال للحصول على المزيد من المعلومات، وحسب الاقتضاء اسم وعنوان المستورد والمصدر؛ وتحتوي على إعلان يفيد بأن الحركة تتوافق مع متطلبات هذا البروتوكول بالنسبة للمصدر؟",
             "multiple": false,
             "options": [
                {
@@ -2520,7 +2519,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2545,20 +2544,20 @@
             "section": "Article18",
             "number": "98",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 97, what type of documentation does your country require for the identification of LMOs that are intended for intentional introduction into the environment?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 97، ما نوع الوثائق التي يقتضيها بلدك لتحديد الكائنات الحية المحورة المراد إدخالها عن عمد في البيئة؟",
             "multiple": false,
             "options": [
                {
                   "value": "lmoSpecific",
-                  "title": "Documentation specific for LMOs"
+                  "title": "وثيقة خاصة بالكائنات الحية المحورة"
                },
                {
                   "value": "nonLmoSpecific",
-                  "title": "As part of other documentation (not specific for LMOs)"
+                  "title": "كجزء من وثيقة أخرى (غير مخصصة للكائنات الحية المحورة)"
                },
                {
                   "value": "other",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -2569,7 +2568,7 @@
             "section": "Article18",
             "number": "99",
             "type": "option",
-            "title": "هل لدى بلدك أي إرشادات لضمان سلامة مناولة ونقل وتعبئة الكائنات الحية المحورة؟(3)",
+            "title": "هل يتوافر لدى بلدك أي إرشاد لغرض ضمان سلامة مناولة الكائنات الحية المحورة ونقلها وتعبئتها؟",
             "multiple": false,
             "options": [
                {
@@ -2588,7 +2587,7 @@
             "section": "Article18",
             "number": "100",
             "type": "option",
-            "title": "Does your country have the capacity to enforce the requirements of identification and documentation of LMOs?",
+            "title": "هل لدى بلدك القدرة على إنفاذ متطلبات تحديد الكائنات الحية المحورة وتوثيقها؟",
             "multiple": false,
             "options": [
                {
@@ -2597,7 +2596,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2611,28 +2610,24 @@
             "section": "Article18",
             "number": "101",
             "type": "option",
-            "title": "كم عدد موظفي الجمارك في بلدك الذين حصلوا على تدريب على تحديد هوية الكائنات الحية المحورة؟(3)",
+            "title": "كم عدد موظفي الجمارك في بلدك الذين حصلوا على تدريب على تحديد الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
-               },
-               {
-                  "value": "5+",
-                  "title": "5 to 9"
+                  "title": "1 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
-                  "title": "50 to 99"
+                  "title": "50 إلى 99"
                },
                {
                   "value": "100+",
@@ -2656,7 +2651,7 @@
             "section": "Article18",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -2674,7 +2669,7 @@
             "section": "Article18",
             "number": "102",
             "type": "option",
-            "title": "Has your country established procedures for the sampling and detection of LMOs?",
+            "title": "هل وضع بلدك إجراءات لأخذ عينات من الكائنات الحية المحورة والكشف عنها؟",
             "multiple": false,
             "options": [
                {
@@ -2683,7 +2678,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2698,28 +2693,24 @@
             "section": "Article18",
             "number": "103",
             "type": "option",
-            "title": "كم عدد عاملي المختبرات في بلدك الذين حصلوا على تدريب على كشف الكائنات الحية المحورة؟(3)",
+            "title": "كم عدد أخصائيي المختبرات في بلدك الذين حصلوا على تدريب على الكشف عن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
-               },
-               {
-                  "value": "5+",
-                  "title": "5 to 9"
+                  "title": "1 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
-                  "title": "50 to 99"
+                  "title": "50 إلى 99"
                },
                {
                   "value": "100+",
@@ -2743,7 +2734,7 @@
             "section": "Article18",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -2761,7 +2752,7 @@
             "section": "Article18",
             "number": "104",
             "type": "option",
-            "title": "هل لبلدك نفاذ موثوق إلى مرافق المختبرات لأغراض الكشف عن الكائنات الحية المحورة؟(3)",
+            "title": "هل لدى بلدك إمكانية الوصول بشكل موثوق إلى مرافق مختبرات الكشف عن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -2780,24 +2771,24 @@
             "section": "Article18",
             "number": "105",
             "type": "option",
-            "title": "كم عدد المختبرات المعتمدة في بلدك للكشف عن الكائنات الحية المحورة؟(3)",
+            "title": "كم عدد المختبرات المعتمدة في بلدك للكشف عن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
@@ -2821,24 +2812,24 @@
             "section": "Article18",
             "number": "106",
             "type": "option",
-            "title": "If you answered under question <i>105</i> that <i>certified laboratories exist in your country</i>, how many of them are currently operating in the detection of LMOs?",
+            "title": "إذا كانت إجابتك  <i>على السؤال 105</i> هي <i>وجود مختبرات معتمدة في بلدك</i>، ما هو عدد المختبرات التي تعمل حاليا للكشف عن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
@@ -2852,7 +2843,7 @@
             "section": "Article18",
             "number": "107",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 18 in your country:",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 18 في بلدك:",
             "multiple": false
          }
       ]
@@ -2866,7 +2857,7 @@
             "section": "Article19",
             "number": "108",
             "type": "option",
-            "title": "In case your country has designated more than one competent national authority, has your country established a mechanism for the coordination of their actions prior to taking decisions regarding LMOs?",
+            "title": "في حالة ما إذا كان بلدك عين أكثر من سلطة وطنية مختصة، هل أنشأ بلدك آلية لتنسيق أنشطتها قبل اتخاذ قرارات تتعلق بالكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -2879,11 +2870,11 @@
                },
                {
                   "value": "false.noCna",
-                  "title": "Not applicable (no competent national authority was designated)"
+                  "title": "لا ينطبق (لم يتم تعيين سلطة وطنية مختصة)"
                },
                {
                   "value": "false.oneCna",
-                  "title": "Not applicable (only one competent national authority was designated)"
+                  "title": "لا ينطبق (لم يتم تعيين سوى سلطة وطنية مختصة واحدة)"
                }
             ]
          },
@@ -2892,7 +2883,7 @@
             "section": "Article19",
             "number": "109",
             "type": "option",
-            "title": "Has your country established adequate institutional capacity to enable the competent national authority(ies) to perform the administrative functions required by the Cartagena Protocol on Biosafety?",
+            "title": "هل وضع بلدك قدرات مؤسسية مناسبة لتمكين السلطة/السلطات الوطنية المختصة من أداء الوظائف الإدارية المطلوبة بموجب بروتوكول قرطاجنة للسلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -2901,7 +2892,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -2915,7 +2906,7 @@
             "section": "Article19",
             "number": "110",
             "type": "option",
-            "title": "Has your country undertaken initiatives to strengthen collaboration among national focal points, competent national authority(ies) and other institutions on biosafety-related matters?",
+            "title": "هل اضطلع بلدك بمبادرات لتعزيز التعاون بين نقاط الاتصال الوطنية والسلطة (السلطات) الوطنية المختصة والمؤسسات الأخرى بشأن المسائل المتعلقة بالسلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -2934,28 +2925,28 @@
             "section": "Article19",
             "number": "111",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 19 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 19 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article20",
-      "title": "Article 20 – Information Sharing and the Biosafety Clearing-House (BCH)",
+      "title": "المادة 20 -  تقاسم المعلومات وغرفة تبادل معلومات السلامة الأحيائية",
       "questions": [
          {
             "key": "Q112",
             "section": "Article20",
             "number": "112",
             "type": "sub-section",
-            "title": "يرجى تقديم نبذة عامة عن حالة المعلومات الإلزامية التي قدمها بلدك إلى غرفة تبادل معلومات السلامة الأحيائية عن طريق تحديد لكل فئة من فئات المعلومات ما إذا كانت كل هذه المعلومات متوفرة وما إذا كانت قدمت إلى غرفة تبادل معلومات السلامة الأحيائية.(1)",
+            "title": "يرجى تقديم نظرة عامة على حالة المعلومات الإلزامية التي قدمها بلدك إلى غرفة تبادل معلومات السلامة الأحيائية عن طريق تحديد لكل فئة من المعلومات ما إذا كانت متاحة وما إذا كانت قُدمت إلى غرفة تبادل معلومات السلامة الأحيائية.",
             "questions": [
                {
                   "key": "Q112_a",
                   "section": "Article20",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
-                  "title": "Existing legislation, regulations and guidelines for implementing the Protocol, as well as information required by Parties for the advance informed agreement procedure (Article 20, paragraph 3 (a))",
+                  "title": "التشريعات واللوائح والمبادئ التوجيهية القائمة لتنفيذ البروتوكول، فضلا عن المعلومات المطلوبة من قبل الأطراف لإجراء الاتفاق المسبق عن علم (الفقرة 3(أ) من المادة 20)",
                   "multiple": false,
                   "options": [
                      {
@@ -2964,7 +2955,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -2980,9 +2971,9 @@
                {
                   "key": "Q112_b",
                   "section": "Article20",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
-                  "title": "Legislation, regulations and guidelines applicable to the import of LMOs intended for direct use as food or feed, or for processing (Article 11, paragraph 5)",
+                  "title": "التشريعات واللوائح والمبادئ التوجيهية المطبقة على استيراد الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز (الفقرة 5 من المادة 11)",
                   "multiple": false,
                   "options": [
                      {
@@ -2991,7 +2982,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3007,9 +2998,9 @@
                {
                   "key": "Q112_c",
                   "section": "Article20",
-                  "number": "-",
+                  "number": "‌ج",
                   "type": "option",
-                  "title": "Bilateral, multilateral and regional agreements and arrangements (Articles 14, paragraph 2 and 20, paragraph 3 (b))",
+                  "title": "الاتفاقات والترتيبات الثنائية والمتعددة الأطراف والإقليمية (الفقرة 2 من المادة 14 والفقرة 3(ب) من المادة 20)",
                   "multiple": false,
                   "options": [
                      {
@@ -3018,7 +3009,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3034,9 +3025,9 @@
                {
                   "key": "Q112_d",
                   "section": "Article20",
-                  "number": "d",
+                  "number": "د",
                   "type": "option",
-                  "title": "Contact details for competent national authorities (Article 19, paragraphs 2 and 3), national focal points (Article 19, paragraphs 1 and 3), and emergency contacts (Article 17, paragraph 3 (e))",
+                  "title": "بيانات الاتصال الخاصة بالسلطات الوطنية المختصة (الفقرتان 2 و3 من المادة 19)، ونقاط الاتصال الوطنية (الفقرتان 1 و3 من المادة 19)، وجهات الاتصال في حالات الطوارئ (الفقرة 3(ﻫ) من المادة 17)",
                   "multiple": false,
                   "options": [
                      {
@@ -3045,7 +3036,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3061,9 +3052,9 @@
                {
                   "key": "Q112_e",
                   "section": "Article20",
-                  "number": "e",
+                  "number": "ﻫ",
                   "type": "option",
-                  "title": "Decisions by a Party regarding transit of LMOs (Article 6, paragraph 1)",
+                  "title": "‌القرارات التي تتخذها الأطراف بشأن المرور العابر للكائنات الحية المحورة (الفقرة 1 من المادة 6)",
                   "multiple": false,
                   "options": [
                      {
@@ -3072,7 +3063,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3088,9 +3079,9 @@
                {
                   "key": "Q112_f",
                   "section": "Article20",
-                  "number": "f",
+                  "number": "‌و",
                   "type": "option",
-                  "title": "Decisions by a Party regarding import of LMOs for contained use (Article 6, paragraph 2)",
+                  "title": "القرارات التي تتخذها الأطراف بشأن استيراد الكائنات الحية المحورة للاستخدام المعزول (الفقرة 2 من المادة 6)",
                   "multiple": false,
                   "options": [
                      {
@@ -3099,7 +3090,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3115,9 +3106,9 @@
                {
                   "key": "Q112_g",
                   "section": "Article20",
-                  "number": "g",
+                  "number": "‌ز",
                   "type": "option",
-                  "title": "Notifications regarding the release under your country’s jurisdiction that leads, or may lead, to an unintentional transboundary movement of a LMO that is likely to have significant adverse effects on biological diversity (Article 17, paragraph 1)",
+                  "title": "إخطارات فيما يتعلق بالإطلاق في إطار الولاية القضائية لبلدك تؤدي، أو من الممكن أن تؤدي، إلى حركات عابرة للحدود عن غير عمد لكائن حي محور ومن المرجح أن يكون لها آثار ضارة كبيرة على التنوع البيولوجي (الفقرة 1 من المادة 17)",
                   "multiple": false,
                   "options": [
                      {
@@ -3126,7 +3117,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3142,9 +3133,9 @@
                {
                   "key": "Q112_h",
                   "section": "Article20",
-                  "number": "h",
+                  "number": "‌ح",
                   "type": "option",
-                  "title": "Information concerning cases of illegal transboundary movements of LMOs (Article 25, paragraph 3)",
+                  "title": "معلومات عن حالات الحركات العابرة للحدود غير المشروعة للكائنات الحية المحورة (الفقرة 3 من المادة 25)",
                   "multiple": false,
                   "options": [
                      {
@@ -3153,7 +3144,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3169,9 +3160,9 @@
                {
                   "key": "Q112_i",
                   "section": "Article20",
-                  "number": "i",
+                  "number": "ط",
                   "type": "option",
-                  "title": "Decisions regarding the importation of LMOs for intentional introduction into the environment (Article 10, paragraph 3)",
+                  "title": "‌القرارات المتعلقة باستيراد الكائنات الحية المحورة لإدخالها عن عمد في البيئة (الفقرة 3 من المادة 10)",
                   "multiple": false,
                   "options": [
                      {
@@ -3180,7 +3171,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3196,7 +3187,7 @@
                {
                   "key": "Q112_j",
                   "section": "Article20",
-                  "number": "j",
+                  "number": "‌ي",
                   "type": "option",
                   "title": "معلومات عن تطبيق اللوائح المحلية على واردات معينة من الكائنات الحية المحورة (الفقرة 4 من المادة 14)",
                   "multiple": false,
@@ -3207,7 +3198,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3223,9 +3214,9 @@
                {
                   "key": "Q112_k",
                   "section": "Article20",
-                  "number": "k",
+                  "number": "‌ك",
                   "type": "option",
-                  "title": "Decisions regarding the domestic use of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing (Article 11, paragraph 1)",
+                  "title": "القرارات المتعلقة بالاستخدام المحلي للكائنات الحية المحورة التي قد تخضع لحركة عابرة للحدود لاستخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز (الفقرة 1 من المادة 11)",
                   "multiple": false,
                   "options": [
                      {
@@ -3234,7 +3225,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3250,9 +3241,9 @@
                {
                   "key": "Q112_l",
                   "section": "Article20",
-                  "number": "l",
+                  "number": "‌ل",
                   "type": "option",
-                  "title": "Decisions regarding the import of LMOs intended for direct use as food or feed, or for processing that are taken under domestic regulatory frameworks (Article 11, paragraph 4) or in accordance with Annex III to the Protocol (Article 11, paragraph 6)",
+                  "title": "القرارات المتعلقة باستيراد الكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو كأعلاف أو للتجهيز المتخذة بموجب الأطر التنظيمية المحلية (الفقرة 4 من المادة 11) أو وفقا للمرفق الثالث بالبروتوكول (الفقرة 6 من المادة 11)",
                   "multiple": false,
                   "options": [
                      {
@@ -3261,7 +3252,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3277,7 +3268,7 @@
                {
                   "key": "Q112_m",
                   "section": "Article20",
-                  "number": "m",
+                  "number": "م‌",
                   "type": "option",
                   "title": "الإعلانات المتعلقة بالإطار الذي يتعين استخدامه للكائنات الحية المحورة المراد استخدامها مباشرة كأغذية أو أعلاف أو للتجهيز (الفقرة 6 من المادة 11)",
                   "multiple": false,
@@ -3288,7 +3279,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3304,9 +3295,9 @@
                {
                   "key": "Q112_n",
                   "section": "Article20",
-                  "number": "n",
+                  "number": "ن",
                   "type": "option",
-                  "title": "استعراض وتغيير القرارات المتعلقة بالحركات العابرة للحدود عن عمد للكائنات الحية المحورة (الفقرة 1 من المادة 12)",
+                  "title": "‌استعراض وتغيير القرارات المتعلقة بالحركات العابرة للحدود عن عمد للكائنات الحية المحورة (الفقرة 1 من المادة 12)",
                   "multiple": false,
                   "options": [
                      {
@@ -3315,7 +3306,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3331,9 +3322,9 @@
                {
                   "key": "Q112_o",
                   "section": "Article20",
-                  "number": "o",
+                  "number": "س",
                   "type": "option",
-                  "title": "Cases where intentional transboundary movement may take place at the same time as the movement is notified to the Party of import (Article 13, paragraph 1 (a))",
+                  "title": "‌الحالات التي قد تتم فيها الحركة العابرة للحدود للكائنات الحية المحورة في نفس وقت إخطار طرف الاستيراد (الفقرة 1(أ) من المادة 13)",
                   "multiple": false,
                   "options": [
                      {
@@ -3342,7 +3333,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3358,9 +3349,9 @@
                {
                   "key": "Q112_p",
                   "section": "Article20",
-                  "number": "p",
+                  "number": "‌ع",
                   "type": "option",
-                  "title": "LMOs granted exemption status by each Party (Article 13, paragraph 1 (b))",
+                  "title": "الكائنات الحية المحورة التي مُنحت صفة الإعفاء من كل طرف (الفقرة 1(ب) من المادة 13)",
                   "multiple": false,
                   "options": [
                      {
@@ -3369,7 +3360,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3385,7 +3376,7 @@
                {
                   "key": "Q112_q",
                   "section": "Article20",
-                  "number": "q",
+                  "number": "‌ف",
                   "type": "option",
                   "title": "موجزات عن تقييمات المخاطر أو الاستعراضات البيئية للكائنات الحية المحورة الناشئة عن العمليات التنظيمية والمعلومات ذات الصلة الخاصة بنواتجها (الفقرة 3(ج) من المادة 20)",
                   "multiple": false,
@@ -3396,7 +3387,7 @@
                      },
                      {
                         "value": "true.availableNotOnBch",
-                        "title": "Information available but not in the BCH"
+                        "title": "المعلومات متوفرة ولكن غير متاحة في غرفة تبادل معلومات السلامة الأحيائية"
                      },
                      {
                         "value": "true.availablePartialyOnBch",
@@ -3416,7 +3407,7 @@
             "section": "Article20",
             "number": "113",
             "type": "lstring",
-            "title": "Please provide a brief explanation if you answered that the information is available <i>but not in the BCH or only partially available in the</i> BCH to any item under question 112",
+            "title": "يرجى تقديم شرح موجز إذا كانت إجابتك هي أن المعلومات متاحة <i>ولكن ليس في غرفة تبادل معلومات السلامة الأحيائية أو متاحة جزئيا فقط في غرفة تبادل معلومات السلامة الأحيائية</i>  لأي بند تحت السؤال 112",
             "multiple": false
          },
          {
@@ -3424,7 +3415,7 @@
             "section": "Article20",
             "number": "114",
             "type": "option",
-            "title": "Has your country established a mechanism for strengthening the capacity of the BCH National Focal Point to perform its administrative functions?",
+            "title": "هل أنشأ بلدك آلية لتعزيز قدرات نقطة الاتصال الوطنية التابعة لغرفة تبادل معلومات السلامة الأحيائية للقيام بوظائفها الإدارية؟",
             "multiple": false,
             "options": [
                {
@@ -3433,7 +3424,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3448,7 +3439,7 @@
             "section": "Article20",
             "number": "115",
             "type": "option",
-            "title": "Has your country established a mechanism for the coordination among the BCH National Focal Point, the Cartagena Protocol focal point, and the competent national authority(ies) for making information available to the BCH? (select all that apply)",
+            "title": "هل أنشأ بلدك آلية للتنسيق بين نقطة الاتصال الوطنية التابعة لغرفة تبادل معلومات السلامة الأحيائية ونقطة الاتصال التابعة لبروتوكول قرطاجنة والسلطة (السلطات) الوطنية المختصة لإتاحة المعلومات لغرفة تبادل معلومات السلامة الأحيائية؟ [يرجى التحديد]",
             "multiple": false,
             "options": [
                {
@@ -3457,7 +3448,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3472,12 +3463,12 @@
             "section": "Article20",
             "number": "116",
             "type": "option",
-            "title": "Does your country use the information available in the BCH in its decision making processes on LMOs?",
+            "title": "هل يستخدم بلدك المعلومات المتاحة في غرفة تبادل معلومات السلامة الأحيائية في عمليات صنع القرارات بشأن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -3489,7 +3480,7 @@
                },
                {
                   "value": "false.na",
-                  "title": "Not applicable (no decisions were taken)"
+                  "title": "لا ينطبق (لم تتخذ قرارات)"
                }
             ]
          },
@@ -3498,7 +3489,7 @@
             "section": "Article20",
             "number": "117",
             "type": "option",
-            "title": "Has your country experienced difficulties accessing or using the BCH?",
+            "title": "هل واجه بلدك صعوبات في الوصول إلى غرفة تبادل معلومات السلامة الأحيائية أو استخدامها؟",
             "multiple": false,
             "options": [
                {
@@ -3518,24 +3509,24 @@
             "section": "Article20",
             "number": "118",
             "type": "option",
-            "title": "In the current reporting period, how many biosafety-related events (e.g. seminars, workshops, press conferences, educational events) has your country organized?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، كم عدد الأحداث المتصلة بالسلامة الأحيائية (مثل الحلقات الدراسية وحلقات العمل والمؤتمرات الصحفية والأحداث التعليمية) التي نظمها بلدك؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 24"
+                  "title": "10 إلى 24"
                },
                {
                   "value": "25+",
@@ -3549,24 +3540,24 @@
             "section": "Article20",
             "number": "119",
             "type": "option",
-            "title": "In the current reporting period, how many biosafety-related publications has your country published?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، كم عدد المطبوعات المتعلقة بالسلامة الأحيائية التي نشرها بلدك؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 9"
+                  "title": "1 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
-                  "title": "50 to 99"
+                  "title": "50 إلى 99"
                },
                {
                   "value": "100+",
@@ -3580,7 +3571,7 @@
             "section": "Article20",
             "number": "120",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 20 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 20 في بلدك",
             "multiple": false
          }
       ]
@@ -3594,7 +3585,7 @@
             "section": "Article21",
             "number": "121",
             "type": "option",
-            "title": "Has your country established procedures to protect confidential information received under the Protocol?",
+            "title": "هل وضع بلدك إجراءات لحماية المعلومات السرية المستلمة بموجب البروتوكول؟",
             "multiple": false,
             "options": [
                {
@@ -3603,7 +3594,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3618,12 +3609,12 @@
             "section": "Article21",
             "number": "122",
             "type": "option",
-            "title": "Does your country allow the notifier to identify information that is to be treated as confidential?",
+            "title": "هل يسمح بلدك للمخطر بتحديد المعلومات التي يتعين تناولها كمعلومات سرية؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "Yes, always"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -3641,21 +3632,21 @@
             "section": "Article21",
             "number": "123",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 21 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 21 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article22",
-      "title": "Article 22 – Capacity-building",
+      "title": "المادة 22 - بناء القدرات",
       "questions": [
          {
             "key": "Q124",
             "section": "Article22",
             "number": "124",
             "type": "option",
-            "title": "هل لدى بلدك تمويل موثوق ويمكن التنبؤ به لبناء القدرات من أجل تنفيذ البروتوكول تنفيذا فعالا؟(3)",
+            "title": "هل لدى بلدك تمويل يمكن التنبؤ به وموثوق لبناء القدرات من أجل التنفيذ الفعال للبروتوكول؟",
             "multiple": false,
             "options": [
                {
@@ -3664,7 +3655,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3679,7 +3670,7 @@
             "section": "Article22",
             "number": "125",
             "type": "option",
-            "title": "Has your country received external support or benefited from collaborative activities with other Parties in the development and/or strengthening of human resources and institutional capacities in biosafety?",
+            "title": "هل حصل بلدك على دعم خارجي أو استفاد من الأنشطة التعاونية مع الأطراف الأخرى في تنمية و/أو تعزيز الموارد البشرية والقدرات المؤسسية في مجال السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -3688,7 +3679,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3714,20 +3705,20 @@
             "section": "Article22",
             "number": "126",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 125, how were these resources made available? (select all that apply)",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 125، كيف أتيحت هذه الموارد؟ [يرجى التحديد]",
             "multiple": true,
             "options": [
                {
                   "value": "channels.bilateral",
-                  "title": "Bilateral channels"
+                  "title": "قنوات ثنائية"
                },
                {
                   "value": "channels.regional",
-                  "title": "Regional channels"
+                  "title": "قنوات إقليمية"
                },
                {
                   "value": "channels.multilateral",
-                  "title": "Multilateral channels"
+                  "title": "قنوات متعددة الأطراف"
                }
             ],
             "mandatory": true
@@ -3737,7 +3728,7 @@
             "section": "Article22",
             "number": "127",
             "type": "option",
-            "title": "Has your country provided support to other Parties in the development and/or strengthening of human resources and institutional capacities in biosafety?",
+            "title": "هل قدم بلدك دعما إلى الأطراف الأخرى لتنمية و/أو تعزيز الموارد البشرية والقدرات المؤسسية في مجال السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -3746,7 +3737,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3771,20 +3762,20 @@
             "section": "Article22",
             "number": "128",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 127, how were these resources made available? (select all that apply)",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 127، كيف أتيحت هذه الموارد؟ [يرجى التحديد]",
             "multiple": true,
             "options": [
                {
                   "value": "channels.bilateral",
-                  "title": "Bilateral channels"
+                  "title": "قنوات ثنائية"
                },
                {
                   "value": "channels.regional",
-                  "title": "Regional channels"
+                  "title": "قنوات إقليمية"
                },
                {
                   "value": "channels.multilateral",
-                  "title": "Multilateral channels"
+                  "title": "قنوات متعددة الأطراف"
                }
             ],
             "mandatory": true
@@ -3794,7 +3785,7 @@
             "section": "Article22",
             "number": "129",
             "type": "option",
-            "title": "In the reporting period, has your country initiated a process to access funds from the Global Environment Facility (GEF) for building capacity in biosafety?",
+            "title": "في الفترة المشمولة بالتقرير، هل شرع بلدك في عملية للحصول على أموال من مرفق البيئة العالمية لبناء القدرات في مجال السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -3824,12 +3815,12 @@
             "section": "Article22",
             "number": "130",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 129, how would you characterize the process?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 129، كيف تصف هذه العملية؟",
             "multiple": false,
             "options": [
                {
                   "value": "veryEasy",
-                  "title": "Very easy"
+                  "title": "سهلة للغاية"
                },
                {
                   "value": "easy",
@@ -3845,7 +3836,7 @@
                },
                {
                   "value": "veryDifficult",
-                  "title": "Very difficult"
+                  "title": "صعبة للغاية"
                }
             ],
             "mandatory": true
@@ -3855,7 +3846,7 @@
             "section": "Article22",
             "number": "131",
             "type": "term",
-            "title": "In the current reporting period, has your country undertaken activities for the development and/or strengthening of human resources and institutional capacities in biosafety?",
+            "title": "خلال المرحلة الحالية المشمولة بالتقرير، هل اضطلع بلدك بأنشطة لتنمية و/أو تعزيز الموارد البشرية والقدرات المؤسسية في مجال السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -3864,7 +3855,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -3890,16 +3881,16 @@
             "section": "Article22",
             "number": "132",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 131, in which of the following areas were these activities undertaken? (select all that apply)” ",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 131، في أي مجال من المجالات التالية اضطلع فيها بهذه الأنشطة؟ (اختر كل ما ينطبق) ",
             "multiple": true,
             "options": [
                {
                   "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
-                  "title": "Institutional capacity and human resources"
+                  "title": "القدرات المؤسسية والموارد البشرية"
                },
                {
                   "value": "68250AA6-75F1-470D-A8E7-85ECDF703D00",
-                  "title": "Integration of biosafety in cross-sectoral and sectoral legislation, policies and institutions (mainstreaming biosafety)"
+                  "title": "إدماج السلامة الأحيائية في التشريعات والسياسات والمؤسسات متعددة القطاعات والقطاعية (تعميم السلامة الأحيائية)"
                },
                {
                   "value": "7C980FF4-3C5B-4711-81F9-BA6F28C12598",
@@ -3911,15 +3902,15 @@
                },
                {
                   "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
-                  "title": "التوعية العامة والمشاركة والتثقيف في مجال السلامة الأحيائية"
+                  "title": "التوعية العامة والمشاركة والتعليم في مجال السلامة الأحيائية"
                },
                {
                   "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
-                  "title": "Information exchange and data management including participation in the Biosafety Clearing-House"
+                  "title": "تبادل المعلومات وإدارة البيانات بما في ذلك المشاركة في غرفة تبادل معلومات السلامة الأحيائية"
                },
                {
                   "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
-                  "title": "التعاون العلمي والتقني والمؤسسي على المستويات دون الإقليمية والإقليمية والدولية"
+                  "title": "التعاون العلمي والتقني والمؤسسي على الصعيد دون الإقليمي والإقليمي والدولي نقل التكنولوجيا"
                },
                {
                   "value": "6F6C058C-6741-4878-A448-AE56299821A8",
@@ -3927,31 +3918,31 @@
                },
                {
                   "value": "0FF8F112-C0E9-4A18-83E1-40D4EF61503E",
-                  "title": "تحديد هوية الكائنات الحية المحورة وكشفها"
+                  "title": "تحديد الكائنات الحية المحورة بما في ذلك الكشف عنها"
                },
                {
                   "value": "76DB23A3-F880-4AC8-8602-DF9DC45EECAF",
-                  "title": "Socio-economic considerations"
+                  "title": "الاعتبارات الاجتماعية والاقتصادية"
                },
                {
                   "value": "A16727EE-FE61-43FF-8530-35A9C7261247",
-                  "title": "Implementation of the documentation requirements under Article 18.2 of the Protocol"
+                  "title": "تنفيذ متطلبات التوثيق بموجب المادة 18-2 من البروتوكول"
                },
                {
                   "value": "3E7615C5-7DFC-4E04-9D26-6C80B4B1DED8",
-                  "title": "التعامل مع المعلومات السرية "
+                  "title": "تناول المعلومات السرية "
                },
                {
                   "value": "D9AC6B7F-316B-483B-8E74-A5EC87343C81",
-                  "title": "إجراءات مواجهة النقل غير المقصود و/أو غير القانوني للكائنات الحية المحورة عبر الحدود"
+                  "title": "تدابير لمعالجة الحركات العابرة للحدود عن غير عمد و/أو غير المشروعة للكائنات الحية المحورة"
                },
                {
                   "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
-                  "title": "الأبحاث العلمية في السلامة الأحيائية المتعلقة بالكائنات الحية المحورة"
+                  "title": "البحوث العلمية في مجال السلامة الأحيائية المتعلقة بالكائنات الحية المحورة"
                },
                {
                   "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
-                  "title": "أخذ المخاطر على صحة الإنسان في الاعتبار"
+                  "title": "مراعاة المخاطر على الصحة البشرية"
                },
                {
                   "value": "667CD9B1-4571-4C2A-A459-F78E004D7D96",
@@ -3959,7 +3950,7 @@
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -3970,7 +3961,7 @@
             "section": "Article22",
             "number": "133",
             "type": "option",
-            "title": "In the current reporting period, has your country carried out a capacity-building needs assessment?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل أجرى بلدك تقييما بشأن الاحتياجات من حيث بناء القدرات؟",
             "multiple": false,
             "options": [
                {
@@ -3989,7 +3980,7 @@
             "section": "Article22",
             "number": "134",
             "type": "option",
-            "title": "Does your country still have capacity-building needs?",
+            "title": "هل ما زال لدى بلدك احتياجات من حيث بناء القدرات؟",
             "multiple": false,
             "options": [
                {
@@ -4018,16 +4009,16 @@
             "section": "Article22",
             "number": "135",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 134, which of the following areas still need capacity-building (select all that apply)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 134، في أي مجال من المجالات التالية لا تزال هناك حاجة إلى بناء القدرات (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
-                  "title": "Institutional capacity and human resources"
+                  "title": "القدرات المؤسسية والموارد البشرية"
                },
                {
                   "value": "68250AA6-75F1-470D-A8E7-85ECDF703D00",
-                  "title": "Integration of biosafety in cross-sectoral and sectoral legislation, policies and institutions (mainstreaming biosafety)"
+                  "title": "إدماج السلامة الأحيائية في التشريعات والسياسات والمؤسسات متعددة القطاعات والقطاعية (تعميم السلامة الأحيائية)"
                },
                {
                   "value": "7C980FF4-3C5B-4711-81F9-BA6F28C12598",
@@ -4039,15 +4030,15 @@
                },
                {
                   "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
-                  "title": "التوعية العامة والمشاركة والتثقيف في مجال السلامة الأحيائية"
+                  "title": "التوعية العامة والمشاركة والتعليم في مجال السلامة الأحيائية"
                },
                {
                   "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
-                  "title": "Information exchange and data management including participation in the Biosafety Clearing-House"
+                  "title": "تبادل المعلومات وإدارة البيانات بما في ذلك المشاركة في غرفة تبادل معلومات السلامة الأحيائية"
                },
                {
                   "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
-                  "title": "التعاون العلمي والتقني والمؤسسي على المستويات دون الإقليمية والإقليمية والدولية"
+                  "title": "التعاون العلمي والتقني والمؤسسي على الصعيد دون الإقليمي والإقليمي والدولي نقل التكنولوجيا"
                },
                {
                   "value": "6F6C058C-6741-4878-A448-AE56299821A8",
@@ -4055,31 +4046,31 @@
                },
                {
                   "value": "0FF8F112-C0E9-4A18-83E1-40D4EF61503E",
-                  "title": "Sampling, detection and identification of LMOs"
+                  "title": "تحديد الكائنات الحية المحورة بما في ذلك الكشف عنها"
                },
                {
                   "value": "76DB23A3-F880-4AC8-8602-DF9DC45EECAF",
-                  "title": "Socio-economic considerations"
+                  "title": "الاعتبارات الاجتماعية والاقتصادية"
                },
                {
                   "value": "A16727EE-FE61-43FF-8530-35A9C7261247",
-                  "title": "Implementation of the documentation requirements for handling, transport, packaging and identification"
+                  "title": "تنفيذ متطلبات التوثيق بموجب المادة 18-2 من البروتوكول"
                },
                {
                   "value": "3E7615C5-7DFC-4E04-9D26-6C80B4B1DED8",
-                  "title": "Handling of confidential information "
+                  "title": "مناولة المعلومات السرية "
                },
                {
                   "value": "D9AC6B7F-316B-483B-8E74-A5EC87343C81",
-                  "title": "إجراءات مواجهة النقل غير المقصود و/أو غير القانوني للكائنات الحية المحورة عبر الحدود"
+                  "title": "تدابير لمعالجة الحركات العابرة للحدود عن غير عمد و/أو غير المشروعة للكائنات الحية"
                },
                {
                   "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
-                  "title": "الأبحاث العلمية في السلامة الأحيائية المتعلقة بالكائنات الحية المحورة"
+                  "title": "البحوث العلمية في مجال السلامة الأحيائية المتعلقة بالكائنات الحية المحورة"
                },
                {
                   "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
-                  "title": "أخذ المخاطر على صحة الإنسان في الاعتبار"
+                  "title": "مراعاة المخاطر على الصحة البشرية"
                },
                {
                   "value": "667CD9B1-4571-4C2A-A459-F78E004D7D96",
@@ -4087,7 +4078,7 @@
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -4098,7 +4089,7 @@
             "section": "Article22",
             "number": "136",
             "type": "option",
-            "title": "Has your country developed a capacity-building strategy or action plan?",
+            "title": "هل أعد بلدك استراتيجية أو خطة عمل لبناء القدرات؟",
             "multiple": false,
             "options": [
                {
@@ -4117,7 +4108,7 @@
             "section": "Article22",
             "number": "137",
             "type": "option",
-            "title": "هل يطبق بلدك آلية وظيفية وطنية لتنسيق مبادرات بناء القدرات في مجال السلامة الأحيائية؟ (3)",
+            "title": "هل لدى بلدك آلية وطنية عاملة لتنسيق مبادرات بناء القدرة في مجال السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4143,14 +4134,14 @@
    },
    {
       "key": "Article23",
-      "title": "Article 23 – Public awareness and participation",
+      "title": "المادة 23 - التوعية العامة والمشاركة",
       "questions": [
          {
             "key": "Q139",
             "section": "Article23",
             "number": "139",
             "type": "option",
-            "title": "Is biosafety public awareness, education and/or participation addressed in legislation or policy in your country?",
+            "title": "هل تتناول التشريعات أو السياسات في بلدك التوعية العامة و/أو التعليم و/أو المشاركة فيما يتعلق بالسلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4159,7 +4150,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -4173,7 +4164,7 @@
             "section": "Article23",
             "number": "140",
             "type": "option",
-            "title": "In the current reporting period, has your country cooperated with other States and international bodies in relation to public awareness, education and participation?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل تعاون بلدك مع دول وهيئات دولية أخرى فيما يتعلق بالتوعية العامة والتعليم والمشاركة؟",
             "multiple": false,
             "options": [
                {
@@ -4193,7 +4184,7 @@
             "section": "Article23",
             "number": "141",
             "type": "option",
-            "title": "Has your country established a mechanism to ensure public access to information on LMOs?",
+            "title": "هل أنشأ بلدك آلية لضمان إمكانية حصول عامة الجمهور على معلومات بشأن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4202,7 +4193,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -4217,7 +4208,7 @@
             "section": "Article23",
             "number": "142",
             "type": "option",
-            "title": "Does your country have in place a national communication strategy on biosafety?",
+            "title": "هل لدى بلدك استراتيجية اتصال وطنية بشأن السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4237,7 +4228,7 @@
             "section": "Article23",
             "number": "143",
             "type": "option",
-            "title": "هل لدى بلدك أي برامج للتوعية والتثقيف بشأن السلامة الأحيائية؟ (3)",
+            "title": "هل لدى بلدك أي برامج توعية وترويج بشأن السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4257,7 +4248,7 @@
             "section": "Article23",
             "number": "144",
             "type": "option",
-            "title": "Does your country currently have a national biosafety website?",
+            "title": "هل لدى بلدك حاليا موقعا وطنيا على الإنترنت بشأن السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4281,15 +4272,15 @@
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
@@ -4313,7 +4304,7 @@
             "section": "Article23",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -4331,28 +4322,28 @@
             "section": "Article23",
             "number": "146",
             "type": "option",
-            "title": "How many educational materials and/or online modules on biosafety are available and accessible to the public in your country?",
+            "title": "كم عدد المواد التعليمية و/أو الوحدات القائمة على الإنترنت بشأن السلامة الأحيائية المتاحة ويمكن للجمهور الوصول إليها في بلدك؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 24"
+                  "title": "10 إلى 24"
                },
                {
                   "value": "25+",
-                  "title": "25 to 99"
+                  "title": "25 إلى 99"
                },
                {
                   "value": "100+",
@@ -4376,7 +4367,7 @@
             "section": "Article23",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -4394,7 +4385,7 @@
             "section": "Article23",
             "number": "147",
             "type": "option",
-            "title": "Has your country established a mechanism to consult the public in the decision-making process regarding LMOs?",
+            "title": "هل أنشأ بلدك آلية لاستشارة الجمهور في عملية صنع القرار بشأن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4403,7 +4394,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -4418,7 +4409,7 @@
             "section": "Article23",
             "number": "148",
             "type": "option",
-            "title": "Has your country informed the public about existing modalities for public participation in the decision-making process regarding LMOs?",
+            "title": "هل أبلغ بلدك الجمهور بالطرائق الحالية للمشاركة العامة في عملية صنع القرار المتعلق بالكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4427,7 +4418,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -4452,16 +4443,16 @@
             "section": "Article23",
             "number": "149",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 148, please indicate the modalities used to inform the public: (select all that apply)",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 148، يرجى بيان الطرائق المستخدمة لإبلاغ الجمهور: (اختر كل ما ينطبق)",
             "multiple": true,
             "options": [
                {
                   "value": "4E205CD9-9958-497F-A760-F8321771AB3A",
-                  "title": "National websites"
+                  "title": "مواقع الإنترنت الوطنية"
                },
                {
                   "value": "6400c117-0d9a-4e5d-a0df-ac696f7c0611",
-                  "title": "Newspaper"
+                  "title": "الصحف"
                },
                {
                   "value": "38A7618F-D953-4e5c-8AD1-8AC794971EB0",
@@ -4469,19 +4460,19 @@
                },
                {
                   "value": "E8FAF86C-4202-4ABB-9B89-D3D2F2B2BABF",
-                  "title": "Mailing lists"
+                  "title": "القوائم البريدية"
                },
                {
                   "value": "51792A07-B3C0-4F7B-830E-0741635F57BB",
-                  "title": "Public hearings"
+                  "title": "الجلسات العلنية"
                },
                {
                   "value": "887CD9B1-4571-5Z6A-A459-F78E004D7D28",
-                  "title": "Social media"
+                  "title": "وسائل التواصل الاجتماعي"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ],
@@ -4492,16 +4483,16 @@
             "section": "Article23",
             "number": "150",
             "type": "option",
-            "title": "In the current reporting period, how many times has your country consulted the public in the decision-making process regarding LMOs?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، كم عدد المرات التي استشار فيها بلدك الجمهور في عملية صنع القرار المتعلق بالكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None (decisions taken without consultation)"
+                  "title": "لا يوجد (القرارات اتخذت بدون استشارة)"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
@@ -4509,7 +4500,7 @@
                },
                {
                   "value": "na",
-                  "title": "Not applicable (no decisions were taken)"
+                  "title": "لا ينطبق (لم تتخذ قرارات)"
                }
             ],
             "mandatory": true
@@ -4519,7 +4510,7 @@
             "section": "Article23",
             "number": "151",
             "type": "option",
-            "title": "Has your country informed the public about the means to access the Biosafety Clearing-House?",
+            "title": "هل أبلغ بلدك الجمهور بوسائل الوصول إلى غرفة تبادل معلومات السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
@@ -4538,21 +4529,21 @@
             "section": "Article23",
             "number": "152",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 23 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 23 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article24",
-      "title": "Article 24 – Non-Parties",
+      "title": "المادة 24 - غير الأطراف",
       "questions": [
          {
             "key": "Q153",
             "section": "Article24",
             "number": "153",
             "type": "option",
-            "title": "Has your country entered into any bilateral, regional, or multilateral agreement with non-Parties regarding transboundary movements of LMOs?",
+            "title": "هل دخل بلدك في ترتيب ثنائي أو إقليمي أو متعدد الأطراف مع بلد من غير الأطراف فيما يتعلق بالحركات العابرة للحدود للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4571,7 +4562,7 @@
             "section": "Article24",
             "number": "154",
             "type": "option",
-            "title": "In the current reporting period, has your country imported LMOs from a non-Party?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل استورد بلدك كائنات حية محورة من بلد من غير الأطراف؟",
             "multiple": false,
             "options": [
                {
@@ -4597,7 +4588,7 @@
             "section": "Article24",
             "number": "155",
             "type": "option",
-            "title": "In the current reporting period, has your country exported LMOs to a non-Party?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل صدر بلدك كائنات حية محورة إلى بلد من غير الأطراف؟",
             "multiple": false,
             "options": [
                {
@@ -4623,12 +4614,12 @@
             "section": "Article24",
             "number": "156",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 154 and/or 155, were the transboundary movements of LMOs consistent with the objective of the Cartagena Protocol on Biosafety?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 154 و/أو 155، هل كانت الحركات العابرة للحدود للكائنات الحية المحورة متسقة مع هدف بروتوكول قرطاجنة السلامة الأحيائية؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "نعم"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -4646,22 +4637,22 @@
             "section": "Article24",
             "number": "157",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 24 in your country:",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 24 في بلدك:",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article25",
-      "title": "Article 25 – Illegal transboundary movements<sup>3</sup>",
-      "footnote": "<sup>3</sup>In accordance with the operational definition adopted in decision CP VIII/16, “‘Illegal transboundary movement’ is a transboundary movement of living modified organisms carried out in contravention of the domestic measures to implement the Protocol that have been adopted by the Party concerned”.",
+      "title": "المادة 25 - الحركات العابرة للحدود غير المشروعة<sup>3</sup>",
+      "footnote": "<sup>3</sup>وفقا للتعريف التشغيلي المعتمد في المقرر CP VIII/16، فإن، \"\"النقل غير المشروع عبر الحدود\" هو نقل عبر الحدود للكائنات الحية المحورة يتم بالمخالفة للتدابير المحلية لتنفيذ البروتوكول التي اعتمدها الطرف المعني \".",
       "questions": [
          {
             "key": "Q158",
             "section": "Article25",
             "number": "158",
             "type": "option",
-            "title": "Has your country adopted domestic measures aimed at preventing and/or penalizing transboundary movements of LMOs carried out in contravention of its domestic measures to implement the Cartagena Protocol?",
+            "title": "هل اعتمد بلدك تدابير محلية تهدف إلى منع الحركات العابرة للحدود للكائنات الحية المحورة المضطلع بها بما يتعارض مع تدابير البلد المحلية المتعلقة بتنفيذ بروتوكول قرطاجنة و/أو معاقبة المسؤولين عنها؟",
             "multiple": false,
             "options": [
                {
@@ -4670,7 +4661,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, to some extent",
+                  "title": "نعم، إلى حد ما",
                   "type": "lstring"
                },
                {
@@ -4685,24 +4676,24 @@
             "section": "Article25",
             "number": "159",
             "type": "option",
-            "title": "In the current reporting period, how many cases of illegal transboundary movements of LMOs has your country become aware of?",
+            "title": "في الفترة المشمولة بالتقرير، كم عدد حالات الحركات العابرة للحدود غير المشروعة للكائنات الحية المحورة الذي أصبح بلدك على علم بها؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "أكثر من 10"
+                  "title": "10 أو أكثر"
                }
             ],
             "mandatory": true,
@@ -4722,7 +4713,7 @@
             "section": "Article25",
             "number": "160",
             "type": "option",
-            "title": "If you indicated <i>under question 159</i> that <i>your country became aware of cases of illegal transboundary movements</i>, has the origin of the LMO(s) been established?",
+            "title": "إذا كانت إجابتك <i>على السؤال 159 هي أن بلدك أصبح على علم بالحركات العابرة للحدود غير المشروعة</i>، هل تم تحديد منشأ الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4731,7 +4722,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Yes, some cases"
+                  "title": "نعم، في بعض الحالات"
                },
                {
                   "value": "false",
@@ -4744,21 +4735,21 @@
             "section": "Article25",
             "number": "161",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 25 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 25 في بلدك",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article26",
-      "title": "Article 26 – Socio-economic considerations",
+      "title": "المادة 26 - الاعتبارات الاجتماعية والاقتصادية",
       "questions": [
          {
             "key": "Q162",
             "section": "Article26",
             "number": "162",
             "type": "option",
-            "title": "Does your country have any specific approaches or requirements that facilitate how socioeconomic considerations should be taken into account in LMO decision-making?",
+            "title": "هل لدى بلدك أي نُهُج أو متطلبات محددة تيسر كيفية مراعاة الاعتبارات الاجتماعية والاقتصادية في صناعة القرار المتعلق بالكائنات الحية المحورة؟(3)",
             "multiple": false,
             "options": [
                {
@@ -4777,12 +4768,12 @@
             "section": "Article26",
             "number": "163",
             "type": "option",
-            "title": "In the current reporting period, have socioeconomic considerations arising from the impact of LMOs been taken into account in decision-making?",
+            "title": "في الفترة الحالية المشمولة بالتقرير، هل تم أخذ الاعتبارات الاجتماعية والاقتصادية الناشئة عن أثر الكائنات الحية المحورة في الاعتبار عند اتخاذ القرار؟",
             "multiple": false,
             "options": [
                {
                   "value": "true",
-                  "title": "نعم"
+                  "title": "نعم، دائما"
                },
                {
                   "value": "true.some",
@@ -4794,7 +4785,7 @@
                },
                {
                   "value": "false.na",
-                  "title": "Not applicable (no decisions were taken)"
+                  "title": "لا ينطبق (لم تتخذ قرارات)"
                }
             ],
             "mandatory": true
@@ -4804,24 +4795,24 @@
             "section": "Article26",
             "number": "164",
             "type": "option",
-            "title": "How many peer-reviewed published materials has your country used for the purpose of elaborating or determining national actions with regard to socioeconomic considerations?",
+            "title": "كم عدد المواد المنشورة التي خضعت لاستعراض النظراء التي استخدمها بلدك لغرض وضع أو تحديد الإجراءات الوطنية فيما يتعلق بالاعتبارات الاجتماعية والاقتصادية؟",
             "multiple": false,
             "options": [
                {
                   "value": "0",
-                  "title": "None"
+                  "title": "لا يوجد"
                },
                {
                   "value": "1+",
-                  "title": "1 to 4"
+                  "title": "1 إلى 4"
                },
                {
                   "value": "5+",
-                  "title": "5 to 9"
+                  "title": "5 إلى 9"
                },
                {
                   "value": "10+",
-                  "title": "10 to 49"
+                  "title": "10 إلى 49"
                },
                {
                   "value": "50+",
@@ -4845,7 +4836,7 @@
             "section": "Article26",
             "number": "",
             "type": "option",
-            "title": "Is this number adequate",
+            "title": "هل هذا العدد كاف",
             "multiple": false,
             "options": [
                {
@@ -4863,7 +4854,7 @@
             "section": "Article26",
             "number": "165",
             "type": "option",
-            "title": "Has your country cooperated with other Parties on research and information exchange on any socioeconomic impacts of LMOs?",
+            "title": "هل تعاون بلدك مع أطراف أخرى بشأن البحوث وتبادل المعلومات المتعلقة بأي آثار اجتماعية واقتصادية للكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -4882,7 +4873,7 @@
             "section": "Article26",
             "number": "166",
             "type": "lstring",
-            "title": "Here you may provide further details on the implementation of Article 26 in your country",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن تنفيذ المادة 26 في بلدك",
             "multiple": false
          }
       ]
@@ -4896,28 +4887,28 @@
             "section": "Article28",
             "number": "167",
             "type": "option",
-            "title": "In the current reporting period, how much funding (in the equivalent of US dollars) has your country mobilized to support implementation of the Cartagena Protocol beyond the regular national budgetary allocation?",
+            "title": "في الفترة المشمولة بالتقرير، ما حجم التمويل (بما يعادل الدولارات الأمريكية) الذي حشده بلدك لدعم تنفيذ بروتوكول قرطاجنة بما يتجاوز مخصصات الميزانية الوطنية العادية؟",
             "multiple": false,
             "options": [
                {
                   "value": "USD0",
-                  "title": "Nothing"
+                  "title": "لا يوجد"
                },
                {
                   "value": "USD1-4999",
-                  "title": "1 to 4,999 USD"
+                  "title": "1 إلى 999 4 دولارا أمريكيا"
                },
                {
                   "value": "USD5000-49999",
-                  "title": "5,000 to 49,999 USD"
+                  "title": "5,000 إلى 999 49 دولارا أمريكيا"
                },
                {
                   "value": "USD50000-99999",
-                  "title": "50,000 to 99,999 USD"
+                  "title": "50,000 إلى 999 99 دولارا أمريكيا"
                },
                {
                   "value": "USD100000-499000",
-                  "title": "100,000 to 499,000 USD"
+                  "title": "100,000 إلى 999 499 دولارا أمريكيا"
                },
                {
                   "value": "USD500000+",
@@ -4930,15 +4921,15 @@
    },
    {
       "key": "Article33",
-      "title": "Article 33 – Monitoring and reporting",
-      "description": "<i></i>",
+      "title": "المادة 33 - الرصد وإعداد التقارير",
+      "description": "<i>تقضي المادة 33 <u>تنفيذ التزاماتها</u> من الأطراف أن ترصد بموجب بروتوكول قرطاجنة وتقديم تقرير إلى مؤتمر الأطراف العامل كاجتماع للأطراف في البروتوكول بشأن التدابير المتخذة لتنفيذ بروتوكول قرطاجن</i>",
       "questions": [
          {
             "key": "Q168",
             "section": "Article33",
             "number": "168",
             "type": "option",
-            "title": "Does your country have in place a system to monitor and enforce the implementation of the Cartagena Protocol?",
+            "title": "هل لدى بلدك نظام لرصد وإنفاذ تنفيذ بروتوكول قرطاجنة؟",
             "multiple": false,
             "options": [
                {
@@ -4957,14 +4948,14 @@
    {
       "key": "LiabilityRedress",
       "title": "بروتوكول ناغويا-كوالا لامبور التكميلي بشأن المسؤولية والجبر التعويضي",
-      "description": "<i></i>",
+      "description": "<i>تدعى الأطراف في بروتوكول قرطاجنة أيضا التي لم تصبح بعد أطرافا في البروتوكول التكميلي إلى الإجابة على الأسئلة الواردة أدنا</i>",
       "questions": [
          {
             "key": "Q169",
             "section": "LiabilityRedress",
             "number": "169",
             "type": "option",
-            "title": "Is your country a Party to the Nagoya-Kuala Lumpur Supplementary Protocol on Liability and Redress?",
+            "title": "هل بلدك طرف في بروتوكول ناغويا-كوالالمبور التكميلي بشأن المسؤولية والجبر التعويضي؟",
             "multiple": false,
             "options": [
                {
@@ -4993,7 +4984,7 @@
             "section": "LiabilityRedress",
             "number": "170",
             "type": "option",
-            "title": "If you answered <i>No</i> to question 169, is there any national process in place towards becoming a Party to the Supplementary Protocol?",
+            "title": "إذا كانت إجابتك <i>لا</i> على السؤال 169، هل هناك أي عملية وطنية لكي يصبح طرفا في البروتوكول التكميلي؟",
             "multiple": false,
             "options": [
                {
@@ -5012,28 +5003,28 @@
             "section": "LiabilityRedress",
             "number": "171",
             "type": "term",
-            "title": "Has your country introduced the necessary measures for the implementation of the Supplementary Protocol?",
+            "title": "هل أدخل بلدك التدابير الوطنية الضرورية لتنفيذ البروتوكول التكميلي؟",
             "multiple": false,
             "options": [
                {
                   "value": "74B17D51-786F-3D68-3B76-A50121842925",
-                  "title": "National measures are fully in place"
+                  "title": "توجد تدابير وطنية كاملة"
                },
                {
                   "value": "FAA03A2A-F79E-1347-22E3-0EB4815DF05B",
-                  "title": "National measures are partially in place"
+                  "title": "توجد تدابير وطنية جزئية"
                },
                {
                   "value": "EFCE3DC1-BED6-041D-0AEA-93B0F04AE166",
-                  "title": "Only temporary measures have been introduced"
+                  "title": "لم توضع إلا تدابير مؤقتة فقط"
                },
                {
                   "value": "2B4110FC-8B86-50E6-851F-08AF1A43CFEC",
-                  "title": "Only draft measures exist"
+                  "title": "لا يوجد إلا مشروع تدابير"
                },
                {
                   "value": "C9B01C6D-6B40-1A67-B5A0-DDB7FF6B9CE9",
-                  "title": "No measures have yet been taken"
+                  "title": "لم تتخذ تدابير بعد"
                }
             ],
             "validations": [
@@ -5052,27 +5043,27 @@
             "section": "LiabilityRedress",
             "number": "172",
             "type": "term",
-            "title": "Which instruments are in place for the implementation of the Supplementary Protocol?",
+            "title": "ما هي الأدوات القائمة لتنفيذ البروتوكول التكميلي؟",
             "multiple": false,
             "options": [
                {
                   "value": "6BAF09B7-6331-04E6-479D-C1C1B0D55ECD",
-                  "title": "One or more national laws",
+                  "title": "قانون وطني واحد أو أكثر",
                   "type": "lstring"
                },
                {
                   "value": "0D3A9BB1-B378-174D-F4DD-1217D79D8B21",
-                  "title": "One or more national regulations",
+                  "title": "لائحة وطنية واحدة أو أكثر",
                   "type": "lstring"
                },
                {
                   "value": "BA743C79-B202-4611-16C4-2C7D4678ACEB",
-                  "title": "One or more sets of guidelines",
+                  "title": "مجموعة واحدة أو أكثر من المبادئ التوجيهية",
                   "type": "lstring"
                },
                {
                   "value": "9067DB5B-E33B-655D-83A3-32D4D562618F",
-                  "title": "No instruments are in place"
+                  "title": "لا توجد أدوات قائمة"
                }
             ]
          },
@@ -5081,15 +5072,15 @@
             "section": "LiabilityRedress",
             "number": "173",
             "type": "sub-section",
-            "title": "Does your country have administrative or legal instruments that require response measures to be taken",
+            "title": "هل لدى بلدك أدوات إدارية أو قانونية تقتضي اتخاذ تدابير استجابة",
             "multiple": false,
             "questions": [
                {
                   "key": "Q173_a",
                   "section": "LiabilityRedress",
-                  "number": "a",
+                  "number": "أ",
                   "type": "option",
-                  "title": "In case of damage resulting from LMOs?",
+                  "title": "في حالة الأضرار الناجمة عن الكائنات الحية المحورة؟",
                   "multiple": false,
                   "options": [
                      {
@@ -5132,9 +5123,9 @@
                {
                   "key": "Q173_b",
                   "section": "LiabilityRedress",
-                  "number": "b",
+                  "number": "ب",
                   "type": "option",
-                  "title": "In case there is sufficient likelihood that damage will result if response measures are not taken?",
+                  "title": "في حالة ما إذا كان من المحتمل بدرجة كافية أن يكون هناك ضرر إذا لم تُتخذ تدابير الاستجابة؟",
                   "multiple": false,
                   "options": [
                      {
@@ -5165,24 +5156,24 @@
             "section": "LiabilityRedress",
             "number": "174",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 173a, do these instruments impose requirements on an operator (select all that apply)?",
+            "title": "ذا كانت إجابتك <i>نعم</i> على السؤال 173أ، هل تفرض هذه الأدوات متطلبات على المشغل (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "true.inform",
-                  "title": "Yes, the operator must inform the competent authority of the damage"
+                  "title": "نعم، على المشغل أن يبلغ السلطة المختصة بالضرر"
                },
                {
                   "value": "true.evaluate",
-                  "title": "Yes, the operator must evaluate the damage"
+                  "title": "نعم، على المشغل أن يقيّم الضرر"
                },
                {
                   "value": "true.response",
-                  "title": "Yes, the operator must take response measures"
+                  "title": "نعم، على المشغل أن يتخذ تدابير استجابة"
                },
                {
                   "value": "true.other",
-                  "title": "Yes, other requirements",
+                  "title": "نعم، متطلبات أخرى",
                   "type": "lstring"
                },
                {
@@ -5196,7 +5187,7 @@
             "section": "LiabilityRedress",
             "number": "175",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 173a, do these instruments require the operator to take response measures to avoid damage?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 173أ، هل تفرض هذه الأدوات متطلبات على المشغل (اختر كل ما ينطبق)؟",
             "multiple": false,
             "options": [
                {
@@ -5214,7 +5205,7 @@
             "section": "LiabilityRedress",
             "number": "176",
             "type": "option",
-            "title": "If you answered <i>Yes</i> to question 173a or 173b, do these instruments provide for a definition of “operator”?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 173أ أو 173ب، هل توفر هذه الأدوات تعريفا لكلمة \"المشغل\"؟",
             "multiple": false,
             "options": [
                {
@@ -5242,48 +5233,48 @@
             "section": "LiabilityRedress",
             "number": "177",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 176, which of the following could be an ‘operator’ (select all that apply)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 176، في أي مجال من المجالات التالية لا تزال هناك حاجة إلى بناء القدرات (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "8F627A99-7CD4-D892-80EA-12C58607508F",
-                  "title": "Permit holder"
+                  "title": "الحائز على تصريح"
                },
                {
                   "value": "888E88C5-0C25-76A8-B3C8-48C3FDAE5215",
-                  "title": "Person who placed the LMO on the market"
+                  "title": "شخص طرح الكائن الحي المحور في السوق"
                },
                {
                   "value": "B985EF7B-B94E-BF56-3D56-BE2ACE2BB835",
-                  "title": "Developer"
+                  "title": "مطور"
                },
                {
                   "value": "ADEF00D6-0901-8750-1069-5CBA877011CC",
-                  "title": "Producer"
+                  "title": "منتج"
                },
                {
                   "value": "3F54E971-E791-FE00-5312-F7FF07C818B1",
-                  "title": "Notifier"
+                  "title": "مخطر"
                },
                {
                   "value": "2D8B29DD-0703-6130-BE79-389F5278C21D",
-                  "title": "Exporter"
+                  "title": "مصدر"
                },
                {
                   "value": "D475D239-517E-9D8B-E1F9-4C453039C792",
-                  "title": "Importer"
+                  "title": "مستورد"
                },
                {
                   "value": "8BD75295-88DF-2A32-A150-1132670E19A9",
-                  "title": "Carrier"
+                  "title": "ناقل"
                },
                {
                   "value": "58FE50CB-9958-4F9F-FEE4-861628BDC6F7",
-                  "title": "Supplier"
+                  "title": "مورد"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ]
@@ -5293,7 +5284,7 @@
             "section": "LiabilityRedress",
             "number": "178",
             "type": "option",
-            "title": "Has a competent authority been identified for carrying out the functions set out in the Supplementary Protocol?",
+            "title": "هل تم تحديد سلطة مختصة للقيام بالوظائف المنصوص عليها في البروتوكول التكميلي؟",
             "multiple": false,
             "options": [
                {
@@ -5322,32 +5313,32 @@
             "section": "LiabilityRedress",
             "number": "179",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 178, what measures may the competent authority take (select all that apply)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 178، ما هي التدابير التي يمكن أن تتخذها السلطة المختصة (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "2DAA6BFF-9EB2-F99E-AA11-CB348A25E7F2",
-                  "title": "Identify the operator that caused the damage"
+                  "title": "تحديد المشغل الذي يتسبب في الضرر"
                },
                {
                   "value": "6065EDB8-C5A4-BA81-5271-B2F93159A471",
-                  "title": "Evaluate the damage"
+                  "title": "تقييم الضرر"
                },
                {
                   "value": "A038303D-7049-E34F-8381-5B59702BBCF6",
-                  "title": "Determine response measures to be taken by operator"
+                  "title": "تحديد تدابير الاستجابة التي يتعين أن يتخذها المشغل"
                },
                {
                   "value": "9C54DE71-9B5A-5579-7B7B-E49DA2AB43CA",
-                  "title": "Implement response measures"
+                  "title": "تنفيذ تدابير الاستجابة"
                },
                {
                   "value": "34BCA89E-DCBF-586E-02FD-37E6FFD186A4",
-                  "title": "Recover costs and expenses of the evaluation of the damage and the implementation of any response measures from the operator"
+                  "title": "استرداد تكاليف ونفقات تقييم الضرر وتنفيذ تدابير الاستجابة من المشغل"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ]
@@ -5357,7 +5348,7 @@
             "section": "LiabilityRedress",
             "number": "180",
             "type": "option",
-            "title": "Does your country have measures in place to provide for financial security for damage resulting from LMOs?",
+            "title": "هل لدى بلدك تدابير لتوفير الأمن المالي للضرر الناتج عن الكائنات الحية المحورة؟",
             "multiple": false,
             "options": [
                {
@@ -5386,24 +5377,24 @@
             "section": "LiabilityRedress",
             "number": "181",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 180, what type of financial security measures are in place (select all that apply)?",
+            "title": "إذا كانت إجابتك <i>نعم</i> على السؤال 180، ما نوع تدابير الأمن المالي الموجودة (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "69C39AF0-E97E-A277-5741-BC14BB5FFCB7",
-                  "title": "Requirement to provide evidence for secure source of funding"
+                  "title": "متطلبات بتوفير أدلة على مصدر تمويل آمن"
                },
                {
                   "value": "D12679C3-AE57-50EA-648E-9F0DC02B18E8",
-                  "title": "Mandatory insurance"
+                  "title": "تأمين إلزامي"
                },
                {
                   "value": "89B8212D-4CB0-FF9E-2107-F1D8D77C86D5",
-                  "title": "Government schemes, including funds"
+                  "title": "خطط حكومية، بما في ذلك صناديق"
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Other",
+                  "title": "أخرى",
                   "type": "lstring"
                }
             ]
@@ -5413,20 +5404,20 @@
             "section": "LiabilityRedress",
             "number": "182",
             "type": "term",
-            "title": "Does your country have rules and procedures on civil liability that address damage resulting from LMOs, or has such damage been recognized in court rulings (select all that apply)?",
+            "title": "هل لدى بلدك قواعد وإجراءات متعلقة بالمسؤولية المدنية التي تتناول الضرر الناتج عن الكائنات الحية المحورة أو إذا كان قد تم الإقرار بأضرار من هذا القبيل في أحكام المحاكم (اختر كل ما ينطبق)؟",
             "multiple": true,
             "options": [
                {
                   "value": "878DF5F5-0B5E-48E1-6A42-80867A101675",
-                  "title": "Yes, in a civil liability instrument"
+                  "title": "نعم، في أداة عن المسؤولية المدنية"
                },
                {
                   "value": "0FC0DC50-EFAE-1C83-74F5-7A7D0205DB0A",
-                  "title": "Yes, in court rulings"
+                  "title": "نعم، في أحكام المحاكم"
                },
                {
                   "value": "true",
-                  "title": "Yes, in other instruments",
+                  "title": "نعم، في أدوات أخرى",
                   "type": "lstring"
                },
                {
@@ -5440,7 +5431,7 @@
             "section": "LiabilityRedress",
             "number": "183",
             "type": "term",
-            "title": "Have there been any occurrences of damage resulting from LMOs in your country?",
+            "title": "هل حدثت أي أضرار ناتجة عن الكائنات الحية المحورة في بلدك؟",
             "multiple": false,
             "options": [
                {
@@ -5469,7 +5460,7 @@
             "section": "LiabilityRedress",
             "number": "184",
             "type": "term",
-            "title": "If you answered <i>Yes</i> to question 183, have response measures been taken?",
+            "title": "إذا كانت إجابتك <i>نعم</i>، هل اتُخذت تدابير استجابة؟",
             "multiple": false,
             "options": [
                {
@@ -5488,7 +5479,7 @@
             "section": "LiabilityRedress",
             "number": "185",
             "type": "lstring",
-            "title": "يمكنك من هنا الحصول على المزيد من المعلومات حول أي أنشطة تم إجرائها في بلدك من أجل تنفيذ بروتوكول ناغويا - كوالالمبور التكميلي حول المسئولية والجبر التعويضي",
+            "title": "يمكن أن تقدم هنا المزيد من التفاصيل عن أي أنشطة اضطلع بها في بلدك من أجل تنفيذ بروتوكول ناغويا-كوالالمبور التكميلي بشأن المسؤولية والجبر التعويضي",
             "multiple": false
          }
       ]
