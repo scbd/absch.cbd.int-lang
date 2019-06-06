@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default"  dir="rtl">
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span dir="rtl">Checkpoint <span class="color-black"> (CP) </span> </span></h4>	
+		<h4><span dir="rtl">نقطة التفتيش <span class="color-black">(CP)</span></span></h4>	
 	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
@@ -45,22 +45,23 @@
 			</div>--></div>
 
 		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
-			<legend>تتسلم السلطة (السلطات) نسخًا مجانية من بيانات نقطة التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو حصلت عليها.</legend>
+			<legend>Authority/ies to receive courtesy copies of checkpoint communiqu&eacute;s</legend>
 
-			<div class="help-info" style="padding-top:10px;">ستتلقى جميع السلطات الوطنية وجهات الاتصال المبينة أدناه نسخًا بالبريد الإلكتروني من بيانات نقاط التفتيش التي تحتوي على المعلومات التي جمعتها هذه النقطة أو استلمتها ونشرتها. يُرجى ملاحظة أن السلطات الوطنية التي تقدم الموافقة المسبقة عن علم سوف تتلقى تلقائيًا نسخًا بالبريد الإلكتروني من جميع البيانات المنشورة لنقاط التفتيش. لا تضمن غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع استلام رسائل البريد الإلكتروني أو قراءتها.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new"> All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>) </a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+			<div class="help-info" style="padding-top:10px;">The contacts indicated below will receive email copies of checkpoint communiqu&eacute;s containing the information collected or received and published from this checkpoint.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities">All Competent National Authorities designated for <strong>{{document.government|term:locale}}</strong> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</li>
+
+			</div>
           
-			<div ng-show="document.contactsToInform">
-				<div class="km-value" ng-repeat="authority in document.contactsToInform">
-                    <div view-contact-reference ng-model="authority" locale="locale"></div>
-				</div>
-			</div><!--<div ng-show="document.contactsToInform" class="row">
+			
+			<div  ng-show="document.contactsToInform">
+					<div class="km-value"  ng-repeat="authority in document.contactsToInform" ><span view-contact-reference ng-model="authority" locale="locale"></span></div>
+				</div><!--<div ng-show="document.contactsToInform" class="row">
 				<div ng-repeat="contact in document.contactsToInform">
 					<div class="col-xs-12">
 						<div view-contact-reference ng-model="contact" locale="locale" class="well"></div>
 					</div>
 				</div>
-			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >لم يتم تحديد أي سلطات إضافية لكي تتلقى نسخًا تلقائية بالبريد الإلكتروني من بيانات نقاط التفتيش التي نشرتها هذه النقطة. </span></div>
+			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >لم يتم تحديد أي سلطات إضافية لكي تتلقى نسخًا تلقائية بالبريد الإلكتروني من بيانات نقاط التفتيش التي نشرتها هذه النقطة.</span></div>
 
 		</div>
 

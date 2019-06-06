@@ -18,7 +18,7 @@
 									<legend>一般信息</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -117,7 +117,7 @@
 									<legend>文档细节</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="documents" caption="文档文本">
+											<div class="km-control-group" name="documents" caption="Document text">
 												<div class="help-block">最好提供附件。否则，请提供文档位置(如网页地址，包括网站网址(如http://bch.biodiv.org)和网站名称(如&ldquo;生物安全信息交换所&rdquo;)。</div>
 												<div km-link name="documents" ng-model="document.documents" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
@@ -143,7 +143,7 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="amendedRecords" caption="增补">	
+											<div class="km-control-group" name="amendedRecords" caption="Amendments">	
 												<div class="help-block">请说明该文档是否有任何修正。如果修正已作为另一记录登记，则请提供交叉引用链接。</div>										
 												<div document-selector ng-model="document.amendedRecords" question="amendedRecords"
 													government="document.government" schema="(biosafetyLaw)" caption="法律、法规或准则"></div>			
@@ -188,7 +188,7 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Additional information</legend>
+									<legend>更多信息</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="address" caption="其它相关信息">
@@ -226,10 +226,9 @@
 					</form>
 				</edit-form>
 				<review-form>
-					<div view-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
+					<div view-biosafety-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
 				</review-form>
 			</workflow-arrow-buttons>
 		</div>
 	</div>
-</div>
 </div>

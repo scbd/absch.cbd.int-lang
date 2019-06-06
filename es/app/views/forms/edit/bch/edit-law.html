@@ -18,7 +18,7 @@
 									<legend>Informaci&oacute;n general</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -29,7 +29,7 @@
 										<div class="col-sm-12">
 											<div class="km-control-group" name="government" required caption="Country submitting the decision or communication">
 												<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
-												 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
+												 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un pa&iacute;s"></div>
 											</div>
 										</div>
 									</div>
@@ -37,7 +37,7 @@
 
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="jurisdiction" required caption="Jurisdicción">
+											<div class="km-control-group" name="jurisdiction" required caption="Jurisdicci&oacute;n">
 												<div class="help-block">Proporcione la jurisdicci&oacute;n donde se aplica la ley, norma, directriz o acuerdo si es diferente del nombre del pa&iacute;s. Ejemplo: Pa&iacute;s: Dinamarca, Jurisdicci&oacute;n: &quot;Con exclusi&oacute;n territorial en relaci&oacute;n a las Islas Feroe y Groenlandia&quot;. <br/> <strong>Important note for EU Members only: if the law, regulation, guideline or agreement applies to all EU Member States please select &quot;European Union&quot; in the &apos;Jurisdiction&apos; field.</strong></div>
 												<div km-select multiple required name="jurisdiction" ng-model="document.jurisdictions"
 												 items="options.jurisdiction()" placeholder="Please select a Jurisdiction..."></div>
@@ -160,7 +160,7 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Regulatory contact information</legend>
+									<legend>Informaci&oacute;n del contacto regulatorio</legend>
 									<div class="row">
 										<div  class="col-xs-12">
 											<div class="km-control-group" name="authorities" caption="Competent National Authorities" required>	
@@ -177,7 +177,7 @@
 									<legend>Cronograma para la confirmaci&oacute;n o actualizaci&oacute;n de la informaci&oacute;n</legend>
 									<div class="row">
 										<div  class="col-xs-12">
-											<div class="km-control-group" name="authorities" caption="¿Esta información se confirmará o actualizará después de dos años a partir de la fecha de presentación?" required>	
+											<div class="km-control-group" name="authorities" caption="¿Esta informaci&oacute;n se confirmar&aacute; o actualizar&aacute; despu&eacute;s de dos a&ntilde;os a partir de la fecha de presentaci&oacute;n?" required>	
 												<div class="help-block">Si la respuesta a esta pregunta es &quot;S&iacute;&quot;, despu&eacute;s de dos a&ntilde;os a partir de la fecha de presentaci&oacute;n, se le pedir&aacute; que confirme o actualice el registro dentro de los tres meses siguientes. Despu&eacute;s de este per&iacute;odo, si no se ha recibido la confirmaci&oacute;n, el registro ser&aacute; marcado como &quot;No Confirmado&quot;.</div>     
 												<div class="km-yes-no" name="expires" ng-model="document.expires"></div>			
 											</div>
@@ -191,7 +191,7 @@
 									<legend>Informaci&oacute;n adicional</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+											<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
 												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
@@ -226,10 +226,9 @@
 					</form>
 				</edit-form>
 				<review-form>
-					<div view-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
+					<div view-biosafety-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
 				</review-form>
 			</workflow-arrow-buttons>
 		</div>
 	</div>
-</div>
 </div>

@@ -1,144 +1,10 @@
 ﻿<div class="row margin-bottom-20">
-    <style>
-        .margin-bottom-20 {
-            margin-bottom: 20px;
-        }
-
-        .steps {
-            list-style: none;
-            overflow: hidden;
-            font: 14px;
-            margin: 0;
-            padding: 0;
-            font-weight: 450;
-        }
-        .steps-xs{
-            font-size: 12px !important;
-        }
-        .steps-xs li a {
-            color: white;
-            text-decoration: none;
-            padding: 3px 0 3px 45px !important;
-            background: #ccc;
-            position: relative;
-            display: block;
-            float: left;
-        }
-
-        .steps li a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 0 8px 55px;
-            background: #ccc;
-            position: relative;
-            display: block;
-            float: left;
-        }
-
-        .steps li {
-            float: left;
-        }
-
-       
-
-        .steps li a:after {
-            content: " ";
-            display: block;
-            width: ;
-            height: 0;
-            border-top: 50px solid transparent;
-            /* Go big on the size, and let overflow hide */
-            border-bottom: 50px solid transparent;
-            border-left: 30px solid #ccc;
-            position: absolute;
-            top: 50%;
-            margin-top: -50px;
-            left: 100%;
-            z-index: 2;
-        }
-
-        .steps li a:before {
-            content: " ";
-            display: block;
-            width: 0;
-            height: 0;
-            border-top: 50px solid transparent;
-            /* Go big on the size, and let overflow hide */
-            border-bottom: 50px solid transparent;
-            border-left: 30px solid white;
-            position: absolute;
-            top: 50%;
-            margin-top: -50px;
-            margin-left: 1px;
-            left: 100%;
-            z-index: 1;
-        }
-
-        .steps li:first-child a {
-            padding-left: 24px;
-        }
-
-        .steps li:a {
-            background: #ccc;
-        }
-
-        .steps li:a:after {
-            border-left-color: #ccc;
-        }
-
-        .steps li a:hover {
-            background: #aaa;
-        }
-
-        .steps li a:hover:after {
-            border-left-color: #aaa !important;
-        }
-
-        .steps li.arrowSelected a, .active-button {
-            background: #aaa !important;
-            color: #000 !important;
-        }
-
-        .steps li.arrowSelected a:after {
-            border-left-color: #aaa !important;
-        }
-
-
-        .steps li.publish a:hover {
-            background: #5cb85c;
-            color: #FFF !important;
-        }
-
-        .steps li.publish a:hover:after {
-            border-left-color: #5cb85c !important;
-        }
-
-        .steps li.publish.arrowSelected a {
-            background: #5cb85c !important;
-            color: #FFF !important;
-        }
-
-        .steps li.publish.arrowSelected a:after {
-            border-left-color: #5cb85c !important;
-        }
-        .btnSelected{
-            background: #666;
-            color: #FFF !important;
-        }
-        .btnSelected:hover {
-            background: #666;
-            color: #FFF !important;
-        }
-       
-        .viewForm{
-            margin: 20px 0px;
-        }
-    </style><span block-region activate="loading" ng-if="loading" update-parent-position="true" block-text="processing..."></span><div class="workflow-arrows margin-bottom-20"  >
+    <style>.margin-bottom-20 { margin-bottom: 20px; } .steps { list-style: none; overflow: hidden; font: 14px; margin: 0; padding: 0; font-weight: 450; } .steps-xs{ font-size: 12px !important; } .steps-xs li a { color: white; text-decoration: none; padding: 3px 0 3px 45px !important; background: #ccc; position: relative; display: block; float: left; } .steps li a { color: white; text-decoration: none; padding: 8px 0 8px 55px; background: #ccc; position: relative; display: block; float: left; } .steps li { float: left; } .steps li a:after { content: &quot; &quot;; display: block; width: ; height: 0; border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */ border-bottom: 50px solid transparent; border-left: 30px solid #ccc; position: absolute; top: 50%; margin-top: -50px; left: 100%; z-index: 2; } .steps li a:before { content: &quot; &quot;; display: block; width: 0; height: 0; border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */ border-bottom: 50px solid transparent; border-left: 30px solid white; position: absolute; top: 50%; margin-top: -50px; margin-left: 1px; left: 100%; z-index: 1; } .steps li:first-child a { padding-left: 24px; } .steps li:a { background: #ccc; } .steps li:a:after { border-left-color: #ccc; } .steps li a:hover { background: #aaa; } .steps li a:hover:after { border-left-color: #aaa !important; } .steps li.arrowSelected a, .active-button { background: #aaa !important; color: #000 !important; } .steps li.arrowSelected a:after { border-left-color: #aaa !important; } .steps li.publish a:hover { background: #5cb85c; color: #FFF !important; } .steps li.publish a:hover:after { border-left-color: #5cb85c !important; } .steps li.publish.arrowSelected a { background: #5cb85c !important; color: #FFF !important; } .steps li.publish.arrowSelected a:after { border-left-color: #5cb85c !important; } .btnSelected{ background: #666; color: #FFF !important; } .btnSelected:hover { background: #666; color: #FFF !important; } .viewForm{ margin: 20px 0px; }</style><span block-region activate="loading" ng-if="loading" update-parent-position="true" block-text="processing..."></span><div class="workflow-arrows margin-bottom-20"  >
         <ng-include onload="workflowScope=workflowScope" src="'template/workflow-arrows'"></ng-include>
     </div>
 
-    <div class="workflow-validation-error">
-        <div km-document-validation ng-model="validationReport" container="{{container}}"></div>
+    <div class="workflow-validation-error" >
+        <div km-document-validation ng-model="validationReport" container="{{container}}" ></div>
     </div>
 
     <div style="display:none" id="msgDraftSaveMessage">Votre dossier a &eacute;t&eacute; enregistr&eacute; comme brouillon</div>
@@ -146,13 +12,12 @@
     <div class="row" id="divShowError" ng-show="errorMessage">
         <div class="col-xs-12">
             <div class="alert alert-danger" role="alert">
-                <button type="button" class="close" ng-click="errorMessage=undefined"><span aria-hidden="true">&times;</span> <span class="sr-only">Fermer</span></button> {{errorMessage}}</div>
+                <button type="button" class="close" ng-click="errorMessage=undefined"><span aria-hidden="true">&times;</span> <span class="sr-only">Fermer</span></button>{{errorMessage}}</div>
         </div>
     </div>
 
     <div ng-if="tab=='intro'" km-tab="intro">
-        <div ng-transclude="introForm" class="well bg-white"><i ng-if="tab=='intro' && loading" class="fa fa-spinner fa-spin"></i><div>
-                <h2>{{article.title|lstring}}</h2><br><p ng-bind-html="article.content| lstring | toTrusted"></p>
+        <div ng-transclude="introForm" class="well bg-white"><i ng-if="tab=='intro' && loading" class="fa fa-spinner fa-spin"></i><div><a class="btn btn-primary pull-right" ng-if="isAdmin" ng-href="https://www.cbd.int/management/articles/{{article._id}}/edit">Modifier</a><h2>{{article.title|lstring}}</h2><br><p ng-bind-html="article.content| lstring | toTrusted"></p>
             </div>
         </div>
     </div>
@@ -166,13 +31,13 @@
     </div>
     <div ng-show="tab=='publish'" km-tab="publish">
         <div ng-transclude-slot="publishForm"></div>
-        <div class="row margin-bottom-20">
+        <div class="row margin-bottom-20" ng-if="!validationReport.isAnalyzing">
             <div class="clearfix"></div>
 
             <div class="col-xs-12">
 
                 <div class="well">
-                    <p style="font-size:16px;"> <strong>Please ensure that the information in this record is correct, complete, relevant and not confidential. </strong> This clearing-house does not host any confidential information and all information published will become publicly available. </p>
+                    <p style="font-size:16px;"><strong>Please ensure that the information in this record is correct, complete, relevant and not confidential.</strong> This clearing-house does not host any confidential information and all information published will become publicly available.</p>
                     <ul style="list-style-type:none;margin:0;padding:0;padding-top:10px;">
                         <li style="display: inline;" ng-show="security.canSave">
                             <button type="button" class="btn btn-danger bg-published btn-lg " width="50px" ng-click="tab='publish';publish()"
@@ -213,7 +78,7 @@
                     </ul>
                 </div>
                <div class="col-xs-1">
-                    <button type="button" class="btn btn-default bg-grey color-white " ng-click="goNextTab(workflowScope.tab)"    ng-disabled="disableNextBtn" ><span class="glyphicon glyphicon-forward"> </span></button>
+                    <button type="button" class="btn btn-default bg-grey color-white " ng-click="goNextTab(workflowScope.tab)"    ng-disabled="disableNextBtn" ><span class="glyphicon glyphicon-forward"></span></button>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -224,7 +89,7 @@
                         <button   class="btn btn-sm btn-default "ng-class="{'btnSelected': workflowScope.tab=='edit'}"><span href="#" ng-click="workflowScope.switchTab('edit')" ng-disabled="workflowScope.loading || workflowScope.security==undefined">Form</span></button>
                         <button  class="btn btn-sm btn-default" ng-class="{'btnSelected': workflowScope.tab=='review'}"><span href="#" ng-click="workflowScope.switchTab('review')" ng-disabled="workflowScope.loading || workflowScope.security==undefined">Examen</span></button>
                         <button  class="btn btn-sm btn-default" ng-class="{'btnSelected': workflowScope.tab=='publish'}"><span href="#" ng-click="workflowScope.switchTab('publish')" ng-disabled="workflowScope.loading || workflowScope.security==undefined">Publier</span></button>
-                <button type="button" class="btn btn-sm btn-default  " ng-click="goNextTab(workflowScope.tab)"  ng-disabled="disableNextBtn"><span class="glyphicon glyphicon-forward"> </span></button>
+                <button type="button" class="btn btn-sm btn-default  " ng-click="goNextTab(workflowScope.tab)"  ng-disabled="disableNextBtn"><span class="glyphicon glyphicon-forward"></span></button>
             </div>
 
             <button type="button" class="btn btn-sm btn-default bg-draft pull-right" ng-click="workflowScope.tab='draft';workflowScope.saveDraft()" 
@@ -242,7 +107,7 @@
                         <h4>CLOSE AND CANCEL CHANGES</h4>
                     </div>
                     <div class="modal-body" style="text-align: center;">
-                        <h1>Are you sure you want to close this record without saving? <span class="color-red">Any changes will be lost.</span> </h1> 
+                        <h1>Are you sure you want to close this record without saving? <span class="color-red">Any changes will be lost.</span></h1> 
                     </div>
                     <div class="modal-footer" style="margin-top:0">
                         <button type="button" ng-click="closeDialog()" class="btn btn-default cancelClose">Annuler</button>

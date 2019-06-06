@@ -18,7 +18,7 @@
 									<legend>Informations g&eacute;n&eacute;rales</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+											<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -27,7 +27,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="government" required caption="Pays soumettant la décision ou la communication">
+											<div class="km-control-group" name="government" required caption="Pays soumettant la d&eacute;cision ou la communication">
 												<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
 												 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Veuillez choisir un pays..."></div>
 											</div>
@@ -87,7 +87,7 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="type" required caption="Types d'OVM abordés">
+											<div class="km-control-group" name="type" required caption="Types d&apos;OVM abord&eacute;s">
 												<div class="help-block">Cette section comprend des mots cl&eacute;s relatifs aux cat&eacute;gories d&apos;OVM abord&eacute;es qui ont pour but d&apos;aider &agrave; la recherche et la tracuction du dossier (une description compl&egrave;te peut &ecirc;tre fournie ailleurs dans le dossier).</div>
 												<div km-term-check required ng-model="document.cpbOrganismTypes" locales="document.header.languages"
 													terms="options.typeOfOrganisms()" show-other="true" binding-type="term[]"></div>
@@ -96,7 +96,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="description" caption="Courte description du document, comprenant l'objectif et le champ d'application">
+											<div class="km-control-group" name="description" caption="Courte description du document, comprenant l&apos;objectif et le champ d&apos;application">
 												<div class="help-block">Objective Example: &quot;The objective of this Act is to contribute to ensuring an adequate level of protection in the field of the safe transfer, handling and use of living modified organisms resulting from modern biotechnology that may have adverse effects on the conservation and sustainable use of biological diversity, taking also into account risks to human health, and specifically focusing on transboundary movements.&quot; <br/> <br/> Scope Example: &quot;These regulations apply to the transboundary movement, transit, handling and use of all living modified plants that may have adverse effects on the conservation and sustainable use of biological diversity, taking also into account risks to human health.&quot;</div>
 												<div km-rich-textbox ng-model="document.description" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
@@ -104,7 +104,7 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="entryIntoForce" caption="Date d'entrée en vigueur">
+											<div class="km-control-group" name="entryIntoForce" caption="Date d&apos;entr&eacute;e en vigueur">
 												<div km-date placeholder="AAAA-MM-JJ" name="entryIntoForce" ng-model="document.entryIntoForce"></div>
 											</div>
 										</div>
@@ -146,7 +146,7 @@
 											<div class="km-control-group" name="amendedRecords" caption="Amendements">	
 												<div class="help-block">Veuillez pr&eacute;ciser si des modifications ont &eacute;t&eacute; apport&eacute;es au pr&eacute;sent document. Si les modifications ont &eacute;t&eacute; enregistr&eacute;es dans un fichier s&eacute;par&eacute;, veuillez fournir un lien de renvoi.</div>										
 												<div document-selector ng-model="document.amendedRecords" question="amendedRecords"
-													government="document.government" schema="(biosafetyLaw)" caption="Loi, réglementation ou directive"></div>			
+													government="document.government" schema="(biosafetyLaw)" caption="Loi, r&eacute;glementation ou directive"></div>			
 											</div>
 										</div>
 										<div class="col-sm-12">
@@ -163,7 +163,7 @@
 									<legend>Regulatory contact information</legend>
 									<div class="row">
 										<div  class="col-xs-12">
-											<div class="km-control-group" name="authorities" caption="Autorités nationales compétentes" required>	
+											<div class="km-control-group" name="authorities" caption="Autorit&eacute;s nationales comp&eacute;tentes" required>	
 												<div document-selector ng-model="document.authorities" question="authorities"
 													government="document.government" schema="(authority)"></div>			
 											</div>
@@ -226,10 +226,9 @@
 					</form>
 				</edit-form>
 				<review-form>
-					<div view-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
+					<div view-biosafety-law ng-model="document" locale="review.locale" allow-drafts="true"></div>
 				</review-form>
 			</workflow-arrow-buttons>
 		</div>
 	</div>
-</div>
 </div>

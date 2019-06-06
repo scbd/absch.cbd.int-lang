@@ -1,15 +1,16 @@
-﻿<div><!-- <div ng-hide="!report.isAnalyzing && (report || onLoad)" class="alert alert-info">
-		<i class="fa fa-cog fa-spin"></i> Analyzing your document...
-	</div> --><div ng-show="report.isAnalyzing" class="alert alert-info"><i class="fa fa-cog fa-spin"></i> Analizando su documento...</div>
+﻿<div>
+	<div ng-show="report.isAnalyzing" class="alert alert-info"><i class="fa fa-cog fa-spin"></i> Analizando su documento...</div>
 	<div ng-show="report.isSaving" class="alert alert-info"><i class="fa fa-cog fa-spin"></i> Saving your document...</div>
 	<div ng-show="report && !report.isAnalyzing">
+
 		<div ng-show="isValid()" class="alert alert-success">Your document is valid.</div>
 
-
-		<div ng-show="hasErrors() && show" class="alert alert-warning"  >
-			<button type="button" class="close" ng-click="show=!show" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sus documentos contienen errores.</strong><ul>
-				<li ng-repeat="error in report.errors" title="{{error.parameters}}">{{getTranslation(error.code, error.property, error.parameters)}} / <a href="#" ng-click="jumpTo(error.property)">{{getLabel(error.property)}}</a></li>
+		<div ng-show="hasErrors() && show" class="alert alert-warning">
+			<button type="button" class="close" ng-click="show=!show" aria-label="Close"><span
+					aria-hidden="true">&times;</span></button><strong>Your document contains {{report.errors.length}} errors.</strong><ul>
+				<li ng-repeat="error in report.errors" title="{{::error.parameters}}">{{::error.typeLabel}} / <a href="#"
+						ng-click="jumpTo(error.property)">{{::error.propertyLabel}}</a></li>
 			</ul>
 		</div>
 
-</div>
+	</div>
