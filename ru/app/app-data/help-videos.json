@@ -1,0 +1,77 @@
+{
+  "country-profile": {
+    "url": "",
+    "heading": "",
+    "desc": " "
+  },
+  "matrix": {
+    "url": "",
+    "heading": "",
+    "desc": "  "
+  },
+  "search-matrix": {
+    "url": "",
+    "heading": "",
+    "desc": "  "
+  },
+  "search-search": {
+    "url": "",
+    "heading": "",
+    "desc": "     "
+  },
+  "search-uid": {
+    "url": "",
+    "heading": "",
+    "desc": "      "
+  },
+  "search-report": {
+    "url": "",
+    "heading": "",
+    "desc": "   "
+  },
+  "new-account": {
+    "url": "",
+    "heading": "",
+    "desc": " "
+  },
+  "sign-in": {
+    "url": "",
+    "heading": "",
+    "desc": ""
+  },
+  "old-account": {
+    "url": "",
+    "heading": "",
+    "desc": ""
+  },
+  "forgot-password": {
+    "url": "",
+    "heading": "",
+    "desc": ""
+  },
+  "user-management": {
+    "url": "",
+    "heading": "",
+    "desc": ""
+  },
+  "dashboard": {
+    "url": "",
+    "heading": "",
+    "desc": "     "
+  },
+  "notification": {
+    "url": "",
+    "heading": "",
+    "desc": " "
+  },
+  "email-alerts": {
+    "url": "",
+    "heading": "",
+    "desc": " "
+  },
+  "helpdesk": {
+    "url": "",
+    "heading": "",
+    "desc": "  "
+  }
+}

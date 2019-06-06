@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span>Checkpoint <span class="color-black"> (CP) </span> </span></h4>	
+		<h4><span>Контрольный пункт <span class="color-black">(КП)</span></span></h4>	
 	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
@@ -45,22 +45,23 @@
 			</div>--></div>
 
 		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
-			<legend>Орган(ы), который(-е) будет(-ут) получать в порядке любезности копии коммюнике контрольного пункта о собранной или полученной информации от данного контрольного пункта</legend>
+			<legend>Authority/ies to receive courtesy copies of checkpoint communiqu&eacute;s</legend>
 
-			<div class="help-info" style="padding-top:10px;">Все указанные ниже органы и контактные лица будут получать по электронной почте копии коммюнике контрольного пункта о собранной или полученной и опубликованной информации от данного контрольного пункта. Просьба заметить, что национальные органы власти, предоставляющие предварительное обоснованное согласие (ПОС), будут также получать по электронной почте копии всех опубликованных коммюнике контрольных пунктов (ККП). МП-ДГРСИВ не может гарантировать получение или прочтение сообщений электронных почты.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new"> All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>) </a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+			<div class="help-info" style="padding-top:10px;">The contacts indicated below will receive email copies of checkpoint communiqu&eacute;s containing the information collected or received and published from this checkpoint.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities">All Competent National Authorities designated for <strong>{{document.government|term:locale}}</strong> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</li>
+
+			</div>
           
-			<div ng-show="document.contactsToInform">
-				<div class="km-value" ng-repeat="authority in document.contactsToInform">
-                    <div view-contact-reference ng-model="authority" locale="locale"></div>
-				</div>
-			</div><!--<div ng-show="document.contactsToInform" class="row">
+			
+			<div  ng-show="document.contactsToInform">
+					<div class="km-value"  ng-repeat="authority in document.contactsToInform" ><span view-contact-reference ng-model="authority" locale="locale"></span></div>
+				</div><!--<div ng-show="document.contactsToInform" class="row">
 				<div ng-repeat="contact in document.contactsToInform">
 					<div class="col-xs-12">
 						<div view-contact-reference ng-model="contact" locale="locale" class="well"></div>
 					</div>
 				</div>
-			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >Дополнительные органы власти не были отобраны для автоматического получения по электронной почте копий коммюнике, опубликованных данным контрольным пунктом. </span></div>
+			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >Дополнительные органы власти не были отобраны для автоматического получения по электронной почте копий коммюнике, опубликованных данным контрольным пунктом.</span></div>
 
 		</div>
 
