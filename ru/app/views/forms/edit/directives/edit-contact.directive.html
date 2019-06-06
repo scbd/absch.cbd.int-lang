@@ -11,7 +11,7 @@
 									<legend name="formInfo" style="display:none"></legend>
                                     <section><br><div class="row">
 													<div class="col-xs-12">
-														<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+														<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 															<div class="indent">
 																<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 															</div>
@@ -25,14 +25,13 @@
 										<div class="row" ng-if="isNationalUser">
 											<div class="col-sm-12">
 												<div class="km-control-group" name="government" required caption="Government">
-													<div afc-autocomplete required name="government" ng-disabled="isNationalUser" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Выберите страну..."></div>
+													<div afc-autocomplete required name="government" ng-disabled="!canEitGovernment" ng-model="document.government" source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Выберите страну..."></div>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-xs-12">
-												<legend name="contactType">Тип контакта</legend>
-												<div class="km-control-group" >
+												<div class="km-control-group" name="type" caption="Тип контакта">												
 													<label class="radio-inline">
 														<input type="radio" ng-model="document.type" value="organization" name="editionContactType" />Организация</label>
 													<label class="radio-inline">
@@ -42,12 +41,7 @@
 										</div>
 									</section>
 									<div>
-										<style>
-											input.ng-invalid-url,
-											input.ng-invalid-email {
-												background-color: #f0ad4e;
-											}
-										</style>
+										<style>input.ng-invalid-url, input.ng-invalid-email { background-color: #f0ad4e; }</style>
 			
 										<div ng-show="document.type=='person'">
 			
@@ -119,8 +113,8 @@
 												<div class="col-md-5 col-xs-12">
 													<div class="km-control-group" name="contact_organizationAcronym" caption="Сокращение" ng-required="!form.organization.$valid && document.type!='person'">
 														<div class="help-info">Сокращение для длинного названия</div>
-														<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="пример: СКБР" locales="document.header.languages"></div>
-														<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="пример: СКБР" locales="document.header.languages"></div>
+														<div ng-if="document.header.schema=='organization'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.acronym" placeholder="пример: SCBD" locales="document.header.languages"></div>
+														<div ng-if="document.type=='organization'  && document.header.schema=='contact'" km-textbox-ml name="contact_organizationAcronym" ng-model="document.organizationAcronym" placeholder="пример: SCBD" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
@@ -133,7 +127,7 @@
 												</div>
 												<div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
 													<div class="km-control-group" name="contact_organizationTypeName" caption="Другой тип организации">
-														<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: СКБР" locales="document.header.languages"></div>
+														<div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue" placeholder="example: SCBD" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>

@@ -1,6 +1,6 @@
 ﻿<div style="padding:0!important;margin:0 0 20px 0!important;">
 
-        <div class="pull-right" style="padding-right:15px;position:relative;top:5px;"  ng-show="showDoc" ><span style="color:#ddd" > | </span> &nbsp; <a translation-url class="bold"  style="position:relative;top:2px;color:#FFF;font-size:20px;cursor:pointer;z-index:99999999;width:100%;" ng-click="showDoc=false">&times;</a></div>
+        <div class="pull-right" style="padding-right:15px;position:relative;top:5px;"  ng-show="showDoc" ><span style="color:#ddd" >|</span> &nbsp; <a translation-url class="bold"  style="position:relative;top:2px;color:#FFF;font-size:20px;cursor:pointer;z-index:99999999;width:100%;" ng-click="showDoc=false">&times;</a></div>
     <div ng-if="showDoc" class="animate-if" style="padding:5px 0px 10px 0px!important;margin:0 0 0 0!important;">
         <record-loader class="card card-3" api="api.recordLoaderApi" show-details="false" hide-buttons="true" link-target="_new"></record-loader>
     </div>
@@ -9,8 +9,12 @@
         <div ng-show="!showDoc" ng-click="showDoc=!showDoc" style="padding:0!important;margin:0!important;">
             <div class="{{type}}">
 
-                <div class="title bold">{{doc.rec_title}} <span ng-if="doc.publicationYear_i">({{doc.publicationYear_i}})</span></div><span class="description hidden-xs descriptionSpan" ng-if="doc.rec_summary">{{doc.rec_summary|limitTo:250}} <span ng-if="doc.rec_summary.length > 250">...</span></span><div ng-if="doc.schema_s=='capacityBuildingInitiative'"><span ng-if="doc.implementingAgencies_EN_txt"><strong>Implemented by</strong><span ng-repeat="item in doc.implementingAgencies_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span> <span ng-if="doc.executingAgencies_EN_txt"><strong>executed by</strong><span ng-repeat="item in doc.executingAgencies_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span> <span ng-if="doc.collaboratingPartners_EN_txt"><strong> with the collaboration of </strong><span ng-repeat="item in doc.collaboratingPartners_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span></div>
-                 <div ng-if="doc.schema_s=='resource'"><span ng-if="doc.authors_t">Автор(ы): {{doc.authors_t}}</span> <span ng-if="doc.organizations_EN_txt"><strong>Organizations </strong><span ng-repeat="item in doc.organizations_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span></div> 
+       
+                <div class="title bold" style="font-size:108%;" >{{doc.rec_title}} <span ng-if="doc.publicationYear_i">({{doc.publicationYear_i}})</span></div>
+                <div class="description hidden-xs descriptionSpan" style="margin: 5px 0;"  ng-if="doc.rec_summary">{{doc.rec_summary|limitTo:250}} <span ng-if="doc.rec_summary.length > 250">...</span></div>
+
+                <div ng-if="doc.schema_s=='capacityBuildingInitiative'"><span ng-if="doc.implementingAgencies_EN_txt"><strong>Implemented by</strong> <span ng-repeat="item in doc.implementingAgencies_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span> <span ng-if="doc.executingAgencies_EN_txt"><strong>executed by</strong> <span ng-repeat="item in doc.executingAgencies_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span> <span ng-if="doc.collaboratingPartners_EN_txt"><strong>with the collaboration of</strong> <span ng-repeat="item in doc.collaboratingPartners_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span></div>
+                 <div ng-if="doc.schema_s=='resource'"><span ng-if="doc.authors_t">Автор(ы): {{doc.authors_t}}</span> <span ng-if="doc.organizations_EN_txt"><strong>Organizations</strong> <span ng-repeat="item in doc.organizations_EN_txt">{{item}} <span ng-if="!$last">|</span></span></span></div> 
 
                     
                 <ul class="metadata bold">
