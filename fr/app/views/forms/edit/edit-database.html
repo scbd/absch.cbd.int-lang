@@ -10,7 +10,7 @@
 							<legend name="formInfo" style="display:none"></legend>
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+									<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -19,7 +19,7 @@
 							</div>
 							<section>
 
-								<legend>Nom du site Web ou de la base de donn&eacute;es </legend>
+								<legend>Nom du site Web ou de la base de donn&eacute;es</legend>
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="government" required caption="Pays">
@@ -30,7 +30,7 @@
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
-										<div class="km-control-group" name="title" required caption="Nom du site Web ou de la base de données">
+										<div class="km-control-group" name="title" required caption="Nom du site Web ou de la base de donn&eacute;es">
 											<div class="help-info">Veuillez entrer le nom du site Web ou de la base de donn&eacute;es tel que vous voudriez le voir dans le titre du dossier.</div>
 											<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages"
 											 placeholder="exemple: Le titre"></div>
@@ -96,8 +96,7 @@
 					</form>
 				</edit-form>
 				<review-form>
-					<view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true">
-						</view->
+					<view-database ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></view-database>
 				</review-form><!-- <publish-form></publish-form> --> <!-- use when you wan to display more than publish buttons --></div>
 
 		</div>

@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span>Checkpoint <span class="color-black"> (CP) </span> </span></h4>	
+		<h4><span>Punto de verificaci&oacute;n <span class="color-black"></span></span></h4>	
 	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
@@ -45,22 +45,23 @@
 			</div>--></div>
 
 		<div ng-if="document.informAllAuthorities || document.contactsToInform" >
-			<legend>Autoridad(es) que habr&aacute;n de recibir copias de cortes&iacute;a de los comunicados del punto de verificaci&oacute;n sobre la informaci&oacute;n recopilada o recibida originada en el punto de verificaci&oacute;n</legend>
+			<legend>Authority/ies to receive courtesy copies of checkpoint communiqu&eacute;s</legend>
 
-			<div class="help-info" style="padding-top:10px;">Todas las autoridades y contactos indicados a continuaci&oacute;n recibir&aacute;n copias por correo electr&oacute;nico de los comunicados del punto de verificaci&oacute;n que contengan informaci&oacute;n recopilada o recibida y publicada originada en ese punto de verificaci&oacute;n. S&iacute;rvase tomar nota de que las autoridades nacionales que proporcionaron un consentimiento fundamentado previo (CFP) autom&aacute;ticamente recibir&aacute;n copias por correo electr&oacute;nico de todos los comunicados del punto de verificaci&oacute;n. El Centro de Intercambio de Informaci&oacute;n sobre APB no puede garantizar que los correos electr&oacute;nicos hayan sido recibidos o le&iacute;dos.</div>
-			<div class="km-value" ng-show="document.informAllAuthorities"><a translation-url  href="/countries/{{document.government.identifier|uppercase}}" target="_new"> All national competent authorities (<a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a>) </a> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</div>
+			<div class="help-info" style="padding-top:10px;">The contacts indicated below will receive email copies of checkpoint communiqu&eacute;s containing the information collected or received and published from this checkpoint.</div>
+			<div class="km-value" ng-show="document.informAllAuthorities">All Competent National Authorities designated for <strong>{{document.government|term:locale}}</strong> have been selected to automatically receive checkpoint communiqu&eacute;s by email published from this checkpoint.</li>
+
+			</div>
           
-			<div ng-show="document.contactsToInform">
-				<div class="km-value" ng-repeat="authority in document.contactsToInform">
-                    <div view-contact-reference ng-model="authority" locale="locale"></div>
-				</div>
-			</div><!--<div ng-show="document.contactsToInform" class="row">
+			
+			<div  ng-show="document.contactsToInform">
+					<div class="km-value"  ng-repeat="authority in document.contactsToInform" ><span view-contact-reference ng-model="authority" locale="locale"></span></div>
+				</div><!--<div ng-show="document.contactsToInform" class="row">
 				<div ng-repeat="contact in document.contactsToInform">
 					<div class="col-xs-12">
 						<div view-contact-reference ng-model="contact" locale="locale" class="well"></div>
 					</div>
 				</div>
-			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >No se han seleccionado autoridades adicionales para recibir las copias autom&aacute;ticas por correo electr&oacute;nico de los comunicados del punto de verificaci&oacute;n publicados por dicho punto de verificaci&oacute;n. </span></div>
+			</div>--><div class="km-value" ng-show="!document.informAllAuthorities && !document.authoritiesToInform && !document.contactsToInform"><span >No se han seleccionado autoridades adicionales para recibir las copias autom&aacute;ticas por correo electr&oacute;nico de los comunicados del punto de verificaci&oacute;n publicados por dicho punto de verificaci&oacute;n.</span></div>
 
 		</div>
 

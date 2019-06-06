@@ -1,9 +1,5 @@
 ﻿<div ng-controller="editAbsProcedure">
-    <style>
-        .indent {
-            padding: 0 15px 0 15px;
-        }
-    </style>
+    <style>.indent { padding:0 15px 0 15px; }</style>
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -15,7 +11,7 @@
                         <div class="editForm">
                             <section><br><div class="row">
                                     <div class="col-xs-12" >
-                                        <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                        <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                             <div class="indent">
                                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                             </div>
@@ -41,7 +37,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="name" required caption="2.This is an ABS procedure for:">
-                                            <div class="indent help-info"> Please provide a title for this specific ABS procedure (E.g.:Non-commercial use)</div>
+                                            <div class="indent help-info">Please provide a title for this specific ABS procedure (E.g.:Non-commercial use)</div>
                                             <div class="indent" km-textbox-ml ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -49,7 +45,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="jurisdiction" caption="3.Area of jurisdiction:" >
+                                        <div class="km-control-group" name="jurisdiction" required caption="3.Area of jurisdiction:" >
                                             <div class="help-info indent">Jurisdiction where this ABS procedure is relevant</div>
                                             <div class="indent" style="max-width:300px;">
                                                 <div afc-autocomplete name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter"
@@ -83,8 +79,8 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="contactsOrLinks" caption="4.Where should applications for access be made?">
-                                            <div class="indent help-info"> Please provide relevant contacts or links. </div>
+                                        <div class="km-control-group" required name="contactsOrLinks" caption="4.Where should applications for access be made?">
+                                            <div class="indent help-info">Please provide relevant contacts or links.</div>
                                             <div class="indent">
                                                 <div document-selector ng-model="document.contacts" question="contacts" government="document.government" schema="(authority contact)" locales="document.header.languages"></div><br/><div km-link name="links" ng-model="document.links" identifier="document.header.identifier"></div>
 
@@ -121,7 +117,7 @@
                                             <div class="indent">
                                                 <div class="km-yes-no"  ng-model="document.hasApplicationDocuments"></div><br><div class="help-info">Please provide information on application forms or required documents (e.g.: copy of applicant&rsquo;s national passport)</div>
                                                 <div km-rich-textbox name="applicationInformation" rows="3" ng-model="document.applicationInformation" locales="document.header.languages"></div><br><div class="help-info">Please attach relevant application form/documents or provide a link to website</div>
-                                                <div km-link name="applicationLinks" ng-model="document.applicationLinks" identifier="document.header.identifier"></div><br><div class=" help-info"> Please provide information on whom the application should be sent to:</div>
+                                                <div km-link name="applicationLinks" ng-model="document.applicationLinks" identifier="document.header.identifier"></div><br><div class=" help-info">Please provide information on whom the application should be sent to:</div>
                                                 <div document-selector ng-model="document.applicationContacts" question="applicationContacts" government="document.government" schema="(authority contact)"></div>
                                             </div>
                                         </div>
@@ -164,7 +160,7 @@
                                         <div class="km-control-group" name="relevantMeasures" caption="10.Relevant ABS measure(s):">
                                             <div class="indent">
                                                 <div document-selector ng-model="document.relevantMeasures" question="relevantMeasures" government="document.government"
-                                                    schema="(measures)"></div>
+                                                    schema="(measure)"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -206,7 +202,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                            <div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                             <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                         </div>
                                     </div>

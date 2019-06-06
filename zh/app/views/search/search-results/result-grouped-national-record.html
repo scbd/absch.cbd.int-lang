@@ -1,12 +1,8 @@
 ﻿<div id="result-grouped-national-record easing">
-    <style>
-        .easing {
-            transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-        }
-    </style>
+    <style>.easing { transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); }</style>
 
 
-    <div class="pull-right" style="padding-right:15px;position:relative;top:5px;"  ng-show="showDoc" ><span style="color:#ddd" > | </span> &nbsp; <a translation-url class="bold"  style="position:relative;top:2px;color:#FFF;font-size:20px;cursor:pointer;z-index:99999999;width:100%;" ng-click="showDoc=false">&times;</a></div>
+    <div class="pull-right" style="padding-right:15px;position:relative;top:5px;"  ng-show="showDoc" ><span style="color:#ddd" >|</span> &nbsp; <a translation-url class="bold"  style="position:relative;top:2px;color:#FFF;font-size:20px;cursor:pointer;z-index:99999999;width:100%;" ng-click="showDoc=false">&times;</a></div>
 
     
     <div  ng-if="showDoc" class="animate-if" style="padding:5px 0px 10px 0px!important;margin:0 0 0 0!important;" class="easing">
@@ -15,16 +11,19 @@
     <div class="recordDefault nationalRecords card card-1 easing" style="margin-bottom:10px;" ng-show="!showDoc" ng-click="showDoc=!showDoc">
 
        
-        <div class="title bold">{{doc.rec_title}}</div><span class="description hidden-xs descriptionSpan" ng-if="doc.rec_summary">{{doc.rec_summary|limitTo:250}} <span ng-if="doc.rec_summary.length > 250">...</span></span><ul class="metadata bold" style="padding-top:0;margin-top:0;">
+        <div class="title bold"  style="font-size:108%;" >{{doc.rec_title}}</div>
+        <div class="description hidden-xs descriptionSpan"  style="margin: 5px 0;" ng-if="doc.rec_summary">{{doc.rec_summary|limitTo:250}} <span ng-if="doc.rec_summary.length > 350">...</span></div>
+
+        <ul class="metadata bold" style="padding-top:0;margin-top:0;">
             <li class="hidden-xs"><span class="color-blue">{{doc.rec_type ? doc.rec_type + &quot; (&quot;+ (doc.schema_s | schemaShortName) +&quot;)&quot;:(doc.schema_s | schemaName) }}</span></li>
             <li ng-if="doc.rec_countryName" class="hidden-xs"><span>{{doc.rec_countryName}}</span></li>
             <li ng-if="doc.uniqueIdentifier_s" ><span>{{doc.uniqueIdentifier_s}}</span></li>
-            <li class="hidden-xs" ng-if="doc.rec_meta1 && doc.schema_s !=='database'"  id="meta1"><span ng-if="doc.schema_s ==='absCheckpointCommunique'" style="color:#666!important;" >CHECKPOINT:</span><span  ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ?&apos;&apos;:&apos;, &apos;}}</span></li>
-            <li class="hidden-xs" ng-if="doc.rec_meta2 && doc.schema_s !=='absPermit'" id="meta2" ><span ng-if="doc.schema_s ==='absCheckpointCommunique'" style="color:#666!important;" >SOURCE:</span><span  ng-repeat="meta in doc.rec_meta2">{{meta}}{{$last ?&apos;&apos;:&apos;, &apos;}}</span></li>
+            <li class="hidden-xs" ng-if="doc.rec_meta1 && doc.schema_s !=='database'"  id="meta1"><span ng-if="doc.schema_s ==='absCheckpointCommunique'" style="color:#666!important;" >CHECKPOINT:</span> <span  ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ?&apos;&apos;:&apos;, &apos;}}</span></li>
+            <li class="hidden-xs" ng-if="doc.rec_meta2 && doc.schema_s !=='absPermit'" id="meta2" ><span ng-if="doc.schema_s ==='absCheckpointCommunique'" style="color:#666!important;" >SOURCE:</span> <span  ng-repeat="meta in doc.rec_meta2">{{meta}}{{$last ?&apos;&apos;:&apos;, &apos;}}</span></li>
             <li class="hidden-xs" ng-if="doc.rec_meta3" id="meta3"><span  ng-repeat="meta in doc.rec_meta3" ng-class="{'color-red':meta==='Revoked'}">{{meta}}{{$last ?&apos;&apos;:&apos;, &apos;}}</span></li>
             <li class="hidden-xs" ng-if="doc.rec_meta5" id="meta5"><span ng-repeat="meta in doc.rec_meta5">{{meta}}</span></li>
             <li class="hidden-xs" ng-if="doc.rec_meta4" id="meta4"><span  ng-repeat="meta in doc.rec_meta4">{{meta}}</span></li>
-            <li><span  ng-if="doc.schema_s =='absNationalReport' && compareDate(doc.rec_date, doc.rec_creationDate)"><span class="xlabel">submitted on:</span><span class="date">{{doc.rec_creationDate | formatDate}}</span></span> <span class="last-span"><label class="xlabel" ng-if="doc.schema_s =='absNationalReport' && compareDate(doc.rec_date, doc.rec_creationDate)">&nbsp;last updated:</label>{{doc.rec_date | formatDate}}</span></li>
+            <li><span  ng-if="doc.schema_s =='absNationalReport' && compareDate(doc.rec_date, doc.rec_creationDate)"><span class="xlabel">submitted on:</span> <span class="date">{{doc.rec_creationDate | formatDate}}</span></span> <span class="last-span"><label class="xlabel" ng-if="doc.schema_s =='absNationalReport' && compareDate(doc.rec_date, doc.rec_creationDate)">&nbsp;last updated:</label>{{doc.rec_date | formatDate}}</span></li>
         </ul><!--{{doc.schemaSort_i}} | {{doc.sort1_s}} | {{doc.sort2_s}} | {{doc.sort3_s}}--></div>
 
 </div>
