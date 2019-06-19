@@ -8,7 +8,7 @@
             "section": "General",
             "number": "11",
             "type": "option",
-            "title": "Votre pays fait-il partie des membres du Protocole de Cartagena sur la biosécurité ?",
+            "title": "Votre pays fait-il parti des membres du Protocole de Cartagena sur la biosécurité ?",
             "multiple": false,
             "options": [
                {
@@ -62,7 +62,7 @@
             "section": "General",
             "number": "13",
             "type": "lstring",
-            "title": "Vous pouvez fournir de plus amples renseignements dans la case suivante : ",
+            "title": "Vous pouvez fournir de plus amples renseignements dans la case suivante :",
             "multiple": false
          }
       ]
@@ -77,28 +77,28 @@
             "section": "Article2",
             "number": "14",
             "type": "option",
-            "title": "Votre pays a-t-il adopté les mesures nationales nécessaires à l’application du Protocole ? ",
+            "title": "Votre pays a-t-il adopté les mesures nationales nécessaires à l’application du Protocole ?",
             "multiple": false,
             "options": [
                {
                   "value": "implementation.fullInPlace",
-                  "title": "Les mesures nationales sont pleinement en place"
+                  "title": "Des mesures nationales ont été entièrement mises en place"
                },
                {
                   "value": "implementation.partiallyInPlace",
-                  "title": "Les mesures nationales sont partiellement en place"
+                  "title": "Des mesures nationales ont été partiellement mises en place"
                },
                {
                   "value": "implementation.temporaryMeasures",
-                  "title": "Seules des mesures temporaires ont été adoptées"
+                  "title": "Seules des mesures temporaires ont été mises en place"
                },
                {
                   "value": "implementation.draftMeasures",
-                  "title": "Il n’existe que des projets de mesures"
+                  "title": "Il n’y a qu’un projet de mesures"
                },
                {
                   "value": "implementation.none",
-                  "title": "Aucune mesure n'a encore été prise"
+                  "title": "Aucune mesure n’a encore été prise"
                }
             ],
             "mandatory": true
@@ -108,7 +108,7 @@
             "section": "Article2",
             "number": "15",
             "type": "option",
-            "title": "Quels instruments spécifiques sont en place pour l’application des mesures nationales sur la prévention des risques biotechnologiques ?  (Cochez toutes les réponses qui s'appliquent)",
+            "title": "Quels instruments spécifiques sont en place pour l’application des mesures nationales sur la prévention des risques biotechnologiques ? (Cochez toutes les réponses qui s'appliquent)",
             "multiple": true,
             "options": [
                {
@@ -117,7 +117,7 @@
                },
                {
                   "value": "instrument.nationalBiosafetyRegulations",
-                  "title": "Une ou plusieurs réglementations nationales "
+                  "title": "Une ou plusieurs réglementations nationales"
                },
                {
                   "value": "instrument.biosafetyGuidelines",
@@ -129,7 +129,7 @@
                },
                {
                   "value": "instrument.none",
-                  "title": "Aucun instrument n'est en place"
+                  "title": "Aucun instrument n’est en place"
                }
             ]
          },
@@ -152,7 +152,7 @@
                },
                {
                   "value": "false.other",
-                  "title": "Autre :",
+                  "title": "Autre",
                   "type": "lstring"
                }
             ]
@@ -213,7 +213,7 @@
             "section": "Article2",
             "number": "19",
             "type": "option",
-            "title": "Si vous avez répondu <i>Oui </i> à la question 18, combien d’employés permanents sont affectés à des fonctions directement liées à la prévention des risques biotechnologiques ?  ",
+            "title": "Si vous avez répondu <i>Oui </i> à la question 18, combien d’employés permanents sont affectés à des fonctions directement liées à la prévention des risques biotechnologiques ? ",
             "multiple": false,
             "options": [
                {
@@ -298,7 +298,7 @@
             "section": "Article5",
             "number": "22",
             "type": "lstring",
-            "title": "Vous pouvez fournir de plus amples détails sur l'application de l'article 5 dans votre pays  :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 5 dans votre pays :",
             "multiple": false
          }
       ]
@@ -373,7 +373,7 @@
             "section": "Article6",
             "number": "26",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 6 dans votre pays : ",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 6 dans votre pays :",
             "multiple": false
          }
       ]
@@ -484,7 +484,7 @@
             "section": "Articles7-10",
             "number": "30",
             "type": "option",
-            "title": "Si vous avez répondu  <i>Oui </i> à la question 29, la (les) notification (s) contenait-elle des informations complètes (au minimum les informations précisées à l'annexe I du Protocole de Cartagena sur la prévention des risques biotechnologiques) ?",
+            "title": "Si vous avez répondu  <i>Oui</i> à la question 29, la (les) notification (s) contenai (en) t-elle (s) des informations complètes (au minimum les informations précisées à l'annexe I du Protocole de Cartagena sur la prévention des risques biotechnologiques) ?",
             "multiple": false,
             "options": [
                {
@@ -507,7 +507,7 @@
             "section": "Articles7-10",
             "number": "31",
             "type": "option",
-            "title": "Si vous avez répondu <i>Oui </i>à la question 29, votre pays a-t-il accusé réception de la notification à son auteur dans les quatre-vingt-dix jours suivant sa réception ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 29, votre pays a-t-il accusé réception de la notification à son auteur dans les quatre-vingt-dix jours suivant sa réception ?",
             "multiple": false,
             "options": [
                {
@@ -530,7 +530,7 @@
             "section": "Articles7-10",
             "number": "32",
             "type": "sub-section",
-            "title": "Si vous avez répondu <i>Oui </i> à la question 29, votre pays a-t-il informé les parties suivantes de sa décision ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 29, votre pays a-t-il informé les parties suivantes de sa décision ?",
             "multiple": false,
             "questions": [
                {
@@ -623,7 +623,7 @@
             "section": "Articles7-10",
             "number": "34",
             "type": "option",
-            "title": "Si vous avez répondu <i>Oui </i> à la question 33, combien d’OVM votre pays a-t-il approuvés à ce jour aux fins d’importation en vue d’une introduction intentionnelle dans l’environnement ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 33, combien d’OVM votre pays a-t-il approuvés à ce jour aux fins d’importation en vue d’une introduction intentionnelle dans l’environnement ?",
             "multiple": false,
             "options": [
                {
@@ -660,7 +660,7 @@
             "section": "Articles7-10",
             "number": "35",
             "type": "option",
-            "title": "Si vous avez répondu <i>à la question 34 <i>que des <i>OVM ont été approuvés</i>, est-ce que tous ces OVM ont été importés dans votre pays ?",
+            "title": "Si vous avez répondu <i>à la question 34</i> que des <i>OVM ont été approuvés</i>, est-ce que tous ces OVM ont été importés dans votre pays ?",
             "multiple": false,
             "options": [
                {
@@ -683,7 +683,7 @@
             "section": "Articles7-10",
             "number": "36",
             "type": "option",
-            "title": "Si vous avez répondu <i>Oui </i> à la question 33, quel pourcentage de décisions de votre pays entre dans les catégories suivantes ? (Cochez toutes les réponses qui s'appliquent)",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 33, quel pourcentage de décisions de votre pays entre dans les catégories suivantes ? (Cochez toutes les réponses qui s'appliquent)",
             "multiple": true,
             "options": [
                {
@@ -730,7 +730,7 @@
             "section": "Articles7-10",
             "number": "37",
             "type": "option",
-            "title": "Si vous avez répondu <i>à la question 36 </i> que votre pays a pris la décision <i>d'approuver l'importation sous conditions </i> ou<i>d'interdire l'importation,</i>,les raisons ont-elles été fournies ? ",
+            "title": "Si vous avez répondu <i>à la question 36</i> que votre pays a pris la décision <i>d’approuver l’importation sous conditions</i> ou <i>d’interdire l’importation</i>, les raisons ont-elles été fournies ?",
             "multiple": false,
             "options": [
                {
@@ -856,7 +856,7 @@
             "section": "Article11",
             "number": "43",
             "type": "option",
-            "title": "Au cours de la période couverte par le présent rapport, combien de décisions votre pays a-t-il prises <u>concernant l'importation</u>d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale ou pour être transformés ? ",
+            "title": "Au cours de la période couverte par le présent rapport, combien de décisions votre pays a-t-il prises <u>concernant l'importation</u> d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale ou pour être transformés ?",
             "multiple": false,
             "options": [
                {
@@ -1135,7 +1135,7 @@
             "section": "Article12",
             "number": "52",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 12 dans votre pays :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 12 dans votre pays :",
             "multiple": false
          }
       ]
@@ -1209,7 +1209,7 @@
             "section": "Article13",
             "number": "55",
             "type": "option",
-            "title": "Si vous avez répondu<i>Oui</i> à la question 54, pour combien d'OVM votre pays a-t-il appliqué la procédure simplifiée ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 54, pour combien d'OVM votre pays a-t-il appliqué la procédure simplifiée ?",
             "multiple": false,
             "options": [
                {
@@ -1255,7 +1255,7 @@
             "section": "Article13",
             "number": "57",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 13 dans votre pays :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 13 dans votre pays :",
             "multiple": false
          }
       ]
@@ -1456,7 +1456,7 @@
                   "section": "Article15_16",
                   "number": "a",
                   "type": "option",
-                  "title": "Évaluation des risques :",
+                  "title": "Évaluation des risques",
                   "multiple": false,
                   "options": [
                      {
@@ -1498,7 +1498,7 @@
                   "section": "Article15_16",
                   "number": "",
                   "type": "option",
-                  "title": "Ce chiffre est-il suffisant : ",
+                  "title": "Ce chiffre est-il suffisant :",
                   "multiple": false,
                   "options": [
                      {
@@ -1576,7 +1576,7 @@
                   "section": "Article15_16",
                   "number": "c",
                   "type": "option",
-                  "title": "Suivi :",
+                  "title": "Évaluer",
                   "multiple": false,
                   "options": [
                      {
@@ -1986,7 +1986,7 @@
             "section": "Article15_16",
             "number": "76",
             "type": "option",
-            "title": "Si vous avez répondu <i>Oui</i>à la question 75, combien d'évaluations des risques ont-elles été réalisées ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 75, combien d'évaluations des risques ont-elles été réalisées ?",
             "multiple": false,
             "options": [
                {
@@ -2012,7 +2012,7 @@
             "section": "Article15_16",
             "number": "77",
             "type": "term",
-            "title": "Si vous avez répondu  <i>Oui</i> à la question 75, veuillez indiquer le champ d’application de l'évaluation des risques (cochez toutes les cases pertinentes) :",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 75, veuillez indiquer le champ d’application de l'évaluation des risques (cochez toutes les cases pertinentes) :",
             "multiple": true,
             "options": [
                {
@@ -2041,7 +2041,7 @@
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Autre :",
+                  "title": "Autre",
                   "type": "lstring"
                }
             ]
@@ -2252,7 +2252,7 @@
             "section": "Article17",
             "number": "87",
             "type": "option",
-            "title": "Si vous avez répondu <i>à la question 86</i>qu'une<i>dissémination s'est produite</i>, votre pays a-t-il informé les États touchés ou susceptibles d'être touchés, le Centre d'échange pour la prévention des risques biotechnologiques et, le cas échéant, les organisations internationales compétentes ?",
+            "title": "Si vous avez répondu <i>à la question 86</i> qu'une <i>dissémination s'est produite</i>, votre pays a-t-il informé les États touchés ou susceptibles d'être touchés, le Centre d'échange pour la prévention des risques biotechnologiques et, le cas échéant, les organisations internationales compétentes ?",
             "multiple": false,
             "options": [
                {
@@ -2335,7 +2335,7 @@
             "section": "Article18",
             "number": "91",
             "type": "option",
-            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les OVM pouvant <i>faire l’objet de mouvements transfrontières</i>soient manipulés, emballés et transportés dans des conditions de sécurité tenant compte des règles et normes internationales pertinentes ?",
+            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les OVM pouvant <i>faire l’objet de mouvements transfrontières</i> soient manipulés, emballés et transportés dans des conditions de sécurité tenant compte des règles et normes internationales pertinentes ?",
             "multiple": false,
             "options": [
                {
@@ -2452,7 +2452,7 @@
             "section": "Article18",
             "number": "95",
             "type": "option",
-            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les documents accompagnant les <i>OVM destinés à un usage confiné</i>indiquent clairement qu’il s’agit <i>d’organismes vivants modifiés</i>, précisent les normes à respecter pour une manipulation, un entreposage, un transport et une utilisation sans danger, et fournissent les coordonnées de la personne à contacter pour tout complément d’information, dont le nom et l’adresse de la personne et de l’institution auxquelles les organismes vivants modifiés sont expédiés ?",
+            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les documents accompagnant les <i>OVM destinés à un usage confiné</i> indiquent clairement qu’il s’agit <i>d’organismes vivants modifiés</i>, précisent les normes à respecter pour une manipulation, un entreposage, un transport et une utilisation sans danger, et fournissent les coordonnées de la personne à contacter pour tout complément d’information, dont le nom et l’adresse de la personne et de l’institution auxquelles les organismes vivants modifiés sont expédiés ?",
             "multiple": false,
             "options": [
                {
@@ -2510,7 +2510,7 @@
             "section": "Article18",
             "number": "97",
             "type": "option",
-            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les documents accompagnant des <i>OVM destinés à une introduction intentionnelle dans l’environnement de la Partie importatrice</i>indiquent clairement qu’il s’agit d’<i>organismes vivants modifiés</i>, précisent leur identité et leurs traits ou caractères pertinents, ainsi que toute règle de sécurité à observer pour la manipulation, l’entreposage, le transport et l’utilisation de ces organismes, fournissent les coordonnées de la personne à contacter pour un complément d’information, et si nécessaire, le nom et l’adresse de l’importateur et l’exportateur, et contiennent une déclaration certifiant que le mouvement est conforme aux dispositions du Protocole applicables à l’exportateur ?",
+            "title": "Votre pays a-t-il pris les mesures nécessaires pour exiger que les documents accompagnant des <i>OVM destinés à une introduction intentionnelle dans l’environnement de la Partie importatrice</i> indiquent clairement qu’il s’agit d’ <i>organismes vivants modifiés</i>, précisent leur identité et leurs traits ou caractères pertinents, ainsi que toute règle de sécurité à observer pour la manipulation, l’entreposage, le transport et l’utilisation de ces organismes, fournissent les coordonnées de la personne à contacter pour un complément d’information, et si nécessaire, le nom et l’adresse de l’importateur et l’exportateur, et contiennent une déclaration certifiant que le mouvement est conforme aux dispositions du Protocole applicables à l’exportateur ?",
             "multiple": false,
             "options": [
                {
@@ -2812,7 +2812,7 @@
             "section": "Article18",
             "number": "106",
             "type": "option",
-            "title": "Si vous avez répondu <i>à la question 105</i>que <i>des laboratoires certifiés existent dans votre pays</i>, combien d'entre eux s’occupent actuellement de la détection des OVM ?",
+            "title": "Si vous avez répondu <i>à la question 105</i> que <i>des laboratoires certifiés existent dans votre pays</i>, combien d'entre eux s’occupent actuellement de la détection des OVM ?",
             "multiple": false,
             "options": [
                {
@@ -2843,14 +2843,14 @@
             "section": "Article18",
             "number": "107",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 18 dans votre pays:",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 18 dans votre pays :",
             "multiple": false
          }
       ]
    },
    {
       "key": "Article19",
-      "title": "Article 19 – Autorités nationales compétentes et correspondants nationaux ",
+      "title": "Article 19 – Autorités nationales compétentes et correspondants nationaux",
       "questions": [
          {
             "key": "Q108",
@@ -2925,7 +2925,7 @@
             "section": "Article19",
             "number": "111",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 19 dans votre pays :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 19 dans votre pays :",
             "multiple": false
          }
       ]
@@ -3439,7 +3439,7 @@
             "section": "Article20",
             "number": "115",
             "type": "option",
-            "title": "Votre pays a-t-il établi un mécanisme pour la coordination des efforts du correspondant national du Centre d’échange pour la prévention des risques biotechnologiques, du correspondant national du Protocole de Cartagena et des autorités nationales compétentes afin de mettre les informations à la disposition du Centre d’échange pour la prévention des risques biotechnologiques ? (Cochez toutes les réponses qui s'appliquent)",
+            "title": "Votre pays a-t-il établi un mécanisme pour la coordination des efforts du correspondant national du Centre d’échange pour la prévention des risques biotechnologiques, du correspondant national du Protocole de Cartagena et des autorités nationales compétentes afin de mettre les informations à la disposition du Centre d’échange pour la prévention des risques biotechnologiques ?",
             "multiple": false,
             "options": [
                {
@@ -3540,7 +3540,7 @@
             "section": "Article20",
             "number": "119",
             "type": "option",
-            "title": "Au cours de la période couverte par ce rapport, combien de publications relatives à la prévention des risques biotechnologiques votre pays a-t-il publiées ? ",
+            "title": "Au cours de la période couverte par ce rapport, combien de publications relatives à la prévention des risques biotechnologiques votre pays a-t-il publiées ?",
             "multiple": false,
             "options": [
                {
@@ -3571,7 +3571,7 @@
             "section": "Article20",
             "number": "120",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 20 dans votre pays:",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 20 dans votre pays :",
             "multiple": false
          }
       ]
@@ -3881,7 +3881,7 @@
             "section": "Article22",
             "number": "132",
             "type": "term",
-            "title": "Si vous avez répondu  <i>Oui</i> à la question 131, dans quels secteurs parmi les suivants ces activités ont-elles été entreprises (cocher toutes les cases pertinentes) ? (Cochez toutes les réponses qui s'appliquent)» ",
+            "title": "Si vous avez répondu  <i>Oui</i> à la question 131, dans quels secteurs parmi les suivants ces activités ont-elles été entreprises (cocher toutes les cases pertinentes) ?",
             "multiple": true,
             "options": [
                {
@@ -3930,7 +3930,7 @@
                },
                {
                   "value": "3E7615C5-7DFC-4E04-9D26-6C80B4B1DED8",
-                  "title": "Manipulation de renseignements confidentiels  "
+                  "title": "Manipulation de renseignements confidentiels "
                },
                {
                   "value": "D9AC6B7F-316B-483B-8E74-A5EC87343C81",
@@ -3938,7 +3938,7 @@
                },
                {
                   "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
-                  "title": "Recherche scientifique en matière de prévention des risques biotechnologiques liés aux OVM"
+                  "title": "Recherche scientifique en prévention des risques biotechnologiques liés aux OVM"
                },
                {
                   "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
@@ -3950,7 +3950,7 @@
                },
                {
                   "value": "5B6177DD-5E5E-434E-8CB7-D63D67D5EBED",
-                  "title": "Autre",
+                  "title": "Autres :",
                   "type": "lstring"
                }
             ],
@@ -4030,7 +4030,7 @@
                },
                {
                   "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
-                  "title": "Sensibilisation et participation du public, et éducation en biosécurité"
+                  "title": "Sensibilisation du public, participation et éducation sur la prévention des risques biotechnologiques"
                },
                {
                   "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
@@ -4460,11 +4460,11 @@
                },
                {
                   "value": "E8FAF86C-4202-4ABB-9B89-D3D2F2B2BABF",
-                  "title": "Listes de diffusion : "
+                  "title": "Listes de diffusion :"
                },
                {
                   "value": "51792A07-B3C0-4F7B-830E-0741635F57BB",
-                  "title": "Audiences publiques : "
+                  "title": "Audiences publiques :"
                },
                {
                   "value": "887CD9B1-4571-5Z6A-A459-F78E004D7D28",
@@ -4529,7 +4529,7 @@
             "section": "Article23",
             "number": "152",
             "type": "lstring",
-            "title": "Vous pouvez fournir ici de plus amples détails sur l’application de l’article 23 dans votre pays :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 23 dans votre pays :",
             "multiple": false
          }
       ]
@@ -4637,7 +4637,7 @@
             "section": "Article24",
             "number": "157",
             "type": "lstring",
-            "title": "Vous pouvez fournir de plus amples détails sur l’application de l’article 24 dans votre pays dans la case suivante :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 24 dans votre pays :",
             "multiple": false
          }
       ]
@@ -4713,7 +4713,7 @@
             "section": "Article25",
             "number": "160",
             "type": "option",
-            "title": "Si vous avez indiqué <i>à la question 159</i>que<i>votre pays a eu connaissance de cas de mouvements transfrontières illégaux</i>, l'origine du ou des OVM a-t-elle été établie ?",
+            "title": "Si vous avez indiqué <i>à la question 159</i> que <i>votre pays a eu connaissance de cas de mouvements transfrontières illégaux</i>, l'origine du ou des OVM a-t-elle été établie ?",
             "multiple": false,
             "options": [
                {
@@ -4735,7 +4735,7 @@
             "section": "Article25",
             "number": "161",
             "type": "lstring",
-            "title": "Vous pouvez fournir de plus amples détails sur l’application de l’article 25 dans votre pays dans la case suivante :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 25 dans votre pays :",
             "multiple": false
          }
       ]
@@ -4873,7 +4873,7 @@
             "section": "Article26",
             "number": "166",
             "type": "lstring",
-            "title": "Vous pouvez fournir de plus amples détails sur l’application de l’article 26 dans votre pays dans la case suivante :",
+            "title": "Vous pouvez fournir ici plus de détails sur l'application de l'article 26 dans votre pays :",
             "multiple": false
          }
       ]
@@ -4922,7 +4922,7 @@
    {
       "key": "Article33",
       "title": "Article 33 – Suivi et établissement de rapports",
-      "description": "<i>L'Article 33 demande aux Parties de surveiller <u>la mise en œuvre de leurs obligations</u> au titre du Protocole de Cartagena et de faire un rapport à la Conférence des Parties siégeant en tant que réunion des Parties au Protocole de Cartagena sur les mesures prises pour mettre en œuvre le Protocole </i>",
+      "description": "<i>L'Article 33 demande aux Parties de surveiller <u>la mise en œuvre de leurs obligations</u> au titre du Protocole de Cartagena et de faire un rapport à la Conférence des Parties siégeant en tant que réunion des Parties au Protocole de Cartagena sur les mesures prises pour mettre en œuvre le Protocole</i>",
       "questions": [
          {
             "key": "Q168",
@@ -5048,17 +5048,17 @@
             "options": [
                {
                   "value": "6BAF09B7-6331-04E6-479D-C1C1B0D55ECD",
-                  "title": "Une ou plusieurs lois nationales ",
+                  "title": "Une ou plusieurs lois nationales",
                   "type": "lstring"
                },
                {
                   "value": "0D3A9BB1-B378-174D-F4DD-1217D79D8B21",
-                  "title": "Une ou plusieurs réglementations nationales ",
+                  "title": "Une ou plusieurs réglementations nationales",
                   "type": "lstring"
                },
                {
                   "value": "BA743C79-B202-4611-16C4-2C7D4678ACEB",
-                  "title": "Une ou plusieurs directives ",
+                  "title": "Une ou plusieurs directives",
                   "type": "lstring"
                },
                {
@@ -5417,7 +5417,7 @@
                },
                {
                   "value": "true",
-                  "title": "Oui, dans d’autres instruments : ",
+                  "title": "Oui, dans d’autres instruments :",
                   "type": "lstring"
                },
                {
@@ -5460,7 +5460,7 @@
             "section": "LiabilityRedress",
             "number": "184",
             "type": "term",
-            "title": "Si vous avez répondu  <i>Oui</i> à la question 183, des mesures d’intervention ont-elles été prises ?",
+            "title": "Si vous avez répondu <i>Oui</i> à la question 183, des mesures d’intervention ont-elles été prises ?",
             "multiple": false,
             "options": [
                {
