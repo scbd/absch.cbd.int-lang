@@ -1,9 +1,6 @@
 ﻿<div id="RecordDetails">
     
-    <style>
-        #RecordDetails td {padding-right:5px;}
-         #RecordDetails label {color:#666;}
-    </style>
+    <style> #RecordDetails td {padding-right:5px;} #RecordDetails label {color:#666;} </style>
 
    <div class="row" >
             <div class="col-xs-12">
@@ -11,28 +8,28 @@
                     <h3 style="margin:0 0 20px 0;padding:0;border-bottom:1px solid #999;">Information sur le fichier</h3>
                     <table style="width:100%!important;">
                             <tr>
-                                <td><label> Identifiant unique : </label></td>
+                                <td><label>Identifiant unique :</label></td>
                                 <td class="bold">{{doc | uniqueID}}</td>
                             </tr>
                             <tr>
-                                <td><label> Propri&eacute;t&eacute;s de l&apos;enregistrement : </label></td>
+                                <td><label>Propri&eacute;t&eacute;s de l&apos;enregistrement :</label></td>
                                 <td class="bold"><span class="color-grey" ng-if="docInfo.revision == '0'">BROUILLON</span> <span class="color-green"  ng-if="docInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red"  ng-if="docInfo.workingDocumentLock">[ verrouill&eacute;: Demande de publication en cours]</span></td>
                             </tr>
                             <tr>
-                                <td><label> Type de fichier : </label></td>
+                                <td><label>Type de fichier :</label></td>
                                 <td class="bold">{{docInfo.metadata.schema | schemaName}}</td>
                             </tr>
                             
                              <tr  ng-if="docInfo.revision > 0">
-                                <td><label> Versions enregistr&eacute;es : </label></td>
+                                <td><label>Versions enregistr&eacute;es :</label></td>
                                 <td class="bold">{{docInfo.revision}}</td>
                             </tr>
                             <tr ng-if="docInfo.metadata.government">
-                                <td><label> Auteur du fichier : </label></td>
-                                 <td class="bold"> {{getUserCountry(docInfo.metadata.government)}}</td>
+                                <td><label>Auteur du fichier :</label></td>
+                                 <td class="bold">{{getUserCountry(docInfo.metadata.government)}}</td>
                             </tr>
                             <tr>
-                                <td><label> Historique :</label></td>
+                                <td><label>Historique :</label></td>
                                 <td>
                                   <div view-history document-id="docInfo.identifier"></div>
                                 </td>

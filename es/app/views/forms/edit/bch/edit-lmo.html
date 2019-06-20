@@ -18,7 +18,7 @@
 									<legend>Informaci&oacute;n general</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -39,19 +39,19 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="transformationEvent" caption="Eventos de transformación">
+											<div class="km-control-group" required name="transformationEvent" caption="Eventos de transformaci&oacute;n">
 												<div class="help-block">Nombre de la transformaci&oacute;n, por ejemplo, MON810</div>
 												<input type="text" class="form-control" name="transformationEvent" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="hasUniqueIdentification" required caption="¿Este OVM tiene un identificador único?">
+											<div class="km-control-group" name="hasUniqueIdentification" required caption="¿Este OVM tiene un identificador &uacute;nico?">
 												<div class="help-block">El CIISB est&aacute; utilizando actualmente el sistema de identificador &uacute;nico que figura en la Gu&iacute;a de la OCDE para la designaci&oacute;n de los identificadores &uacute;nicos para los vegetales transg&eacute;nicos (por ejemplo, MON-&Oslash;&Oslash;81&Oslash;-6). For more information see <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
 												<div km-yes-no required ng-model="hasUniqueIdentification" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-sm-12" ng-if="hasUniqueIdentification">
-											<div class="km-control-group" required name="uniqueIdentification" caption="Identificador único">
+											<div class="km-control-group" required name="uniqueIdentification" caption="Identificador &uacute;nico">
 												<input type="text" class="form-control" name="uniqueIdentification" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
@@ -62,7 +62,7 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="description" caption="Descripción">
+											<div class="km-control-group" required name="description" caption="Descripci&oacute;n">
 												<div km-textbox-ml name="description" required ng-model="document.description" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -75,7 +75,7 @@
 										</div>
 
 										<div class="col-sm-12">
-											<div class="km-control-group"  name="recipientOrganismCollectionPoint" caption="Punto de recolección o adquisición del organismo receptor o de los organismos parentales">
+											<div class="km-control-group"  name="recipientOrganismCollectionPoint" caption="Punto de recolecci&oacute;n o adquisici&oacute;n del organismo receptor o de los organismos parentales">
 												<div km-textbox-ml name="recipientOrganismCollectionPoint"  ng-model="document.recipientOrganismCollectionPoint" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -102,24 +102,24 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group"  name="techniqueUsed" caption="Técnicas utilizadas para la modificación">
+											<div class="km-control-group"  name="techniqueUsed" caption="T&eacute;cnicas utilizadas para la modificaci&oacute;n">
 												<div km-term-check name="techniqueUsed" required ng-model="document.techniqueUsed" terms="options.techniqueUsed" binding-type="term[]"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="genes" caption="Elementos introducidos o genéticamente modificados">	
+											<div class="km-control-group" required name="genes" caption="Elementos introducidos o gen&eacute;ticamente modificados">	
 												<div class="help-block">Es preferible que en esta secci&oacute;n se haga referencia a todos los elementos gen&eacute;ticos introducidos en este OVM, tales como promotores, secuencias de codificaci&oacute;n de la prote&iacute;na y terminadores. Como m&iacute;nimo, es obligatorio consignar TODAS las secuencias de codificaci&oacute;n de la prote&iacute;na.</div>
 												<div document-selector ng-model="document.genes" question="genes"
 													schema="(dnaSequence)" caption="Gen y secuencia de DNA"></div>			
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="geneConstructs" caption="Constructo elementos genéticos">
+											<div class="km-control-group" required name="geneConstructs" caption="Constructo elementos gen&eacute;ticos">
 												<div class="help-block"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="geneNotes" caption="Notas relacionadas con los elementos genéticos presentes en este OVM">	
+											<div class="km-control-group" name="geneNotes" caption="Notas relacionadas con los elementos gen&eacute;ticos presentes en este OVM">	
 												<div class="help-block">Please specify if any of these elements has been modified from the sequence registered in the BCH Genetic Element Registry and how they relate to each other in this LMO, for instance &ldquo;epsps protein coding sequence under control of the 35S promoter and nos terminator&rdquo;.</div>
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
@@ -139,19 +139,19 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="affectedGenes" caption="Otro(s) gen(es) cuya expresión fue afectada por la transformación">	
+											<div class="km-control-group" required name="affectedGenes" caption="Otro(s) gen(es) cuya expresi&oacute;n fue afectada por la transformaci&oacute;n">	
 												<div class="help-block">Esta secci&oacute;n debe usarse para especificar los cambios en la expresi&oacute;n de genes distintos de los que se insertaron en los organismos vivos modificados, por ejemplo, el silenciamiento o la inducci&oacute;n del gen.</div>
 												<div document-selector ng-model="document.affectedGenes" question="affectedGenes"
 													schema="(dnaSequence)" caption="Gen y secuencia de DNA"></div>			
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="geneNotes" caption="Por favor describa cómo la expresión del(los) gen(es) se vio afectada">	
+											<div class="km-control-group" name="geneNotes" caption="Por favor describa c&oacute;mo la expresi&oacute;n del(los) gen(es) se vio afectada">	
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="commonUses" caption="Uso común del(os) OVM(s)">
+											<div class="km-control-group" required name="commonUses" caption="Uso com&uacute;n del(os) OVM(s)">
 												<div class="help-block">Seleccione tantas opciones como sea preciso.</div>
 												<div km-term-check name="commonUses" required ng-model="document.commonUses" terms="options.commonUses" binding-type="term[]"></div>
 											</div>
@@ -185,7 +185,7 @@
 									<legend>Informaci&oacute;n suplementaria</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+											<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
 												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>

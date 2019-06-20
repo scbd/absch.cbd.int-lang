@@ -1,11 +1,11 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
-		<h4>Initiatives de renforcement des capacit&eacute;s <span class="color-black">(IRC) </span></h4>
+		<h4>Initiatives de renforcement des capacit&eacute;s <span class="color-black">(IRC)</span></h4>
     </div>
 	<div class="record-body panel-body">
 			
-		<document-date></document-date> <br><div ng-show="document.title">
+		<document-date></document-date><br><div ng-show="document.title">
 			<label>Titre</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
@@ -16,35 +16,35 @@
 		</div>
 
 		<div ng-show="document.geographicScope">
-			<label>Couverture g&eacute;ographique</label><span class="km-value">{{document.geographicScope.scope | term:locale}} </span></div>
+			<label>Couverture g&eacute;ographique</label><span class="km-value">{{document.geographicScope.scope | term:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && (document.geographicScope.regions || document.geographicScope.countries)">
 			<label>Pays ou groupe(s) g&eacute;ographique(s) ou politique(s)</label>
 			<div class="km-value">
                 <ul  class="list" ng-show="document.geographicScope.regions || document.geographicScope.countries">
-                    <li ng-repeat="term in document.geographicScope.regions">{{term | term:locale}} </li>
-                    <li ng-repeat="term in document.geographicScope.countries">{{term | term:locale}} </li>
+                    <li ng-repeat="term in document.geographicScope.regions">{{term | term:locale}}</li>
+                    <li ng-repeat="term in document.geographicScope.countries">{{term | term:locale}}</li>
                 </ul>
             </div>
 		</div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.jurisdiction">
-			<label>Juridiction</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}} </span></div>
+			<label>Juridiction</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.community">
-			<label>Communaut&eacute;</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}} </span></div>
+			<label>Communaut&eacute;</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}}</span></div>
 
 		<div>
 			<label>Type d&rsquo;initiative de renforcement des capacit&eacute;s</label>
 			<div style="padding-left:20px" >
 				<div>
-					<label>a. S&rsquo;agit-il d&rsquo;un programme enti&egrave;rement d&eacute;die au projet/programme de renforcement des capacit&eacute;s? </label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Oui</div>
+					<label>a. S&rsquo;agit-il d&rsquo;un programme enti&egrave;rement d&eacute;die au projet/programme de renforcement des capacit&eacute;s?</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Yes</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isProjectProgramme">Non</div>
 				</div>
 				<div>
 					<label>b. S&rsquo;agit-il d&rsquo;une activit&eacute; APA ou d&rsquo;un &eacute;l&eacute;ment faisant partie d&rsquo;un plus vaste projet/programme de renforcement des capacit&eacute;s?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">Oui</div>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">Yes</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isBroaderProjectPart">Non</div>
 					<div ng-if="document.capacityBuildingType.broaderProjects">
 						<label>Projets plus vastes</label>
@@ -58,15 +58,15 @@
 					</div>
 				</div>
 				<div>
-					<label>c. S&rsquo;agit-il d&rsquo;une activit&eacute; APA autonome ne faisant pas partie d&rsquo;un plus vaste projet/programme de renforcement des capacit&eacute;s? </label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Oui</div>
+					<label>c. S&rsquo;agit-il d&rsquo;une activit&eacute; APA autonome ne faisant pas partie d&rsquo;un plus vaste projet/programme de renforcement des capacit&eacute;s?</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Yes</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isStandaloneProject">Non</div>
 				</div>
 			</div>
 		</div>
 	
 		<div ng-show="document.status">
-			<label>Statut du document</label><span class="km-value">{{document.status | term:locale}} </span></div>
+			<label>Statut du document</label><span class="km-value">{{document.status | term:locale}}</span></div>
 
 		<div ng-show="(document.startDate && document.endDate) || document.durationPeriod || document.durationText">
 	  			<div class="row" ng-show="document.startDate && document.endDate">
@@ -82,7 +82,7 @@
 
 	  			<div ng-show="document.durationPeriod || document.durationText">
 	  				<label>Dur&eacute;e</label>
-	  				<div class="km-value km-pre">{{document.durationPeriod}} {{document.durationText | lstring:locale}} </div>
+	  				<div class="km-value km-pre">{{document.durationPeriod}} {{document.durationText | lstring:locale}}</div>
 	  			</div>
 		</div>
 
@@ -211,14 +211,14 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Additional Information</legend>
+			<legend>Renseignements suppl&eacute;mentaires</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Autres sites Web pertinents ou documents en pi&egrave;ce jointe</label>
+				<label>Other relevant website address or attached documents</label>
 				<div class="km-value" >
 					<ul class="list">
 						<li ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>

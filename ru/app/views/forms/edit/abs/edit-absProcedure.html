@@ -1,5 +1,5 @@
 ﻿<div ng-controller="editAbsProcedure">
-    <style>.indent { padding: 0 15px 0 15px; }</style>
+    <style> .indent { padding: 0 15px 0 15px; } </style>
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -11,7 +11,7 @@
                         <div class="editForm">
                             <section><br><div class="row">
                                     <div class="col-xs-12" >
-                                        <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+                                        <div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
                                             <div class="indent">
                                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                             </div>

@@ -1,16 +1,13 @@
 <div class="nr-selector">
 
-    <style>
-        .nr-selector td[ng-click],
-        .nr-selector th[ng-click] { cursor:pointer; }
-    </style>
+    <style> .nr-selector td[ng-click], .nr-selector th[ng-click] { cursor:pointer; } .modal-open { overflow: scroll; } </style>
 
     <table class="table table-hover" style="margin-bottom:0px">
         <tr>
             <th style="width:200px">National Report</th>
             <td>
                 <select style="Width: 100%;" ng-model="selectedReportType" ng-change="reportTypeChanged()"  class="form-control">
-                    <option ng-repeat="report in reportData" value="{{report.type}}" >{{report.title}}</option>
+                    <option ng-repeat="report in (reportData|filter:hasAnalyzer)" value="{{report.type}}" >{{report.title}}</option>
                     
                 </select>
             </td>
@@ -44,21 +41,21 @@
     <table class="table table-hover">
         <tr>
             <td>
-                <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="allSectionsClicked()" >
+                <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-change="allSectionsClicked()" >
             </td>
             <th class="Title" colspan="4" ng-click="allSelected=!allSelected; allSectionsClicked();">Toutes les questions et/ou les sections du rapport</th>
         </tr>
 
         <tr ng-repeat-start="section in sections">
-            <td><input type="checkbox" ng-model="section.selected" ng-click="sectionClicked(section)" indeterminate="section.selected===null"></td>
+            <td><input type="checkbox" ng-model="section.selected" ng-change="sectionClicked(section)" indeterminate="section.selected===null"></td>
             <th ng-click="section.expanded=!section.expanded" colspan="3">{{::section.title}}</th>
             <th ng-click="section.expanded=!section.expanded"><i class="fa" ng-class="{ 'fa-caret-up' : section.expanded, 'fa-caret-down' : !section.expanded }"></i></th>
         </tr>
 
         <tr ng-if="section.expanded" ng-repeat="question in ::section.questions">
             <td></td>
-            <td><input type="checkbox" ng-model="question.selected" ng-click="questionClicked(question)"></td>
-            <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap"><span ng-switch="question.key[0]"><span ng-switch-when="S">Survey Question {{::question.number}}.</span><span ng-switch-default>Question {{::question.number}}.</span></span></td>
+            <td><input type="checkbox" ng-model="question.selected" ng-change="questionClicked(question)"></td>
+            <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap"><span ng-switch="question.key[0]"><span ng-switch-when="S">Survey Question {{::question.number}}.</span> <span ng-switch-default>Question {{::question.number}}.</span></span></td>
             <td ng-click="question.selected=!question.selected; questionClicked(question)">{{::question.title}}</td>
             <td></td>
         </tr>

@@ -18,7 +18,7 @@
 										<legend>Informations g&eacute;n&eacute;rales</legend>
 											<div class="row">
 												<div class="col-xs-12" >
-													<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+													<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 														<div class="indent">
 															<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 														</div>
@@ -27,7 +27,7 @@
 											</div>
 											<div class="row" ng-if="isNational">
 												<div class="col-sm-12">
-													<div class="km-control-group" name="government" required caption="Pays soumettant la décision ou la communication">
+													<div class="km-control-group" name="government" required caption="Pays soumettant la d&eacute;cision ou la communication">
 														<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries"
 															filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Veuillez choisir un pays..."></div>
 													</div>
@@ -36,7 +36,7 @@
 		
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" required name="title" caption="Titre de l'évaluation des risques">
+													<div class="km-control-group" required name="title" caption="Titre de l&apos;&eacute;valuation des risques">
 														<div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -44,7 +44,7 @@
 		
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" name="date" caption="Date de l'évaluation des risques">
+													<div class="km-control-group" name="date" caption="Date de l&apos;&eacute;valuation des risques">
 														<div km-date placeholder="AAAA-MM-JJ" name="date" required ng-model="document.date"></div>
 													</div>
 												</div>
@@ -75,7 +75,7 @@
 											<legend>D&eacute;tails de l&apos;&eacute;valuation des risques</legend>
 											<div class="row">
 												<div class="col-xs-12">
-													<div class="km-control-group" name="modifiedOrganisms" required caption="Organisme vivant modifié">											
+													<div class="km-control-group" name="modifiedOrganisms" required caption="Organisme vivant modifi&eacute;">											
 														<div document-selector ng-model="document.modifiedOrganisms" question="modifiedOrganisms"
 															government="document.government" schema="(modifiedOrganism)" skip-government="true"></div>			
 													</div>
@@ -83,7 +83,7 @@
 											</div>
 											<div class="row">
 												<div class="col-xs-12">
-													<div class="km-control-group" name="scopes" required caption="Étendue de l'évaluation des risques">
+													<div class="km-control-group" name="scopes" required caption="&Eacute;tendue de l&apos;&eacute;valuation des risques">
 															<div km-term-check required ng-model="document.scopes" locales="document.header.languages"
 															terms="options.riskAssessmentScope()"  binding-type="term[]"></div>
 													</div>
@@ -113,14 +113,14 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffectsLikelihood" caption="Probabilité de réalisation des effets défavorables possibles">
+													<div class="km-control-group"  name="adverseEffectsLikelihood" caption="Probabilit&eacute; de r&eacute;alisation des effets d&eacute;favorables possibles">
 														<div km-rich-textbox  name="adverseEffectsLikelihood"  ng-model="document.adverseEffectsLikelihood" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffectsConsequence" caption="Conséquences possibles">
+													<div class="km-control-group"  name="adverseEffectsConsequence" caption="Cons&eacute;quences possibles">
 														<div km-rich-textbox name="adverseEffectsConsequence"  ng-model="document.adverseEffectsConsequence" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -134,21 +134,21 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffectsRecommendation" caption="Recommandations sur le caractère acceptable des risques ou la capacité de gérer les risques et les stratégies de gestion">
+													<div class="km-control-group"  name="adverseEffectsRecommendation" caption="Recommandations sur le caract&egrave;re acceptable des risques ou la capacit&eacute; de g&eacute;rer les risques et les strat&eacute;gies de gestion">
 														<div km-rich-textbox name="adverseEffectsRecommendation"  ng-model="document.adverseEffectsRecommendation" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="riskManagementStrategies" caption="Nécessité d'obtenir des renseignements supplémentaires sur des préoccupations particulières">
+													<div class="km-control-group"  name="riskManagementStrategies" caption="N&eacute;cessit&eacute; d&apos;obtenir des renseignements suppl&eacute;mentaires sur des pr&eacute;occupations particuli&egrave;res">
 														<div km-rich-textbox name="riskManagementStrategies"  ng-model="document.riskManagementStrategies" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="receivingEnvironment" caption="Milieux récepteurs envisagés">
+													<div class="km-control-group"  name="receivingEnvironment" caption="Milieux r&eacute;cepteurs envisag&eacute;s">
 														<div class="help-block">Information sur l&apos;emplacement et les caract&eacute;ristiques g&eacute;ographiques, climatiques et &eacute;cologiques du milieu r&eacute;cepteur potentiel probable, y compris information pertinente sur la diversit&eacute; biologique et les centres d&apos;origine qui s&apos;y trouvent, tel qu&apos;&eacute;nonc&eacute; dans l&apos;Annexe III, paragraphe 9 h) du Protocole.</div>
 														<div km-rich-textbox name="receivingEnvironment"  ng-model="document.receivingEnvironment" locales="document.header.languages"></div>
 													</div>
@@ -156,7 +156,7 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="detectionMethod" caption="Méthodes proposées pour la détection et l'identification des OVM">
+													<div class="km-control-group"  name="detectionMethod" caption="M&eacute;thodes propos&eacute;es pour la d&eacute;tection et l&apos;identification des OVM">
 														<div km-rich-textbox name="detectionMethod"  ng-model="document.detectionMethod" locales="document.header.languages"></div>
 													</div>
 												</div>

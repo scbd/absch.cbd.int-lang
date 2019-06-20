@@ -1,7 +1,7 @@
 ﻿<div ng-show="showWarning">
     <div class="well" ng-if="responsibleCNA && responsibleCNA.numFound > 0">
         <h3 class="color-red">Une autorit&eacute; nationale comp&eacute;tente (ANC) a d&eacute;j&agrave; &eacute;t&eacute; enregistr&eacute;e comme &eacute;tant la seule ANC d&eacute;sign&eacute;e pour votre pays.</h3>
-            <h5 class="color-red"> Vous pouvez toutefois enregistr&eacute; un brouillon mais vous ne pourrez le publier en tant que nouvelle ANC avant d&rsquo;avoir mis ce fichier &agrave; jour :</h5>
+            <h5 class="color-red">Vous pouvez toutefois enregistr&eacute; un brouillon mais vous ne pourrez le publier en tant que nouvelle ANC avant d&rsquo;avoir mis ce fichier &agrave; jour :</h5>
             <div id="search-new">
             <div ng-repeat="rec in responsibleCNA.docs">
                 <result-default doc='rec' type="nationalRecords"></result-default>

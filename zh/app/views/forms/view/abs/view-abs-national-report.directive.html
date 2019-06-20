@@ -1,10 +1,10 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><label><span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span> <span class="color-black"> (NR) </span></label>
+	<div class="panel-heading bg-blue"><label><span class="color-white">Interim National Report on the Implementation of the Nagoya Protocol</span> <span class="color-black">(NR)</span></label>
 	</div>
 	<div class="record-body panel-body">
 
 			
-		<document-date></document-date> <br><br><div class="panel panel-info">
+		<document-date></document-date><br><br><div class="panel panel-info">
 			<div class="panel-heading">
 				<label>一般信息</label>
 			</div>
@@ -13,7 +13,7 @@
 				<div>
 					<label>国家</label>
 					<div class="km-value"  ng-show="document.government"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></div>
-					<div class="km-value"  ng-hide="document.government">未选中国家</div>
+					<div class="km-value"  ng-hide="document.government">No country selected</div>
 				</div>
 
 				<div ng-show="document.title">
@@ -24,7 +24,7 @@
 					<label>2.联系人</label>
 					<div class="km-value" view-contact-reference ng-model="document.contact" locale="locale"  ng-if="document.contact">
 					</div>
-					<div  class="km-value"  ng-if="!document.contact">未提供联系方式</div>
+					<div  class="km-value"  ng-if="!document.contact">No Contact provided</div>
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 							<div class="km-value pre-wrap">{{document.question4.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question4.documentReferenceIDs && !documentReferenceIDsEmpty(document.question4.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question4.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -87,7 +87,7 @@
 							<div class="km-value pre-wrap">{{document.question5.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question5.documentReferenceIDs && !documentReferenceIDsEmpty(document.question5.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question5.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -111,7 +111,7 @@
 							<div class="km-value pre-wrap">{{document.question6.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question6.documentReferenceIDs && !documentReferenceIDsEmpty(document.question6.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question6.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -136,7 +136,7 @@
 							<div class="km-value pre-wrap">{{document.question7.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question7.documentReferenceIDs && !documentReferenceIDsEmpty(document.question7.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question7.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -157,7 +157,7 @@
 							<div class="km-value pre-wrap">{{document.question8.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question8.documentReferenceIDs && !documentReferenceIDsEmpty(document.question8.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question8.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -181,7 +181,7 @@
 							<div class="km-value pre-wrap">{{document.question9.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question9.documentReferenceIDs && !documentReferenceIDsEmpty(document.question9.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question9.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -193,15 +193,15 @@
 				</div>
 
 				<div>
-					<label>10.其他信息</label>
+					<label>10.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question10.challengesInfo">
-							<label>请提供主要困难和挑战的摘要 </label>
+							<label>请提供主要困难和挑战的摘要</label>
 							<div class="km-value pre-wrap">{{document.question10.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question10.documentReferenceIDs && !documentReferenceIDsEmpty(document.question10.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question10.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -233,7 +233,7 @@
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question11.answer)}}</div>
 								<div ng-show="document.question11.challengesInfo">
-									<label>Please provide further information including indicating if there is any other system in place in relation to access to genetic resources </label>
+									<label>Please provide further information including indicating if there is any other system in place in relation to access to genetic resources</label>
 									<div class="km-value pre-wrap">{{document.question11.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.furtherInfo">
@@ -241,7 +241,7 @@
 									<div class="km-value pre-wrap">{{document.question11.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.documentReferenceIDs && !documentReferenceIDsEmpty(document.question11.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question11.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -261,7 +261,7 @@
 									<div class="km-value pre-wrap">{{document.question12.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question12.documentReferenceIDs && !documentReferenceIDsEmpty(document.question12.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question12.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -281,7 +281,7 @@
 									<div class="km-value pre-wrap">{{document.question13.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question13.documentReferenceIDs && !documentReferenceIDsEmpty(document.question13.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question13.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -301,7 +301,7 @@
 									<div class="km-value pre-wrap">{{document.question14.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question14.documentReferenceIDs && !documentReferenceIDsEmpty(document.question14.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question14.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -321,7 +321,7 @@
 									<div class="km-value pre-wrap">{{document.question15.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question15.documentReferenceIDs && !documentReferenceIDsEmpty(document.question15.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question15.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -342,7 +342,7 @@
 									<div class="km-value pre-wrap">{{document.question16.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question16.documentReferenceIDs && !documentReferenceIDsEmpty(document.question16.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question16.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -362,7 +362,7 @@
 									<div class="km-value pre-wrap">{{document.question17.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question17.documentReferenceIDs && !documentReferenceIDsEmpty(document.question17.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question17.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -425,7 +425,7 @@
 									<div class="km-value pre-wrap">{{document.question18.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question18.documentReferenceIDs && !documentReferenceIDsEmpty(document.question18.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question18.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -437,15 +437,15 @@
 						</div>
 
 						<div>
-							<label>19.其他信息</label>
+							<label>19.Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">未提供其它信息</div>
+								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question19.challengesInfo">
-									<label>请提供主要困难和挑战的摘要 </label>
+									<label>请提供主要困难和挑战的摘要</label>
 									<div class="km-value pre-wrap">{{document.question19.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question19.documentReferenceIDs && !documentReferenceIDsEmpty(document.question19.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question19.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -477,7 +477,7 @@
 									<div class="km-value pre-wrap">{{document.question20.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question20.documentReferenceIDs && !documentReferenceIDsEmpty(document.question20.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question20.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -497,7 +497,7 @@
 									<div class="km-value pre-wrap">{{document.question21.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question21.documentReferenceIDs && !documentReferenceIDsEmpty(document.question21.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question21.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -517,7 +517,7 @@
 									<div class="km-value pre-wrap">{{document.question22.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question22.documentReferenceIDs && !documentReferenceIDsEmpty(document.question22.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question22.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -529,15 +529,15 @@
 						</div>
 
 						<div ng-show="document.question23">
-							<label>23.其他信息</label>
+							<label>23.Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question23.challengesInfo && !document.question23.relevantDocuments && (!document.question23.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question23.documentReferenceIDs))">未提供其它信息</div>
+								<div class="km-value" ng-show="!document.question23.challengesInfo && !document.question23.relevantDocuments && (!document.question23.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question23.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question23.challengesInfo">
 									<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 									<div class="km-value pre-wrap">{{document.question23.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question23.documentReferenceIDs && !documentReferenceIDsEmpty(document.question23.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question23.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -592,7 +592,7 @@
 									<div class="km-value pre-wrap">{{document.question24.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question24.documentReferenceIDs && !documentReferenceIDsEmpty(document.question24.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question24.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -627,7 +627,7 @@
 									<div class="km-value pre-wrap">{{document.question25.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question25.documentReferenceIDs && !documentReferenceIDsEmpty(document.question25.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question25.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -665,7 +665,7 @@
 									<div class="km-value pre-wrap">{{document.question26.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question26.documentReferenceIDs && !documentReferenceIDsEmpty(document.question26.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question26.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -684,7 +684,7 @@
 				                	<ul>
 					                    <div>
 							            	<label>贵国是否已利用检查点公报？</label>
-							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty(&apos;option&apos;)? document.question27.cpc.option :&quot;Not selected&quot;}} </div>
+							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty(&apos;option&apos;)? document.question27.cpc.option :&quot;Not selected&quot;}}</div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
 						                    <label>Please provide further information</label>
@@ -697,7 +697,7 @@
 				                    <div class="km-value pre-wrap">{{document.question27.challengesInfo | lstring:locale}}</div>
 				                </div>
 				                <div ng-if="document.question27.cpcsOnAbsChCount >= 0">
-				                	<label>请提供贵国在获取和惠益分享信息交换所提供的检查点公报的数量（如适用）。</label>
+				                	<label>Please provide number of checkpoint communiques available in the ABS Clearing-House, if applicable</label>
 				                	<div class="km-value">{{document.question27.hasOwnProperty(&apos;cpcsOnAbsChCount&apos;)&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
@@ -716,7 +716,7 @@
 									<div class="km-value pre-wrap">{{document.question28.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question28.documentReferenceIDs && !documentReferenceIDsEmpty(document.question28.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question28.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -740,7 +740,7 @@
 									<div class="km-value pre-wrap">{{document.question29.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.documentReferenceIDs && !documentReferenceIDsEmpty(document.question29.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question29.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -752,15 +752,15 @@
 						</div>
 
 						<div>
-							<label>30.其他信息</label>
+							<label>30.Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question30.challengesInfo && !document.question30.relevantDocuments && (!document.question30.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question30.documentReferenceIDs))">未提供其它信息</div>
+								<div class="km-value" ng-show="!document.question30.challengesInfo && !document.question30.relevantDocuments && (!document.question30.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question30.documentReferenceIDs))">No addtional information provided</div>
 								<div ng-show="document.question30.challengesInfo">
 									<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 									<div class="km-value pre-wrap">{{document.question30.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question30.documentReferenceIDs && !documentReferenceIDsEmpty(document.question30.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question30.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -792,7 +792,7 @@
 									<div class="km-value pre-wrap">{{document.question31.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question31.documentReferenceIDs && !documentReferenceIDsEmpty(document.question31.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question31.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -812,7 +812,7 @@
 									<div class="km-value pre-wrap">{{document.question32.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question32.documentReferenceIDs && !documentReferenceIDsEmpty(document.question32.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question32.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -839,7 +839,7 @@
 									<div class="km-value pre-wrap">{{document.question33.mechanisms.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question33.documentReferenceIDs && !documentReferenceIDsEmpty(document.question33.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question33.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -851,15 +851,15 @@
 						</div>
 
 						<div>
-							<label>34.其他信息</label>
+							<label>34.Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">未提供其它信息</div>
+								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question34.challengesInfo">
 									<label>请提供主要困难和挑战的摘要</label>
 									<div class="km-value pre-wrap">{{document.question34.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question34.documentReferenceIDs && !documentReferenceIDsEmpty(document.question34.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question34.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -894,7 +894,7 @@
 							<div class="km-value pre-wrap">{{document.question35.research.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.research.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.research.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.research.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -909,7 +909,7 @@
 							<div class="km-value pre-wrap">{{document.question35.emergencies.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.emergencies.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.emergencies.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.emergencies.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -924,7 +924,7 @@
 							<div class="km-value pre-wrap">{{document.question35.access.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.access.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.access.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.access.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -932,14 +932,14 @@
 
 							</div>
 						</div>
-						<label>Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)? </label>
+						<label>Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
 							<label>Please provide further information</label>
 							<div class="km-value pre-wrap">{{document.question35.importance.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.importance.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.importance.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.importance.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -951,15 +951,15 @@
 				</div>
 
 				<div>
-					<label>36.其他信息</label>
+					<label>36.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question36.challengesInfo && !document.question36.relevantDocuments && (!document.question36.documentReferenceIDs || documentReferenceIDsEmpty(document.question36.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question36.challengesInfo && !document.question36.relevantDocuments && (!document.question36.documentReferenceIDs || documentReferenceIDsEmpty(document.question36.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question36.challengesInfo">
 							<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 							<div class="km-value pre-wrap">{{document.question36.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question36.documentReferenceIDs && !documentReferenceIDsEmpty(document.question36.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question36.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -990,7 +990,7 @@
 							<div class="km-value pre-wrap">{{document.question37.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question37.documentReferenceIDs && !documentReferenceIDsEmpty(document.question37.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question37.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1013,7 +1013,7 @@
 										<div class="km-value pre-wrap">{{document.question38.law.furtherInfo | lstring:locale}}</div>
 									</div>
 									<div ng-show="document.question38.law.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.law.documentReferenceIDs)">
-			                			<label>提供包含相关信息的信息交换所记录编号</label>
+			                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 										<div class="km-value">
 											<ul class="list">
 												<li ng-repeat="reference in document.question38.law.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1047,7 +1047,7 @@
 							<div class="km-value pre-wrap">{{document.question38.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question38.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question38.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1067,7 +1067,7 @@
 							<div class="km-value pre-wrap">{{document.question39.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question39.documentReferenceIDs && !documentReferenceIDsEmpty(document.question39.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question39.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1087,7 +1087,7 @@
 							<div class="km-value pre-wrap">{{document.question40.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question40.documentReferenceIDs && !documentReferenceIDsEmpty(document.question40.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question40.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1107,7 +1107,7 @@
 							<div class="km-value pre-wrap">{{document.question41.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question41.documentReferenceIDs && !documentReferenceIDsEmpty(document.question41.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question41.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1132,7 +1132,7 @@
 			                    	<div class="km-value pre-wrap">{{document.question42.community.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.community.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.community.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.community.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1152,7 +1152,7 @@
 			                    	<div ng-show="document.question42.mat.furtherInfo" class="km-value pre-wrap">{{document.question42.mat.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mat.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mat.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mat.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1172,7 +1172,7 @@
 			                    	<div class="km-value pre-wrap">{{document.question42.mcc.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mcc.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mcc.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mcc.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1194,7 +1194,7 @@
 							<div class="km-value pre-wrap">{{document.question43.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question43.documentReferenceIDs && !documentReferenceIDsEmpty(document.question43.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question43.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1206,16 +1206,16 @@
 				</div>
 
 				<div>
-					<label>44.其他信息</label>
+					<label>44.Additional information:</label>
 					<ul>
 						<div class="km-value km-pre" ng-show="!document.question37.answer ">{{conditionalBooleanToText(!document.question37.answer,document.question44.answer)}}</div>
-						<div class="km-value" ng-show="document.question37.answer && !document.question44.challengesInfo && !document.question44.relevantDocuments && (!document.question44.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question44.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="document.question37.answer && !document.question44.challengesInfo && !document.question44.relevantDocuments && (!document.question44.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question44.documentReferenceIDs))">No additional information provided.</div>
 						<div ng-show="document.question44.challengesInfo">
 							<label>Please provide a summary of the main difficulties and challenges for putting measures in place in relation to traditional knowledge associated with genetic resources</label>
 							<div class="km-value pre-wrap">{{document.question44.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question44.documentReferenceIDs && !documentReferenceIDsEmpty(document.question44.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question44.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1247,7 +1247,7 @@
 							<div class="km-value pre-wrap">{{document.question45.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question45.documentReferenceIDs && !documentReferenceIDsEmpty(document.question45.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question45.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1261,12 +1261,12 @@
 				<div>
 					<label>46.请说明贵国实施名古屋议定书为保护和可持续利用生物多样性做出了哪些贡献：</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question46.furtherInfo && (!document.question46.documentReferenceIDs || documentReferenceIDsEmpty(document.question46.documentReferenceIDs))">未提供反馈</div>
+						<div class="km-value" ng-show="!document.question46.furtherInfo && (!document.question46.documentReferenceIDs || documentReferenceIDsEmpty(document.question46.documentReferenceIDs))">No answer provided</div>
 						<div ng-show="document.question46.furtherInfo">
 							<div class="km-value pre-wrap">{{document.question46.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question46.documentReferenceIDs && !documentReferenceIDsEmpty(document.question46.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question46.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1278,15 +1278,15 @@
 				</div>
 
 				<div>
-					<label>47.其他信息</label>
+					<label>47.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">No additional information provided.</div>
 						<div ng-show="document.question47.challengesInfo">
 							<label>请提供主要困难和挑战的摘要</label>
 							<div class="km-value pre-wrap">{{document.question47.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question47.documentReferenceIDs && !documentReferenceIDsEmpty(document.question47.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question47.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1321,7 +1321,7 @@
 							<div class="km-value pre-wrap">{{document.question48.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.documentReferenceIDs && !documentReferenceIDsEmpty(document.question48.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question48.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1342,7 +1342,7 @@
 							<div class="km-value pre-wrap">{{document.question49.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question49.documentReferenceIDs && !documentReferenceIDsEmpty(document.question49.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question49.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1354,15 +1354,15 @@
 				</div>
 
 				<div>
-					<label>50.其他信息</label>
+					<label>50.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question50.challengesInfo">
 							<label>请提供主要困难和挑战的摘要</label>
 							<div class="km-value pre-wrap">{{document.question50.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question50.documentReferenceIDs && !documentReferenceIDsEmpty(document.question50.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question50.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1393,7 +1393,7 @@
 							<div class="km-value pre-wrap">{{document.question51.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question51.documentReferenceIDs && !documentReferenceIDsEmpty(document.question51.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question51.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1412,7 +1412,7 @@
 							<div class="km-value pre-wrap">{{document.question52.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question52.documentReferenceIDs && !documentReferenceIDsEmpty(document.question52.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question52.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1423,15 +1423,15 @@
 					</ul>
 				</div>
 				<div>
-					<label>53.其他信息</label>
+					<label>53.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question53.challengesInfo">
 							<label>请提供主要困难和挑战的摘要</label>
 							<div class="km-value pre-wrap">{{document.question53.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question53.documentReferenceIDs && !documentReferenceIDsEmpty(document.question53.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question53.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1466,7 +1466,7 @@
 									<div class="km-value pre-wrap">{{document.question54.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question54.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.measures.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question54.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1481,7 +1481,7 @@
 							<div class="km-value pre-wrap">{{document.question54.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question54.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question54.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1498,14 +1498,14 @@
 						<div class="km-value km-pre">{{booleanToText(document.question55.answer)}}</div>
 						<div style="margin: 0 0 10px 20px;" ng-show="document.question55.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？ </label>
+								<label>贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？</label>
 								<div class="km-value km-pre">{{document.question55.measures.answer | yesno}}</div>
 								<div ng-show="document.question55.measures.furtherInfo">
 									<label>Please provide a summary of the measures taken</label>
 									<div class="km-value pre-wrap">{{document.question55.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question55.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.measures.documentReferenceIDs)">
-		                			<label>提供包含相关信息的信息交换所记录编号</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question55.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1520,7 +1520,7 @@
 							<div class="km-value pre-wrap">{{document.question55.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question55.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question55.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1532,7 +1532,7 @@
 				</div>
 
 				<div>
-					<label>56.在名古屋议定书实施能力建设和培养方面，贵国是否已获得外部支持？  </label>
+					<label>56.在名古屋议定书实施能力建设和培养方面，贵国是否已获得外部支持？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
@@ -1540,7 +1540,7 @@
 							<div class="km-value pre-wrap">{{document.question56.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question56.documentReferenceIDs && !documentReferenceIDsEmpty(document.question56.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question56.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1552,7 +1552,7 @@
 				</div>
 
 				<div>
-					<label>57.在名古屋议定书实施能力建设和培养方面，贵国是否已对外提供支持？ </label>
+					<label>57.在名古屋议定书实施能力建设和培养方面，贵国是否已对外提供支持？</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
@@ -1560,7 +1560,7 @@
 							<div class="km-value pre-wrap">{{document.question57.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question57.documentReferenceIDs && !documentReferenceIDsEmpty(document.question57.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question57.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1572,15 +1572,15 @@
 				</div>
 
 				<div>
-					<label>58.其他信息</label>
+					<label>58.Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question58.challengesInfo">
 							<label>请提供主要困难和挑战的摘要</label>
 							<div class="km-value pre-wrap">{{document.question58.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question58.documentReferenceIDs && !documentReferenceIDsEmpty(document.question58.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question58.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1616,7 +1616,7 @@
 							<div class="km-value pre-wrap">{{document.question59.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.documentReferenceIDs && !documentReferenceIDsEmpty(document.question59.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question59.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1637,12 +1637,12 @@
 				<div>
 					<label>60.请提供成为名古屋议定书缔约方所面临主要困难和挑战的摘要。</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">未提供其它信息</div>
+						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question60.challengesInfo">
 							<div class="km-value pre-wrap">{{document.question60.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question60.documentReferenceIDs && !documentReferenceIDsEmpty(document.question60.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question60.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1666,11 +1666,11 @@
 							<div class="km-value pre-wrap">{{document.question61.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.furtherInfo">
-							<label>请在输入文字处提供进一步的信息， 可包含为执行《名古屋议定书》而调配资源的经验以及相关拨款的使用状态（拨款支出情况，金额和计划以及资金缺口）</label>
+							<label>Use the text entry to provide further information. including on experiences gained in relation to mobilization of resources to support the implementation of the Nagoya Protocol and the status of funds mobilized (level of domestic expenditures, or the amount of and trends in funding allocated, for the implementation of the Protocol and the funding gap)</label>
 							<div class="km-value pre-wrap">{{document.question61.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.documentReferenceIDs && !documentReferenceIDsEmpty(document.question61.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question61.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1739,11 +1739,11 @@
 							<div class="km-value km-pre">否</div>
 						</ul>
                         <div ng-show="document.question62.furtherInfo">
-                            <label>请在输入文字处提供进一步的信息， 可包含为执行《议定书》而获得的财政资源的具体调配情况（如总金额） </label>
+                            <label>Use the text entry to provide further information, .including on the status of financial resources (total amount) mobilized donated or received for the purposes of implementation of the Protocol</label>
 							<div class="km-value pre-wrap">{{document.question62.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question62.documentReferenceIDs && !documentReferenceIDsEmpty(document.question62.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question62.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1788,7 +1788,7 @@
 							<div class="km-value pre-wrap">{{document.question63.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question63.documentReferenceIDs && !documentReferenceIDsEmpty(document.question63.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question63.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1804,7 +1804,7 @@
 					<ul>
 						<div class="km-value pre-wrap">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
-                			<label>提供包含相关信息的信息交换所记录编号</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question64.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>

@@ -13,7 +13,7 @@
                                         <legend name="generalInfo">Informations g&eacute;n&eacute;rales</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+                                                <div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -23,7 +23,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="control-group">
-                                                    <div class="km-control-group" name="government" required caption="Pays émetteur du communiqué de point de contrôle">
+                                                    <div class="km-control-group" name="government" required caption="Pays &eacute;metteur du communiqu&eacute; de point de contr&ocirc;le">
                                                         <div afc-autocomplete required name="government" ng-disabled="userGovernment()"
                                                             ng-model="document.government" source="options.countries" filter="genericFilter"
                                                             mapping="genericMapping" selectbox="true" placeholder="Veuillez choisir un pays..."></div>
@@ -35,9 +35,9 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="control-group">
-                                                    <div class="km-control-group" name="title" required caption="Titre de ce communiqué de point de contrôle">
+                                                    <div class="km-control-group" name="title" required caption="Titre de ce communiqu&eacute; de point de contr&ocirc;le">
                                                         <div class="help-info">Ce champs sert de titre pour ce fichier et doit ainsi &ecirc;tre distinct et permettre d&apos;identifier facilement ce fichier dans le Centre d&apos;&eacute;change pour l&rsquo;APA.</div>
-                                                        <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Titre de ce communiqué de point de contrôle"
+                                                        <div km-textbox-ml ng-model="document.title" rows="1" placeholder="Titre de ce communiqu&eacute; de point de contr&ocirc;le"
                                                             locales="document.header.languages"></div>
                                                     </div>
                                                 </div>
@@ -50,8 +50,8 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="control-group">
-                                                    <div class="km-control-group" name="absCheckpoints" required caption="Point(s) de contrôle qui ont collecté ou reçu l’information">
-                                                        <div class="help-info"> Dans ce champs, vous pouvez s&eacute;lectionner parmi les fichiers existants du Centre d&apos;&eacute;change APA, le fichier du point de contr&ocirc;le qui a collect&eacute; ou re&ccedil;u l&apos;information.</div>
+                                                    <div class="km-control-group" name="absCheckpoints" required caption="Point(s) de contr&ocirc;le qui ont collect&eacute; ou re&ccedil;u l&rsquo;information">
+                                                        <div class="help-info">Dans ce champs, vous pouvez s&eacute;lectionner parmi les fichiers existants du Centre d&apos;&eacute;change APA, le fichier du point de contr&ocirc;le qui a collect&eacute; ou re&ccedil;u l&apos;information.</div>
             
                                                         <div document-selector ng-model="document.absCheckpoints" question="absCheckpoints"
                                                             government="document.government" schema="absCheckpoint" filter="true"></div>
@@ -68,10 +68,10 @@
                                             <div class="col-xs-12">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable"
-                                                                watch-items> Le certificat de conformit&eacute; internationalement reconnu n&apos;est pas disponible</input></span></div>
+                                                                watch-items>Le certificat de conformit&eacute; internationalement reconnu n&apos;est pas disponible</input></span></div>
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                                         <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs"
-                                                            required caption="Liens avec les autres certificats de conformité internationalement reconnus relatifs à ce communiqué">
+                                                            required caption="Liens avec les autres certificats de conformit&eacute; internationalement reconnus relatifs &agrave; ce communiqu&eacute;">
                                                             <div class="help-info">Ici, la r&eacute;f&eacute;rence &agrave; un certificat de conformit&eacute; internationalement reconnu est incluse si l&rsquo;usager des ressources g&eacute;n&eacute;tiques a pr&eacute;sent&eacute; un CCIR  &agrave; un point de contr&ocirc;le. Utiliser les diff&eacute;rents filtres ou l&rsquo;identifiant unique dans le champs de texte pour chercher le CCIR pertinent. Si le CCIR n&apos;est pas disponible, s&eacute;lectionner l&rsquo;option «&nbsp;Cette information n&apos;est pas disponible&nbsp;» et l&rsquo;encadr&eacute; gris sera accessible.</div>
                                                             <div document-selector ng-model="document.absIRCCs" question="absIRCCs"
                                                                 schema="absPermit" disabled="isAbsIRCCsNotAvailable()" filter="true"
@@ -95,7 +95,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="control-group">
-                                                        <div class="km-control-group" name="sourceCountries" required caption="Source des la ressource génétique">
+                                                        <div class="km-control-group" name="sourceCountries" required caption="Source des la ressource g&eacute;n&eacute;tique">
                                                             <div class="help-info">S&eacute;lectionnez le/les pays sources de la ressource g&eacute;n&eacute;tique. Les pays s&eacute;lectionn&eacute;s seront ceux qui recevront le CPCC &eacute;mis &agrave; partir de l&rsquo;information enregistr&eacute;e.</div>
                                                             <div km-select required name="sourceCountries" ng-model="document.sourceCountries"
                                                                 multiple items="options.countries()" placeholder="Veuillez choisir un pays..."></div>
@@ -108,8 +108,8 @@
                                             <legend>Objet ou ressource g&eacute;n&eacute;tique</legend>
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="subjectMatter" required caption="Objet ou ressources génétiques pertinents pour les informations recueillies ou reçues">
-                                                        <div class="help-info">Veuillez fournir les d&eacute;tails de l&rsquo;objet ou des ressources g&eacute;n&eacute;tiques pertinents pour les informations recueillies ou re&ccedil;ues par le point de contr&ocirc;le. Cela comprend le biote &agrave; n&apos;importe quel rang taxonomique, qui peut porter un nom taxonomique. Cela peut &eacute;galement inclure la position d&rsquo;une collection de la mati&egrave;re. Il est &eacute;galement possible d&rsquo;identifier une ressource g&eacute;n&eacute;tique avec une r&eacute;f&eacute;rence &agrave; un &eacute;chantillon de r&eacute;f&eacute;rence ou &agrave; des notes de terrain d&eacute;tenues dans des archives ou une collection identifi&eacute;es. </div>
+                                                    <div class="km-control-group" name="subjectMatter" required caption="Objet ou ressources g&eacute;n&eacute;tiques pertinents pour les informations recueillies ou re&ccedil;ues">
+                                                        <div class="help-info">Veuillez fournir les d&eacute;tails de l&rsquo;objet ou des ressources g&eacute;n&eacute;tiques pertinents pour les informations recueillies ou re&ccedil;ues par le point de contr&ocirc;le. Cela comprend le biote &agrave; n&apos;importe quel rang taxonomique, qui peut porter un nom taxonomique. Cela peut &eacute;galement inclure la position d&rsquo;une collection de la mati&egrave;re. Il est &eacute;galement possible d&rsquo;identifier une ressource g&eacute;n&eacute;tique avec une r&eacute;f&eacute;rence &agrave; un &eacute;chantillon de r&eacute;f&eacute;rence ou &agrave; des notes de terrain d&eacute;tenues dans des archives ou une collection identifi&eacute;es.</div>
                                                         <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter"
                                                             locales="document.header.languages"></div>
                                                     </div>
@@ -119,7 +119,7 @@
                                                 <div class="legend2">Sujet suppl&eacute;mentaire ou information sur les ressources g&eacute;n&eacute;tiques <span class="help-info">Fournir des d&eacute;tails sur la mati&egrave;re ou la ressource g&eacute;n&eacute;tique couverte par le permis ou son &eacute;quivalent permet d&rsquo;offrir une s&eacute;curit&eacute; juridique suppl&eacute;mentaire.</span></div>
                                                 <div class="row">
                                                     <div class="col-xs-12">
-                                                        <div class="km-control-group" name="specimens" caption="Données sur l’échantillon"><span class="help-info">Lien vers un sp&eacute;cimen de r&eacute;f&eacute;rence h&eacute;berg&eacute; dans un &eacute;tablissement appropri&eacute;</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true"
+                                                        <div class="km-control-group" name="specimens" caption="Donn&eacute;es sur l&rsquo;&eacute;chantillon"><span class="help-info">Lien vers un sp&eacute;cimen de r&eacute;f&eacute;rence h&eacute;berg&eacute; dans un &eacute;tablissement appropri&eacute;</span><div km-link name="specimens" ng-model="document.specimens" allow-link="true"
                                                                 allow-file="false" identifier="document.header.identifier"></div>
                                                         </div>
                                                     </div>
@@ -143,7 +143,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12">
-                                                        <div class="km-control-group" name="keywords" caption="Mots clés pour décrire le sujet ou les ressources génétiques auxquels se rapporte le permis ou son équivalent.">
+                                                        <div class="km-control-group" name="keywords" caption="Mots cl&eacute;s pour d&eacute;crire le sujet ou les ressources g&eacute;n&eacute;tiques auxquels se rapporte le permis ou son &eacute;quivalent.">
                                                             <div class="help-info"></div>
                                                             <div km-select multiple show-description="true" required name="keywords"
                                                                 ng-model="document.keywords" items="options.keywords()"></div>
@@ -152,7 +152,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12" ng-show="isOthers()">
-                                                        <div class="km-control-group" required name="keywordOther" caption="Autres mots clés">
+                                                        <div class="km-control-group" required name="keywordOther" caption="Autres mots cl&eacute;s">
                                                             <div km-textbox-ml required name="keywordOther" rows="1" ng-model="document.keywordOther"
                                                                 locales="document.header.languages"></div>
                                                         </div>
@@ -174,7 +174,7 @@
             
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="evidenceOfPIC" caption="Référence ou preuve du consentement préalable en connaissance de cause CPCC">
+                                                    <div class="km-control-group" name="evidenceOfPIC" caption="R&eacute;f&eacute;rence ou preuve du consentement pr&eacute;alable en connaissance de cause CPCC">
                                                         <div class="help-info">Ce champs fournit de l&rsquo;information sur le CPCC Veuillez fournir des information sur tout identificateur national qui peut aider les usagers &agrave; chercher et extraire des informations li&eacute;es au CPCC, ou au permis ou son &eacute;quivalent dans leurs fichiers nationaux.</div>
                                                         <div km-rich-textbox name="evidenceOfPIC" rows="4" ng-model="document.evidenceOfPIC"
                                                             locales="document.header.languages"></div>
@@ -192,7 +192,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="entityToWhomPICGranted" caption="La personne ou entité à laquelle le consentement préalable en connaissance de cause a été donné"><span class="help-info">Veuillez fournir le nom et les coordonn&eacute;es de la personne ou de l&rsquo;entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;;</span><div document-selector ng-model="document.entityToWhomPICGranted" type="radio" skip-government="true" list-view="true"
+                                                    <div class="km-control-group" name="entityToWhomPICGranted" caption="La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;"><span class="help-info">Veuillez fournir le nom et les coordonn&eacute;es de la personne ou de l&rsquo;entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;;</span><div document-selector ng-model="document.entityToWhomPICGranted" type="radio" skip-government="true" list-view="true"
                                                             question="entityToWhomPICGranted" schema="(contact authority)"
                                                             government="document.government" filter="true"></div>
             
@@ -201,7 +201,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="evidenceOfMAT" caption="Référence ou preuve de mise en place de conditions convenues d’un commun accord (CCCA)">
+                                                    <div class="km-control-group" name="evidenceOfMAT" caption="R&eacute;f&eacute;rence ou preuve de mise en place de conditions convenues d&rsquo;un commun accord (CCCA)">
                                                         <div class="help-info">Ce champs fournit des renseignements sur les CCCA. Veuillez fournir des renseignements sur tout identificateur national pouvant aider les usagers &agrave; chercher et extraire des informations li&eacute;es aux CCCA,  au permis ou &agrave; son &eacute;quivalent dans leurs fichiers nationaux.</div>
                                                         <div km-rich-textbox name="evidenceOfMAT" rows="4" ng-model="document.evidenceOfMAT"
                                                             locales="document.header.languages"></div>
@@ -211,7 +211,7 @@
             
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-3">
-                                                    <div class="km-control-group" name="dateOfAccess" caption="Date d’accès aux ressources génétiques">
+                                                    <div class="km-control-group" name="dateOfAccess" caption="Date d&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques">
                                                         <div km-date placeholder="AAAA-MM-JJ" required name="dateOfAccess" ng-model="document.dateOfAccess"></div>
                                                     </div>
                                                 </div>
@@ -223,7 +223,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" required name="description" caption="Brève description des informations amassées ou reçues par le point de contrôle sur l’utilisation de ressources génétiques, y compris le type d’usage.">
+                                                <div class="km-control-group" required name="description" caption="Br&egrave;ve description des informations amass&eacute;es ou re&ccedil;ues par le point de contr&ocirc;le sur l&rsquo;utilisation de ressources g&eacute;n&eacute;tiques, y compris le type d&rsquo;usage.">
                                                     <div class="help-info">Cela peut inclure les informations sur l&rsquo;utilisation des ressources g&eacute;n&eacute;tiques, entre autres, &agrave; n&rsquo;importe quel stade de la recherche, du d&eacute;veloppement, de l&rsquo;innovation, de pr&eacute;-commercialisation ou de commercialisation. L&apos;information fournie permettra au fournisseur de la ressource g&eacute;n&eacute;tique de v&eacute;rifier si l&apos;utilisation de la ressource g&eacute;n&eacute;tique est conforme au CPCC et aux CCCA et que les avantages sont partag&eacute;s conform&eacute;ment aux CCCA.</div>
                                                     <div km-rich-textbox name="description" rows="4" ng-model="document.description"
                                                         locales="document.header.languages"></div>
@@ -233,7 +233,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="personsAtCheckpoint" caption=" Personne ou entité donnant accès à l’information au point de contrôle sur l’utilisation de la ressource génétique ">
+                                                <div class="km-control-group" name="personsAtCheckpoint" caption="Personne ou entit&eacute; donnant acc&egrave;s &agrave; l&rsquo;information au point de contr&ocirc;le sur l&rsquo;utilisation de la ressource g&eacute;n&eacute;tique">
                                                     <div class="help-info">Cette information permet au fournisseur de la ressource g&eacute;n&eacute;tique de v&eacute;rifier si la personne ou l&rsquo;entit&eacute; &agrave; qui le CPCC a &eacute;t&eacute; accord&eacute; est la m&ecirc;me personne ou l&rsquo;entit&eacute; qui fournie la preuve de CPCC et des CCCA au point de contr&ocirc;le. En cas de divergence, les fournisseurs peuvent v&eacute;rifier les informations et les conditions li&eacute;es au transfert &agrave; un tiers.</div>
                                                     <div document-selector ng-model="document.personsAtCheckpoint" question="personsAtCheckpoint"
                                                         schema="(contact authority)" government="document.government" filter="true"></div>
@@ -254,7 +254,7 @@
                                                 <div km-date placeholder="De :" required name="dateCollectedFrom" ng-model="document.dateCollectedFrom"></div>
                                             </div>
                                             <div class="col-xs-3  text-right">
-                                                <div km-date placeholder="À :" required name="ddateCollectedTo" ng-model="document.dateCollectedTo"></div>
+                                                <div km-date placeholder="&Agrave; :" required name="ddateCollectedTo" ng-model="document.dateCollectedTo"></div>
                                             </div>
                                         </div>
             
@@ -265,7 +265,7 @@
                                         <legend>Additional Information</legend>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="relevantInformation" caption="Additional Information">
+                                                <div class="km-control-group" name="relevantInformation" caption="Informations suppl&eacute;mentaires :">
                                                     <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le fichier.</div>
                                                     <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation"
                                                         locales="document.header.languages"></div>
@@ -275,7 +275,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pièces jointes">
+                                                <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pi&egrave;ces jointes">
                                                     <div km-link name="relevantDocuments" ng-model="document.relevantDocuments"
                                                         identifier="document.header.identifier"></div>
                                                 </div>

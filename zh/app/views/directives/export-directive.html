@@ -1,22 +1,6 @@
 ﻿<div>
 
-    <style>
-        .radio label{
-            padding:20px;
-        }
-        .radio-inline{
-            display: inline-block !important;
-        }
-        .ngdialog.ngdialog-theme-default .ngdialog-content{padding:0;}
-        
-        .ngdialog-theme-default.wide .ngdialog-content{
-            min-width:70% !important;
-        }
-        .modal-body{background-color:#FFF;}
-         #datatable .tableexport-caption{
-            display: none!important;
-        } 
-    </style>
+    <style> .radio label{ padding:20px; } .radio-inline{ display: inline-block !important; } .ngdialog.ngdialog-theme-default .ngdialog-content{padding:0;} .ngdialog-theme-default.wide .ngdialog-content{ min-width:70% !important; } .modal-body{background-color:#FFF;} #datatable .tableexport-caption{ display: none!important; } </style>
     <div class="row">
         <div class="col-xs-12" >
             <div style="color:#bbb;text-transform: uppercase;font-weight: 500;text-shadow: 0px 1px 0px rgba(255,255,255,.5);cursor:pointer;"  ng-click="showDialog()" ng-disabled="loading"><span ng-if="helpTitle" class="helpinfoInline fa fa-table " data-toggle="tooltip" data-html="true" data-title="{{helpTitle}}" data-container="body"></span> Export</div>
@@ -43,11 +27,11 @@
                             <th class="tableexport-string">类型</th>
                             <th class="tableexport-string">UID</th>
                             <th class="tableexport-string">政府</th>
-                            <th class="tableexport-string">Title </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Info 1 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Info 2 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Info 3 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Info 4 </th>
+                            <th class="tableexport-string">Title</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Info 1</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Info 2</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Info 3</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Info 4</th>
                             <th style="white-space:nowrap;" class="tableexport-string">Published on</th>
                             <th style="white-space:nowrap;" class="tableexport-string" ng-if="customFieldList.length>0" ng-repeat="field in  customFieldList">{{field}}</th>
                         </tr>
@@ -66,7 +50,7 @@
                             <td style="white-space:nowrap;" class="tableexport-string" ng-if="customFieldList.length>0" ng-repeat="field in  customFieldList">{{row[field]}}</td>                             
                         </tr>
                     </table>
-                   <h3 class="color-red bold">This is only sample of the information to be exported. All records retrieved by this search will be included in the export.</h3>
+                   <h3 class="color-red bold">This is only sample of the information to be exported.All records retrieved by this search will be included in the export.</h3>
             </div>
         </div>
         <div class="modal-footer">

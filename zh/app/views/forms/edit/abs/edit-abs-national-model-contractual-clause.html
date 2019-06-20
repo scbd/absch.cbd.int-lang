@@ -1,9 +1,5 @@
 ﻿<div ng-controller="editAbsNationalModelContractualClause">
-    <style>
-        .indent {
-            padding: 0 15px 0 15px;
-        }
-    </style>
+    <style> .indent { padding: 0 15px 0 15px; } </style>
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -15,7 +11,7 @@
                         <div class="editForm">
                             <section><br><div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                        <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
                                             <div class="indent">
                                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                             </div>
@@ -46,7 +42,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="description" caption="3.摘要 ">
+                                        <div class="km-control-group" name="description" caption="3.摘要">
                                             <div class="indent">
                                                 <div km-rich-textbox name="description" rows="3" ng-model="document.description" locales="document.header.languages"></div>
                                             </div>
@@ -91,7 +87,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="relevantMeasures" caption="5.Relevant ABS Measure(s):">
-                                            <div class="indent help-info"> Please provide relevant ABS Measure(s). </div>
+                                            <div class="indent help-info">Please provide relevant ABS Measure(s).</div>
                                             <div class="indent">
                                                 <div document-selector ng-model="document.relevantMeasures" question="measure" government="document.government" schema="(measure)" locales="document.header.languages"></div>                                                
                                             </div>
@@ -137,7 +133,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="notes">
-                                            <div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                            <div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                             <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                         </div>
                                     </div>

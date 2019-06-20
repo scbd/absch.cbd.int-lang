@@ -18,7 +18,7 @@
 									<legend>Informaci&oacute;n general</legend>
 									<div class="row">
 										<div class="col-xs-12" >
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -29,7 +29,7 @@
 											<div class="col-sm-12">
 												<div class="km-control-group" name="government" required caption="Country submitting the decision or communication">
 													<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries"
-														filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
+														filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
 												</div>
 											</div>
 										</div>
@@ -52,7 +52,7 @@
 	
 										<div class="row">
 											<div class="col-sm-12">
-												<div class="km-control-group" name="date" caption="Fecha de la decisión">
+												<div class="km-control-group" name="date" caption="Fecha de la decisi&oacute;n">
 													<div km-date placeholder="AAAA-MM-DD" name="date" required ng-model="document.date"></div>
 												</div>
 											</div>
@@ -68,7 +68,7 @@
 										
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="jurisdictions" caption="Jurisdicción(es)">
+												<div class="km-control-group" name="jurisdictions" caption="Jurisdicci&oacute;n(es)">
 													<div class="help-info">Proporcione la jurisdicci&oacute;n donde se aplica la ley, norma, directriz o acuerdo si es diferente del nombre del pa&iacute;s. Ejemplo: Pa&iacute;s: Dinamarca, Jurisdicci&oacute;n: &quot;Con exclusi&oacute;n territorial en relaci&oacute;n a las Islas Feroe y Groenlandia&quot;.</div>
 													<div km-select multiple name="jurisdictions" ng-model="document.jurisdictions" items="options.countries()"></div>
 												</div>
@@ -164,13 +164,13 @@
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="exporters" caption="Please provide Exporter’s contact details">											
+												<div class="km-control-group" name="exporters" caption="Please provide Exporter&rsquo;s contact details">											
 													<div document-selector ng-model="document.exporters" question="exporters"
 														government="document.government" schema="(contact)"></div>			
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant's contact details">											
+												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant&apos;s contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -183,7 +183,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+												<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -191,7 +191,7 @@
 										</div>
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="involvesFieldTrial" caption="¿La decisión involucra pruebas de campo?">
+												<div class="km-control-group" name="involvesFieldTrial" caption="¿La decisi&oacute;n involucra pruebas de campo?">
 													<div km-yes-no required ng-model="document.involvesFieldTrial" locales="document.header.languages"></div>
 												</div>
 											</div>
@@ -252,19 +252,19 @@
 														</div>
 													</div>
 													<div class="col-xs-12" ng-if="'0D0BEEF4-54E4-44C1-ABB2-B89DC145E0B3'">
-														<div class="km-control-group" name="exporters"  caption="Please provide Exporter’s contact details">											
+														<div class="km-control-group" name="exporters"  caption="Please provide Exporter&rsquo;s contact details">											
 															<div document-selector ng-model="document.exporters" question="exporters"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant's contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant&apos;s contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
@@ -292,7 +292,7 @@
 										<legend>LMO &amp; risk assessment</legend>
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="modifiedOrganisms" required caption="Identificación del OVM">											
+												<div class="km-control-group" name="modifiedOrganisms" required caption="Identificaci&oacute;n del OVM">											
 													<div document-selector ng-model="document.modifiedOrganisms" question="modifiedOrganisms"
 														government="document.government"  schema="(modifiedOrganism)" skip-government="true"></div>			
 												</div>
@@ -327,7 +327,7 @@
 										<legend>Cronograma para la confirmaci&oacute;n o actualizaci&oacute;n de la informaci&oacute;n</legend>
 										<div class="row">
 											<div class="col-sm-12">
-												<div class="km-control-group" name="expires" required caption="¿Esta información se confirmará o actualizará después de dos años a partir de la fecha de presentación?">												
+												<div class="km-control-group" name="expires" required caption="¿Esta informaci&oacute;n se confirmar&aacute; o actualizar&aacute; despu&eacute;s de dos a&ntilde;os a partir de la fecha de presentaci&oacute;n?">												
 													<div km-yes-no required ng-model="document.expires" locales="document.header.languages"></div>
 												</div>	
 											</div>
@@ -340,7 +340,7 @@
 										<legend>Additional information</legend>
 										<div class="row">
 											<div class="col-sm-12">
-												<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+												<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
 													<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 													<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 												</div>

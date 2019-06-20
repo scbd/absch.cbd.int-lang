@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span  dir="rtl">Checkpoint Communiqu&eacute; <span class="color-black"> (CPC) </span> </span></h4>	
+		<h4><span  dir="rtl">بيان نقطة التفتيش <span class="color-black">(CPC)</span></span></h4>	
 	</div>
 	<div class="record-body panel-body">
 			
@@ -119,7 +119,7 @@
 							<label>كلمات مفتاحية لوصف الموضوع أو المورد (الموارد) الجينية التي يشملها هذا البيان</label>
 							<div class="km-value">
 								<ul class="list">
-									<li ng-repeat="term in document.keywords">{{term|term}} <span ng-show="term.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'"> ({{document.keywordOther|lstring:locale}})</span></li>
+									<li ng-repeat="term in document.keywords">{{term|term}} <span ng-show="term.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">({{document.keywordOther|lstring:locale}})</span></li>
 								</ul>
 							</div>
 						</div>

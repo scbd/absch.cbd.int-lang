@@ -1,12 +1,8 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading  bg-blue">
-		<h4><span >Competent National Authority <span class="color-black"> (CNA) </span> </span></h4>
+		<h4><span >Competent National Authority <span class="color-black">(CNA)</span></span></h4>
 	</div>
-	<style>
-		#Record p:empty, #Record div:empty{
-			display:none
-		}
-	</style>
+	<style> #Record p:empty, #Record div:empty{ display:none } </style>
 
 	<div class="record-body panel-body" help schema="viewCNA" >
 		
@@ -23,9 +19,9 @@
 			<div class="km-value">
 				<div><strong>{{document.name | lstring:locale}}</strong></div>
 				<div ng-show="document.address">{{document.address | lstring:locale}}</div>
-				<div ng-show="document.city">{{document.city | lstring:locale}}<span ng-show="document.city">、 </span></div>
+				<div ng-show="document.city">{{document.city | lstring:locale}}<span ng-show="document.city">,</span></div>
 				<div ng-show="document.state">{{document.state | lstring:locale}}<br ng-show="document.city || document.state" /></div>
-				<div ng-show="document.postalCode">{{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">、 </span></div>
+				<div ng-show="document.postalCode">{{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">,</span></div>
 				<div ng-show="document.country">{{document.country|term}}</div>
 				<ul ng-show="document.phones" class="list"  style="list-style-type: none;padding: 0px;margin: 3px 0 0 0;">
 					<li ng-repeat="item in document.phones track by $index"><i class="fa fa-phone"></i> {{item}}</li>
@@ -38,13 +34,13 @@
 				</ul>
 
 				<ul  ng-show="document.websites" class="list" style="list-style-type: none;padding: 0px;margin: 3px 0 0 0;">
-					<li ng-repeat="item in document.websites"><a translation-url  target="_new_" ng-href="{{item.url}}"> <i class="fa fa-external-link"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+					<li ng-repeat="item in document.websites"><a translation-url  target="_new_" ng-href="{{item.url}}"><i class="fa fa-external-link"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
 		</div>
 
 
-		<legend ng-if="contacts.length > 0">联系人</legend>
+		<legend ng-if="contacts.length > 0">Contact(s)</legend>
 		<div ng-show="contacts.length > 0" class="row">
 				<div  ng-repeat="contact in contacts" >
 					<div class="col-xs-12">
@@ -56,12 +52,12 @@
 		</div>
 
 		<div ng-show="document.absPolicyBasisForCompetency || document.absPolicyBasisForCompetencyRef ">
-			<legend>国家主管部门权职的立法、行政或政策依据</legend>
+			<legend>Legislative, administrative or policy basis for the competence of the CNA</legend>
 			<div ng-show="document.absPolicyBasisForCompetency"><!--<label>Information on the legal, administrative or policy basis for the competence of the CNA</label>--><div class="km-value" ng-bind-html="document.absPolicyBasisForCompetency | lstring:locale">
 				</div>
 			</div>
 			<div ng-if="document.absPolicyBasisForCompetencyRef">
-				<label>指向相关立法、行政或政策措施的链接 </label>
+				<label>Links to relevant legislative, administrative or policy measure(s)</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.absPolicyBasisForCompetencyRef" >
@@ -74,18 +70,18 @@
 		</div>
 
 		<div ng-if="document.responsibilities ||document.absResponsibleForAll || document.absFunctions|| document.absJurisdiction||document.absGeneticResourceTypes ">
-			<legend name="ABSResponsibilities">获取和惠益分享职责摘要 </legend>
+			<legend name="ABSResponsibilities">Summary of ABS Responsibilities</legend>
 
 			<div ng-show="document.responsibilities">
 				<div class="km-value" ng-bind-html="document.responsibilities | lstring:locale"></div>
 			</div>
 
 			<div ng-if="document.absResponsibleForAll">
-				<div class="km-value">负责所有遗传资源。该国唯一指定的国家主管部门（CNA）。</div>
+				<div class="km-value">Responsible for all genetic resources.Only designated competent national authority (CNA) for the country.</div>
 			</div>
 
 			<div ng-show="document.absFunctions">
-				<label>职能</label>
+				<label>Functions</label>
 				<div class="km-value km-pre">{{document.absFunctions | lstring:locale}}</div>
 			</div><!--<div ng-show="document.absJurisdiction">
 				<label>Jurisdiction(s) covered by this CNA</label>
@@ -98,8 +94,8 @@
 				<label>Sub-national or community jurisdiction(s) covered by this CNA</label>
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
-				<label>此国家主管部门覆盖的辖区</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ?&apos;&apos; :&apos;, &apos;}} </span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<label>Jurisdiction(s) covered by this CNA</label>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ?&apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>
@@ -112,10 +108,10 @@
 					<li ng-repeat="term in document.absGeneticResourceAreas">{{term|term}} </li>
 				</ul>
 			</div> --><div ng-show="document.absGeneticResourceTypes ">
-				<label>有助于描述国家主管部门职责的关键词</label>
+				<label>Keywords to help describe the responsibilities of the competent national authority</label>
 				<div class="km-value" >
 					<ul class="list">
-						<li ng-repeat="term in document.absGeneticResourceTypes">{{term|term}} </li>
+						<li ng-repeat="term in document.absGeneticResourceTypes">{{term|term}}</li>
 					</ul>
 				</div>
 			</div>
@@ -129,7 +125,7 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>链接和文档</label>
+				<label>Links and documents</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>

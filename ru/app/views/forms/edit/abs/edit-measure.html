@@ -12,11 +12,11 @@
 
                                 <legend name="formInfo" style="display:none"></legend>
                                 <section>
-                                    <legend>Является ли это поправкой к ранее принятой законодательной, административной или политической мере? </legend>
+                                    <legend>Является ли это поправкой к ранее принятой законодательной, административной или политической мере?</legend>
                                     <div class="help-info">Данный раздел заполняется только в случае представления информации о мере, которая принята с целью внесения поправок в существующую меру. Если мера, регистрируемая в Механизме посредничества для регулирования ДГРСИВ, является поправкой к существующей мере или ее частью, удостоверьтесь в том, что мера, в которую вносятся поправки, уже зарегистрирована в Механизме посредничества для регулирования ДГРСИВ, с тем чтобы обеспечить возможность увязки с существующей записью. Это позволит отобразить две записи вместе.</div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="isAmendment" required caption="Является ли это поправкой к ранее принятой законодательной, административной или политической мере? ">
+                                            <div class="km-control-group" name="isAmendment" required caption="Является ли это поправкой к ранее принятой законодательной, административной или политической мере?">
                                                 <div class="help-block"></div>
                                                 <div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
                                             </div>
@@ -48,7 +48,7 @@
                                     <legend>Общая информация</legend>
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -213,7 +213,7 @@
     
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div class="km-control-group" name="linkedMeasuresDescription" caption="Опишите взаимосвязь ">
+                                            <div class="km-control-group" name="linkedMeasuresDescription" caption="Опишите взаимосвязь">
                                                 <div km-rich-textbox ng-model="document.linkedMeasuresDescription" rows="4" placeholder="" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -251,19 +251,19 @@
     
                                 <section>
                                     <legend>
-                                        <label for="absMeasures"> Элементы меры</label>
+                                        <label for="absMeasures">Элементы меры</label>
                                     </legend>
                                    
     
     
                                     <div ng-if="document.absMeasuresForDelete">
                                         <div class="alert alert-warning">
-                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Формат для сохранения <i>Элементов мер</i> изменен. Обновление данной записи требуется выполнить вручную. Ниже приводится список <i>Элементов мер</i> из предыдущей версии, предназначенный для использования в справочных целях, с тем чтобы помочь вам обновить данную запись.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span> &nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Формат для сохранения <i>Элементов мер</i> изменен. Обновление данной записи требуется выполнить вручную. Ниже приводится список <i>Элементов мер</i> из предыдущей версии, предназначенный для использования в справочных целях, с тем чтобы помочь вам обновить данную запись.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-heading"><span ng-class="{'confidential-text':document.absMesasureNotApplicable}"><input type="checkbox" name="absMesasureNotApplicable" ng-model="document.absMesasureNotApplicable" watch-items> Элементы не применимы для данной меры.</input></span></div>
+                                                <div class="panel-heading"><span ng-class="{'confidential-text':document.absMesasureNotApplicable}"><input type="checkbox" name="absMesasureNotApplicable" ng-model="document.absMesasureNotApplicable" watch-items>Элементы не применимы для данной меры.</input></span></div>
                                                 <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absMesasureNotApplicable}">
                                                     <div class="km-control-group"  name="absMeasures" required caption="">
                                                         <div class="help-info"></div>

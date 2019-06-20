@@ -1,54 +1,5 @@
 ﻿<div ng-controller="CountryListController">
-	<style>
-		table {
-			border-collapse: collapse;
-		}
-		
-		.tableContainer {
-			margin: auto;
-		}
-		
-		.fixed {
-			top: 0;
-			position: fixed;
-		}
-		
-		.scrollMore {
-			margin-top: 600px;
-		}
-		
-		.up {
-			cursor: pointer;
-		}
-		
-		.table-hover > tbody > tr:hover > td {
-			background-color: #FFF;
-		}
-		
-		.letter {
-			color: #999;
-		}
-		
-		.letter-active {
-			font-weight: bold;
-			color: #111!important;
-		}
-		
-		.evenly-spaced {
-			display: flex;
-			justify-content: space-between;
-		}
-		
-		.zero {
-			background-color: #DDD!important;
-		}
-		
-		@media (max-width: 992px) {
-			/* .sm-small {
-				font-size: 10px;
-			} */
-		}
-	</style>
+	<style> table { border-collapse: collapse; } .tableContainer { margin: auto; } .fixed { top: 0; position: fixed; } .scrollMore { margin-top: 600px; } .up { cursor: pointer; } .table-hover &gt; tbody &gt; tr:hover &gt; td { background-color: #FFF; } .letter { color: #999; } .letter-active { font-weight: bold; color: #111!important; } .evenly-spaced { display: flex; justify-content: space-between; } .zero { background-color: #DDD!important; } @media (max-width: 992px) { /* .sm-small { font-size: 10px; } */ } </style>
 
 
 	<div id="Jumbotron" class="bg-texture-green color-black hidden-sm hidden-xs" 
@@ -83,12 +34,12 @@
 
 				<div class="dropdown" style="display:inline;">
 					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="true"><i ng-if="sortTerm==='name.en'" class="fa" ng-class="{'fa-sort-alpha-asc':!orderList, 'fa-sort-alpha-desc':orderList}" style="width:20px;"></i> <span ng-if="sortTerm!=='name.en'">Ordered by: <strong> {{sortTerm|schemaShortName}}</strong></span> <span class="caret"></span></button>
+						aria-expanded="true"><i ng-if="sortTerm==='name.en'" class="fa" ng-class="{'fa-sort-alpha-asc':!orderList, 'fa-sort-alpha-desc':orderList}" style="width:20px;"></i> <span ng-if="sortTerm!=='name.en'">Ordered by: <strong>{{sortTerm|schemaShortName}}</strong></span> <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a translation-url  href="#" ng-click="sortTable('name.en', 'ASC')"><i class=" fa fa-sort-alpha-asc" style="width:20px;"></i> Sort alphabetical A-Z </a></li>
+                        <li><a translation-url  href="#" ng-click="sortTable('name.en', 'ASC')"><i class=" fa fa-sort-alpha-asc" style="width:20px;"></i> Sort alphabetical A-Z</a></li>
                         <li><a translation-url  href="#" ng-click="sortTable('name.en', 'DESC')"><i class=" fa fa-sort-alpha-desc" style="width:20px;"></i> Sort alphabetical Z-A</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a translation-url  href="#" ng-repeat="header in headerCount" ng-click="sortTable(header.schema)"> {{ header.schema |schemaNamePlural}} </a></li>
+                        <li><a translation-url  href="#" ng-repeat="header in headerCount" ng-click="sortTable(header.schema)">{{ header.schema |schemaNamePlural}}</a></li>
                     </ul>
                     </div>
 
@@ -96,30 +47,30 @@
 						 multiple placeholder="Pays" display-count="0" show-selection-pop-over="true"></div>
 
 				   <div class="dropdown" style="display:inline;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span><strong ng-if="partyFilter==='All' || !partyFilter" >Party Status</strong><strong ng-if="partyFilter == 'party'" ><i class="color-party fa fa-square"></i> Parties</strong><strong ng-if="partyFilter == 'inbetween'" ><i class="color-inbetween fa fa-square"></i> Ratified, not yet Party</strong><strong ng-if="partyFilter == 'nonparty'" ><i class="color-nonparty fa fa-square"></i> Non-Parties</strong></span> <span class="caret"></span></button>
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span><strong ng-if="partyFilter==='All' || !partyFilter" >Party Status</strong> <strong ng-if="partyFilter == 'party'" ><i class="color-party fa fa-square"></i> Parties</strong> <strong ng-if="partyFilter == 'inbetween'" ><i class="color-inbetween fa fa-square"></i> Ratified, not yet Party</strong> <strong ng-if="partyFilter == 'nonparty'" ><i class="color-nonparty fa fa-square"></i> Non-Parties</strong></span> <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><a translation-url  href="#" ng-click="setPartyFilter('All');" > Show all </a></li>
+                        <li><a translation-url  href="#" ng-click="setPartyFilter('All');" >Show all</a></li>
 						<li role="separator" class="divider"></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('party');" > <i class="color-party fa fa-square"></i> Parties</a></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('inbetween');" >  <i class="color-inbetween fa fa-square"></i> Ayant ratifi&eacute;, mais n&rsquo;&eacute;tant pas encore Partie au Protecole</a></li>
-						<li><a translation-url  href="#" ng-click="setPartyFilter('nonparty');" > <i class="color-nonparty fa fa-square"></i> Non Parties</a></li>
+						<li><a translation-url  href="#" ng-click="setPartyFilter('party');" ><i class="color-party fa fa-square"></i> Parties</a></li>
+						<li><a translation-url  href="#" ng-click="setPartyFilter('inbetween');" ><i class="color-inbetween fa fa-square"></i> Ayant ratifi&eacute;, mais n&rsquo;&eacute;tant pas encore Partie au Protecole</a></li>
+						<li><a translation-url  href="#" ng-click="setPartyFilter('nonparty');" ><i class="color-nonparty fa fa-square"></i> Non Parties</a></li>
                     </ul>
                     </div>
 
 					<div  km-select required name="regions" ng-model="regions" items="options.regions()"
-						 multiple placeholder="Régions" display-count="0" show-selection-pop-over="true"></div>
+						 multiple placeholder="R&eacute;gions" display-count="0" show-selection-pop-over="true"></div>
 					
 					<button class="btn btn-default" style="text-transform: uppercase;" ng-click="export()" ng-disabled="readyForExport||loading"><i class="fa fa-table" /> Exporter</button>
               </div>
               <div class="col-xs-6 evenly-spaced center-text hidden-xs hidden-sm" >                            
 				<div ng-repeat="header in headerCount"><span style="cursor:pointer;" ng-click="sortTable(header.schema)" data-toggle="tooltip" title="{{header.title|lstring:locale}}"
-						data-container="body"><span id="nrCount" class="bold color-black">{{header.shortCode}}&nbsp;<i class="fa fa-info-circle color-litegrey" ></i> </span><br> <span class="badge bg-black">{{header.count}}</span></span></div>
+						data-container="body"><span id="nrCount" class="bold color-black">{{header.shortCode}}&nbsp;<i class="fa fa-info-circle color-litegrey" ></i></span><br> <span class="badge bg-black">{{header.count}}</span></span></div>
 			</div>
 		</div><!--end row--><div class="row linkWhite" style="margin:0;border-bottom:2px solid #DDD;padding:5px 0 10px 0;" ng-click="gotoCountryProfile(country.code)"
 			ng-repeat="country in list = (countries | filter:hasCountries | filter: hasStatus | filter: hasRegions | orderBy:sortTermFilter:orderList) track by country.name.en">
 			<div class="col-md-6">
 
-				<div style="text-align:left;width:30px;display:inline-block;"> {{$index+1}} </div>
+				<div style="text-align:left;width:30px;display:inline-block;">{{$index+1}}</div>
 
 				<div style="display:inline;"><span style="font-size:18px;font-weight:500;" ng-class="{'color-party': country.isAppProtocolParty, 'color-grey':!country.isAppProtocolParty, 'color-inbetween': country.isNPInbetweenParty}">{{country.name|lstring:locale}}</span></div>
 				<div style="margin-left:35px;text-transform:uppercase;font-weight:500;">

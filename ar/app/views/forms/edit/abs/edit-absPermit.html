@@ -1,29 +1,8 @@
 ﻿<div ng-controller="editAbsPermit" dir="rtl">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
-    <style>
-        .dimmer-parent{
-            position: relative;
-        }
-        .blockRegion {
-            position: initial;
-            /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
-            margin: 1rem 0;
-            padding: 1em;
-            border-radius: .28571429rem;
-            /*border: 1px solid rgba(34,36,38,.15);*/
-        }
-        .dimmer {
-            border-radius: inherit!important;
-            position: absolute!important;
-            top: 0!important;
-            left: 0!important;
-            padding: 0;
-            margin: 0;
-        }
-
-    </style>
-    <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
+    <style> .dimmer-parent{ position: relative; } .blockRegion { position: initial; /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/ margin: 1rem 0; padding: 1em; border-radius: .28571429rem; /*border: 1px solid rgba(34,36,38,.15);*/ } .dimmer { border-radius: inherit!important; position: absolute!important; top: 0!important; left: 0!important; padding: 0; margin: 0; } </style>
+    <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
             <div workflow-arrow-buttons document="getCleanDocument()" 
             languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
@@ -71,7 +50,7 @@
                                         <legend>معلومات عامة</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -89,7 +68,7 @@
                                             <div class="col-xs-12">
                                                 <div class="km-control-group">
                                                     <div class="km-control-group" name="permit" caption="الروابط لشهادة/شهادات الامتثال المعترف بها دوليًا التي ترتبط بهذا التصريح">
-                                                        <div class="help-info">يمكن ربط تصريح في بعض الأحيان بالتصاريح الأخرى، على سبيل المثال تصريح للوصول إلى عينة تربة. حسب الموافقة المسبقة عن علم، من الممكن أن تقرر بعض الدول إصدار تصاريح محددة للموارد الجينية المحددة لاحقًا من عينة التربة المأخوذة. لمثل هذه الحالات، تقدم غرفة تبادل المعلومات بشأن الحصول على الموارد الجينية وتقاسم المعرفة إمكانية ربط شهادات الامتثال المعترف بها دوليا المختلفة معًا. سيتم عرض شهادات الامتثال المعترف بها دوليا معًا من خلال هذه الآلية ومن ثم تسهل تتبع شهادات الامتثال المعترف بها دوليًا. </div>
+                                                        <div class="help-info">يمكن ربط تصريح في بعض الأحيان بالتصاريح الأخرى، على سبيل المثال تصريح للوصول إلى عينة تربة. حسب الموافقة المسبقة عن علم، من الممكن أن تقرر بعض الدول إصدار تصاريح محددة للموارد الجينية المحددة لاحقًا من عينة التربة المأخوذة. لمثل هذه الحالات، تقدم غرفة تبادل المعلومات بشأن الحصول على الموارد الجينية وتقاسم المعرفة إمكانية ربط شهادات الامتثال المعترف بها دوليا المختلفة معًا. سيتم عرض شهادات الامتثال المعترف بها دوليا معًا من خلال هذه الآلية ومن ثم تسهل تتبع شهادات الامتثال المعترف بها دوليًا.</div>
                                                         <div document-selector ng-model="document.relatedIRCCs" question="relatedIRCCs" government="document.government" schema="absPermit" hide-self="document.header.identifier"></div>
             
                                                     </div>
@@ -139,7 +118,7 @@
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="km-control-group" name="dateOfExpiry" caption="تاريخ انتهاء التصريح أو ما يعادله">
-                                                    <div class="help-info">شهران قبل انتهاء صلاحية التصريح </div>
+                                                    <div class="help-info">شهران قبل انتهاء صلاحية التصريح</div>
                                                     <div km-date placeholder="يوم  - شهر - سنة" name="dateOfExpiry" ng-model="document.dateOfExpiry"></div>
                                                 </div>
                                             </div>
@@ -192,7 +171,7 @@
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.entitiesToWhomPICGrantedConfidential}">
                                                         <div class="km-control-group " name="entitiesToWhomPICGranted" required required caption="الشخص أو الكيان الذي مُنحت له الموافقة المسبقة عن علم؛" style="margin-top:0;">
                                                             <div ng-show="!document.entitiesToWhomPICGrantedConfidential">
-                                                                <div class="help-info">يرجى إدخال اسم وتفاصيل الاتصال بالشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم. إذا كانت المعلومات مميزة بأنها سرية، فلن يستطيع الشخص الحصول على نسخة مجانية من شهادة الامتثال المعترف بها دوليًا أو الموافقة المسبقة عن علم. </div>
+                                                                <div class="help-info">يرجى إدخال اسم وتفاصيل الاتصال بالشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم. إذا كانت المعلومات مميزة بأنها سرية، فلن يستطيع الشخص الحصول على نسخة مجانية من شهادة الامتثال المعترف بها دوليًا أو الموافقة المسبقة عن علم.</div>
                                                                 <div document-selector ng-model="document.entitiesToWhomPICGranted" question="entitiesToWhomPICGranted" government="document.government" schema="(contact authority)"></div>
                                                             </div>
                                                         </div>
@@ -333,7 +312,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="thirdPartyTransferCondition" caption="شروط نقل الطرف الخارجي"><span class="help-info">عندما يؤسس التصريح أو ما يعادله لشروط أو قيود على النقل لطرف خارجي، فإن ذلك سيساعد على جعل هذه المعلومات متاحة من خلال غرفة تبادل المعلومات بشأن الحصول على الموارد الجينية أو تقاسم المنافع أو استخدام الموارد الجينية وتعزيز اليقين القانوني. </span><div km-rich-textbox name="thirdPartyTransferCondition" rows="4" ng-model="document.thirdPartyTransferCondition" locales="document.header.languages"></div>
+                                                <div class="km-control-group" name="thirdPartyTransferCondition" caption="شروط نقل الطرف الخارجي"><span class="help-info">عندما يؤسس التصريح أو ما يعادله لشروط أو قيود على النقل لطرف خارجي، فإن ذلك سيساعد على جعل هذه المعلومات متاحة من خلال غرفة تبادل المعلومات بشأن الحصول على الموارد الجينية أو تقاسم المنافع أو استخدام الموارد الجينية وتعزيز اليقين القانوني.</span><div km-rich-textbox name="thirdPartyTransferCondition" rows="4" ng-model="document.thirdPartyTransferCondition" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
                                         </div>

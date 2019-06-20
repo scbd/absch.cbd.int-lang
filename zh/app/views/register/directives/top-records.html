@@ -1,21 +1,14 @@
 ﻿<div class="row top-records" style="margin:0 0 5px 0" ng-show="loading || self.records.Items.length > 0">
     <h4 ng-if="self.title" style="padding:3px;margin-top:0;border-bottom:1px solid #ddd;">{{self.title}}</h4>
     <div ng-if="loading" style="margin:0 48%"><i class="fa fa-spin fa-spinner" /></div>
-    <style>
-        .top-records .table>thead>tr>th, .top-records .table>tbody>tr>td{
-            padding:0px!important;
-        }
-        .top-records .table>tbody+tbody{
-            border-top: none
-        }
-    </style>
+    <style> .top-records .table&gt;thead&gt;tr&gt;th, .top-records .table&gt;tbody&gt;tr&gt;td{ padding:0px!important; } .top-records .table&gt;tbody+tbody{ border-top: none } </style>
     <table class="table table-hover table-striped" style="width:100%;" ng-if="self.records.Items.length > 0">
         <thead style="padding-bottom:10px;">
             <tr>
                 <th><span class="bold" style="padding-left:3px;font-weight: normal;font-size:12px;">Latest records</span></th>
-                <th style="font-weight: normal;font-size:12px;"> Title</th>
-                <th style="font-weight: normal;font-size:12px;"> Updated</th>
-                <th style="font-weight: normal;font-size:12px;"> <span class="hidden-xs">Status</span> <span ng-if="self.records.Count > 0"  class="pull-right" ><a  class="bold"  style="white-space:nowrap;padding-left:10px;padding-right:10px;font-weight: normal;font-size:12px;" translation-url ng-href="/register/{{schema|urlSchemaShortName}}" ng-if="!self.viewAllUrl">View all</a><a  class="bold"  style="white-space:nowrap;padding-left:5px;padding-right:10px;font-weight: normal;font-size:12px;" translation-url ng-href="{{self.viewAllUrl}}" ng-if="self.viewAllUrl">View all</a></span></th>
+                <th style="font-weight: normal;font-size:12px;">Title</th>
+                <th style="font-weight: normal;font-size:12px;">Updated</th>
+                <th style="font-weight: normal;font-size:12px;"><span class="hidden-xs">Status</span> <span ng-if="self.records.Count > 0"  class="pull-right" ><a  class="bold"  style="white-space:nowrap;padding-left:10px;padding-right:10px;font-weight: normal;font-size:12px;" translation-url ng-href="/register/{{schema|urlSchemaShortName}}" ng-if="!self.viewAllUrl">View all</a> <a  class="bold"  style="white-space:nowrap;padding-left:5px;padding-right:10px;font-weight: normal;font-size:12px;" translation-url ng-href="{{self.viewAllUrl}}" ng-if="self.viewAllUrl">View all</a></span></th>
             </tr>
         </thead> 
         <tbody ng-repeat="record in self.records.Items | orderBy:'workingDocumentLock.lockedOn'">

@@ -21,9 +21,9 @@
                 <div class="col-xs-12">
                     <div class="well">
                         <h3 style="margin:0 0 10px 0;padding:0;border-bottom:1px solid #999;">Information sur le fichier</h3>
-                        <div><span style="font-size:12px">Type : </span> {{internalDocumentInfo.metadata.schema | schemaName}} </div>
-                        <div><span style="font-size:12px">Statut : </span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">BROUILLON</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Verrouil&eacute;: En cours {{workflowRequestType}} request ]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">SUPPRIM&Eacute;</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">R&Eacute;VOQU&Eacute;</span></span></div>
-                        <div><span style="font-size:12px">Historique : </span><div view-history document-id="internalDocumentInfo.identifier"></div>
+                        <div><span style="font-size:12px">Type :</span> {{internalDocumentInfo.metadata.schema | schemaName}}</div>
+                        <div><span style="font-size:12px">Statut :</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">BROUILLON</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLI&Eacute;</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[ Verrouil&eacute;: Pending {{workflowRequestType}} request]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">DELETED</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">REVOKED</span></span></div>
+                        <div><span style="font-size:12px">Historique :</span><div view-history document-id="internalDocumentInfo.identifier"></div>
                         </div>
 
                        
@@ -41,7 +41,7 @@
 
         <div style="float:right; position:relative;top:1px;right:1px;" ng-if="!isIRCCRevoked && showDetails">
             <div><a translation-url title="Modifier" ng-show="!internalDocumentInfo.deletedOn && !internalDocumentInfo.workingDocumentLock" type="button"
-                    class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Modifier </a><button title="Supprimer" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}"
+                    class="btn btn-default" ng-href="/register/{{internalDocument.header.schema|urlSchemaShortName}}/{{internalDocument.header.identifier}}/edit"><i class="fa fa-edit"></i> Modifier</a><button title="Supprimer" ng-show="!isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}"
                     type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>

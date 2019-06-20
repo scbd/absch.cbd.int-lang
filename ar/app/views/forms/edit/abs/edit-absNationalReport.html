@@ -43,7 +43,7 @@
     
                                                     <p>وبالإضافة إلى ذلك، فإن بعض الأسئلة لا تستند بشكل صارم إلى أحكام البروتوكول وتُحدد بوصفها طوعية. ويتم إدراجها في شكل إعداد التقارير للمساهمة في تقييم واستعراض فعالية البروتوكول في سياق المادة 31 وحصر التحديات والصعوبات التي تصادف في تنفيذ البروتوكول، والمقررات التي اعتمدها مؤتمر الأطراف العامل كاجتماع للأطراف في بروتوكول ناغويا.</p>
     
-                                                    <p>The interim national report can be a useful tool for both Parties and Non-Parties to assess the level of implementation of the Nagoya Protocol, as well as gaps and needs in terms of capacity, and will assist the COP-MOP in reviewing, on a regular basis, the implementation of the Nagoya Protocol and to make, within its mandate, the decisions necessary to promote its effective implementation in accordance with Article&nbsp;26, paragraph&nbsp;4.</p>
+                                                    <p>The interim national report can be a useful tool for both Parties and Non-Parties to assess the level of implementation of the Nagoya Protocol, as well as gaps and needs in terms of capacity, and will assist the COP-MOP in reviewing, on a regular basis, the implementation of the Nagoya Protocol and to make, within its mandate, the decisions necessary to promote its effective implementation in accordance with Article 26, paragraph 4.</p>
     
                                                     <p>ويمكن أن تعمل المعلومات المقدمة من خلال التقرير الوطني المؤقت أيضا لتبادل الخبرات والتحديات والحلول بين البلدان فيما يتعلق بتنفيذ بروتوكول ناغويا. وفي هذا الصدد، يمكن أن يكون التقرير الوطني المؤقت أداة قيّمة لبناء وتطوير القدرات اللازمة لتنفيذ البروتوكول وتصميم أنشطة بناء القدرات على نحو أكثر فعالية. ويهدف النسق إلى تقليل عبء الإبلاغ على البلدان وبالتالي فإن الأسئلة بسيطة (تكون الإجابة عادة بنعم أو لا). وبصفة عامة، يتبع هذه أسئلة خانات لإدخال نصوص حيث تشجع البلدان على تقديم تفاصيل بشأن التدابير المتخذة والإبلاغ عن الصعوبات والتحديات التي تواجه تنفيذ أحكام معينة من البروتوكول وتقديم مزيد من المعلومات حول هذه المسائل من خلال الربط بسجلات غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع القائمة أو مواقع الإنترنت أو تحميل الوثائق. وهذه فرصة لتحديد الممارسات الجيدة والمعوقات فيما يتعلق بتنفيذ بروتوكول ناغويا.</p>
     
@@ -68,7 +68,7 @@
                                             <legend>معلومات عامة</legend>
                                             <div class="row">
                                                 <div class="col-xs-12" >
-                                                    <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                    <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                         <div class="indent">
                                                             <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                         </div>
@@ -78,7 +78,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="government" required bold="true"
-                                                        caption="Country"><span class="help-inline color-blue bold" ng-if="userGovernment()">لا يمكن تغيير البلد </span><div afc-autocomplete required name="government" ng-disabled="userGovernment()"
+                                                        caption="Country"><span class="help-inline color-blue bold" ng-if="userGovernment()">لا يمكن تغيير البلد</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()"
                                                             ng-model="document.government" source="options.countries"
                                                             filter="genericFilter" mapping="genericMapping" selectbox="true"
                                                             placeholder="يرجى اختيار البلد..."></div>
@@ -452,7 +452,7 @@
                                                                 ng-model="document.question16.permitsOnAbsCh" min="0"
                                                                 ng-init="document.question16.permitsOnAbsCh=0">
     
-                                                            <div class="help-info color-blue bold" ng-if="recordsCount.ircc">Currently you have <strong>{{recordsCount.ircc}} </strong> permits or their equivalents (IRCC) published in the ABS-CH.</div>
+                                                            <div class="help-info color-blue bold" ng-if="recordsCount.ircc">لديك حاليًا  <strong>{{recordsCount.ircc}}</strong> تصريحًا أو ما يعادلها (شهادات امتثال معترف بها دوليًا) نشرت في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
                                                         </div>
     
                                                     </div>
@@ -822,7 +822,7 @@
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
                                                                         name="q27Options" id="q27Option2" value="No">لا</label>
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
-                                                                        name="q27Options" id="q27Option3" value="Other">مقررات أخرى</label>
+                                                                        name="q27Options" id="q27Option3" value="Other">أخرى</label>
                                                             </div>
                                                             <div class="km-control-group" name="question27_ccFurtherInfo">يُرجى تقديم المزيد من المعلومات<div km-textbox-ml rows=2 name="question27_ccFurtherInfo"
                                                                     ng-model="document.question27.cpc.furtherInfo" locales="document.header.languages"
@@ -838,7 +838,7 @@
                                                         <input class="col-xs-2" type="number" name="ccsOnAbsCh" class="form-control text-right"
                                                             ng-model="document.question27.cpcsOnAbsChCount" min="0" ng-init="document.question27.cpcsOnAbsChCount=0">
     
-                                                        <div class="help-info color-blue bold" ng-if="recordsCount.cpc">Currently you have <strong>{{recordsCount.cpc}} </strong> Checkpoint Communiques published (CPC) published in the ABS-CH.</div>
+                                                        <div class="help-info color-blue bold" ng-if="recordsCount.cpc">حاليًا لديك <strong>{{recordsCount.cpc}}</strong> بيانًا حول نقاط التفتيش نشرت في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
     
                                                     </div>
     
@@ -1707,7 +1707,7 @@
                                                     <div class="row" ng-show="document.question55.answer">
                                                         <div class="col-xs-10 col-xs-offset-1">
                                                             <div class="km-control-group" name="question55_measures"
-                                                                caption="في حالة اختيار هذه الإجابة، هل اتخذ بلدك تدابير لتنفيذ الإطار الاستراتيجي لبناء القدرات وتنميتها لدعم التنفيذ الفعال لبروتوكول ناغويا بشأن الحصول وتقاسم المنافع؟ ">
+                                                                caption="في حالة اختيار هذه الإجابة، هل اتخذ بلدك تدابير لتنفيذ الإطار الاستراتيجي لبناء القدرات وتنميتها لدعم التنفيذ الفعال لبروتوكول ناغويا بشأن الحصول وتقاسم المنافع؟">
                                                                 <div class="help-info">اعتمد بوصفه المقرر NP-1/8</div>
                                                                 <div class="km-yes-no" name="question55_measures" ng-click="Q55Clear()"
                                                                     ng-model="document.question55.measures.answer"></div>
@@ -1914,7 +1914,7 @@
                                                                 <label><input type="checkbox" ng-model="document.question62.recipient.gef">من مرفق البيئة العالمية</label>
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question62.recipient.financialInstitutions">
-                                                                <label><input type="checkbox" ng-model="document.question62.recipient.npImplementationFund">من صندوق تنفيذ بروتوكول ناغويا </label>
+                                                                <label><input type="checkbox" ng-model="document.question62.recipient.npImplementationFund">من صندوق تنفيذ بروتوكول ناغويا</label>
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question62.recipient.financialInstitutions">
                                                                 <label><input type="checkbox" ng-model="document.question62.recipient.otherSources"
@@ -1973,7 +1973,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question63" bold="true" caption="63. هل لدى بلدكم موظفين محددين يديرون الوظائف بشكل مباشر فيما يتعلق بتنفيذ بروتوكول ناغويا؟ ">
+                                                    <div class="km-control-group" name="question63" bold="true" caption="63. هل لدى بلدكم موظفين محددين يديرون الوظائف بشكل مباشر فيما يتعلق بتنفيذ بروتوكول ناغويا؟">
                                                         <div class="help-info">جَمع هذه المعلومات يمكن أن تكون مفيدة لتقييم فعالية البروتوكول بموجب المادة (31) عن تقييم واستعراض وكذلك قياس التقدم المحرز وتحديد الصعوبات والتحديات لتنفيذ البروتوكول.</div>
                                                         <div class="km-yes-no" name="question63" ng-model="document.question63.answer"
                                                             ng-click="Q63Clear()"></div>
@@ -1982,10 +1982,10 @@
                                                     <div ng-show="document.question63.answer" class="km-control-group" name="question63NumberOfStaff"
                                                         caption="في حالة اختيار هذه الإجابة، يرجى تحديد عددهم:">
                                                         <label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
-                                                                value="One"> واحد</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
-                                                                value="Less than 5"> أقل من 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
-                                                                value="Less than 10"> أقل من 10</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
-                                                                value="10 or more"> 10 أو أكثر</label>
+                                                                value="One">واحد</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
+                                                                value="Less than 5">أقل من 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
+                                                                value="Less than 10">أقل من 10</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
+                                                                value="10 or more">10 أو أكثر</label>
                                                     </div>
     
                                                     <div class="km-control-group" name="question63Challenges" caption="">يُرجى تقديم موجز للصعوبات والتحديات الرئيسية التي صودفت.<div km-textbox-ml rows=4 name="question63Challenges" ng-model="document.question63.challengesInfo"
@@ -2061,7 +2061,7 @@
     
     
     
-                        </div> <!-- tab='edit' --></form>
+                        </div><!-- tab='edit' --></form>
                 </edit-form>
                 <review-form>
                     <view-abs-national-report ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></view-abs-national-report>

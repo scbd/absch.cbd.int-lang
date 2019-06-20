@@ -1,19 +1,8 @@
 ﻿<div ng-controller="newAbout" dir="rtl">
-<style>
-blockquote {
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-blockquote > h4{color:#1FA65D;}
-p.list-title{ margin-bottom:0;padding-bottom:0;}
-#article-content img {width:100%}
-#link-content p {padding:0;margin:0;}
-
-</style>
+<style> blockquote { background: #f9f9f9; border: 1px solid #ccc; font-size: 14px; } blockquote &gt; h4{color:#1FA65D;} p.list-title{ margin-bottom:0;padding-bottom:0;} #article-content img {width:100%} #link-content p {padding:0;margin:0;} </style>
         <div class="container">
                 <div class="row">
-                  <div class="col-sm-3 col-xs-12" style="background-color: #f9f9f9;"><br><input style="width:100%;border-radius: 2px; padding: 12px 20px;border:solid 1px #ddd;" ng-model="searchText" placeholder="Search this page "><br> <br><div id="link-content" ng-bind-html="links.content | lstring:locale | toTrusted"></div>
+                  <div class="col-sm-3 col-xs-12" style="background-color: #f9f9f9;"><br><input style="width:100%;border-radius: 2px; padding: 12px 20px;border:solid 1px #ddd;" ng-model="searchText" placeholder="Search this page"><br> <br><div id="link-content" ng-bind-html="links.content | lstring:locale | toTrusted"></div>
                   </div>
 
                   <div class="col-sm-9 col-xs-12" id="articles">

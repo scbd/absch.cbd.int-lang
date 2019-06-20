@@ -1,14 +1,9 @@
 ﻿<div id="Search-Filter"  >
 
-<style>
-    .level0{margin-top:10px;}
-    .level1{margin-left:20px;}
-     .level2{margin-left:40px;}
-      .level3{margin-left:65px;}
-</style>
+<style> .level0{margin-top:10px;} .level1{margin-left:20px;} .level2{margin-left:40px;} .level3{margin-left:65px;} </style>
     <div ng-repeat="(key,related) in relatedKeywords">   
         <div style="margin-bottom:30px;" >
-        <div ng-if="relatedkeywords.length"><span class="country-heading"> Mots-cl&eacute;s li&eacute;s &agrave; : <span class="color-darkgrey">{{searchFilters[key].name}}</span> </span><hr class="heading" />
+        <div ng-if="relatedkeywords.length"><span class="country-heading">Mots-cl&eacute;s li&eacute;s &agrave; : <span class="color-darkgrey">{{searchFilters[key].name}}</span></span><hr class="heading" />
         </div>
             <div ng-repeat="doc in relatedkeywords = (related | filter:searchKeyword | orderBy:'parent' )" >
                 <div ng-if="doc.parent != relatedkeywords[$index-1].parent && $index > 0" style="margin-top:10px;"></div>

@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-blue">
-		<h4>Permit or its equivalent constituting an internationally recognized certificate of compliance <span class="color-black" dir="rtl"> (IRCC) </span></h4> </div>
+		<h4>التصريح أو ما يعادله مما يشكل شهادة امتثال معترف بها دوليًا  <span class="color-black">(IRCC)</span></h4></div>
 	<div class="record-body panel-body">
 
 		
@@ -63,7 +63,7 @@
 
 
 			<div ng-show="document.title">
-			 	<label> الرقم المرجعي للتصريح أو ما يعادله</label>
+			 	<label>الرقم المرجعي للتصريح أو ما يعادله</label>
 			 	<div class="km-value">{{document.title | lstring:locale}}</div>
 		 	</div>
 
@@ -151,7 +151,7 @@
     				</div>
     			</div>
 
-<legend>الموضوع أو المورد الجيني </legend>
+<legend>الموضوع أو المورد الجيني</legend>
 				<div ng-show="document.subjectMatter">
 					<label>الموضوع أو الموارد الجينية التي يشملها التصريح أو ما يعادله</label>
 					<div class="km-value km-pre"ng-bind-html="document.subjectMatter | lstring:locale"></div>
@@ -168,7 +168,7 @@
 							<i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i>
 						</div> --><div class="km-value">
 						  <ul>
-							<li ng-repeat="item in document.specimens"><a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+							<li ng-repeat="item in document.specimens"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 						</ul>
 					    </div>
 
@@ -177,7 +177,7 @@
 						<label>بيانات التصنيف</label>
                         <div class="km-value">
 						  <ul>
-							<li ng-repeat="item in document.taxonomies"><a translation-url  target="{{target}}" ng-href="{{item.url}}"> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+							<li ng-repeat="item in document.taxonomies"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 						</ul>
 					    </div>
 
@@ -197,7 +197,7 @@
 				</div>
 			</div>
 
-		<legend ng-if="document.usages || document.usagesDescription || document.usagesConfidential || document.thirdPartyTransferCondition">معلومات عن استخدام المورد (الموارد) الجينية </legend>
+		<legend ng-if="document.usages || document.usagesDescription || document.usagesConfidential || document.thirdPartyTransferCondition">معلومات عن استخدام المورد (الموارد) الجينية</legend>
 			<div ng-if="document.usages">
 				<label>نوع الاستخدام المسموح به في التصريح أو ما يعادله</label>
 				<div class="km-value" ng-if="document.usages && !document.usagesConfidential">
@@ -222,7 +222,7 @@
 			</div>
 
 	<div ng-if="document.permitFiles || document.permitDescription"  >
-		<legend >الوثائق </legend>
+		<legend >الوثائق</legend>
 
 			<div ng-show="document.permitFiles">
 				<label>نسخة التصريح أو ما يعادله، أو وثيقة أخرى ذات صلة متاحة لاطلاع الجمهور</label>

@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-blue">
-		<h4>Living Modified Organism <span class="color-black" dir="rtl"> (LMO) </span></h4>
+		<h4>Living Modified Organism <span class="color-black">(LMO)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -21,11 +21,11 @@
 			<div ng-bind="document.uniqueIdentification" class="km-value"></div>
 		</div>
 		<div ng-show="document.developers">
-			<label>المطوّر (المطورون)	</label>
+			<label>المطوّر (المطورون)</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.developers" >						
-						<view-contact-reference ng-model='item.identifier' locale="locale"></view-contact-reference>
+						<view-contact-reference ng-model='item' locale="locale"></view-contact-reference>
 					</li>
 				</ul>
 			</div>
@@ -166,7 +166,7 @@
 		</div>
 		
 		<div>
-			<view-reference-records ng-model="document.header.identifier"></view-reference-records>
+			<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 				
 			</div>
 	</div>

@@ -13,7 +13,7 @@
                                         <legend name="generalInfo">Общая информация</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                <div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -51,7 +51,7 @@
                                             <div class="col-xs-12">
                                                 <div class="control-group">
                                                     <div class="km-control-group" name="absCheckpoints" required caption="Контрольный(-ые) пункт(ы), которые собирали или получали информацию">
-                                                        <div class="help-info"> В этом поле вы можете из существующих в МП-ДГРСИВ записей выбрать запись о контрольном(-ых) пункте(-ах), которые собирали или получали информацию.</div>
+                                                        <div class="help-info">В этом поле вы можете из существующих в МП-ДГРСИВ записей выбрать запись о контрольном(-ых) пункте(-ах), которые собирали или получали информацию.</div>
             
                                                         <div document-selector ng-model="document.absCheckpoints" question="absCheckpoints"
                                                             government="document.government" schema="absCheckpoint" filter="true"></div>
@@ -68,7 +68,7 @@
                                             <div class="col-xs-12">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable"
-                                                                watch-items> Международно признанный сертификат о соответствии требованиям (МПССТ) отсутствует</input></span></div>
+                                                                watch-items>Международно признанный сертификат о соответствии требованиям (МПССТ) отсутствует</input></span></div>
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                                         <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs"
                                                             required caption="Ссылки на международно признанный(-ые) сертификат(ы) о соответствии требованиям (МПССТ), имеющий(-ие) отношение к данному коммюнике">
@@ -109,7 +109,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="subjectMatter" required caption="Предмет или генетические ресурсы, имеющие отношение к собранной или полученной информации">
-                                                        <div class="help-info">Предоставьте сведения о предмете или генетических ресурсах, имеющих отношение к информации, собранной или полученной контрольным пунктом. Она может включать сведения о биоте любого таксономического ранга, которому может соответствовать таксономическое название. Она также может включать данные о местонахождении коллекции материала. Кроме того, она также может использоваться для идентификации генетического ресурса посредством ссылки на контрольный образец или полевые записи в указанном архиве или коллекцию. </div>
+                                                        <div class="help-info">Предоставьте сведения о предмете или генетических ресурсах, имеющих отношение к информации, собранной или полученной контрольным пунктом. Она может включать сведения о биоте любого таксономического ранга, которому может соответствовать таксономическое название. Она также может включать данные о местонахождении коллекции материала. Кроме того, она также может использоваться для идентификации генетического ресурса посредством ссылки на контрольный образец или полевые записи в указанном архиве или коллекцию.</div>
                                                         <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter"
                                                             locales="document.header.languages"></div>
                                                     </div>
@@ -233,7 +233,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="personsAtCheckpoint" caption=" Лицо или организация, предоставляющие контрольному пункту информацию об использовании генетического ресурса ">
+                                                <div class="km-control-group" name="personsAtCheckpoint" caption="Лицо или организация, предоставляющие контрольному пункту информацию об использовании генетического ресурса">
                                                     <div class="help-info">Данная информация позволяет поставщику генетического ресурса проверить, являются ли лицо или организация, которым было предоставлено ПОС, теми же лицами или организациями, которые предоставляют доказательство получения ПОС или заключения ВСУ, на контрольном пункте. В случае расхождений поставщики могут проверить информацию и условия, касающиеся передачи третьему лицу.</div>
                                                     <div document-selector ng-model="document.personsAtCheckpoint" question="personsAtCheckpoint"
                                                         schema="(contact authority)" government="document.government" filter="true"></div>

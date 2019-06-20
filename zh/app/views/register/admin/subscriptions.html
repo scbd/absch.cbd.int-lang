@@ -1,16 +1,11 @@
 ﻿<div ng-controller="subscriptionsCotroller" id="RegisterPage">
 	<link href="/app/css/register.css" rel="stylesheet">
-	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style>
-		.table>tbody:hover {
-			background-color: #f2dede;
-			;
-		}
-	</style>
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style> .table&gt;tbody:hover { background-color: #f2dede; ; } </style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-pink color-white">
 			<div style="padding:10px 10px;">
-				<h3> subscriptions</h3>
+				<h3>subscriptions</h3>
 			</div>
 		</div>
 		<div class="register-content-content">
@@ -18,7 +13,7 @@
 			<legend name="formInfo" style="display:none"></legend><!--<div style="font-weight:bold;">Records which have been not approved since 12 weeks.</div>--><div class="registerpage-content">
 
 				<div class="alert alert-danger" ng-show="__error"><strong>错误：</strong>{{__error}}</div>
-				<legend>Filters </legend>
+				<legend>Filters</legend>
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="km-control-group" name="startDate" required caption="开始日期">
@@ -32,7 +27,7 @@
 					</div>
 					<div class="col-xs-6">
 						<div class="km-control-group" name="systemAlert" caption="">
-							<input type="checkbox" ng-model="filters.systemAlerts"/> Include System Subscription</div>
+							<input type="checkbox" ng-model="filters.systemAlerts"/>Include System Subscription</div>
 					</div>
 				</div><!--<div class="row">
                     <div class="col-xs-12">
@@ -48,7 +43,7 @@
 							<ul class="list-group">
 								<li class="list-group-item clearfix" style="background-color:#eee;"
 								ng-repeat="record in subscriptions | orderBy:'reportedOn':'desc'">
-									<h4><a class="text-bold mb0 color-blue"  >{{record.queryTitle}}</a> <a class="label label-warning" target="_blank" ng-href="https://accounts.cbd.int/admin/users/{{record.meta.createdBy}}" >{{record.meta.createdBy}}</a> <span class="label label-danger" ng-if="record.isSystemAlert"> System alert</span></h4><span style="color:#bbb;">FILTERS:</span><span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;"><span class="label label-info"><span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span>{{filter.name}} <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span></span></span></li>
+									<h4><a class="text-bold mb0 color-blue"  >{{record.queryTitle}}</a> <a class="label label-warning" target="_blank" ng-href="https://accounts.cbd.int/admin/users/{{record.meta.createdBy}}" >{{record.meta.createdBy}}</a> <span class="label label-danger" ng-if="record.isSystemAlert">System alert</span></h4><span style="color:#bbb;">FILTERS:</span><span ng-repeat="filter in record.filters" style="margin-bottom:10px;margin-right:10px;"><span class="label label-info"><span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span>{{filter.name}} <span ng-if="filter.type === 'freeText' || filter.type === 'UID'">&quot;</span></span></span></li>
 							</ul>
 						</div>
 					</div>

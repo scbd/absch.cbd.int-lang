@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span>{{schema.title|lstring:locale}} <span class="color-black"> ({{schema.shortCode}}) </span> </span></h4>	
+		<h4><span>{{schema.title|lstring:locale}} <span class="color-black">({{schema.shortCode}})</span></span></h4>	
 	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
@@ -49,7 +49,7 @@
 
 		<div ng-show="document.hasApplicationDocuments!=undefined">
 			<legend>Does the applicant need to provide any documents</legend>
-			<div class="km-value" ng-show="document.hasApplicationDocuments">Oui</div>
+			<div class="km-value" ng-show="document.hasApplicationDocuments">Yes</div>
 			<div class="km-value" ng-show="!document.hasApplicationDocuments">Non</div>
 		</div>
 		<div ng-show="document.applicationInformation">
@@ -70,7 +70,7 @@
 
 		<div ng-show="document.hasApplicationFees!=undefined">
 			<legend>Are there application fees</legend>
-			<div class="km-value" ng-show="document.hasApplicationFees">Oui</div>
+			<div class="km-value" ng-show="document.hasApplicationFees">Yes</div>
 			<div class="km-value" ng-show="!document.hasApplicationFees">Non</div>
 		</div>
 		<div ng-show="document.applicationFeesInformation">
@@ -88,18 +88,14 @@
 			<div class="km-value" ng-repeat="measure in document.relevantMeasures">
 				<div view-default-reference ng-model="measure.identifier" locale="locale"></div>
 			</div>
-		</div>
-
-		<div ng-show="document.keywords">
-			<label>Mots-cl&eacute;s</label>
+		</div><!-- <div ng-show="document.keywords">
+			<label>Keywords</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="term in document.keywords">{{term | term:locale}}</li>
 				</ul>
 			</div>
-		</div>
-
-		<div ng-show="document.relevantInformation||document.relevantDocuments">
+		</div> --><div ng-show="document.relevantInformation||document.relevantDocuments">
 			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">

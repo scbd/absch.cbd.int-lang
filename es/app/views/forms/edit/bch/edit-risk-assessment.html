@@ -18,7 +18,7 @@
 										<legend>Informaci&oacute;n general</legend>
 											<div class="row">
 												<div class="col-xs-12" >
-													<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+													<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 														<div class="indent">
 															<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 														</div>
@@ -29,14 +29,14 @@
 												<div class="col-sm-12">
 													<div class="km-control-group" name="government" required caption="Country submitting the decision or communication">
 														<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries"
-															filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
+															filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
 													</div>
 												</div>
 											</div>
 		
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" required name="title" caption="Título de la evaluación del riesgo">
+													<div class="km-control-group" required name="title" caption="T&iacute;tulo de la evaluaci&oacute;n del riesgo">
 														<div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -44,7 +44,7 @@
 		
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" name="date" caption="Fecha de la evaluación del riesgo">
+													<div class="km-control-group" name="date" caption="Fecha de la evaluaci&oacute;n del riesgo">
 														<div km-date placeholder="AAAA-MM-DD" name="date" required ng-model="document.date"></div>
 													</div>
 												</div>
@@ -52,7 +52,7 @@
 		
 											<div class="row">
 												<div class="col-xs-12">
-													<div class="km-control-group" name="authorities" caption="Autoridad(es) Nacional(es) Competente(s) responsable(s) por la evaluación del riesgo">											
+													<div class="km-control-group" name="authorities" caption="Autoridad(es) Nacional(es) Competente(s) responsable(s) por la evaluaci&oacute;n del riesgo">											
 														<div document-selector ng-model="document.authorities" question="authorities"
 															government="document.government" schema="(authority)"></div>			
 													</div>
@@ -83,7 +83,7 @@
 											</div>
 											<div class="row">
 												<div class="col-xs-12">
-													<div class="km-control-group" name="scopes" required caption="Ámbito de aplicación de la evaluación del riesgo">
+													<div class="km-control-group" name="scopes" required caption="&Aacute;mbito de aplicaci&oacute;n de la evaluaci&oacute;n del riesgo">
 															<div km-term-check required ng-model="document.scopes" locales="document.header.languages"
 															terms="options.riskAssessmentScope()"  binding-type="term[]"></div>
 													</div>
@@ -106,7 +106,7 @@
 											
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffects" caption="Posibles efectos adversos identificados en la evaluación del riesgo">
+													<div class="km-control-group"  name="adverseEffects" caption="Posibles efectos adversos identificados en la evaluaci&oacute;n del riesgo">
 														<div km-rich-textbox name="adverseEffects"  ng-model="document.adverseEffects" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -127,21 +127,21 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffectsOverallRisk" caption="Estimación del riesgo global">
+													<div class="km-control-group"  name="adverseEffectsOverallRisk" caption="Estimaci&oacute;n del riesgo global">
 														<div km-rich-textbox name="adverseEffectsOverallRisk"  ng-model="document.adverseEffectsOverallRisk" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="adverseEffectsRecommendation" caption="Recomendación(es) sobre si los riesgos son aceptables/gestionables y posibles estrategias de gestión">
+													<div class="km-control-group"  name="adverseEffectsRecommendation" caption="Recomendaci&oacute;n(es) sobre si los riesgos son aceptables/gestionables y posibles estrategias de gesti&oacute;n">
 														<div km-rich-textbox name="adverseEffectsRecommendation"  ng-model="document.adverseEffectsRecommendation" locales="document.header.languages"></div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="riskManagementStrategies" caption="Necesidad(es) de ampliar la información sobre cuestiones específicas de interés">
+													<div class="km-control-group"  name="riskManagementStrategies" caption="Necesidad(es) de ampliar la informaci&oacute;n sobre cuestiones espec&iacute;ficas de inter&eacute;s">
 														<div km-rich-textbox name="riskManagementStrategies"  ng-model="document.riskManagementStrategies" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -156,7 +156,7 @@
 											</div>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group"  name="detectionMethod" caption="OVM, métodos de detección e identificación propuestos">
+													<div class="km-control-group"  name="detectionMethod" caption="OVM, m&eacute;todos de detecci&oacute;n e identificaci&oacute;n propuestos">
 														<div km-rich-textbox name="detectionMethod"  ng-model="document.detectionMethod" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -169,7 +169,7 @@
 											<legend>Cronograma para la confirmaci&oacute;n o actualizaci&oacute;n de la informaci&oacute;n</legend>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" name="expires"  caption="¿Esta información se confirmará o actualizará después de dos años a partir de la fecha de presentación?">			
+													<div class="km-control-group" name="expires"  caption="¿Esta informaci&oacute;n se confirmar&aacute; o actualizar&aacute; despu&eacute;s de dos a&ntilde;os a partir de la fecha de presentaci&oacute;n?">			
 														<div class="help-block">Si la respuesta a esta pregunta es &quot;S&iacute;&quot;, despu&eacute;s de dos a&ntilde;os a partir de la fecha de presentaci&oacute;n, se le pedir&aacute; que confirme o actualice el registro dentro de los tres meses siguientes. Despu&eacute;s de este per&iacute;odo, si no se ha recibido la confirmaci&oacute;n, el registro ser&aacute; marcado como &quot;No Confirmado&quot;.</div>									
 														<div km-yes-no  ng-model="document.expires" locales="document.header.languages"></div>
 													</div>	
@@ -183,7 +183,7 @@
 											<legend>Informaci&oacute;n adicional</legend>
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+													<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
 														<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 														<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 													</div>

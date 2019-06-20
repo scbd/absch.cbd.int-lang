@@ -18,7 +18,7 @@
 									<legend>Informaci&oacute;n general</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -32,7 +32,7 @@
 									<legend>Informaci&oacute;n del Organismo</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="scientificName" caption="Nombre científico">
+											<div class="km-control-group" required name="scientificName" caption="Nombre cient&iacute;fico">
 												<div class="help-block">El nombre cient&iacute;fico de un organismo se compone generalmente del nombre del g&eacute;nero, seguido de la denominaci&oacute;n espec&iacute;fica. Por ejemplo: Oryza sativa es el nombre cient&iacute;fico del arroz.</div>
 												<input type="text" class="form-control" name="scientificName" required ng-model="document.scientificName"/>
 											</div>
@@ -63,7 +63,7 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="genus" caption="Género">
+											<div class="km-control-group" name="genus" caption="G&eacute;nero">
 												<input type="text" class="form-control" name="genus" ng-model="document.genus" />
 											</div>
 										</div>
@@ -127,7 +127,7 @@
 											</div>	
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="domestication"  caption="Domesticación de Organismo">
+											<div class="km-control-group" name="domestication"  caption="Domesticaci&oacute;n de Organismo">
 												<div km-term-radio  ng-model="document.domestication" locales="document.header.languages"
 													terms="options.domestication" binding-type="term"></div>
 											</div>	
@@ -147,20 +147,20 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="diversityCentre" caption="Centro(s) de la diversidad genética">
+											<div class="km-control-group" name="diversityCentre" caption="Centro(s) de la diversidad gen&eacute;tica">
 												<div class="help-block">m&aacute;x. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.diversityCentre" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="habitat" caption="Hábitat, ámbito">
+											<div class="km-control-group" name="habitat" caption="H&aacute;bitat, &aacute;mbito">
 												<div class="help-block">m&aacute;x. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.habitat" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 
 										<div class="col-xs-12">
-											<div class="km-control-group" name="geographicalDistribution" caption="Distribución geográfica">
+											<div class="km-control-group" name="geographicalDistribution" caption="Distribuci&oacute;n geogr&aacute;fica">
 												<div class="help-block">Ejemplo: &aacute;lamo oriental (Populus deltoides) se produce en Am&eacute;rica del Norte de Alberta en el oeste de Quebec en el este y la Florida, Tejas, Arizona y el norte de M&eacute;xico en el sur. (m&aacute;x. 200 caracteres)</div>
 												<div km-rich-textbox ng-model="document.geographicalDistribution" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
@@ -178,7 +178,7 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="commonUses" caption="Uso(s) común(es)">
+											<div class="km-control-group" required name="commonUses" caption="Uso(s) com&uacute;n(es)">
 												<div km-term-check name="commonUses" required ng-model="document.commonUses" terms="options.commonUses" binding-type="term[]"></div>
 											</div>
 										</div>
@@ -190,7 +190,7 @@
 									<legend>Additional information</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
+											<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
 												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>

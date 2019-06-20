@@ -10,18 +10,18 @@
                             target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
                 </div>
 
-                <div ng-show="document.contact"></br><label>Contact person submitting the report</label>
+                <div ng-show="document.contact"></br><label>Persona de contacto presentando el informe</label>
                     <div class="km-value">
                         <view-contact-reference ng-model='document.contact' locale="locale">
                         </view-contact-reference>
                     </div>
                 </div>
 
-                <div ng-show="document.stakeholders"></br><label>9. Organizations/stakeholders who were consulted or participated in the preparation of this report</label>
+                <div ng-show="document.stakeholders"></br><label>9. Organizaciones/grupos interesados que fueron consultados o participaron en la preparaci&oacute;n de este informe</label>
                     <km-value-ml value="document.stakeholders" locales="locale"></km-value-ml>
                 </div>
 
-                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. Time period covered by this report</label>
+                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. Per&iacute;odo de tiempo que abarca este informe</label>
                     <div class="row">
                         <div class="col-xs-6" ng-if="document.reportPeriodStartDate">
                             <label>Desde</label>

@@ -1,6 +1,6 @@
 ﻿<div id="national-records-country" class="row">
     <div class="col-md-12">
-        <h4 style="border-bottom:#ddd solid 1px;"><a translation-url ng-href="/countries/{{name|uppercase}}" class="color-black link">{{getFilter(name).name}}</a><ng-party-status code="group.groupValue" style="margin-left:10px;"></ng-party-status><span class="badge pull-right">{{numFound}}</span></h4>
+        <h4 style="border-bottom:#ddd solid 1px;"><a translation-url ng-href="/countries/{{name|uppercase}}" class="color-black link">{{getFilter(name).name}}</a><ng-party-status code="name" style="margin-left:10px;"></ng-party-status><span class="badge pull-right">{{numFound}}</span></h4>
         <div ng-repeat="(key, schema) in schemas" ng-if="schema.docs.length>0">
             <div class="schemaTitle color-darkgrey" class="animate-if">{{schema.title |lstring:locale}} <span class="schema color-blue">({{schema.shortCode}})</span> <span class="badge color-darkgrey pull-right" style="background-color:#777">{{schema.numFound}}</span></div>
             <div ng-repeat="row in schema.docs">

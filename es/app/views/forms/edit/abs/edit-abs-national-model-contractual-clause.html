@@ -1,9 +1,5 @@
 ﻿<div ng-controller="editAbsNationalModelContractualClause">
-    <style>
-        .indent {
-            padding: 0 15px 0 15px;
-        }
-    </style>
+    <style> .indent { padding: 0 15px 0 15px; } </style>
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
 
@@ -15,7 +11,7 @@
                         <div class="editForm">
                             <section><br><div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                        <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                             <div class="indent">
                                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                             </div>
@@ -27,10 +23,10 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="government" required caption="1. País">
+                                        <div class="km-control-group" name="government" required caption="1. Pa&iacute;s">
                                             <div class="indent">
                                                 <div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government" source="options.countries"
-                                                    filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país"></div>
+                                                    filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..."></div>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +34,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="title" required caption="2. Denominación:">
+                                        <div class="km-control-group" name="title" required caption="2. Denominaci&oacute;n:">
                                             <div class="indent" km-textbox-ml ng-model="document.title" rows="1" placeholder="" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -46,7 +42,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" name="description" caption="3. Resumen ">
+                                        <div class="km-control-group" name="description" caption="3. Resumen">
                                             <div class="indent">
                                                 <div km-rich-textbox name="description" rows="3" ng-model="document.description" locales="document.header.languages"></div>
                                             </div>
@@ -68,7 +64,7 @@
 
                                 <div class="row indent" ng-if="isSubNational()">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" required name="jurisdictionName" caption="Nombre de la jurisdicción subnacional">
+                                        <div class="km-control-group" required name="jurisdictionName" caption="Nombre de la jurisdicci&oacute;n subnacional">
                                             <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdiction.customValue" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -82,7 +78,7 @@
                                 </div>
                                 <div class="row indent" ng-if="isOthers()">
                                     <div class="col-xs-12">
-                                        <div class="km-control-group" required name="jurisdictionName" caption="Nombre de otra jurisdicción">
+                                        <div class="km-control-group" required name="jurisdictionName" caption="Nombre de otra jurisdicci&oacute;n">
                                             <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdiction.customValue" locales="document.header.languages"></div>
                                         </div>
                                     </div>
@@ -91,7 +87,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="km-control-group" name="relevantMeasures" caption="5. Relevant ABS Measure(s):">
-                                            <div class="indent help-info"> Please provide relevant ABS Measure(s). </div>
+                                            <div class="indent help-info">Please provide relevant ABS Measure(s).</div>
                                             <div class="indent">
                                                 <div document-selector ng-model="document.relevantMeasures" question="measure" government="document.government" schema="(measure)" locales="document.header.languages"></div>                                                
                                             </div>

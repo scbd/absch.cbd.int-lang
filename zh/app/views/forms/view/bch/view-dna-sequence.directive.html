@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Gene and DNA Sequence <span class="color-black"> (DNA) </span></h4>
+		<h4>Gene and DNA Sequence <span class="color-black">(DNA)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -38,7 +38,7 @@
 
 		<div ng-show="document.isSynthetic!=undefined">
 			<label>Is the gene / DNA sequence is a synthetic molecule?</label>
-			<div class="km-value" ng-if="document.isSynthetic">是</div>
+			<div class="km-value" ng-if="document.isSynthetic">Yes</div>
 			<div class="km-value" ng-if="!document.isSynthetic">否</div>
 		</div>
 	
@@ -91,7 +91,7 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>其他相关网址或附加文档</label>
+				<label>Other relevant website address or attached documents</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>

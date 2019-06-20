@@ -18,7 +18,7 @@
 									<legend>一般信息</legend>
 									<div class="row">
 										<div class="col-xs-12" >
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -68,7 +68,7 @@
 										
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="jurisdictions" caption="辖区">
+												<div class="km-control-group" name="jurisdictions" caption="Jurisdiction(s)">
 													<div class="help-info">如果辖区不同于国家名称，则请提供适用法律、法规、准则或协议所属的辖区。示例：国家：Denmark, Jurisdiction:&ldquo;法罗群岛和格陵兰属于例外领土&rdquo;。</div>
 													<div km-select multiple name="jurisdictions" ng-model="document.jurisdictions" items="options.countries()"></div>
 												</div>
@@ -164,13 +164,13 @@
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="exporters" caption="Please provide Exporter’s contact details">											
+												<div class="km-control-group" name="exporters" caption="Please provide Exporter&rsquo;s contact details">											
 													<div document-selector ng-model="document.exporters" question="exporters"
 														government="document.government" schema="(contact)"></div>			
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant's contact details">											
+												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant&apos;s contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -183,7 +183,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+												<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -252,19 +252,19 @@
 														</div>
 													</div>
 													<div class="col-xs-12" ng-if="'0D0BEEF4-54E4-44C1-ABB2-B89DC145E0B3'">
-														<div class="km-control-group" name="exporters"  caption="Please provide Exporter’s contact details">											
+														<div class="km-control-group" name="exporters"  caption="Please provide Exporter&rsquo;s contact details">											
 															<div document-selector ng-model="document.exporters" question="exporters"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant's contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant&apos;s contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
@@ -362,7 +362,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="notes">
-												<div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+												<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
 												<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 											</div>
 										</div>

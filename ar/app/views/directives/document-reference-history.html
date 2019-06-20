@@ -9,8 +9,8 @@
                     <div class="row" style="margin:0 0 10px 0;padding:0;" ng-show="!isLoading" ng-repeat="doc in rawDocuments.docs | filter:keyword">
                         <result-default doc='doc' type="nationalRecords"></result-default>
                     </div>
-                    <div ng-if="isLoading"> <i class="fa fa-spinner fa-spin"></i> قيد التحميل...</div>
-                    <div ng-if="rawDocuments.numFound===0"> no records found.</div>
+                    <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> قيد التحميل...</div>
+                    <div ng-if="rawDocuments.numFound===0">no records found.</div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,93 @@
+{
+  "meetingDocument": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "pressRelease": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "Пресс-релизы"
+    }
+  },
+  "news": {
+    "type": "",
+    "title": {
+      "en": "Новости"
+    },
+    "description": {
+      "en": "Новости"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "Новости"
+    }
+  },
+  "new": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "statement": {
+    "type": "",
+    "title": {
+      "en": "Заявление"
+    },
+    "description": {
+      "en": "Заявления"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "Заявление"
+    }
+  },
+  "meeting": {
+    "type": "",
+    "title": {
+      "en": "Совещание"
+    },
+    "description": {
+      "en": "Совещание"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "Совещания"
+    }
+  },
+  "notification": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "Уведомления"
+    }
+  }
+}

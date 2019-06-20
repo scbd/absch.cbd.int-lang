@@ -18,7 +18,7 @@
 
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="name" required caption="اسم السلطة الوطنية المختصة">
-                                                <div class="help-info"> اذكر اسم الجهة المسؤولة، مثل وزارة البيئة يُرجى العلم أن اسم السلطة الوطنية المختصة سيساعد في تحديد السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
+                                                <div class="help-info">اذكر اسم الجهة المسؤولة، مثل وزارة البيئة يُرجى العلم أن اسم السلطة الوطنية المختصة سيساعد في تحديد السجل في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
                                                 <div km-textbox-ml name="name" required ng-model="document.name" rows="1"
                                                     placeholder="" locales="document.header.languages"></div>
                                             </div>
@@ -176,7 +176,7 @@
                                             <div class="km-control-group" ng-show="showResponsibleforAllMsg()" name="absResponsibleForAllNot"
                                                 caption="هناك بالفعل سلطة وطنية مختصة لبلدك، يرجى تحديد نطاق المسؤوليات لكل سلطة وطنية مختصة." />
 
-                                            <div class="km-control-group" name="absResponsibleForAll" required caption="هل هذه هي السلطة الوطنية المختصة المعينة في بلدك؟ إذا كانت الإجابة "لا"، يرجى وصف مسؤوليات هذه السلطة الوطنية المختصة.">
+                                            <div class="km-control-group" name="absResponsibleForAll" required caption="هل هذه هي السلطة الوطنية المختصة المعينة في بلدك؟ إذا كانت الإجابة &quot;لا&quot;، يرجى وصف مسؤوليات هذه السلطة الوطنية المختصة.">
 
                                                 <div km-yes-no required ng-model="document.absResponsibleForAll"
                                                     locales="document.header.languages"></div>
@@ -197,7 +197,7 @@
                                                             <div class="km-control-group" name="responsibilities"
                                                                 caption="وصف قصير لمسؤوليات السلطة الوطنية المختصة (300 حرف بحد أقصى)"
                                                                 required>
-                                                                <div class="help-info">تنص الفقرة 2 من المادة 13 على أن &quot;السلطات الوطنية المختصة مسؤولة، وفقاً للتدابير التشريعية أو الإدارية أو&nbsp;السياساتية الوطنية الواجبة التطبيق، عن منح حق الحصول، أو عند الاقتضاء، إصدار دليل كتابي يفيد باستيفاء متطلبات الحصول ومسؤولة عن الإبلاغ عن الإجراءات والمتطلبات المنطبقة للحصول على الموافقة المسبقة عن علم وإبرام شروط متفق عليها بصورة متبادلة&quot;. تذكر أن الغرض من هذا القسم هو مساعدة المستخدمين على فهم المسؤوليات التي تتعلق بالحصول على الموارد الجينية  وينبغي أن يجيب على السؤال: من يمنح الوصول لماذا؟ ينبغي أن يكون وصف المسؤوليات موجزًا وواضحًا. </div>
+                                                                <div class="help-info">تنص الفقرة 2 من المادة 13 على أن &quot;السلطات الوطنية المختصة مسؤولة، وفقاً للتدابير التشريعية أو الإدارية أو&nbsp;السياساتية الوطنية الواجبة التطبيق، عن منح حق الحصول، أو عند الاقتضاء، إصدار دليل كتابي يفيد باستيفاء متطلبات الحصول ومسؤولة عن الإبلاغ عن الإجراءات والمتطلبات المنطبقة للحصول على الموافقة المسبقة عن علم وإبرام شروط متفق عليها بصورة متبادلة&quot;. تذكر أن الغرض من هذا القسم هو مساعدة المستخدمين على فهم المسؤوليات التي تتعلق بالحصول على الموارد الجينية  وينبغي أن يجيب على السؤال: من يمنح الوصول لماذا؟ ينبغي أن يكون وصف المسؤوليات موجزًا وواضحًا.</div>
                                                                 <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities"
                                                                     rows="6" placeholder="" locales="document.header.languages"
                                                                     required></div>

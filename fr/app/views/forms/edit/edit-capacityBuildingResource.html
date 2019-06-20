@@ -18,7 +18,7 @@
 	
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+									<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -52,7 +52,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="formatDetails" caption="Détails du format">
+									<div class="km-control-group" name="formatDetails" caption="D&eacute;tails du format">
 										<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -60,7 +60,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="purpose" caption="Veuillez identifier l’utilité de la ressource">
+									<div class="km-control-group" name="purpose" caption="Veuillez identifier l&rsquo;utilit&eacute; de la ressource">
 										<div km-select multiple  name="purpose" ng-model="document.purpose" items="options.purposes()"></div>
 									</div>
 								</div>
@@ -68,7 +68,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="targetGroups" caption="Cible un/des groupe (s) bénéficiaire (s)">
+									<div class="km-control-group" required name="targetGroups" caption="Cible un/des groupe (s) b&eacute;n&eacute;ficiaire (s)">
 										<div km-term-check name="targetGroups" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 									</div>
 								</div>
@@ -84,7 +84,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="authors" caption="Auteur(s)* :">
+									<div class="km-control-group" required name="authors" caption="Auteur(s)*&nbsp;:">
 										<div class="help-info">Nom de l&apos;auteur de la publication ou de la source d&apos;information.</div>
 										<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 									</div>
@@ -93,7 +93,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="organizations" caption="Référence à l’organisation de création de la source d’information">
+									<div class="km-control-group" name="organizations" caption="R&eacute;f&eacute;rence &agrave; l&rsquo;organisation de cr&eacute;ation de la source d&rsquo;information">
 										
 										<div document-selector ng-model="document.organizations"
 																			question="organizations"
@@ -112,7 +112,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="publicationYear" caption="Année de publication">
+									<div class="km-control-group" required name="publicationYear" caption="Ann&eacute;e de publication">
 										<input type="number" class="form-control" style="width:200px" required name="publicationYear" ng-model="document.publicationYear" />
 									</div>
 								</div>
@@ -140,7 +140,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="resourceLinks" caption="Lien à la ressource">
+									<div class="km-control-group" required name="resourceLinks" caption="Lien &agrave; la ressource">
 										<div class="help-info">Pri&egrave;re de toujours joindre le ou les documents pertinents &agrave; int&eacute;grer &agrave; la base de donn&eacute;es afin que les utilisateurs puissent les t&eacute;l&eacute;charger. Veuillez &eacute;galement ajouter le lien vers les ressources qui sont disponibles sur Internet.</div>
 										<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 									</div>
@@ -160,7 +160,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="summary" caption="Résumé">
+									<div class="km-control-group" name="summary" caption="R&eacute;sum&eacute;">
 										<div km-textbox-ml ng-model="document.summary"  rows="4" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -168,8 +168,8 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="regions" caption="Pays ou groupe(s) régional(aux) ou économique(s) liés à la ressource">
-										<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="Choisissez un pays et/ou une région"></div>
+									<div class="km-control-group" required name="regions" caption="Pays ou groupe(s) r&eacute;gional(aux) ou &eacute;conomique(s) li&eacute;s &agrave; la ressource">
+										<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="Choisissez un pays et/ou une r&eacute;gion"></div>
 									</div>
 								</div>
 							</div>
@@ -178,7 +178,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="absKeyAreas" caption="Domaines clés et mesures stratégiques pour le renforcement et le développement des capacités">
+									<div class="km-control-group" name="absKeyAreas" caption="Domaines cl&eacute;s et mesures strat&eacute;giques pour le renforcement et le d&eacute;veloppement des capacit&eacute;s">
 										<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 									</div>
 								</div>

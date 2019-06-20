@@ -1,10 +1,10 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading  bg-blue"> <h4>{{getNFPText(document.categories) | uppercase}}</h4></div>
+	<div class="panel-heading  bg-blue"><h4>{{getNFPText(document.categories) | uppercase}}</h4></div>
 	<div class="record-body panel-body">
 		
 			
 		<document-date></document-date><br><div ng-show="document.government">
-			<label>Страна</label><span class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a><span ng-party-status code="document.government.identifier" id="government"></span></span></div>
+			<label>Страна</label><span class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status code="document.government.identifier" id="government"></span></span></div>
 
 		<div ng-show="document.firstName||document.lastName">
 			<label>Name</label><span class="km-value">{{document.title | lstring:locale}} {{document.firstName | lstring:locale}} {{document.lastName | lstring:locale}}</span></div>

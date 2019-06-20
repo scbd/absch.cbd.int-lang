@@ -13,7 +13,7 @@
 			
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -36,7 +36,7 @@
 											</div>
 											<div ng-if="isNationalUser && displayMCCWarning" class="alert alert-info">
 												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-												<h4><strong>请注意：</strong>If this module contractual clause has been developed by your country, then please submit it under the national record format <a href="/register/NMCC/new" class="color-blue" >&apos;National Model Contractual Clause&apos;</a> so that will be clearly visible as a national record in the search and country profile. </h4><a href="/register/NMCC/new" class="bold">Click here</a> to open the national record submission form.</div>
+												<h4><strong>请注意：</strong>If this module contractual clause has been developed by your country, then please submit it under the national record format <a href="/register/NMCC/new" class="color-blue" >&apos;National Model Contractual Clause&apos;</a> so that will be clearly visible as a national record in the search and country profile.</h4><a href="/register/NMCC/new" class="bold">Click here</a> to open the national record submission form.</div>
 										</div>
 										<div class="col-xs-12" ng-show="isOtherSelected(document.resourceTypes)">
 											<div class="km-control-group" required name="resourceTypeName" caption="其他资源类型的名称">
@@ -97,9 +97,9 @@
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="organizations" caption="创作组织 ">
+											<div class="km-control-group" name="organizations" caption="创作组织">
 												<organization-selector multiple ng-model="document.organizations" organization-only locales="document.header.languages"
-												 caption="Add organizations »">
+												 caption="公布年份">
 											</div>
 										</div>
 									</div>
@@ -252,7 +252,7 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="notes">
-												<div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+												<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
 												<textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
 											</div>
 										</div>

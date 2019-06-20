@@ -13,7 +13,7 @@
                                         <legend name="generalInfo">معلومات عامة</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -51,7 +51,7 @@
                                             <div class="col-xs-12">
                                                 <div class="control-group">
                                                     <div class="km-control-group" name="absCheckpoints" required caption="نقطة/نقاط التفتيش التي جمعت أو تلقت المعلومات">
-                                                        <div class="help-info"> في هذا الحقل يمكنك اختيار سجل نقطة/نقاط التفتيش التي جمعت أو تلقت المعلومات من السجلات الحالية في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
+                                                        <div class="help-info">في هذا الحقل يمكنك اختيار سجل نقطة/نقاط التفتيش التي جمعت أو تلقت المعلومات من السجلات الحالية في غرفة تبادل المعلومات بشأن الحصول وتقاسم المنافع.</div>
             
                                                         <div document-selector ng-model="document.absCheckpoints" question="absCheckpoints"
                                                             government="document.government" schema="absCheckpoint" filter="true"></div>
@@ -68,7 +68,7 @@
                                             <div class="col-xs-12">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable"
-                                                                watch-items> شهادة الامتثال المعترف بها دوليًا غير متاحة.</input></span></div>
+                                                                watch-items>شهادة الامتثال المعترف بها دوليًا غير متاحة.</input></span></div>
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                                         <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs"
                                                             required caption="الروابط لشهادة/شهادات الامتثال المعترف بها دوليًا التي ترتبط بهذا البيان">
@@ -109,7 +109,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="subjectMatter" required caption="الموضوع أو الموارد الجينية المتصلة بالمعلومات التي تم جمعها أو استلامها.">
-                                                        <div class="help-info">يرجى إدخال التفاصيل حول الموضوع أو الموارد الجينية للمعلومات التي تم جمعها أو استلامها في نقطة التفتيش. قد يتضمن ذلك الكائنات الحية في أي مرتبة تصنيفية قد تحمل اسمًا تصنيفيًا. ربما يتضمن ذلك مكان أو منطقة جمع المادة. من الممكن كذلك تحديد المورد الجيني من خلال الإشارة إلى عينة قسيمة أو ملاحظات ميدانية محفوظة في أرشيف أو مجموعة محددة. </div>
+                                                        <div class="help-info">يرجى إدخال التفاصيل حول الموضوع أو الموارد الجينية للمعلومات التي تم جمعها أو استلامها في نقطة التفتيش. قد يتضمن ذلك الكائنات الحية في أي مرتبة تصنيفية قد تحمل اسمًا تصنيفيًا. ربما يتضمن ذلك مكان أو منطقة جمع المادة. من الممكن كذلك تحديد المورد الجيني من خلال الإشارة إلى عينة قسيمة أو ملاحظات ميدانية محفوظة في أرشيف أو مجموعة محددة.</div>
                                                         <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter"
                                                             locales="document.header.languages"></div>
                                                     </div>
@@ -233,7 +233,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="personsAtCheckpoint" caption=" الشخص أو الكيان الذي يتيح المعلومات لنقطة التفتيش حول استخدام المورد الجيني ">
+                                                <div class="km-control-group" name="personsAtCheckpoint" caption="الشخص أو الكيان الذي يتيح المعلومات لنقطة التفتيش حول استخدام المورد الجيني">
                                                     <div class="help-info">تتيح هذه المعلومات لموفر المورد الجيني التحقق مما إذا كان الشخص أو الكيان الذي منحت له الموافقة المسبقة عن علم هو الشخص أو الكيان نفسه الذي قدم دليلا على الشروط المتفق عليها بصورة متبادلة في نقطة التفتيش. في حالة الاختلاف، بإمكان الموفرين التحقق من المعلومات والظروف المرتبطة بالنقل من خلال طرف خارجي.</div>
                                                     <div document-selector ng-model="document.personsAtCheckpoint" question="personsAtCheckpoint"
                                                         schema="(contact authority)" government="document.government" filter="true"></div>

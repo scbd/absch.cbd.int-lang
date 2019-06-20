@@ -15,7 +15,7 @@
 				
 										<div class="row">
 											<div class="col-xs-12" >
-												<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+												<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 													<div class="indent">
 														<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 													</div>
@@ -91,7 +91,7 @@
 												<div class="km-control-group" required name="capacityBuildingType" caption="4. نوع مبادرة بناء القدرات">
 													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4. Atleast one question should be answered yes</span></label>
 													<div style="padding-left:20px" class="well">
-														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme? ">
+														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme?">
 															<div class="km-yes-no" required name="isProjectProgramme" ng-model="document.capacityBuildingType.isProjectProgramme"></div>
 														</div>
 														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?">
@@ -103,7 +103,7 @@
 																							question="capacityBuildingInitiative"
 																							schema="capacityBuildingInitiative" filter="true" skip-government="true"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme? ">
+														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?">
 															<div class="km-yes-no" required name="isStandaloneProject" ng-model="document.capacityBuildingType.isStandaloneProject"></div>
 														</div>
 													</div>
@@ -136,7 +136,7 @@
 																</div>
 															</div>
 															<div class="col-md-1 text-center" ng-show="!document.status || isProposedOrApproved()">
-																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > أو </div>
+																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" >أو</div>
 															</div>
 															<div class="col-md-5">
 																<div class="km-control-group" name="duration" caption="المدة" ng-show="!document.status || isProposedOrApproved()">
@@ -194,7 +194,7 @@
 														<div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="يرجى تحديد الشريك (الشركاء) المتعاونين">
 															<div class="help-info">يشير مصطلح الشركاء المتعاونين Collaborating Partners إلى الكيانات أو المؤسسات التي تقدم مساهمات كبيرة، سواءً كانت مالية أو غيرها، للمبادرة أو تدعم رعاية المبادرة أو تتعاون بنشاط في تنفيذها.</div>
 															 
-															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="8. مسؤول (مسؤولو) الاتصال"></organization-selector>
 														</div>
 													</div>
 												</div>
@@ -277,7 +277,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="15. مصدر (مصادر) التمويل المشترك"></organization-selector>
 												</div>
 											</div>
 										</div>
@@ -289,7 +289,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="16. إجمالي الميزانية (المبلغ بالدولار الأمريكي)"></organization-selector>
 												</div>
 											</div>
 										</div>
@@ -361,7 +361,7 @@
 				
 										<div class="row">
 											<div class="col-md-12">
-												<div class="km-control-group" name="address" caption=" أى معلومات أخرى ذات صلة" >
+												<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة" >
 													<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 													<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 												</div>

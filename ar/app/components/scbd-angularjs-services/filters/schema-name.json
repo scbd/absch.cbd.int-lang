@@ -1,0 +1,93 @@
+{
+  "meetingDocument": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "pressRelease": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": "بيان صحفي"
+    },
+    "description": {
+      "en": "بيان صحفي"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "النشرات الصحفية"
+    }
+  },
+  "news": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": "الأخبار"
+    },
+    "description": {
+      "en": "الأخبار"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "الأخبار"
+    }
+  },
+  "new": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": "الجديد"
+    },
+    "description": {
+      "en": "الجديد"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "الجديد"
+    }
+  },
+  "statement": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": "البيانات"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "meeting": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "الاجتماعات"
+    }
+  },
+  "notification": {
+    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "title": {
+      "en": "الإخطار"
+    },
+    "description": {
+      "en": "الإخطار"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "الإخطارات"
+    }
+  }
+}

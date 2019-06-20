@@ -88,7 +88,7 @@ style="max-width:90%">
                                         </md-whiteframe></br></div>
                                 </div>
                                  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                                    <md-button class="md-raised md-primary" ng-click="addField()"> <i class="fa fa-plus"></i> Ajouter </md-button>
+                                    <md-button class="md-raised md-primary" ng-click="addField()"><i class="fa fa-plus"></i> Ajouter</md-button>
                                 </section>
                                 </md-card-content>
                             </md-card><br><section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
@@ -103,11 +103,11 @@ style="max-width:90%">
                             <button type="button" class="btn btn-warning" ng-click="deleteHelp(document)" ng-if="canEdit()">Supprimer</button>
                         </div>
                         <section>
-                            <legend name="termCation">{{document.title}} </legend><!--<h3>{{document.schemaName}}<h3>--><md-list>
+                            <legend name="termCation">{{document.title}}</legend><!--<h3>{{document.schemaName}}<h3>--><md-list>
                                 <md-list-item class="md-3-line" ng-repeat="item in document.fields | orderBy:'sequence'">
                                     <div class="md-list-item-text">
                                     <h3>{{item.fieldTitle}}</h3>
-                                    <p class="helpText" ng-bind-html="item.helpText|lstring"> </p>
+                                    <p class="helpText" ng-bind-html="item.helpText|lstring"></p>
                                     </div>
                                     <md-divider ng-if="!$last"></md-divider>
                                 </md-list-item>

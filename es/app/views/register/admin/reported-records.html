@@ -103,7 +103,7 @@
                 <div class="col-xs-12 col-form-label">Esquema: {{record.schema|schemaName}}</div>
                 <div class="col-xs-12 col-form-label">Informado por: {{record.reportedBy}}</div>
                 <div class="col-xs-12 col-form-label">Informado el: <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
-                <div class="col-xs-12 col-form-label">Informaci&oacute;n: <span ng-if="record.incorrect">incorrecto o inadecuado |</span> <span ng-if="record.broken">enlace roto o informaci&oacute;n desactualizada |</span> <span ng-if="record.copyright">infracci&oacute;n a los derechos de autor</span><br> {{record.additionalInformation}}</div>
+                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">

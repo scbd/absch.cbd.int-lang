@@ -1,9 +1,6 @@
 ﻿<div id="RecordDetails" dir="rtl">
     
-    <style>
-        #RecordDetails td {padding-right:5px;}
-         #RecordDetails label {color:#666;}
-    </style>
+    <style> #RecordDetails td {padding-right:5px;} #RecordDetails label {color:#666;} </style>
 
    <div class="row" >
             <div class="col-xs-12">
@@ -11,28 +8,28 @@
                     <h3 style="margin:0 0 20px 0;padding:0;border-bottom:1px solid #999;">معلومات السجل</h3>
                     <table style="width:100%!important;">
                             <tr>
-                                <td><label> المعرف الفريد: </label></td>
+                                <td><label>المعرف الفريد:</label></td>
                                 <td class="bold">{{doc | uniqueID}}</td>
                             </tr>
                             <tr>
-                                <td><label> حالة السجل: </label></td>
+                                <td><label>حالة السجل:</label></td>
                                 <td class="bold"><span class="color-grey" ng-if="docInfo.revision == '0'">مسودة</span> <span class="color-green"  ng-if="docInfo.revision > 0">منشور</span> <span class="color-red"  ng-if="docInfo.workingDocumentLock">[ مغلق: طلب النشر معلق ]</span></td>
                             </tr>
                             <tr>
-                                <td><label> نوع السجل: </label></td>
+                                <td><label>نوع السجل:</label></td>
                                 <td class="bold">{{docInfo.metadata.schema | schemaName}}</td>
                             </tr>
                             
                              <tr  ng-if="docInfo.revision > 0">
-                                <td><label> إصدارات السجل: </label></td>
+                                <td><label>إصدارات السجل:</label></td>
                                 <td class="bold">{{docInfo.revision}}</td>
                             </tr>
                             <tr ng-if="docInfo.metadata.government">
-                                <td><label> مالك السجل: </label></td>
-                                 <td class="bold"> {{getUserCountry(docInfo.metadata.government)}}</td>
+                                <td><label>مالك السجل:</label></td>
+                                 <td class="bold">{{getUserCountry(docInfo.metadata.government)}}</td>
                             </tr>
                             <tr>
-                                <td><label> تاريخ السجل:</label></td>
+                                <td><label>تاريخ السجل:</label></td>
                                 <td>
                                   <div view-history document-id="docInfo.identifier"></div>
                                 </td>

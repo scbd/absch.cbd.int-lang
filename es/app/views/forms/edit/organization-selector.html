@@ -20,7 +20,7 @@
                             <div ng-if="!loading && existingOrganizations && existingOrganizations.length==0" style="padding:0 10px;">
                                 <h3 class="color-litegrey">Organizaciones no encontradas. S&iacute;rvase a&ntilde;adir una nueva organizaci&oacute;n.</h3>
                             </div>
-                            <input type="textbox" ng-model="search.keyword" placeholder="filtrar el nombre de la organización" 
+                            <input type="textbox" ng-model="search.keyword" placeholder="filtrar el nombre de la organizaci&oacute;n" 
                                 class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">{{recordCount}} organization found</span></div>
                         
                         <div class="col-xs-12 " infinite-scroll='loadExisting()' infinite-scroll-immediate-check='true' 

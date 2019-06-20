@@ -103,7 +103,7 @@
                 <div class="col-xs-12 col-form-label">المخطط: {{record.schema|schemaName}}</div>
                 <div class="col-xs-12 col-form-label">قام بالإبلاغ: {{record.reportedBy}}</div>
                 <div class="col-xs-12 col-form-label">الإبلاغ في: <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
-                <div class="col-xs-12 col-form-label">المعلومات: <span ng-if="record.incorrect">غير صحيح أو غير ملائم |</span> <span ng-if="record.broken">رابط لا يعمل أو معلومات قديمة |</span> <span ng-if="record.copyright">انتهاك حقوق النسخ والنشر</span><br> {{record.additionalInformation}}</div>
+                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer" dir="rtl">

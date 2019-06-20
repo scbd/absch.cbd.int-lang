@@ -1,10 +1,10 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><label><span class="color-white"> Interim National Report on the Implementation of the Nagoya Protocol </span> <span class="color-black"> (NR) </span></label>
+	<div class="panel-heading bg-blue"><label><span class="color-white">Interim National Report on the Implementation of the Nagoya Protocol</span> <span class="color-black">(NR)</span></label>
 	</div>
 	<div class="record-body panel-body">
 
 			
-		<document-date></document-date> <br><br><div class="panel panel-info">
+		<document-date></document-date><br><br><div class="panel panel-info">
 			<div class="panel-heading">
 				<label>Informaci&oacute;n general</label>
 			</div>
@@ -13,18 +13,18 @@
 				<div>
 					<label>Pa&iacute;s</label>
 					<div class="km-value"  ng-show="document.government"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></div>
-					<div class="km-value"  ng-hide="document.government">Ning&uacute;n pa&iacute;s seleccionado</div>
+					<div class="km-value"  ng-hide="document.government">No country selected</div>
 				</div>
 
 				<div ng-show="document.title">
-					<label>1. T&iacute;tulo de este informe nacional</label>
+					<label>1. Title of this national report</label>
 					<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 				</div>
 				<div>
 					<label>2. Persona responsable</label>
 					<div class="km-value" view-contact-reference ng-model="document.contact" locale="locale"  ng-if="document.contact">
 					</div>
-					<div  class="km-value"  ng-if="!document.contact">Ning&uacute;n contacto adjunto</div>
+					<div  class="km-value"  ng-if="!document.contact">No Contact provided</div>
 				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 			</div>
 			<div class="panel-body">
 		  		<div>
-					<label>3. ¿Ha dado su pa&iacute;s a conocer la informaci&oacute;n en el Centro de Intercambio de Informaci&oacute;n sobre APB conforme a lo dispuesto en el art&iacute;culo 14.2?</label>
+					<label>3. Has your country made the information available to the ABS Clearing-House as provided in Article 14.2?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question3.answer)}}</div>
 		               	<div  ng-show="document.question3.challengesInfo" >
@@ -50,12 +50,12 @@
 				</div>
 
 				<div>
-					<label>4. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica sobre APB?</label>
+					<label>4. Has your country taken legislative, administrative and policy measures on ABS?</label>
 					<ul>
 						<div class="km-value km-pre" >{{booleanToText(document.question4.answer)}}</div>
 						
 						<div ng-show="document.question4.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados al adoptar esas medidas.</label>
+							<label>Please provide a summary of the main difficulties and challenges encountered in setting up these measures</label>
 							<div class="km-value pre-wrap">{{document.question4.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question4.additionalInfo">
@@ -63,7 +63,7 @@
 							<div class="km-value pre-wrap">{{document.question4.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question4.documentReferenceIDs && !documentReferenceIDsEmpty(document.question4.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question4.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -75,19 +75,19 @@
 				</div>
 
 				<div>
-					<label>5. ¿Ha designado su pa&iacute;s un puntos focal nacional conforme a lo dispuesto en el art&iacute;culo 13?</label>
+					<label>5. Has your country designated a national focal point as provided in Article 13?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question5.answer)}}</div>
 						<div ng-show="document.question5.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar un punto focal nacional.</label>
+							<label>Please provide a summary of the main difficulties and challenges encountered for designating a national focal point</label>
 							<div class="km-value pre-wrap">{{document.question5.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question5.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question5.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question5.documentReferenceIDs && !documentReferenceIDsEmpty(document.question5.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question5.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -99,19 +99,19 @@
 				</div>
 
 				<div>
-					<label>6. ¿Ha designado su pa&iacute;s una o m&aacute;s autoridades nacionales competentes conforme a lo dispuesto en el art&iacute;culo 13?</label>
+					<label>6. Has your country designated one or more competent national authorities as provided in Article 13?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question6.answer)}}</div>
 						<div ng-show="document.question6.challengesInfo">
-		                	<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar una o m&aacute;s autoridades nacionales competentes.</label>
+		                	<label>Please provide a summary of the main difficulties and challenges encountered for designating one or more competent national authority</label>
 							<div class="km-value pre-wrap">{{document.question6.challengesInfo | lstring:locale}} &nbsp;</div>
 		                </div>
 		                <div ng-show="document.question6.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question6.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question6.documentReferenceIDs && !documentReferenceIDsEmpty(document.question6.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question6.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -123,20 +123,20 @@
 				</div>
 
 				<div>
-					<label>7. ¿Ha dado su pa&iacute;s a conocer en el Centro de Intercambio de Informaci&oacute;n sobre APB permisos o sus equivalentes emitidos en el momento del acceso como prueba de la decisi&oacute;n de otorgar el consentimiento fundamentado previo (CFP) y del establecimiento de condiciones mutuamente acordadas (CMA)?</label>
+					<label>7. Has your country made available to the ABS Clearing-House permits or their equivalent issued at the time of access as evidence of the decision to grant prior informed consent (PIC) and of the establishment of mutually agreed terms (MAT)?</label>
 					<ul>
 						<div class="km-value" ng-show="document.question7.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
 						<div class="km-value km-pre" ng-show="(!document.question7.notApplicable)">{{booleanToText(document.question7.answer)}}</div>
 						<div ng-show="document.question7.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados al dar a conocer esta informaci&oacute;n.</label>
+							<label>Please provide a summary of the main difficulties and challenges encountered for making this information available</label>
 							<div class="km-value pre-wrap">{{document.question7.challengesInfo | lstring:locale}} &nbsp;</div>
 						</div>
 						<div ng-show="document.question7.furtherInfo">
-							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional.</label>
+							<label>Use the text entry to provide further information.</label>
 							<div class="km-value pre-wrap">{{document.question7.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question7.documentReferenceIDs && !documentReferenceIDsEmpty(document.question7.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question7.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -148,16 +148,16 @@
 				</div>
 
 				<div>
-					<label>8. ¿Ha dado su pa&iacute;s a conocer en el Centro de Intercambio de Informaci&oacute;n sobre APB permisos o sus equivalentes que constituyan un certificado de cumplimiento reconocido internacionalmente conforme a lo dispuesto en el art&iacute;culo 17.2?</label>
+					<label>8. Has your country made available to the ABS Clearing-House permits or their equivalent for the constitution of an internationally recognized certificate of compliance in accordance with Article 17.2?</label>
 					<ul>
 						<div class="km-value" ng-show="document.question8.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
 						<div class="km-value km-pre" ng-show="!document.question8.notApplicable">{{booleanToText(document.question8.answer)}}</div>
 		                <div ng-show="document.question8.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question8.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question8.documentReferenceIDs && !documentReferenceIDsEmpty(document.question8.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question8.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -169,19 +169,19 @@
 				</div>
 
 				<div>
-					<label>9. ¿Ha designado su pa&iacute;s uno o m&aacute;s puntos de verificaci&oacute;n conforme a lo dispuesto en el art&iacute;culo 17?</label>
+					<label>9. Has your country designated one or more checkpoints as provided in Article 17?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question9.answer)}}</div>
 						<div  ng-show="document.question9.challengesInfo">
-		                	<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para designar uno o m&aacute;s puntos de control</label>
+		                	<label>Please provide a summary of the main difficulties and challenges encountered for designating one or more checkpoints</label>
 							<div class="km-value pre-wrap">{{document.question9.challengesInfo | lstring:locale}}</div>
 		                </div>
 		                <div ng-show="document.question9.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question9.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question9.documentReferenceIDs && !documentReferenceIDsEmpty(document.question9.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question9.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -193,15 +193,15 @@
 				</div>
 
 				<div>
-					<label>10. Informaci&oacute;n adicional</label>
+					<label>10. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question10.challengesInfo && !document.question10.relevantDocuments && (!document.question10.documentReferenceIDs || documentReferenceIDsEmpty(document.question10.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question10.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os. </label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value pre-wrap">{{document.question10.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question10.documentReferenceIDs && !documentReferenceIDsEmpty(document.question10.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question10.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -229,19 +229,19 @@
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>11. ¿Est&aacute; el acceso a los recursos gen&eacute;ticos sujeto al CFP conforme al art&iacute;culo 6.1?</label>
+							<label>11. Is access to genetic resources subject to PIC as provided in Article 6.1?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question11.answer)}}</div>
 								<div ng-show="document.question11.challengesInfo">
-									<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n, incluyendo si hay alg&uacute;n otro sistema en funcionamiento en relaci&oacute;n con el acceso a recursos gen&eacute;ticos. </label>
+									<label>Please provide further information including indicating if there is any other system in place in relation to access to genetic resources</label>
 									<div class="km-value pre-wrap">{{document.question11.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question11.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question11.documentReferenceIDs && !documentReferenceIDsEmpty(document.question11.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question11.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -253,15 +253,15 @@
 						</div>
 
 						<div>
-							<label>12. ¿Tiene su pa&iacute;s normas y procedimientos justos y no arbitrarios sobre el acceso a recursos gen&eacute;ticos conforme a lo dispuesto en el art&iacute;culo 6.3 b)?</label>
+							<label>12. Does your country have fair and non-arbitrary rules and procedures on accessing genetic resources as provided in Article 6.3 (b)?</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question12.answer)}}</div>
 								<div ng-show="document.question12.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question12.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question12.documentReferenceIDs && !documentReferenceIDsEmpty(document.question12.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question12.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -273,15 +273,15 @@
 						</div>
 
 						<div>
-							<label>13. ¿Brinda su pa&iacute;s informaci&oacute;n sobre c&oacute;mo solicitar el CFP conforme a lo dispuesto en el art&iacute;culo 6.3 c)?</label>
+							<label>13. Does your country provide information on how to apply for PIC as provided in Article 6.3(c)?</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question13.answer)}}</div>
 								<div ng-show="document.question13.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question13.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question13.documentReferenceIDs && !documentReferenceIDsEmpty(document.question13.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question13.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -293,15 +293,15 @@
 						</div>
 
 						<div>
-							<label>14. ¿Prev&eacute; su pa&iacute;s la emisi&oacute;n de una decisi&oacute;n por escrito clara y transparente de una autoridad nacional competente conforme a lo dispuesto en el art&iacute;culo 6.3 d)?</label>
+							<label>14. Does your country provide for a clear and transparent written decision by a competent national authority as provided in Article 6.3 (d)?</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question14.answer)}}</div>
 								<div ng-show="document.question14.furtherInfo">
-									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional.</label>
+									<label>Use the text entry to provide further information.</label>
 									<div class="km-value pre-wrap">{{document.question14.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question14.documentReferenceIDs && !documentReferenceIDsEmpty(document.question14.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question14.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -313,15 +313,15 @@
 						</div>
 
 						<div>
-							<label>15. ¿Prev&eacute; su pa&iacute;s la emisi&oacute;n de un permiso o su equivalente en el momento del acceso conforme a lo dispuesto en el art&iacute;culo 6.3 e)?</label>
+							<label>15. Does your country provide for the issuance at the time of access of a permit or its equivalent as provided in Article 6.3 (e)?</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question15.answer)}}</div>
 								<div ng-show="document.question15.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question15.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question15.documentReferenceIDs && !documentReferenceIDsEmpty(document.question15.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question15.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -333,16 +333,16 @@
 						</div>
 
 						<div>
-							<label>16. S&iacute;rvase proporcionar el n&uacute;mero de permisos o sus equivalentes dados a conocer a trav&eacute;s del Centro de Intercambio de Informaci&oacute;n sobre APB desde la entrada en vigor del Protocolo en su pa&iacute;s.</label>
+							<label>16. Please provide the number of permits or their equivalents made available through the ABS-Clearing-House since the entry into force of the Protocol for your country.</label>
 							<ul>
 								<div class="km-value">{{document.question11.answer? ((document.question16.hasOwnProperty(&apos;permitsOnAbsCh&apos;)&amp;&amp;document.question16.permitsOnAbsCh!=null)? document.question16.permitsOnAbsCh: &quot;No answer provided&quot;) : &quot;Not applicable&quot;}}</div>
 
 								<div ng-show="document.question16.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question16.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question16.documentReferenceIDs && !documentReferenceIDsEmpty(document.question16.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question16.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -354,15 +354,15 @@
 						</div>
 
 						<div>
-							<label>17. ¿Tiene su pa&iacute;s normas y procedimientos claros para requerir y establecer condiciones mutuamente acordadas (CMA) conforme a lo dispuesto en el art&iacute;culo 6.3 g)?</label>
+							<label>17. Does your country have rules and procedures for requiring and establishing MAT as provided in Article 6.3 (g)?</label>
 							<ul>
 								<div class="km-value km-pre">{{conditionalBooleanToText(!document.question11.answer,document.question17.answer)}}</div>
 								<div ng-show="document.question17.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question17.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question17.documentReferenceIDs && !documentReferenceIDsEmpty(document.question17.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question17.documentReferenceIDs"><a translation-url  target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -374,7 +374,7 @@
 						</div>
 
 						<div>
-							<label>18. Beneficios que la utilizaci&oacute;n de los recursos siguientes ha aportado desde la entrada en vigor del Protocolo en su pa&iacute;s:</label>
+							<label>18. Benefits received since entry into force of the Protocol for your country from the utilization of:</label>
 							<ul>
 								<div ng-if="!document.question18.geneticResources.answer && !document.question18.tk.answer" >
 									<div class="km-value km-pre">No selection made</div>
@@ -421,11 +421,11 @@
 									</ul>
 								</div>
 					            <div ng-show="document.question18.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question18.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question18.documentReferenceIDs && !documentReferenceIDsEmpty(document.question18.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question18.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -437,15 +437,15 @@
 						</div>
 
 						<div>
-							<label>19. Informaci&oacute;n adicional</label>
+							<label>19. Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+								<div class="km-value" ng-show="!document.question19.challengesInfo && !document.question19.relevantDocuments && (!document.question19.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question19.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question19.challengesInfo">
-									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os. </label>
+									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 									<div class="km-value pre-wrap">{{document.question19.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question19.documentReferenceIDs && !documentReferenceIDsEmpty(document.question19.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question19.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -465,19 +465,19 @@
 
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Fair and equitable benefit-sharing (Article 5)</label>
+						<label>Participaci&oacute;n justa y equitativa en los beneficios (Art&iacute;culo 5)</label>
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>20. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica para aplicar el art&iacute;culo 5.1, que dispone que los beneficios que se deriven de la utilizaci&oacute;n de recursos gen&eacute;ticos, as&iacute; como las aplicaciones y comercializaciones subsiguientes, se compartir&aacute;n de manera justa y equitativa con la Parte que aporta dichos recursos que sea el pa&iacute;s de origen de dichos recursos o una Parte que haya adquirido los recursos gen&eacute;ticos de conformidad con el Convenio?</label>
+							<label>20. Has your country taken legislative, administrative or policy measures to implement Article 5.1 that provides that benefits arising from the utilization of genetic resources as well as subsequent applications and commercialization are shared with the Party providing such resources that is the country of origin of such resources or a Party that has acquired the genetic resources in accordance with the Convention as provided in Article 5.3?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question20.answer)}}</div>
 								<div ng-show="document.question20.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question20.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question20.documentReferenceIDs && !documentReferenceIDsEmpty(document.question20.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question20.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -489,15 +489,15 @@
 						</div>
 
 						<div>
-							<label>21. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica con miras a asegurar que los beneficios que se deriven de la utilizaci&oacute;n de recursos gen&eacute;ticos que est&aacute;n en posesi&oacute;n de comunidades ind&iacute;genas y locales, de conformidad con las leyes nacionales respecto de los derechos establecidos de dichas comunidades ind&iacute;genas y locales sobre estos recursos gen&eacute;ticos, se compartan de manera justa y equitativa con las comunidades en cuesti&oacute;n, sobre la base de condiciones mutuamente acordadas conforme a lo dispuesto en el art&iacute;culo 5.2?</label>
+							<label>21. Has your country taken legislative, administrative or policy measures with the aim of ensuring that the benefits from the utilization of genetic resources held by indigenous and local communities, in accordance with domestic legislation regarding the established rights of these indigenous and local communities over these genetic resources, are shared with the indigenous and local communities concerned as provided in Article 5.2?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question21.answer)}}</div>
 								<div ng-show="document.question21.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question21.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question21.documentReferenceIDs && !documentReferenceIDsEmpty(document.question21.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question21.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -509,15 +509,15 @@
 						</div>
 
 						<div>
-							<label>22. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica para que los beneficios que se deriven de la utilizaci&oacute;n de conocimientos tradicionales asociados a recursos gen&eacute;ticos se compartan de manera justa y equitativa con las comunidades ind&iacute;genas y locales poseedoras de dichos conocimientos conforme a lo dispuesto en el art&iacute;culo 5.5?</label>
+							<label>22. Has your country taken legislative, administrative or policy measures in order that benefits arising from the utilization of traditional knowledge associated with genetic resources are shared with indigenous and local communities holding such knowledge as provided in Article 5.5?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question22.answer)}}</div>
 								<div ng-show="document.question22.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question22.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question22.documentReferenceIDs && !documentReferenceIDsEmpty(document.question22.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question22.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -529,15 +529,15 @@
 						</div>
 
 						<div ng-show="document.question23">
-							<label>23. Informaci&oacute;n adicional</label>
+							<label>23. Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question23.challengesInfo && !document.question23.relevantDocuments && (!document.question23.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question23.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+								<div class="km-value" ng-show="!document.question23.challengesInfo && !document.question23.relevantDocuments && (!document.question23.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question23.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question23.challengesInfo">
-									<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
+									<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 									<div class="km-value pre-wrap">{{document.question23.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question23.documentReferenceIDs && !documentReferenceIDsEmpty(document.question23.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question23.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -561,24 +561,24 @@
 					<div class="panel-body">
 
 						<div>
-							<label>24. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica apropiadas, eficaces y proporcionales para asegurar que el acceso a los recursos gen&eacute;ticos utilizados dentro de su jurisdicci&oacute;n haya sido de conformidad con el CFP y se hayan establecido CMA, como se especifica en la legislaci&oacute;n o los requisitos reglamentarios nacionales en materia de APB de la otra Parte, conforme a lo dispuesto en el art&iacute;culo 15.1?</label>
+							<label>24. Has your country taken appropriate, effective and proportionate legislative, administrative or policy measures to provide that genetic resources utilized within your jurisdiction have been accessed in accordance with PIC and that MAT have been established as required by the domestic ABS legislation or regulatory requirements of the other Party as provided in Article 15.1?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question24.answer)}}</div>
 								<div ng-show="document.question24.answer">
-									<label>S&iacute;rvase indicar si su pa&iacute;s ha adoptado medidas para abordar situaciones de incumplimiento de esas medidas conforme a lo dispuesto en el art&iacute;culo 15.2.</label>
+									<label>Please indicate whether your country has taken measures to address situations of non-compliance with those measures as provided in Article 15.2?</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.measures.answer)}}</div>
 										<div ng-show="document.question24.measures.furtherInfo">
-				                            <label>Please provide further information on the measures taken, including when they entered into force</label>
+				                            <label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre las medidas adoptadas, incluida la fecha de la entrada en vigor</label>
 				                            <div class="km-value pre-wrap">{{document.question24.measures.furtherInfo | lstring:locale}}</div>
 				                        </div>
 										<div ng-show="document.question24.measures.complianceInfo">
-											<label>Please provide further information on cases of non-compliance</label>
+											<label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre casos de incumplimiento</label>
 											<div class="km-value pre-wrap">{{document.question24.measures.complianceInfo | lstring:locale}}</div>
 										</div>
 									</ul>
 
-									<label>¿Ha habido casos concretos en los que su pa&iacute;s ha cooperado con otras Partes en casos de presuntas infracciones de medidas de APB conforme a lo dispuesto en el art&iacute;culo 15.3?</label>
+									<label>Have there been specific cases in which your country cooperated with other Parties in cases of alleged violation of ABS measures as provided in Article 15.3?</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question24.violation.answer)}}</div>
 										<div ng-show="document.question24.violation.furtherInfo">
@@ -588,11 +588,11 @@
 								</div>
 
 								<div ng-show="document.question24.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question24.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question24.documentReferenceIDs && !documentReferenceIDsEmpty(document.question24.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question24.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -604,16 +604,16 @@
 						</div>
 
 						<div>
-							<label>25. ¿Ha adoptado su pa&iacute;s medidas legislativas, administrativas o de pol&iacute;tica apropiadas, eficaces y proporcionales para asegurar que se haya accedido a los conocimientos tradicionales asociados a recursos gen&eacute;ticos utilizados dentro de su jurisdicci&oacute;n de conformidad con el CFP o con la aprobaci&oacute;n y participaci&oacute;n de las comunidades ind&iacute;genas y locales y que se hayan establecido CMA como se especifica en la legislaci&oacute;n o los requisitos reglamentarios nacionales de acceso y participaci&oacute;n en los beneficios de la otra Parte donde se encuentran dichas comunidades ind&iacute;genas y locales conforme a lo dispuesto en el art&iacute;culo 16.1?</label>
+							<label>25. Has your country taken appropriate, effective and proportionate legislative, administrative or policy measures to provide that traditional knowledge associated with genetic resources utilized within your jurisdiction has been accessed in accordance with PIC or approval and involvement of indigenous and local communities and that MAT have been established as required by the domestic ABS legislation or regulatory requirements of the other Party where such indigenous and local communities are located as provided in Article 16.1?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question25.answer)}}</div>
 								<div ng-show="document.question25.answer">
-									<label>S&iacute;rvase indicar si su pa&iacute;s ha adoptado medidas para abordar situaciones de incumplimiento de esas medidas conforme a lo dispuesto en el art&iacute;culo 16.2.</label>
+									<label>Please indicate whether your country has taken measures to address situations of non-compliance with those measures as provided in Article 16.2?</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question25.hasMeasures)}}</div>
 									</ul>
 
-									<label>¿Ha cooperado su pa&iacute;s en casos concretos de presuntas infracciones de las medidas de APB conforme a lo dispuesto en el art&iacute;culo 16.3?</label>
+									<label>Has your country cooperated in specific cases of alleged violation of ABS measures as provided in Article 16.3?</label>
 									<ul>
 										<div class="km-value km-pre">{{booleanToText(document.question25.violation.answer)}}</div>
 										<div ng-show="document.question25.violation.furtherInfo">
@@ -623,11 +623,11 @@
 									</ul>
 								</div>
 								<div ng-show="document.question25.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question25.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question25.documentReferenceIDs && !documentReferenceIDsEmpty(document.question25.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question25.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -639,7 +639,7 @@
 					    </div>
 
 						<div>
-							<label>26. ¿Requiere su pa&iacute;s a los usuarios de recursos gen&eacute;ticos que proporcionen informaci&oacute;n relacionada con el CFP, con la fuente del recurso gen&eacute;tico, con el establecimiento de CMA y/o con la utilizaci&oacute;n de recursos gen&eacute;ticos en un punto de verificaci&oacute;n designado, seg&uacute;n corresponda, conforme a lo dispuesto en el art&iacute;culo 17.1 a) i) y ii)?</label>
+							<label>26. Does your country require users of genetic resources to provide information related to PIC, to the source of the genetic resource, to the establishment of MAT and/or utilization of genetic resources at a designated checkpoint, as appropriate, as provided in Article 17.1 (a)(i) and (ii))?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question26.answer)}}</div>
 								<div ng-show="document.question26.answer">
@@ -648,7 +648,7 @@
 											<label>Please provide further information</label>
 											<div class="km-value pre-wrap">{{document.question26.additionalInfo | lstring:locale}}</div>
 										</div>
-										<label>¿Ha adoptado su pa&iacute;s medidas para abordar las situaciones de incumplimiento?</label>
+										<label>Has your country taken measures to address situations of non-compliance?</label>
 										<div class="km-value km-pre">{{booleanToText(document.question26.violation.answer)}}</div>
 										<div>
 											<ul>
@@ -661,11 +661,11 @@
 									</ul>
 								</div>
 								<div ng-show="document.question26.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question26.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question26.documentReferenceIDs && !documentReferenceIDsEmpty(document.question26.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question26.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -677,14 +677,14 @@
 					    </div>
 
 					    <div>
-					    	<label>27. ¿Ha proporcionado su pa&iacute;s la informaci&oacute;n mencionada en el art&iacute;culo 17.1 a) i) a las autoridades nacionales pertinentes, a la Parte que otorga el CFP y al Centro de Intercambio de Informaci&oacute;n sobre APB conforme a lo dispuesto en el art&iacute;culo 17.1 a) iii)?</label>
+					    	<label>27. Has your country provided the information referred to in Article 17.1 (a)(i) to relevant national authorities, to the Party providing PIC and to the ABS Clearing-House as provided in Article 17.1 (a)(iii)?</label>
 					    	<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question27.answer)}}</div>
 				                <div ng-show="document.question27.answer">
 				                	<ul>
 					                    <div>
-							            	<label>¿Ha hecho su pa&iacute;s uso del comunicado del punto de verificaci&oacute;n?</label>
-							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty(&apos;option&apos;)? document.question27.cpc.option : &quot;Not selected&quot;}} </div>
+							            	<label>Has your country made use of the checkpoint communique?</label>
+							            	<div class="km-value">{{document.question27.cpc.hasOwnProperty(&apos;option&apos;)? document.question27.cpc.option : &quot;Not selected&quot;}}</div>
 						                </div>
 						                <div ng-show="document.question27.cpc.furtherInfo">
 						                    <label>Please provide further information</label>
@@ -693,11 +693,11 @@
 				                	</ul>
 				                </div>
 				                <div ng-show="document.question27.challengesInfo">
-				                    <label>Please provide a summary of the main difficulties and challenges</label>
+				                    <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 				                    <div class="km-value pre-wrap">{{document.question27.challengesInfo | lstring:locale}}</div>
 				                </div>
 				                <div ng-if="document.question27.cpcsOnAbsChCount >= 0">
-				                	<label>S&iacute;rvase proporcionar el n&uacute;mero de comunicados del punto de verificaci&oacute;n que hay disponibles en el Centro de Intercambio de Informaci&oacute;n sobre APB, si procede:</label>
+				                	<label>Please provide number of checkpoint communiques available in the ABS Clearing-House, if applicable</label>
 				                	<div class="km-value">{{document.question27.hasOwnProperty(&apos;cpcsOnAbsChCount&apos;)&amp;&amp;document.question27.cpcsOnAbsChCount!=null? document.question27.cpcsOnAbsChCount:&quot;No value is entered&quot;}}</div>
 				                </div>
 				            	<div ng-show="document.question27.relevantDocuments">
@@ -708,15 +708,15 @@
 					    </div>
 
 					    <div>
-							<label>28. ¿Ha adoptado su pa&iacute;s medidas para alentar a los usuarios y proveedores a que incluyan en las CMA disposiciones sobre intercambio de informaci&oacute;n acerca de la aplicaci&oacute;n de dichas condiciones conforme a lo dispuesto en el art&iacute;culo 17.1 b)?</label>
+							<label>28. Has your country taken measures to encourage users and providers to include provisions in MAT to share information on the implementation of such terms as provided in Article 17.1(b)?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question28.answer)}}</div>
 								<div ng-show="document.question28.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question28.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question28.documentReferenceIDs && !documentReferenceIDsEmpty(document.question28.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question28.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -728,7 +728,7 @@
 						</div>
 
 					    <div>
-							<label>29. ¿Est&aacute; su pa&iacute;s alentando el uso de herramientas y sistemas de comunicaci&oacute;n eficientes en relaci&oacute;n con los costos conforme a lo dispuesto en el art&iacute;culo 17.1 c)?</label>
+							<label>29. Is your country encouraging the use of cost-effective communication tools and systems as provided in Article 17.1 (c)?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question29.answer)}}</div>
 								<div ng-show="document.question29.additionalInfo">
@@ -736,11 +736,11 @@
 									<div class="km-value pre-wrap">{{document.question29.additionalInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question29.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question29.documentReferenceIDs && !documentReferenceIDsEmpty(document.question29.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question29.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -752,15 +752,15 @@
 						</div>
 
 						<div>
-							<label>30. Informaci&oacute;n adicional</label>
+							<label>30. Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question30.challengesInfo && !document.question30.relevantDocuments && (!document.question30.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question30.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+								<div class="km-value" ng-show="!document.question30.challengesInfo && !document.question30.relevantDocuments && (!document.question30.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question30.documentReferenceIDs))">No addtional information provided</div>
 								<div ng-show="document.question30.challengesInfo">
-									<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
+									<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 									<div class="km-value pre-wrap">{{document.question30.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question30.documentReferenceIDs && !documentReferenceIDsEmpty(document.question30.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question30.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -779,20 +779,20 @@
 
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<label>Compliance with mutually agreed terms (MAT) (Article 18)</label>
+						<label>Cumplimiento de las condiciones mutuamente acordadas (art&iacute;culo 18)</label>
 					</div>
 					<div class="panel-body">
 						<div>
-							<label>31. ¿Est&aacute; su pa&iacute;s alentando la inclusi&oacute;n de disposiciones sobre la resoluci&oacute;n de controversias en las CMA conforme a lo dispuesto en el art&iacute;culo 18.1 a) b) y c)?</label>
+							<label>31. Is your country encouraging the inclusion of provisions in MAT to cover dispute resolution as provided in Article 18.1 (a) (b) and (c)?</label>
 							<ul>
 								<div class="km-value" ng-show="document.question31.notApplicable">No procede, ya que no se han establecido requisitos para el acceso.</div>
 								<div class="km-value km-pre" ng-show="!document.question31.notApplicable">{{booleanToText(document.question31.answer)}}</div>
 								<div ng-show="document.question31.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question31.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question31.documentReferenceIDs && !documentReferenceIDsEmpty(document.question31.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question31.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -804,15 +804,15 @@
 						</div>
 
 					    <div>
-							<label>32. ¿Se asegura su pa&iacute;s de que sus sistemas jur&iacute;dicos ofrezcan la posibilidad de presentar recursos en casos de controversias dimanantes de las CMA conforme a lo dispuesto en el art&iacute;culo 18.2?</label>
+							<label>32. Does your country ensure that opportunity to seek recourse is available under your legal systems in cases of disputes arising from MAT as provided in Article 18.2?</label>
 							<ul>
 								<div class="km-value km-pre">{{booleanToText(document.question32.answer)}}</div>
 								<div ng-show="document.question32.furtherInfo">
-									<label>Use the text entry to provide further information</label>
+									<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 									<div class="km-value pre-wrap">{{document.question32.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question32.documentReferenceIDs && !documentReferenceIDsEmpty(document.question32.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question32.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -824,22 +824,22 @@
 						</div>
 
 						<div>
-							<label>33. ¿Ha adoptado su pa&iacute;s medidas respecto a los siguientes puntos conforme a lo dispuesto en el art&iacute;culo 18.3?</label>
+							<label>33. Has your country taken measures regarding the following points as provided in Article 18.3?</label>
 							<ul>
-								<label>¿Acceso a la justicia?</label>
+								<label>Access to justice?</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.justice.answer)}}</div>
 								<div ng-show="document.question33.justice.furtherInfo">
 									<label>Please provide further information</label>
 									<div class="km-value pre-wrap">{{document.question33.justice.furtherInfo | lstring:locale}}</div>
 								</div>
-								<label>¿Utilizaci&oacute;n de mecanismos respecto al reconocimiento mutuo y la aplicaci&oacute;n de sentencias extranjeras y laudos arbitrales?</label>
+								<label>Utilization of mechanisms regarding mutual recognition and enforcement of foreign judgements and arbitral awards?</label>
 								<div class="km-value km-pre">{{booleanToText(document.question33.mechanisms.answer)}}</div>
 								<div ng-show="document.question33.mechanisms.furtherInfo">
 									<label>Please provide further information</label>
 									<div class="km-value pre-wrap">{{document.question33.mechanisms.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question33.documentReferenceIDs && !documentReferenceIDsEmpty(document.question33.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question33.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -851,15 +851,15 @@
 						</div>
 
 						<div>
-							<label>34. Informaci&oacute;n adicional</label>
+							<label>34. Additional information:</label>
 							<ul>
-								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+								<div class="km-value" ng-show="!document.question34.challengesInfo && !document.question34.relevantDocuments && (!document.question34.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question34.documentReferenceIDs))">No additional information provided</div>
 								<div ng-show="document.question34.challengesInfo">
-									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
+									<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 									<div class="km-value pre-wrap">{{document.question34.challengesInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question34.documentReferenceIDs && !documentReferenceIDsEmpty(document.question34.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question34.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -885,16 +885,16 @@
 			<div class="panel-body">
 
 				<div>
-					<label>35. ¿Ha hecho su pa&iacute;s lo que se especifica a continuaci&oacute;n al elaborar y aplicar su legislaci&oacute;n o requisitos reglamentarios sobre APB?</label>
+					<label>35. In the development and implementation of ABS legislation or regulatory requirements has your country:</label>
 					<ul>
-						<label>¿Ha creado condiciones para promover y alentar la investigaci&oacute;n que contribuya a la conservaci&oacute;n y utilizaci&oacute;n sostenible de la diversidad biol&oacute;gica, particularmente en los pa&iacute;ses en desarrollo, por ejemplo mediante medidas simplificadas de acceso para fines de investigaci&oacute;n de &iacute;ndole no comercial, teniendo en cuenta la necesidad de abordar el cambio de intenci&oacute;n para dicha investigaci&oacute;n, conforme al art&iacute;culo 8 a)?</label>
+						<label>Created conditions to promote and encourage research which contributes to the conservation and sustainable use of biodiversity including through simplified measures on access for non-commercial research purposes, taking into account the need to address a change of intent for such research as provided in Article 8(a)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.research.answer)}}</div>
 						<div ng-show="document.question35.research.furtherInfo">
 							<label>Please provide further information</label>
 							<div class="km-value pre-wrap">{{document.question35.research.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.research.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.research.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.research.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -902,14 +902,14 @@
 
 							</div>
 						</div>
-						<label>¿Ha prestado la debida atenci&oacute;n a los casos de emergencias presentes o inminentes que representen amenazas o da&ntilde;os para la salud humana, animal o vegetal, conforme a lo dispuesto en el art&iacute;culo 8 b)?</label>
+						<label>Paid due regard to cases of present or imminent emergencies that threaten or damage human, animal or plant health as provided in Article 8(b)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.emergencies.answer)}}</div>
 						<div ng-show="document.question35.emergencies.furtherInfo">
 							<label>Please provide further information</label>
 							<div class="km-value pre-wrap">{{document.question35.emergencies.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.emergencies.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.emergencies.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.emergencies.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -917,14 +917,14 @@
 
 							</div>
 						</div>
-						<label>¿Ha tenido en cuenta la necesidad de acceso expeditivo a los recursos gen&eacute;ticos y de una participaci&oacute;n justa y equitativa y expeditiva en los beneficios que se deriven del uso de dichos recursos gen&eacute;ticos, incluido el acceso a tratamientos asequibles para los necesitados, especialmente en los pa&iacute;ses en desarrollo, conforme a lo dispuesto en el art&iacute;culo 8 b)?</label>
+						<label>Taken into consideration the need for expeditious access to genetic resources and expeditious fair and equitable sharing of benefits arising out of the use of such genetic resources, including access to affordable treatments by those in need, especially, in developing countries as provided in Article 8(b)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.access.answer)}}</div>
 						<div ng-show="document.question35.access.furtherInfo">
 							<label>Please provide further information</label>
 							<div class="km-value pre-wrap">{{document.question35.access.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.access.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.access.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.access.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -932,14 +932,14 @@
 
 							</div>
 						</div>
-						<label>¿Ha considerado la importancia de los recursos gen&eacute;ticos para la alimentaci&oacute;n y la agricultura y el papel especial que cumplen para la seguridad alimentaria, conforme a lo dispuesto en el art&iacute;culo 8 c)? </label>
+						<label>Considered the importance of genetic resources for food and agriculture and their special role for food security as provided in Article 8 (c)?</label>
 						<div class="km-value km-pre">{{booleanToText(document.question35.importance.answer)}}</div>
 						<div ng-show="document.question35.importance.furtherInfo">
 							<label>Please provide further information</label>
 							<div class="km-value pre-wrap">{{document.question35.importance.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question35.importance.documentReferenceIDs && !documentReferenceIDsEmpty(document.question35.importance.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question35.importance.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -951,15 +951,15 @@
 				</div>
 
 				<div>
-					<label>36. Informaci&oacute;n adicional</label>
+					<label>36. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question36.challengesInfo && !document.question36.relevantDocuments && (!document.question36.documentReferenceIDs || documentReferenceIDsEmpty(document.question36.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question36.challengesInfo && !document.question36.relevantDocuments && (!document.question36.documentReferenceIDs || documentReferenceIDsEmpty(document.question36.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question36.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir las medidas.</label>
+							<label>Please provide a summary of the main difficulties and challenges for putting measures in place</label>
 							<div class="km-value pre-wrap">{{document.question36.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question36.documentReferenceIDs && !documentReferenceIDsEmpty(document.question36.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question36.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -982,15 +982,15 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>37. ¿Hay comunidades ind&iacute;genas y locales en su pa&iacute;s?</label>
+					<label>37. Does your country have indigenous and local communities?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question37.answer)}}</div>
 						<div ng-show="document.question37.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question37.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question37.documentReferenceIDs && !documentReferenceIDsEmpty(document.question37.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question37.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1002,7 +1002,7 @@
 				</div>
 
 				<div>
-					<label>38. ¿Tienen las comunidades ind&iacute;genas y locales el derecho establecido a otorgar acceso a recursos gen&eacute;ticos conforme a las leyes nacionales de su pa&iacute;s? (art&iacute;culo 6.2)</label>
+					<label>38. Do indigenous and local communities have the established right to grant access to genetic resources according to your domestic law? (Article 6.2)</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question38.answer)}}</div>
 						<div style="margin: 0 0 0 20px;" ng-show="document.question38.answer">
@@ -1013,7 +1013,7 @@
 										<div class="km-value pre-wrap">{{document.question38.law.furtherInfo | lstring:locale}}</div>
 									</div>
 									<div ng-show="document.question38.law.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.law.documentReferenceIDs)">
-			                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+			                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 										<div class="km-value">
 											<ul class="list">
 												<li ng-repeat="reference in document.question38.law.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1024,7 +1024,7 @@
 								</div>
 
 								<div>
-									<label>¿Ha adoptado su pa&iacute;s medidas con el fin de asegurar que se obtenga el consentimiento fundamentado previo o la aprobaci&oacute;n y participaci&oacute;n de las comunidades ind&iacute;genas y locales conforme al art&iacute;culo 6.2?</label>
+									<label>Does your country have measures in place with the aim of ensuring that the prior informed consent or approval and involvement of indigenous and local communities is obtained as provided in Article 6.2?</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.measures.answer)}}</div>
 									<div ng-show="document.question38.measures.furtherInfo">
 										<label>Please provide further information</label>
@@ -1033,7 +1033,7 @@
 								</div>
 
 								<div>
-									<label>Ha establecido su pa&iacute;s criterios y/o procesos para obtener el consentimiento fundamentado previo o la aprobaci&oacute;n y participaci&oacute;n de las comunidades ind&iacute;genas y locales para el acceso a los recursos gen&eacute;ticos conforme a lo dispuesto en el art&iacute;culo 6.3 f)?</label>
+									<label>Has your country set out criteria and/or process for obtaining prior informed consent or approval and involvement of indigenous and local communities for access to genetic resources in Article 6.3(f)?</label>
 									<div class="km-value km-pre">{{booleanToText(document.question38.pic.answer)}}</div>
 									<div ng-show="document.question38.pic.furtherInfo">
 										<label>Please provide further information</label>
@@ -1043,11 +1043,11 @@
 							</div>
 						</div>
 						<div ng-show="document.question38.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question38.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question38.documentReferenceIDs && !documentReferenceIDsEmpty(document.question38.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question38.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1059,15 +1059,15 @@
 				</div>
 
 				<div>
-					<label>39. De conformidad con las leyes nacionales, ¿ha adoptado su pa&iacute;s medidas con miras a asegurar que se acceda a los conocimientos tradicionales asociados a recursos gen&eacute;ticos que est&aacute;n en posesi&oacute;n de comunidades ind&iacute;genas y locales con el CFP o la aprobaci&oacute;n y participaci&oacute;n de dichas comunidades ind&iacute;genas y locales, y que se hayan establecido CMA conforme a lo dispuesto en el art&iacute;culo 7?</label>
+					<label>39. In accordance with domestic law has your country taken measures with the aim of ensuring that traditional knowledge associated with genetic resources that is held by indigenous and local communities within your country is accessed with the PIC or approval and involvement of these indigenous and local communities and that MAT have been established as provided in Article 7?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question39.answer)}}</div>
 						<div ng-show="document.question39.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question39.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question39.documentReferenceIDs && !documentReferenceIDsEmpty(document.question39.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question39.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1079,15 +1079,15 @@
 				</div>
 
 				<div>
-					<label>40. Al aplicar el Protocolo, y conforme a las leyes nacionales, ¿ha tomado su pa&iacute;s en consideraci&oacute;n las leyes consuetudinarias, protocolos y procedimientos comunitarios con respecto a los conocimientos tradicionales asociados a recursos gen&eacute;ticos conforme a lo dispuesto en el art&iacute;culo 12.1?</label>
+					<label>40. In implementing the Protocol and in accordance with your domestic law, is your country taking into consideration indigenous and local communities&rsquo; customary laws, community protocols and procedures with respect to traditional knowledge associated with genetic resources as provided in Article 12.1?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question40.answer)}}</div>
 						<div ng-show="document.question40.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question40.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question40.documentReferenceIDs && !documentReferenceIDsEmpty(document.question40.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question40.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1099,15 +1099,15 @@
 				</div>
 
 				<div>
-					<label>41. ¿Ha establecido su pa&iacute;s mecanismos para informar a los posibles usuarios de conocimientos tradicionales asociados a recursos gen&eacute;ticos acerca de sus obligaciones conforme a lo dispuesto en el art&iacute;culo 12.2?</label>
+					<label>41. Has your country established mechanisms to inform potential users of traditional knowledge associated with genetic resources about their obligations as provided in Article 12.2?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question41.answer)}}</div>
 						<div ng-show="document.question41.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question41.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question41.documentReferenceIDs && !documentReferenceIDsEmpty(document.question41.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question41.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1119,7 +1119,7 @@
 				</div>
 
 				<div>
-					<label>42. ¿Est&aacute; su pa&iacute;s apoyando el desarrollo de las siguientes herramientas por parte de las comunidades ind&iacute;genas y locales conforme a lo dispuesto en el art&iacute;culo 12.3?</label>
+					<label>42. Is your country supporting the development by indigenous and local communities of the following tools as provided in Article 12.3?</label>
 					<ul>
 						<div class="km-value km-pre" ng-show="!document.question37.answer">{{conditionalBooleanToText(!document.question37.answer,document.question42.answer)}}</div>
 
@@ -1128,11 +1128,11 @@
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.community.answer)}}</div>
 								<div ng-show="document.question42.community.furtherInfo">
-			                    	<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s el desarrollo de protocolos comunitarios.</label>
+			                    	<label>Please provide further information on how your country is supporting the development of community protocols</label>
 			                    	<div class="km-value pre-wrap">{{document.question42.community.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.community.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.community.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.community.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1148,11 +1148,11 @@
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mat.answer)}}</div>
 			                    <div ng-show="document.question42.mat.furtherInfo">
-			                    	<label>S&iacute;rvase proporcionar m&aacute;s informaci&oacute;n sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s el desarrollo de requisitos m&iacute;nimos en las condiciones mutuamente acordadas.</label>
+			                    	<label>Please provide further information on how your country is supporting the development of minimum requirements mutually agreed terms</label>
 			                    	<div ng-show="document.question42.mat.furtherInfo" class="km-value pre-wrap">{{document.question42.mat.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mat.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mat.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mat.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1168,11 +1168,11 @@
 							<ul>
 								<div class="km-value km-pre">{{q42BooleanToText(document.question42.mcc.answer)}}</div>
 								<div ng-show="document.question42.mcc.furtherInfo">
-			                    	<label>Please provide further information on how your country is supporting the development of model contractual clauses</label>
+			                    	<label>S&iacute;rvase proporcionar informaci&oacute;n adicional sobre c&oacute;mo est&aacute; apoyando su pa&iacute;s la elaboraci&oacute;n de cl&aacute;usulas contractuales modelo</label>
 			                    	<div class="km-value pre-wrap">{{document.question42.mcc.furtherInfo | lstring:locale}}</div>
 			                    </div>
 								<div ng-show="document.question42.mcc.documentReferenceIDs && !documentReferenceIDsEmpty(document.question42.mcc.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question42.mcc.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1186,15 +1186,15 @@
 				</div>
 
 				<div>
-					<label>43. ¿Ha procurado su pa&iacute;s no restringir el uso e intercambio consuetudinario de recursos gen&eacute;ticos y conocimientos tradicionales asociados dentro de las comunidades ind&iacute;genas y locales y entre ellas conforme a lo dispuesto en el art&iacute;culo 12.4?</label>
+					<label>43. Has your country endeavoured not to restrict the customary use and exchange of genetic resources and associated traditional knowledge within and among indigenous and local communities as provided in Article 12.4?</label>
 					<ul>
 						<div class="km-value km-pre">{{conditionalBooleanToText(!document.question37.answer,document.question43.answer)}}</div>
 						<div ng-show="document.question43.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question43.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question43.documentReferenceIDs && !documentReferenceIDsEmpty(document.question43.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question43.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1206,16 +1206,16 @@
 				</div>
 
 				<div>
-					<label>44. Informaci&oacute;n adicional</label>
+					<label>44. Additional information:</label>
 					<ul>
 						<div class="km-value km-pre" ng-show="!document.question37.answer ">{{conditionalBooleanToText(!document.question37.answer,document.question44.answer)}}</div>
-						<div class="km-value" ng-show="document.question37.answer && !document.question44.challengesInfo && !document.question44.relevantDocuments && (!document.question44.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question44.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="document.question37.answer && !document.question44.challengesInfo && !document.question44.relevantDocuments && (!document.question44.documentReferenceIDs ||  documentReferenceIDsEmpty(document.question44.documentReferenceIDs))">No additional information provided.</div>
 						<div ng-show="document.question44.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os para introducir medidas en relaci&oacute;n con conocimientos tradicionales asociados a recursos gen&eacute;ticos.</label>
+							<label>Please provide a summary of the main difficulties and challenges for putting measures in place in relation to traditional knowledge associated with genetic resources</label>
 							<div class="km-value pre-wrap">{{document.question44.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question44.documentReferenceIDs && !documentReferenceIDsEmpty(document.question44.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question44.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1239,15 +1239,15 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>45. ¿Est&aacute; su pa&iacute;s alentando a usuarios y proveedores a canalizar los beneficios derivados de la utilizaci&oacute;n de recursos gen&eacute;ticos hacia la conservaci&oacute;n de la diversidad biol&oacute;gica y la utilizaci&oacute;n sostenible de sus componentes conforme a lo dispuesto en el art&iacute;culo  9?</label>
+					<label>45. Is your country encouraging users and providers to direct benefits arising from the utilization of genetic resources towards the conservation of biological diversity and sustainable use of its components as provided in Article 9?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question45.answer)}}</div>
 						<div ng-show="document.question45.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question45.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question45.documentReferenceIDs && !documentReferenceIDsEmpty(document.question45.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question45.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1259,14 +1259,14 @@
 				</div>
 
 				<div>
-					<label>46. S&iacute;rvase indicar c&oacute;mo ha contribuido el Protocolo de Nagoya a la conservaci&oacute;n y utilizaci&oacute;n sostenible de la diversidad biol&oacute;gica en su pa&iacute;s:</label>
+					<label>46. Please indicate how the implementation of the Nagoya Protocol has contributed to conservation and sustainable use of biodiversity in your country:</label>
 					<ul>
 						<div class="km-value" ng-show="!document.question46.furtherInfo && (!document.question46.documentReferenceIDs || documentReferenceIDsEmpty(document.question46.documentReferenceIDs))">No answer provided</div>
 						<div ng-show="document.question46.furtherInfo">
 							<div class="km-value pre-wrap">{{document.question46.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question46.documentReferenceIDs && !documentReferenceIDsEmpty(document.question46.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question46.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1278,15 +1278,15 @@
 				</div>
 
 				<div>
-					<label>47. Informaci&oacute;n adicional</label>
+					<label>47. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question47.challengesInfo && !document.question47.relevantDocuments && (!document.question47.documentReferenceIDs  || documentReferenceIDsEmpty(document.question47.documentReferenceIDs))">No additional information provided.</div>
 						<div ng-show="document.question47.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value pre-wrap">{{document.question47.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question47.documentReferenceIDs && !documentReferenceIDsEmpty(document.question47.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question47.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1309,19 +1309,19 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>48. ¿Est&aacute; su pa&iacute;s procurando cooperar con la participaci&oacute;n de las comunidades ind&iacute;genas y locales pertinentes con miras a aplicar el presente Protocolo en instancias en las que los mismos recursos gen&eacute;ticos se encuentren in situ dentro del territorio de m&aacute;s de una Parte, conforme a lo dispuesto en el art&iacute;culo 11.1?</label>
+					<label>48. Is your country endeavouring to cooperate, with the involvement of indigenous and local communities concerned, with a view to implementing the Protocol in instances where the same genetic resources are found in situ within the territory of more than one Party as provided in Article 11.1?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question48.answer)}}</div>
 						<div ng-show="document.question48.ilcInfo">
-							<label>Si en su pa&iacute;s hay comunidades ind&iacute;genas y locales, s&iacute;rvase proporcionar m&aacute;s detalles sobre su participaci&oacute;n.</label>
+							<label>If your country has indigenous and local communities, please provide further detail of their involvement</label>
 							<div class="km-value pre-wrap">{{document.question48.ilcInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question48.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question48.documentReferenceIDs && !documentReferenceIDsEmpty(document.question48.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question48.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1333,16 +1333,16 @@
 				</div>
 
 				<div>
-					<label>49. ¿Est&aacute; su pa&iacute;s procurando cooperar con miras a aplicar el Protocolo en instancias en las que los mismos conocimientos tradicionales asociados a recursos gen&eacute;ticos se comparten entre una o m&aacute;s comunidades ind&iacute;genas y locales en varias Partes conforme a lo dispuesto en el art&iacute;culo 11.2?</label>
+					<label>49. Is your country endeavouring to cooperate with a view to implementing the Protocol in instances where the same traditional knowledge associated with genetic resources is shared by one or more indigenous and local communities in several Parties as provided in Article 11.2?</label>
 					<ul>
 						<div class="km-value" ng-show="document.question49.notApplicable">No corresponde ya que no hay comunidades ind&iacute;genas y locales en mi pa&iacute;s</div>
 						<div class="km-value km-pre" ng-show="!document.question49.notApplicable">{{booleanToText(document.question49.answer)}}</div>
 		                <div ng-show="document.question49.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question49.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question49.documentReferenceIDs && !documentReferenceIDsEmpty(document.question49.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question49.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1354,15 +1354,15 @@
 				</div>
 
 				<div>
-					<label>50. Informaci&oacute;n adicional</label>
+					<label>50. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question50.challengesInfo && !document.question50.relevantDocuments && (!document.question50.documentReferenceIDs  || documentReferenceIDsEmpty(document.question50.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question50.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value pre-wrap">{{document.question50.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question50.documentReferenceIDs && !documentReferenceIDsEmpty(document.question50.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question50.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1385,15 +1385,15 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>51. ¿Est&aacute; su pa&iacute;s alentando el desarrollo, la actualizaci&oacute;n y la utilizaci&oacute;n de cl&aacute;usulas contractuales modelo para las CMA conforme a lo dispuesto en el art&iacute;culo 19?</label>
+					<label>51. Is your country encouraging the development, update and use of model contractual clauses for MAT as provided in Article 19?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question51.answer)}}</div>
 						<div ng-show="document.question51.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question51.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question51.documentReferenceIDs && !documentReferenceIDsEmpty(document.question51.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question51.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1404,15 +1404,15 @@
 					</ul>
 				</div>
 				<div>
-					<label>52. ¿Est&aacute; su pa&iacute;s alentando el desarrollo, la actualizaci&oacute;n y la utilizaci&oacute;n de c&oacute;digos de conducta, directrices y pr&aacute;cticas &oacute;ptimas o est&aacute;ndares conforme a lo dispuesto en el art&iacute;culo 20?</label>
+					<label>52. Is your country encouraging the development, update and use of codes of conduct, guidelines and best practices or standards as provided in Article 20?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question52.answer)}}</div>
 						<div ng-show="document.question52.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question52.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question52.documentReferenceIDs && !documentReferenceIDsEmpty(document.question52.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question52.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1423,15 +1423,15 @@
 					</ul>
 				</div>
 				<div>
-					<label>53. Informaci&oacute;n adicional</label>
+					<label>53. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question53.challengesInfo && !document.question53.relevantDocuments && (!document.question53.documentReferenceIDs || documentReferenceIDsEmpty(document.question53.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question53.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value pre-wrap">{{document.question53.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question53.documentReferenceIDs && !documentReferenceIDsEmpty(document.question53.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question53.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1454,19 +1454,19 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>54. ¿Ha adoptado su pa&iacute;s medidas para aumentar la concienciaci&oacute;n acerca de la importancia de los recursos gen&eacute;ticos y los conocimientos tradicionales asociados a recursos gen&eacute;ticos y de las cuestiones conexas de acceso y participaci&oacute;n en los beneficios conforme a lo dispuesto en el art&iacute;culo 21?</label>
+					<label>54. Has your country taken measures to raise awareness of the importance of genetic resources and traditional knowledge associated with genetic resources and related access and benefit-sharing issues as provided in Article 21?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question54.answer)}}</div>
 						<div style="margin: 0 0 0 20px;" ng-show="document.question54.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>¿Ha adoptado su pa&iacute;s medidas para aplicar la estrategia de aumento de la concienciaci&oacute;n para el Protocolo de Nagoya sobre APB ?</label>
+								<label>Has your country taken measures to implement the awareness-raising strategy for the Nagoya Protocol on ABS?</label>
 								<div class="km-value km-pre">{{document.question54.measures.answer | yesno}}</div>
 								<div ng-show="document.question54.measures.furtherInfo">
-									<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
+									<label>Please provide a summary of the measures taken</label>
 									<div class="km-value pre-wrap">{{document.question54.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question54.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.measures.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question54.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1477,11 +1477,11 @@
 							</div>
 						</div>
 						<div ng-show="document.question54.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question54.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question54.documentReferenceIDs && !documentReferenceIDsEmpty(document.question54.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question54.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1493,19 +1493,19 @@
 				</div>
 
 				<div>
-					<label>55. ¿Ha adoptado su pa&iacute;s medidas para crear capacidades, desarrollar capacidades y fortalecer los recursos humanos y las capacidades institucionales para aplicar el Protocolo de manera efectiva conforme a lo dispuesto en el art&iacute;culo 22?</label>
+					<label>55. Has your country taken measures to build and develop capacity and strengthening of human resources and institutional capacities to effectively implement the Protocol as provided in Article 22?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question55.answer)}}</div>
 						<div style="margin: 0 0 10px 20px;" ng-show="document.question55.answer">
 							<div style="margin: 0 0 0 20px;" >
-								<label>¿Ha adoptado su pa&iacute;s medidas para aplicar el marco estrat&eacute;gico de creaci&oacute;n y desarrollo de capacidad en apoyo a la aplicaci&oacute;n efectiva del Protocolo de Nagoya sobre APB ? </label>
+								<label>Has your country taken measures to implement the strategic framework for capacity-building and development to support effective implementation of the Nagoya Protocol on ABS?</label>
 								<div class="km-value km-pre">{{document.question55.measures.answer | yesno}}</div>
 								<div ng-show="document.question55.measures.furtherInfo">
-									<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
+									<label>Please provide a summary of the measures taken</label>
 									<div class="km-value pre-wrap">{{document.question55.measures.furtherInfo | lstring:locale}}</div>
 								</div>
 								<div ng-show="document.question55.measures.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.measures.documentReferenceIDs)">
-		                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+		                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 									<div class="km-value">
 										<ul class="list">
 											<li ng-repeat="reference in document.question55.measures.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1516,11 +1516,11 @@
 							</div>
 						</div>
 						<div ng-show="document.question55.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question55.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question55.documentReferenceIDs && !documentReferenceIDsEmpty(document.question55.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question55.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1532,15 +1532,15 @@
 				</div>
 
 				<div>
-					<label>56. ¿Ha recibido su pa&iacute;s apoyo externo para la creaci&oacute;n y desarrollo de capacidad para la aplicaci&oacute;n del Protocolo de Nagoya ?  </label>
+					<label>56. Has your country received external support for building and developing capacity for the implementation of the Nagoya Protocol?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question56.answer)}}</div>
 						<div ng-show="document.question56.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question56.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question56.documentReferenceIDs && !documentReferenceIDsEmpty(document.question56.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question56.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1552,15 +1552,15 @@
 				</div>
 
 				<div>
-					<label>57. ¿Ha brindado su pa&iacute;s apoyo externo para la creaci&oacute;n y desarrollo de capacidad para la aplicaci&oacute;n del Protocolo de Nagoya ? </label>
+					<label>57. Has your country provided external support for building and developing capacity for the implementation of the Nagoya Protocol?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question57.answer)}}</div>
 						<div ng-show="document.question57.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question57.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question57.documentReferenceIDs && !documentReferenceIDsEmpty(document.question57.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question57.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1572,15 +1572,15 @@
 				</div>
 
 				<div>
-					<label>58. Informaci&oacute;n adicional</label>
+					<label>58. Additional information:</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question58.challengesInfo && !document.question58.relevantDocuments && (!document.question58.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question58.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os.</label>
+							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os</label>
 							<div class="km-value pre-wrap">{{document.question58.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question58.documentReferenceIDs && !documentReferenceIDsEmpty(document.question58.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question58.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1604,19 +1604,19 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>59. ¿Est&aacute; su pa&iacute;s colaborando y cooperando en programas de investigaci&oacute;n t&eacute;cnica y cient&iacute;fica y desarrollo como medio para alcanzar el objetivo del Protocolo conforme a lo dispuesto en el art&iacute;culo 23?</label>
+					<label>59. Is your country collaborating and cooperating in technical and scientific research and development programmes as a means to achieve the objective of the Protocol as provided in Article 23?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question59.answer)}}</div>
 						<div ng-show="document.question59.additionalInfo">
-							<label>S&iacute;rvase proporcionar un resumen de las medidas adoptadas.</label>
+							<label>Please provide a summary of the measures taken</label>
 							<div class="km-value pre-wrap">{{document.question59.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.furtherInfo">
-							<label>Use the text entry to provide further information</label>
+							<label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question59.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question59.documentReferenceIDs && !documentReferenceIDsEmpty(document.question59.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question59.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1635,14 +1635,14 @@
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>60. S&iacute;rvase proporcionar un resumen de las principales dificultades y desaf&iacute;os encontrados para ser Parte en el Protocolo de Nagoya.</label>
+					<label>60. Please provide a summary of the main difficulties and challenges encountered for becoming a Party to the Nagoya Protocol.</label>
 					<ul>
-						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">Ninguna informaci&oacute;n adicional adjunta</div>
+						<div class="km-value" ng-show="!document.question60.challengesInfo && (!document.question60.documentReferenceIDs || documentReferenceIDsEmpty(document.question60.documentReferenceIDs))">No additional information provided</div>
 						<div ng-show="document.question60.challengesInfo">
 							<div class="km-value pre-wrap">{{document.question60.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question60.documentReferenceIDs && !documentReferenceIDsEmpty(document.question60.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question60.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1654,7 +1654,7 @@
 				</div>
 
 				<div>
-					<label>61. ¿Ha establecido su pa&iacute;s un mecanismo de asignaciones presupuestarias de fondos para la aplicaci&oacute;n del Protocolo de Nagoya?</label>
+					<label>61. Has your country established a mechanism for budgetary allocations of funds for the implementation of the Nagoya Protocol?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question61.answer)}}</div>
 						<div ng-show="document.question61.additionalInfo">
@@ -1662,15 +1662,15 @@
 							<div class="km-value pre-wrap">{{document.question61.additionalInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.challengesInfo">
-							<label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados.</label>
+							<label>Please provide a summary of the main difficulties and challenges encountered</label>
 							<div class="km-value pre-wrap">{{document.question61.challengesInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.furtherInfo">
-							<label>Use el campo de texto para proporcionar m&aacute;s informaci&oacute;n, incluyendo sobre las experiencias adquiridas sobre la movilizaci&oacute;n de recursos para apoyar la implementaci&oacute;n del Protocolo de Nagoya y el estado de los fondos movilizados (nivel de gastos nacionales, o la cantidad de los fondos  y de las tendencias en la financiaci&oacute;n  asignada para la aplicaci&oacute;n del Protocolo de Nagoya y el d&eacute;ficit de financiaci&oacute;n).</label>
+							<label>Use the text entry to provide further information. including on experiences gained in relation to mobilization of resources to support the implementation of the Nagoya Protocol and the status of funds mobilized (level of domestic expenditures, or the amount of and trends in funding allocated, for the implementation of the Protocol and the funding gap)</label>
 							<div class="km-value pre-wrap">{{document.question61.furtherInfo | lstring:locale}}</div>
 						</div>
 						<div ng-show="document.question61.documentReferenceIDs && !documentReferenceIDsEmpty(document.question61.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question61.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1682,13 +1682,13 @@
 				</div>
 
 				<div>
-					<label>62. a) ¿Ha proporcionado su pa&iacute;s a otras Partes o recibido de otras Partes o instituciones financieras recursos financieros para fines de aplicaci&oacute;n del Protocolo conforme a lo dispuesto en el art&iacute;culo 25?</label>
+					<label>62. a) Has your country made financial resources available to other Parties or received financial resources from other Parties or financial institutions for the purposes of implementation of the Protocol as provided in Article 25?</label>
 					<ul>
 						<ul ng-if="!document.question62.donor.answer && !document.question62.recipient.answer && !document.question62.no">
 							<div class="km-value km-pre">No selection made</div>
 						</ul>
 						<ul ng-if="document.question62.donor.answer">
-							<label>Se han proporcionado recursos financieros.</label>
+							<label>Financial resources have been made available</label>
 							<div class="km-value km-pre">{{booleanToText(document.question62.donor.answer)}}</div>
 							<div ng-show="document.question62.donor.additionalInfo">
                             	<label>Please provide further information</label>
@@ -1697,7 +1697,7 @@
 						</ul>
 
 						<ul ng-if="document.question62.recipient.answer">
-							<label>Se han recibido recursos financieros.</label>
+							<label>Financial resources have been received</label>
 							<div class="km-value km-pre">{{booleanToText(document.question62.recipient.answer)}}</div>
 							<ul>
 								<ul ng-if="document.question62.recipient.parties">
@@ -1739,11 +1739,11 @@
 							<div class="km-value km-pre">No</div>
 						</ul>
                         <div ng-show="document.question62.furtherInfo">
-                            <label>Use el campo de texto para proporcionar m&aacute;s informaci&oacute;n, incluyendo sobre el estado de recursos financieros (cantidad total) movilizados, donados o recibidos  para la implementaci&oacute;n del Protocolo. </label>
+                            <label>Use the text entry to provide further information, .including on the status of financial resources (total amount) mobilized donated or received for the purposes of implementation of the Protocol</label>
 							<div class="km-value pre-wrap">{{document.question62.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question62.documentReferenceIDs && !documentReferenceIDsEmpty(document.question62.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question62.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1771,24 +1771,24 @@
 				</div>
 
 				<div>
-					<label>63. ¿Dispone su pa&iacute;s de personal espec&iacute;fico para administrar funciones directamente relacionadas con la aplicaci&oacute;n del Protocolo de Nagoya ?</label>
+					<label>63. Does your country have specific staff to administer functions directly related to the implementation of the Nagoya Protocol?</label>
 					<ul>
 						<div class="km-value km-pre">{{booleanToText(document.question63.answer)}}</div>
                         <div ng-show="document.question63.answer">
                         	<ul>
-                        		<label>S&iacute;rvase indicar cu&aacute;ntos</label><br /><div class="km-value km-pre">{{document.question63.numberOfStaff}}</div>
+                        		<label>Please indicate how many</label><br /><div class="km-value km-pre">{{document.question63.numberOfStaff}}</div>
                         	</ul>
                         </div>
                         <div ng-show="document.question63.challengesInfo">
-                            <label>S&iacute;rvase proporcionar un resumen de los principales dificultades y desaf&iacute;os encontrados.</label>
+                            <label>Please provide a summary of the main difficulties and challenges encountered</label>
 							<div class="km-value pre-wrap">{{document.question63.challengesInfo | lstring:locale}}</div>
                         </div>
                         <div ng-show="document.question63.furtherInfo">
-                            <label>Use the text entry to provide further information</label>
+                            <label>Use el campo de texto para proporcionar informaci&oacute;n adicional</label>
 							<div class="km-value pre-wrap">{{document.question63.furtherInfo | lstring:locale}}</div>
                         </div>
 						<div ng-show="document.question63.documentReferenceIDs && !documentReferenceIDsEmpty(document.question63.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question63.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1800,11 +1800,11 @@
 				</div>
 
 				<div>
-					<label>64. Otra informaci&oacute;n pertinente:</label>
+					<label>64. Any other relevant information:</label>
 					<ul>
 						<div class="km-value pre-wrap">{{text(document.question64.furtherInfo) | lstring:locale}}</div>
 						<div ng-show="document.question64.documentReferenceIDs && !documentReferenceIDsEmpty(document.question64.documentReferenceIDs)">
-                			<label>El identificador &uacute;nico del centro de intercambio de informaci&oacute;n de APB que contiene informaci&oacute;n relevante</label>
+                			<label>The ABS Clearing-House unique ID containing relevant information</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="reference in document.question64.documentReferenceIDs"><a target="_new" ng-href="{{getLink(reference)}}">{{getLinkText(reference)}}</a></li>
@@ -1825,11 +1825,11 @@
 
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<label>Comentarios sobre el formato de presentaci&oacute;n de informes</label>
+				<label>Comments in the reporting format</label>
 			</div>
 			<div class="panel-body">
 				<div>
-					<label>65. S&iacute;rvase brindar cualquier comentario que pueda tener sobre el formato de este informe.</label>
+					<label>65. Please provide any comment that you may have regarding the format of this report:</label>
 					<ul>
 						<div class="km-value pre-wrap">{{text(document.question65) | lstring:locale}}</div>
 					</ul>

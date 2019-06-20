@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default" >
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span>{{schema.title|lstring:locale}} <span class="color-black"> ({{schema.shortCode}}) </span> </span></h4>	
+		<h4><span>{{schema.title|lstring:locale}} <span class="color-black">({{schema.shortCode}})</span></span></h4>	
 	</div>
 
 	<div class="record-body panel-body" help schema="ViewCP" >
@@ -88,19 +88,15 @@
 			<div class="km-value" ng-repeat="measure in document.relevantMeasures">
 				<div view-default-reference ng-model="measure.identifier" locale="locale"></div>
 			</div>
-		</div>
-
-		<div ng-show="document.keywords">
+		</div><!-- <div ng-show="document.keywords">
 			<label>Keywords</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="term in document.keywords">{{term | term:locale}}</li>
 				</ul>
 			</div>
-		</div>
-
-		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+		</div> --><div ng-show="document.relevantInformation||document.relevantDocuments">
+			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
 				<km-value-ml value="document.relevantInformation" locales="locale" km-pre html></km-value-ml> 

@@ -1,0 +1,93 @@
+{
+  "meetingDocument": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "pressRelease": {
+    "type": "",
+    "title": {
+      "en": "新闻简报"
+    },
+    "description": {
+      "en": "新闻简报"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "新闻稿"
+    }
+  },
+  "news": {
+    "type": "",
+    "title": {
+      "en": "新闻"
+    },
+    "description": {
+      "en": "新闻"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "新闻"
+    }
+  },
+  "new": {
+    "type": "",
+    "title": {
+      "en": "最新消息"
+    },
+    "description": {
+      "en": "最新消息"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "最新消息"
+    }
+  },
+  "statement": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": "声明"
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": ""
+    }
+  },
+  "meeting": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "会议"
+    }
+  },
+  "notification": {
+    "type": "",
+    "title": {
+      "en": ""
+    },
+    "description": {
+      "en": ""
+    },
+    "shortCode": "",
+    "titlePlural": {
+      "en": "通知"
+    }
+  }
+}

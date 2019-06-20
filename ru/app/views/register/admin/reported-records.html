@@ -103,7 +103,7 @@
                 <div class="col-xs-12 col-form-label">Схема: {{record.schema|schemaName}}</div>
                 <div class="col-xs-12 col-form-label">Сообщившее лицо: {{record.reportedBy}}</div>
                 <div class="col-xs-12 col-form-label">Дата сообщения: <span ng-if="record.meta">{{record.meta.createdOn|formatDate}}</span></div>
-                <div class="col-xs-12 col-form-label">Информация: <span ng-if="record.incorrect">неверно или неактуально |</span> <span ng-if="record.broken">недействительная ссылка или устаревшая информация |</span> <span ng-if="record.copyright">нарушение авторского права</span><br> {{record.additionalInformation}}</div>
+                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">

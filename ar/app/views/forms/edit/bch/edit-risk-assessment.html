@@ -18,7 +18,7 @@
 										<legend>معلومات عامة</legend>
 											<div class="row">
 												<div class="col-xs-12" >
-													<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+													<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 														<div class="indent">
 															<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 														</div>
@@ -92,7 +92,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group" name="documents" required caption="Risk assessment report / summary">
-														<div class="help-block">An attachment is preferred. وإلا، فقم من فضلك بتوفير موقع المستند (على سبيل المثال، عنوان الموقع الإلكتروني مشتملاً علي الرابط إلي الموقع الإلكتروني (علي سبيل المثال، http://bch.biodiv.org) واسم موقع الانترنت (على سبيل المثال، &quot;غرفة تبادل معلومات السلامة الأحيائية&quot;). قم بإدخال النص لتوفير المعلومات حول كيفية الحصول علي نسخة من المستند إن لم يكن متوفراً كمرفق أو على الانترنت.</div>
+														<div class="help-block">An attachment is preferred. وإلا، فقم من فضلك بتوفير موقع المستند (على سبيل المثال، عنوان الموقع الإلكتروني مشتملاً علي الرابط إلي الموقع الإلكتروني (علي سبيل المثال، http://bch.biodiv.org) واسم موقع الانترنت (على سبيل المثال، &quot;غرفة تبادل معلومات السلامة الأحيائية&quot;). Only use text entry to provide details of how to obtain a copy of the document if it is not available as an attachment or online.</div>
 														<div km-link name="documents" ng-model="document.documents" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 													</div>
 												</div>
@@ -149,7 +149,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group"  name="receivingEnvironment" caption="بيئة (بيئات)التلقي المعتبرة">
-														<div class="help-block">Information on the location, geographical, climatic and ecological characteristics including relevant information on biological diversity and centres of origin of the likely potential receiving environment as listed in Annex III paragraph 9 (h) of the Protocol.</div>
+														<div class="help-block">المعلومات المتعلقة بالخصائص المكانية والجغرافية والمناخة والإيكولوجية التي تشمل المعلومات ذات الصلة حول التنوع البيولوجي ومراكز منشأ البيئة المستقبلة المحتملة كما هو مذكور في الملحق 3 الفقرة 9 (ح) من البروتوكول.</div>
 														<div km-rich-textbox name="receivingEnvironment"  ng-model="document.receivingEnvironment" locales="document.header.languages"></div>
 													</div>
 												</div>

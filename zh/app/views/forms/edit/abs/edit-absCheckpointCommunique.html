@@ -13,7 +13,7 @@
                                         <legend name="generalInfo">一般信息</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -51,7 +51,7 @@
                                             <div class="col-xs-12">
                                                 <div class="control-group">
                                                     <div class="km-control-group" name="absCheckpoints" required caption="收集或收到此信息的检查点">
-                                                        <div class="help-info"> 在此字段中，您可以从现有的获取和惠益分享信息交换所中选择收集或接收此信息的检查点的记录。</div>
+                                                        <div class="help-info">在此字段中，您可以从现有的获取和惠益分享信息交换所中选择收集或接收此信息的检查点的记录。</div>
             
                                                         <div document-selector ng-model="document.absCheckpoints" question="absCheckpoints"
                                                             government="document.government" schema="absCheckpoint" filter="true"></div>
@@ -68,7 +68,7 @@
                                             <div class="col-xs-12">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading"><span ng-class="{'confidential-text':document.absIRCCsNotAvailable}"><input type="checkbox" name="absIRCCsNotAvailable" ng-model="document.absIRCCsNotAvailable"
-                                                                watch-items> 国际公认合规证书（IRCC）暂不可用</input></span></div>
+                                                                watch-items>国际公认合规证书（IRCC）暂不可用</input></span></div>
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absIRCCsNotAvailable}">
                                                         <div class="km-control-group" style="margin-bottom:20px;" name="absIRCCs"
                                                             required caption="指同与本公报有关的国际公认合规证书（IRCC）的链接">
@@ -109,7 +109,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="subjectMatter" required caption="与收集或收到的信息相关的主题或遗传资源">
-                                                        <div class="help-info">请详细说明与检查站收集或收到的信息相关的主题或遗传资源。这可包括任何分类级别（可带分类学名）的生物群。还可包括收集材料的地点。也可以通过提及已确定档案或收藏所载的证据标本或者实地现场说明来查明遗传资源。 </div>
+                                                        <div class="help-info">请详细说明与检查站收集或收到的信息相关的主题或遗传资源。这可包括任何分类级别（可带分类学名）的生物群。还可包括收集材料的地点。也可以通过提及已确定档案或收藏所载的证据标本或者实地现场说明来查明遗传资源。</div>
                                                         <div km-rich-textbox name="subjectMatter" rows="6" ng-model="document.subjectMatter"
                                                             locales="document.header.languages"></div>
                                                     </div>
@@ -233,7 +233,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="personsAtCheckpoint" caption=" 向检查站提供遗传资源利用相关信息的个人或实体 ">
+                                                <div class="km-control-group" name="personsAtCheckpoint" caption="向检查站提供遗传资源利用相关信息的个人或实体">
                                                     <div class="help-info">此信息让遗传资源的提供者能够核实获授事先知情同意书的个人或实体是否与在检查点提供事先知情同意书和共同商定条件证据的个人或实体相同。如果存在差异，则提供者可以验证与第三方转移相关的信息和条件。</div>
                                                     <div document-selector ng-model="document.personsAtCheckpoint" question="personsAtCheckpoint"
                                                         schema="(contact authority)" government="document.government" filter="true"></div>
@@ -288,7 +288,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="km-control-group" name="notes">
-                                                    <div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                    <div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                                     <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                                 </div>
                                             </div>

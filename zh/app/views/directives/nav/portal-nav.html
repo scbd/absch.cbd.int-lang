@@ -1,5 +1,5 @@
 ﻿<div>
-    <style>.navbar-nav&gt;li { float: left; } .helpOn{color:#FFF} .helpOff{color:#333;} /*.helpinfo{display:{{showHelp ? block : none}};}*/ #PortalLinks1 .icon{margin-top:2px;}</style>
+    <style> .navbar-nav&gt;li { float: left; } .helpOn{color:#FFF} .helpOff{color:#333;} /*.helpinfo{display:{{showHelp ? block : none}};}*/ #PortalLinks1 .icon{margin-top:2px;} </style>
     <nav id="PortalLinks1" class="navbar navbar-links navbar-default navbar-static-top" >
         <div class="container-fluid container-links color-grey">
             <div class="navbar-header">
@@ -19,7 +19,7 @@
                     <li><a href="#" class="hidden-xs dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
                         ng-class="{'active-menu' : activeMenu == 'countryProfile'}" ng-click="activeMenu='countryProfile'"><span  ng-href="countries">国家概况 <span class="caret"></span></span></a> <a ng-href="countries" class="visible-xs"><i class="icon fa fa-globe "></i></a><ul class="dropdown-menu hidden-xs"  style="padding:10px;max-height:380px;overflow-y:scroll; border:0;margin-top:11px;"><br><li style="border:0!important;"><a style="color:#111!important;font-size:16px;" ng-href="countries">Overview - List all countries</a></li>
                             <hr>
-                            <li  style="border:0!important;" ng-repeat="c in list = (countries | orderBy:'name' ) track by c.name.en" ><a style="color:#666!important;font-size:14px;" ng-href="/countries/{{c.code}}" ><span class="bold" ng-class="{'color-party': c.isNPParty, 'color-grey':!c.isNPParty, 'color-inbetween': c.isNPInbetweenParty}">{{c.name | lstring:locale}}</span></a></li>
+                            <li  style="border:0!important;" ng-repeat="c in countries track by c.code" ><a style="color:#666!important;font-size:14px;" ng-href="countries/{{c.code|encode|uppercase}}" ><span class="bold" ng-class="{'color-party': c.isNPParty, 'color-grey':!c.isNPParty, 'color-inbetween': c.isNPInbetweenParty}">{{c.name | lstring:locale}}</span></a></li>
                         </ul>
                     </li>
 

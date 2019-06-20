@@ -15,7 +15,7 @@
 				
 										<div class="row">
 											<div class="col-xs-12" >
-												<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+												<div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
 													<div class="indent">
 														<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 													</div>
@@ -91,7 +91,7 @@
 												<div class="km-control-group" required name="capacityBuildingType" caption="4.能力建设倡议类型">
 													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4.Atleast one question should be answered yes</span></label>
 													<div style="padding-left:20px" class="well">
-														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme? ">
+														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme?">
 															<div class="km-yes-no" required name="isProjectProgramme" ng-model="document.capacityBuildingType.isProjectProgramme"></div>
 														</div>
 														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?">
@@ -103,7 +103,7 @@
 																							question="capacityBuildingInitiative"
 																							schema="capacityBuildingInitiative" filter="true" skip-government="true"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme? ">
+														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?">
 															<div class="km-yes-no" required name="isStandaloneProject" ng-model="document.capacityBuildingType.isStandaloneProject"></div>
 														</div>
 													</div>
@@ -136,7 +136,7 @@
 																</div>
 															</div>
 															<div class="col-md-1 text-center" ng-show="!document.status || isProposedOrApproved()">
-																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > 或者 </div>
+																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" >或者</div>
 															</div>
 															<div class="col-md-5">
 																<div class="km-control-group" name="duration" caption="持续时间" ng-show="!document.status || isProposedOrApproved()">
@@ -194,7 +194,7 @@
 														<div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="请选择合作伙伴">
 															<div class="help-info">合作伙伴是指对该倡议有重大财务或其他贡献，和/或积极支持或配合该倡议实施的实体或组织。</div>
 															 
-															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="8.Contact person(s)"></organization-selector>
 														</div>
 													</div>
 												</div>
@@ -205,7 +205,7 @@
 				
 										<div class="row">
 											<div class="col-md-12">
-												<div class="km-control-group" name="contacts" caption="8.联系人">
+												<div class="km-control-group" name="contacts" caption="8.Contact person(s)">
 				
 													 <div document-selector ng-model="document.contacts"
 																						question="contacts"
@@ -277,7 +277,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="15.共同出资来源"></organization-selector>
 												</div>
 											</div>
 										</div>
@@ -289,7 +289,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="16.总预算（金额，美元）"></organization-selector>
 												</div>
 											</div>
 										</div>
@@ -307,7 +307,7 @@
 										<legend>能力建设成果</legend>
 										<div class="help-info">一旦从正在进行的或已完成的倡议中得到一些结果（产出、成果或影响）或最佳做法以及涉及的经验教训，则可以提供这些信息。</div>
 										<div class="well">
-											<div class="km-control-group" name="totalBudget" caption="17.结果">
+											<div class="km-control-group" name="totalBudget" caption="17.Results">
 												<div class="row">
 													<div class="col-md-12">
 														<div class="km-control-group" name="resultsAchievements" caption="结果：主要成就"><span class="help-info">请简要总结该倡议的主要成就，包括在实现《公约》及其各项议定书目标的过程中与促进两性平等相关的情况。（最多 200 单词）</span><div km-textbox-ml name="resultsAchievements" ng-model="document.resultsAchievements" rows="4" locales="document.header.languages"></div>
@@ -361,7 +361,7 @@
 				
 										<div class="row">
 											<div class="col-md-12">
-												<div class="km-control-group" name="address" caption=" 其它相关信息" >
+												<div class="km-control-group" name="address" caption="其它相关信息" >
 													<div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
 													<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 												</div>

@@ -12,11 +12,11 @@
 
                                 <legend name="formInfo" style="display:none"></legend>
                                 <section>
-                                    <legend>这是对先前立法、行政或政策措施的修正？ </legend>
+                                    <legend>这是对先前立法、行政或政策措施的修正？</legend>
                                     <div class="help-info">仅当所提交的措施会修正某个现有措施时才与本部分相关。如果将在获取和惠益分享信息交换所注册的措施是对现有措施或其一部分的修正，请确保被修正的措施已在获取和惠益分享信息交换所中注册，以便能够提供指向现有记录的链接。这将让两个记录能够一起显示。</div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="isAmendment" required caption="这是对先前立法、行政或政策措施的修正？ ">
+                                            <div class="km-control-group" name="isAmendment" required caption="这是对先前立法、行政或政策措施的修正？">
                                                 <div class="help-block"></div>
                                                 <div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
                                             </div>
@@ -48,7 +48,7 @@
                                     <legend>一般信息</legend>
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -213,7 +213,7 @@
     
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div class="km-control-group" name="linkedMeasuresDescription" caption="请描述关系 ">
+                                            <div class="km-control-group" name="linkedMeasuresDescription" caption="请描述关系">
                                                 <div km-rich-textbox ng-model="document.linkedMeasuresDescription" rows="4" placeholder="" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -251,19 +251,19 @@
     
                                 <section>
                                     <legend>
-                                        <label for="absMeasures"> 措施要素</label>
+                                        <label for="absMeasures">措施要素</label>
                                     </legend>
                                    
     
     
                                     <div ng-if="document.absMeasuresForDelete">
                                         <div class="alert alert-warning">
-                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>保存<i>措施要素</i>的格式已变化。必须手动更新此记录。下面的<i>措施要素</i>列表来自上一版本，仅供参考，以帮助您更新此记录。</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}。{{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span> &nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>保存<i>措施要素</i>的格式已变化。必须手动更新此记录。下面的<i>措施要素</i>列表来自上一版本，仅供参考，以帮助您更新此记录。</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}。{{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-heading"><span ng-class="{'confidential-text':document.absMesasureNotApplicable}"><input type="checkbox" name="absMesasureNotApplicable" ng-model="document.absMesasureNotApplicable" watch-items> 要素不适用于此措施。</input></span></div>
+                                                <div class="panel-heading"><span ng-class="{'confidential-text':document.absMesasureNotApplicable}"><input type="checkbox" name="absMesasureNotApplicable" ng-model="document.absMesasureNotApplicable" watch-items>要素不适用于此措施。</input></span></div>
                                                 <div class="panel-body panel-body-confidential" ng-class="{'disable':document.absMesasureNotApplicable}">
                                                     <div class="km-control-group"  name="absMeasures" required caption="">
                                                         <div class="help-info"></div>
@@ -307,7 +307,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="km-control-group" name="notes">
-                                                <div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                                 <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                             </div>
                                         </div>

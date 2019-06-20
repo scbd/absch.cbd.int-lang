@@ -5,7 +5,7 @@
             <div>
                 <div class="register-content-header" style="margin-top:20px;" ng-class="{'bg-blue': schemaType != 'referenceRecords','bg-orange': schemaType == 'referenceRecords' }">
                          <div style="padding:5px 5px;">
-                            <h3 style="padding: 0 5px 0 5px; margin: 0; font-weight: normal;"><a href="/register" class="color-white">{{schema|mapSchema|schemaName}} ({{schema | schemaShortName }})  </a> <span class="helpinfoInline"  ><a href="/register"><i class="glyphicon glyphicon-remove pull-right color-white"></i></a></span></h3>
+                            <h3 style="padding: 0 5px 0 5px; margin: 0; font-weight: normal;"><a href="/register" class="color-white">{{schema|mapSchema|schemaName}} ({{schema | schemaShortName }})</a> <span class="helpinfoInline"  ><a href="/register"><i class="glyphicon glyphicon-remove pull-right color-white"></i></a></span></h3>
                         </div>
                     </div>
                 </div>
@@ -20,13 +20,13 @@
                         <button type="button" ng-click="statusFilter=isRequest" class="filterbtn btn btn-danger"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isRequest}"></i> Demandes <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isRequest).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isPublished" class="filterbtn btn btn-success"><i  class="fa fa-2 fa-square"  ng-class="{'fa-check-square':statusFilter==isPublished}"></i> Publi&eacute; <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isPublished).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isDraft" class="filterbtn btn btn-draft"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isDraft}"></i> Brouillons <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isDraft).length}}</span></button>
-                        <input type="text" ng-model="keywords" placeholder=" Mot clé " class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
+                        <input type="text" ng-model="keywords" placeholder="Mot cl&eacute;" class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
                     </div>
 
                 </div>
                 <div class="col-xs-4 " ng-show="showAddButton()">
                     <div class="btn-group-sm pull-right"><!--<a translation-url  ng-href="#" class="btn btn-sm btn-primary" ng-click="showReference(schema);">
-                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-default" ng-click="refreshList(schema);"><i class="fa fa-refresh"></i> Actualiser</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary bold" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i>Ajouter un &eacute;l&eacute;ment </a></div>
+                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-default" ng-click="refreshList(schema);"><i class="fa fa-refresh"></i> Actualiser</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary bold" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i>Ajouter un &eacute;l&eacute;ment</a></div>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                     <td colspan="6" style="text-align:center;padding:30px;"><i class="fa fa-spin fa-cog" /> chargement en cours...</td>
                 </tr>
                 <tr ng-cloak ng-show="!loading && filteredRecords.length <= 0">
-                    <td colspan="6" style="text-align:center;padding:30px;"> <strong>Aucun fichier trouv&eacute;.</strong></td>
+                    <td colspan="6" style="text-align:center;padding:30px;"><strong>Aucun fichier trouv&eacute;.</strong></td>
                 </tr>
 
                 <tbody ng-repeat="record in (filteredRecords = (records | filter:schemaFilter | filter:statusFilter | filter:keywords | orderBy:orderBy))">
@@ -69,17 +69,17 @@
                         </td>
                         <td><span ng-if="record.workflowActivityStatus == 'pending'" ><div class="btn btn-primary color-white" ><i class="fa fa-spin fa-spinner"/> En cours...</div></span><div ng-show="record.workflowActivityStatus!='pending'">
 
-                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold"> Publi&eacute; </div>
-                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold"> Brouillon </div><span class="color-red bold" ng-show="record.revoked">R&eacute;voqu&eacute;</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">Approbation en attente</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">En attente d&apos;approbation</div>
+                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold">Publi&eacute;</div>
+                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold">Brouillon</div><span class="color-red bold" ng-show="record.revoked">R&eacute;voqu&eacute;</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">Approbation en attente</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">En attente d&apos;approbation</div>
                                 <div ng-show="!record.revoked && isRequest(record) && record.isUpdating">
-                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> En cours... </strong></a></div>
+                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> En cours...</strong></a></div>
                                 </div>
                         </td>
                         <td>
                             <div class="btn-group document_buttons btn-group-sm" style="width:100px;" ng-show="record.workflowActivityStatus!='pending'">
                                 <button ng-show="showAddButton()" title="Dupliquer" type="button" class="btn btn-default" ng-click="askDuplicate(record)"><i class="fa fa-files-o"></i></button>
-                                <button title="Verrouillé pour l’édition" ng-show="!record.revoked && isRequest(record) && showAddButton()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-lock"></i></button>
-                                <button title="Demande d’annulation" ng-show="!record.revoked && isRequest(record) && showAddButton() && isMyRecord(record)" type="button" class="btn btn-default" ng-click="askRecallWorkflowRequest(record)"><i class="fa fa-undo"></i></button><a translation-url  title="Modifier" ng-show="!record.revoked && !isRequest(record) && showAddButton()" type="button" class="btn btn-default" href="/register/{{record.type|urlSchemaShortName}}/{{record.identifier}}/edit"><i class="fa fa-edit"></i></a><button title="Supprimer" ng-show="!record.revoked && !isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
+                                <button title="Verrouill&eacute; pour l&rsquo;&eacute;dition" ng-show="!record.revoked && isRequest(record) && showAddButton()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-lock"></i></button>
+                                <button title="Demande d&rsquo;annulation" ng-show="!record.revoked && isRequest(record) && showAddButton() && isMyRecord(record)" type="button" class="btn btn-default" ng-click="askRecallWorkflowRequest(record)"><i class="fa fa-undo"></i></button><a translation-url  title="Modifier" ng-show="!record.revoked && !isRequest(record) && showAddButton()" type="button" class="btn btn-default" href="/register/{{record.type|urlSchemaShortName}}/{{record.identifier}}/edit"><i class="fa fa-edit"></i></a><button title="Supprimer" ng-show="!record.revoked && !isRequest(record) && showAddButton()" ng-class="{'red':(record.type == 'absPermit' && isPublished(record))}" type="button" class="btn btn-default" ng-click="askDelete(record)"><i class="fa fa-trash-o"></i></button>
                             </div>
                         </td>
                     </tr>
@@ -92,7 +92,7 @@
                                 <table class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <td> Champs </td>
+                                            <td>Champs</td>
                                             <td>R&eacute;vision en cours des champs</td>
                                             <td>R&eacute;vision du fichier de r&eacute;f&eacute;rence</td>
                                             <td></td>
@@ -121,16 +121,16 @@
                         <div ng-show="isDraft(recordToDelete)" class="well" style="font-size:14px;">
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;color:#999;border-bottom:1px solid #ddd;margin-bottom:10px;">FICHIER BROUILLON</div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Titre&nbsp;:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.workingDocumentTitle|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">Titre&nbsp;:</div><div class="col-xs-10" style="font-weight:bold">{{recordToDelete.workingDocumentTitle|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">Identifiant unique</div> <div class="col-xs-10" style="font-weight:bold"> <i>BROUILLON</i></div>
+                                <div class="col-xs-2" class="small color-litegrey">Identifiant unique</div><div class="col-xs-10" style="font-weight:bold"><i>BROUILLON</i></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">R&eacute;sum&eacute; :</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">R&eacute;sum&eacute; :</div><div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
                              </div>
                             <div class="row" style="margin-top:10px;"> 
-                                <div class="col-xs-12"> <button type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Annuler le brouillon</button></div>
+                                <div class="col-xs-12"><button type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Annuler le brouillon</button></div>
                             </div>
                         </div>
 
@@ -140,13 +140,13 @@
                                  <div class="col-xs-12 bold">Les enregistrements de certificats de conformit&eacute; reconnus internationalement (CCIR) publi&eacute;s ne peuvent &ecirc;tre r&eacute;voqu&eacute;s. Un CCIR r&eacute;voqu&eacute; ne sera plus valide et restera publi&eacute; dans le CE-APA pour permettre sa tra&ccedil;abilit&eacute; et une transparence. Les CCIR r&eacute;voqu&eacute;s seront clairement identifi&eacute;s comme r&eacute;voqu&eacute;s lors de la recherche et de l&apos;affichage de l&apos;enregistrement.</div>
                               </div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Titre&nbsp;:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.title|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">Titre&nbsp;:</div><div class="col-xs-10" style="font-weight:bold">{{recordToDelete.title|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">Identifiant unique :</div> <div class="col-xs-10" style="font-weight:bold"> <a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
+                                <div class="col-xs-2" class="small color-litegrey">Identifiant unique :</div><div class="col-xs-10" style="font-weight:bold"><a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">R&eacute;sum&eacute; :</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.summary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">R&eacute;sum&eacute; :</div><div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.summary|lstring"></span></div>
                              </div>
 
                               <div class="row" ng-show="isIRCC"> 
@@ -162,7 +162,7 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note : Any pending draft will also be deleted"><span ng-if="!security.canDelete">Demander la suppression de ce fichier</span> <span ng-if="security.canDelete">Supprimer le fichier </span></button> 
+                                <div class="col-xs-12"><button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note&nbsp;: Any pending draft will also be deleted"><span ng-if="!security.canDelete">Demander la suppression de ce fichier</span> <span ng-if="security.canDelete">Supprimer le fichier</span></button> 
                                 </div>
                             </div>
                         </div>

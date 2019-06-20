@@ -1,22 +1,6 @@
 ﻿<div>
 
-    <style>
-        .radio label{
-            padding:20px;
-        }
-        .radio-inline{
-            display: inline-block !important;
-        }
-        .ngdialog.ngdialog-theme-default .ngdialog-content{padding:0;}
-        
-        .ngdialog-theme-default.wide .ngdialog-content{
-            min-width:70% !important;
-        }
-        .modal-body{background-color:#FFF;}
-         #datatable .tableexport-caption{
-            display: none!important;
-        } 
-    </style>
+    <style> .radio label{ padding:20px; } .radio-inline{ display: inline-block !important; } .ngdialog.ngdialog-theme-default .ngdialog-content{padding:0;} .ngdialog-theme-default.wide .ngdialog-content{ min-width:70% !important; } .modal-body{background-color:#FFF;} #datatable .tableexport-caption{ display: none!important; } </style>
     <div class="row">
         <div class="col-xs-12" >
             <div style="color:#bbb;text-transform: uppercase;font-weight: 500;text-shadow: 0px 1px 0px rgba(255,255,255,.5);cursor:pointer;"  ng-click="showDialog()" ng-disabled="loading"><span ng-if="helpTitle" class="helpinfoInline fa fa-table " data-toggle="tooltip" data-html="true" data-title="{{helpTitle}}" data-container="body"></span> Экспортировать</div>
@@ -43,11 +27,11 @@
                             <th class="tableexport-string">Тип</th>
                             <th class="tableexport-string">УИ</th>
                             <th class="tableexport-string">Правительство</th>
-                            <th class="tableexport-string">Название </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Информация 1 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Информация 2 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Информация 3 </th>
-                            <th style="white-space:nowrap;" class="tableexport-string">Информация 4 </th>
+                            <th class="tableexport-string">Название</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Информация 1</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Информация 2</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Информация 3</th>
+                            <th style="white-space:nowrap;" class="tableexport-string">Информация 4</th>
                             <th style="white-space:nowrap;" class="tableexport-string">Дата публикации:</th>
                             <th style="white-space:nowrap;" class="tableexport-string" ng-if="customFieldList.length>0" ng-repeat="field in  customFieldList">{{field}}</th>
                         </tr>

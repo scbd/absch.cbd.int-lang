@@ -5,7 +5,7 @@
             <div>
                 <div class="register-content-header" style="margin-top:20px;" ng-class="{'bg-blue': schemaType != 'referenceRecords','bg-orange': schemaType == 'referenceRecords' }">
                          <div style="padding:5px 5px;">
-                            <h3 style="padding: 0 5px 0 5px; margin: 0; font-weight: normal;"><a href="/register" class="color-white">{{schema|mapSchema|schemaName}} ({{schema | schemaShortName }})  </a> <span class="helpinfoInline"  ><a href="/register"><i class="glyphicon glyphicon-remove pull-right color-white"></i></a></span></h3>
+                            <h3 style="padding: 0 5px 0 5px; margin: 0; font-weight: normal;"><a href="/register" class="color-white">{{schema|mapSchema|schemaName}} ({{schema | schemaShortName }})</a> <span class="helpinfoInline"  ><a href="/register"><i class="glyphicon glyphicon-remove pull-right color-white"></i></a></span></h3>
                         </div>
                     </div>
                 </div>
@@ -20,13 +20,13 @@
                         <button type="button" ng-click="statusFilter=isRequest" class="filterbtn btn btn-danger"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isRequest}"></i> Запросы <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isRequest).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isPublished" class="filterbtn btn btn-success"><i  class="fa fa-2 fa-square"  ng-class="{'fa-check-square':statusFilter==isPublished}"></i> Опубликовано <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isPublished).length}}</span></button>
                         <button type="button" ng-click="statusFilter=isDraft" class="filterbtn btn btn-draft"><i class="fa fa-2 fa-square" ng-class="{'fa-check-square':statusFilter==isDraft}"></i> Черновики <span class="badge badge-default">{{(records | filter:schemaFilter | filter:isDraft).length}}</span></button>
-                        <input type="text" ng-model="keywords" placeholder=" Ключевое слово " class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
+                        <input type="text" ng-model="keywords" placeholder="Ключевое слово" class="form-control keyword input-group" style="width:160px;display:inline;font-size:12px;height:31px;">
                     </div>
 
                 </div>
                 <div class="col-xs-4 " ng-show="showAddButton()">
                     <div class="btn-group-sm pull-right"><!--<a translation-url  ng-href="#" class="btn btn-sm btn-primary" ng-click="showReference(schema);">
-                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-default" ng-click="refreshList(schema);"><i class="fa fa-refresh"></i> Обновить</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary bold" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i> Добавить новую запись </a></div>
+                        <span class="glyphicon glyphicon-random"></span> Show Reference</a>--> <a translation-url  href="#" class="btn btn-sm btn-default" ng-click="refreshList(schema);"><i class="fa fa-refresh"></i> Обновить</a> <a translation-url  ng-href="/register/{{schema|urlSchemaShortName}}/new" class="btn btn-sm btn-primary bold" style="color:#fff;" id="new_button"><i class="fa fa-plus-square"></i> Добавить новую запись</a></div>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                     <td colspan="6" style="text-align:center;padding:30px;"><i class="fa fa-spin fa-cog" /> загрузка ...:</td>
                 </tr>
                 <tr ng-cloak ng-show="!loading && filteredRecords.length <= 0">
-                    <td colspan="6" style="text-align:center;padding:30px;"> <strong>Записей не найдено.</strong></td>
+                    <td colspan="6" style="text-align:center;padding:30px;"><strong>Записей не найдено.</strong></td>
                 </tr>
 
                 <tbody ng-repeat="record in (filteredRecords = (records | filter:schemaFilter | filter:statusFilter | filter:keywords | orderBy:orderBy))">
@@ -69,10 +69,10 @@
                         </td>
                         <td><span ng-if="record.workflowActivityStatus == 'pending'" ><div class="btn btn-primary color-white" ><i class="fa fa-spin fa-spinner"/> Обработка...</div></span><div ng-show="record.workflowActivityStatus!='pending'">
 
-                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold"> Опубликовано </div>
-                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold"> Черновик </div><span class="color-red bold" ng-show="record.revoked">Отозвано</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">На утверждении</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">На утверждении</div>
+                                <div ng-show="!record.revoked && isPublished(record) && !isRequest(record)" class="color-published-green bold">Опубликовано</div>
+                                <div ng-show="!record.revoked && isDraft(record) && !isRequest(record)" class="color-litegrey bold">Черновик</div><span class="color-red bold" ng-show="record.revoked">Отозвано</span> <a translation-url  class="btn btn-danger color-white" ng-show="!record.revoked  && isRequest(record) && !record.isUpdating " ng-href="/register/{{record.metadata.schema | urlSchemaShortName}}/{{record.identifier}}/view">На утверждении</a><div class="color-red bold" ng-show="!record.revoked && isRequest(record) && record.isUpdating">На утверждении</div>
                                 <div ng-show="!record.revoked && isRequest(record) && record.isUpdating">
-                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Обработка... </strong></a></div>
+                                    <div ng-show="isRequest(record) && record.isUpdating"><a translation-url  class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Обработка...</strong></a></div>
                                 </div>
                         </td>
                         <td>
@@ -92,7 +92,7 @@
                                 <table class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <td> Поле </td>
+                                            <td>Поле</td>
                                             <td>Текущая версия поля</td>
                                             <td>Версия справочной записи</td>
                                             <td></td>
@@ -121,16 +121,16 @@
                         <div ng-show="isDraft(recordToDelete)" class="well" style="font-size:14px;">
                             <div style="font-size:11px;font-weight:bold;text-transform:uppercase;color:#999;border-bottom:1px solid #ddd;margin-bottom:10px;">ЧЕРНОВИК</div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Название:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.workingDocumentTitle|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">Название:</div><div class="col-xs-10" style="font-weight:bold">{{recordToDelete.workingDocumentTitle|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">Уникальный идентификатор:</div> <div class="col-xs-10" style="font-weight:bold"> <i>ЧЕРНОВИК</i></div>
+                                <div class="col-xs-2" class="small color-litegrey">Уникальный идентификатор:</div><div class="col-xs-10" style="font-weight:bold"><i>ЧЕРНОВИК</i></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">Резюме:</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">Резюме:</div><div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></span></div>
                              </div>
                             <div class="row" style="margin-top:10px;"> 
-                                <div class="col-xs-12"> <button type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Удалить черновик</button></div>
+                                <div class="col-xs-12"><button type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Удалить черновик</button></div>
                             </div>
                         </div>
 
@@ -140,13 +140,13 @@
                                  <div class="col-xs-12 bold">Опубликованные записи о международно признанных сертификатах о соответствии требованиям (МПССТ) могут быть только отозваны. Отозванный МПССТ будет считаться недействительным, а опубликованная в МП-ДГРСИВ запись о нем будет сохраняться в целях обеспечения отслеживания и прозрачности. Отозванные МПССТ будут четко помечены как отозванные в результатах поиска и при отображении записи.</div>
                               </div>
                             <div class="row">     
-                                <div class="col-xs-2" class="color-litegrey">Название:</div> <div class="col-xs-10" style="font-weight:bold"> {{recordToDelete.title|lstring}}</div>
+                                <div class="col-xs-2" class="color-litegrey">Название:</div><div class="col-xs-10" style="font-weight:bold">{{recordToDelete.title|lstring}}</div>
                               </div>
                              <div class="row">    
-                                <div class="col-xs-2" class="small color-litegrey">Уникальный идентификатор:</div> <div class="col-xs-10" style="font-weight:bold"> <a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
+                                <div class="col-xs-2" class="small color-litegrey">Уникальный идентификатор:</div><div class="col-xs-10" style="font-weight:bold"><a translation-url  href="/database/{{recordToDelete | uniqueIDWithoutRevision}}" target="_new">{{recordToDelete | uniqueIDWithoutRevision}}</a></div>
                              </div>
                             <div class="row"> 
-                                <div class="col-xs-2" class="color-litegrey">Резюме:</div> <div class="col-xs-10" style="font-weight:bold" > <span ng-bind-html="recordToDelete.summary|lstring"></span></div>
+                                <div class="col-xs-2" class="color-litegrey">Резюме:</div><div class="col-xs-10" style="font-weight:bold" ><span ng-bind-html="recordToDelete.summary|lstring"></span></div>
                              </div>
 
                               <div class="row" ng-show="isIRCC"> 
@@ -162,7 +162,7 @@
                              </div>
 
                             <div class="row" style="margin-top:10px;" ng-show="!isIRCC"> 
-                                <div class="col-xs-12">  <button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Примечание: также будут удалены любые находящиеся на утверждении черновики"><span ng-if="!security.canDelete">Запрос на удаление данной записи</span> <span ng-if="security.canDelete">Удалить запись </span></button> 
+                                <div class="col-xs-12"><button ng-show="security" type="button" class="btn btn-danger" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Примечание: также будут удалены любые находящиеся на утверждении черновики"><span ng-if="!security.canDelete">Запрос на удаление данной записи</span> <span ng-if="security.canDelete">Удалить запись</span></button> 
                                 </div>
                             </div>
                         </div>

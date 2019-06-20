@@ -1,11 +1,11 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
-		<h4>Инициатива по созданию потенциала<span class="color-black"> (ИСП) </span></h4>
+		<h4>Инициатива по созданию потенциала<span class="color-black"> (ИСП)</span></h4>
     </div>
 	<div class="record-body panel-body">
 			
-		<document-date></document-date> <br><div ng-show="document.title">
+		<document-date></document-date><br><div ng-show="document.title">
 			<label>Название</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
@@ -16,29 +16,29 @@
 		</div>
 
 		<div ng-show="document.geographicScope">
-			<label>Географический охват</label><span class="km-value">{{document.geographicScope.scope | term:locale}} </span></div>
+			<label>Географический охват</label><span class="km-value">{{document.geographicScope.scope | term:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && (document.geographicScope.regions || document.geographicScope.countries)">
 			<label>Географическая(-ие) или политическая(-ие)/экономическая(-ие) группа(-ы) и/или страна(-ы)</label>
 			<div class="km-value">
                 <ul  class="list" ng-show="document.geographicScope.regions || document.geographicScope.countries">
-                    <li ng-repeat="term in document.geographicScope.regions">{{term | term:locale}} </li>
-                    <li ng-repeat="term in document.geographicScope.countries">{{term | term:locale}} </li>
+                    <li ng-repeat="term in document.geographicScope.regions">{{term | term:locale}}</li>
+                    <li ng-repeat="term in document.geographicScope.countries">{{term | term:locale}}</li>
                 </ul>
             </div>
 		</div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.jurisdiction">
-			<label>Юрисдикция</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}} </span></div>
+			<label>Юрисдикция</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.community">
-			<label>Общинная</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}} </span></div>
+			<label>Общинная</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}}</span></div>
 
 		<div>
 			<label>Тип инициативы по созданию потенциала</label>
 			<div style="padding-left:20px" >
 				<div>
-					<label>a. Is this a dedicated ABS capacity-building project/programme? </label>
+					<label>a. Is this a dedicated ABS capacity-building project/programme?</label>
 					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Да</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isProjectProgramme">Нет</div>
 				</div>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div>
-					<label>c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme? </label>
+					<label>c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?</label>
 					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Да</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isStandaloneProject">Нет</div>
 				</div>
@@ -66,7 +66,7 @@
 		</div>
 	
 		<div ng-show="document.status">
-			<label>Статус документа</label><span class="km-value">{{document.status | term:locale}} </span></div>
+			<label>Статус документа</label><span class="km-value">{{document.status | term:locale}}</span></div>
 
 		<div ng-show="(document.startDate && document.endDate) || document.durationPeriod || document.durationText">
 	  			<div class="row" ng-show="document.startDate && document.endDate">
@@ -82,7 +82,7 @@
 
 	  			<div ng-show="document.durationPeriod || document.durationText">
 	  				<label>Продолжительность</label>
-	  				<div class="km-value km-pre">{{document.durationPeriod}} {{document.durationText | lstring:locale}} </div>
+	  				<div class="km-value km-pre">{{document.durationPeriod}} {{document.durationText | lstring:locale}}</div>
 	  			</div>
 		</div>
 

@@ -103,12 +103,12 @@
                 <div class="col-xs-12 col-form-label">Sch&eacute;ma : {{record.schema|schemaName}}</div>
                 <div class="col-xs-12 col-form-label">Rapport&eacute; par : {{record.reportedBy}}</div>
                 <div class="col-xs-12 col-form-label">Rapport&eacute; le : <span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span></div>
-                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect ou inappropri&eacute; |</span> <span ng-if="record.broken">lien erron&eacute; ou information d&eacute;su&egrave;te |</span> <span ng-if="record.copyright">atteinte au droit d&rsquo;auteur</span><br> {{record.additionalInformation}}</div>
+                <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">
             <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Non</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Oui</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
         </div>
     </script>
 

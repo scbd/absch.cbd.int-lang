@@ -1,12 +1,8 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading  bg-blue">
-		<h4><span >Competent National Authority <span class="color-black"> (CNA) </span> </span></h4>
+		<h4><span >Autoridad nacionales competentes <span class="color-black">(ANC)</span></span></h4>
 	</div>
-	<style>
-		#Record p:empty, #Record div:empty{
-			display:none
-		}
-	</style>
+	<style> #Record p:empty, #Record div:empty{ display:none } </style>
 
 	<div class="record-body panel-body" help schema="viewCNA" >
 		
@@ -23,9 +19,9 @@
 			<div class="km-value">
 				<div><strong>{{document.name | lstring:locale}}</strong></div>
 				<div ng-show="document.address">{{document.address | lstring:locale}}</div>
-				<div ng-show="document.city">{{document.city | lstring:locale}}<span ng-show="document.city">, </span></div>
+				<div ng-show="document.city">{{document.city | lstring:locale}}<span ng-show="document.city">,</span></div>
 				<div ng-show="document.state">{{document.state | lstring:locale}}<br ng-show="document.city || document.state" /></div>
-				<div ng-show="document.postalCode">{{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">, </span></div>
+				<div ng-show="document.postalCode">{{document.postalCode | lstring:locale}}<span ng-show="document.postalCode">,</span></div>
 				<div ng-show="document.country">{{document.country|term}}</div>
 				<ul ng-show="document.phones" class="list"  style="list-style-type: none;padding: 0px;margin: 3px 0 0 0;">
 					<li ng-repeat="item in document.phones track by $index"><i class="fa fa-phone"></i> {{item}}</li>
@@ -38,7 +34,7 @@
 				</ul>
 
 				<ul  ng-show="document.websites" class="list" style="list-style-type: none;padding: 0px;margin: 3px 0 0 0;">
-					<li ng-repeat="item in document.websites"><a translation-url  target="_new_" ng-href="{{item.url}}"> <i class="fa fa-external-link"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
+					<li ng-repeat="item in document.websites"><a translation-url  target="_new_" ng-href="{{item.url}}"><i class="fa fa-external-link"></i> {{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
 				</ul>
 			</div>
 		</div>
@@ -61,7 +57,7 @@
 				</div>
 			</div>
 			<div ng-if="document.absPolicyBasisForCompetencyRef">
-				<label>Enlaces a la(s) medida(s) legislativa(s), administrativa(s) o de pol&iacute;tica pertinentes </label>
+				<label>Enlaces a la(s) medida(s) legislativa(s), administrativa(s) o de pol&iacute;tica pertinentes</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.absPolicyBasisForCompetencyRef" >
@@ -74,7 +70,7 @@
 		</div>
 
 		<div ng-if="document.responsibilities ||document.absResponsibleForAll || document.absFunctions|| document.absJurisdiction||document.absGeneticResourceTypes ">
-			<legend name="ABSResponsibilities">Resumen de las responsabilidades en materia de APB </legend>
+			<legend name="ABSResponsibilities">Resumen de las responsabilidades en materia de APB</legend>
 
 			<div ng-show="document.responsibilities">
 				<div class="km-value" ng-bind-html="document.responsibilities | lstring:locale"></div>
@@ -99,7 +95,7 @@
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
 				<label>Jurisdicci&oacute;n(es) cubierta(s) por esta ANC</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? &apos;&apos; : &apos;, &apos;}} </span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? &apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>
@@ -115,7 +111,7 @@
 				<label>Palabras clave para ayudar a describir las responsabilidades de la autoridad nacional competente</label>
 				<div class="km-value" >
 					<ul class="list">
-						<li ng-repeat="term in document.absGeneticResourceTypes">{{term|term}} </li>
+						<li ng-repeat="term in document.absGeneticResourceTypes">{{term|term}}</li>
 					</ul>
 				</div>
 			</div>
