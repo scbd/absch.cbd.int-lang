@@ -1,12 +1,12 @@
 ﻿<div class="modal-content">
 
-    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group &gt; .btn { float: none; display: inline-block; } </style>
+    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group > .btn { float: none; display: inline-block; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Grant / Revoke Roles - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
+        <h3 class="modal-title">授予/撤销角色 - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
 
-    <div class="modal-body"><!-- ROLES --><p>Please select which functions you want assign to the user</p>
+    <div class="modal-body"><!-- ROLES --><p>请选择要分配给这位用户的职能</p>
 
 
         <table class="table table-striped" style="width:100%">
@@ -29,6 +29,6 @@
         </div>
 
         <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">取消</button>
-        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editRolesDialogCtrl.save()" ng-disabled="!editRolesDialogCtrl.stats().changes">Next »</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editRolesDialogCtrl.save()" ng-disabled="!editRolesDialogCtrl.stats().changes">下一条 »</button>
     </div>
 </div>

@@ -3,7 +3,7 @@
         <style> #rec {font-size:12px;} #rec .type {text-transform:uppercase; white-space:nowrap; font-size:10px; font-weight:bold;} #rec .id {text-transform:uppercase; white-space:nowrap; } #rec .title {color:#111;font-size:12px; font-weight:bold;} #rec .meta {max-width:20%;} .col-title {color:#333; text-transform: uppercase; font-size: 12px; font-weight: bold;} </style><!-- existing documents display --><div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || &apos;Add record&apos;}}{{type!==&apos;radio&apos; ? &quot;(s)&quot; : &quot;&quot;}}</button><span ng-show="model.length==0 || !model"><i class="color-blue">No hay enlaces a registros.</i></span> <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} linked records.</a></div>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'Add record'}}{{type!=='radio' ? "(s)" : ""}}</button><span ng-show="model.length==0 || !model"><i class="color-blue">No hay enlaces a registros.</i></span> <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} linked records.</a></div>
     </div>
     <div class="row" ng-show="areVisible && !disabled">
         <div class="col-xs-12"><br /><table class="table" id="search-new" style="padding-bottom:3px;width:100%;">
@@ -28,8 +28,8 @@
         <div class="rounded bg-dropshadow" id="{{question}}">
             <div class="modal-header bg-grey ">
                 <h3>Please select from the list of <span class="bold color-blue">{{docs.length}}</span> published record(s) below:</h3>
-                <div ng-if="hideAddContact" class="help-info">If the record is not listed, please save your current draft and go to the &lsquo;Dashboard&rsquo; and create a new record.</div>
-                <div ng-if="!hideAddContact" class="help-info">If the contact you are looking for is not listed, please create a new record by clicking the <a style="cursor:pointer;" ng-click="addNewContact=!addNewContact;loadContactDirective()">&apos;create contact&apos;</a> button below.</div><!-- <div ng-show="filter"> --><input type="textbox" ng-model="keyword" placeholder="filtrar registros por palabras clave o identificador &uacute;nico" class="form-control"><!-- </div> --></div>
+                <div ng-if="hideAddContact" class="help-info">If the record is not listed, please save your current draft and go to the ‘Dashboard’ and create a new record.</div>
+                <div ng-if="!hideAddContact" class="help-info">If the contact you are looking for is not listed, please create a new record by clicking the <a style="cursor:pointer;" ng-click="addNewContact=!addNewContact;loadContactDirective()">'create contact'</a> button below.</div><!-- <div ng-show="filter"> --><input type="textbox" ng-model="keyword" placeholder="filtrar registros por palabras clave o identificador único" class="form-control"><!-- </div> --></div>
             
             <div class="modal-body" >
                 
@@ -79,9 +79,9 @@
                                             <td >{{doc.rec_countryName}}</td>
                                             <td class="id color-blue"><a href="{{doc.url_ss}}" target="_blank">{{doc.uniqueIdentifier_s}}</a></td>
                                             <td class="summary">{{doc.rec_summary | limitTo:20 }}</td>
-                                            <td class="meta"><span ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
-                                            <td class="meta"><span ng-repeat="meta1 in doc.rec_meta2">{{meta1}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
-                                            <td class="meta"><span ng-repeat="meta2 in doc.rec_meta3">{{meta2}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ? '':', '}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta1 in doc.rec_meta2">{{meta1}}{{$last ? '':', '}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta2 in doc.rec_meta3">{{meta2}}{{$last ? '':', '}}</span></td>
                                         </tr>
                                         </tbody>
                                       </table>
@@ -90,7 +90,7 @@
                         </div> 
 
                     <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> Cargando...</div>
-                    <div ng-if="rawDocuments.numFound===0">No se encontr&oacute; registro</div>
+                    <div ng-if="rawDocuments.numFound===0">no se encontraron registros.</div>
                 </div>
                 <div  ng-show="addNewContact" class="row" style="max-width:100%">
                     <div id="divNewContact" class="col-lg-12" style="margin:20px"></div>

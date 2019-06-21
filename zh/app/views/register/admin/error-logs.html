@@ -1,6 +1,6 @@
 ﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
 	<link href="/app/css/register.css" rel="stylesheet">
-	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style> .table&gt;tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style> .table>tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-pink color-white">
@@ -13,7 +13,7 @@
 			<legend name="formInfo" style="display:none"></legend><!--<div style="font-weight:bold;">Records which have been not approved since 12 weeks.</div>--><div class="registerpage-content">
 
 				<div class="alert alert-danger" ng-show="__error"><strong>错误：</strong>{{__error}}</div>
-				<legend>Filters</legend>
+				<legend>筛选条件</legend>
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="km-control-group" name="startDate" required caption="开始日期">

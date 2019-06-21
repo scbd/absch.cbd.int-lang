@@ -18,7 +18,7 @@
 									<legend>Общая информация</legend>
 									<div class="row">
 										<div class="col-xs-12" >
-											<div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -36,7 +36,7 @@
 	
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="authorities" caption="Competent National Authority(ies) responsible for the decision or communication">											
+												<div class="km-control-group" name="authorities" caption="Компетентный(-ые) национальный(-ые) орган(ы), отвечающий(-ие) за решение или сообщение">											
 													<div document-selector ng-model="document.authorities" question="authorities"
 														government="document.government" schema="(authority)"></div>			
 												</div>
@@ -60,7 +60,7 @@
 	
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="takenPriorEntryIntoForce" required caption="Is the decision taken prior to entry into force of the Protocol?">
+												<div class="km-control-group" name="takenPriorEntryIntoForce" required caption="Принято ли решение до вступления Протокола в силу?">
 													<div km-yes-no required ng-model="document.takenPriorEntryIntoForce" locales="document.header.languages"></div>
 												</div>
 											</div>
@@ -69,7 +69,7 @@
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="jurisdictions" caption="Юрисдикция(-и)">
-													<div class="help-info">Предоставить информацию о юрисдикции на которой применяются закон, норма, руководящий принцип или соглашение, если она отлична от названия страны. Пример: Страна: Дания, юрисдикция: «С территориальными исключениями в отношении Фарерских островов и Гренландии».</div>
+													<div class="help-info">Provide the jurisdiction where the law, regulation, guideline or agreement applies if this is different from the country name. Пример: Страна: Дания, юрисдикция: «С территориальными исключениями в отношении Фарерских островов и Гренландии».</div>
 													<div km-select multiple name="jurisdictions" ng-model="document.jurisdictions" items="options.countries()"></div>
 												</div>
 											</div>
@@ -84,7 +84,7 @@
 	
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="isAmendment" required caption="Is this an amendment to a previous decision / communication?">
+												<div class="km-control-group" name="isAmendment" required caption="Является ли это поправкой к предыдущему решению/сообщению?">
 													<div km-yes-no required ng-model="document.isAmendment" locales="document.header.languages"></div>
 												</div>
 											</div>
@@ -108,8 +108,8 @@
 	
 								<section>
 									<div class="well no-shadow bg-white">
-									<label for="decisionTypes" style="width:0px;height:0px;display:inline"><span style="display:none">Subject of the decision / notification / communication</span></label>
-									<legend>Subject of the decision / notification / communication</legend>								
+									<label for="decisionTypes" style="width:0px;height:0px;display:inline"><span style="display:none">Предмет решения/уведомления/сообщения</span></label>
+									<legend>Предмет решения/уведомления/сообщения</legend>								
 									<div class="row">
 										<div class="col-xs-12">
 											<div block-region activate="decisions.otherDecisions.identifier" skip-loading-icon="true" >
@@ -133,7 +133,7 @@
 	
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>LMOs for intentional introduction into the environment</legend>
+										<legend>ЖИО для преднамеренной интродукции в окружающую среду</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="addressesTransboundaryMovement" required caption="Was the decision triggered by a request for a transboundary movement of LMOs into your country?">
@@ -149,28 +149,28 @@
 												</div>									
 											</div>
 											<div class="col-sm-12">
-												<div class="km-control-group" name="receiptDate"  caption="Date on which the notification was received." style="width:40%">
+												<div class="km-control-group" name="receiptDate"  caption="Дата получения уведомления." style="width:40%">
 													<div km-date placeholder="ГГГГ-ММ-ДД" name="receiptDate" required ng-model="document.receiptDate"></div>
 												</div>
 											</div>
 											<div class="col-sm-12">
-												<div class="km-control-group" name="receiptAcknowledgementDate"  caption="Date on which acknowledgement of receipt of the notification was sent to the notifier." style="width:40%">
+												<div class="km-control-group" name="receiptAcknowledgementDate"  caption="Дата отправки уведомителю подтверждения о получении уведомления." style="width:40%">
 													<div km-date placeholder="ГГГГ-ММ-ДД" name="receiptAcknowledgementDate" required ng-model="document.receiptAcknowledgementDate"></div>
 												</div>
 											</div>
 											<div class="col-sm-12">
-												<div class="km-control-group" name="communicationDate"  caption="Date on which the decision was communicated to the notifier." style="width:40%">
+												<div class="km-control-group" name="communicationDate"  caption="Дата сообщения решения уведомителю." style="width:40%">
 													<div km-date placeholder="ГГГГ-ММ-ДД" name="communicationDate" required ng-model="document.communicationDate"></div>
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="exporters" caption="Please provide Exporter&rsquo;s contact details">											
+												<div class="km-control-group" name="exporters" caption="Please provide Exporter’s contact details">											
 													<div document-selector ng-model="document.exporters" question="exporters"
 														government="document.government" schema="(contact)"></div>			
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant&apos;s contact details">											
+												<div class="km-control-group" name="importers" caption="Please provide Importer/Applicant's contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -183,7 +183,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12">
-												<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
+												<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
 													<div document-selector ng-model="document.importers" question="importers"
 														government="document.government" schema="(contact)"></div>			
 												</div>
@@ -205,7 +205,7 @@
 										</div>
 										<div class="row">
 											<div class="col-xs-12">
-												<div class="km-control-group" name="appliesToSubsequentIntroductions" required caption="Will the decision apply to subsequent introductions of the same LMO(s) into the environment?">
+												<div class="km-control-group" name="appliesToSubsequentIntroductions" required caption="Будет ли данное решение применяться к последующим интродукциям тех же ЖИО в окружающую среду?">
 													<div km-yes-no required ng-model="document.appliesToSubsequentIntroductions" locales="document.header.languages"></div>
 												</div>
 											</div>
@@ -214,7 +214,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForDirectUse">
 									<div class="well no-shadow bg-white">
-										<legend>LMOs for direct use as food or feed, or for processing (LMOs-FFPs)</legend>
+										<legend>ЖИО, предназначенные для непосредственного использования в качестве продовольствия или корма или для обработки (ЖИО-ПКО)</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="decisionLMOFFPSubject" required caption="Subject of the decision">
@@ -228,14 +228,14 @@
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="appliesToTransboundaryMovement" required 
-												caption="Has the decision been taken in the absence of a domestic regulatory framework and in accordance with Article 11.6?">
+												caption="Принято ли решение при отсутствии национальной регламентационной базы и в соответствии со статьей 11.6?">
 													<div km-yes-no required ng-model="document.appliesToTransboundaryMovement" locales="document.header.languages"></div>
 												</div>
 											</div>
 										</div>
 										<div class="row" ng-if="isLmoDecisionForIntentionalIntroduction">
 											<div class="col-xs-12">
-												<div class="alert alert-danger"><strong>Note:</strong> The first two categories in the field Subject of the decision / communication at the top of this page have been selected indicating that this record refers to a decision addressing LMOs for both Intentional introduction into the environment (Articles 7-10) AND LMOs-FFPs (Article 11). Accordingly, the fields below, Type of decision and contact details of the importer/exporter or applicant, are therefore not active because the information has already been provided. Should this not be the case, please create two different records, one for intentional introduction into the environment and one for the LMOs-FFPs.</div>
+												<div class="alert alert-danger"><strong>Note:</strong> выбор первых двух категорий в поле «Предмет решения/сообщения» в верхней части этой страницы указывает на то, что данная запись относится к решению, касающемуся ЖИО, предназначенных для преднамеренной интродукции в окружающую среду (статьи 7–10) и ЖИО-ПКО (статья 11). Соответственно, поля ниже «Тип решения» и «Контактные данные импортера/экспортера или заявителя» не активны, поскольку данная информация уже была представлена. В противном случае следует создайте две различные записи: одну для преднамеренной интродукции в окружающую среду и одну для ЖИО-ПКО.</div>
 											</div>
 										</div>
 										<div class="row">
@@ -252,19 +252,19 @@
 														</div>
 													</div>
 													<div class="col-xs-12" ng-if="'0D0BEEF4-54E4-44C1-ABB2-B89DC145E0B3'">
-														<div class="km-control-group" name="exporters"  caption="Please provide Exporter&rsquo;s contact details">											
+														<div class="km-control-group" name="exporters"  caption="Please provide Exporter’s contact details">											
 															<div document-selector ng-model="document.exporters" question="exporters"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant&apos;s contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Importer/Applicant's contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
 													</div>
 													<div class="col-xs-12">
-														<div class="km-control-group" name="importers" required caption="Please provide Applicant&rsquo;s contact details">											
+														<div class="km-control-group" name="importers" required caption="Please provide Applicant’s contact details">											
 															<div document-selector ng-model="document.importers" question="importers"
 																government="document.government" schema="(contact)"></div>			
 														</div>
@@ -276,10 +276,10 @@
 								</section>
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>Result of the decision</legend>
+										<legend>Результат решения</legend>
 										<div class="row">
 											<div class="col-xs-12" >
-												<div class="km-control-group" name="decisionResult" required caption="Result of the decision">												
+												<div class="km-control-group" name="decisionResult" required caption="Результат решения">												
 													<div km-term-radio required ng-model="document.decisionResult" locales="document.header.languages"
 														terms="options.decisionResult()" binding-type="term"></div>
 												</div>		
@@ -289,7 +289,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>LMO &amp; risk assessment</legend>
+										<legend>ЖИО и оценка рисков</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="modifiedOrganisms" required caption="Идентификация ЖИО">											
@@ -310,7 +310,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>Decision and/or other relevant document(s)</legend>
+										<legend>Решение и/или другой(-ие) соответствующий(-ие) документ(ы)</legend>
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="km-control-group" name="documents" required caption="Document (attached file)">
@@ -324,7 +324,7 @@
 	
 								<section>
 									<div class="well no-shadow bg-white">
-										<legend>Сроки подтверждения или обновления информации</legend>
+										<legend>Timeframe for confirmation or updating of information</legend>
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="km-control-group" name="expires" required caption="Should this information be confirmed or updated after two years from the date of submission?">												

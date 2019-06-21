@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div ng-if="showSystemAlerts">
             <div class="row" style="padding:10px 0;background-color:#eee;">
-                <div class="col-xs-7 col-sm-8"><small class="color-red">system alert</small><br> <span class="bold">Certificates (IRCC) published indicating that prior informed consent (PIC) has been granted to a user within my jurisdiction</span></div>
+                <div class="col-xs-7 col-sm-8"><small class="color-red">alerta del sistema</small><br> <span class="bold">Certificados (CCRI) publicados que indican que se ha otorgado un consentimiento fundamentado previo (CFP) a un usuario dentro de mi jurisdicción</span></div>
                 <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Email&nbsp;me</small><div ng-click="subscribe('absPermit')" class="color-white" ng-if="!hasUserSubscribed('absPermit')"
                         style="cursor:pointer"><i class="fa fa-square fa-2x"></i></div>
                     <div ng-click="unsubscribe('absPermit')" class="color-darkgray" ng-if="hasUserSubscribed('absPermit')"
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-xs-1 text-center color-white"><small class="hidden-xs">Editar</small><div style="cursor:pointer"><i class="fa fa-edit fa-2x"></i></div>
                 </div>
-                <div class="col-xs-1 text-center color-white"><small class="hidden-xs">Borrar</small><div style="cursor:pointer"><i class="fa fa-trash-o fa-2x"></i></div>
+                <div class="col-xs-1 text-center color-white"><small class="hidden-xs">Eliminar</small><div style="cursor:pointer"><i class="fa fa-trash-o fa-2x"></i></div>
                 </div>
             </div>
         </div>
@@ -28,15 +28,15 @@
                 </div>
                 <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Editar</small><div style="cursor:pointer" ng-hide="del" ng-click="addEdit(record)" ng-disabled="!record._id"><i class="fa fa-edit fa-2x"></i></div>
                 </div>
-                <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Borrar</small><div style="cursor:pointer" ng-hide="del" ng-click="del=!!record._id;confirmDelete(record)" ng-disabled="!record._id"><i class="fa fa-trash-o fa-2x"></i></div>
+                <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Eliminar</small><div style="cursor:pointer" ng-hide="del" ng-click="del=!!record._id;confirmDelete(record)" ng-disabled="!record._id"><i class="fa fa-trash-o fa-2x"></i></div>
                 </div>
             </div>
         </div>
-    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Add new</button>
+    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Agregar nuevo</button>
     <div class="clearfix"></div>
 
     <div ng-show="!loading && (!userFilters || userFilters.length==0) && !showSystemAlerts">
-        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">You do not have any saved alerts. <span ng-if="!user.isAuthenticated">Please log in to view your saved alerts.</span></div>
+        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">No tiene ninguna alerta guardada. <span ng-if="!user.isAuthenticated">Sírvase iniciar sesión para ver sus alertas guardadas.</span></div>
     </div>
     <script type="text/ng-template" trados-translation="true" id="newFilterDialog">
         <div class="modal-header">
@@ -45,13 +45,13 @@
         <div class="modal-body">
                 <div class="form-group">
                 <label for="filterTitle">Alert title:</label>
-                <input type="text" ng-model="document.queryTitle" class="form-control" placeholder="Buscar denominaci&oacute;n">
+                <input type="text" ng-model="document.queryTitle" class="form-control" placeholder="Buscar denominación">
             </div>
             <div>
                 <div class="alert alert-danger" role="alert" ng-if="errors && errors.length > 0">
                     <p ng-repeat="error in errors">{{error}}</p>
                 </div>
-            </div><br><label for="filterTitle">Seleccionar filtros de b&uacute;squeda:</label>
+            </div><br><label for="filterTitle">Seleccionar filtros de búsqueda:</label>
             <div class="bg-white" style="border:1px solid #ccc; border-radius: 5px;">
                 <search-directive skip-results="true" skip-save-filter="true" skip-date-filter="true" skip-keywords-filter="{{skipKeywordsFilter}}"
                     skip-text-filter="{{skipTextFilter}}">

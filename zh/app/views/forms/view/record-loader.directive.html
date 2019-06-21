@@ -22,7 +22,7 @@
                     <div class="well">
                         <h3 style="margin:0 0 10px 0;padding:0;border-bottom:1px solid #999;">记录信息</h3>
                         <div><span style="font-size:12px">Type:</span> {{internalDocumentInfo.metadata.schema | schemaName}}</div>
-                        <div><span style="font-size:12px">Status:</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">DRAFT</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLISHED</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[Locked:Pending {{workflowRequestType}} request]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">DELETED</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">REVOKED</span></span></div>
+                        <div><span style="font-size:12px">Status:</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">DRAFT</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLISHED</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[Locked:正在等待 {{workflowRequestType}} 请求 ]</span><span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">已删除</span><span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red"> 已撤销</span></span></div>
                         <div><span style="font-size:12px">历史：</span><div view-history document-id="internalDocumentInfo.identifier"></div>
                         </div>
 
@@ -34,7 +34,7 @@
 
 
         <div class="alert alert-danger" role="alert" ng-show="internalDocumentInfo.latestRevision != internalDocumentInfo.revision && revisionNo != 'draft'">
-            <h3>This document has been updated.This is not the latest published version.<a translation-url ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}"
+            <h3>本文档已更新。这不是最新发布的版本。<a translation-url ng-href="/database/{{internalDocument.header.schema | urlSchemaShortName}}/{{internalDocument | uniqueIDWithoutRevision}}"
                     target="new">Click here to view the latest version of the record.</a></h3>
         </div>
 

@@ -2,24 +2,24 @@
     
     <div class="container">
         
-        <h1>BCH Information Submission</h1>
+        <h1>Представление информации в МПБ</h1>
     
         <h2>Регистрация национальных записей</h2>
-        <p>The submission of records in this category is restricted to Biosafety Clearing-House National Focal Points (BCH-NFPs) and National Authorized Users (NAUs). All records submitted by NAUs will be forwarded to the BCH-NFP for review and validation prior to publication (see FAQs).</p>
+        <p>Записи этой категории могут представляться только национальными координационными центрами Механизма посредничества по биобезопасности (НКЦ-МПБ) и национальными зарегистрированными пользователями (НЗП). До публикации все записи, представленные НЗП, будут переданы НКЦ-МПБ для проверки и аттестации (см. ЧЗВ).</p>
         
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.national" >
                 <h3 style="font-size:auto">{{::s.title}}</h3>
-                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema|urlSchemaShortName}}" class="btn btn-default" style="width:100%">Submit</a></div>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema|urlSchemaShortName}}" class="btn btn-default" style="width:100%">Представить</a></div>
         </div>
         
         <h2>Регистрация справочных записей</h2>
-        <p>Записи в этой категории могут представлять все зарегистрированные пользователи. These records will be subject to review and validation by the Secretariat prior to publication (see FAQs).</p>
+        <p>Records in this category may be submitted by all registered users. Эти записи подлежат проверке и аттестации Секретариатом перед их публикацией (см. ЧЗВ).</p>
         
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.reference" >
                 <h3 style="font-size:auto">{{::s.title}}</h3>
-                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema|urlSchemaShortName}}" class="btn btn-default" style="width:100%">Submit</a></div>
+                <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema|urlSchemaShortName}}" class="btn btn-default" style="width:100%">Представить</a></div>
         </div>
     </div>
 </div>

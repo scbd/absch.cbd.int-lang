@@ -45,8 +45,8 @@ style="max-width:90%">
                                 <input name="title" ng-model="document.title" required md-maxlength="200" minlength="4">
                                 <div ng-messages="editForm.title.$error" ng-show="editForm.title.$dirty">
                                     <div ng-message="required">Please enter {{helptype}}!</div>
-                                    <div ng-message="md-maxlength">That&apos;s too long!</div>
-                                    <div ng-message="minlength">That&apos;s too short!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                    <div ng-message="minlength">That's too short!</div>
                                 </div>
                             </md-input-container>
                             <md-input-container>
@@ -54,8 +54,8 @@ style="max-width:90%">
                                 <div km-rich-textbox name="description" ng-model="document.description" rows="6"
                                                         placeholder="" locales="languages" required toolbar="[['bold', 'italics', 'ul', 'ol', 'redo', 'undo', 'clear'], ['insertLink', 'html']]"></div><!--<textarea name="description" ng-model="document.description" required md-maxlength="25000" minlength="4" />--><div ng-messages="editForm.titdescriptionle.$error" ng-show="editForm.description.$dirty">
                                     <div ng-message="required">Please enter term description!</div>
-                                    <div ng-message="md-maxlength">That&apos;s too long!</div>
-                                    <div ng-message="minlength">That&apos;s too short!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                    <div ng-message="minlength">That's too short!</div>
                                 </div>
                             </md-input-container>
                             <div layout="column">
@@ -80,7 +80,7 @@ style="max-width:90%">
                         <div class="pull-right"><!--<button type="button" class="btn btn-warning pull-right" ng-click="saveGlossary()" ng-if="!document.description.en">
                                 need save
                             </button>--><button type="button" class="btn btn-success pull-right" ng-click="editGlossary()"  ng-if="canEdit()">Editar</button>
-                            <button type="button" class="btn btn-warning" ng-click="deleteGlossary(document)" ng-if="canEdit()">Borrar</button>
+                            <button type="button" class="btn btn-warning" ng-click="deleteGlossary(document)" ng-if="canEdit()">Eliminar</button>
                         </div>
                         <section>
                             <legend name="termCation">{{document.sequence}} {{document.title}}</legend>
@@ -91,7 +91,7 @@ style="max-width:90%">
                                 </div>
                             </div>
                         </section><br><section ng-if="document.related">
-                            <legend>En relaci&oacute;n con el taller</legend>
+                            <legend>En relación con el taller</legend>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <md-list >

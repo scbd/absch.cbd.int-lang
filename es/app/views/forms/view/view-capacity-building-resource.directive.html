@@ -1,13 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
-		<h4>Recursos para la creaci&oacute;n de capacidad</h4>
+		<h4>Recursos para la creación de capacidad</h4>
     </div>
 	<div class="record-body panel-body">
 
 			
 		<document-date></document-date><br><div ng-show="document.title">
-			<label>Denominaci&oacute;n</label>
+			<label>Título</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
 
@@ -26,12 +26,12 @@
 		</div>
 
 		<div ng-show="document.formatDetails">
-			<label>Informaci&oacute;n acerca de los formatos</label>
+			<label>Información acerca de los formatos</label>
 			<div class="km-value km-pre">{{document.formatDetails | lstring:locale}}</div>
 		</div>
 
 		<div ng-show="document.purpose">
-			<label>S&iacute;rvase indicar el prop&oacute;sito principal del recurso</label>
+			<label>Sírvase indicar el propósito principal del recurso</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.purpose">{{term | term:locale}}</li>
@@ -49,7 +49,7 @@
 		</div>
 
 		<div ng-show="document.expertiseLevel">
-			<label>Nivel del contenido o nivel de conocimientos/conocimientos especializados del p&uacute;blico destinatario del recurso</label>
+			<label>Nivel del contenido o nivel de conocimientos/conocimientos especializados del público destinatario del recurso</label>
 			<div class="km-value">{{document.expertiseLevel | term:locale}}</div>
 		</div>
 
@@ -59,14 +59,14 @@
 		</div>
 
 		<div ng-show="document.organizations">
-			<label>Organizaci&oacute;n(es) responsables de la publicaci&oacute;n de este recurso</label>
+			<label>Organización(es) responsables de la publicación de este recurso</label>
 			<div class="km-value" ng-repeat="contact in document.organizations">
 				<div view-contact-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="document.publicationYear">
-			<label>A&ntilde;o de publicaci&oacute;n</label>
+			<label>Año de publicación</label>
 			<div class="km-value">{{document.publicationYear}}</div>
 		</div>
 
@@ -92,7 +92,7 @@
 			<div class="km-value"><a translation-url  ng-repeat="link in document.covers" ng-href="{{link.url}}" target="{{target}}"> <img class="img-polaroid" ng-src="{{link.url}}" alt="{{link.name}}" style="max-height: 150px; max-width: 150px" /> </a></div>
 		</div>
 
-		<legend ng-show="document.summary || document.regions">Informaci&oacute;n sobre el contenido del recurso</legend>
+		<legend ng-show="document.summary || document.regions">Información sobre el contenido del recurso</legend>
 
 		<div ng-show="document.summary">
 			<label>Resumen</label>
@@ -100,7 +100,7 @@
 		</div>
 
 		<div ng-show="document.regions">
-			<label>Pa&iacute;s(es), grupo(s) regional(es) o econ&oacute;mico(s) relacionado(s) con el recurso</label>
+			<label>País(es), grupo(s) regional(es) o económico(s) relacionado(s) con el recurso</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.regions | orderBy:name">{{term | term:locale}}</li>
@@ -111,10 +111,10 @@
 
 		<div ng-show="document.cbdSubjects || document.aichiTargets">
 
-			<legend>Campo tem&aacute;tico y Metas de Aichi para la Diversidad Biol&oacute;gica que abarca el recurso</legend>
+			<legend>Campo temático y Metas de Aichi para la Diversidad Biológica que abarca el recurso</legend>
 
 			<div ng-show="document.cbdSubjects">
-				<label>Cuesti&oacute;n/Tema/Problema</label>
+				<label>Cuestión/Tema/Problema</label>
 					<div class="km-value">
 						<ul class="list">
 							<li ng-repeat="term in document.cbdSubjects">{{term | term:locale}}</li>
@@ -124,7 +124,7 @@
 
 			<div ng-show="document.aichiTargets">
 				<div ng-show="document.aichiTargets">
-					<label>Meta(s) de Aichi para la Diversidad Biol&oacute;gica relacionada(s)</label>
+					<label>Meta(s) de Aichi para la Diversidad Biológica relacionada(s)</label>
 					<div class="km-value">
                      <ul class="list">
 						<li ng-repeat="term in document.aichiTargets">{{term | term:locale}}</li>
@@ -135,9 +135,9 @@
 		</div>
 
 		<div ng-show="document.absKeyAreas">
-			<legend>Centro de Intercambio de la Informaci&oacute;n sobre APB</legend>
+			<legend>Centro de Intercambio de la Información sobre APB</legend>
 
-			<label>&Aacute;reas clave y medidas estrat&eacute;gicas para la creaci&oacute;n y el desarrollo de capacidad</label>
+			<label>Áreas clave y medidas estratégicas para la creación y el desarrollo de capacidad</label>
 			<div class="km-value">
               <ul class="list">
 				<li ng-repeat="term in document.absKeyAreas">{{term | term:locale}}</li>
@@ -147,10 +147,10 @@
 
 		<div ng-show="document.bchSubjects">
 
-			<legend>Protocolo de Cartagena sobre Seguridad de la Biotecnolog&iacute;a</legend>
+			<legend>Protocolo de Cartagena sobre Seguridad de la Biotecnología</legend>
 
 			<div ng-show="document.bchSubjects">
-				<label>&Aacute;rea(s) tem&aacute;tica(s)</label>
+				<label>Área(s) temática(s)</label>
 				<div class="km-value">
                 <ul class="list">
 					<li ng-repeat="term in document.bchSubjects">{{term | term:locale}}</li>
@@ -160,7 +160,7 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value km-pre" ng-bind-html="document.relevantInformation | lstring:locale | markdown"></div>

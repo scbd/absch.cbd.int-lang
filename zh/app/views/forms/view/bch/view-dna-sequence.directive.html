@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Gene and DNA Sequence <span class="color-black">(DNA)</span></h4>
+		<h4>基因和 DNA 序列<span class="color-black"> (DNA)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -15,11 +15,11 @@
 		</div>
 
 		<div ng-show="document.name">
-			<label>Name of the gene or DNA sequence</label>
+			<label>基因或DNA序列的名称</label>
 			<km-value-ml value="document.name" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.synonymNames">
-			<label>Alternate Genetic Element Name (synonyms)</label>
+			<label>备选基因片断名称（同义词）</label>
 			<ul class="list" style="padding-left:0px">
 				<li ng-repeat="synonym in document.synonymNames" style="padding-bottom:5px;">
 					<km-value-ml value="synonym" locales="locale"></km-value-ml>
@@ -28,17 +28,17 @@
 			
 		</div>
 		<div ng-show="document.abbreviation">
-			<label>Abbreviation</label>
+			<label>缩写</label>
 			<km-value-ml value="document.abbreviation" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.family">
-			<label>Category of DNA sequence</label>
+			<label>DNA序列的类别</label>
 			<div class="km-value" ng-bind="document.family | term:locale"></div>
 		</div>
 
 		<div ng-show="document.isSynthetic!=undefined">
-			<label>Is the gene / DNA sequence is a synthetic molecule?</label>
-			<div class="km-value" ng-if="document.isSynthetic">Yes</div>
+			<label>基因/DNA序列是合成分子吗？</label>
+			<div class="km-value" ng-if="document.isSynthetic">是</div>
 			<div class="km-value" ng-if="!document.isSynthetic">否</div>
 		</div>
 	
@@ -52,31 +52,31 @@
 		</div>
 
 		<div ng-show="document.donorOrganismCollectionPoint">
-			<label>Donor organism point of collection</label>
+			<label>供体生物体收集点</label>
 			<div class="km-value">
 				<km-value-ml value="document.donorOrganismCollectionPoint"  html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 
-		<legend>Characteristics of the protein coding sequence</legend>
+		<legend>蛋白质编码序列特征</legend>
 
 		<div ng-show="document.proteinName">
-			<label>Name of the protein expressed by the coding sequence</label>
+			<label>编码序列表达之蛋白质的名称</label>
 			<div class="km-value">
 					<km-value-ml value="document.proteinName" locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.biologicalFunction">
-			<label>Biological function</label>
+			<label>生物学功能</label>
 			<div class="km-value">
 				<km-value-ml value="document.biologicalFunction" html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.traits">
-			<label>Related trait(s) or use(s) in biotechnology</label>
+			<label>生物科技中的相关性状或用途</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="use in document.traits" ng-bind="use | term:locale"></li>

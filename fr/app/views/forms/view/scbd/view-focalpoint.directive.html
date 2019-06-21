@@ -28,7 +28,7 @@
 				</ul></span></div>
 
 		<div ng-show="document.phones||document.mobiles">
-			<label>T&eacute;l&eacute;phone :</label><span class="km-value"><ul style="list-style-type: none;padding-left:0;">
+			<label>Téléphone :</label><span class="km-value"><ul style="list-style-type: none;padding-left:0;">
 					<li ng-repeat="item in document.phones" ng-if="document.phones"><i class="fa fa-phone" /> {{item}},</li>
 					<li ng-repeat="item in document.mobiles" ng-if="document.mobiles"><i class="fa fa-phone" /> {{item}},</li>
 				</ul></span></div>
@@ -36,12 +36,12 @@
 
 
 		<div ng-show="document.faxes">
-			<label>T&eacute;l&eacute;copieur</label><span class="km-value"><ul style="list-style-type: none;padding-left:0;">
+			<label>Télécopieur</label><span class="km-value"><ul style="list-style-type: none;padding-left:0;">
 					<li ng-repeat="item in document.faxes"><i class="fa fa-fax" /> {{item}},</li>
 				</ul></span></div>
 
 		<div ng-show="focalPointDetails.treaty_CEN_ss">
-				<label>Trait&eacute;s</label>
+				<label>Traités</label>
 				<div class="km-value" >
 					<ul class="list">
 						<li ng-repeat="item in focalPointDetails.treaty_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>

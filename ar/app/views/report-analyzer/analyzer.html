@@ -5,7 +5,7 @@
                 <span class="hidden-xs">National Report<span> 
                 <span class="hidden-xs hidden-sm">on the Implementation of the Nagoya Protocol (NR)</span></span> --></span></h1>
 
-        <h2 ng-show="self.showAnalyzer">Analysis: <span ng-show="self.showAnalyzer" style="padding:0;margin:0; display:inline;font-weight:normal;" ng-switch="self.selectedRegionsPreset" ><span ng-switch-when="cbdRegions">Breakdown by CBD regions</span> <span ng-switch-when="countries">Select countries</span> <span ng-switch-when="regions">Select regions</span> <span ng-switch-when="npParties">Breakdown by Protocol Parties</span> <span ng-switch-when="npNonParties">Breakdown by Protocol Non-Parties</span></span></h2>
+        <h2 ng-show="self.showAnalyzer">التحليل: <span ng-show="self.showAnalyzer" style="padding:0;margin:0; display:inline;font-weight:normal;" ng-switch="self.selectedRegionsPreset" ><span ng-switch-when="cbdRegions">Breakdown by CBD regions</span> <span ng-switch-when="countries">Select countries</span> <span ng-switch-when="regions">Select regions</span> <span ng-switch-when="npParties">Breakdown by Protocol Parties</span> <span ng-switch-when="npNonParties">Breakdown by Protocol Non-Parties</span></span></h2>
 
         <div class="register-content-content" style="padding:5px;">
              <div ng-if="!self.showAnalyzer && self.reportData" class="panel panel-default">
@@ -13,7 +13,7 @@
                     <table style="width:100%">
                         <tr>
                             <td style="width:99%">
-                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                                <h4 class="panel-title">أداة تحليل التقارير الوطنية</h4>تتيح لك هذه الأداة تحديد أقسام أو أسئلة محددة من التقرير وعرض النتائج حسب البلد/المنطقة.</td>
                             <td>
                                 <button type="button" class="btn btn-primary" ng-click="analyze(true);">تحليل »</button>
                             </td>

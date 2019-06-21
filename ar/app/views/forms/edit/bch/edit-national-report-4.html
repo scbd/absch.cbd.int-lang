@@ -114,7 +114,7 @@
             <div style="margin:20px" dir="rtl">
                 <div class="row">
                     <div class="col-xs-12" >
-                        <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+                        <div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
                             <div class="indent">
                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                             </div>
@@ -125,7 +125,7 @@
                     <div class="col-sm-12">
                         <div class="km-control-group" name="government" required caption="Country">
                             <div afc-autocomplete required name="government" ng-disabled="userHasGovernment()" ng-model="document.government" source="options.countries"
-                                filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..." ng-change="onGovernmentChange(document.government)"></div>
+                                filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يُرجى اختيار البلد..." ng-change="onGovernmentChange(document.government)"></div>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="km-control-group" required name="stakeholders" caption="9. المنظمات / أصحاب المصالح المستشارين أو المشاركين في إعداد هذه التقرير">
+                        <div class="km-control-group" required name="stakeholders" caption="9. Organizations/stakeholders who were consulted or participated in the preparation of this report">
                             <div km-textbox-ml name="stakeholders" required ng-model="document.stakeholders" locales="document.header.languages"></div>
                         </div>
                     </div>
@@ -148,13 +148,13 @@
 
                 <div class="row">
                         <div class="col-sm-6">
-                            <div class="km-control-group" required name="stakeholders" caption="10. الفترة الزمنية التي يغطيها هذا التقرير">
+                            <div class="km-control-group" required name="stakeholders" caption="10. Time period covered by this report">
                                 <div class="col-sm-5">
-                                    <div km-date placeholder="يوم  - شهر - سنة" name="reportPeriodStartDate" required ng-model="document.reportPeriodStartDate"></div>
+                                    <div km-date placeholder="يوم - شهر - سنة" name="reportPeriodStartDate" required ng-model="document.reportPeriodStartDate"></div>
                                 </div> 
                                 <div class="col-sm-1"><strong>إلى</strong></div>
                                 <div class="col-sm-5">
-                                    <div km-date placeholder="يوم  - شهر - سنة" name="reportPeriodEndDate" required ng-model="document.reportPeriodEndDate"></div>
+                                    <div km-date placeholder="يوم - شهر - سنة" name="reportPeriodEndDate" required ng-model="document.reportPeriodEndDate"></div>
                                 </div>                                
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-darkgrey"><h4>R&eacute;unions</h4></div>
+	<div class="panel-heading bg-darkgrey"><h4>Réunions</h4></div>
 	<div class="record-body panel-body">
 
 			
@@ -12,24 +12,24 @@
 			<label>Titre</label><span class="km-value">{{document.title_s}}</span></div>
 
 		<div ng-show="document.startDate_dt">
-			<label>Date de d&eacute;but</label><span class="km-value">{{document.startDate_dt | moment:&apos;utc&apos; | formatDate}}</span></div>
+			<label>Date de début</label><span class="km-value">{{document.startDate_dt | moment:'utc' | formatDate}}</span></div>
 		<div ng-show="document.endDate_dt">
-			<label>Date de fin</label><span class="km-value">{{document.endDate_dt | moment:&apos;utc&apos; | formatDate}}</span></div>
+			<label>Date de fin</label><span class="km-value">{{document.endDate_dt | moment:'utc' | formatDate}}</span></div>
 
 		<div ng-show="document.eventCountry_CEN_s">
-			<label>&Eacute;v&eacute;nements par pays</label><span class="km-value">{{document.eventCountry_CEN_s |stringToJSON | lstring:locale}}</span></div>
+			<label>Événements par pays</label><span class="km-value">{{document.eventCountry_CEN_s |stringToJSON | lstring:locale}}</span></div>
 
 		<div ng-show="document.eventCity_s">
-			<label>&Eacute;venement par ville</label><span class="km-value">{{document.eventCity_s}}</span></div>
+			<label>Évenement par ville</label><span class="km-value">{{document.eventCity_s}}</span></div>
 		<div ng-show="document.symbol_s">
-			<label>Documents de r&eacute;union</label><span class="km-value"><a translation-url  target="_new" ng-href="http://www.cbd.int/doc/?meeting={{document.symbol_s}}">http://www.cbd.int/doc/?meeting={{document.symbol_s}}</a></span></div><!--
+			<label>Documents de réunion</label><span class="km-value"><a translation-url  target="_new" ng-href="http://www.cbd.int/doc/?meeting={{document.symbol_s}}">http://www.cbd.int/doc/?meeting={{document.symbol_s}}</a></span></div><!--
 		<div ng-show="document.themes_CEN_ss">
 			<label>Themes</label>
 			<ul class="km-value">
 				<li ng-repeat="item in document.themes_CEN_ss">{{item |stringToJSON  | lstring:locale}}</li>
 			</ul>
 		</div> --><div ng-show="document.thematicAreas_CEN_ss">
-			<label>Domaines th&eacute;matiques</label>
+			<label>Domaines thématiques</label>
 			<div class="km-value">
 				<ul >
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>

@@ -1,10 +1,10 @@
 ﻿<div class="modal-content">
 
-    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group &gt; .btn { float: none; display: inline-block; } </style>
+    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group > .btn { float: none; display: inline-block; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Grant / Revoke Roles - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
+        <h3 class="modal-title">Назначить/Отозвать роли - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
 
     <div class="modal-body"><!-- ROLES --><p>Выберите функции, которые бы вы хотели поручить пользователю</p>
 
@@ -29,6 +29,6 @@
         </div>
 
         <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">Отменить</button>
-        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editRolesDialogCtrl.save()" ng-disabled="!editRolesDialogCtrl.stats().changes">Дальше »</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="editRolesDialogCtrl.save()" ng-disabled="!editRolesDialogCtrl.stats().changes">Next »</button>
     </div>
 </div>

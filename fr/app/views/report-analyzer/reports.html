@@ -3,17 +3,17 @@
         <div class="panel panel-default">
                 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Vue d&apos;ensemble</h3>
+                    <h3 class="panel-title">Aperçu</h3>
                 </div>
     
                 <div class="panel-body">
                     <table class="table" cellspacing="0" cellpadding="0" style="width:100%;">
                             <thead>
                             <tr>
-                                <th>Report</th>
-                                <th style="text-align:center;" class="hidden-xs">Year</th>
+                                <th>Rapport</th>
+                                <th style="text-align:center;" class="hidden-xs">Année</th>
                                 <th style="text-align:center;">Party count <br/>on due date</th>
-                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace(&apos;CBD - &apos;, &apos;&apos;)}}</th>                                
+                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace('CBD - ', '')}}</th>                                
                                 <th style="text-align:center;" class="hidden-xs">By Parties</th>
                                 <th style="text-align:center;" class="hidden-xs">By Non-Parties</th>
                                 <th style="text-align:center;">Rapports</th>
@@ -39,9 +39,9 @@
                     <table style="width:100%">
                         <tr>
                             <td style="width:99%">
-                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                                <h4 class="panel-title">Analyseur des rapports nationaux</h4>Cet outil en ligne permet de sélectionner des sections ou questions spécifiques du rapport et de montrer les résultats relatifs par pays ou par région.</td>
                             <td>
-                                <button type="button" class="btn btn-primary" ng-click="analyze()">Analyser&nbsp;»</button>
+                                <button type="button" class="btn btn-primary" ng-click="analyze()">Analyser »</button>
                             </td>
                         </tr>
                     </table>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="panel-footer text-right">
-                    <button type="button" class="btn btn-primary" ng-click="analyze()">Analyser&nbsp;»</button>
+                    <button type="button" class="btn btn-primary" ng-click="analyze()">Analyser »</button>
                 </div>
 
             </div>

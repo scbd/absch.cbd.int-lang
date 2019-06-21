@@ -1,12 +1,12 @@
 ﻿<div class="modal-content" dir="rtl">
 
-    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group &gt; .btn { float: none; display: inline-block; } </style>
+    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group > .btn { float: none; display: inline-block; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Grant / Revoke Roles - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
+        <h3 class="modal-title">منح / رفض الأدوار - {{editRolesDialogCtrl.user.firstName}} {{editRolesDialogCtrl.user.lastName}}</h3>{{editRolesDialogCtrl.user.email}}</div>
 
-    <div class="modal-body"><!-- ROLES --><p>يرجى تحديد الوظاائف التي ترغب في إسنادها للمستخدم</p>
+    <div class="modal-body"><!-- ROLES --><p>يُرجى تحديد الوظائف التي ترغب في إسنادها للمستخدم</p>
 
 
         <table class="table table-striped" style="width:100%">
@@ -24,8 +24,8 @@
     <div class="modal-footer">
 
         <div class="pull-left" ng-if="editRolesDialogCtrl.stats().grant || editRolesDialogCtrl.stats().revoke">
-            <div ng-show="editRolesDialogCtrl.stats().grant" ><em>{{editRolesDialogCtrl.stats().grant}} role(s) will be granted</em></div>
-            <div ng-show="editRolesDialogCtrl.stats().revoke"><em>{{editRolesDialogCtrl.stats().revoke}} role(s) will be revoked</em></div>
+            <div ng-show="editRolesDialogCtrl.stats().grant" ><em>{{editRolesDialogCtrl.stats().grant}} دور (أدوار) سيتم منحها</em></div>
+            <div ng-show="editRolesDialogCtrl.stats().revoke"><em>{{editRolesDialogCtrl.stats().revoke}} دور (أدوار) سيتم رفضها</em></div>
         </div>
 
         <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()">إلغاء</button>

@@ -1,5 +1,5 @@
 <div class="bch-header"><img class="hidden-xs pull-right" style="height:60px;margin:10px" src="/app/img/cbd-logo-gray-en.svg"><h1 class="hidden-xs bch-brand">生物安全信息交换所</h1>
-    <style> .navbar-nav&gt;li { float: left; } .navbar-breadcrumbs{ min-height:26px; background-color:#FFF!important; z-index:70; margin-bottom:0; } .container-breadcrumbs{ /*background: rgba(25, 25, 25, .05);*/ min-height:30px; color:white; padding-top:7px; font-size:12px; padding-left:38px; } .container-breadcrumbs a{ color:#999; font-weight: bold; } .color-litegrey{ color: #999!important; } </style>
+    <style> .navbar-nav>li { float: left; } .navbar-breadcrumbs{ min-height:26px; background-color:#FFF!important; z-index:70; margin-bottom:0; } .container-breadcrumbs{ /*background: rgba(25, 25, 25, .05);*/ min-height:30px; color:white; padding-top:7px; font-size:12px; padding-left:38px; } .container-breadcrumbs a{ color:#999; font-weight: bold; } .color-litegrey{ color: #999!important; } </style>
     <nav class="navbar navbar-links navbar-default navbar-static-top" style="margin-bottom:0px;">
         <div class="container-fluid container-links color-grey" style="margin-bottom:5px">           
             <div class="navbar-header">
@@ -11,7 +11,7 @@
                     <li><a translation-url  ng-href="https://bch.cbd.int/about/" ng-click="activeMenu='about'"
                         ng-class="{'active-menu' : activeMenu == 'about'}"><i class="icon fa fa-question-circle  visible-xs "></i> <span class="hidden-xs ">About</span></a></li>
                     <li><a  translation-url href="https://bch.cbd.int/protocol" ng-click="activeMenu='protocol'"
-                        ng-class="{'active-menu' : activeMenu == 'protocol'}"><i class="icon fa fa-book visible-xs"></i><span class="hidden-xs">Protocol</span></a></li>
+                        ng-class="{'active-menu' : activeMenu == 'protocol'}"><i class="icon fa fa-book visible-xs"></i><span class="hidden-xs">议定书</span></a></li>
                     <li><a translation-url  ng-href="https://bch.cbd.int/database/" ng-click="activeMenu='search'"
                         ng-class="{'active-menu' : activeMenu == 'search'}"><i class="icon fa fa-search visible-xs "></i> <span class="hidden-xs ">搜索</span></a></li>
                     <li><a translation-url  ng-href="register"  ng-click="activeMenu='submit'"
@@ -27,9 +27,9 @@
                         </ul>
                     </li>
     
-                    <li><a translation-url  href="reports" ng-class="{'active-menu' : activeMenu == 'reports'}" ng-click="activeMenu='reports'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;国家报告</span></a></li>
-                    <li><a translation-url  href="https://bch.cbd.int/onlineconferences/" ng-class="{'active-menu' : activeMenu == 'forums'}" ng-click="activeMenu='forums'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;论坛</span></a></li>
-                    <li><a translation-url  href="https://bch.cbd.int/resources/" ng-class="{'active-menu' : activeMenu == 'resources'}" ng-click="activeMenu='resources'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;资源</span></a></li><!-- <li class="dropdown pull-right">
+                    <li><a translation-url  href="reports" ng-class="{'active-menu' : activeMenu == 'reports'}" ng-click="activeMenu='reports'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;National Reports</span></a></li>
+                    <li><a translation-url  href="https://bch.cbd.int/onlineconferences/" ng-class="{'active-menu' : activeMenu == 'forums'}" ng-click="activeMenu='forums'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;Forums</span></a></li>
+                    <li><a translation-url  href="https://bch.cbd.int/resources/" ng-class="{'active-menu' : activeMenu == 'resources'}" ng-click="activeMenu='resources'"><i class="fa fa-comments visible-xs"></i><span class="hidden-xs">&nbsp;Resources</span></a></li><!-- <li class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon fa fa-bookmark visible-xs "></i> 
                                 <span class="hidden-xs">Resources <span class="caret"></span></span>
@@ -45,7 +45,7 @@
             </div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav>
     <nav class="navbar navbar-breadcrumbs navbar-default navbar-static-top"  ng-hide="breadcrumbs.get().length == 1" >
             <div class="container-fluid container-breadcrumbs">
-                <div class="color-litegrey" ><a translation-url  href="https://www.cbd.int" class="margin-right-xs">生物多样性公约</a> <span ng-repeat="breadcrumb in breadcrumbs.get()" >&nbsp;&nbsp;<i class="fa fa-chevron-right color-litegrey"></i>&nbsp;&nbsp;<span ng-if="!breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span> <span ng-if="breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span></span></div>
+                <div class="color-litegrey" ><a translation-url  href="https://www.cbd.int" class="margin-right-xs">生物多样性公约</a> <span ng-repeat="breadcrumb in breadcrumbs.get()" >&nbsp;&nbsp;<i class="fa fa-chevron-right color-litegrey"></i>&nbsp;&nbsp; <span ng-if="!breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span> <span ng-if="breadcrumb.param"><a translation-url  ng-if="!$last" ng-href="{{ breadcrumb.path }}" ng-bind="breadcrumb.label" class="margin-right-xs"></a> <span ng-if="$last" ng-bind="breadcrumb.label"></span></span></span></div>
             </div>
         </nav>
 </div>

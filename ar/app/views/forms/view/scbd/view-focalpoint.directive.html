@@ -4,7 +4,7 @@
 		
 			
 		<document-date></document-date><br><div ng-show="document.government">
-			<label>Country</label><span class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status code="document.government.identifier" id="government"></span></span></div>
+			<label>البلد</label><span class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status code="document.government.identifier" id="government"></span></span></div>
 
 		<div ng-show="document.firstName||document.lastName">
 			<label>الاسم</label><span class="km-value">{{document.title | lstring:locale}} {{document.firstName | lstring:locale}} {{document.lastName | lstring:locale}}</span></div>
@@ -16,11 +16,11 @@
 			<label>الوظيفة</label><span class="km-value">{{document.designation|lstring:locale}}</span></div>
 
 		<div ng-show="document.department">
-			<label>Department</label><span class="km-value">{{document.department|lstring:locale}}</span></div>
+			<label>الإدارة</label><span class="km-value">{{document.department|lstring:locale}}</span></div>
 
 
 		<div ng-show="document.organization">
-			<label>المنظمة</label><span class="km-value">{{document.organization|lstring:locale}}</span></div>
+			<label>المنظمة/المؤسسة</label><span class="km-value">{{document.organization|lstring:locale}}</span></div>
 
 		<div ng-show="document.emails">
 			<label>البريد الإلكتروني</label><span class="km-value"><ul style="list-style-type: none;padding-left:0;">

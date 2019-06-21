@@ -1,5 +1,5 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><h4>National Database or Website <span class="color-black">(NDB)</span></h4></div>
+	<div class="panel-heading bg-blue"><h4>国家数据库或网站<span class="color-black">（NDB）</span></h4></div>
 	<div class="record-body panel-body">
 
 
@@ -24,11 +24,11 @@
 		</div>
 
 		<div ng-show="document.website">
-			<label>URL of the website</label>
+			<label>网站 URL</label>
 			<div class="km-value"><a translation-url  target="{{target}}" target="_new" ng-href="{{document.website.url}}">{{document.website.name||document.website.url}}</a> <i ng-show="document.website.name">({{document.website.url}})</i></div>
 		</div>
 		<div ng-show="document.websites && document.websites.length >0">
-			<label>URL of the website</label>
+			<label>网站 URL</label>
 			<div class="km-value">
 				<div ng-repeat="site in document.websites"><a translation-url  target="{{target}}" target="_new" ng-href="{{site.url}}">{{site.name||site.url}}</a> <i ng-show="site.name">({{site.url}})</i></div>
 			</div>

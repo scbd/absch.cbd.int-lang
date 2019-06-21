@@ -10,7 +10,7 @@
 		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">معلومات عامة</legend>
 
 		<div ng-show="document.government" >
-			<label name="country">الدولة</label>
+			<label name="country">البلد</label>
 			<div class="km-value"><span><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></span> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
@@ -52,12 +52,12 @@
 		</div>
 
 		<div ng-show="document.absPolicyBasisForCompetency || document.absPolicyBasisForCompetencyRef ">
-			<legend>الأساس التشريعي أو الإداري أو السياساتي لكفاءة أو قدرات السلطة الوطنية المختصة</legend>
+			<legend>الأسس التشريعية أو الإدارية أو السياساتية لكفاءة وقدرات السلطة الوطنية المختصة</legend>
 			<div ng-show="document.absPolicyBasisForCompetency"><!--<label>Information on the legal, administrative or policy basis for the competence of the CNA</label>--><div class="km-value" ng-bind-html="document.absPolicyBasisForCompetency | lstring:locale">
 				</div>
 			</div>
 			<div ng-if="document.absPolicyBasisForCompetencyRef">
-				<label>روابط للتدبير (التدابير) التشريعية أو الإدارية أو السياساتية</label>
+				<label>روابط للتدابير التشريعية أو الإدارية أو السياساتية</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.absPolicyBasisForCompetencyRef" >
@@ -70,7 +70,7 @@
 		</div>
 
 		<div ng-if="document.responsibilities ||document.absResponsibleForAll || document.absFunctions|| document.absJurisdiction||document.absGeneticResourceTypes ">
-			<legend name="ABSResponsibilities">ملخص المسؤوليات في بروتوكول ناغويا للحصول وتقاسم المنافع</legend>
+			<legend name="ABSResponsibilities">موجز بمسؤوليات الحصول على الموارد وتقاسم المنافع</legend>
 
 			<div ng-show="document.responsibilities">
 				<div class="km-value" ng-bind-html="document.responsibilities | lstring:locale"></div>
@@ -95,7 +95,7 @@
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
 				<label>الاختصاصات التي تشملها السلطة الوطنية المختصة</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? &apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? '' : ', '}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>

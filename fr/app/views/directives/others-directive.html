@@ -7,12 +7,12 @@
 						<div><strong>{{reference.title | lstring}}</strong><div ng-bind-html="reference.summary | lstring"></div>
 					</div>
 
-					<div ng-show="reference.__loading"><i class="fa fa-spinner fa-spin"></i> Loading...</div>
+					<div ng-show="reference.__loading"><i class="fa fa-spinner fa-spin"></i> Chargement en cours...</div>
 
 					<div ng-show="reference.__errorCode">
 						<div ng-switch="reference.__errorCode">
-							<div ng-switch-when="404" class="alert alert-warning"><strong>Aucun fichier trouv&eacute;</strong> {{reference.identifier}}</div>
-							<div ng-switch-default class="alert alert-danger"><strong>Une erreur est survenue en t&eacute;l&eacute;chargeant le fichier</strong> {{reference.identifier}}<div>{{reference.__error}}<div>
+							<div ng-switch-when="404" class="alert alert-warning"><strong>Aucun fichier trouvé</strong> {{reference.identifier}}</div>
+							<div ng-switch-default class="alert alert-danger"><strong>Une erreur est survenue en téléchargeant le fichier</strong> {{reference.identifier}}<div>{{reference.__error}}<div>
 							</div>
 						</div>
 					</div>
@@ -24,14 +24,14 @@
 		</table>
 		</div>
 
-		<button type="button" class="btn btn-default" ng-show="multiple" ng-click="addReference()">Ajouter une r&eacute;f&eacute;rence</button>
-		<button type="button" class="km-reference-select btn btn-default" ng-hide="multiple" ng-click="addReference()">S&eacute;lectionner une r&eacute;f&eacute;rence...</button>
+		<button type="button" class="btn btn-default" ng-show="multiple" ng-click="addReference()">Ajouter une référence</button>
+		<button type="button" class="km-reference-select btn btn-default" ng-hide="multiple" ng-click="addReference()">Sélectionner une référence...</button>
 	</div><!--Reference Editor--><div id="editReference" class="modal fade" data-backdrop="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3>S&eacute;lectionner une r&eacute;f&eacute;rence</h3>
-					<h5>Tapez pour filtrer, cliquez ou utilisez les touches de fl&egrave;ches et la barre d&rsquo;espacement pour s&eacute;lectionner, puis cliquez sur «&nbsp;enregistrer/sauvegarder&nbsp;» ou appuyez sur «&nbsp;entr&eacute;e&nbsp;» pour sauvegarder vos changements.</h5>
+					<h3>Sélectionner une référence</h3>
+					<h5>Tapez pour filtrer, cliquez ou utilisez les touches de flèches et la barre d’espacement pour sélectionner, puis cliquez sur « enregistrer/sauvegarder » ou appuyez sur « entrée » pour sauvegarder vos changements.</h5>
 				</div>
 				<div class="modal-body" style="max-height:400px;overflow-y:auto">
 

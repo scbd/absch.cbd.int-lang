@@ -3,7 +3,7 @@
       <div  class="col-md-6" ng-show="nf_filters.length" style="margin-bottom:30px;" >
         <div class="heading color-blue" ng-if="nf_filters.length">Fichiers nationaux</div>
         <hr  class="heading" ng-if="nf_filters.length">
-        <p class="helpinfo" ng-if="nf_filters.length" ><i class="fa fa-info-circle helpicon" ></i> Les fichiers nationaux sont publi&eacute;s par les gouvernements et incluent des informations suppl&eacute;mentaires pour la mise en oeuvre du Protocole ainsi que des informations que les Parties sont oblig&eacute;es de fournir conform&eacute;ment au Protocole.</p>
+        <p class="helpinfo" ng-if="nf_filters.length" ><i class="fa fa-info-circle helpicon" ></i> Les fichiers nationaux sont publiés par les gouvernements et incluent des informations supplémentaires pour la mise en oeuvre du Protocole ainsi que des informations que les Parties sont obligées de fournir conformément au Protocole.</p>
         
         <div ng-repeat="doc in nf_filters = (nf_searchFilters | filter:searchKeyword | orderBy:['filterSort', 'sort'])"><a translation-url  class="filter"  ng-click="saveFilter(doc)"><i class="fa check" ng-class="{'fa-check-square':isFilterOn(doc.id),'fa-square':!isFilterOn(doc.id)}"></i> {{doc.name}} <!--<span class="badge">100</span>--></a> <!--<p class="helpinfo" ><i class="fa fa-info-circle helpicon" ng-if="doc.description"></i> {{doc.description}} </p>--> <span ng-if="doc.description" href="#" class="helpinfoInline fa fa-info-circle color-white" data-toggle="tooltip" data-html="true" data-title="{{doc.description}}" data-container="body"></span></div>
       </div>

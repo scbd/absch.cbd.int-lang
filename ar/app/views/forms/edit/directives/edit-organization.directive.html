@@ -10,7 +10,7 @@
                     <legend>معلومات عامة</legend>
                     <div class="row">
                         <div class="col-xs-12" >
-                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+                            <div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
                                 <div class="indent">
                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                 </div>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="col-md-4 col-xs-12">
-                            <div class="km-control-group" name="acronym" required caption="الاسم المختصر">
+                            <div class="km-control-group" name="acronym" required caption="الاسم المختصر للمنظمة">
                                 <div km-textbox-ml name="acronym" required ng-model="document.acronym"
                                     placeholder="إدخال النص" locales="document.header.languages"></div>
                             </div>
@@ -40,13 +40,13 @@
                             </div>
                         </div>
                         <div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
-                            <div class="km-control-group" name="contact_organizationTypeName" caption="نوع منظمة أخرى">
+                            <div class="km-control-group" name="contact_organizationTypeName" caption="نوع آخر للمنظمة">
                                 <div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue"
-                                    placeholder="مثال: أمانة اتفاقية التنوع البيولوجي SCBD" locales="locales"></div>
+                                    placeholder="مثال: SCBD (أمانة اتفاقية التنوع البيولوجي)" locales="locales"></div>
                             </div>
                         </div>
                     </div>
-                    <legend>إحداثيات المنظمة</legend>
+                    <legend>بيانات عنوان المنظمة</legend>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -61,14 +61,14 @@
                         <div class="col-md-6 col-xs-12">
                             <div class="km-control-group" name="city" required caption="المدينة">
                                 <div km-textbox-ml required name="city" ng-model="document.city" locales="document.header.languages"
-                                    placeholder="example: Montreal"></div>
+                                    placeholder="مثال: Montreal"></div>
                             </div>
                         </div>
 
                         <div class="col-md-6 col-xs-12">
                             <div class="km-control-group" name="state" caption="الولاية أو المقاطعة">
                                 <div km-textbox-ml name="state" ng-model="document.state" locales="document.header.languages"
-                                    placeholder="example: Quebec"></div>
+                                    placeholder="مثال: Quebec"></div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
                             <div class="km-control-group" name="phones" required caption="أرقام الهاتف">
-                                <div class="help-info">Please use the following format: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
+                                <div class="help-info">يُرجى استخدم الترتيب التالي: [الرقم الداخلي، إذا كان متوفرًا] [رقم الهاتف] [كود المدينة] [كود البلد]+</div>
                                 <div km-inputtext-list required name="phones" ng-model="document.phones"
                                     placeholder="مثال: 2220 288 514 1+"></div>
                             </div>
@@ -115,7 +115,7 @@
                         </div>
 
                         <div class="col-md-6 col-xs-12">
-                            <div class="km-control-group" name="websites" caption="الموقع الإلكتروني:">
+                            <div class="km-control-group" name="websites" caption="المواقع الإلكترونية">
                                 <div km-link name="websites" ng-model="document.websites" allow-link="true"
                                     allow-file="false"></div>
                             </div>

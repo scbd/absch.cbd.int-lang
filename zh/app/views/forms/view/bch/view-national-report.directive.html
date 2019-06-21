@@ -10,25 +10,25 @@
                             target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
                 </div>
 
-                <div ng-show="document.contact"></br><label>提交报告的联系人</label>
+                <div ng-show="document.contact"></br><label>Contact person submitting the report</label>
                     <div class="km-value">
                         <view-contact-reference ng-model='document.contact' locale="locale">
                         </view-contact-reference>
                     </div>
                 </div>
 
-                <div ng-show="document.stakeholders"></br><label>9提供咨询或参与编写本报告的组织/利益攸关方</label>
+                <div ng-show="document.stakeholders"></br><label>9.Organizations/stakeholders who were consulted or participated in the preparation of this report</label>
                     <km-value-ml value="document.stakeholders" locales="locale"></km-value-ml>
                 </div>
 
-                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10本报告的时间跨度</label>
+                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10.Time period covered by this report</label>
                     <div class="row">
                         <div class="col-xs-6" ng-if="document.reportPeriodStartDate">
-                            <label>From</label>
+                            <label>发件人</label>
                             <div class="km-value" ng-bind="document.reportPeriodStartDate|formatDate"></div>
                         </div>
                         <div class="col-xs-6" ng-if="document.reportPeriodEndDate">
-                            <label>To</label>
+                            <label>收件人</label>
                             <div class="km-value" ng-bind="document.reportPeriodEndDate|formatDate"></div>
                         </div>
                     </div>

@@ -1,25 +1,25 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
-		<h4>Iniciativas de creaci&oacute;n de capacidad</h4>
+		<h4>Iniciativas de creación de capacidad</h4>
     </div>
 	<div class="record-body panel-body">
 			
 		<document-date></document-date><br><div ng-show="document.title">
-			<label>Denominaci&oacute;n</label>
+			<label>Título</label>
 			<div class="km-value km-pre">{{document.title | lstring:locale}}</div>
 		</div>
 
 		<div ng-show="document.projectNumber">
-			<label>N&uacute;mero o identificador del proyecto</label>
+			<label>Número o identificador del proyecto</label>
 			<div class="km-value km-pre">{{document.projectNumber | lstring:locale}}</div>
 		</div>
 
 		<div ng-show="document.geographicScope">
-			<label>Alcance geogr&aacute;fico</label><span class="km-value">{{document.geographicScope.scope | term:locale}}</span></div>
+			<label>Alcance geográfico</label><span class="km-value">{{document.geographicScope.scope | term:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && (document.geographicScope.regions || document.geographicScope.countries)">
-			<label>Grupo(s) geogr&aacute;fico(s) o pol&iacute;tico/econ&oacute;mico y/o pa&iacute;s(es)</label>
+			<label>Grupo(s) geográfico(s) o político/económico y/o país(es)</label>
 			<div class="km-value">
                 <ul  class="list" ng-show="document.geographicScope.regions || document.geographicScope.countries">
                     <li ng-repeat="term in document.geographicScope.regions">{{term | term:locale}}</li>
@@ -29,25 +29,25 @@
 		</div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.jurisdiction">
-			<label>Jurisdicci&oacute;n</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}}</span></div>
+			<label>Jurisdicción</label><span class="km-value km-pre">{{document.geographicScope.jurisdiction | lstring:locale}}</span></div>
 
 		<div ng-show="document.geographicScope && document.geographicScope.community">
 			<label>Comunidad</label><span class="km-value km-pre">{{document.geographicScope.community | lstring:locale}}</span></div>
 
 		<div>
-			<label>Tipo de iniciativa de creaci&oacute;n de capacidad</label>
+			<label>Tipo de iniciativa de creación de capacidad</label>
 			<div style="padding-left:20px" >
 				<div>
-					<label>a. Is this a dedicated ABS capacity-building project/programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Yes</div>
+					<label>a. ¿Es un proyecto o programa de creación de capacidad específico sobre el acceso y la participación en los beneficios?</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Sí</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isProjectProgramme">No</div>
 				</div>
 				<div>
-					<label>b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">Yes</div>
+					<label>b. ¿Es una actividad o componente de actividad relativos al acceso y la participación en los beneficios que forma parte de un proyecto o programa de creación de capacidad más amplio?</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">Sí</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isBroaderProjectPart">No</div>
 					<div ng-if="document.capacityBuildingType.broaderProjects">
-						<label>Broader projects</label>
+						<label>Proyectos más amplios</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.capacityBuildingType.broaderProjects">
@@ -58,8 +58,8 @@
 					</div>
 				</div>
 				<div>
-					<label>c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Yes</div>
+					<label>c. ¿Es una actividad autónoma sobre acceso y participación en los beneficios que no forma parte de un proyecto o programa de creación de capacidad más amplio?</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Sí</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isStandaloneProject">No</div>
 				</div>
 			</div>
@@ -72,16 +72,16 @@
 	  			<div class="row" ng-show="document.startDate && document.endDate">
 	  				<div class="col-md-6">
 	  					<label>Fecha de inicio</label>
-	  					<div class="km-value km-pre">{{document.startDate | date : &apos;longDate&apos;}}</div>
+	  					<div class="km-value km-pre">{{document.startDate | date : 'longDate'}}</div>
 	  				</div>
 	  				<div class="col-md-6">
-	  					<label>Fecha de finalizaci&oacute;n</label>
-	  					<div class="km-value km-pre">{{document.endDate | date : &apos;longDate&apos;}}</div>
+	  					<label>Fecha de finalización</label>
+	  					<div class="km-value km-pre">{{document.endDate | date : 'longDate'}}</div>
 	  				</div>
 	  			</div>
 
 	  			<div ng-show="document.durationPeriod || document.durationText">
-	  				<label>Duraci&oacute;n</label>
+	  				<label>Duración</label>
 	  				<div class="km-value km-pre">{{document.durationPeriod}} {{document.durationText | lstring:locale}}</div>
 	  			</div>
 		</div>
@@ -89,21 +89,21 @@
 		<div ng-show="document.isImplementedByAgencies || document.isExecutededByAgencies || document.isCollaboratededByPartners">
 
 			<div ng-show="document.isImplementedByAgencies && document.implementingAgencies">
-			  	<label>Organismo(s) u organizaci&oacute;n(es) de aplicaci&oacute;n</label>
+			  	<label>Organismo(s) u organización(es) de aplicación</label>
 				<div class="km-value" ng-repeat="contact in document.implementingAgencies">
 					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.isImplementedByAgencies && document.executingAgencies">
-			  	<label>Organismo(s) u organizaci&oacute;n(es) de ejecuci&oacute;n</label>
+			  	<label>Organismo(s) u organización(es) de ejecución</label>
 				<div class="km-value" ng-repeat="contact in document.executingAgencies">
 					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
 			</div>
 
 			<div ng-show="document.collaboratingPartners && document.collaboratingPartners">
-				<label>Asociado(s) en colaboraci&oacute;n</label>
+				<label>Asociado(s) en colaboración</label>
 				<div class="km-value" ng-repeat="contact in document.collaboratingPartners">
 					<div view-organization-reference ng-model="contact" locale="locale"></div>
 				</div>
@@ -123,10 +123,10 @@
 			<div class="km-value" ng-repeat="item in document.projectDocument"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 		</div>
 
-	  	<legend>Informaci&oacute;n detallada</legend>
+	  	<legend>Información detallada</legend>
 
 		<div ng-show="document.description">
-			<label>Descripci&oacute;n breve de la iniciativa, incluidos sus metas y objetivos</label>
+			<label>Descripción breve de la iniciativa, incluidos sus metas y objetivos</label>
 			<div class="km-value km-pre">{{document.description | lstring:locale}}</div>
 		</div>
 
@@ -140,7 +140,7 @@
 		</div>
 
 		<div ng-show="document.categories">
-			<label>Categor&iacute;a(s) de las actividades de creaci&oacute;n de capacidad</label>
+			<label>Categoría(s) de las actividades de creación de capacidad</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.categories">{{term | term:locale}}</li>
@@ -148,10 +148,10 @@
             </div>
 		</div>
 
-		<legend>Informaci&oacute;n sobre financiaci&oacute;n</legend>
+		<legend>Información sobre financiación</legend>
 
 		<div ng-show="document.fundingSourceTypes">
-			<label>Tipo(s) de fuentes de financiaci&oacute;n</label>
+			<label>Tipo(s) de fuentes de financiación</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.fundingSourceTypes">{{term | term:locale}}</li>
@@ -160,14 +160,14 @@
 		</div>
 
 		<div ng-show="document.coreFundingSources">
-			<label>Fuente(s) principal(es) de financiaci&oacute;n</label>
+			<label>Fuente(s) principal(es) de financiación</label>
 			<div class="km-value" ng-repeat="contact in document.coreFundingSources">
 				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="document.coFinancingSources">
-			<label>Fuente(s) de cofinanciaci&oacute;n</label>
+			<label>Fuente(s) de cofinanciación</label>
 			<div class="km-value" ng-repeat="contact in document.coFinancingSources">
 				<div view-organization-reference ng-model="contact" locale="locale"></div>
 			</div>
@@ -175,12 +175,12 @@
 
 		<div ng-show="document.totalBudget">
 			<label>Presupuesto total (monto, en USD)</label>
-			<div class="km-value km-pre">{{document.totalBudget | currency:&quot;USD$&quot;}}</div>
+			<div class="km-value km-pre">{{document.totalBudget | currency:"USD$"}}</div>
 		</div>
 
 
 		<div ng-show="document.resultsAchievements || document.resultsOutputs || document.bestPractices">
-			<legend>Resultados en materia de creaci&oacute;n de capacidad</legend>
+			<legend>Resultados en materia de creación de capacidad</legend>
 
 			<div ng-show="document.resultsAchievements">
 				<label>Resultados</label>
@@ -193,16 +193,16 @@
 			</div>
 
 			<div ng-show="document.bestPractices">
-				<label>Mejores pr&aacute;cticas y lecciones aprendidas</label>
+				<label>Mejores prácticas y lecciones aprendidas</label>
 				<div class="km-value km-pre">{{document.bestPractices | lstring:locale}}</div>
 			</div>
 		</div>
 
 
 		<div ng-show="document.absKeyAreas">
-			<legend>Centro de Intercambio de la Informaci&oacute;n sobre APB</legend>
+			<legend>Centro de Intercambio de la Información sobre APB</legend>
 
-			<label>&Aacute;reas clave y medidas estrat&eacute;gicas para la creaci&oacute;n y el desarrollo de capacidad</label>
+			<label>Áreas clave y medidas estratégicas para la creación y el desarrollo de capacidad</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.absKeyAreas">{{term | term:locale}}</li>
@@ -211,7 +211,7 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>

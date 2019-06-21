@@ -18,13 +18,13 @@
                         <td>
                             <div class="btn-group" role="group">
                                 <button type="button" ng-model="filterStatus" class="btn btn-default dropdown-toggle"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span ng-if="filterStatus=='Pending'">Pending Approval</span> <span ng-if="filterStatus=='Approved'">Approved</span> <span ng-if="filterStatus=='Rejected'">Rejected</span> <span ng-if="filterStatus=='Canceled'">Canceled</span> <span ng-if="filterStatus=='Expired'">Expired</span> <span ng-if="filterStatus=='All'">All</span> <span class="caret"></span></button>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span ng-if="filterStatus=='Pending'">На утверждении</span> <span ng-if="filterStatus=='Approved'">Утверждено</span> <span ng-if="filterStatus=='Rejected'">Отклонено</span> <span ng-if="filterStatus=='Canceled'">Отменено</span> <span ng-if="filterStatus=='Expired'">Просрочено</span> <span ng-if="filterStatus=='All'">Все</span> <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a translation-url href="#" ng-click="filterByStatus('Pending')">Pending Approval</a></li>
+                                    <li><a translation-url href="#" ng-click="filterByStatus('Pending')">На утверждении</a></li>
                                     <li><a translation-url href="#" ng-click="filterByStatus('Approved')">Утверждено</a></li>
-                                    <li><a translation-url href="#" ng-click="filterByStatus('Rejected')">Rejected</a></li>
-                                    <li><a translation-url href="#" ng-click="filterByStatus('Canceled')">Canceled</a></li>
-                                    <li><a translation-url href="#" ng-click="filterByStatus('Expired')">Expired</a></li>
+                                    <li><a translation-url href="#" ng-click="filterByStatus('Rejected')">Отклонено</a></li>
+                                    <li><a translation-url href="#" ng-click="filterByStatus('Canceled')">Отменено</a></li>
+                                    <li><a translation-url href="#" ng-click="filterByStatus('Expired')">Просрочено</a></li>
                                     <li><a translation-url href="#" ng-click="filterByStatus('All')">Все</a></li>
                                 </ul>
                             </div>
@@ -39,7 +39,7 @@
                                     </div>
                         </td>
                         <td style="width:100%">
-                                <div style="margin: 5px 0 0 20px; text-transform: lowercase;" ><span class="badge">{{itemCount}}</span> {{filterStatus == &quot;All&quot; ? &quot;&quot; : filterStatus}} requests found</div>
+                                <div style="margin: 5px 0 0 20px; text-transform: lowercase;" ><span class="badge">{{itemCount}}</span> {{filterStatus == "All" ? "" : filterStatus}} requests found</div>
                         </td>
                     </tr>
                 </table>
@@ -59,18 +59,18 @@
 
                                 <div class="col-md-2 hidden-xs hidden-sm" style="text-transform: uppercase;font-size:12px;font-weight: 450"><!-- schema --> <span style="color:#888;">{{task.workflow.data.metadata.schema|schemaName}}</span></div>
 
-                                <div class="col-sm-3 col-md-2 hidden-xs "><!-- Requested on --><div style="text-transform: uppercase;font-weight: bold; font-size:12px; ">{{task.workflow.createdOn | moment:&apos;fromNow&apos;}}</div><a  style="font-size: 12px;color:#888;" href="mailto:{{task.workflow.createdBy_info.email}}">by {{task.workflow.createdBy_info.firstName}} {{task.workflow.createdBy_info.lastName}} ({{task.workflow.createdBy_info.email}})</a></div>
+                                <div class="col-sm-3 col-md-2 hidden-xs "><!-- Requested on --><div style="text-transform: uppercase;font-weight: bold; font-size:12px; ">{{task.workflow.createdOn | moment:'fromNow'}}</div><a  style="font-size: 12px;color:#888;" href="mailto:{{task.workflow.createdBy_info.email}}">by {{task.workflow.createdBy_info.firstName}} {{task.workflow.createdBy_info.lastName}} ({{task.workflow.createdBy_info.email}})</a></div>
                                 <div class="col-sm-3 col-md-2 hidden-xs" ><!-- Status --><div ng-switch="task.workflow.state">
                                         <div ng-switch-when="completed">
-                                            <div ng-show="task.activity.completedOn && task.activity" ng-switch="task.activity.result.action"><span ng-switch-when="approve"> <span class="bold color-green">APPROVED</span> <span ng-if="task.activity.result.reason">({{task.activity.result.reason}})</span><div style="text-transform: uppercase;font-weight: bold; font-size: 12px; padding-top:5px;">{{task.activity.completedOn | moment:&apos;fromNow&apos;}}</div><a style="font-size: 12px;color:#888;" href="mailto:{{task.activity.completedBy_info.email}}">by {{task.activity.completedBy_info.firstName}} {{task.activity.completedBy_info.lastName}} ({{task.activity.completedBy_info.email}})</a> </span> <span ng-switch-when="reject"> <span class="bold color-red">REJECTED</span> <span ng-if="task.activity.result.reason">({{task.activity.result.reason}})</span><div style="text-transform: uppercase;font-weight: bold; font-size: 12px;">{{task.activity.completedOn | moment:&apos;fromNow&apos;}}</div><a style="font-size: 12px;color:#888;" href="mailto:{{task.activity.completedBy_info.email}}">by {{task.activity.completedBy_info.firstName}} {{task.activity.completedBy_info.lastName}} ({{task.activity.completedBy_info.email}})</a> </span></div>
+                                            <div ng-show="task.activity.completedOn && task.activity" ng-switch="task.activity.result.action"><span ng-switch-when="approve"> <span class="bold color-green">УТВЕРЖДЕНО</span> <span ng-if="task.activity.result.reason">({{task.activity.result.reason}})</span><div style="text-transform: uppercase;font-weight: bold; font-size: 12px; padding-top:5px;">{{task.activity.completedOn | moment:'fromNow'}}</div><a style="font-size: 12px;color:#888;" href="mailto:{{task.activity.completedBy_info.email}}">{{task.activity.completedBy_info.firstName}} {{task.activity.completedBy_info.lastName}} ({{task.activity.completedBy_info.email}})</a> </span> <span ng-switch-when="reject"> <span class="bold color-red">ОТКЛОНЕНО</span> <span ng-if="task.activity.result.reason">({{task.activity.result.reason}})</span><div style="text-transform: uppercase;font-weight: bold; font-size: 12px;">{{task.activity.completedOn | moment:'fromNow'}}</div><a style="font-size: 12px;color:#888;" href="mailto:{{task.activity.completedBy_info.email}}">{{task.activity.completedBy_info.firstName}} {{task.activity.completedBy_info.lastName}} ({{task.activity.completedBy_info.email}})</a> </span></div>
                                         </div>
-                                        <div ng-switch-when="canceled" class='bold'>CANCELLED</div>
-                                        <div ng-switch-when="timedOut" class='bold'>EXPIRED</div>
+                                        <div ng-switch-when="canceled" class='bold'>ОТМЕНЕНО</div>
+                                        <div ng-switch-when="timedOut" class='bold'>ПРОСРОЧЕНО</div>
                                         <div ng-switch-when="running">
-                                            <div ng-if="task.workflow.workflowExpiryDate < today" class='bold'>EXPIRED</div>
+                                            <div ng-if="task.workflow.workflowExpiryDate < today" class='bold'>ПРОСРОЧЕНО</div>
                                             <div ng-if="task.workflow.workflowExpiryDate >= today" class='bold'><span ng-if="task.workflow.type.name == 'publishReferenceRecord'"
                                                     class="color-orange">PENDING SCBD REVIEW</span> <span ng-if="task.workflow.type.name != 'publishReferenceRecord'" ng-class="{'color-red': roles.isAbsPublishingAuthority }"> <i class="fa fa-star" ng-if="roles.isAbsPublishingAuthority"/> PENDING <span ng-if="roles.isAbsPublishingAuthority">YOUR</span> <span ng-if="!roles.isAbsPublishingAuthority">PA</span> APPROVAL</span></div>
-                                            <div ng-if="task.workflow.workflowExpiryDate >= today && !task.activity.isUpdating"><span style="font-size: 12px;color:#888;">Expires on {{task.workflow.workflowExpiryDate|formatDate}}</span></div>
+                                            <div ng-if="task.workflow.workflowExpiryDate >= today && !task.activity.isUpdating"><span style="font-size: 12px;color:#888;">Дата истечения срока действия: {{task.workflow.workflowExpiryDate|formatDate}}</span></div>
                                         </div>
                                     </div>
                                     <div ng-show="task.activity.isUpdating"><a translation-url class="btn btn-info" type="button" ng-click="return" style="padding:4px;"><strong><i class="fa fa-spin fa-cog"></i> Обработка...</strong></a></div>
@@ -84,8 +84,8 @@
                                     <div class="col-xs-5 col-lg-5 col-md-5"><!-- Description --> <strong ng-show="history.workflow.result.documentID||history.workflow.data.documentID"><a
                                                 translation-url ng-href="/database/record/{{history.workflow.result.documentID||history.workflow.data.documentID}}">{{history.workflow.data.title | lstring}}</a></strong> <strong ng-hide="history.workflow.result.documentID||history.workflow.data.documentID"><a
                                                 translation-url href="#" ng-click="tasksDisplay=!tasksDisplay; formLoading=false;">{{history.workflow.data.title | lstring}}</a></strong> <br> <span ng-show="history.workflow.data.additionalInfo">{{history.workflow.data.additionalInfo}}</span></div>
-                                    <div class="col-xs-2 col-lg-2 col-md-2"><!-- Requested on --><div>{{history.workflow.createdOn|date:&apos;short&apos;}}</div>
-                                        <div><em>by {{history.workflow.createdBy_info.firstName}} {{history.workflow.createdBy_info.lastName}} ({{task.workflow.createdBy_info.email}})</em></div>
+                                    <div class="col-xs-2 col-lg-2 col-md-2"><!-- Requested on --><div>{{history.workflow.createdOn|date:'short'}}</div>
+                                        <div><em>{{task.workflow.createdBy_info.firstName}} {{task.workflow.createdBy_info.lastName}} ({{task.workflow.createdBy_info.email}})</em></div>
                                     </div>
                                     <div class="col-xs-2 col-lg-2 col-md-2" style="padding-left:0px"><!-- Status --><div ng-switch="history.workflow.state">
                                             <div ng-switch-when="completed">
@@ -99,7 +99,7 @@
                             </div>
 
                         </div>
-                        <h4 style="margin:20px;color:#999; " ng-show="!tasks || tasks.length==0">No <span style="text-transform: lowercase">{{filterStatus}}</span> requests found.</h4>
+                        <h4 style="margin:20px;color:#999; " ng-show="!tasks || tasks.length==0">Запросы <span style="text-transform: lowercase">{{filterStatus}}</span> не найдены.</h4>
                     </div>
                 </div>
 

@@ -15,7 +15,7 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Informaci&oacute;n general sobre el elemento gen&eacute;tico</legend>
+									<legend>Información general sobre el elemento genético</legend>
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
@@ -34,7 +34,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="synonymNames" caption="Alternate Genetic Element Name (synonyms)">
+											<div class="km-control-group" name="synonymNames" caption="Nombre del elemento genético alternativo (sinónimos)">
 												<div ng-repeat="synonym in synonymNames" style="padding-bottom:5px;">
 													<div km-textbox-ml name="synonymNames_{{$index}}" ng-model="synonym.value" locales="document.header.languages"></div>
 												</div>
@@ -44,7 +44,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="abbreviation" caption="Abbreviation">
+											<div class="km-control-group" required name="abbreviation" caption="Abreviatura">
 												<div km-textbox-ml name="abbreviation" required ng-model="document.abbreviation" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -92,7 +92,7 @@
 									<legend>Additional information</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="Cualquier otra informaci&oacute;n pertinente">
+											<div class="km-control-group" name="address" caption="Cualquier otra información pertinente">
 												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
@@ -111,12 +111,12 @@
 								</div>
 							</section>
 							<section>
-								<legend>Notes</legend>
+								<legend>Notas</legend>
 
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">El campo &quot;Notas&quot; es para sus notas u observaciones personales y quedar&aacute; oculto al ver el registro. Este campo no est&aacute; destinado a ser usado para informaci&oacute;n confidencial.</div>
+											<div class="help-block">El campo "Notas" es para sus notas u observaciones personales y quedará oculto al ver el registro. Este campo no está destinado a ser usado para información confidencial.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

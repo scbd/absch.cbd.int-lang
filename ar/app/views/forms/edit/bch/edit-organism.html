@@ -18,7 +18,7 @@
 									<legend>معلومات عامة</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -33,7 +33,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" required name="scientificName" caption="الاسم العلمي">
-												<div class="help-block">الاسم العلمي للكائن الحي يتكون من اسم الجنس متبوعاً باسم طائفته الخاص. وعلى سبيل المثال: Oryza sativa هي الاسم العلمي للأرز.</div>
+												<div class="help-block">الاسم العلمي للكائن الحي يتكون من اسم الجنس متبوعاً باسم طائفته الخاصة. على سبيل المثال: Oryza sativa هو الاسم العلمي للأرز.</div>
 												<input type="text" class="form-control" name="scientificName" required ng-model="document.scientificName"/>
 											</div>
 										</div>
@@ -43,22 +43,22 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="phylum" caption="الصنف">
+											<div class="km-control-group" name="phylum" caption="الشعبة">
 												<input type="text" class="form-control" name="phylum" ng-model="document.phylum" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="_class" caption="الشعبة">
+											<div class="km-control-group" name="_class" caption="الطبقة/الفئة">
 												<input type="text" class="form-control" name="_class" ng-model="document._class" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="order" caption="المجموعة">
+											<div class="km-control-group" name="order" caption="الرتبة">
 												<input type="text" class="form-control" name="order" ng-model="document.order" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="family" caption="العائلة">
+											<div class="km-control-group" name="family" caption="الفصيلة/العائلة">
 												<input type="text" class="form-control" name="family" ng-model="document.family" />
 											</div>
 										</div>
@@ -73,24 +73,24 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="subSpecies" caption="Sub-species">
+											<div class="km-control-group" name="subSpecies" caption="النوع الفرعي">
 												<input type="text" class="form-control" name="subSpecies" ng-model="document.subSpecies" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="scientificNameSynonyms" caption="Alternate scientific name (synonyms)">
+											<div class="km-control-group" name="scientificNameSynonyms" caption="الاسم العلمي البديل (مرادفات)">
 												<div ng-repeat="synonym in scientificNameSynonyms" style="padding-bottom:5px;">
 													<input type="text" class="form-control" name="scientificNameSynonyms{{$index}}" ng-model="synonym.value" />
 												</div>
-												<button class="btn btn-primary" ng-click="scientificNameSynonyms.push({})">Add a item</button>
+												<button class="btn btn-primary" ng-click="scientificNameSynonyms.push({})">أضف بندًا</button>
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="commonNames" caption="Alternate scientific name (synonyms)">
+											<div class="km-control-group" name="commonNames" caption="الاسم العلمي البديل (مرادفات)">
 												<div ng-repeat="commonName in commonNames" style="padding-bottom:5px;">
 													<div km-textbox-ml name="commonNames{{$index}}" ng-model="commonName.value" locales="document.header.languages"></div>
 												</div>
-												<button class="btn btn-primary" ng-click="commonNames.push({})">Add a item</button>
+												<button class="btn btn-primary" ng-click="commonNames.push({})">أضف بندًا</button>
 											</div>
 										</div>
 									</div>
@@ -101,22 +101,22 @@
 									<legend>التصنيف الإضافي</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="plantCultivar" caption="Cultivar / variety (نباتات)">
+											<div class="km-control-group" name="plantCultivar" caption="الصنف/النوع (النباتات)">
 												<input type="text" class="form-control" name="plantCultivar"  ng-model="document.plantCultivar"/>
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="microorganismStrain" caption="Strain / isolate / serotype (الكائنات الدقيقة)">
+											<div class="km-control-group" name="microorganismStrain" caption="السلالة / الفصيلة المعزولة / المصل (الكائنات الدقيقة)">
 												<input type="text" class="form-control" name="microorganismStrain" ng-model="document.microorganismStrain" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="bacteriaPathovar" caption="Pathovar (البكتيريا)">
+											<div class="km-control-group" name="bacteriaPathovar" caption="الصفة الإمراضية (في البكتيريا)">
 												<input type="text" class="form-control" name="bacteriaPathovar" ng-model="document.bacteriaPathovar" />
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="virusGroup" caption="Group (الفيروسات)">
+											<div class="km-control-group" name="virusGroup" caption="مجموعة (الفيروسات)">
 												<input type="text" class="form-control" name="virusGroup" ng-model="document.virusGroup" />
 											</div>
 										</div>
@@ -141,44 +141,44 @@
 									<legend>الصفات المتعلقة بالسلامة الأحيائية</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="originCentre" caption="مركز(مراكز) الأصل">
-												<div class="help-block">الحد الأقصي 200 حرف</div>
+											<div class="km-control-group" name="originCentre" caption="مركز (مراكز) المنشأ">
+												<div class="help-block">الحد الأقصى 200 حرف</div>
 												<div km-rich-textbox ng-model="document.originCentre" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="diversityCentre" caption="مركز(مراكز) التنوع الجيني">
-												<div class="help-block">الحد الأقصي 200 حرف</div>
+											<div class="km-control-group" name="diversityCentre" caption="مركز (مراكز) التنوع الجيني">
+												<div class="help-block">الحد الأقصى 200 حرف</div>
 												<div km-rich-textbox ng-model="document.diversityCentre" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="habitat" caption="حدود الموطن">
-												<div class="help-block">الحد الأقصي 200 حرف</div>
+											<div class="km-control-group" name="habitat" caption="حدود الموطن/الموئل">
+												<div class="help-block">الحد الأقصى 200 حرف</div>
 												<div km-rich-textbox ng-model="document.habitat" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 
 										<div class="col-xs-12">
 											<div class="km-control-group" name="geographicalDistribution" caption="التوزيع الجغرافي">
-												<div class="help-block">مثال: كوتونوود الشرقية (أشجار البوبولس) توجد في شمال أمريكا من ولاية ألبيرتا في الغرب إلي كويبك في الشرق، وتوجد في الجنوب في كلاً من فلوريدا وتكساس وأريزونا وشمال المكسيك. (بحد أقصى 200 حرف)</div>
+												<div class="help-block">مثال: أشجار خشب القطن الشرقي (اسمها العلمي Populus deltoides) تنمو في أمريكا الشمالية من ألبيرتا في الغرب حتى كويبيك في الشرق وفلوريدا وتيكساس وأريزونا وشمال المكسيك في الجنوب. (بحد أقصى 200 حرف)</div>
 												<div km-rich-textbox ng-model="document.geographicalDistribution" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="donorOrganism" caption="Cross-compatible species">
-												<div class="hel-block">اذكر قائمة بالأنواع التي المعروفة بالتكاثر المتبادل مع الكائن الحي في السجل وذلك باستخدام التصنيف العلمي (أسماء الأجناس والأنواع).</div>
+											<div class="km-control-group" name="donorOrganism" caption="الأنواع المُهجَّنة بالتكاثر">
+												<div class="hel-block">اذكر قائمة بالأنواع المعروفة بالتكاثر المتبادل مع الكائن الحي في السجل وذلك باستخدام جدول التصنيف العلمي (أسماء الأجناس والأنواع).</div>
 												<div document-selector ng-model="document.donorOrganism" question="donorOrganism" schema="(organism)"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="pathogenicity" caption="الأنواع المعروفة الفتاكة و/أو المنفرة">
-												<div class="help-block">الحد الأقصي 200 حرف</div>
+											<div class="km-control-group" name="pathogenicity" caption="السمة التي يشتهر بها الكائن من حيث إثارة الحساسية و/أو نقل الأمراض">
+												<div class="help-block">الحد الأقصى 200 حرف</div>
 												<div km-rich-textbox ng-model="document.pathogenicity" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="commonUses" caption="Common use(s)">
+											<div class="km-control-group" required name="commonUses" caption="الاستخدام (الاستخدامات) الشائعة:">
 												<div km-term-check name="commonUses" required ng-model="document.commonUses" terms="options.commonUses" binding-type="term[]"></div>
 											</div>
 										</div>
@@ -190,8 +190,8 @@
 									<legend>معلومات إضافية</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+											<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+												<div class="help-block">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -200,7 +200,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="relevantDocuments" caption="أي وثائق أخرى ذات صلة">
-												<div class="help-block">من فضلك قم باستخدام هذا الحقل فى توفير أى عناوين لمواقع انترنت أخرى ذات صلة و/أو مستند أو أكثر لتخزينها فى قاعدة البيانات ليمكن تحميلها من قبل المستخدمين.</div>
+												<div class="help-block">يُرجى استخدام هذا الحقل في إدخال عناوين أي مواقع إنترنت أخرى ذات صلة و/أو وثيقة أو وثائق أخرى ذات صلة لتخزينها في قاعدة البيانات ليستطيع المستخدمون تنزيلها.</div>
 												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>
@@ -214,7 +214,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+											<div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

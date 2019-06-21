@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div ng-if="showSystemAlerts">
             <div class="row" style="padding:10px 0;background-color:#eee;">
-                <div class="col-xs-7 col-sm-8"><small class="color-red">system alert</small><br> <span class="bold">Certificates (IRCC) published indicating that prior informed consent (PIC) has been granted to a user within my jurisdiction</span></div>
+                <div class="col-xs-7 col-sm-8"><small class="color-red">Alerte du système</small><br> <span class="bold">les certificats (CCIR) publiés indiquant que le consentement préalable en connaissance de cause (CPCC) a été accordé à un utilisateur dans le cadre de ma juridiction</span></div>
                 <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Email&nbsp;me</small><div ng-click="subscribe('absPermit')" class="color-white" ng-if="!hasUserSubscribed('absPermit')"
                         style="cursor:pointer"><i class="fa fa-square fa-2x"></i></div>
                     <div ng-click="unsubscribe('absPermit')" class="color-darkgray" ng-if="hasUserSubscribed('absPermit')"
@@ -32,15 +32,15 @@
                 </div>
             </div>
         </div>
-    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Add new</button>
+    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Ajouter une nouvelle alerte</button>
     <div class="clearfix"></div>
 
     <div ng-show="!loading && (!userFilters || userFilters.length==0) && !showSystemAlerts">
-        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">You do not have any saved alerts. <span ng-if="!user.isAuthenticated">Please log in to view your saved alerts.</span></div>
+        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">Vous n’avez pas d’alerte sauvegardée <span ng-if="!user.isAuthenticated">Veuillez vous connecter pour voir vos alertes sauvegardées.</span></div>
     </div>
     <script type="text/ng-template" trados-translation="true" id="newFilterDialog">
         <div class="modal-header">
-            <h3 class="modal-title">AJouter/&eacute;diter un filtre</h3>
+            <h3 class="modal-title">AJouter/éditer un filtre</h3>
         </div>
         <div class="modal-body">
                 <div class="form-group">
@@ -51,7 +51,7 @@
                 <div class="alert alert-danger" role="alert" ng-if="errors && errors.length > 0">
                     <p ng-repeat="error in errors">{{error}}</p>
                 </div>
-            </div><br><label for="filterTitle">S&eacute;lectionner les filtres de recherche :</label>
+            </div><br><label for="filterTitle">Sélectionner les filtres de recherche :</label>
             <div class="bg-white" style="border:1px solid #ccc; border-radius: 5px;">
                 <search-directive skip-results="true" skip-save-filter="true" skip-date-filter="true" skip-keywords-filter="{{skipKeywordsFilter}}"
                     skip-text-filter="{{skipTextFilter}}">

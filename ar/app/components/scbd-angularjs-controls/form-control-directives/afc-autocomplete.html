@@ -8,5 +8,5 @@
 		<style media="screen" dir="rtl"> #listGroup{ max-width:95%; min-width:80%; } </style>
 		 <div style="display: none; position: absolute; z-index: 9999; background-color: white; max-height: 300px; overflow: auto;" class="list-group" dir="rtl"><a ng-repeat="item in buttonOverrideFilter(bindingDisplay, items)" ng-click="clickSelected($index)"
 			ng-mouseover="updateSelected($index)" class="list-group-item"
-			ng-class="{'list-group-item-info': selected == $index, 'list-group-item-success': displaySpans.indexOf(item.__value)!=-1}" dir="rtl">{{item.title | lstring:currentLocale}}&nbsp;<span ng-show="displaySpans.indexOf(item.__value) != -1" class="glyphicon glyphicon-ok"></span></a></div>
+			ng-class="{'list-group-item-info': selected == $index, 'list-group-item-success': displaySpans.indexOf(item.__value)!=-1}" dir="rtl">{{item.title | lstring:currentLocale}}&nbsp; <span ng-show="displaySpans.indexOf(item.__value) != -1" class="glyphicon glyphicon-ok"></span></a></div>
 		 <div ng-show="!hidePreview" compile="preview" dir="rtl"></div>

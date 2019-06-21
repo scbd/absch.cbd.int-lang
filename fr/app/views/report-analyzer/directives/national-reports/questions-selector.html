@@ -4,7 +4,7 @@
 
     <table class="table table-hover" style="margin-bottom:0px">
         <tr>
-            <th style="width:200px">National Report</th>
+            <th style="width:200px">Rapport national</th>
             <td>
                 <select style="Width: 100%;" ng-model="selectedReportType" ng-change="reportTypeChanged()"  class="form-control">
                     <option ng-repeat="report in (reportData|filter:hasAnalyzer)" value="{{report.type}}" >{{report.title}}</option>
@@ -13,25 +13,25 @@
             </td>
         </tr>
         <tr>
-            <th>Zones g&eacute;ographiques</th>
+            <th>Zones géographiques</th>
             <td>
                 <select style="width: 100%;" ng-model="selectedRegionsPreset" ng-change="regionsPresetChanged()" class="form-control">
-                    <option value="cbdRegions">Ventilation par r&eacute;gions de la CBD</option>
-                    <option value="countries">Select countries</option>
-                    <option value="regions">Select regions</option>
-                    <option value="protocolParties">Breakdown by Nagoya Protocol Parties</option>
-                    <option value="protocolNonParties">Breakdown by Nagoya Protocol Non-Parties</option>
+                    <option value="cbdRegions">Ventilation par régions de la CBD</option>
+                    <option value="countries">Sélectionnez un/des pays</option>
+                    <option value="regions">Sélectionnez une/des région</option>
+                    <option value="protocolParties">Répartition par Parties au Protocole de Nagoya</option>
+                    <option value="protocolNonParties">Répartition par Non- Parties au Protocole de Nagoya</option>
                 </select>
             </td>
         </tr>
         <tr ng-if="selectedRegionsPreset!='cbdRegions'">
             <td class="text-center">
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="selectedRegionsPreset=='countries'">Select countries</button>
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="selectedRegionsPreset=='regions'">Select regions</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="selectedRegionsPreset=='countries'">Sélectionnez un/des pays</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="selectedRegionsPreset=='regions'">Sélectionnez une/des région</button>
             </td>
             <td>
 
-                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">No countries or regions selected</div>
+                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">Aucun pays ou régions sélectionnés</div>
 
                 <ul ng-if="selectedRegions.length" class="list-unstyled">
                     <li ng-repeat="c in selectedRegions"><span ng-if="selectedRegionsPreset!='protocolParties' && selectedRegionsPreset!='protocolNonParties'"><i class="fa fa-times" ng-click="removeRegions(c)" ng-show="selectedRegionsPreset!='cbdRegions'"></i> {{regionsMap[c].title|lstring}}</span> <span ng-if="selectedRegionsPreset!='protocolParties' || selectedRegionsPreset!='protocolNonParties'">{{npCountries[c].title|lstring}}</span></li>

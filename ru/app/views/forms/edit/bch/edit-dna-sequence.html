@@ -18,7 +18,7 @@
 									<legend>Общая информация о генетическом элементе</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -34,17 +34,17 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="synonymNames" caption="Alternate Genetic Element Name (synonyms)">
+											<div class="km-control-group" name="synonymNames" caption="Альтернативное название генетического элемента (синонимы)">
 												<div ng-repeat="synonym in synonymNames" style="padding-bottom:5px;">
 													<div km-textbox-ml name="synonymNames_{{$index}}" ng-model="synonym.value" locales="document.header.languages"></div>
 												</div>
-												<button class="btn btn-primary" ng-click="synonymNames.push({})">Add a item</button>
+												<button class="btn btn-primary" ng-click="synonymNames.push({})">Добавить пункт</button>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="abbreviation" caption="Abbreviation">
+											<div class="km-control-group" required name="abbreviation" caption="Сокращенное название">
 												<div km-textbox-ml name="abbreviation" required ng-model="document.abbreviation" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -102,7 +102,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="relevantDocuments" caption="Любые другие соответствующие документы">
-												<div class="help-block">Укажите в этом поле любые другие релевантные адреса веб-сайтов и (или) один или несколько релевантных документов, которые будут храниться в базе данных для загрузки пользователями.</div>
+												<div class="help-block">Please use this field to provide any other relevant website addresses and/or one or more relevant documents that will be stored in the database for users to download.</div>
 												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>

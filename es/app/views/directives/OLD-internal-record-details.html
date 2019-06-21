@@ -5,15 +5,15 @@
    <div class="row" >
             <div class="col-xs-12">
                 <div class="well">
-                    <h3 style="margin:0 0 20px 0;padding:0;border-bottom:1px solid #999;">Informaci&oacute;n de registro</h3>
+                    <h3 style="margin:0 0 20px 0;padding:0;border-bottom:1px solid #999;">Información de registro</h3>
                     <table style="width:100%!important;">
                             <tr>
-                                <td><label>Identificador &uacute;nico:</label></td>
+                                <td><label>Identificador único:</label></td>
                                 <td class="bold">{{doc | uniqueID}}</td>
                             </tr>
                             <tr>
                                 <td><label>Estado del registro:</label></td>
-                                <td class="bold"><span class="color-grey" ng-if="docInfo.revision == '0'">BORRADOR</span> <span class="color-green"  ng-if="docInfo.revision > 0">PUBLICADO</span> <span class="color-red"  ng-if="docInfo.workingDocumentLock">[ Locked: Solicitud de publicaci&oacute;n pendiente ]</span></td>
+                                <td class="bold"><span class="color-grey" ng-if="docInfo.revision == '0'">BORRADOR</span> <span class="color-green"  ng-if="docInfo.revision > 0">PUBLICADO</span> <span class="color-red"  ng-if="docInfo.workingDocumentLock">[ Locked: Solicitud de publicación pendiente ]</span></td>
                             </tr>
                             <tr>
                                 <td><label>Tipo de registro:</label></td>

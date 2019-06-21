@@ -11,9 +11,9 @@
                             <thead>
                             <tr>
                                 <th>Informe</th>
-                                <th style="text-align:center;" class="hidden-xs">Year</th>
+                                <th style="text-align:center;" class="hidden-xs">Año</th>
                                 <th style="text-align:center;">Party count <br/>on due date</th>
-                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace(&apos;CBD - &apos;, &apos;&apos;)}}</th>                                
+                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace('CBD - ', '')}}</th>                                
                                 <th style="text-align:center;" class="hidden-xs">By Parties</th>
                                 <th style="text-align:center;" class="hidden-xs">By Non-Parties</th>
                                 <th style="text-align:center;">Informes</th>
@@ -39,7 +39,7 @@
                     <table style="width:100%">
                         <tr>
                             <td style="width:99%">
-                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                                <h4 class="panel-title">Analizador de informes nacionales</h4>Esta herramienta le permite seleccionar secciones o preguntas específicas del informe y mostrar los resultados por país o región.</td>
                             <td>
                                 <button type="button" class="btn btn-primary" ng-click="analyze()">Analizar »</button>
                             </td>

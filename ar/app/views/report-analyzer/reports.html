@@ -3,7 +3,7 @@
         <div class="panel panel-default">
                 
                 <div class="panel-heading">
-                    <h3 class="panel-title">لمحة عامة</h3>
+                    <h3 class="panel-title">نبذة عامة</h3>
                 </div>
     
                 <div class="panel-body">
@@ -13,7 +13,7 @@
                                 <th>التقرير</th>
                                 <th style="text-align:center;" class="hidden-xs">السنة</th>
                                 <th style="text-align:center;">Party count <br/>on due date</th>
-                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace(&apos;CBD - &apos;, &apos;&apos;)}}</th>                                
+                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace('CBD - ', '')}}</th>                                
                                 <th style="text-align:center;" class="hidden-xs">By Parties</th>
                                 <th style="text-align:center;" class="hidden-xs">By Non-Parties</th>
                                 <th style="text-align:center;">التقارير</th>
@@ -39,7 +39,7 @@
                     <table style="width:100%">
                         <tr>
                             <td style="width:99%">
-                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                                <h4 class="panel-title">أداة تحليل التقارير الوطنية</h4>تتيح لك هذه الأداة تحديد أقسام أو أسئلة محددة من التقرير وعرض النتائج حسب البلد/المنطقة.</td>
                             <td>
                                 <button type="button" class="btn btn-primary" ng-click="analyze()">تحليل »</button>
                             </td>

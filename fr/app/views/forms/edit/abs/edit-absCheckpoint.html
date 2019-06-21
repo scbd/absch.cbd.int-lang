@@ -11,11 +11,11 @@
                                 <div class="editForm" ng-show="tab=='edit'" km-tab="edit">
                                     <legend name="formInfo" style="display:none"></legend>
                                     <section>
-                                    <legend name="generalInfo">Informations g&eacute;n&eacute;rales</legend>
+                                    <legend name="generalInfo">Informations générales</legend>
               
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+                                            <div class="km-control-group" name="languages" required caption="Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -34,8 +34,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                                <div class="km-control-group" name="name" required caption="Nom du point de contr&ocirc;le">
-                                                    <div class="help-info">Noter que le nom du point de contr&ocirc;le aidera &agrave; identifier le fichier au Centre d&rsquo;&eacute;change APA.</div>
+                                                <div class="km-control-group" name="name" required caption="Nom du point de contrôle">
+                                                    <div class="help-info">Noter que le nom du point de contrôle aidera à identifier le fichier au Centre d’échange APA.</div>
                                                     <div km-textbox-ml ng-model="document.name" rows="1" placeholder="" locales="document.header.languages"></div>
                                                 </div>
                                         </div>
@@ -44,12 +44,12 @@
               
                                     <section>
               
-                                    <legend name="responsibilities–title">Responsabilit&eacute;s</legend>
-                                    <div class="help-info">Le paragraphe 1 (a) (i) de l&apos;article 17 pr&eacute;voit que les points de contr&ocirc;le d&eacute;sign&eacute;s recueillent ou re&ccedil;oivent des informations pertinentes relatives au consentement pr&eacute;alable en connaissance de cause, &agrave; la source de la ressource g&eacute;n&eacute;tique, &agrave; l&apos;&eacute;tablissement de termes convenus d&rsquo;un commun accord et/ou &agrave; l&apos;utilisation de ressources g&eacute;n&eacute;tiques, le cas &eacute;ch&eacute;ant, le sous-alin&eacute;a (iv) pr&eacute;voit que les points de contr&ocirc;le doivent comporter des fonctions pertinentes pour l&apos;utilisation des ressources g&eacute;n&eacute;tiques, ou la collecte d&apos;informations pertinentes, entre autres, &agrave; toutes les &eacute;tapes de recherche, de d&eacute;veloppement, d&apos;innovation, de pr&eacute;-commercialisation ou de commercialisation.</div>
+                                    <legend name="responsibilities–title">Responsabilités</legend>
+                                    <div class="help-info">Le paragraphe 1 (a) (i) de l'article 17 prévoit que les points de contrôle désignés recueillent ou reçoivent des informations pertinentes relatives au consentement préalable en connaissance de cause, à la source de la ressource génétique, à l'établissement de termes convenus d’un commun accord et/ou à l'utilisation de ressources génétiques, le cas échéant, le sous-alinéa (iv) prévoit que les points de contrôle doivent comporter des fonctions pertinentes pour l'utilisation des ressources génétiques, ou la collecte d'informations pertinentes, entre autres, à toutes les étapes de recherche, de développement, d'innovation, de pré-commercialisation ou de commercialisation.</div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" required name="responsibilities" caption="Br&egrave;ve description des responsabilit&eacute;s">
-                                                   <div class="help-info">Une br&egrave;ve description des responsabilit&eacute;s du point de contr&ocirc;le aidera les utilisateurs des ressources g&eacute;n&eacute;tiques et d&apos;autres personnes &agrave; identifier et &agrave; clarifier le r&ocirc;le et le fonctionnement du point de contr&ocirc;le dans la collecte d&apos;informations pertinentes sur l&apos;utilisation des ressources, entre autres, dans n&apos;importe quelle &eacute;tape de recherche, de d&eacute;veloppement, d&apos;innovation, de pr&eacute;-commercialisation ou de commercialisation. (max. 300 caract&egrave;res)</div>
+                                            <div class="km-control-group" required name="responsibilities" caption="Brève description des responsabilités">
+                                                   <div class="help-info">Une brève description des responsabilités du point de contrôle aidera les utilisateurs des ressources génétiques et d'autres personnes à identifier et à clarifier le rôle et le fonctionnement du point de contrôle dans la collecte d'informations pertinentes sur l'utilisation des ressources, entre autres, dans n'importe quelle étape de recherche, de développement, d'innovation, de pré-commercialisation ou de commercialisation. (max. 300 caractères)</div>
                                                 <div km-rich-textbox name="responsibilities" rows="6" ng-model="document.responsibilities" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                                 <div class="km-control-group" name="jurisdiction" caption="Zone de juridiction">
-                                                    <div class="help-info">Les informations sur la zone de juridiction (&agrave; l&rsquo;&eacute;chelle nationale/f&eacute;d&eacute;rale, sous-nationale  ou communautaire) peuvent aider &agrave; cartographier les diff&eacute;rentes responsabilit&eacute;s g&eacute;ographiques dans le cas o&ugrave; il existe plus d&rsquo;un point de contr&ocirc;le.</div>
+                                                    <div class="help-info">Les informations sur la zone de juridiction (à l’échelle nationale/fédérale, sous-nationale  ou communautaire) peuvent aider à cartographier les différentes responsabilités géographiques dans le cas où il existe plus d’un point de contrôle.</div>
                                                      <div afc-autocomplete name="jurisdiction" ng-model="document.jurisdiction" source="options.jurisdictions" filter="genericFilter" mapping="genericMapping" selectbox="true" required></div>
                                                 </div>
                                         </div>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="row" ng-show="isOthers()">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" required name="jurisdictionName" caption="Nom de d&rsquo;autres juridictions">
+                                            <div class="km-control-group" required name="jurisdictionName" caption="Nom de d’autres juridictions">
                                                 <div km-textbox-ml required name="jurisdictionName" rows="1" ng-model="document.jurisdictionName" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -88,15 +88,15 @@
               
                                     <section>
               
-                                    <legend name="nationalAuthorities">Autorit&eacute;s nationales devant recevoir les informations collect&eacute;es ou re&ccedil;ues par le point de contr&ocirc;le d&eacute;sign&eacute;.</legend>
-                                    <div class="help-info">Conform&eacute;ment au paragraphe 1  (a) (i) et (iii) de l&apos;article 17 du Protocole de Nagoya, les informations recueillies ou re&ccedil;ues par le point de contr&ocirc;le li&eacute;es au consentement pr&eacute;alable en connaissance de cause, &agrave; la source de la ressource g&eacute;n&eacute;tique, &agrave; l&apos;&eacute;tablissement des termes convenus d&apos;un commun accord et/ou &agrave; l&apos;utilisation de ressources g&eacute;n&eacute;tiques, y compris du certificat de conformit&eacute; internationalement reconnu, doivent &ecirc;tre fournies aux autorit&eacute;s nationales comp&eacute;tentes, &agrave; la Partie fournissant un consentement pr&eacute;alable en connaissance de cause et au Centre d&apos;&eacute;change APA, le cas &eacute;ch&eacute;ant. Sur la base de l&rsquo;information fournie, le Centre d&apos;&eacute;change APA &eacute;mettra un communiqu&eacute; et enverra automatiquement une copie de courtoisie &agrave; l&rsquo;autorit&eacute;(s) nationale(s) d&eacute;sign&eacute;e (s) de votre pays. <br><br> Par cons&eacute;quent, les contacts inclus dans la section suivante sur les autorit&eacute;s nationales seront ceux qui recevront les informations recueillies ou re&ccedil;ues par le point de contr&ocirc;le d&eacute;sign&eacute; (et communiqu&eacute;es au centre d&apos;&eacute;change APA par le biais du communiqu&eacute; du point de contr&ocirc;le (CPC)). Pour des autorit&eacute;s multiples, veuillez inclure les num&eacute;ros des fichiers ou les formulaires de coordonn&eacute;es. Veuillez noter que la Partie qui fournit le consentement pr&eacute;alable en connaissance de cause recevra automatiquement l&rsquo;information collect&eacute;e ou re&ccedil;ues par le point de contr&ocirc;le. Veuillez indiquer &agrave; quelle autorit&eacute; nationale ou &agrave; quelle personne contact dans votre pays d&eacute;sirez-vous envoyer les informations collect&eacute;es ou re&ccedil;ues par le point de contr&ocirc;le d&eacute;sign&eacute;. Pour des autorit&eacute;s multiples, veuillez inclure les num&eacute;ros des fichiers ou les formulaires de coordonn&eacute;es. Veuillez noter que la Partie qui fournit le consentement pr&eacute;alable en connaissance de cause recevra automatiquement l&rsquo;information collect&eacute;e ou re&ccedil;ues par le point de contr&ocirc;le.</div>
+                                    <legend name="nationalAuthorities">Autorités nationales devant recevoir les informations collectées ou reçues par le point de contrôle désigné.</legend>
+                                    <div class="help-info">Conformément au paragraphe 1  (a) (i) et (iii) de l'article 17 du Protocole de Nagoya, les informations recueillies ou reçues par le point de contrôle liées au consentement préalable en connaissance de cause, à la source de la ressource génétique, à l'établissement des termes convenus d'un commun accord et/ou à l'utilisation de ressources génétiques, y compris du certificat de conformité internationalement reconnu, doivent être fournies aux autorités nationales compétentes, à la Partie fournissant un consentement préalable en connaissance de cause et au Centre d'échange APA, le cas échéant. Sur la base de l’information fournie, le Centre d'échange APA émettra un communiqué et enverra automatiquement une copie de courtoisie à l’autorité(s) nationale(s) désignée (s) de votre pays. <br><br> Par conséquent, les contacts inclus dans la section suivante sur les autorités nationales seront ceux qui recevront les informations recueillies ou reçues par le point de contrôle désigné (et communiquées au centre d'échange APA par le biais du communiqué du point de contrôle (CPC)). Pour des autorités multiples, veuillez inclure les numéros des fichiers ou les formulaires de coordonnées. Veuillez noter que la Partie qui fournit le consentement préalable en connaissance de cause recevra automatiquement l’information collectée ou reçues par le point de contrôle. Veuillez indiquer à quelle autorité nationale ou à quelle personne contact dans votre pays désirez-vous envoyer les informations collectées ou reçues par le point de contrôle désigné. Pour des autorités multiples, veuillez inclure les numéros des fichiers ou les formulaires de coordonnées. Veuillez noter que la Partie qui fournit le consentement préalable en connaissance de cause recevra automatiquement l’information collectée ou reçues par le point de contrôle.</div>
                                     
                                     
                                     
               
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" required name="informAllAuthorities" caption="Envoyez une copie du communiqu&eacute; &agrave; toutes les autorit&eacute;s nationales comp&eacute;tentes du pays.">
+                                            <div class="km-control-group" required name="informAllAuthorities" caption="Envoyez une copie du communiqué à toutes les autorités nationales compétentes du pays.">
                                                 <div class="km-yes-no" name="informAllAuthorities" ng-model="document.informAllAuthorities"></div>
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@
                                         </div>
                                     </div> --><div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="contactsToInform" caption="Veuillez s&eacute;lectionnez tout autorit&eacute; nationale &agrave; qui vous d&eacute;sirez envoyer une copie du communiqu&eacute;.">
+                                            <div class="km-control-group" name="contactsToInform" caption="Veuillez sélectionnez tout autorité nationale à qui vous désirez envoyer une copie du communiqué.">
                                                 
                                                 <div document-selector ng-model="document.contactsToInform"
                                                                              question="contactsToInform"
@@ -130,8 +130,8 @@
                                     <legend>Additional Information</legend>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="relevantInformation" caption="Informations suppl&eacute;mentaires :">
-                                                <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le fichier.</div>
+                                            <div class="km-control-group" name="relevantInformation" caption="Informations supplémentaires">
+                                                <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n'ayant pas été abordé ailleurs dans le fichier.</div>
                                                 <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation" locales="document.header.languages"></div>
                                             </div>
                                         </div>
@@ -139,7 +139,7 @@
               
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pi&egrave;ces jointes">
+                                            <div class="km-control-group" name="relevantDocuments" caption="Autres sites Internet ou fichiers en pièces jointes">
                                                 <div km-link name="relevantDocuments" ng-model="document.relevantDocuments" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
@@ -151,7 +151,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="notes">
-                                                            <div class="help-info">Le champ «Notes» est destin&eacute; &agrave; vos notes ou commentaires personnels et sera masqu&eacute; lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
+                                                            <div class="help-info">Le champ «Notes» est destiné à vos notes ou commentaires personnels et sera masqué lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
                                                 <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                             </div>
                                         </div>

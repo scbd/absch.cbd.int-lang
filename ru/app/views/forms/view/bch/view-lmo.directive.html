@@ -1,13 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Living Modified Organism <span class="color-black">(LMO)</span></h4>
+		<h4>Живой измененный организм <span class="color-black">(ЖИО)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 		<document-date></document-date>
 		<legend>Идентификационные данные живого измененного организма</legend>
 		<div ng-show="document.info.documentID" style="text-align: center">
-			<div class="help-info">The image below identifies the LMO through its unique identifier, trade name and a link to this page of the BCH. Click on it to download a larger image on your computer. For help on how to use it go to the LMO quick-links page.</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
+			<div class="help-info">Изображение ниже используется для идентификации ЖИО по его уникальному идентификатору, торговому названию и ссылке на данную страницу МПБ. Щелкните его, чтобы загрузить изображение большего размера на свой компьютер. Информацию о том, как его использовать, см. на странице «Быстрые ссылки на ЖИО».</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
 		<div ng-show="document.identity">
 			<label>Название ЖИО</label>
 			<km-value-ml value="document.identity" locales="locale"></km-value-ml>
@@ -21,7 +21,7 @@
 			<div ng-bind="document.uniqueIdentification" class="km-value"></div>
 		</div>
 		<div ng-show="document.developers">
-			<label>Разработчик(и)</label>
+			<label>Разработчик(-и)</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.developers" >						
@@ -37,8 +37,8 @@
 		</div>
 
 		<div ng-show="document.recipientOrganisms">
-			<label>Recipient Organism or Parental Organisms</label>
-			<div class="help-info">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+			<label>Организм-реципиент или родительские организмы</label>
+			<div class="help-info">Термин «организм-реципиент» относится к организму (уже измененному или неизмененному), подвергнутому генетической модификации, а термин «родительские организмы» относится к организмам, участвовавшим в процессах кроссбридинга или слияния клеток.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.recipientOrganisms" >						
@@ -49,7 +49,7 @@
 		</div>
 
 		<div ng-show="document.recipientOrganismCollectionPoint">
-			<label>Пункт сбора или приобретения организма-донора(-ов)</label>			
+			<label>Место сбора или приобретения организма(-ов)-реципиента(-ов)</label>			
 			<km-value-ml value="document.recipientOrganismCollectionPoint" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.linkedModifiedOrganisms">
@@ -70,7 +70,7 @@
 			<km-value-ml value="document.vector" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.transformationEvent">
-			<label>Использованные способы модификации</label>
+			<label>Techniques used for the modification</label>
 			<div ng-bind="document.transformationEvent" class="km-value"></div>
 		</div>
 
@@ -85,7 +85,7 @@
 		</div>
 		<div ng-show="document.genes">
 			<label>Интродуцированные или модифицированные генетические элементы</label>
-			<div class="help-info">Некоторые их этих генетических элементов могут быть представлены в виде фрагментов или в укороченной форме. См. примечания ниже, где применимо.</div>
+			<div class="help-info">Некоторые их этих генетических элементов могут быть представлены в виде фрагментов или в укороченной форме. Please see notes below, where applicable.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.genes" >						
@@ -96,7 +96,7 @@
 		</div>
 
 		<div ng-show="document.geneNotes">
-			<label>Notes regarding the genetic elements introduced or modified in this LMO</label>
+			<label>Примечания, касающиеся генетических элементов, присутствующих или модифицированных в данном ЖИО</label>
 			<km-value-ml value="document.geneNotes" locales="locale"></km-value-ml>
 		</div>
 
@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		<div ng-show="document.affectedGenes">
-			<label>Другие гены, экспрессия которых подвергалась воздействию данной трансформации</label>			
+			<label>Другой(-ие) ген(-ы), экспрессия которых подверглась трансформации</label>			
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.affectedGenes" >						
@@ -121,11 +121,11 @@
 			</div>
 		</div>
 		<div ng-show="document.affectedGeneNotes">
-			<label>Как экспрессия гена (генов) подвергалась воздействию</label>
+			<label>Каким образом осуществлялось воздействие на экспрессию гена (генов)</label>
 			<div ng-bind="document.affectedGeneNotes" class="km-value"></div>
 		</div>
 		<div ng-show="document.commonUses">
-			<label>Основные сферы применения</label>
+			<label>Вид(ы) обычного применения</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="use in document.commonUses" ng-bind="use | term:locale"></li>
@@ -133,9 +133,9 @@
 			</div>
 		</div>
 		<div ng-show="document.detectionMethod||document.detectionMethodLinks">
-			<legend>Метод(-ы) обнаружения</legend>
+			<legend>Метод(ы) обнаружения</legend>
 			<div ng-show="document.detectionMethodLinks">
-				<label>Внешняя ссылка(-и)</label>
+				<label>Внешняя(-ие) ссылка(-и)</label>
 				<div class="km-value">
 					<ul>
 						<li ng-repeat="item in document.detectionMethodLinks"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -143,20 +143,20 @@
 				</div>
 			</div>
 			<div ng-show="document.detectionMethod">
-				<label>Дополнительная информация</label>
+				<label>Additional Information</label>
 				<div class="km-value" ng-bind-html="document.detectionMethod | lstring:locale"></div>
 			</div>
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Дополнительная информация</legend>
+			<legend>Дополнительные сведения</legend>
 
 			<div ng-show="document.relevantInformation">
-				<label>Дополнительная информация</label>
+				<label>Дополнительные сведения</label>
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Адрес другого соответствующего веб-сайта или прилагаемые документы</label>
 				<div class="km-value">
 					<ul>
 						<li ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>

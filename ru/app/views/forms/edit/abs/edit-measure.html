@@ -48,7 +48,7 @@
                                     <legend>Общая информация</legend>
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -258,7 +258,7 @@
     
                                     <div ng-if="document.absMeasuresForDelete">
                                         <div class="alert alert-warning">
-                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Формат для сохранения <i>Элементов мер</i> изменен. Обновление данной записи требуется выполнить вручную. Ниже приводится список <i>Элементов мер</i> из предыдущей версии, предназначенный для использования в справочных целях, с тем чтобы помочь вам обновить данную запись.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>Формат для сохранения <i>Элементов мер</i> изменен. Обновление данной записи требуется выполнить вручную. Ниже приводится список <i>Элементов мер</i> из предыдущей версии, предназначенный для использования в справочных целях, с тем чтобы помочь вам обновить данную запись.</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}. {{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp; <span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">

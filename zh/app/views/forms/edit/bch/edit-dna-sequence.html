@@ -18,7 +18,7 @@
 									<legend>有关基因片断的一般信息</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -34,17 +34,17 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="synonymNames" caption="Alternate Genetic Element Name (synonyms)">
+											<div class="km-control-group" name="synonymNames" caption="备选基因片断名称（同义词）">
 												<div ng-repeat="synonym in synonymNames" style="padding-bottom:5px;">
 													<div km-textbox-ml name="synonymNames_{{$index}}" ng-model="synonym.value" locales="document.header.languages"></div>
 												</div>
-												<button class="btn btn-primary" ng-click="synonymNames.push({})">Add a item</button>
+												<button class="btn btn-primary" ng-click="synonymNames.push({})">添加项目</button>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="abbreviation" caption="Abbreviation">
+											<div class="km-control-group" required name="abbreviation" caption="缩写">
 												<div km-textbox-ml name="abbreviation" required ng-model="document.abbreviation" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -116,7 +116,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
+											<div class="help-block">“备注”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

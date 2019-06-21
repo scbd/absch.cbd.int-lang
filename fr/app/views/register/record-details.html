@@ -41,18 +41,18 @@
                         <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
 
                             <div ng-show="isDraft(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Supprimer le brouillon</button><em>Brouillon {{recordToDelete.documentID||&apos;[new]&apos;}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Supprimer le brouillon</button><em>Brouillon {{recordToDelete.documentID||'[new]'}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
                             </div>
 
                             <div ng-show="isPublished(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note&nbsp;: Any pending draft will also be deleted">Fichier non publi&eacute; ou supprim&eacute;</button><em>Fichier publi&eacute; {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
+                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Note : Any pending draft will also be deleted">Fichier non publié ou supprimé</button><em>Fichier publié {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.summary|lstring"></p>
                             </div>
 
                         </div>
-                        <div class="modal-body" ng-show="cantDelete || pilotDelete">Vous n&rsquo;&ecirc;tes pas autoris&eacute; &agrave; supprimer les fichiers publi&eacute;s Un fichier CCIR peut &ecirc;tre modifi&eacute; et affich&eacute; comme &eacute;tant <i>r&eacute;voqu&eacute;</i>. <i>R&eacute;voqu&eacute;</i> les fichiers CCIR ne sont plus valides. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
-                        <div class="modal-body" ng-show="iacCantDelete">Vous n&rsquo;avez pas l&rsquo;autorisation de supprimer ce document.</div>
+                        <div class="modal-body" ng-show="cantDelete || pilotDelete">Vous n’êtes pas autorisé à supprimer les fichiers publiés Un fichier CCIR peut être modifié et affiché comme étant <i>révoqué</i>. <i>Révoqué</i> les fichiers CCIR ne sont plus valides. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
+                        <div class="modal-body" ng-show="iacCantDelete">Vous n’avez pas l’autorisation de supprimer ce document.</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                         </div>
@@ -66,11 +66,11 @@
                             <h4>Annuler une demande de publication<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
                         </div>
                         <div class="modal-body">
-                            <p>&Ecirc;tes-vous s&ucirc;r de vouloir retirer et  annuler cette demande de publication?</p>
+                            <p>Êtes-vous sûr de vouloir retirer et  annuler cette demande de publication?</p>
                         </div>
                         <div class="modal-footer" style="margin-top:0">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Yes</button>
+                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Oui</button>
 
                         </div>
                     </div>

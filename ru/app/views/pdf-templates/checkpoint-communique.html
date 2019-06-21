@@ -4,44 +4,44 @@
             <div class="col-xs-12">
                 <div class="alert alert-danger" ng-show="documentInfo.Realm && documentInfo.Realm.toUpperCase()!= 'ABS'">
                     <h4>Внимание!</h4>
-                    <p>this pdf was generated from ABS-CH test website.<p>
+                    <p>Данный файл в формате PDF создан на тестовом веб-сайте МП-ДГРСИВ.<p>
                 </div>
 
                 <div id="printContentHeader" ng-include="'/app/views/forms/view/print-header.html'"></div>
 
                 <div class="bg-blue text-center" style="padding:5px;">
                     <h1>
-                        <div class="color-lightblue">ABS Clearing-House Checkpoint Communiqu&eacute;</div>
+                        <div class="color-lightblue">Коммюнике контрольного пункта для Механизма посредничества для регулирования ДГРСИВ</div>
                         <div class="color-white">{{documentInfo|uniqueID}}</div>
                     </h1>
                 </div>
 
-                <p style="margin-bottom:30px;">On the basis of the information collected or received by the checkpoint and provided to the ABS Clearing-House pursuant to Article 17 of the Nagoya Protocol, a courtesy copy of the report of the records on the communique has been automatically sent by electronic means to the designated national authorities, the national focal point and the competent national authority of the country providing prior informed consent (PIC), as appropriate.</p><!--
+                <p style="margin-bottom:30px;">Копия сообщения о записях, содержащихся в коммюнике, составленного на основании информации, собранной или полученной контрольными пунктами и представленной в Механизм посредничества для регулирования ДГРСИВ в соответствии со статьей 17 Нагойского протокола, в порядке любезности была автоматически направлена по электронным каналам назначенным национальным органам власти, национальному координационному центру и компетентному национальному органу, предоставляющему предварительное обоснованное согласие (ПОС) (в зависимости от обстоятельств).</p><!--
             <p>{{document}}</p> --><legend>Общая информация</legend>
                 <div class="row top-border bg-lightblue">
                     <div class="col-xs-6">
-                        <label>Звание:</label>
+                        <label>Title:</label>
                         <div class="text">{{document.title| lstring:locale}}</div>
                     </div>
                     <div class="col-xs-3">
-                        <label>Уникальный идентификатор:</label>
+                        <label>Уникальный идентификатор</label>
                         <div class="text">{{documentInfo|uniqueID}}</div>
                     </div>
                     <div class="col-xs-3">
-                        <label>Sent on:</label>
+                        <label>Дата отправки:</label>
                         <div class="text">{{documentVersion.createdOn |formatDate}}</div>
                     </div>
                 </div>
 
 
-                <legend>Issuing Authority of the Checkpoint Communiqu&eacute;</legend>
+                <legend>Орган, выдавший коммюнике контрольных пунктов</legend>
                 <div class="row top-border bg-lightblue">
                     <div class="col-xs-12">
-                        <label>Issuing country:</label>
+                        <label>Страна выдачи</label>
                         <div class="text">{{document.government|term:locale}}</div>
                     </div>
                     <div class="col-xs-12">
-                        <label>Checkpoint(s) that collected or received this information:</label>
+                        <label>Контрольный(-ые) пункт(ы), ) которые собирали или получали информацию:</label>
                         <div class="text" ng-repeat="item in document.absCheckpoints"><span view-default-reference ng-model="item.identifier" locale="locale" collapse="false"></span></div>
                     </div>
                 </div>
@@ -64,18 +64,18 @@
                 <legend>Информация, собранная или полученная на контрольном пункте</legend>
                 <div class="row top-border bg-lightblue"><!-- repeat for each IRCC, if IRCC was included--><div class="clearfix"></div>
                     <div class="col-xs-12" ng-if="!document.absIRCCsNotAvailable || document.absIRCCs">
-                        <label>INTERNATIONAL RECOGNIZED CERTIFICATE(s) OF COMPLIANCE</label>
+                        <label>МЕЖДУНАРОДНО ПРИЗНАННЫЕ СЕРТИФИКАТЫ О СООВЕТСТВИИ ТРЕБОВАНИЯМ</label>
                         <div class="text" ng-repeat="item in document.absIRCCs"><span view-default-reference ng-model="item.identifier" locale="locale" collapse="false"></span></div>
                     </div><!-- if IRCC was NOT included--><div ng-if="document.absIRCCsNotAvailable==true">
                         <div class="clearfix"></div>
                         <div class="col-xs-12">
-                            <label>Internationally Recognized Certificate of Complicance (IRCC)</label>
-                            <div class="text alert-text">not available</div>
+                            <label>Международно признанный сертификат о соответствии требованиям (МПССТ)</label>
+                            <div class="text alert-text">отсутствует</div>
                         </div>
 
                         <div class="clearfix"></div>
                         <div class="col-xs-6">
-                            <label>Source country of the genetic resource(s)</label>
+                            <label>Страна происхождения генетических ресурсов</label>
                             <div class="text">
                                 <ul>
                                     <li ng-repeat="country in document.sourceCountries">{{country|term}}</li>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-xs-12">
-                            <label>Evidence of prior informed consent (PIC)</label>
+                            <label>Доказательство получения предварительного обоснованного согласия (ПОС)</label>
                             <div class="text" ng-bind-html="renderHtml(document.evidenceOfPIC)"></div>
                         </div>
                         <div class="clearfix"></div>
@@ -144,27 +144,27 @@
 
                         <div class="clearfix"></div>
                         <div class="col-xs-8">
-                            <label>Evidence of mutually agreed terms (MAT)</label>
+                            <label>Доказательство заключения взаимосогласованных условий (ВСУ)</label>
                             <div class="text" ng-bind-html="renderHtml(document.evidenceOfMAT)"></div>
                         </div>
 
                         <div class="col-xs-4">
-                            <label>Date of access to the genetic resources:</label>
+                            <label>Дата предоставления доступа к генетическим ресурсам:</label>
                             <div class="text"><span ng-show="document.dateCollected">{{document.dateOfAccess}}</span></div>
                         </div>
                     </div><!-- end if no IRCC --><div class="clearfix"></div>
                     <div class="col-xs-8">
-                        <label>Information collected or received relevant to the utilization of genetic resources</label>
+                        <label>Собранная или полученная информация, касающаяся использования генетических ресурсов</label>
                         <div class="text" ng-bind-html="renderHtml(document.description)"></div>
                     </div>
                     <div class="col-xs-4">
-                        <label>Information collected or received on:</label>
+                        <label>Дата сбора или получения информации:</label>
                         <div class="text"><span ng-show="document.dateCollected">{{document.dateCollected}}</span> <span ng-show="document.dateCollectedFrom && !document.dateCollected">{{document.dateCollectedFrom}}</span> <span ng-show="document.dateCollectedTo && document.dateCollectedFrom">to {{document.dateCollectedTo}}</span></div>
                     </div>
 
                     <div class="clearfix"></div>
                     <div class="col-xs-12">
-                        <label>People or entities utilizing the genetic resource at the checkpoint</label>
+                        <label>Физические лица или организации, использующие генетические ресурсы на контрольном пункте</label>
                     </div>
                     <div class="col-xs-12">
                         <div ng-repeat="user in document.personsAtCheckpoint" style="padding-left:0px;">
@@ -176,10 +176,10 @@
 
                     <div class="clearfix"></div>
                 </div>
-                <legend>Дополнительная информация</legend>
+                <legend>Дополнительные сведения</legend>
                 <div class="row top-border bg-lightblue">
                     <div class="col-xs-12">
-                        <label>Дополнительная информация</label>
+                        <label>Дополнительные сведения</label>
                         <div class="text">
                             <div ng-bind-html="renderHtml(document.relevantInformation)"></div>
                         </div>
@@ -187,7 +187,7 @@
 
                     <div class="clearfix"></div>
                     <div class="col-xs-12" ng-show="document.informationDocument || document.relevantDocuments">
-                        <label>Attached documents</label>
+                        <label>Прилагаемые документы</label>
                         <ul style="list-style-type: none;" class="text">
                             <li ng-repeat="item in document.informationDocuments"><strong><a ng-href="https://absch.cbd.int/{{item.url}}">{{item.name}}</strong></li>
                             <li ng-repeat="item in document.relevantDocuments"><strong><a ng-href="https://absch.cbd.int/{{item.url}}">{{item.name}}</strong></li>
@@ -200,8 +200,8 @@
                 <legend>Дополнительная информация</legend>
                 <table class="top-border">
                     <tr>
-                        <td class="col-md-6" width="50%" style="font-size:12px;text-align: justify">По вопросам, касающимся разрешения или эквивалентного ему документа, являющегося международно признанным сертификатом о соответствии требованиям, следует обращаться к компетентному национальному органу, выдавшему разрешение или эквивалентный ему документ. Additional information about the permit or its equivalent may be available in the Access and Benefit-Sharing Clearing House ( <a href="https://absch.cbd.int/">https://absch.cbd.int/</a>). <br> <br> По вопросам о Нагойском протоколе регулирования доступа к генетическим ресурсам и совместного использования на справедливой и равной основе выгод от их применения или функционировании Механизма посредничества для регулирования ДГРСИВ можно обращаться к Секретариату Конвенции о биологическом разнообразии.</td>
-                        <td class="col-md-6" style="font-size:12px;vertical-align: top"><strong>Secretariat of the Convention on Biological Diversity</strong> <br/> 413 rue Saint-Jacques, suite 800 <br/> Montreal, Qu&eacute;bec, H2Y 1N9 <br/> Canada <br/> Факс: +1 514 288-6588 <br/> Адрес электронной почты: <a href="mailto:secretariat@cbd.int" style="color:white;">secretariat@cbd.int</a></td>
+                        <td class="col-md-6" width="50%" style="font-size:12px;text-align: justify">По вопросам, касающимся разрешения или эквивалентного ему документа, являющегося международно признанным сертификатом о соответствии требованиям, следует обращаться к компетентному национальному органу, выдавшему разрешение или эквивалентный ему документ. Дополнительная информация о разрешении или эквивалентном ему документе может быть размещена в Механизме посредничества для регулирования доступа к генетическим ресурсам и совместного использования выгод (<a href="https://absch.cbd.int/">https://absch.cbd.int/</a>). <br> <br> Questions about the Nagoya Protocol on Access and Benefit-sharing or the operation of the Access and Benefit-sharing Clearing-House may be directed to the Secretariat of the Convention on Biological Diversity.</td>
+                        <td class="col-md-6" style="font-size:12px;vertical-align: top"><strong>Secretariat of the Convention on Biological Diversity</strong> <br/> 413 rue Saint-Jacques, suite 800 <br/> Montreal, Québec, H2Y 1N9 <br/> Canada <br/> Факс: +1 514 288-6588 <br/> Email: <a href="mailto:secretariat@cbd.int" style="color:white;">secretariat@cbd.int</a></td>
                     </tr>
                 </table>
 

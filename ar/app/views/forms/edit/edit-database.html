@@ -10,7 +10,7 @@
 							<legend name="formInfo" style="display:none"></legend>
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+									<div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -24,7 +24,7 @@
 									<div class="col-xs-12">
 										<div class="km-control-group" name="government" required caption="Country">
 											<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
-											 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
+											 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يُرجى اختيار البلد..."></div>
 										</div>
 									</div>
 								</div>
@@ -48,8 +48,8 @@
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
-										<div class="km-control-group" name="website" required caption="عنوان موقع الإنترنت">
-											<div class="help-info">يرجى ذكر الرابط الكامل لموقع الويب (مثال: http://www.cbd.int).</div>
+										<div class="km-control-group" name="website" required caption="عنوان موقع على الإنترنت">
+											<div class="help-info">يُرجى ذكر الرابط الكامل لموقع الويب (مثال: http://www.cbd.int).</div>
 											<input type="url" ng-model="document.website.url" required class="form-control" placeholder="مثال: http://www.cbd.int" />
 										</div>
 									</div>
@@ -62,8 +62,8 @@
 
 								<div class="row">
 									<div class="col-xs-12">
-										<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-											<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+										<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+											<div class="help-info">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 											<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -85,7 +85,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-info">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+											<div class="help-info">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

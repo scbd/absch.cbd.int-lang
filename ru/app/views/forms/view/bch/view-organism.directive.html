@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Organism <span class="color-black">(ORSM)</span></h4>
+		<h4>Организм <span class="color-black">(ОРЗМ)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -12,11 +12,11 @@
 			<div class="km-value" ng-bind="document.scientificName"><span ng-if="document.scientificNameSynonyms">({{document.scientificNameSynonyms}})</span></div>
 		</div>
 		<div>
-			<label>Taxonomic Classification</label>
+			<label>Таксономическая классификация</label>
 			<div class="km-value">
 				<table cellpadding="0" cellspacing="0">
 					<tbody>
-						<tr ng-if="document.kingdom"><td  style="padding: 2px 3px 2px 2px;padding-left: 5px;">Kingdom</td><td id="E6884729" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.kingdom"	></td></td>
+						<tr ng-if="document.kingdom"><td  style="padding: 2px 3px 2px 2px;padding-left: 5px;">Царство</td><td id="E6884729" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.kingdom"	></td></td>
 						<tr ng-if="document.phylum"><td  style="padding: 2px 3px 2px 2px;padding-left: 10px;">Тип</td><td id="E6884732" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.phylum"	></td></tr>
 						<tr ng-if="document._class"><td  style="padding: 2px 3px 2px 2px;padding-left: 15px;">Класс</td><td id="E6884735" style="padding: 2px 2px 2px 3px;" 	ng-bind="document._class"	></td></tr>
 						<tr ng-if="document.order"><td  style="padding: 2px 3px 2px 2px;padding-left: 20px;">Отряд</td><td id="E6884738" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.order"	></td></tr>
@@ -29,7 +29,7 @@
 		</div>
 
 		<div ng-show="document.scientificNameSynonyms">
-				<label>Scientific name synonyms(s)</label>
+				<label>Синоним(ы) научного названия</label>
 				<div class="km-value"> 
 					<ul class="list">
 						<li ng-repeat="name in document.scientificNameSynonyms" ng-bind="name"></li>
@@ -51,12 +51,12 @@
 		<legend>Дополнительная классификация</legend>
 		
 		<div ng-show="document.plantCultivar">
-				<label>Культурный сорт, вариетет (растения)</label>
+				<label>Cultivar / variety (plants)</label>
 				<div class="km-value" ng-bind="document.plantCultivar"></div>
 		</div>
 
 		<div ng-show="document.microorganismStrain">
-				<label>Штамм, изолят, серотип (микроорганизмы)</label>
+				<label>Strain / isolate / serotype (microorganisms)</label>
 				<div class="km-value" ng-bind="document.microorganismStrain"></div>
 		</div>
 
@@ -102,13 +102,13 @@
 		</div>
 
 		<div ng-show="document.compatibleSpecies">
-				<label>Cross-compatible species</label>
+				<label>Перекрестно-совместимые виды</label>
 				<view-default-reference ng-model="document.compatibleSpecies.identifier" locale="locale" target="target"></view-default-reference>
 				<div class="km-value" ng-bind="document.compatibleSpecies"></div>
 		</div>
 
 		<div ng-show="document.pathogenicity">
-				<label>Known pathogenicity and/or allergenicity</label>
+				<label>Известная патогенность и/или аллергенность</label>
 				<km-value-ml value="document.pathogenicity" locales="locale" html ></km-value-ml>
 		</div>
 

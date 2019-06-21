@@ -4,21 +4,21 @@
     <div class="col-xs-12 "  ng-show="showReport">
         <div class="alert alert-danger" style="padding:0;" block-region activate=" loading">
             <h1 style="margin-left:20px">إبلاغ عن هذا السجل. <i ng-click="showReport = !showReport" aria-label="Close" style="margin-right:20px;cursor:pointer;" class="pull-right fa fa-close" dir="rtl"></i></h1>
-            <p style="margin-left:20px">Please use the form to report a problem with this record and help us to keep the ABSCH up-to-date and correct.</p>
+            <p style="margin-left:20px">يُرجى استخدام الاستمارة للإبلاغ عن مشكلة في هذا السجل ومساعدتنا في تحديث وتصحيح البيانات في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع.</p>
             <div  style="margin:20px;">
                 <form>
                 <div class="form-group">
                   <div class="checkbox" style="margin-left:20px">
                     <label style="font-size:14px">
-                        <input type="checkbox" value="" ng-model="report.incorrect">&nbsp; غير صحيح أو غير لائق</label>
+                        <input type="checkbox" value="" ng-model="report.incorrect">&nbsp; incorrect or inappropriate</label>
                     </div>
                     <div class="checkbox" style="margin-left:20px">
                     <label style="font-size:14px">
-                        <input type="checkbox" value="" ng-model="report.broken">&nbsp; رابط لا يعمل أو معلومات قديمة</label>
+                        <input type="checkbox" value="" ng-model="report.broken">&nbsp; broken link or outdated information</label>
                     </div>
                     <div class="checkbox" style="margin-left:20px">
                     <label style="font-size:14px">
-                        <input type="checkbox" value="" ng-model="report.copyright">&nbsp; انتهاك حقوق النسخ والنشر</label>
+                        <input type="checkbox" value="" ng-model="report.copyright">&nbsp; copyright infringement</label>
                     </div><br><div>
                         <textarea class="form-control" rows="3"
                         placeholder="additional information"  ng-model="report.additionalInformation"></textarea>

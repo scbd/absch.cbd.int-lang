@@ -1,8 +1,8 @@
 ﻿<div id="Search-Filter"  class="row" ng-show="rf_filters.length" style="margin-bottom:30px;">
     <div  class="col-md-12"  >
-    <div class="heading color-orange" ng-if="rf_filters.length">Fichiers de r&eacute;f&eacute;rence</div>
+    <div class="heading color-orange" ng-if="rf_filters.length">Fichiers de référence</div>
     <hr class="heading" ng-if="rf_filters.length">
-        <p class="helpinfo" ng-if="rf_filters.length"><i class="fa fa-info-circle helpicon" ></i> Les fichiers de r&eacute;f&eacute;rence incluent un certain nombre de ressources  e d&rsquo;informations APA pertinentes. Ils peuvent &ecirc;tre soumis par tout usagers inscrit du Centre d&rsquo;&eacute;change APA (Parties, non Parties, gouvernements, organisations internationales, communaut&eacute;s locales et autochtones et parties prenantes concern&eacute;es.</p>
+        <p class="helpinfo" ng-if="rf_filters.length"><i class="fa fa-info-circle helpicon" ></i> Les fichiers de référence incluent un certain nombre de ressources  e d’informations APA pertinentes. Ils peuvent être soumis par tout usagers inscrit du Centre d’échange APA (Parties, non Parties, gouvernements, organisations internationales, communautés locales et autochtones et parties prenantes concernées.</p>
         
     <div ng-repeat="doc in rf_filters = (rf_searchFilters | filter:searchKeyword | orderBy:['filterSort', 'sort'])"><a translation-url  class="filter"  ng-click="saveFilter(doc)"><i class="fa check" ng-class="{'fa-check-square':isFilterOn(doc.id),'fa-square':!isFilterOn(doc.id)}"></i> {{doc.name}} <!--<span class="badge">100</span>--></a> <!--<p class="helpinfo" ><i class="fa fa-info-circle helpicon" ng-if="doc.description"></i> {{doc.description}} </p>--> <span ng-if="doc.description" href="#" class="helpinfoInline fa fa-info-circle color-white" data-toggle="tooltip" data-html="true" data-title="{{doc.description}}" data-container="body"></span></div>
     <div ng-if="(searchKeyword && !showFilters) && rf_filters.length" style="margin-bottom:10px;"></div>  

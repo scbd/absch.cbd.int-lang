@@ -1,7 +1,7 @@
 ﻿<div id="RegisterPage" dir="rtl">
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
-    <style> .popover { margin-top: 3px; background-color: #d9534f !important; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .2); } .popover.right&gt;.arrow { border-right-color: #999; border-right-color: rgba(0, 0, 0, .25); } .popover.right&gt;.arrow:after { border-right-color: #d9534f; } .cursor { cursor: pointer; } .overview&gt;tbody&gt;tr&gt;td { padding: 3px !important; border: 0; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
+    <style> .popover { margin-top: 3px; background-color: #d9534f !important; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, .2); } .popover.right>.arrow { border-right-color: #999; border-right-color: rgba(0, 0, 0, .25); } .popover.right>.arrow:after { border-right-color: #d9534f; } .cursor { cursor: pointer; } .overview>tbody>tr>td { padding: 3px !important; border: 0; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div ng-if="isBch" style="margin:10px;">
             <h1 class="color-green bold" style="margin-bottom:30px;padding-top:15px;"
@@ -52,19 +52,19 @@
                             <td>
                                 <label>الدور (الأدوار):</label>
                             </td>
-                            <td><span class="comma" ng-if="roles.isAbsNationalFocalPoint">ABS National Focal Point <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
+                            <td><span class="comma" ng-if="roles.isAbsNationalFocalPoint">نقطة الاتصال الوطنية للحصول على الموارد وتقاسم المنافع <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
                                         data-html="true"
-                                        data-title="The National Focal Point is responsible for liason with the Secretariat as well as to designate themselves or another user as the Publishing Authority (PA)."
-                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsPublishingAuthority">Publishing Authority (PA) <span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip"
+                                        data-title="نقطة الاتصال الوطنية مسؤولة عن التنسيق مع الأمانة وتعيين نفسها أو مستخدم آخر كسلطة نشر."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsPublishingAuthority">سلطة النشر <span class="helpinfoInline fa fa-info-circle " data-toggle="tooltip"
                                         data-html="true"
-                                        data-title="Each country can designate only one Publishing Authority (PA). The PA&apos;s job is to make information publically available by verifing and publishing records. A PA can also designate National Authorized Users (NAUs) who are allowed to submit draft records for their country."
-                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser">National Authorized User (NAU) <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
+                                        data-title="يجوز لكل دولة تعيين سلطة نشر واحدة فقط. مهمة سلطة النشر هي إتاحة المعلومات للجميع من خلال التحقق من السجلات ونشرها. تعين سلطات  النشر مستخدمين وطنيين مفوضين يُسمح لهم بإرسال مسودات السجلات بالنيابة عن بلادهم."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsNationalAuthorizedUser">المستخدم الوطني المفوض <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
                                         data-html="true"
-                                        data-title="National Authorized User (NAUs) can create draft national record and submit them to the PA for approval."
-                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isUser">Registered User <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
+                                        data-title="يستطيع المستخدم الوطني المفوض إنشاء مسودة السجلات الوطنية وإرسالها إلى سلطة النشر للموافقة."
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isUser">المستخدم المسجل <span class="helpinfoInline fa fa-info-circle" data-toggle="tooltip"
                                         data-html="true"
                                         data-title="بإمكان المستخدم العادي إنشاء مسودة من السجلات المرجعية وطلب نشرها من أمانة اتفاقية التنوع البيولوجي."
-                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">ABSCH Admin</strong></span> <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">Admin</strong></span></td>
+                                        data-container="body"></span></span> <span class="comma" ng-if="roles.isAbsAdministrator"><strong class="color-pink">إدارة غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع </strong></span> <span class="comma" ng-if="roles.isAdministrator"><strong class="color-pink">الإدارة</strong></span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -115,7 +115,7 @@
 
                         <div class="row" style="padding:0;margin:0 1px 0 1px; border-bottom:1px solid #ddd; "><span class="color-blue">السجلات الوطنية</span> <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip"
                                 data-html="true"
-                                data-title="National records contain information that is typically required to be reported as part of a Party&rsquo;s obligations and must be approved by the Publishing Authority prior to being made publically available."
+                                data-title="تحتوي السجلات الوطنية على معلومات تكون عادة مطلوبة كجزء من التزامات أحد الأطراف، ويجب أن تتحقق سلطة النشر  منها قبل إتاحتها للجمهور."
                                 data-container="body"></span></div>
 
 
@@ -137,18 +137,18 @@
                                         </div>
                                     </td>
                                     <td style="min-width:180px!important;"><a translation-url href="#" ng-click="gotoList($event,'contact')"
-                                            class="color-darkgrey" style="font-weight:500;">National contacts (CON)</a></td>
+                                            class="color-darkgrey" style="font-weight:500;">نقاط الاتصال الوطنية</a></td>
                                     <td style="width:7%;" class="text-center hidden-xs"><a translation-url
                                             ng-href="/register/CON/status/published" class="label label-success"
-                                            ng-class="{'bg-litegrey': facets('contact','publish')===0}">{{facets(&apos;contact&apos;,&apos;publish&apos;)}}</a></td>
+                                            ng-class="{'bg-litegrey': facets('contact','publish')===0}">{{facets('contact','publish')}}</a></td>
 
                                     <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                             ng-href="/register/CON/status/drafts" class="label label-default"
-                                            ng-class="{'bg-litegrey': Math.max(0, facets('contact','draft') - facets('contact','request'))===0}">{{Math.max(0, facets(&apos;contact&apos;,&apos;draft&apos;) - facets(&apos;contact&apos;,&apos;request&apos;))}}</a></td>
+                                            ng-class="{'bg-litegrey': Math.max(0, facets('contact','draft') - facets('contact','request'))===0}">{{Math.max(0, facets('contact','draft') - facets('contact','request'))}}</a></td>
 
                                     <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                             ng-href="/register/CON/status/requests" class="label label-danger"
-                                            ng-class="{'bg-litegrey': facets('contact','request')===0}">{{facets(&apos;contact&apos;,&apos;request&apos;)}}</a></td>
+                                            ng-class="{'bg-litegrey': facets('contact','request')===0}">{{facets('contact','request')}}</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -180,17 +180,17 @@
                                         <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                                 ng-href="/register/{{schema|urlSchemaShortName}}/status/published"
                                                 class="label label-success"
-                                                ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,&apos;publish&apos;)}}</a></td>
+                                                ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,'publish')}}</a></td>
 
                                         <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                                 ng-href="/register/{{schema|urlSchemaShortName}}/status/drafts"
                                                 class="label label-default"
-                                                ng-class="{'bg-litegrey': Math.max(0, facets(schema,'draft') - facets(schema,'request'))===0}">{{Math.max(0, facets(schema,&apos;draft&apos;) - facets(schema,&apos;request&apos;))}}</a></td>
+                                                ng-class="{'bg-litegrey': Math.max(0, facets(schema,'draft') - facets(schema,'request'))===0}">{{Math.max(0, facets(schema,'draft') - facets(schema,'request'))}}</a></td>
 
                                         <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                                 ng-href="/register/{{schema|urlSchemaShortName}}/status/requests"
                                                 class="label label-danger"
-                                                ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,&apos;request&apos;)}}</a></td>
+                                                ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,'request')}}</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -204,7 +204,7 @@
 
                     <div class="row" style="padding:0;margin:0 1px 0 1px; border-bottom:1px solid #ddd; " ng-if="!isBch"><span class="color-orange">السجلات المرجعية <span href="#" class="helpinfoInline fa fa-info-circle color-litegrey" data-toggle="tooltip"
                                 data-html="true"
-                                data-title="Reference records contain information relevant to the Protocol&apos;s implemenation. This information can be made available by any registered user (including representatives of Governments, indigenous and local communities, academia, nongovernmental organizations, research institutions, business representatives, etc.). All reference records are validated by the Secretariat prior to being made publically available."
+                                data-title="تحتوي السجلات المرجعية على معلومات مرتبطة بتنفيذ البروتوكول. يستطيع أي مستخدم مسجل إتاحة هذه المعلومات (كممثلي الحكومات، والمجتمعات الأصلية والمحلية، والجهات الأكاديمية والمؤسسات غير الحكومية، والمؤسسات البحثية، وممثلي الشركات والأعمال، وغيرها). تتحقق الأمانة من صحة السجلات المرجعية قبل نشرها في غرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع."
                                 data-container="body"></span></span></div>
 
                     <div ng-repeat="schema in referenceSchemas">
@@ -230,17 +230,17 @@
                                     <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                             ng-href="/register/{{schema|urlSchemaShortName}}/status/published"
                                             class="label label-success"
-                                            ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,&apos;publish&apos;)}}</a></td>
+                                            ng-class="{'bg-litegrey': facets(schema,'publish')===0}">{{facets(schema,'publish')}}</a></td>
 
                                     <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                             ng-href="/register/{{schema|urlSchemaShortName}}/status/drafts"
                                             class="label label-default"
-                                            ng-class="{'bg-litegrey': Math.max(0, facets(schema,'draft') - facets(schema,'request'))===0}">{{Math.max(0, facets(schema,&apos;draft&apos;) - facets(schema,&apos;request&apos;))}}</a></td>
+                                            ng-class="{'bg-litegrey': Math.max(0, facets(schema,'draft') - facets(schema,'request'))===0}">{{Math.max(0, facets(schema,'draft') - facets(schema,'request'))}}</a></td>
 
                                     <td style="width:7%;" class="text-center  hidden-xs"><a translation-url
                                             ng-href="/register/{{schema|urlSchemaShortName}}/status/requests"
                                             class="label label-danger"
-                                            ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,&apos;request&apos;)}}</a></td>
+                                            ng-class="{'bg-litegrey': facets(schema,'request')===0}">{{facets(schema,'request')}}</a></td>
                                 </tr>
                             </tbody>
                         </table>

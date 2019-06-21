@@ -41,17 +41,17 @@
                         <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
 
                             <div ng-show="isDraft(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">حذف المسودة</button><em>مسودة {{recordToDelete.documentID||&apos;[new]&apos;}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">حذف المسودة</button><em>مسودة {{recordToDelete.documentID||'[new]'}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
                             </div>
 
                             <div ng-show="isPublished(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="ملاحظة: أي مسودة معلقة ستحذف أيضًا">إلغاء نشر السجل وحذفه</button><em>السجل المنشور {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
+                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="ملاحظة: أي مسودة معلقة ستُحذف أيضًا">إلغاء نشر السجل وحذفه</button><em>السجل المنشور {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.summary|lstring"></p>
                             </div>
 
                         </div>
-                        <div class="modal-body" ng-show="cantDelete || pilotDelete">لا يسمح بحذف سجلات منشورة خاصة بغرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع - شهادات الامتثال المعترف بها دوليًا. يمكن تعديل سجلات شهادات الامتثال المعترف بها دوليًا لكي يتم <i>حذفها</i>. سجلات شهادات الامتثال المعترف بها دوليًا <i>المرفوضة</i>  لم تعد صالحة. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
+                        <div class="modal-body" ng-show="cantDelete || pilotDelete">لا يُسمح بحذف سجلات منشورة خاصة بغرفة تبادل المعلومات بشأن الحصول على الموارد وتقاسم المنافع - شهادات الامتثال المعترف بها دوليًا. يمكن تعديل سجلات شهادات الامتثال المعترف بها دوليًا وتعيينها على <i>مرفوضة</i> سجلات شهادات الامتثال المعترف بها دوليًا <i>المرفوضة</i> لم تعد صالحة. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
                         <div class="modal-body" ng-show="iacCantDelete">ليس لديك صلاحيات كافية لحذف الوثيقة.</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>

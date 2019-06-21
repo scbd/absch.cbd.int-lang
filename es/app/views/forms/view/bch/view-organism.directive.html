@@ -1,35 +1,35 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Organism <span class="color-black">(ORSM)</span></h4>
+		<h4>Organismo <span class="color-black"></span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 		<document-date></document-date>
-		<legend>Informaci&oacute;n del Organismo</legend>
+		<legend>Información sobre el organismo</legend>
 		
 		<div ng-show="document.scientificName">
-			<label>Nombre cient&iacute;fico</label>
+			<label>Nombre científico</label>
 			<div class="km-value" ng-bind="document.scientificName"><span ng-if="document.scientificNameSynonyms">({{document.scientificNameSynonyms}})</span></div>
 		</div>
 		<div>
-			<label>Taxonomic Classification</label>
+			<label>Clasificación taxonómica</label>
 			<div class="km-value">
 				<table cellpadding="0" cellspacing="0">
 					<tbody>
-						<tr ng-if="document.kingdom"><td  style="padding: 2px 3px 2px 2px;padding-left: 5px;">Unido</td><td id="E6884729" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.kingdom"	></td></td>
+						<tr ng-if="document.kingdom"><td  style="padding: 2px 3px 2px 2px;padding-left: 5px;">Reino</td><td id="E6884729" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.kingdom"	></td></td>
 						<tr ng-if="document.phylum"><td  style="padding: 2px 3px 2px 2px;padding-left: 10px;">Filo</td><td id="E6884732" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.phylum"	></td></tr>
 						<tr ng-if="document._class"><td  style="padding: 2px 3px 2px 2px;padding-left: 15px;">Clase</td><td id="E6884735" style="padding: 2px 2px 2px 3px;" 	ng-bind="document._class"	></td></tr>
 						<tr ng-if="document.order"><td  style="padding: 2px 3px 2px 2px;padding-left: 20px;">Orden</td><td id="E6884738" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.order"	></td></tr>
 						<tr ng-if="document.family"><td  style="padding: 2px 3px 2px 2px;padding-left: 25px;">Familia</td><td id="E6884741" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.family"	><!-- ng-bind="document.subFamily " --></td></tr>
-						<tr ng-if="document.genus"><td  style="padding: 2px 3px 2px 2px;padding-left: 30px;">G&eacute;nero</td><td id="E6884744" style="padding: 2px 2px 2px 3px;"		ng-bind="document.genus"	></td></tr>
-						<tr ng-if="document.species"><td  style="padding: 2px 3px 2px 2px;padding-left: 35px;">Especies</td><td id="E6884747" style="padding: 2px 2px 2px 3px;"	ng-bind="document.species"	><!-- ng-bind="document.subSpecies" --></td></tr>
+						<tr ng-if="document.genus"><td  style="padding: 2px 3px 2px 2px;padding-left: 30px;">Género</td><td id="E6884744" style="padding: 2px 2px 2px 3px;"		ng-bind="document.genus"	></td></tr>
+						<tr ng-if="document.species"><td  style="padding: 2px 3px 2px 2px;padding-left: 35px;">Especie</td><td id="E6884747" style="padding: 2px 2px 2px 3px;"	ng-bind="document.species"	><!-- ng-bind="document.subSpecies" --></td></tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 
 		<div ng-show="document.scientificNameSynonyms">
-				<label>Scientific name synonyms(s)</label>
+				<label>Sinónimo(s) del nombre científico</label>
 				<div class="km-value"> 
 					<ul class="list">
 						<li ng-repeat="name in document.scientificNameSynonyms" ng-bind="name"></li>
@@ -38,7 +38,7 @@
 		</div>
 
 		<div ng-show="document.commonNames">
-			<label>Nombre(s) com&uacute;n(es)</label>
+			<label>Nombre(s) común(es)</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="name in document.commonNames" style="margin-bottom: 5px;">
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 
-		<legend>Clasificaci&oacute;n adicional</legend>
+		<legend>Clasificación adicional</legend>
 		
 		<div ng-show="document.plantCultivar">
 				<label>Cultivar / variedad (plantas)</label>
@@ -75,11 +75,11 @@
 		</div>
 
 		<div ng-show="document.domestication">
-			<label>Domesticaci&oacute;n de Organismo</label>
+			<label>Domesticación del organismo</label>
 			<div class="km-value" ng-bind="document.domestication | term:locale"></div>
 		</div>
 
-		<legend>Caracter&iacute;sticas relacionadas con la seguridad de la biotecnolog&iacute;a</legend>
+		<legend>Características relacionadas con la seguridad de la biotecnología</legend>
 		
 		<div ng-show="document.plantCultivar">
 				<label>Centro(s) de origen</label>
@@ -87,22 +87,22 @@
 		</div>
 
 		<div ng-show="document.originCentre">
-				<label>Centro(s) de la diversidad gen&eacute;tica</label>
+				<label>Centro(s) de la diversidad genética</label>
 				<km-value-ml value="document.originCentre" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.habitat">
-				<label>H&aacute;bitat, &aacute;mbito</label>
+				<label>Área del hábitat</label>
 				<km-value-ml value="document.habitat" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.geographicalDistribution">
-				<label>Distribuci&oacute;n geogr&aacute;fica</label>
+				<label>Distribución geográfica</label>
 				<km-value-ml value="document.geographicalDistribution" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.compatibleSpecies">
-				<label>Cross-compatible species</label>
+				<label>Especies compatibles entre sí</label>
 				<view-default-reference ng-model="document.compatibleSpecies.identifier" locale="locale" target="target"></view-default-reference>
 				<div class="km-value" ng-bind="document.compatibleSpecies"></div>
 		</div>
@@ -113,7 +113,7 @@
 		</div>
 
 		<div ng-show="document.commonUses">
-				<label>Uso(s) com&uacute;n(es)</label>
+				<label>Uso(s) común(es)</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="use in document.commonUses" ng-bind="use | term:locale"></li>
@@ -122,7 +122,7 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Additional Information</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<km-value-ml value="document.relevantInformation" locales="locale" html ></km-value-ml>

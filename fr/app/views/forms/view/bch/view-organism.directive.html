@@ -1,11 +1,11 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Organism <span class="color-black">(ORSM)</span></h4>
+		<h4>OrganismE <span class="color-black">(ORSM)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 		<document-date></document-date>
-		<legend>Renseignements sur l&apos;organisme</legend>
+		<legend>Renseignements sur l'organisme</legend>
 		
 		<div ng-show="document.scientificName">
 			<label>Nom scientifique</label>
@@ -22,7 +22,7 @@
 						<tr ng-if="document.order"><td  style="padding: 2px 3px 2px 2px;padding-left: 20px;">Ordre</td><td id="E6884738" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.order"	></td></tr>
 						<tr ng-if="document.family"><td  style="padding: 2px 3px 2px 2px;padding-left: 25px;">Famille</td><td id="E6884741" style="padding: 2px 2px 2px 3px;" 	ng-bind="document.family"	><!-- ng-bind="document.subFamily " --></td></tr>
 						<tr ng-if="document.genus"><td  style="padding: 2px 3px 2px 2px;padding-left: 30px;">Genre</td><td id="E6884744" style="padding: 2px 2px 2px 3px;"		ng-bind="document.genus"	></td></tr>
-						<tr ng-if="document.species"><td  style="padding: 2px 3px 2px 2px;padding-left: 35px;">Esp&egrave;ce</td><td id="E6884747" style="padding: 2px 2px 2px 3px;"	ng-bind="document.species"	><!-- ng-bind="document.subSpecies" --></td></tr>
+						<tr ng-if="document.species"><td  style="padding: 2px 3px 2px 2px;padding-left: 35px;">Espèce</td><td id="E6884747" style="padding: 2px 2px 2px 3px;"	ng-bind="document.species"	><!-- ng-bind="document.subSpecies" --></td></tr>
 					</tbody>
 				</table>
 			</div>
@@ -48,20 +48,20 @@
 			</div>
 		</div>
 
-		<legend>Classification suppl&eacute;mentaire</legend>
+		<legend>Classification supplémentaire</legend>
 		
 		<div ng-show="document.plantCultivar">
-				<label>Cultivar / vari&eacute;t&eacute; (plantes)</label>
+				<label>Cultivar / variété (plantes)</label>
 				<div class="km-value" ng-bind="document.plantCultivar"></div>
 		</div>
 
 		<div ng-show="document.microorganismStrain">
-				<label>Souche / isolat / s&eacute;rotype (microorganismes)</label>
+				<label>Souche / isolat / sérotype (microorganismes)</label>
 				<div class="km-value" ng-bind="document.microorganismStrain"></div>
 		</div>
 
 		<div ng-show="document.bacteriaPathovar">
-				<label>Pathovar (bact&eacute;rie)</label>
+				<label>Pathovar (bactérie)</label>
 				<div class="km-value" ng-bind="document.bacteriaPathovar"></div>
 		</div>
 		<div ng-show="document.virusGroup">
@@ -70,45 +70,45 @@
 		</div>
 
 		<div ng-show="document.organismType">
-			<label>Type d&apos;organisme</label>
+			<label>Type d'organisme</label>
 			<div class="km-value" ng-bind="document.organismType | term:locale"></div>
 		</div>
 
 		<div ng-show="document.domestication">
-			<label>Domestication de l&apos;organisme</label>
+			<label>Domestication de l'organisme</label>
 			<div class="km-value" ng-bind="document.domestication | term:locale"></div>
 		</div>
 
-		<legend>Characteristics related to biosafety</legend>
+		<legend>Caractéristiques liées à la prévention des risques biotechnologiques</legend>
 		
 		<div ng-show="document.plantCultivar">
-				<label>Centre(s) of origin</label>
+				<label>Centre(s) d'origine</label>
 				<km-value-ml value="document.plantCultivar" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.originCentre">
-				<label>Centres de diversit&eacute; g&eacute;n&eacute;tique</label>
+				<label>Centres de diversité génétique</label>
 				<km-value-ml value="document.originCentre" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.habitat">
-				<label>&Eacute;tendue de l&apos;habitat</label>
+				<label>Étendue de l'habitat</label>
 				<km-value-ml value="document.habitat" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.geographicalDistribution">
-				<label>R&eacute;partition g&eacute;ographique</label>
+				<label>Répartition géographique</label>
 				<km-value-ml value="document.geographicalDistribution" locales="locale" html></km-value-ml>
 		</div>
 
 		<div ng-show="document.compatibleSpecies">
-				<label>Cross-compatible species</label>
+				<label>Espèces à compatibilité croisée</label>
 				<view-default-reference ng-model="document.compatibleSpecies.identifier" locale="locale" target="target"></view-default-reference>
 				<div class="km-value" ng-bind="document.compatibleSpecies"></div>
 		</div>
 
 		<div ng-show="document.pathogenicity">
-				<label>Pathog&eacute;n&eacute;cit&eacute; et/ou allerg&eacute;nicit&eacute; connue</label>
+				<label>Pathogénécité et/ou allergénicité connue</label>
 				<km-value-ml value="document.pathogenicity" locales="locale" html ></km-value-ml>
 		</div>
 
@@ -122,7 +122,7 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Renseignements suppl&eacute;mentaires</legend>
+			<legend>Renseignements supplémentaires</legend>
 
 			<div ng-show="document.relevantInformation">
 				<km-value-ml value="document.relevantInformation" locales="locale" html ></km-value-ml>

@@ -1,8 +1,8 @@
-﻿<div id="view-history" style="max-height:200px;overflow:scroll;display:inline!important;"><span ng-if="documents.length == 0">Pas d&rsquo;historique disponible</span><table style="width:100%!important;" class="table table-condensed" ng-if="documents.length > 0">
+﻿<div id="view-history" style="max-height:200px;overflow:scroll;display:inline!important;"><span ng-if="documents.length == 0">Pas d’historique disponible</span><table style="width:100%!important;" class="table table-condensed" ng-if="documents.length > 0">
         <tr>
                 <th class="color-litegrey" style="font-size:12px;bold;">Identifiant unique</th>
                 <th class="color-litegrey " style="font-size:12px;bold;">Statut</th>
-                <th class="color-litegrey hidden-xs" style="font-size:12px;bold;">Date <span ng-if="!publicView">Publi&eacute;</span></th>
+                <th class="color-litegrey hidden-xs" style="font-size:12px;bold;">Date <span ng-if="!publicView">Publié</span></th>
                 <th class="color-litegrey hidden-xs" style="font-size:12px;bold;" ng-if="!publicView">Date de la demande</th>
             </tr>
            
@@ -10,7 +10,7 @@
             <tr>
                 <td style="white-space:nowrap;"><a translation-url  ng-href="/database/{{document.type | urlSchemaShortName}}/{{document | uniqueIDWithoutRevision}}/{{document.revision}}" target="_blank"><strong>{{document | uniqueID}}</strong></a></td>
                 <td>
-                    <div><span ng-show="!document.deletedOn && document.body.amendmentIntent==1  && document.type!='absCheckpointCommunique'"><span class="bold color-red">R&Eacute;VOQU&Eacute;</span></span> <span ng-show="((documents.length>1 && !document.deletedOn && document.body.amendmentIntent!=1 && document.revision < documents.length))"><span class="bold color-grey" >{{(document.type | schemaShortName) === &apos;IRCC&apos; ? &quot;NON VALIDE&quot; : &quot;VERSION ANT&Eacute;RIEURE&quot;}}</span></span> <span ng-show="!document.deletedOn && (documents.length==1 || (documents.length>1 && documents.length == document.revision && (!isPermit || document.body.amendmentIntent!=1)))"><span class="bold color-green">PUBLI&Eacute;</span></span> <span ng-show="document.deletedOn"><span class="bold color-grey">SUPPRIM&Eacute;</span></span></div>
+                    <div><span ng-show="!document.deletedOn && document.body.amendmentIntent==1  && document.type!='absCheckpointCommunique'"><span class="bold color-red">RÉVOQUÉ</span></span> <span ng-show="((documents.length>1 && !document.deletedOn && document.body.amendmentIntent!=1 && document.revision < documents.length))"><span class="bold color-grey" >{{(document.type | schemaShortName) === 'IRCC' ? "NON VALIDE" : "VERSION ANTÉRIEURE"}}</span></span> <span ng-show="!document.deletedOn && (documents.length==1 || (documents.length>1 && documents.length == document.revision && (!isPermit || document.body.amendmentIntent!=1)))"><span class="bold color-green">PUBLIÉ</span></span> <span ng-show="document.deletedOn"><span class="bold color-grey">SUPPRIMÉ</span></span></div>
                 </td>
                 <td  class="hidden-xs" >
                     <div ng-show="!publicView"><span>{{document.updatedBy.firstName}} {{document.updatedBy.lastName}} ({{document.updatedBy.email}})</span> <br> <span style="font-size:11px;text-transform:uppercase;font-weight:bold">{{document.updatedOn | formatDateWithTime}}</span></div>

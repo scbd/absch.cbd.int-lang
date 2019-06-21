@@ -1,6 +1,6 @@
 ﻿<div class="modal-content">
 
-    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group &gt; .btn { float: none; display: inline-block; } </style>
+    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group > .btn { float: none; display: inline-block; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-disabled="commitDialogCtrl.loading" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
@@ -11,7 +11,7 @@
         <div ng-if="commitDialogCtrl.error">
 
             <div ng-switch="commitDialogCtrl.error.code">
-                <div class="alert alert-warning" ng-switch-when="forbidden"><b>¡Uy!</b> Lo lamentamos, pero no est&aacute; autorizado a designar un usuario.</div>
+                <div class="alert alert-warning" ng-switch-when="forbidden"><b>¡Uy!</b> Lo lamentamos, pero no está autorizado a designar un usuario.</div>
                 <div class="alert alert-danger" ng-switch-default><b>¡Uy!</b> Lo lamentamos, pero hubo un problema. <br> {{commitDialogCtrl.error|json}}</div>
             </div>
 
@@ -26,7 +26,7 @@
                 <td style="width:90%">{{tran.user.firstName}} {{tran.user.lastName}} ({{tran.user.email}}) <br> {{tran.user.organization}}</td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!--ADD Government--><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'addGovernment'}).length">
-                <td colspan="3"><b>Se otorgar&aacute; la afiliaci&oacute;n del Gobierno:</b></td>
+                <td colspan="3"><b>Se otorgará la afiliación del Gobierno:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'addGovernment'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -34,7 +34,7 @@
                 <td style="width:90%">{{tran.governmentName|lstring}}</td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!-- GRANT --><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'grantRole'}).length">
-                <td colspan="3"><b>Funci&oacute;n(es) a otorgar:</b></td>
+                <td colspan="3"><b>Función(es) a otorgar:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'grantRole'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -42,7 +42,7 @@
                 <td style="width:90%">{{tran.role.name}} <br> <i>{{tran.role.description}}</i></td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!-- REVOKE --><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'revokeRoles'}).length">
-                <td colspan="3"><b>Funci&oacute;n(es) a revocar:</b></td>
+                <td colspan="3"><b>Función(es) a revocar:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'revokeRoles'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -50,7 +50,7 @@
                 <td style="width:90%">{{tran.role.name}} <br> <i>{{tran.role.description}}</i></td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!--DELETE Government--><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'deleteGovernment'}).length">
-                <td colspan="3"><b>Se revocar&aacute; la afiliaci&oacute;n del gobierno:</b></td>
+                <td colspan="3"><b>Se revocará la afiliación del gobierno:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'deleteGovernment'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -65,6 +65,6 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()" ng-disabled="commitDialogCtrl.loading">Cancelar</button>
-        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="commitDialogCtrl.save()" ng-disabled="commitDialogCtrl.loading">Proceder a una designaci&oacute;n »</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="commitDialogCtrl.save()" ng-disabled="commitDialogCtrl.loading">Proceder a una designación »</button>
     </div>
 </div>

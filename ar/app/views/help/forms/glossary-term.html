@@ -45,8 +45,8 @@ style="max-width:90%" dir="rtl">
                                 <input name="title" ng-model="document.title" required md-maxlength="200" minlength="4">
                                 <div ng-messages="editForm.title.$error" ng-show="editForm.title.$dirty">
                                     <div ng-message="required">Please enter {{helptype}}!</div>
-                                    <div ng-message="md-maxlength">That&apos;s too long!</div>
-                                    <div ng-message="minlength">That&apos;s too short!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                    <div ng-message="minlength">That's too short!</div>
                                 </div>
                             </md-input-container>
                             <md-input-container>
@@ -54,8 +54,8 @@ style="max-width:90%" dir="rtl">
                                 <div km-rich-textbox name="description" ng-model="document.description" rows="6"
                                                         placeholder="" locales="languages" required toolbar="[['bold', 'italics', 'ul', 'ol', 'redo', 'undo', 'clear'], ['insertLink', 'html']]"></div><!--<textarea name="description" ng-model="document.description" required md-maxlength="25000" minlength="4" />--><div ng-messages="editForm.titdescriptionle.$error" ng-show="editForm.description.$dirty">
                                     <div ng-message="required">Please enter term description!</div>
-                                    <div ng-message="md-maxlength">That&apos;s too long!</div>
-                                    <div ng-message="minlength">That&apos;s too short!</div>
+                                    <div ng-message="md-maxlength">That's too long!</div>
+                                    <div ng-message="minlength">That's too short!</div>
                                 </div>
                             </md-input-container>
                             <div layout="column">

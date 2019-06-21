@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Gene and DNA Sequence <span class="color-black">(DNA)</span></h4>
+		<h4>Реестр последовательности генов и ДНК <span class="color-black">(ДНК)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -15,11 +15,11 @@
 		</div>
 
 		<div ng-show="document.name">
-			<label>Name of the gene or DNA sequence</label>
+			<label>Название последовательности генов или ДНК</label>
 			<km-value-ml value="document.name" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.synonymNames">
-			<label>Alternate Genetic Element Name (synonyms)</label>
+			<label>Альтернативное название генетического элемента (синонимы)</label>
 			<ul class="list" style="padding-left:0px">
 				<li ng-repeat="synonym in document.synonymNames" style="padding-bottom:5px;">
 					<km-value-ml value="synonym" locales="locale"></km-value-ml>
@@ -28,16 +28,16 @@
 			
 		</div>
 		<div ng-show="document.abbreviation">
-			<label>Abbreviation</label>
+			<label>Сокращенное название</label>
 			<km-value-ml value="document.abbreviation" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.family">
-			<label>Category of DNA sequence</label>
+			<label>Категория последовательности ДНК</label>
 			<div class="km-value" ng-bind="document.family | term:locale"></div>
 		</div>
 
 		<div ng-show="document.isSynthetic!=undefined">
-			<label>Is the gene / DNA sequence is a synthetic molecule?</label>
+			<label>Является ли последовательность генов/ДНК синтетической молекулой?</label>
 			<div class="km-value" ng-if="document.isSynthetic">Да</div>
 			<div class="km-value" ng-if="!document.isSynthetic">Нет</div>
 		</div>
@@ -52,31 +52,31 @@
 		</div>
 
 		<div ng-show="document.donorOrganismCollectionPoint">
-			<label>Donor organism point of collection</label>
+			<label>Место сбора организма-донора</label>
 			<div class="km-value">
 				<km-value-ml value="document.donorOrganismCollectionPoint"  html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 
-		<legend>Characteristics of the protein coding sequence</legend>
+		<legend>Характеристики кодирующей белок последовательности</legend>
 
 		<div ng-show="document.proteinName">
-			<label>Name of the protein expressed by the coding sequence</label>
+			<label>Название белка, экспрессированного кодирующей последовательностью</label>
 			<div class="km-value">
 					<km-value-ml value="document.proteinName" locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.biologicalFunction">
-			<label>Biological function</label>
+			<label>Биологическая функция</label>
 			<div class="km-value">
 				<km-value-ml value="document.biologicalFunction" html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.traits">
-			<label>Related trait(s) or use(s) in biotechnology</label>
+			<label>Связанный(-ые) признак(и) или использование в биотехнологии</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="use in document.traits" ng-bind="use | term:locale"></li>

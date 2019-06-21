@@ -2,7 +2,7 @@
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
     <link href="/app/css/AdminLTE.min.css" rel="stylesheet" />
-    <style> #National .statsBox { background-color: #428BCA; padding: 5px; border-radius: 3px; text-align: center; margin: auto; width: 100%; margin-top: 10px!important; } #Reference .statsBox { background-color: #fa6938; padding: 5px; min-height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #SCBDRecs .statsBox { background-color: #999; padding: 5px; height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #National .statsBox:hover { background-color: #333; cursor: pointer; } .countryCount { font-size: 14px; } .countryText { font-size: 14px; color: #CCC!important; position: relative; top: 1px; font-weight: 500; } .havePublished { /*color: #bbb!important;*/ width: 100%; white-space: nowrap; } .recordText { color: #CCC!important; line-height: 1; padding-top: 3px; font-weight: 500; } .recordText&gt; .helpinfoInline { color: #CCC!important; } .center { margin: auto; width: 100%; text-align: center; } .flex { display: flex; justify-content: space-between; } .tooltip-inner { font-size: 14px; text-align: left; } .dateType .btn-group, .dateType button { width: 100% !important; } .chart { position: relative; overflow: hidden; width: 100%; } .legend{ list-style: none; } .legend li{ display: inline; padding:10px; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
+    <style> #National .statsBox { background-color: #428BCA; padding: 5px; border-radius: 3px; text-align: center; margin: auto; width: 100%; margin-top: 10px!important; } #Reference .statsBox { background-color: #fa6938; padding: 5px; min-height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #SCBDRecs .statsBox { background-color: #999; padding: 5px; height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #National .statsBox:hover { background-color: #333; cursor: pointer; } .countryCount { font-size: 14px; } .countryText { font-size: 14px; color: #CCC!important; position: relative; top: 1px; font-weight: 500; } .havePublished { /*color: #bbb!important;*/ width: 100%; white-space: nowrap; } .recordText { color: #CCC!important; line-height: 1; padding-top: 3px; font-weight: 500; } .recordText> .helpinfoInline { color: #CCC!important; } .center { margin: auto; width: 100%; text-align: center; } .flex { display: flex; justify-content: space-between; } .tooltip-inner { font-size: 14px; text-align: left; } .dateType .btn-group, .dateType button { width: 100% !important; } .chart { position: relative; overflow: hidden; width: 100%; } .legend{ list-style: none; } .legend li{ display: inline; padding:10px; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
@@ -27,18 +27,18 @@
                             </div>
                             <div class="col-xs-5">
                                 <div class="km-control-group" name="startDate" required caption="تاريخ البدء">
-                                    <div km-date placeholder="يوم  - شهر - سنة" required name="startDate" ng-model="filters.startDate"></div>
+                                    <div km-date placeholder="يوم - شهر - سنة" required name="startDate" ng-model="filters.startDate"></div>
                                 </div>
                             </div>
                             <div class="col-xs-5">
                                 <div class="km-control-group" name="endDate" caption="End Date">
-                                    <div km-date placeholder="يوم  - شهر - سنة" name="endDate" ng-model="filters.endDate"></div>
+                                    <div km-date placeholder="يوم - شهر - سنة" name="endDate" ng-model="filters.endDate"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filters.countries" multiple binding-type="string" placeholder="الدول" items="options.filterCountries()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="حالة الأطراف" items="options.filterPartyStatus()"></div>
+                                <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filters.countries" multiple binding-type="string" placeholder="البلدان" items="options.filterCountries()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="حالة العضوية" items="options.filterPartyStatus()"></div>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.regionalMeasures" />تضمين التدابير الإقليمية الافتراضية</label>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeNFP" />استثناء نقطة الاتصال الوطنية</label>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.cumulative" />رسم بياني تراكمي</label>

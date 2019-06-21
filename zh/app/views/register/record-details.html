@@ -41,7 +41,7 @@
                         <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
 
                             <div ng-show="isDraft(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">删除草案</button><em>草案 {{recordToDelete.documentID||&apos;[new]&apos;}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">删除草案</button><em>Draft {{recordToDelete.documentID||'[new]'}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
                             </div>
 
@@ -70,7 +70,7 @@
                         </div>
                         <div class="modal-footer" style="margin-top:0">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Yes</button>
+                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">是</button>
 
                         </div>
                     </div>

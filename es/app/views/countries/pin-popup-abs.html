@@ -1,9 +1,9 @@
 ﻿<div>
 <div ng-if="currentCountry.code" style="padding:5px;" ng-class="{'bg-party': currentCountry.isNPParty, 'bg-darkgrey':!currentCountry.isNPParty, 'bg-inbetween': currentCountry.isNPInbetweenParty}">
     <div><span ng-if="(isABS && currentCountry.isNPParty) || (isBCH && currentCountry.isCPParty)"
-             >Party to the Nagoya Protocol</span> <span ng-if="(isABS && currentCountry.isNPInbetweenParty)"
-            >Ratified, not yet Party</span> <span ng-if="(isABS && !currentCountry.isNPParty && !currentCountry.isNPInbetweenParty) || (isBCH && !currentCountry.isCPParty)"
-             >Not a Party to the Nagoya Protocol</span></div>
+             >Parte en el Protocolo de Nagoya</span> <span ng-if="(isABS && currentCountry.isNPInbetweenParty)"
+            >Ratificado, pero todavía no es Parte</span> <span ng-if="(isABS && !currentCountry.isNPParty && !currentCountry.isNPInbetweenParty) || (isBCH && !currentCountry.isCPParty)"
+             >Estado que no es Parte del Protocolo de Nagoya</span></div>
 
     <div class="row abs-exception-tooltip"
     ng-if="country.exceptionCountry=='dk'||country.code.toLowerCase()=='dk'||
@@ -11,10 +11,10 @@
             country.exceptionCountry=='gb'||country.code.toLowerCase()=='gb'">
         <div class="col-lg-12">
             <div class="small  {{(country.exceptionCountry.toLowerCase()=='dk' || country.code.toLowerCase()=='dk') ? 'show' : 'hide'}}"
-                style="margin-top:5px;white-space: normal;padding:3px;">Denmark&rsquo;s ratification of the Protocol does not apply in respect of Greenland and the Faroe Islands.</div>
-            <div class="{{country.code.toLowerCase()=='fk' ? 'show' : 'hide'}}   small " style="margin-top:5px;white-space: normal;padding:3px;">A dispute exists between the Governments of Argentina and the United Kingdom of Great Britain and Northern Ireland concerning sovereignty over the Falkland Islands (Malvinas).</div>
-            <div class="{{country.code.toLowerCase()=='eh' ? 'show' : 'hide'}}   small " style="margin-top:25px;white-space: normal;padding:3px;font-size: x-large;">Non-Self Governing Territory.</div>
-            <div class="small  {{(country.exceptionCountry.toLowerCase()=='gb'||country.code.toLowerCase()=='gb') ? 'show' : 'hide'}}" style="margin-top:5px;white-space: normal;padding:3px;">The UK&rsquo;s ratification of the Nagoya Protocol does not extend to the <a ng-href="#"  class=" color-litegrey gb-territories" data-toggle="tooltip" data-placement="bottom" title="Anguilla; Bermuda; British Antarctic Territory; British Indian Ocean Territory; British Virgin Islands; Cayman Islands; Falkland Islands; Gibraltar; Montserrat; Pitcairn Islands; Saint Helena, Ascension and Tristan da Cunha; South Georgia and the South Sandwich Islands; Sovereign Base Areas of Akrotiri and Dhekelia; Turks and Caicos Islands">14 Overseas Territories</a> or <a ng-href="#" class=" color-litegrey gb-territories" data-toggle="tooltip" data-placement="right" title="Bailiwick of Jersey, the Bailiwick of Guernsey and the Isle of Man">3 Crown Dependencies</a></div>
+                style="margin-top:5px;white-space: normal;padding:3px;">La ratificación de Dinamarca del Protocolo no se aplica a Groenlandia y las Islas Feroe.</div>
+            <div class="{{country.code.toLowerCase()=='fk' ? 'show' : 'hide'}}   small " style="margin-top:5px;white-space: normal;padding:3px;">Existe una disputa entre el Gobierno de la Argentina y el del Reino Unido de Gran Bretaña e Irlanda del Norte en relación con la soberanía de las Islas Falklands (Islas Malvinas).</div>
+            <div class="{{country.code.toLowerCase()=='eh' ? 'show' : 'hide'}}   small " style="margin-top:25px;white-space: normal;padding:3px;font-size: x-large;">Territorio no autónomo.</div>
+            <div class="small  {{(country.exceptionCountry.toLowerCase()=='gb'||country.code.toLowerCase()=='gb') ? 'show' : 'hide'}}" style="margin-top:5px;white-space: normal;padding:3px;">La ratificación del Protocolo de Nagoya por parte del Reino Unido no incluye los <a ng-href="#"  class=" color-litegrey gb-territories" data-toggle="tooltip" data-placement="bottom" title="Anguila; Bases bajo soberanía británica de Acrotiri y Dhekelia; Bermuda; Islas Falkland; Islas Caimán; Islas Georgias del Sur y Sandwich del Sur; Islas Pitcairn; Islas Turcas y Caicos; Islas Vírgenes Británicas; Gibraltar; Montserrat; Santa Elena, Ascensión y Tristán de Acuña; Territorio Británico Antártico y Territorio Británico del Océano Índico">14 territorios de ultramar</a> o las <a ng-href="#" class=" color-litegrey gb-territories" data-toggle="tooltip" data-placement="right" title="Bailía de Jersey; Isla de Guernesey e Isla de Man">tres dependencias de la Corona</a></div>
         </div>
     </div>
 </div>

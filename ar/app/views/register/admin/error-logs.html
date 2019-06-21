@@ -1,6 +1,6 @@
 ﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage" dir="rtl">
 	<link href="/app/css/register.css" rel="stylesheet">
-	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu dir="rtl"></span><style> .table&gt;tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu dir="rtl"></span><style> .table>tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-pink color-white">
@@ -17,12 +17,12 @@
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="km-control-group" name="startDate" required caption="تاريخ البدء">
-							<div km-date placeholder="يوم  - شهر - سنة" required name="startDate" ng-model="filters.startDate"></div>
+							<div km-date placeholder="يوم - شهر - سنة" required name="startDate" ng-model="filters.startDate"></div>
 						</div>
 					</div>
 					<div class="col-xs-6">
 						<div class="km-control-group" name="endDate" caption="End Date">
-							<div km-date placeholder="يوم  - شهر - سنة" name="endDate" ng-model="filters.endDate"></div>
+							<div km-date placeholder="يوم - شهر - سنة" name="endDate" ng-model="filters.endDate"></div>
 						</div>
 					</div>
 				</div><!--<div class="row">
@@ -59,7 +59,7 @@
 									</tr>
 									<tr ng-if="error.showDetails">
 										<td colspan="6">
-											<div class="message_body"><span class=""><b>عنوان الرابط:</b> {{error.url}}<br> </span><br> <span class=""><b>User:</b> <a ng-if="error.user != 1" ng-href="https://accounts.cbd.int/admin/users/{{error.user}}">{{error.user}}</a> <span ng-if="error.user == 1">Anonymous</span></span><br><br> <span class=""><b>User Agent:</b> {{error.userAgent.trim()}}<br> </span><br><p class="hyphenate"><b>الرسالة:</b> {{error.message.trim()}}</p><br><pre class="special_formatting ">													
+											<div class="message_body"><span class=""><b>URL:</b> {{error.url}}<br> </span><br> <span class=""><b>User:</b> <a ng-if="error.user != 1" ng-href="https://accounts.cbd.int/admin/users/{{error.user}}">{{error.user}}</a> <span ng-if="error.user == 1">Anonymous</span></span><br><br> <span class=""><b>User Agent:</b> {{error.userAgent.trim()}}<br> </span><br><p class="hyphenate"><b>الرسالة:</b> {{error.message.trim()}}</p><br><pre class="special_formatting ">													
 														<p class="language-html pull-left hyphenate" data-lang="html" style="margin:0px" ng-bind-html="error.stack">
 														</p>
 													</pre>
@@ -70,7 +70,7 @@
 								</tbody>
 							</table>
 							<div class="alert alert-success" ng-show="errors.length==0">لا يوجد ما يتطلب اهتمامك</div>
-							<div style="margin-left:50%" ng-show="loadingErrors"><i class="fa fa-spin fa-spinner" /> قيد التحميل ...</div>
+							<div style="margin-left:50%" ng-show="loadingErrors"><i class="fa fa-spin fa-spinner" /> Loading...</div>
 						</div>
 					</div>
 				</div>

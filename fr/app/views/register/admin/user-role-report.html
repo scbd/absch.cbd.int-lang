@@ -5,7 +5,7 @@
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
-                <h3>Rapport sur le r&ocirc;le de l&rsquo;usager</h3>
+                <h3>Rapport sur le rôle de l’usager</h3>
             </div>
         </div>
         <div class="register-content-content" style="background:#d2d6de;">
@@ -24,7 +24,7 @@
                                 <div class="pull-left">
                                     <div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Statut de la Partie" items="options.filterPartyStatus()"></div>
                                     <div km-select ng-model="filters.filterType" binding-type="string" placeholder="Filtre" items="options.filterTypes()"></div>
-                                    <div km-select ng-model="filters.role" binding-type="string" placeholder="R&ocirc;les" items="options.filterRoles()"></div>
+                                    <div km-select ng-model="filters.role" binding-type="string" placeholder="Rôles" items="options.filterRoles()"></div>
                                 </div>
                                 <div class="pull-right">
                                     <input type="button" class="btn btn-primary" ng-click="loadRecords()" value="Filter" ng-disabled="!filters.partyStatus || !filters.filterType || !filters.role">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-xs-12" ng-if="filters.role=='nfp'"><br/><div class="callout callout-warning">
                                     <h4>Attention!</h4>
-                                    <p>Seulement les comptes des usagers sont consid&eacute;r&eacute;s et non les fichiers des correspondants nationaux</p>
+                                    <p>Seulement les comptes des usagers sont considérés et non les fichiers des correspondants nationaux</p>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
 
                         <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title">R&ocirc;le des usagers</h3>
+                                <h3 class="box-title">Rôle des usagers</h3>
                             </div>
                             <div class="box-body">
                                 <div class="row-fluid center" id="National">
@@ -55,7 +55,7 @@
                                                 <tr>
                                                     <th></th>
                                                     <th>Pays <i ng-show="reverse" ng-click="sortByField='name.en';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='name.en'}"></i> <i ng-show="!reverse" ng-click="sortByField='name.en';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='name.en'}"></i></th>
-                                                    <th>D&eacute;compte <i ng-show="reverse" ng-click="sortByField='count';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='count'}"></i> <i ng-show="!reverse" ng-click="sortByField='count';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='count'}"></i></th>
+                                                    <th>Décompte <i ng-show="reverse" ng-click="sortByField='count';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='count'}"></i> <i ng-show="!reverse" ng-click="sortByField='count';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='count'}"></i></th>
                                                     <th>CBD Region <i ng-show="reverse" ng-click="sortByField='region';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='region'}"></i> <i ng-show="!reverse" ng-click="sortByField='region';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='region'}"></i></th>
                                                     <th>User(s)</th>
                                                 </tr>

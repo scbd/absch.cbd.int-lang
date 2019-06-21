@@ -2,7 +2,7 @@
   <li class="dropdown"><a translation-url  class="btn dropdown-toggle"
        data-toggle="dropdown" style="color:#111;" 
        href="#"><span ng-hide="since || until">{{title}}</span> <span ng-show="since"><span style="color:#428BCA">since:</span> {{since}}</span> <span ng-show="until"><span style="color:#428BCA">until:</span> {{until}}</span> <b class="caret"></b></a><ul class="dropdown-menu" style="width:300px"><!-- <span search-filter-dates title='Date of Adoption' query='adoptionDate'></span>  --><div class="list-group" >
-            <button class="btn btn-xs btn-default"  type ="button" ng-click="clearSelection()" ng-disabled="!hasSelectedItems()">Effacer la s&eacute;lection</button>
+            <button class="btn btn-xs btn-default"  type ="button" ng-click="clearSelection()" ng-disabled="!hasSelectedItems()">Effacer la sélection</button>
             <div class="list-group-item active">{{title}}</div>
             <div class="list-group-item dropdowndate" >   
                 <select class="form-control" ng-model="selectedDate" ng-change-"onSelectedDate()" ng-options="date.text for date in dates"></select>
@@ -12,7 +12,7 @@
                         <div class="km-date" ng-model="since"></div>
                     </div>
                     <div class="col-md-6">
-                        <div style="font-size:10px;font-weight:bold">JUSQU&rsquo;&Agrave;</div>
+                        <div style="font-size:10px;font-weight:bold">JUSQU’À</div>
                         <div class="km-date" ng-model="until"></div>
                     </div>
                 </div>

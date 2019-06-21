@@ -23,7 +23,7 @@
 				</ul>
 			</div>
 		</div> --><div ng-show="document.thematicAreas_CEN_ss">
-			<label>Thematic Areas</label>
+			<label>专题领域</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>
@@ -34,7 +34,7 @@
 
 
 		<div ng-show="document.url_ss">
-			<label>文档</label><span class="km-value"><a translation-url  ng-href="http://www.cbd.int/doc/press/{{document.date_s| formatDate:'YYYY'}}/{{document.url_ss | lstring:locale}}" target="_">http://www.cbd.int/doc/press/{{document.date_s| formatDate:&apos;YYYY&apos;}}/{{document.url_ss | lstring:locale}}</a></span></div>
+			<label>文档</label><span class="km-value"><a translation-url  ng-href="http://www.cbd.int/doc/press/{{document.date_s| formatDate:'YYYY'}}/{{document.url_ss | lstring:locale}}" target="_">http://www.cbd.int/doc/press/{{document.date_s| formatDate:'YYYY'}}/{{document.url_ss | lstring:locale}}</a></span></div>
 	</div>
 	<div document-metadata  class="panel-footer"></div>
 </div>

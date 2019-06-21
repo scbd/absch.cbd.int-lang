@@ -18,7 +18,7 @@
 									<legend>Общая информация</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -30,23 +30,23 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Identity of the living modified organism (LMO)</legend>
+									<legend>Идентификационные данные живого измененного организма (ЖИО)</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group"  name="identity" caption="Название ЖИО">
-												<div class="help-block">Название, обычно использованное для идентификации ЖИО, например коммерческое название (такое как трансгенная соя, устойчивая к гербициду Раундап, картофель NewLeaf® и т.п.)</div>
+												<div class="help-block">Название, обычно использованное для идентификации ЖИО, например коммерческое название (например соя под «Раундап», картофель серии NewLeaf® и т. п.)</div>
 												<div km-textbox-ml name="identity"  ng-model="document.identity" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="transformationEvent" caption="Трансформационное событие">
+											<div class="km-control-group" required name="transformationEvent" caption="Transformation event">
 												<div class="help-block">Название трансформационного события, например MON810.</div>
 												<input type="text" class="form-control" name="transformationEvent" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="hasUniqueIdentification" required caption="Имеется ли у ЖИО уникальный идентификатор?">
-												<div class="help-block">МПБ в настоящее время использует систему уникальных идентификаторов, установленную рекомендациями ОЭСР по присвоению уникальных идентификаторов трансгенным растениям (например: MON-&Oslash;&Oslash;81&Oslash;-6). For more information see <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
+												<div class="help-block">В настоящее время в МПБ используется система уникальных идентификаторов, изложенная в Руководящих указаниях ОЭСР по определению уникальных идентификаторов для трансгенных растений (например, MON-ØØ81Ø-6). С дополнительной информацией можно ознакомиться по адресу: <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
 												<div km-yes-no required ng-model="hasUniqueIdentification" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -56,7 +56,7 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="developers" caption="Разработчик(и)">	
+											<div class="km-control-group" name="developers" caption="Разработчик(-и)">	
 												<div document-selector ng-model="document.developers" question="developers"
 													schema="(contact)" caption="Контакты"></div>			
 											</div>
@@ -67,8 +67,8 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="recipientOrganisms" caption="Recipient Organism or Parental Organisms">	
-												<div class="help-block">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+											<div class="km-control-group" required name="recipientOrganisms" caption="Организм-реципиент или родительские организмы">	
+												<div class="help-block">Термин «организм-реципиент» относится к организму (уже измененному или неизмененному), подвергнутому генетической модификации, а термин «родительские организмы» относится к организмам, участвовавшим в процессах кроссбридинга или слияния клеток.</div>
 												<div document-selector required ng-model="document.recipientOrganisms" question="recipientOrganisms"
 													schema="(organism modifiedOrganism)" caption="Add Organism / Modified Organism"></div>			
 											</div>
@@ -81,7 +81,7 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="linkedModifiedOrganisms" caption="Связанные ЖИО">	
-												<div class="help-block">This field relates to other LMOs with similar characteristics.</div>
+												<div class="help-block">Данное поле относится к другим ЖИО с аналогичными характеристиками.</div>
 												<div document-selector ng-model="document.linkedModifiedOrganisms" question="linkedModifiedOrganisms"
 													schema="(modifiedOrganism)"></div>			
 											</div>
@@ -97,7 +97,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group"  name="vector" caption="Вектор">
-												<div class="help-block">Vectors are used to incorporate a DNA sequence (typically the promoter-gene-terminator construct) to assist its transfer into the recipient organism. Примеры: Ti-плазмида Agrobacterium и pBIN19.</div>
+												<div class="help-block">Векторы используются для внедрения ДНК-последовательности (обычно структуры промотор-ген-терминатор) с целью облегчения ее передачи в организм-реципиент. Примеры: Ti-плазмида Agrobacterium и pBIN19.</div>
 												<div km-textbox-ml name="vector"  ng-model="document.vector" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -108,7 +108,7 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" required name="genes" caption="Интродуцированные или модифицированные генетические элементы">	
-												<div class="help-block">Предпочтительно чтобы все генетические элементы, интродуцированные в данный ЖИО такие, как промоторы, кодирующие белок последовательности и терминаторы, были обязательно указаны в данном разделе. По меньшей мере обязательно должны быть указаны  ВСЕ кодирующие белок последовательности.</div>
+												<div class="help-block">Желательно, чтобы все генетические элементы, интродуцированные в данный ЖИО такие, как промоторы, кодирующие белок последовательности и терминаторы, были обязательно указаны в данном разделе. Как минимум, обязательно должны быть указаны ВСЕ кодирующие белок последовательности.</div>
 												<div document-selector ng-model="document.genes" question="genes"
 													schema="(dnaSequence)" caption="Последовательность генов и ДНК"></div>			
 											</div>
@@ -120,7 +120,7 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="geneNotes" caption="Примечания касательно генетических элементов, присутствующих в данном ЖИО">	
-												<div class="help-block">Please specify if any of these elements has been modified from the sequence registered in the BCH Genetic Element Registry and how they relate to each other in this LMO, for instance &ldquo;epsps protein coding sequence under control of the 35S promoter and nos terminator&rdquo;.</div>
+												<div class="help-block">Просьба указать, если любые из этих генетических элементов были изменены относительно последовательности, зарегистрированной в Реестре генетических элементов МПБ, и как они связаны друг с другом в данном ЖИО (например, «последовательность, кодирующая белок EPSPS, управляемая промотором 35S и терминатором NOS»)</div>
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
 										</div>
@@ -139,8 +139,8 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="affectedGenes" caption="Другие гены, экспрессия которых подвергалась воздействию данной трансформации">	
-												<div class="help-block">В данном разделе следует указать изменения в экспрессии генов, отличных от введенных в ЖИО, например, подавление активности генов или индукцию генов.</div>
+											<div class="km-control-group" required name="affectedGenes" caption="Other gene(s) whose expression was affected by the transformation">	
+												<div class="help-block">Данный раздел следует использовать для указания изменений в экспрессии генов, отличных от тех, которые были вставлены в ЖИО (например, подавление экспрессии генов и индукция генов).</div>
 												<div document-selector ng-model="document.affectedGenes" question="affectedGenes"
 													schema="(dnaSequence)" caption="Последовательность генов и ДНК"></div>			
 											</div>
@@ -152,7 +152,7 @@
 										</div>
 										<div class="col-sm-12">
 											<div class="km-control-group" required name="commonUses" caption="Основные применения ЖИО">
-												<div class="help-block">Выберите все применимые варианты.</div>
+												<div class="help-block">Choose as many options as applicable.</div>
 												<div km-term-check name="commonUses" required ng-model="document.commonUses" terms="options.commonUses" binding-type="term[]"></div>
 											</div>
 										</div>
@@ -164,7 +164,7 @@
 									<legend>Метод(-ы) обнаружения</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="detectionMethod" caption="Внешняя ссылка(-и)">
+											<div class="km-control-group" name="detectionMethod" caption="Внешняя(-ие) ссылка(-и)">
 												<div km-rich-textbox ng-model="document.detectionMethod" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -195,7 +195,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="relevantDocuments" caption="Любые другие соответствующие документы">
-												<div class="help-block">Укажите в этом поле любые другие релевантные адреса веб-сайтов и (или) один или несколько релевантных документов, которые будут храниться в базе данных для загрузки пользователями.</div>
+												<div class="help-block">Please use this field to provide any other relevant website addresses and/or one or more relevant documents that will be stored in the database for users to download.</div>
 												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>

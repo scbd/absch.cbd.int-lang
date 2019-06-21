@@ -1,18 +1,18 @@
 ﻿<div class="modal-content">
-    <style> .has-error .fa-validate:before { content: &quot;\f069&quot;; color: #a94442; } .has-warning .fa-validate:before { content: &quot;\f0a5&quot;; color: #c09853; } .has-success .fa-validate:before { content: &quot;\f00c&quot;; color: #468847; } .help-block.error { text-transform: uppercase; font-size: 10px; font-weight: bold; margin-bottom: -10px; } .panel-identity { position: relative; padding-top: 19px; } .panel-identity:after { content: &quot;Identity&quot;; position: absolute; top: -1px; left: -1px; padding: 3px 7px; font-size: 12px; font-weight: bold; background-color: #f5f5f5; border: 1px solid #ddd; color: #9da0a4; height: 1.6em; line-height: 1em; -webkit-border-radius: 4px 0 4px 0; -moz-border-radius: 4px 0 4px 0; border-radius: 4px 0 4px 0; } .panel-identity-new:after { content: &quot;New Identity&quot;; } </style>
+    <style> .has-error .fa-validate:before { content: "\f069"; color: #a94442; } .has-warning .fa-validate:before { content: "\f0a5"; color: #c09853; } .has-success .fa-validate:before { content: "\f00c"; color: #468847; } .help-block.error { text-transform: uppercase; font-size: 10px; font-weight: bold; margin-bottom: -10px; } .panel-identity { position: relative; padding-top: 19px; } .panel-identity:after { content: "Identity"; position: absolute; top: -1px; left: -1px; padding: 3px 7px; font-size: 12px; font-weight: bold; background-color: #f5f5f5; border: 1px solid #ddd; color: #9da0a4; height: 1.6em; line-height: 1em; -webkit-border-radius: 4px 0 4px 0; -moz-border-radius: 4px 0 4px 0; border-radius: 4px 0 4px 0; } .panel-identity-new:after { content: "New Identity"; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Rechercher un nomin&eacute;</h3>
+        <h3 class="modal-title">Rechercher un nominé</h3>
     </div>
 
     <div class="modal-body">
         <form name="form" novalidate ng-submit="searchUserDialogCtrl.search()">
 
-            <p>Veuillez entrer l&rsquo;adresse courriel de la personne que vous souhaiter nominer et cliquer sur le bouton de recherche <i class="fa fa-search"></i>.</p>
+            <p>Veuillez entrer l’adresse courriel de la personne que vous souhaiter nominer et cliquer sur le bouton de recherche <i class="fa fa-search"></i>.</p>
 
             <div class="form-group" ng-class="{ 'has-warning': form.email.$invalid }">
-                <label>Adresse courriel du nomin&eacute;</label>
+                <label>Adresse courriel du nominé</label>
                 <div class="input-group" style="margin-bottom:2px; padding-left: 0px"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="email" name="email" class="form-control" ng-model="searchUserDialogCtrl.email" ng-change='searchUserDialogCtrl.search()' ng-keydown="searchUserDialogCtrl.user=null" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 300, 'blur': 0 } }" placeholder="email@domain.xyz" required><span class="input-group-btn"><button class="btn btn-default" aria-label="Search" type="submit"><i class="fa fa-fw" ng-class="{ 'fa-search' : !searchUserDialogCtrl.loading, 'fa-cog fa-spin' : searchUserDialogCtrl.loading  }"></i></button></span></div>
                 <p class="help-info error" ng-show="form.email.$invalid && !form.email.$error.email">Ce champs est obligatoire</p>
                 <p class="help-info error" ng-show="form.email.$error.email">Le courriel est invalide ou incomplet</p>
@@ -23,8 +23,8 @@
         <div ng-if="searchUserDialogCtrl.error">
 
             <div ng-switch="searchUserDialogCtrl.error.code">
-                <div class="alert alert-warning" ng-switch-when="forbidden"><b>Oups...</b> Nous sommes d&eacute;sol&eacute;s, vous n&rsquo;&ecirc;tes pas autoris&eacute; &agrave; nominer un nouvel usager.</div>
-                <div class="alert alert-danger" ng-switch-default><b>Oups...</b> Nous sommes d&eacute;sol&eacute;s, une erreur est survenue. <br> {{searchUserDialogCtrl.error|json}}</div>
+                <div class="alert alert-warning" ng-switch-when="forbidden"><b>Oups...</b> Nous sommes désolés, vous n’êtes pas autorisé à nominer un nouvel usager.</div>
+                <div class="alert alert-danger" ng-switch-default><b>Oups...</b> Nous sommes désolés, une erreur est survenue. <br> {{searchUserDialogCtrl.error|json}}</div>
             </div>
 
         </div>
@@ -37,11 +37,11 @@
                 <div class="panel-body">
 
                     <div class="alert alert-warning" role="alert">
-                        <p><b>Usager non trouv&eacute;e :</b> <i>{{searchUserDialogCtrl.email}}</i></p>
-                        <p>Veuillez noter que l&apos;adresse courriel sp&eacute;cifi&eacute;e ne correspond pas au compte existant de cet usager. Vous pouvez cependant proc&eacute;der avec la nomination en initiant la cr&eacute;ation d&rsquo;un nouveau compte d&rsquo;usager. Le nouvel usager devra confirmer sa participation et fournir ses renseignements et coordonn&eacute;es.</p>
+                        <p><b>Usager non trouvée :</b> <i>{{searchUserDialogCtrl.email}}</i></p>
+                        <p>Veuillez noter que l'adresse courriel spécifiée ne correspond pas au compte existant de cet usager. Vous pouvez cependant procéder avec la nomination en initiant la création d’un nouveau compte d’usager. Le nouvel usager devra confirmer sa participation et fournir ses renseignements et coordonnées.</p>
                     </div>
 
-                    <button class="btn btn-lg btn-block btn-success" ng-click="searchUserDialogCtrl.save()">Nomine run nouvel usager en utilisant l&rsquo;adresse courriel suivante : <br> <b>{{searchUserDialogCtrl.user.email}}</b></button>
+                    <button class="btn btn-lg btn-block btn-success" ng-click="searchUserDialogCtrl.save()">Nomine run nouvel usager en utilisant l’adresse courriel suivante : <br> <b>{{searchUserDialogCtrl.user.email}}</b></button>
 
                 </div>
 
@@ -55,8 +55,8 @@
 
                         <div class="col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label for="firstName">Pr&eacute;nom</label>
-                                <input type="text" class="form-control" name="firstName" ng-model="searchUserDialogCtrl.user.firstName" ng-disabled="true" placeholder="&lt;new&gt;">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" class="form-control" name="firstName" ng-model="searchUserDialogCtrl.user.firstName" ng-disabled="true" placeholder="<new>">
                             </div>
                         </div>
 

@@ -7,10 +7,10 @@
 	<div class="record-body panel-body" help schema="viewCNA" >
 		
 		<document-date></document-date><!-- <a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> --><div name="article-13-2"></div>
-		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">Informaci&oacute;n general</legend>
+		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">Información general</legend>
 
 		<div ng-show="document.government" >
-			<label name="country">Pa&iacute;s</label>
+			<label name="country">País</label>
 			<div class="km-value"><span><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a></span> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
@@ -52,12 +52,12 @@
 		</div>
 
 		<div ng-show="document.absPolicyBasisForCompetency || document.absPolicyBasisForCompetencyRef ">
-			<legend>Fundamentos jur&iacute;dicos, administrativos o de pol&iacute;tica para la competencia de la ANC</legend>
+			<legend>Fundamentos jurídicos, administrativos o de política para la competencia de la ANC</legend>
 			<div ng-show="document.absPolicyBasisForCompetency"><!--<label>Information on the legal, administrative or policy basis for the competence of the CNA</label>--><div class="km-value" ng-bind-html="document.absPolicyBasisForCompetency | lstring:locale">
 				</div>
 			</div>
 			<div ng-if="document.absPolicyBasisForCompetencyRef">
-				<label>Enlaces a la(s) medida(s) legislativa(s), administrativa(s) o de pol&iacute;tica pertinentes</label>
+				<label>Enlaces a la(s) medida(s) legislativa(s), administrativa(s) o de política pertinentes</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.absPolicyBasisForCompetencyRef" >
@@ -77,7 +77,7 @@
 			</div>
 
 			<div ng-if="document.absResponsibleForAll">
-				<div class="km-value">Responsable de todos los recursos gen&eacute;ticos. Solo la autoridad nacional competente (ANC) del pa&iacute;s.</div>
+				<div class="km-value">Responsable de todos los recursos genéticos. Solo la Autoridad Nacional Competente (ANC) del país.</div>
 			</div>
 
 			<div ng-show="document.absFunctions">
@@ -94,8 +94,8 @@
 				<label>Sub-national or community jurisdiction(s) covered by this CNA</label>
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
-				<label>Jurisdicci&oacute;n(es) cubierta(s) por esta ANC</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? &apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<label>Jurisdicción(es) cubierta(s) por esta ANC</label>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? '' : ', '}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>
@@ -118,7 +118,7 @@
 
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>

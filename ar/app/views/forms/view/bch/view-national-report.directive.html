@@ -5,7 +5,7 @@
         <div class="panel-body" style="padding:0px">
             <div style="margin:5px" class="row">
                 <div ng-show="document.government">
-                    <label name="country">الدولة</label>
+                    <label name="country">البلد</label>
                     <div class="km-value"><a ng-href="/countries/{{document.government.identifier}}"
                             target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
                 </div>
@@ -17,11 +17,11 @@
                     </div>
                 </div>
 
-                <div ng-show="document.stakeholders"></br><label>9. المنظمات / أصحاب المصالح المستشارين أو المشاركين في إعداد هذه التقرير</label>
+                <div ng-show="document.stakeholders"></br><label>9. Organizations/stakeholders who were consulted or participated in the preparation of this report</label>
                     <km-value-ml value="document.stakeholders" locales="locale"></km-value-ml>
                 </div>
 
-                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. الفترة الزمنية التي يغطيها هذا التقرير</label>
+                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. Time period covered by this report</label>
                     <div class="row">
                         <div class="col-xs-6" ng-if="document.reportPeriodStartDate">
                             <label>من</label>

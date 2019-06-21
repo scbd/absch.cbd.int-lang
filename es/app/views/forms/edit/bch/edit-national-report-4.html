@@ -46,8 +46,8 @@
                                                                             ng-bind-html="::(spaceSubQuestion(question.number) + question.title)" ng-required="question.mandatory">
                                                                         </label>                                                          
                                                                         <div class="pull-right" style="margin-bottom:5px;">
-                                                                            <button ng-if="previousAnswerMapping[question.key] && !question.showPrevious" ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Mostrar la respuesta anterior</button>
-                                                                            <button ng-if="previousAnswerMapping[question.key] && question.showPrevious"  ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Ocultar la respuesta anterior</button>
+                                                                            <button ng-if="previousAnswerMapping[question.key] && !question.showPrevious" ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Show previous Answer</button>
+                                                                            <button ng-if="previousAnswerMapping[question.key] && question.showPrevious"  ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Hide previous Answer</button>
                                                                         </div>
                                                                     </div>         
                                                                 </div>
@@ -62,8 +62,8 @@
                                                                                         ng-bind-html="::(spaceSubQuestion(subQuestion.number) + subQuestion.title)" ng-required="subQuestion.mandatory">
                                                                                     </label>        
                                                                                     <div class="pull-right" style="margin-bottom:5px;">
-                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && !subQuestion.showPrevious" ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Mostrar la respuesta anterior</button>
-                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && subQuestion.showPrevious"  ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Ocultar la respuesta anterior</button>
+                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && !subQuestion.showPrevious" ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Show previous Answer</button>
+                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && subQuestion.showPrevious"  ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Hide previous Answer</button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -81,7 +81,7 @@
                                                 <div ng-if="tab.tab==1"  class="section-pane panel panel-default" id="section1" 
                                                     style="margin-bottom:3px!important">
                                                     
-                                                    <div class="panel-heading"><strong>Informaci&oacute;n general</strong></div>
+                                                    <div class="panel-heading"><strong>Información general</strong></div>
                                                     <div class="panel-body" style="padding:0px">
                                                         <div ng-include="'contact'"></div>
                                                     </div>
@@ -123,16 +123,16 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="km-control-group" name="government" required caption="Pa&iacute;s">
+                        <div class="km-control-group" name="government" required caption="País">
                             <div afc-autocomplete required name="government" ng-disabled="userHasGovernment()" ng-model="document.government" source="options.countries"
-                                filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Please select a country..." ng-change="onGovernmentChange(document.government)"></div>
+                                filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="Seleccione un país" ng-change="onGovernmentChange(document.government)"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="km-control-group" name="contact" caption="Persona de contacto presentando el informe" required>											
+                        <div class="km-control-group" name="contact" caption="Contact person submitting the report" required>											
                             <div document-selector ng-model="document.contact" question="contact"  type="radio"
                                 government="document.government" schema="(contact focalPoint)"></div>			
                         </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="km-control-group" required name="stakeholders" caption="9. Organizaciones/grupos interesados que fueron consultados o participaron en la preparaci&oacute;n de este informe">
+                        <div class="km-control-group" required name="stakeholders" caption="9. Organizations/stakeholders who were consulted or participated in the preparation of this report">
                             <div km-textbox-ml name="stakeholders" required ng-model="document.stakeholders" locales="document.header.languages"></div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
 
                 <div class="row">
                         <div class="col-sm-6">
-                            <div class="km-control-group" required name="stakeholders" caption="10. Per&iacute;odo de tiempo que abarca este informe">
+                            <div class="km-control-group" required name="stakeholders" caption="10. Time period covered by this report">
                                 <div class="col-sm-5">
                                     <div km-date placeholder="AAAA-MM-DD" name="reportPeriodStartDate" required ng-model="document.reportPeriodStartDate"></div>
                                 </div> 
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-md-4" ng-if="question.showPrevious">
                     <div style="border: 2px solid #fff;padding:5px">
-                        <div class="alert alert-info" ng-if="previousAnswerMapping[question.key].showMessage">Por favor note que el periodo de tiempo que abarca esta pregunta es diferente en cada formato de reporte.</div>
+                        <div class="alert alert-info" ng-if="previousAnswerMapping[question.key].showMessage">* Please note that the period covered by this question is different in each reporting format.</div>
                         <div><strong ng-bind="::(previousAnswerMapping[question.key].prevQuestion + '. ' + previousAnswerMapping[question.key].previousQuestion.title)"></strong></div>
                         <div class="well well-sm" ng-if="previousAnswerMapping[question.key].previousQuestion.type!='array' && previousAnswerMapping[question.key].previousQuestion.answer"
                             ng-bind="::(previousAnswerMapping[question.key].previousQuestion.answer|lstring)"></div>
@@ -205,11 +205,11 @@
         </script>
         <script type="text/ng-template" id="recordExistsTemplate.html" trados-translation="true">
             <div style="margin:10px;">
-                <h1>Cuarto informe nacional</h1>
+                <h1>Fourth national report</h1>
                 <hr>
                 <div class=" alert alert-danger">
                     <div class="glyphicon glyphicon-exclamation-sign"></div>
-                    <div>S&oacute;lo se permite un registro del cuarto informe nacional para cada gobierno, el cuarto informe nacional ya existe para su gobierno, usted ser&aacute; redirigido al r&eacute;cord en {{alertSeconds}} segundos.</div>
+                    <div>Only one record of the fourth national report is allowed for each government, the fourth national report already exists for your government, you will be redirected to the record in {{alertSeconds}} seconds.</div>
                 </div>
                 <div class="ngdialog-buttons">
                     <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="openExisting()">Redireccionar ahora</button>

@@ -9,10 +9,10 @@
         </div>
         <div class="jumbotron" style="background-color:white;" role="alert" ng-if="documentSuccess">
             <h2>نشكرك على تنزيل الوثيقة {{documentUID}}.</h2>
-            <p>إذا لم يبدأ تنزيل الوثيقة، يرجى الضغط  <a translation-url href="{{documentUrl}}" class="alert-link">هنا...</a></p></br> </br> </br> </br> ستغلق النافذة تلقائيًا في {{timeLaspe}} ثانية.</div>
+            <p>إذا لم يبدأ تنزيل الوثيقة، فاضغط <a translation-url href="{{documentUrl}}" class="alert-link">هنا...</a></p></br> </br> </br> </br> ستغلق النافذة تلقائيًا في {{timeLaspe}} ثانية.</div>
 
         <div class="jumbotron" style="background-color:white;" role="alert" ng-if="documentError">
-            <h2>نشكرك على تنزيل الوثيقة {{documentUID}}.</h2>
+            <h2>نشكرك على طلب الوثيقة {{documentUID}}.</h2>
             <p>الوثيقة غير موجودة. إذا كنت واثقًا من أن الملف كان متاحًا من قبل، يرجى إبلاغ أمانة الاتفاقية بالبريد الإلكتروني  <a translation-url href="mailto:absch@cbd.int" class="alert-link">absch@cbd.int</a></p>
         </div>
 
@@ -21,8 +21,8 @@
                 <div class="col-xs-12">
                     <div class="well">
                         <h3 style="margin:0 0 10px 0;padding:0;border-bottom:1px solid #999;">معلومات السجل</h3>
-                        <div><span style="font-size:12px">Type:</span> {{internalDocumentInfo.metadata.schema | schemaName}}</div>
-                        <div><span style="font-size:12px">الحالة:</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">DRAFT</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">PUBLISHED</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[Locked: Pending {{workflowRequestType}} request]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">DELETED</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">REVOKED</span></span></div>
+                        <div><span style="font-size:12px">النوع:</span> {{internalDocumentInfo.metadata.schema | schemaName}}</div>
+                        <div><span style="font-size:12px">الحالة:</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && (internalDocumentInfo.latestRevision == 0 || internalDocumentInfo.revision === '0')">مسودة</span> <span class="color-green" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.latestRevision > 0 && internalDocumentInfo.revision > 0">منشورة</span> <span class="color-red" ng-if="internalDocument.amendmentIntent!=1 && !internalDocumentInfo.deletedOn && internalDocumentInfo.workingDocumentLock">[مغلقة: طلب {{workflowRequestType}} مُعلق]</span> <span class="color-grey" ng-if="internalDocument.amendmentIntent!=1 && internalDocumentInfo.deletedOn && internalDocumentInfo.revision > 0">محذوف</span> <span ng-show="!internalDocument.deletedOn && internalDocument.amendmentIntent==1  && internalDocument.type!='absCheckpointCommunique'"><span class="bold color-red">مرفوض</span></span></div>
                         <div><span style="font-size:12px">History:</span><div view-history document-id="internalDocumentInfo.identifier"></div>
                         </div>
 

@@ -3,8 +3,8 @@
     <div class="clearfix"></div>
     <div class="col-xs-12 "  ng-show="showReport">
         <div class="alert alert-danger" style="padding:0;" block-region activate=" loading">
-            <h1 style="margin-left:20px">Report this record <i ng-click="showReport = !showReport" aria-label="Close" style="margin-right:20px;cursor:pointer;" class="pull-right fa fa-close"></i></h1>
-            <p style="margin-left:20px">Please use the form to report a problem with this record and help us to keep the ABSCH up-to-date and correct.</p>
+            <h1 style="margin-left:20px">报告此记录 <i ng-click="showReport = !showReport" aria-label="Close" style="margin-right:20px;cursor:pointer;" class="pull-right fa fa-close"></i></h1>
+            <p style="margin-left:20px">请使用此表格报告与此记录相关的问题，并帮助我们在获取和惠益分享信息交换所中保持最新的正确记录。</p>
             <div  style="margin:20px;">
                 <form>
                 <div class="form-group">
@@ -22,7 +22,7 @@
                     </div><br><div>
                         <textarea class="form-control" rows="3"
                         placeholder="additional information"  ng-model="report.additionalInformation"></textarea>
-                    </div><br><div>Reported By<input class="form-control"
+                    </div><br><div>报告人：<input class="form-control"
                         placeholder="reported by"  ng-model="report.reportedBy"></textarea>
                     </div><br><div>
                         <button type="submit" class="btn btn-primary" ng-click="submitReport(report)">提交</button>

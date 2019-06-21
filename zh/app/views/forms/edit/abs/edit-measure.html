@@ -48,7 +48,7 @@
                                     <legend>一般信息</legend>
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
+                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -187,7 +187,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="km-control-group" required name="documents" caption="文件文字（原语言）">
-                                                <div class="help-info">最好提供附件。否则，请提供文件的位置，即网址，包括网站的 URL（例如http://absch.cbd.int/）和网站名称（例如&ldquo;获取和惠益分享信息交换所&rdquo;）。</div>
+                                                <div class="help-info">最好提供附件。否则，请提供文件的位置，即网址，包括网站的 URL（例如http://absch.cbd.int/）和网站名称（例如“获取和惠益分享信息交换所”）。</div>
                                                 <div km-link required name="documents" ng-model="document.documents" extensions="options.documentLinksExt" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
                                             </div>
                                         </div>
@@ -258,7 +258,7 @@
     
                                     <div ng-if="document.absMeasuresForDelete">
                                         <div class="alert alert-warning">
-                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>保存<i>措施要素</i>的格式已变化。必须手动更新此记录。下面的<i>措施要素</i>列表来自上一版本，仅供参考，以帮助您更新此记录。</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}。{{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp;<span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
+                                            <h4 class="color-blue"><i class='fa fa-info-circle'></i> <strong>保存<i>措施要素</i>的格式已变化。必须手动更新此记录。下面的<i>措施要素</i>列表来自上一版本，仅供参考，以帮助您更新此记录。</strong></h4><span ng-repeat="elm in document.absMeasuresForDelete">{{$index+1}}。{{elm|term}} <span ng-if="elm.customValue">{{elm.customValue}}</span>&nbsp; <span ng-if="elm.section">({{elm.section|lstring}})</span> <br/> </span></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -307,7 +307,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="km-control-group" name="notes">
-                                                <div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
+                                                <div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
                                                 <textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
                                             </div>
                                         </div>

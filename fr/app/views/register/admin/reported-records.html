@@ -4,7 +4,7 @@
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
-                <h3>Fichiers pr&eacute;sent&eacute;s</h3>
+                <h3>Fichiers présentés</h3>
             </div>
         </div>
         <div  class="register-content-content">
@@ -12,9 +12,9 @@
 
             <div class="" style="width:100%">
                 <div class="row table-striped" style="padding:10px;border-bottom:1px solid white;">                
-                    <div class="col-xs-2">Sch&eacute;ma</div>
-                    <div class="col-xs-2">Rapport&eacute; par</div>
-                    <div class="col-xs-2">Rapport&eacute; le</div>
+                    <div class="col-xs-2">Schéma</div>
+                    <div class="col-xs-2">Rapporté par</div>
+                    <div class="col-xs-2">Rapporté le</div>
                     <div class="col-xs-4">Information</div>
                     <div class="col-xs-2"></div>
                 </div>
@@ -24,7 +24,7 @@
                         <div class="col-xs-2">{{record.schema|schemaName}}</div>
                         <div class="col-xs-2">{{record.reportedBy}}</div>
                         <div class="col-xs-2"><span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span></div>
-                        <div class="col-xs-3"><span ng-if="record.incorrect">incorrect ou inappropri&eacute; |</span> <span ng-if="record.broken">lien erron&eacute; ou information d&eacute;su&egrave;te |</span> <span ng-if="record.copyright">atteinte au droit d&rsquo;auteur</span><br> {{record.additionalInformation}}</div>
+                        <div class="col-xs-3"><span ng-if="record.incorrect">incorrect ou inapproprié |</span> <span ng-if="record.broken">lien erroné ou information désuète |</span> <span ng-if="record.copyright">atteinte au droit d’auteur</span><br> {{record.additionalInformation}}</div>
                         <div class="col-xs-3">
                             <input type="button" class="btn btn-primary" value="View Record" ng-click="record.showDoc=!record.showDoc;loadDocumentDetails(record.showDoc, record)" />
                             <input type="button" class="btn btn-primary" value="Add Comments" ng-click="addComments($event, record)" />
@@ -74,8 +74,8 @@
                 <div class="col-xs-10">
                     <select class="form-control" style="width:10%" required name="status" ng-model="record.status">
                         <option value="Read">Lecture</option>
-                        <option value="Not a issue">Non probl&eacute;matique</option>
-                        <option value="Record owner contacted">Auteur du fichier contact&eacute;</option>
+                        <option value="Not a issue">Non problématique</option>
+                        <option value="Record owner contacted">Auteur du fichier contacté</option>
                     </select>
                 </div>
             </div>
@@ -100,15 +100,15 @@
         </div>
 
         <div class="modal-body">             
-                <div class="col-xs-12 col-form-label">Sch&eacute;ma : {{record.schema|schemaName}}</div>
-                <div class="col-xs-12 col-form-label">Rapport&eacute; par : {{record.reportedBy}}</div>
-                <div class="col-xs-12 col-form-label">Rapport&eacute; le : <span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span></div>
+                <div class="col-xs-12 col-form-label">Schéma : {{record.schema|schemaName}}</div>
+                <div class="col-xs-12 col-form-label">Rapporté par : {{record.reportedBy}}</div>
+                <div class="col-xs-12 col-form-label">Rapporté le : <span ng-if="record.meta">{{record.meta.createdOn|formatDateWithTime}}</span></div>
                 <div class="col-xs-12 col-form-label">Information : <span ng-if="record.incorrect">incorrect or inappropriate |</span> <span ng-if="record.broken">broken link or outdated information |</span> <span ng-if="record.copyright">copyright infringement</span><br> {{record.additionalInformation}}</div>
         </div>
 
         <div class="modal-footer">
             <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeDialog()" ng-disabled="loading">Non</button>
-            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Yes</button>
+            <button type="button" class="btn btn-primary" aria-label="Save" ng-click="confirmDelete()" ng-disabled="loading">Oui</button>
         </div>
     </script>
 

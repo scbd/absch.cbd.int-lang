@@ -2,7 +2,7 @@
 
     <div class="well bg-white" id="guide" >
 
-    <style> figure &gt; img{ max-width: 100%; height: auto; } </style><a href="/about/guides" class="pull-left bold color-blue" style="text-transform: uppercase;font-size: 10px;">Step-by-step guide</a><div class="pull-right" style="text-transform: uppercase;font-size: 10px;"><a href="" class="color-grey" ng-click="expand=!expand; expandAll(expand);"><span ng-if="!expand">+ expand</span> <span ng-if="expand">- collapse</span></a> <!-- &nbsp; | &nbsp; print &nbsp; | &nbsp; email  --></div><br><h2 class="color-green bold" >{{format.summary| lstring:locale}}</h2>  
+    <style> figure > img{ max-width: 100%; height: auto; } </style><a href="/about/guides" class="pull-left bold color-blue" style="text-transform: uppercase;font-size: 10px;">دليل تفصيلي</a><div class="pull-right" style="text-transform: uppercase;font-size: 10px;"><a href="" class="color-grey" ng-click="expand=!expand; expandAll(expand);"><span ng-if="!expand">+ expand</span> <span ng-if="expand">- collapse</span></a> <!-- &nbsp; | &nbsp; print &nbsp; | &nbsp; email  --></div><br><h2 class="color-green bold" >{{format.summary| lstring:locale}}</h2>  
     <hr>
         <div><span ng-click="show_introABSCH=!show_introABSCH" ng-class="{'color-grey':!showFAQ, 'color-black':showFAQ}" style="font-weight:normal;font-size:1.4em; cursor:pointer;"><i class="fa" ng-class="{'fa-plus':!show_introABSCH, 'fa-minus color-grey':show_introABSCH}"></i> <span  ng-bind-html="introABSCH.title | lstring:locale"></span></span><div ng-show="show_introABSCH" style="background-color:#e9e9e9;margin-bottom:10px;padding:20px;border-top:#ddd 1px solid;">
                 <p ng-bind-html="introABSCH.content | lstring:locale"></p>

@@ -6,10 +6,10 @@
 		<document-date></document-date>
 
 		<div ng-show="document.title_EN_t">
-			<label>Denominaci&oacute;n</label><span class="km-value">{{document.title_EN_t | lstring:locale}}</span></div>
+			<label>Título</label><span class="km-value">{{document.title_EN_t | lstring:locale}}</span></div>
 
 		<div ng-show="document.description_EN_t">
-			<label>Descripci&oacute;n</label><span class="km-value">{{document.description_EN_t}}</span></div>
+			<label>Descripción</label><span class="km-value">{{document.description_EN_t}}</span></div>
 
 		<div ng-show="document.themes_CEN_ss">
 			<label>Temas</label>
@@ -21,7 +21,7 @@
 		</div>
 
 		<div ng-show="document.thematicAreas_CEN_ss">
-			<label>&Aacute;reas tem&aacute;ticas</label>
+			<label>Áreas temáticas</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>

@@ -68,7 +68,7 @@
                                             <legend>一般信息</legend>
                                             <div class="row">
                                                 <div class="col-xs-12" >
-                                                    <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
+                                                    <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                         <div class="indent">
                                                             <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                         </div>
@@ -293,7 +293,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question10" caption="10.其他信息">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question10" caption="10.Additional information">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -526,7 +526,7 @@
                                                                     ng-change="Q18Clear()">Traditional knowledge associated with genetic resources</label>
                                                             <div class="checkbox" ng-show="document.question18.tk.answer">
                                                                 <label><input type="checkbox" ng-model="document.question18.tk.monetary"
-                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">经济惠益</label>
+                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">Monetary benefits</label>
                                                                 <div ng-show="document.question18.tk.monetary"
                                                                     km-textbox-ml rows=2 name="question18FurtherInfo"
                                                                     ng-model="document.question18.tk.monetaryInfo" locales="document.header.languages"
@@ -534,7 +534,7 @@
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question18.tk.answer">
                                                                 <label><input type="checkbox" ng-model="document.question18.tk.nonMonetary"
-                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.nonMonetary); Q18ClearInfo()">非货币性惠益</label>
+                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.nonMonetary); Q18ClearInfo()">非货币惠益</label>
                                                                 <div ng-show="document.question18.tk.nonMonetary"
                                                                     km-textbox-ml rows=2 name="question18FurtherInfo"
                                                                     ng-model="document.question18.tk.nonMonetaryInfo"
@@ -560,7 +560,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question19" caption="19.其他信息">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question19" caption="19.Additional information">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -648,7 +648,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question23" caption="23.其他信息">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question23" ng-model="document.question23.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question23" caption="23.Additional information">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question23" ng-model="document.question23.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -818,7 +818,7 @@
                                                         <div class="col-xs-10 col-xs-offset-1">
                                                             <div class="km-control-group" name="question27_cc" caption="贵国是否已利用检查点公报？">
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
-                                                                        name="q27Options" id="q27Option1" value="Yes">Yes</label>
+                                                                        name="q27Options" id="q27Option1" value="Yes">是</label>
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
                                                                         name="q27Options" id="q27Option2" value="No">否</label>
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
@@ -898,7 +898,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question30" caption="30.其他信息">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question30" ng-model="document.question30.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question30" caption="30.Additional information">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question30" ng-model="document.question30.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1007,7 +1007,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question34" caption="34.其他信息">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question34" ng-model="document.question34.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question34" caption="34.Additional information">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question34" ng-model="document.question34.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1122,7 +1122,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question36" caption="36.其他信息">请提供落实措施所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question36" ng-model="document.question36.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question36" caption="36.Additional information">请提供落实措施所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question36" ng-model="document.question36.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1414,7 +1414,7 @@
     
                                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question44" bold="true" caption="44.其他信息">请提供落实与遗传资源相关传统知识相关的措施所面临主要困难和挑战的摘要：<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question44" bold="true" caption="44.Additional information">请提供落实与遗传资源相关传统知识相关的措施所面临主要困难和挑战的摘要：<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question44" ng-model="document.question44.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1481,7 +1481,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question47" bold="true" caption="47.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question47" ng-model="document.question47.challengesInfo"
+                                                    <div class="km-control-group" name="question47" bold="true" caption="47.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question47" ng-model="document.question47.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1558,7 +1558,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question50" bold="true" caption="50.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question50" ng-model="document.question50.challengesInfo"
+                                                    <div class="km-control-group" name="question50" bold="true" caption="50.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question50" ng-model="document.question50.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1627,7 +1627,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question53" bold="true" caption="53.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question53" ng-model="document.question53.challengesInfo"
+                                                    <div class="km-control-group" name="question53" bold="true" caption="53.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question53" ng-model="document.question53.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1786,7 +1786,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question58" bold="true" caption="58.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question58" ng-model="document.question58.challengesInfo"
+                                                    <div class="km-control-group" name="question58" bold="true" caption="58.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question58" ng-model="document.question58.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1985,7 +1985,7 @@
                                                                 value="One">1人</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
                                                                 value="Less than 5">Less than 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
                                                                 value="Less than 10">Less than 10</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
-                                                                value="10 or more">至少10</label>
+                                                                value="10 or more">10 or more</label>
                                                     </div>
     
                                                     <div class="km-control-group" name="question63Challenges" caption="">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question63Challenges" ng-model="document.question63.challengesInfo"
@@ -2047,7 +2047,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="Notes" bold="true" caption="注释：">
-                                                        <div class="help-info">&ldquo;注释&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                        <div class="help-info">“注释”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                                     </div>
                                                 </div>

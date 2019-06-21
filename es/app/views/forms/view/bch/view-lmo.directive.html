@@ -1,23 +1,23 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Living Modified Organism <span class="color-black">(LMO)</span></h4>
+		<h4>Organismo vivo modificado <span class="color-black">(OVM)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 		<document-date></document-date>
-		<legend>Identidad de los organismos vivos modificados (OVM)</legend>
+		<legend>Identidad del organismo vivo modificado</legend>
 		<div ng-show="document.info.documentID" style="text-align: center">
-			<div class="help-info">The image below identifies the LMO through its unique identifier, trade name and a link to this page of the BCH. Click on it to download a larger image on your computer. For help on how to use it go to the LMO quick-links page.</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
+			<div class="help-info">En la imagen que se encuentra abajo se identifica el OVM mediante su identificador único, nombre comercial y enlace a esta página del CIISB. Haga clic en el enlace para descargar una imagen más grande en su computadora. Para obtener ayuda sobre cómo utilizarlo, vaya a las páginas de enlace rápido al OVM.</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
 		<div ng-show="document.identity">
 			<label>Nombre del OVM</label>
 			<km-value-ml value="document.identity" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.transformationEvent">
-			<label>Eventos de transformaci&oacute;n</label>
+			<label>Eventos de transformación</label>
 			<div ng-bind="document.transformationEvent" class="km-value"></div>
 		</div>
 		<div ng-show="document.uniqueIdentification">
-			<label>Identificador &uacute;nico</label>
+			<label>Identificador único</label>
 			<div ng-bind="document.uniqueIdentification" class="km-value"></div>
 		</div>
 		<div ng-show="document.developers">
@@ -32,13 +32,13 @@
 		</div>
 		
 		<div ng-show="document.description">
-			<label>Descripci&oacute;n</label>
+			<label>Descripción</label>
 			<km-value-ml value="document.description" locales="locale"></km-value-ml>
 		</div>
 
 		<div ng-show="document.recipientOrganisms">
-			<label>Recipient Organism or Parental Organisms</label>
-			<div class="help-info">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+			<label>Organismo receptor u organismos parentales</label>
+			<div class="help-info">El término "organismo receptor" hace referencia a un organismo (modificado o no modificado) que fue objeto de una modificación genética, en tanto que "organismos parentales" hace referencia a los implicados en el cruzamiento o la fusión de células.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.recipientOrganisms" >						
@@ -49,7 +49,7 @@
 		</div>
 
 		<div ng-show="document.recipientOrganismCollectionPoint">
-			<label>Punto de recolecci&oacute;n o adquisici&oacute;n del organismo receptor</label>			
+			<label>Punto de recolección o adquisición del organismo receptor</label>			
 			<km-value-ml value="document.recipientOrganismCollectionPoint" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.linkedModifiedOrganisms">
@@ -63,19 +63,19 @@
 			</div>
 		</div>
 		
-		<legend>Caracter&iacute;sticas del proceso de transformaci&oacute;n</legend>
+		<legend>Características del proceso de transformación</legend>
 		
 		<div ng-show="document.vector">
 			<label>Vector</label>
 			<km-value-ml value="document.vector" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.transformationEvent">
-			<label>T&eacute;cnicas utilizadas para la modificaci&oacute;n</label>
+			<label>Técnicas utilizadas para la modificación</label>
 			<div ng-bind="document.transformationEvent" class="km-value"></div>
 		</div>
 
 		<div ng-show="document.geneConstructs">
-			<label>Constructo elementos gen&eacute;ticos</label>
+			<label>Constructo elementos genéticos</label>
 
 			<div class="km-value">
 				<div ng-repeat="construct in document.geneConstructs">
@@ -84,8 +84,8 @@
 			</div>
 		</div>
 		<div ng-show="document.genes">
-			<label>Elementos introducidos o gen&eacute;ticamente modificados</label>
-			<div class="help-info">Algunos de estos elementos gen&eacute;ticos pueden estar presentes como fragmentos o formas truncadas. Por favor, v&eacute;anse las notas a continuaci&oacute;n, en los casos en los que corresponda.</div>
+			<label>Elementos introducidos o genéticamente modificados</label>
+			<div class="help-info">Algunos de estos elementos genéticos pueden estar presentes como fragmentos o formas truncadas. Por favor, véanse las notas a continuación, en los casos en los que corresponda.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.genes" >						
@@ -96,12 +96,12 @@
 		</div>
 
 		<div ng-show="document.geneNotes">
-			<label>Notes regarding the genetic elements introduced or modified in this LMO</label>
+			<label>Notas relacionadas con los elementos genéticos introducidos o modificados en este OVM.</label>
 			<km-value-ml value="document.geneNotes" locales="locale"></km-value-ml>
 		</div>
 
 
-		<legend>Caracter&iacute;sticas del OVM</legend>		
+		<legend>Características del OVM</legend>		
 		<div ng-show="document.traits">
 			<label>Rasgos modificados</label>
 			<div class="km-value">
@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		<div ng-show="document.affectedGenes">
-			<label>Otro(s) gen(es) cuya expresi&oacute;n fue afectada por la transformaci&oacute;n</label>			
+			<label>Otro(s) gen(es) cuya expresión fue afectada por la transformación</label>			
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.affectedGenes" >						
@@ -121,11 +121,11 @@
 			</div>
 		</div>
 		<div ng-show="document.affectedGeneNotes">
-			<label>C&oacute;mo se vio afectada la expresi&oacute;n del(los) gen(es)</label>
+			<label>Cómo se vio afectada la expresión del(los) gen(es)</label>
 			<div ng-bind="document.affectedGeneNotes" class="km-value"></div>
 		</div>
 		<div ng-show="document.commonUses">
-			<label>Uso(s) com&uacute;n(es)</label>
+			<label>Uso(s) común(es)</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="use in document.commonUses" ng-bind="use | term:locale"></li>
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 		<div ng-show="document.detectionMethod||document.detectionMethodLinks">
-			<legend>M&eacute;todo(s) de detecci&oacute;n</legend>
+			<legend>Método(s) de detección</legend>
 			<div ng-show="document.detectionMethodLinks">
 				<label>Enlace(s) externo(s)</label>
 				<div class="km-value">
@@ -143,15 +143,15 @@
 				</div>
 			</div>
 			<div ng-show="document.detectionMethod">
-				<label>Informaci&oacute;n suplementaria</label>
+				<label>Additional Information</label>
 				<div class="km-value" ng-bind-html="document.detectionMethod | lstring:locale"></div>
 			</div>
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
-				<label>Informaci&oacute;n adicional</label>
+				<label>Información adicional</label>
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
 			</div>
 

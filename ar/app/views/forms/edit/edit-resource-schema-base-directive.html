@@ -13,7 +13,7 @@
 			
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -30,16 +30,16 @@
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="resourceTypes" caption="نوع المورد">
+											<div class="km-control-group" required name="resourceTypes" caption="نوع الوثيقة المرجعية">
 												<div km-select multiple name="resourceTypes" required ng-model="document.resourceTypes" items="options.resourceTypes()"
 												 show-description="true"></div>
 											</div>
 											<div ng-if="isNationalUser && displayMCCWarning" class="alert alert-info">
 												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-												<h4><strong>يرجى مراعاة ما يلي:</strong> If this module contractual clause has been developed by your country, then please submit it under the national record format <a href="/register/NMCC/new" class="color-blue" >&apos;National Model Contractual Clause&apos;</a> so that will be clearly visible as a national record in the search and country profile.</h4><a href="/register/NMCC/new" class="bold">Click here</a> to open the national record submission form.</div>
+												<h4><strong>يُرجى مراعاة ما يلي:</strong> إذا كان بلدك قد طور هذا البند التعاقدي للوحدة، يُرجى إرساله بنموذج السجل الوطني <a href="/register/NMCC/new" class="color-blue" >"البنود التعاقدية النموذجية الوطنية"</a> حتى يظهر بوضوح كسجل وطني في نتائج البحث وفي صفحة معلومات كل بلد.</h4><a href="/register/NMCC/new" class="bold">اضغط هنا</a> لفتح نموذج تقديم السجلات الوطنية.</div>
 										</div>
 										<div class="col-xs-12" ng-show="isOtherSelected(document.resourceTypes)">
-											<div class="km-control-group" required name="resourceTypeName" caption="اسم النوع الآخر للمورد">
+											<div class="km-control-group" required name="resourceTypeName" caption="اسم النوع الآخر للمصدر/المرجع">
 												<div km-textbox-ml required name="resourceTypeName" rows="1" ng-model="document.resourceTypeName" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -54,8 +54,8 @@
 									</div>
 									<div class="row" ng-if="isResource">
 										<div class="col-md-12">
-											<div class="km-control-group" name="formatDetails" caption="تفاصيل الصيغة">
-												<div class="help-info">من الممكن استخدام تفاصيل الصيغة لمعرفة معلومات أخرى مرتبطة بصيغة المرفقات بما في ذلك الأبعاد (مثل الحجم أو عدد الصفحات أو المدة) أو البرمجيات أو الأجهزة أو المعدات الأخرى المطلوبة للعرض أو التشغيل (مثال: مستندات تتطلب برنامج Acrobat Reader لعرضها).</div>
+											<div class="km-control-group" name="formatDetails" caption="تفاصيل نموذج الاستطلاع">
+												<div class="help-info">من الممكن استخدام تفاصيل النموذج لإضافة معلومات أخرى مرتبطة بشكل المرفقات بما في ذلك الأبعاد (مثل الحجم أو عدد الصفحات أو المدة) أو البرامج أو الأجهزة أو المعدات الأخرى المطلوبة لعرض هذه المرفقات أو تشغيلها (مثال: مستندات تتطلب برنامج Acrobat Reader لعرضها).</div>
 												<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -63,7 +63,7 @@
 			
 									<div class="row">
 										<div class="col-md-12" ng-if="isResource">
-											<div class="km-control-group" required name="purpose" caption="يرجى تحديد الغرض الرئيسي للمورد">
+											<div class="km-control-group" required name="purpose" caption="يُرجى تحديد الغرض الرئيسي للوثيقة المرجعية">
 												<div km-select multiple required name="purpose" ng-model="document.purpose" items="options.purposes()"
 												 show-description="true"></div>
 											</div>
@@ -72,7 +72,7 @@
 			
 									<div class="row" ng-if="isResource && IsCapacityBuilding()">
 										<div class="col-md-12">
-											<div class="km-control-group" required="IsCapacityBuilding()" name="targetGroups" caption="المجموعة (المجموعات)/المستفيد (المستفيدين)">
+											<div class="km-control-group" required="IsCapacityBuilding()" name="targetGroups" caption="Target group(s)/beneficiary(ies)">
 												<div km-term-check name="targetGroups" required="IsCapacityBuilding()" ng-model="document.targetGroups" terms="options.targetGroups()"
 												 binding-type="term[]"></div>
 											</div>
@@ -81,15 +81,15 @@
 			
 									<div class="row" ng-if="isResource && IsCapacityBuilding()">
 										<div class="col-md-12">
-											<div class="km-control-group" name="expertiseLevel" caption="مستوى المحتوى أو مستوى المعرفة/الخبرة للجمهور الذي يستهدفه المورد">
+											<div class="km-control-group" name="expertiseLevel" caption="مستوى المحتوى أو مستوى معرفة/خبرة الجمهور الذي يستهدفه الوثيقة المرجعية">
 												<div km-select name="expertiseLevel" ng-model="document.expertiseLevel" items="options.expertiseLevels()"></div>
 											</div>
 										</div>
-									</div><!--//Authors or Authoring organization is madatory Error message --><label for="author_org" style="width:0px;height:0px;display:inline"><span style="display:none">يرجى إدخال تفاصيل المؤلف (المؤلفين) أو تحديد مؤسسات التأليف</span></label>
+									</div><!--//Authors or Authoring organization is madatory Error message --><label for="author_org" style="width:0px;height:0px;display:inline"><span style="display:none">يُرجى إدخال تفاصيل المؤلف (المؤلفين) أو تحديد مؤسسات التأليف</span></label>
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" required name="authors" caption="المؤلف (المؤلفون):">
-												<div class="help-info">اسم الشخص الذي كتب المطبوعة أو مصدر المعلومات.</div>
+												<div class="help-info">اسم الشخص الذي كتب المطبوعة أو وثيقة المعلومات.</div>
 												<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -97,7 +97,7 @@
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="organizations" caption="منظمة (منظمات) التأليف)">
+											<div class="km-control-group" name="organizations" caption="منظمة (منظمات) التأليف">
 												<organization-selector multiple ng-model="document.organizations" organization-only locales="document.header.languages"
 												 caption="سنة النشر">
 											</div>
@@ -108,7 +108,7 @@
 										<div class="col-xs-12">
 											<div class="km-control-group" required name="publicationYear" caption="سنة النشر">
 												<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear"
-												 convert-to-number>&gt;<option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+												 convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 												</select>
 											</div>
 										</div>
@@ -117,7 +117,7 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="rights" caption="الحقوق">
-												<div class="help-info">المعلومات عن الحقوق الخاصة بالمورد مثل صاحب حقوق النشر وإمكانية إعادة النشر للأغراض التعليمية أو غير الربحية.</div>
+												<div class="help-info">المعلومات عن الحقوق الخاصة بالملفات المرفقة مثل صاحب حقوق النشر وإمكانية إعادة النشر لأغراض تعليمية أو غير ربحية.</div>
 												<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -126,7 +126,7 @@
 									<div class="row" ng-if="isResource">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="source" caption="المصدر">
-												<div class="help-info">إشارة للمصدر الذي تم اقتباس المصدر الحالي منه (على سبيل المثال مقال من دورية). بالنسبة للوثائق الأصلية التي قد ترغب في تحديدها &quot;كوثائق أصلية&quot;.</div>
+												<div class="help-info">إشارة مرجعية للوثيقة أو المصدر الذي أعدت منه الوثيقة الحالية (على سبيل المثال مقال من دورية). بالنسبة للوثائق الأصلية التي قد ترغب في تحديدها باعتبارها "وثائق أصلية".</div>
 												<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -134,8 +134,8 @@
 			
 									<div class="row" ng-if="!isResource">
 										<div class="col-md-12">
-											<div class="km-control-group" name="formatDetails" caption="تفاصيل الصيغة">
-												<div class="help-info">من الممكن استخدام تفاصيل الصيغة لمعرفة معلومات أخرى مرتبطة بصيغة المرفقات بما في ذلك الأبعاد (مثل الحجم أو عدد الصفحات أو المدة) أو البرمجيات أو الأجهزة أو المعدات الأخرى المطلوبة للعرض أو التشغيل (مثال: مستندات تتطلب برنامج Acrobat Reader لعرضها).</div>
+											<div class="km-control-group" name="formatDetails" caption="تفاصيل نموذج الاستطلاع">
+												<div class="help-info">من الممكن استخدام تفاصيل النموذج لإضافة معلومات أخرى مرتبطة بشكل المرفقات بما في ذلك الأبعاد (مثل الحجم أو عدد الصفحات أو المدة) أو البرامج أو الأجهزة أو المعدات الأخرى المطلوبة لعرض هذه المرفقات أو تشغيلها (مثال: مستندات تتطلب برنامج Acrobat Reader لعرضها).</div>
 												<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -143,12 +143,12 @@
 								</section>
 			
 								<section>
-									<legend>الملفات أو المستندات أو الموارد المرفقة</legend>
+									<legend>الملفات أو الوثائق أو المصادر المرفقة</legend>
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="resourceLinks" caption="رابط للمصدر (المصادر)">
-												<div class="help-block">يرجى دائما إرفاق المستند (المستندات) ذات الصلة التي سيتم تخزينها في قاعدة البيانات حتى يتمكن المستخدمون من تنزيلها. إذا كانت المصادر متاحة على الإنترنت، يرجى أيضًا وضع رابط لها.</div>
+											<div class="km-control-group" required name="resourceLinks" caption="رابط للوثيقة (الوثائق) المرجعية">
+												<div class="help-block">يُرجى دائمًا إرفاق الوثيقة (الوثائق) ذات الصلة التي سيتم تخزينها في قاعدة البيانات حتى يتمكن المستخدمون من تنزيلها. عندما تصبح الوثائق المرجعية متاحة على الإنترنت، يُرجى أيضًا إضافة الروابط الخاصة بها.</div>
 												<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true"
 												 extensions="options.documentLinksExt" identifier="document.header.identifier"></div>
 											</div>
@@ -165,7 +165,7 @@
 									</div>
 								</section>
 								<section>
-									<legend>معلومات عن محتوى المورد</legend>
+									<legend>معلومات عن محتوى المرفقات</legend>
 			
 									<div class="row">
 										<div class="col-xs-12">
@@ -176,15 +176,15 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="regions" caption="البلد (البلدان) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالمورد">
+											<div class="km-control-group" name="regions" caption="البلد (البلدان) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالوثيقة المرجعية">
 												<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()"
-												 multiple placeholder="حدد البلد/البلاد والمنطقة/المناطق أو الاثنين معًا..."></div>
+												 multiple placeholder="حدد البلد/البلاد والمنطقة/المناطق أو الاثنين معًا.."></div>
 											</div>
 										</div>
 									</div>
 									<div class="row" ng-if="isResource">
 										<div class="col-md-12">
-											<div class="km-control-group" required name="aichiTargets" caption="أهداف أيتشي للتنوع البيولوجي 2020">
+											<div class="km-control-group" required name="aichiTargets" caption="هدف (أهداف) أيتشي للتنوع البيولوجي">
 												<div km-term-check name="aichiTargets" required ng-model="document.aichiTargets" terms="options.aichiTargets()"
 												 binding-type="term[]"></div>
 											</div>
@@ -197,7 +197,7 @@
 			
 									<div class="row" ng-if="isMcc">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="mccKeywords" required caption="يرجى تحديد الكلمات المفتاحية الملائمة لوصف محتوى مدونة السلوك والمبادئ التوجيهية وأفضل الممارسات والمعايير الجاري إرسالها">
+											<div class="km-control-group" name="mccKeywords" required caption="يُرجى تحديد الكلمات المفتاحية الملائمة لوصف محتوى مدونة السلوك والمبادئ التوجيهية وأفضل الممارسات والمعايير الجاري إرسالها">
 												<div km-term-check name="mccKeywords" required ng-model="document.mccKeywords" terms="options.mccKeywords()"
 												 binding-type="term[]"></div>
 											</div>
@@ -216,7 +216,7 @@
 									<div class="row" ng-if="IsCapacityBuilding() && IsTarget16()">
 										<div class="col-md-12">
 											<div class="km-control-group" required name="absKeyAreas" caption="المجالات الرئيسية والتدابير الاستراتيجية لبناء القدرات وتطويرها">
-												<div class="help-info">المجالات الرئيسية محددة في الإطار الاستراتيجي لبناء القدرات وتطويرها من أجل دعم التنفيذ الفعال لبروتوكول ناغويا (القرار NP-1/8، الملحق 1).</div>
+												<div class="help-info">The key areas are identified by the Strategic Framework for capacity-building and development to support the effective implementation of the Nagoya Protocol (decision NP-1/8, annex I).</div>
 												<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()"
 												 binding-type="term[]"></div>
 											</div>
@@ -230,8 +230,8 @@
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+											<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+												<div class="help-block">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 												<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -252,7 +252,7 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="notes">
-												<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+												<div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
 												<textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
 											</div>
 										</div>

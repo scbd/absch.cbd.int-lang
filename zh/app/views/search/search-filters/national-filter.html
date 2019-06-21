@@ -3,13 +3,13 @@
       <div  class="col-md-6" ng-show="nf_filters.length" style="margin-bottom:30px;" >
         <div class="heading color-blue" ng-if="nf_filters.length">国家记录</div>
         <hr  class="heading" ng-if="nf_filters.length">
-        <p class="helpinfo" ng-if="nf_filters.length" ><i class="fa fa-info-circle helpicon" ></i> National records are published by Governments and include national information relevant for the implementation of the Nagoya Protocol as well as information Parties are obliged to provide in accordance with the Protocol.</p>
+        <p class="helpinfo" ng-if="nf_filters.length" ><i class="fa fa-info-circle helpicon" ></i> 国家记录由各国政府发布，包括与《名古屋议定书》执行有关的国家信息以及缔约方根据《议定书》有义务提供的信息。</p>
         
         <div ng-repeat="doc in nf_filters = (nf_searchFilters | filter:searchKeyword | orderBy:['filterSort', 'sort'])"><a translation-url  class="filter"  ng-click="saveFilter(doc)"><i class="fa check" ng-class="{'fa-check-square':isFilterOn(doc.id),'fa-square':!isFilterOn(doc.id)}"></i> {{doc.name}} <!--<span class="badge">100</span>--></a> <!--<p class="helpinfo" ><i class="fa fa-info-circle helpicon" ng-if="doc.description"></i> {{doc.description}} </p>--> <span ng-if="doc.description" href="#" class="helpinfoInline fa fa-info-circle color-white" data-toggle="tooltip" data-html="true" data-title="{{doc.description}}" data-container="body"></span></div>
       </div>
       
       <div  class="col-md-6" ng-show="nf_filters.length" style="margin-bottom:30px;">
-        <div class="heading" ng-if="nf_status.length">Party Status</div>
+        <div class="heading" ng-if="nf_status.length">缔约方身份</div>
         <hr  class="heading" ng-if="nf_status.length">
         
         <div ng-repeat="doc in nf_status = (nf_partyStatus | filter:searchKeyword | orderBy:['filterSort', 'sort'])"><a translation-url  class="filter"  ng-click="saveFilter(doc)"><i class="fa check" ng-class="{'fa-check-square':isFilterOn(doc.id),'fa-square':!isFilterOn(doc.id), 'color-party':doc.id==='npParty', 'color-litegrey':doc.id==='npNonParty', 'color-inbetween':doc.id==='npInbetween'}"></i> {{doc.name}} <!--<span class="badge">100</span>--></a> <span ng-if="doc.description" href="#" class="helpinfoInline fa fa-info-circle color-white" data-toggle="tooltip" data-html="true" data-title="{{doc.description}}" data-container="body"></span> <!--<p class="helpinfo" ><i class="fa fa-info-circle helpicon" ng-if="doc.description"></i> {{doc.description}} </p>--></div>

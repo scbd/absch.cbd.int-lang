@@ -15,10 +15,10 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Informations g&eacute;n&eacute;rales sur l&apos;&eacute;l&eacute;ment g&eacute;n&eacute;tique</legend>
+									<legend>Informations générales sur l'élément génétique</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+											<div class="km-control-group" name="languages" required caption="Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -34,17 +34,17 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="synonymNames" caption="Alternate Genetic Element Name (synonyms)">
+											<div class="km-control-group" name="synonymNames" caption="Nom de l’élément génétique alternatif (synonymes)">
 												<div ng-repeat="synonym in synonymNames" style="padding-bottom:5px;">
 													<div km-textbox-ml name="synonymNames_{{$index}}" ng-model="synonym.value" locales="document.header.languages"></div>
 												</div>
-												<button class="btn btn-primary" ng-click="synonymNames.push({})">Add a item</button>
+												<button class="btn btn-primary" ng-click="synonymNames.push({})">Ajouter un élément</button>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="abbreviation" caption="Abbreviation">
+											<div class="km-control-group" required name="abbreviation" caption="Abréviation">
 												<div km-textbox-ml name="abbreviation" required ng-model="document.abbreviation" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -80,7 +80,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="donorOrganismCollectionPoint" caption="Point de collecte ou d&apos;acquisition de l&apos;organisme donneur">												
+											<div class="km-control-group" name="donorOrganismCollectionPoint" caption="Point de collecte ou d'acquisition de l'organisme donneur">												
 												<div km-rich-textbox ng-model="document.donorOrganismCollectionPoint" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -89,11 +89,11 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Information suppl&eacute;mentaire</legend>
+									<legend>Information supplémentaire</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="address" caption="Any other relevant information">
-												<div class="help-block">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le dossier.</div>
+												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -116,7 +116,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">Le champ «Notes» est destin&eacute; &agrave; vos notes ou commentaires personnels et sera masqu&eacute; lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
+											<div class="help-block">Le champ «Notes» est destiné à vos notes ou commentaires personnels et sera masqué lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

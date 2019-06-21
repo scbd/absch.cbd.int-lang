@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-blue">
-		<h4>Gene and DNA Sequence <span class="color-black">(DNA)</span></h4>
+		<h4>تسلسل الجينات والحمض النووي  <span class="color-black">(DNA)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -15,11 +15,11 @@
 		</div>
 
 		<div ng-show="document.name">
-			<label>Name of the gene or DNA sequence</label>
+			<label>اسم تسلسل الجين أو الحمض النووي</label>
 			<km-value-ml value="document.name" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.synonymNames">
-			<label>Alternate Genetic Element Name (synonyms)</label>
+			<label>الاسم البديل للعنصر الجيني (مترادفات)</label>
 			<ul class="list" style="padding-left:0px">
 				<li ng-repeat="synonym in document.synonymNames" style="padding-bottom:5px;">
 					<km-value-ml value="synonym" locales="locale"></km-value-ml>
@@ -28,16 +28,16 @@
 			
 		</div>
 		<div ng-show="document.abbreviation">
-			<label>Abbreviation</label>
+			<label>الاختصار</label>
 			<km-value-ml value="document.abbreviation" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.family">
-			<label>Category of DNA sequence</label>
+			<label>فئة تسلسل الحمض النووي</label>
 			<div class="km-value" ng-bind="document.family | term:locale"></div>
 		</div>
 
 		<div ng-show="document.isSynthetic!=undefined">
-			<label>Is the gene / DNA sequence is a synthetic molecule?</label>
+			<label>هل التسلسل الجيني/الحمض النووي هو جزيء تركيبي؟</label>
 			<div class="km-value" ng-if="document.isSynthetic">نعم</div>
 			<div class="km-value" ng-if="!document.isSynthetic">لا</div>
 		</div>
@@ -52,31 +52,31 @@
 		</div>
 
 		<div ng-show="document.donorOrganismCollectionPoint">
-			<label>Donor organism point of collection</label>
+			<label>نقطة جمع الكائنات المتبرعة أو الحصول عليها</label>
 			<div class="km-value">
 				<km-value-ml value="document.donorOrganismCollectionPoint"  html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 
-		<legend>Characteristics of the protein coding sequence</legend>
+		<legend>خصائص تسلسل ترميز البروتين</legend>
 
 		<div ng-show="document.proteinName">
-			<label>Name of the protein expressed by the coding sequence</label>
+			<label>اسم البروتين المذكور في تسلسل الترميز</label>
 			<div class="km-value">
 					<km-value-ml value="document.proteinName" locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.biologicalFunction">
-			<label>Biological function</label>
+			<label>الوظيفة البيولوجية</label>
 			<div class="km-value">
 				<km-value-ml value="document.biologicalFunction" html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 		<div ng-show="document.traits">
-			<label>Related trait(s) or use(s) in biotechnology</label>
+			<label>الصفة (الصفات) والاستخدام (الاستخدامات) ذات الصلة في التكنولوجيا الحيوية</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="use in document.traits" ng-bind="use | term:locale"></li>
@@ -91,7 +91,7 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>عنوان لموقع إنترنت أو وثائق مرفقة أخرى ذات صلة</label>
+				<label>Other relevant website address or attached documents</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
     <link href="/app/css/register.css" rel="stylesheet">
     <link href="/app/css/record.css" rel="stylesheet">
     <link href="/app/css/AdminLTE.min.css" rel="stylesheet" />
-    <style> #National .statsBox { background-color: #428BCA; padding: 5px; border-radius: 3px; text-align: center; margin: auto; width: 100%; margin-top: 10px!important; } #Reference .statsBox { background-color: #fa6938; padding: 5px; min-height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #SCBDRecs .statsBox { background-color: #999; padding: 5px; height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #National .statsBox:hover { background-color: #333; cursor: pointer; } .countryCount { font-size: 14px; } .countryText { font-size: 14px; color: #CCC!important; position: relative; top: 1px; font-weight: 500; } .havePublished { /*color: #bbb!important;*/ width: 100%; white-space: nowrap; } .recordText { color: #CCC!important; line-height: 1; padding-top: 3px; font-weight: 500; } .recordText&gt; .helpinfoInline { color: #CCC!important; } .center { margin: auto; width: 100%; text-align: center; } .flex { display: flex; justify-content: space-between; } .tooltip-inner { font-size: 14px; text-align: left; } .dateType .btn-group, .dateType button { width: 100% !important; } .chart { position: relative; overflow: hidden; width: 100%; } .legend{ list-style: none; } .legend li{ display: inline; padding:10px; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
+    <style> #National .statsBox { background-color: #428BCA; padding: 5px; border-radius: 3px; text-align: center; margin: auto; width: 100%; margin-top: 10px!important; } #Reference .statsBox { background-color: #fa6938; padding: 5px; min-height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #SCBDRecs .statsBox { background-color: #999; padding: 5px; height: 100px; border-radius: 3px; text-align: center; margin: auto; width: 100%; } #National .statsBox:hover { background-color: #333; cursor: pointer; } .countryCount { font-size: 14px; } .countryText { font-size: 14px; color: #CCC!important; position: relative; top: 1px; font-weight: 500; } .havePublished { /*color: #bbb!important;*/ width: 100%; white-space: nowrap; } .recordText { color: #CCC!important; line-height: 1; padding-top: 3px; font-weight: 500; } .recordText> .helpinfoInline { color: #CCC!important; } .center { margin: auto; width: 100%; text-align: center; } .flex { display: flex; justify-content: space-between; } .tooltip-inner { font-size: 14px; text-align: left; } .dateType .btn-group, .dateType button { width: 100% !important; } .chart { position: relative; overflow: hidden; width: 100%; } .legend{ list-style: none; } .legend li{ display: inline; padding:10px; } </style><span register-top-menu></span><div class="register-content card card-1-notrans">
 
         <div class="register-content-header bg-pink color-white">
             <div style="padding:10px 10px;">
@@ -31,18 +31,18 @@
                                 </div>
                             </div>
                             <div class="col-xs-5">
-                                <div class="km-control-group" name="endDate" caption="Fecha de finalizaci&oacute;n">
+                                <div class="km-control-group" name="endDate" caption="Fecha de finalización">
                                     <div km-date placeholder="AAAA-MM-DD" name="endDate" ng-model="filters.endDate"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filters.countries" multiple binding-type="string" placeholder="Pa&iacute;ses" items="options.filterCountries()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Situaci&oacute;n de la Parte" items="options.filterPartyStatus()"></div>
+                                <div class="pull-left"><!-- <strong>Type:</strong> --><div km-select ng-model="filters.countries" multiple binding-type="string" placeholder="Países" items="options.filterCountries()"></div><!-- <strong>Status:</strong> --><div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Situación de la Parte" items="options.filterPartyStatus()"></div>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.regionalMeasures" />Incluir medidas regionales virtuales</label>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeNFP" />Excluir el punto focal nacional</label>
                                     <label class="checkbox-inline"><input type="checkbox" ng-model="filters.cumulative" />Diagrama acumulativo</label>
-                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeTotalCount" />Excluir el n&uacute;mero de l&iacute;neas total</label>
+                                    <label class="checkbox-inline"><input type="checkbox" ng-model="filters.excludeTotalCount" />Excluir el número de líneas total</label>
                                 </div>
                                 <div class="pull-right">
                                     <input type="button" class="btn btn-primary" ng-click="loadFacets()" value="Filter">
@@ -57,7 +57,7 @@
 
                         <div class="box box-info">
                             <div class="box-header with-border">
-                                <h3 class="box-title">National records</h3>
+                                <h3 class="box-title">Registros nacionales</h3>
                             </div>
                             <div class="box-body">
                                 <div class="row-fluid center" id="National">                                
@@ -66,7 +66,7 @@
                                         <div class="col-xs-6">
                                             <div ng-hide="!nationalChart">
                                                 <ul class="legend" >
-                                                    <li><span style="background-color:rgba(60,141,188,0.9)">&nbsp;&nbsp;&nbsp;</span> National records</li>
+                                                    <li><span style="background-color:rgba(60,141,188,0.9)">&nbsp;&nbsp;&nbsp;</span> Registros nacionales</li>
                                                     <li ng-repeat="(key, legend) in nationalRecords" ng-if="legend.includeInGraph"><span style="background-color:{{legend.color}}">&nbsp;&nbsp;&nbsp;</span> {{key|schemaShortName}}</li>
                                                 </ul>
                                                 <div class="chart">
@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="col-xs-6">
                                             <div class="col-sm-6 col-md-4 flex" style="vertical-align:middle!important" ng-repeat="(key, schema) in nationalRecords"
-                                            ng-hide="filters.excludeNFP && key=='focalPoint'"><a translation-url class="statsBox color-white" ng-href="/search/nationalRecords/?schema={{key}}"><div style="vertical-align:middle!important;"><span class="countryCount badge bg-white">{{schema.countryCount}}</span> &nbsp; <span class="countryText">Pa&iacute;ses</span></div>
+                                            ng-hide="filters.excludeNFP && key=='focalPoint'"><a translation-url class="statsBox color-white" ng-href="/search/nationalRecords/?schema={{key}}"><div style="vertical-align:middle!important;"><span class="countryCount badge bg-white">{{schema.countryCount}}</span> &nbsp; <span class="countryText">Countries</span></div>
                                                     <div class="havePublished label">- han publicado <span class="color-white">{{schema.recordCount}}</span> -</div>
                                                     <div class="recordText">{{key | schemaName}}</div></a></div>
                                            
@@ -101,7 +101,7 @@
                                                         <label class="checkbox-inline" style="margin-left: 10px;"><input ng-disabled="!nationalChart"  class="flat-red" type="checkbox" ng-model="filters.includeAllSchemas"  ng-change="checkAll(nationalRecords, filters.includeAllSchemas)"/>Todos los esquemas</label>
                                                         <label class="checkbox-inline" ng-repeat="(key, schema) in nationalRecords"
                                                             ng-hide="filters.excludeNFP && key=='focalPoint'">
-                                                            <input ng-disabled="!nationalChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaName}}</label><span ng-if="!nationalChart"></br></br> * selecci&oacute;n de esquema solo disponible en modo gr&aacute;fico, cambiar a gr&aacute;fico para permitirlo</span></div>
+                                                            <input ng-disabled="!nationalChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaName}}</label><span ng-if="!nationalChart"></br></br> * selección de esquema solo disponible en modo gráfico, cambiar a gráfico para permitirlo</span></div>
                                                 </div>
                                                 
                                             </div>
@@ -158,7 +158,7 @@
                                                     <div class="box-body">                                                        
                                                         <label class="checkbox-inline" style="margin-left: 10px;"><input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="filters.includeAllReferenceSchemas"  ng-change="checkAll(referenceRecords, filters.includeAllReferenceSchemas)"/>Todos los esquemas</label>
                                                         <label class="checkbox-inline" ng-repeat="(key, schema) in referenceRecords">
-                                                            <input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaName}}</label><span ng-if="!nationalChart"></br></br> * selecci&oacute;n de esquema solo disponible en modo gr&aacute;fico, cambiar a gr&aacute;fico para permitirlo</span></div>
+                                                            <input  ng-disabled="!referenceChart" class="flat-red" type="checkbox" ng-model="schema.includeInGraph" ng-change="loadSchemaGraphData(schema, key)" />{{key | schemaName}}</label><span ng-if="!nationalChart"></br></br> * selección de esquema solo disponible en modo gráfico, cambiar a gráfico para permitirlo</span></div>
                                                 </div>
                                                 
                                             </div>
@@ -183,7 +183,7 @@
                                         <div class="col-xs-12">
                                            <div>
                                                 <ul class="legend" >
-                                                    <li><span style="background-color:rgba(60,141,188,0.9)">&nbsp;&nbsp;&nbsp;</span> National records</li>
+                                                    <li><span style="background-color:rgba(60,141,188,0.9)">&nbsp;&nbsp;&nbsp;</span> Registros nacionales</li>
                                                     <li><span style="background-color:#fa6938">&nbsp;&nbsp;&nbsp;</span> Registros de referencia</li>
                                                 </ul>
                                                 <div class="chart" style="">

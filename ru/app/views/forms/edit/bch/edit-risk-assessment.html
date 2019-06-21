@@ -18,7 +18,7 @@
 										<legend>Общая информация</legend>
 											<div class="row">
 												<div class="col-xs-12" >
-													<div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+													<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 														<div class="indent">
 															<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 														</div>
@@ -92,7 +92,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group" name="documents" required caption="Risk assessment report / summary">
-														<div class="help-block">An attachment is preferred. В противном случае укажите местонахождение документа: веб-адрес, включая URL-адрес (например, http://bch.cbd.int) и название веб-сайта (например, «Механизм посредничества по биобезопасности»). Only use text entry to provide details of how to obtain a copy of the document if it is not available as an attachment or online.</div>
+														<div class="help-block">An attachment is preferred. В других случаях укажите расположение документа, то есть веб-адрес, включая URL-адрес веб-сайта (например, http://bch.biodiv.org), и название веб-сайта (например, «Механизм посредничества по биобезопасности»). Используйте ввод текста только для представления сведений о способе получения копии документа, если документ нельзя представить в виде вложения или ознакомиться с ним в онлайновом режиме.</div>
 														<div km-link name="documents" ng-model="document.documents" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 													</div>
 												</div>
@@ -102,7 +102,7 @@
 		
 									<section>
 										<div class="well no-shadow bg-white">
-											<legend>Методика и вопросы, которые следует учитывать</legend>
+											<legend>Методика и вопросы для учета</legend>
 											
 											<div class="row">
 												<div class="col-sm-12">
@@ -149,7 +149,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group"  name="receivingEnvironment" caption="Одна или несколько рассматриваемых принимающих сред">
-														<div class="help-block">Информация о местонахождении, географических, климатических и экологических характеристиках, включая релевантную информацию о биологическом разнообразии и центрах происхождения вероятной потенциальной принимающей среды, как перечислено в параграфе 9 (h) приложения III Протокола.</div>
+														<div class="help-block">Информация о местонахождении, географических, климатических и экологических характеристиках, включая соответствующую информацию о биологическом разнообразии и центрах происхождения в наиболее вероятной потенциальной принимающей среде, согласно пункту 9 h) приложения III к Протоколу.</div>
 														<div km-rich-textbox name="receivingEnvironment"  ng-model="document.receivingEnvironment" locales="document.header.languages"></div>
 													</div>
 												</div>
@@ -166,11 +166,11 @@
 		
 									<section>
 										<div class="well no-shadow bg-white">
-											<legend>Сроки подтверждения или обновления информации</legend>
+											<legend>Timeframe for confirmation or updating of information</legend>
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group" name="expires"  caption="Should this information be confirmed or updated after two years from the date of submission?">			
-														<div class="help-block">If the answer to this question is &ldquo;Yes&rdquo;, after two years from the date of submission you will be asked to confirm or update the record within 3 months. По истечении этого периода в случае отсутствия подтверждения запись будет отмечена как «Неподтвержденная».</div>									
+														<div class="help-block">If the answer to this question is “Yes”, after two years from the date of submission you will be asked to confirm or update the record within 3 months. По истечении этого периода в случае отсутствия подтверждения запись будет отмечена как «Неподтвержденная».</div>									
 														<div km-yes-no  ng-model="document.expires" locales="document.header.languages"></div>
 													</div>	
 												</div>
@@ -193,7 +193,7 @@
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="km-control-group" name="relevantDocuments" caption="Любые другие соответствующие документы">
-														<div class="help-block">Укажите в этом поле любые другие релевантные адреса веб-сайтов и (или) один или несколько релевантных документов, которые будут храниться в базе данных для загрузки пользователями.</div>
+														<div class="help-block">Please use this field to provide any other relevant website addresses and/or one or more relevant documents that will be stored in the database for users to download.</div>
 														<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 													</div>
 												</div>

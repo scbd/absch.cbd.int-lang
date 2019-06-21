@@ -2,10 +2,10 @@
     
     <div class="container">
         
-        <h1>BCH Information Submission</h1>
+        <h1>Soumission d’informations au CEPRB</h1>
     
         <h2>Enregistrement de dossiers nationaux</h2>
-        <p>Seuls les utilisateurs nationaux autoris&eacute;s et les correspondants nationaux du Centre d&apos;&eacute;change pour la pr&eacute;vention des risques biotechnologiques (CN-CEPRB) sont autoris&eacute;s &agrave; soumettre des dossiers dans cette cat&eacute;gorie. All records submitted by NAUs will be forwarded to the BCH-NFP for review and validation prior to publication (see FAQs).</p>
+        <p>Seuls les utilisateurs nationaux autorisés et les correspondants nationaux du Centre d'échange pour la prévention des risques biotechnologiques (CN-CEPRB) sont autorisés à soumettre des dossiers dans cette catégorie. Tous les dossiers soumis par les UNA seront envoyés au CN-CEPRB pour vérification et validation avant leur publication (voir FAQ).</p>
         
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.national" >
@@ -13,8 +13,8 @@
                 <p style="min-height:100px">{{::s.description}}</p><a ng-href="/register/{{s.schema|urlSchemaShortName}}" class="btn btn-default" style="width:100%">Soumettre</a></div>
         </div>
         
-        <h2>Enregistrement de dossiers de r&eacute;f&eacute;rence</h2>
-        <p>Les dossiers figurant dans cette cat&eacute;gorie peuvent &ecirc;tre soumis par tout utilisateur inscrit quel qu&apos;il soit. These records will be subject to review and validation by the Secretariat prior to publication (see FAQs).</p>
+        <h2>Enregistrement de dossiers de référence</h2>
+        <p>Les dossiers figurant dans cette catégorie peuvent être soumis par tout utilisateur inscrit quel qu'il soit. Ces dossiers seront soumis pour examen et devront être validés par le Secrétariat avant leur publication (voir FAQ).</p>
         
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="s in ::recordTypesCtrl.schemas.reference" >

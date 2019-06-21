@@ -10,7 +10,7 @@
                             target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
                 </div>
 
-                <div ng-show="document.contact"></br><label>Contact de la personne soumettant le rapport</label>
+                <div ng-show="document.contact"></br><label>Contact person submitting the report</label>
                     <div class="km-value">
                         <view-contact-reference ng-model='document.contact' locale="locale">
                         </view-contact-reference>
@@ -21,14 +21,14 @@
                     <km-value-ml value="document.stakeholders" locales="locale"></km-value-ml>
                 </div>
 
-                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. P&eacute;riode vis&eacute;e par le pr&eacute;sent rapport</label>
+                <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10. Time period covered by this report</label>
                     <div class="row">
                         <div class="col-xs-6" ng-if="document.reportPeriodStartDate">
                             <label>De</label>
                             <div class="km-value" ng-bind="document.reportPeriodStartDate|formatDate"></div>
                         </div>
                         <div class="col-xs-6" ng-if="document.reportPeriodEndDate">
-                            <label>&Agrave;</label>
+                            <label>À</label>
                             <div class="km-value" ng-bind="document.reportPeriodEndDate|formatDate"></div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
     <div  class="col-md-12"  >
     <div class="heading color-orange" ng-if="rf_filters.length">参考记录</div>
     <hr class="heading" ng-if="rf_filters.length">
-        <p class="helpinfo" ng-if="rf_filters.length"><i class="fa fa-info-circle helpicon" ></i> Reference records include a number of ABS relevant resources and information.They can be submitted by any registered user of the ABS Clearing-House (Parties, Non-Parties, governments, international organizations, indigenous and local communities, and relevant stakeholders.</p>
+        <p class="helpinfo" ng-if="rf_filters.length"><i class="fa fa-info-circle helpicon" ></i> 参考记录包括一些获取和惠益分享相关资源和信息。可由获取和惠益分享信息交换所的任何注册用户（缔约方、非缔约方、政府、国际组织、土著和当地社区以及相关利益攸关方）提交。</p>
         
     <div ng-repeat="doc in rf_filters = (rf_searchFilters | filter:searchKeyword | orderBy:['filterSort', 'sort'])"><a translation-url  class="filter"  ng-click="saveFilter(doc)"><i class="fa check" ng-class="{'fa-check-square':isFilterOn(doc.id),'fa-square':!isFilterOn(doc.id)}"></i> {{doc.name}} <!--<span class="badge">100</span>--></a> <!--<p class="helpinfo" ><i class="fa fa-info-circle helpicon" ng-if="doc.description"></i> {{doc.description}} </p>--> <span ng-if="doc.description" href="#" class="helpinfoInline fa fa-info-circle color-white" data-toggle="tooltip" data-html="true" data-title="{{doc.description}}" data-container="body"></span></div>
     <div ng-if="(searchKeyword && !showFilters) && rf_filters.length" style="margin-bottom:10px;"></div>  

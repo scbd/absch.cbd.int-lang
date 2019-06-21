@@ -1,6 +1,6 @@
 ﻿<div ng-controller="adminErrorLogsCotroller" id="RegisterPage">
 	<link href="/app/css/register.css" rel="stylesheet">
-	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style> .table&gt;tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
+	<link href="/app/css/record.css" rel="stylesheet"><span register-top-menu></span><style> .table>tbody:hover { background-color: #f2dede; ; } .hyphenate { /* Careful, this breaks the word wherever it is without a hyphen */ overflow-wrap: break-word; word-wrap: break-word; /* Adds a hyphen where the word breaks */ -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto; } .message_body{ max-width: 1759px; margin-right: 15px!important; margin-left: 15px!important; } </style>
 	<div class="register-content card card-1-notrans">
 
 		<div class="register-content-header bg-pink color-white">
@@ -21,7 +21,7 @@
 						</div>
 					</div>
 					<div class="col-xs-6">
-						<div class="km-control-group" name="endDate" caption="Fecha de finalizaci&oacute;n">
+						<div class="km-control-group" name="endDate" caption="Fecha de finalización">
 							<div km-date placeholder="AAAA-MM-DD" name="endDate" ng-model="filters.endDate"></div>
 						</div>
 					</div>
@@ -39,7 +39,7 @@
 								<thead>
 									<tr>
 										<th>N°</th>
-										<th>Versi&oacute;n de la aplicaci&oacute;n</th>
+										<th>Versión de la aplicación</th>
 										<th>Nivel</th>
 										<th>Fecha</th>
 										<th>Mensaje</th>
@@ -69,7 +69,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<div class="alert alert-success" ng-show="errors.length==0">Ning&uacute;n elemento de informaci&oacute;n requiere su atenci&oacute;n</div>
+							<div class="alert alert-success" ng-show="errors.length==0">Ningún elemento de información requiere su atención</div>
 							<div style="margin-left:50%" ng-show="loadingErrors"><i class="fa fa-spin fa-spinner" /> Cargando...</div>
 						</div>
 					</div>

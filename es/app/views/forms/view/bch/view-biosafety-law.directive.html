@@ -1,26 +1,26 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Biosafety Law, Regulation, Guidelines and Agreements <span class="color-black">(LAW)</span></h4>
+		<h4>Ley, normativas, directrices y acuerdos en materia de seguridad de la biotecnología <span class="color-black"></span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 
 
 		<document-date></document-date>
-		<legend>Informaci&oacute;n general</legend>
+		<legend>Información general</legend>
 
 		<div ng-show="document.government">
-			<label name="country">Pa&iacute;s</label>
+			<label name="country">País</label>
 			<div class="km-value"><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 		</div>
 
 		<div ng-show="document.title">
-			<label>Denominaci&oacute;n</label>
+			<label>Título</label>
 			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		</div>
 
 		<div ng-show="document.jurisdictions">
-			<label>Jurisdicci&oacute;n</label>
+			<label>Jurisdicción</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.jurisdictions"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -28,15 +28,15 @@
 			</div>
 		</div>
 
-		<legend>Informaci&oacute;n legislativa</legend>
+		<legend>Información legislativa</legend>
 		<div>
 			<div ng-show="document.type">
-				<label>Type of document</label>
+				<label>Tipo de documento</label>
 				<div class="km-value"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type.customValue|lstring:locale"></span></div>
 			</div>
 
 			<div ng-show="document.cpbSubjectAreas">
-				<label>Subject areas</label>
+				<label>Áreas temáticas</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbSubjectAreas"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div ng-show="document.cpbOrganismTypes">
-				<label>Types of LMOs addressed</label>
+				<label>Tipos de OVM tratados</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbOrganismTypes"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -53,7 +53,7 @@
 			</div>
 
 			<div ng-show="document.description">
-				<label>Brief description of the document including objective and scope</label>
+				<label>Descripción breve del documento que incluya objetivos y alcance</label>
 				<div>
 					<km-value-ml value="document.description" html locales="locale"></km-value-ml>
 				</div>
@@ -66,24 +66,24 @@
 
 
 		<div ng-show="document.date">
-				<label>Fecha de la decisi&oacute;n</label>
+				<label>Fecha de la decisión</label>
 				<div class="km-value" ng-bind-html="document.date | formatDate"></div>
 			</div>
 			<div ng-show="document.takenPriorEntryIntoForce!==undefined">
-				<label>Is the decision taken prior to entry into force of the Protocol?</label>
+				<label>¿La decisión fue tomada antes de la entrada en vigor del Protocolo?</label>
 				<div  class="km-value">
 					<km-value-bool value="document.takenPriorEntryIntoForce" locales="locale"></km-value-bool>
 				</div>
 			</div>
 			<div ng-if="document.isAmendment">
 				<div ng-show="document.isAmendment">
-					<label>Is this an amendment to a previous decision / communication?</label>
+					<label>¿Se trata de una enmienda a una decisión o comunicación previa?</label>
 					<div  class="km-value">
 						<km-value-bool value="document.isAmendment" locales="locale"></km-value-bool>
 					</div>
 				</div>
 				<div ng-show="document.amendedDecisions">
-					<label>BCH decision amended</label>
+					<label>Enmienda a una decisión del CIISB</label>
 					<div class="km-value">
 						<ul class="list">
 							<li ng-repeat="item in document.amendedDecisions">
@@ -93,19 +93,19 @@
 					</div>
 				</div>
 				<div ng-show="document.amendmentReason">
-					<label>Reasons for the amendment</label>
+					<label>Motivos de la enmienda</label>
 					<div class="km-value">
 						<km-value-ml value="document.amendmentReason" locales="locale"></km-value-ml>
 					</div>
 				</div>
 				<div>
-					<label>This decision has been amended by following decision</label>
+					<label>Esta decisión ha sido enmendada por la siguiente decisión</label>
 					<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 				</div>
 			</div>
 
 		<div ng-show="document.authorities">
-			<label>Competent National Authority(ies) responsible for the decision or communication</label>
+			<label>Autoridad(es) Nacional(es) Competente(s) responsable(s) de la decisión o comunicación</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
@@ -115,12 +115,12 @@
 			</div>
 		</div>
 		<div ng-show="document.description">
-			<label>Descripci&oacute;n</label>
+			<label>Descripción</label>
 			<div class="km-value km-pre" ng-bind-html="document.description | lstring:locale"></div>
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Additional Information</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>

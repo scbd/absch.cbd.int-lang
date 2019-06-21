@@ -25,12 +25,12 @@
                 <km-value-ml value="document.description" locales="locale" km-pre html></km-value-ml>         
             </div>
             <div ng-show="document.jurisdiction">
-                <label>Area of Jurisdiction</label>
+                <label>辖区</label>
                 <div class="km-value">{{document.jurisdiction|term}}</div>
             </div>
     
             <div ng-show="document.relevantMeasures">
-                <label>Relevant ABS Measure(s)</label>
+                <label>相关获取和惠益分享措施</label>
                 <div class="km-value" ng-repeat="measure in document.relevantMeasures">
                     <div view-default-reference ng-model="measure.identifier" locale="locale"></div>
                 </div>
@@ -46,7 +46,7 @@
             </div>
     
             <div ng-show="document.keywords">
-                <label>Thematic area(s)</label>
+                <label>专题领域</label>
                 <div class="km-value">
                     <ul>
                         <li ng-repeat="term in document.thematicAreas">{{term | term:locale}}</li>
@@ -62,7 +62,7 @@
                 </div>
     
                 <div ng-show="document.relevantDocuments">
-                        <label>Links or attached files or documents</label>
+                        <label>链接或附加文件或文档</label>
                     <div class="km-value">
                         <ul >
                             <li ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>

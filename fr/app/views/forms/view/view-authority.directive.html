@@ -1,13 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading  bg-blue">
-		<h4><span >Autorit&eacute;s nationales comp&eacute;tentes <span class="color-black">(ACN)</span></span></h4>
+		<h4><span >Autorités nationales compétentes <span class="color-black">(ACN)</span></span></h4>
 	</div>
 	<style> #Record p:empty, #Record div:empty{ display:none } </style>
 
 	<div class="record-body panel-body" help schema="viewCNA" >
 		
 		<document-date></document-date><!-- <a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> --><div name="article-13-2"></div>
-		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">Informations g&eacute;n&eacute;rales</legend>
+		<legend ng-if="document.government || document.name || document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0">Informations générales</legend>
 
 		<div ng-show="document.government" >
 			<label name="country">Pays</label>
@@ -15,7 +15,7 @@
 		</div>
 
 		<div ng-if="document.name || document.address || document.city || document.state|| document.postalCode || document.country || document.phones.length > 0 ||document.websites.length > 0 || document.faxes.length > 0|| document.emails.length > 0 " >
-			<label name="name">Autorit&eacute; nationale comp&eacute;tente</label>
+			<label name="name">Autorité nationale compétente</label>
 			<div class="km-value">
 				<div><strong>{{document.name | lstring:locale}}</strong></div>
 				<div ng-show="document.address">{{document.address | lstring:locale}}</div>
@@ -52,7 +52,7 @@
 		</div>
 
 		<div ng-show="document.absPolicyBasisForCompetency || document.absPolicyBasisForCompetencyRef ">
-			<legend>Bases juridiques, administratives et politiques pour la comp&eacute;tence de l&rsquo;ANC</legend>
+			<legend>Bases juridiques, administratives et politiques pour la compétence de l’ANC</legend>
 			<div ng-show="document.absPolicyBasisForCompetency"><!--<label>Information on the legal, administrative or policy basis for the competence of the CNA</label>--><div class="km-value" ng-bind-html="document.absPolicyBasisForCompetency | lstring:locale">
 				</div>
 			</div>
@@ -70,14 +70,14 @@
 		</div>
 
 		<div ng-if="document.responsibilities ||document.absResponsibleForAll || document.absFunctions|| document.absJurisdiction||document.absGeneticResourceTypes ">
-			<legend name="ABSResponsibilities">R&eacute;sum&eacute; des responsabilit&eacute;s APA</legend>
+			<legend name="ABSResponsibilities">Résumé des responsabilités APA</legend>
 
 			<div ng-show="document.responsibilities">
 				<div class="km-value" ng-bind-html="document.responsibilities | lstring:locale"></div>
 			</div>
 
 			<div ng-if="document.absResponsibleForAll">
-				<div class="km-value">Responsable de toutes les ressources g&eacute;n&eacute;tiques Seule autorit&eacute; nationale comp&eacute;tence (ANC) d&eacute;sign&eacute;e pour le pays.</div>
+				<div class="km-value">Responsable de toutes les ressources génétiques Seule autorité nationale compétence (ANC) désignée pour le pays.</div>
 			</div>
 
 			<div ng-show="document.absFunctions">
@@ -94,8 +94,8 @@
 				<label>Sub-national or community jurisdiction(s) covered by this CNA</label>
 				<div class="km-value">{{document.absJurisdictionName | lstring:locale}}</div>
 			</div>--><div ng-show="document.absJurisdiction">
-				<label>Juridiction(s) couverte par l&rsquo;ANC</label>
-				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? &apos;&apos; : &apos;, &apos;}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
+				<label>Juridiction(s) couverte par l’ANC</label>
+				<div class="km-value" ng-if="document.absJurisdiction" ><span ng-repeat="jur in document.absJurisdiction">{{jur|term}}{{$last ? '' : ', '}}</span> <span ng-if="document.absJurisdictionName ">({{document.absJurisdictionName | lstring:locale}})</span></div>
 
 			</div><!-- <div ng-show="document.absGeneticResourceTypes">
 				<label>According to the type of organism</label>
@@ -108,7 +108,7 @@
 					<li ng-repeat="term in document.absGeneticResourceAreas">{{term|term}} </li>
 				</ul>
 			</div> --><div ng-show="document.absGeneticResourceTypes ">
-				<label>Mots-cl&eacute;s pour aider &agrave; d&eacute;crire les responsabilit&eacute;s de cette autorit&eacute; nationale comp&eacute;tente</label>
+				<label>Mots-clés pour aider à décrire les responsabilités de cette autorité nationale compétente</label>
 				<div class="km-value" >
 					<ul class="list">
 						<li ng-repeat="term in document.absGeneticResourceTypes">{{term|term}}</li>
@@ -118,7 +118,7 @@
 
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Renseignements suppl&eacute;mentaires</legend>
+			<legend>Renseignements supplémentaires</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>

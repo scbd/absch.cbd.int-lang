@@ -50,7 +50,7 @@ style="max-width:90%">
                                 <input name="formPath" ng-model="document.formPath" required md-maxlength="100" minlength="4">
                             </md-input-container>
                             <md-input-container>
-                                <label>Denominaci&oacute;n</label>
+                                <label>Título</label>
                                 <input name="schemaTitle" ng-model="document.title" required md-maxlength="200" minlength="4">
                             </md-input-container>
                              <md-input-container>
@@ -88,7 +88,7 @@ style="max-width:90%">
                                         </md-whiteframe></br></div>
                                 </div>
                                  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                                    <md-button class="md-raised md-primary" ng-click="addField()"><i class="fa fa-plus"></i> A&ntilde;adir</md-button>
+                                    <md-button class="md-raised md-primary" ng-click="addField()"><i class="fa fa-plus"></i> Añadir</md-button>
                                 </section>
                                 </md-card-content>
                             </md-card><br><section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
@@ -100,7 +100,7 @@ style="max-width:90%">
                     <div ng-if="mode=='read'">
                         <div class="pull-right">
                             <button type="button" class="btn btn-success" ng-click="editHelp()" ng-if="canEdit()">Editar</button>
-                            <button type="button" class="btn btn-warning" ng-click="deleteHelp(document)" ng-if="canEdit()">Borrar</button>
+                            <button type="button" class="btn btn-warning" ng-click="deleteHelp(document)" ng-if="canEdit()">Eliminar</button>
                         </div>
                         <section>
                             <legend name="termCation">{{document.title}}</legend><!--<h3>{{document.schemaName}}<h3>--><md-list>

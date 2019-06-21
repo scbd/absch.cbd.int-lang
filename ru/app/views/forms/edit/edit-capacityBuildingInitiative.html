@@ -15,7 +15,7 @@
 				
 										<div class="row">
 											<div class="col-xs-12" >
-												<div class="km-control-group" name="languages" required caption="Укажите на каком языке вы представляете доклад">
+												<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 													<div class="indent">
 														<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 													</div>
@@ -61,7 +61,7 @@
 																items="options.regions()"></div>
 															</div>
 														</div>
-														<div class="col-md-2" ng-hide="!isGlobalOrRegional()">And / Or</div>
+														<div class="col-md-2" ng-hide="!isGlobalOrRegional()">И/или</div>
 														<div class="col-md-5">
 															<div class="km-control-group"  name="countries" caption="Страна(-ы)">
 																<div km-select multiple required name="geographicalCountries" ng-model="document.geographicScope.countries" placeholder="Выберите один из вариантов" items="options.countries()"></div>
@@ -89,12 +89,12 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="km-control-group" required name="capacityBuildingType" caption="4. Тип инициативы по созданию потенциала">
-													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4. Atleast one question should be answered yes</span></label>
+													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4. Следует дать по меньшей мере один утвердительный ответ</span></label>
 													<div style="padding-left:20px" class="well">
-														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme?">
+														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="а) это специализированный проект/специализированная программа по созданию потенциала в области ДГРСИВ?">
 															<div class="km-yes-no" required name="isProjectProgramme" ng-model="document.capacityBuildingType.isProjectProgramme"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?">
+														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b) это мероприятие по ДГРСИВ или элемент более широкого проекта или программы по созданию потенциала?">
 															<div class="km-yes-no" required name="isBroaderProjectPart" ng-model="document.capacityBuildingType.isBroaderProjectPart"></div>
 														</div>
 														<div class="km-control-group" name="broaderProjects" caption="Please identify the broader project" ng-show="document.capacityBuildingType.isBroaderProjectPart">
@@ -103,7 +103,7 @@
 																							question="capacityBuildingInitiative"
 																							schema="capacityBuildingInitiative" filter="true" skip-government="true"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?">
+														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c) это отдельное мероприятие по ДГРСИВ, не являющееся частью более широкого проекта или программы по созданию потенциала?">
 															<div class="km-yes-no" required name="isStandaloneProject" ng-model="document.capacityBuildingType.isStandaloneProject"></div>
 														</div>
 													</div>
@@ -140,17 +140,17 @@
 															</div>
 															<div class="col-md-5">
 																<div class="km-control-group" name="duration" caption="Продолжительность" ng-show="!document.status || isProposedOrApproved()">
-																	<label for="durationPeriod" style="width:0px;height:0px;display:inline"><span style="display:none">6. Please enter duration in number for eg. 24</span></label>
-																	<label for="durationText" style="width:0px;height:0px;display:inline"><span style="display:none">6. Please identify whether the duration is expressed in years, months or days</span></label>
+																	<label for="durationPeriod" style="width:0px;height:0px;display:inline"><span style="display:none">6. Укажите цифрами продолжительность (например, 24)</span></label>
+																	<label for="durationText" style="width:0px;height:0px;display:inline"><span style="display:none">6. Уточните, указана ли продолжительность в годах, месяцах или днях</span></label>
 																	<input type="number" name="durationPeriod" ng-model="document.durationPeriod"
 																	minlength="1" placeholder="eg. 24" ng-change="clearDates()" class="form-control"
 																	style="display:inline-block;width:100px"/>
 																	<select name="durationText" ng-model="document.durationText"  class="form-control"
 																	style="display:inline-block;width:100px" placeholder="eg. Months">
 																		<option value=""></option>	
-																		<option value="days">Days</option>
-																		<option value="months">Months</option>
-																		<option value="years">Years</option>
+																		<option value="days">Дни</option>
+																		<option value="months">Месяцы</option>
+																		<option value="years">Годы</option>
 																	</select>
 																</div>
 															</div>
@@ -169,7 +169,7 @@
 												<div class="row" >
 													<div class="col-md-12">
 														<div class="km-control-group" ng-show="document.isImplementedByAgencies" name="implementingAgencies" caption="Выберите учреждение(-я) или организацию(-и)-исполнитель(-и)">
-															<div class="help-info">Учреждение-исполнитель&nbsp;&ndash; это организация или юридическое лицо, которое отвечает за разработку инициативы и надзор за ее осуществлением, контроль и оценку, включая привлечение средств, обеспечение соблюдения фидуциарных стандартов и контроля качества, а также подготовку докладов о завершении проектов. В конечном счете, именно учреждение-исполнитель отвечает за реализацию инициативы, и оно подотчетно донору.</div>
+															<div class="help-info">Учреждение-исполнитель – это организация или юридическое лицо, которое отвечает за разработку инициативы и надзор за ее осуществлением, контроль и оценку, включая привлечение средств, обеспечение соблюдения фидуциарных стандартов и контроля качества, а также подготовку докладов о завершении проектов. В конечном счете, именно учреждение-исполнитель отвечает за реализацию инициативы, и оно подотчетно донору.</div>
 				
 				
 															<organization-selector multiple ng-model="document.implementingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
@@ -181,7 +181,7 @@
 												<div class="row">
 													<div class="col-md-12">
 														<div class="km-control-group" ng-show="document.isExecutededByAgencies" name="executingAgencies" caption="Выберите учреждение(-я) или организацию(-и)-организатор(ы)">
-															<div class="help-info">Учреждение-организатор&nbsp;&ndash; это организация/учреждение, которое непосредственно занимается управлением инициативой, в том числе повседневной деятельностью по планированию, координацией и организацией ее мероприятий, отслеживанием хода осуществления и представлением соответствующей отчетности, закупочной деятельностью и управлением ресурсами (персоналом, средствами, оборудованием и т. д.), а также выполнением других функций по управлению проектами.</div>
+															<div class="help-info">Учреждение-организатор – это организация/учреждение, которое непосредственно занимается управлением инициативой, в том числе повседневной деятельностью по планированию, координацией и организацией ее мероприятий, отслеживанием хода осуществления и представлением соответствующей отчетности, закупочной деятельностью и управлением ресурсами (персоналом, средствами, оборудованием и т. д.), а также выполнением других функций по управлению проектами.</div>
 				
 															<organization-selector multiple ng-model="document.executingAgencies" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
 														</div>
@@ -192,7 +192,7 @@
 												<div class="row">
 													<div class="col-md-12">
 														<div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Выберите сотрудничающего(-их) партнера(-ов)">
-															<div class="help-info">Сотрудничающие партнеры&nbsp;&ndash; это учреждения или организации, которые вносят значительный финансовый или другой вклад в инициативу и/или оказывают активную поддержку осуществлению инициативы или сотрудничают в осуществлении инициативы.</div>
+															<div class="help-info">Сотрудничающие партнеры – это учреждения или организации, которые вносят значительный финансовый или другой вклад в инициативу и/или оказывают активную поддержку осуществлению инициативы или сотрудничают в осуществлении инициативы.</div>
 															 
 															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="8. Контактное(-ые) лицо(-а)"></organization-selector>
 														</div>
@@ -335,7 +335,7 @@
 											</div>
 										</div> --><div class="row">
 											<div class="col-md-12">
-												<div class="km-control-group" name="bestPractices" caption="18. Передовые методы и извлеченные уроки"><span class="help-info">Кратко опишите передовые методы и извлеченные уроки (не более 500&nbsp;слов)</span><div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
+												<div class="km-control-group" name="bestPractices" caption="18. Передовые методы и извлеченные уроки"><span class="help-info">Кратко опишите передовые методы и извлеченные уроки (не более 500 слов)</span><div km-textbox-ml name="bestPractices" ng-model="document.bestPractices" rows="4" locales="document.header.languages"></div>
 												</div>
 											</div>
 										</div>
@@ -379,7 +379,7 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="km-control-group" name="notes">
-													<legend>22. Примечания</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
+													<legend>22. Примечания</legend><span class="help-info">The field “Notes” is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 												</div>
 											</div>
 										</div>

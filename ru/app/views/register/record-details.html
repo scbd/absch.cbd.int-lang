@@ -41,7 +41,7 @@
                         <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
 
                             <div ng-show="isDraft(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Удалить черновик</button><em>Черновик {{recordToDelete.documentID||&apos;[new]&apos;}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Удалить черновик</button><em>Черновик {{recordToDelete.documentID||'[new]'}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
                             </div>
 

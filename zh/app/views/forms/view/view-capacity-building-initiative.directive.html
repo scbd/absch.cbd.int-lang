@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-orange" ng-show="display('header')">
 
-		<h4>Capacity-building Initiative<span class="color-black"> (CBI)</span></h4>
+		<h4>能力建设倡议<span class="color-black">（CBI）</span></h4>
     </div>
 	<div class="record-body panel-body">
 			
@@ -38,16 +38,16 @@
 			<label>能力建设倡议类型</label>
 			<div style="padding-left:20px" >
 				<div>
-					<label>a. Is this a dedicated ABS capacity-building project/programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">Yes</div>
+					<label>a. 这是专门的获取和惠益分享能力建设项目/方案吗？</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isProjectProgramme">是</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isProjectProgramme">否</div>
 				</div>
 				<div>
-					<label>b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">Yes</div>
+					<label>b. 这一获取和惠益分享活动或组成部分是否属于更广泛的能力建设项目或方案？</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isBroaderProjectPart">是</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isBroaderProjectPart">否</div>
 					<div ng-if="document.capacityBuildingType.broaderProjects">
-						<label>Broader projects</label>
+						<label>更广泛的项目</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.capacityBuildingType.broaderProjects">
@@ -58,8 +58,8 @@
 					</div>
 				</div>
 				<div>
-					<label>c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme?</label>
-					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">Yes</div>
+					<label>c. 这一独立获取和惠益分享活动是否独立于更广泛的能力建设项目或方案？</label>
+					<div class="km-value km-pre" ng-if="document.capacityBuildingType.isStandaloneProject">是</div>
 					<div class="km-value km-pre" ng-if="!document.capacityBuildingType.isStandaloneProject">否</div>
 				</div>
 			</div>
@@ -72,11 +72,11 @@
 	  			<div class="row" ng-show="document.startDate && document.endDate">
 	  				<div class="col-md-6">
 	  					<label>开始日期</label>
-	  					<div class="km-value km-pre">{{document.startDate | date :&apos;longDate&apos;}}</div>
+	  					<div class="km-value km-pre">{{document.startDate | date : 'longDate'}}</div>
 	  				</div>
 	  				<div class="col-md-6">
 	  					<label>结束日期</label>
-	  					<div class="km-value km-pre">{{document.endDate | date :&apos;longDate&apos;}}</div>
+	  					<div class="km-value km-pre">{{document.endDate | date : 'longDate'}}</div>
 	  				</div>
 	  			</div>
 
@@ -112,7 +112,7 @@
 		</div>
 
 		<div ng-show="document.contacts">
-			<label>Contact person(s)</label>
+			<label>联系人</label>
 			<div class="km-value" ng-repeat="contact in document.contacts">
 				<div view-contact-reference ng-model="contact" locale="locale"></div>
 			</div>
@@ -131,7 +131,7 @@
 		</div>
 
 		<div ng-show="document.targetGroups">
-			<label>Target group(s)/beneficiaries</label>
+			<label>目标群体/受益人</label>
 			<div class="km-value">
             <ul class="list">
 				<li ng-repeat="term in document.targetGroups">{{term | term:locale}}</li>
@@ -175,7 +175,7 @@
 
 		<div ng-show="document.totalBudget">
 			<label>总预算（金额，美元）</label>
-			<div class="km-value km-pre">{{document.totalBudget | currency:&quot;USD$&quot;}}</div>
+			<div class="km-value km-pre">{{document.totalBudget | currency:"USD$"}}</div>
 		</div>
 
 
@@ -183,7 +183,7 @@
 			<legend>能力建设成果</legend>
 
 			<div ng-show="document.resultsAchievements">
-				<label>Results</label>
+				<label>结果</label>
 				<div class="km-value km-pre">{{document.resultsAchievements | lstring:locale}}</div>
 			</div>
 
@@ -200,7 +200,7 @@
 
 
 		<div ng-show="document.absKeyAreas">
-			<legend>Access and Benefit Sharing Clearing-House (ABS-CH)</legend>
+			<legend>获取和惠益分享信息交换所（ABS-CH）</legend>
 
 			<label>能力建设和发展的关键领域和战略措施</label>
 			<div class="km-value">

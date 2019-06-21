@@ -19,7 +19,7 @@
 				<div class="km-value">{{document.organization | lstring:locale}} <i ng-show="document.organizationAcronym">({{document.organizationAcronym | lstring:locale}})</i></div>
 			</div>
 			<div ng-show="document.organizationType">
-				<label>Type d&apos;organisation</label>
+				<label>Type d'organisation</label>
 				<div class="km-value">{{document.organizationType | term}}</div>
 			</div>
 
@@ -45,7 +45,7 @@
 			</div>
 
             <div ng-show="document.department">
-				<label>Section / division / unit&eacute;</label>
+				<label>Section / division / unité</label>
 				<div class="km-value">{{document.department| lstring:locale}}</div>
 			</div>
 
@@ -63,7 +63,7 @@
 				<div class="km-pre">{{document.address | lstring:locale}}</div>{{document.city | lstring:locale}} <span ng-show="document.city">,</span> {{document.state | lstring:locale}} <br ng-show="document.city || document.state" /> {{document.postalCode | lstring:locale}} <span ng-show="document.postalCode">,</span> <b>{{document.country|term}}</b></address>
 		</div>
         <div ng-show="document.phones" >
-            <label>Num&eacute;ros de t&eacute;l&eacute;phone</label>
+            <label>Numéros de téléphone</label>
             	<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.phones">{{item}},</li>
@@ -72,7 +72,7 @@
         </div>
 
         <div ng-show="document.faxes">
-            <label>T&eacute;l&eacute;copieur&nbsp;:</label>
+            <label>Télécopieur :</label>
             	<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.faxes">{{item}},</li>
@@ -96,7 +96,7 @@
 
 		<div>
 			<div ng-show="document.relevantInformation||document.relevantDocuments">
-				<legend>Renseignements suppl&eacute;mentaires</legend>
+				<legend>Renseignements supplémentaires</legend>
 
 				<div ng-show="document.relevantInformation">
 					<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>

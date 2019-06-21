@@ -13,14 +13,14 @@
 		<div class="modal-dialog">
 	    <div class="modal-content">
 	    	<div class="modal-header">
-	        	<h4 class="modal-title">&Eacute;diter le lien</h4>
+	        	<h4 class="modal-title">Éditer le lien</h4>
 	      	</div>
 			<div class="modal-body">
-				<div class="alert alert-info">Veuillez indiquer l&apos;URL du site Web (par example <a target="_blank" href="http://www.cbd.int">http://www.cbd.int</a>) et le nom du site Web (par exemple «La Convention sur la diversit&eacute; biologique»).</div>
+				<div class="alert alert-info">Veuillez indiquer l'URL du site Web (par example <a target="_blank" href="http://www.cbd.int">http://www.cbd.int</a>) et le nom du site Web (par exemple «La Convention sur la diversité biologique»).</div>
 				<form name="linkForm">
 					<fieldset>
 						<div class="alert alert-warning" ng-show="linkForm.input.$error.url || linkForm.$error.pattern">
-							<h4>Avertissement</h4>Specified value is not a valid URL</div>
+							<h4>Warning!</h4>Specified value is not a valid URL</div>
 
 						<div class="control-group" ng-class="{error: linkForm.input.$error.url || linkForm.editor.url.$invalid}">
 							<label class="control-label" required for="url">Url</label>

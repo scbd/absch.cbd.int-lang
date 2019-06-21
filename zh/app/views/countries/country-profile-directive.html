@@ -15,15 +15,15 @@
                     <result-grouped-national-record doc='doc'></result-grouped-national-record>
                 </div>
                 <div class="btn-group" ng-if="schema.numFound >  schema.docs.length">
-                    <button class="btn btn-default bold" style="font-size: 10px;text-transform: uppercase;"  ng-click="loadRecords(key, schema,10)" ng-disabled="schema.isLoading"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> show next 10 records</button>
+                    <button class="btn btn-default bold" style="font-size: 10px;text-transform: uppercase;"  ng-click="loadRecords(key, schema,10)" ng-disabled="schema.isLoading"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> 显示下 10 条记录</button>
                     <button ng-if="schema.isLoading" class="btn btn-default" ng-disabled="true" style="font-size: 10px;text-transform: uppercase;"   ><i class="fa fa-spin fa-spinner pull-left" ></i> 正在加载...</button>
-                    <button class="btn btn-default bold" ng-click="loadRecords(key, schema)" style="font-size: 10px;text-transform: uppercase;"  ng-disabled="schema.isLoading"  ><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> show all {{schema.numFound}} records</button>
+                    <button class="btn btn-default bold" ng-click="loadRecords(key, schema)" style="font-size: 10px;text-transform: uppercase;"  ng-disabled="schema.isLoading"  ><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> 显示全部 {{schema.numFound}} 条记录</button>
                 </div>
             </div>
 
             <div ng-if="schema.shortCode=='MSR'">
                 <div style="width:100%;margin-bottom:30px;">
-                    <legend>Select the ABS Measures to be displayed in the overview</legend>
+                    <legend>选择要在概览中显示的获取和惠益分享措施</legend>
                     <div ng-repeat="measure in schema.docs|orderBy:sortMeasure"  style="padding:5px 0px;border-bottom:1px solid #fff;" 
                        ng-class="{'bg-nationalmsr':measure.rec_meta1[0] === 'National / Federal','bg-subnationalmsr':measure.rec_meta1[0] === 'Sub-national','bg-communitymsr':measure.rec_meta1[0] === 'Community','bg-regionalmsr':measure.rec_meta1[0] === 'Regional / Multilateral'
                        ,'bg-othermsr':measure.rec_meta1[0] === 'Other' }">
@@ -35,7 +35,7 @@
                                 <li><span style="font-size:11px!important;padding-left:10px;padding-right:10px;color:#666;" ng-if="measure.rec_type">{{measure.rec_type}}</span></li>
                                 <li><span style="font-size:11px!important;padding-left:10px;padding-right:10px;color:#666;" ng-if="measure.rec_meta3">{{measure.rec_meta3[0]}}</span></li>
                                 <li><span style="font-size:11px!important;padding-left:10px;padding-right:10px;color:#666;" ng-if="measure.rec_meta5">{{measure.rec_meta5[0]}}</span></li>
-                                <li style="border:0;"><span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.entryIntoForce_dt">Entry into force: {{measure.entryIntoForce_dt|formatDate}} <span style="font-size:11px!important;padding-left:0px;padding-right:0;border:0;color:#666;"  ng-if="measure.limitedApplication_dt">until {{measure.limitedApplication_dt|formatDate}}</span></span> <span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.adoption_dt">Adoption:{{measure.adoption_dt|formatDate}} <span style="font-size:11px!important;padding-left:0px;padding-right:0;border:0;color:#666;" ng-if="measure.limitedApplication_dt">until {{measure.limitedApplication_dt|formatDate}}</span></span> <span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.retired_dt">Retired:{{measure.retired_dt|formatDate}}</span></li>
+                                <li style="border:0;"><span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.entryIntoForce_dt">Entry into force: {{measure.entryIntoForce_dt|formatDate}} <span style="font-size:11px!important;padding-left:0px;padding-right:0;border:0;color:#666;"  ng-if="measure.limitedApplication_dt">until {{measure.limitedApplication_dt|formatDate}}</span></span> <span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.adoption_dt">Adoption:{{measure.adoption_dt|formatDate}} <span style="font-size:11px!important;padding-left:0px;padding-right:0;border:0;color:#666;" ng-if="measure.limitedApplication_dt">至 {{measure.limitedApplication_dt|formatDate}}</span></span>，<span style="font-size:11px!important;padding-left:10px;padding-right:10px;border:0;color:#666;" ng-if="measure.retired_dt">已淘汰：{{measure.retired_dt|formatDate}}</span></li>
                            </ul>
                         </div>
                     </div><!--<a translation-url  class="link" style="margin-top:20px;" ng-click="selectAllForMatrix()" > select <span ng-if="!measureMatrixDocuments.selectAll">all</span><span ng-if="measureMatrixDocuments.selectAll">none</span></a>--></div>    

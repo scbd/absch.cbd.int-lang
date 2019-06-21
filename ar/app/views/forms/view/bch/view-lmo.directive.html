@@ -1,23 +1,23 @@
 ﻿<div id="Record" class="record panel panel-default" dir="rtl">
 	<div class="panel-heading bg-blue">
-		<h4>Living Modified Organism <span class="color-black">(LMO)</span></h4>
+		<h4>الكائن الحي المُحوّر  <span class="color-black">(LMO)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 		<document-date></document-date>
 		<legend>هوية الكائن الحي المحوّر</legend>
 		<div ng-show="document.info.documentID" style="text-align: center">
-			<div class="help-info">The image below identifies the LMO through its unique identifier, trade name and a link to this page of the BCH. Click on it to download a larger image on your computer. For help on how to use it go to the LMO quick-links page.</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
+			<div class="help-info">تحدد الصورة أدناه هوية الكائن الحي المحور من خلال مُعرِّفه الفريد واسمه التجاري ورابط لصفحته على غرفة تبادل معلومات السلامة الأحيائية. اضغط على الصورة عليها لتنزيل صورة أكبر على حاسبك. للمساعدة في كيفية استخدام الصورة، انتقل إلى صفحة الروابط السريعة للكائنات الحية المُحوَّرة.</div><a ng-href="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}&amp;download"><img width="100%" style="max-width:1100px;"class="responsive" border="none" ng-src="https://bch.cbd.int/Bch.Images.DynamicImages.LmoQuickLink.dyn.png?documentid={{document.info.documentID}}"></a></div>
 		<div ng-show="document.identity">
-			<label>اسم الكائن الحى المحوّر</label>
+			<label>اسم الكائن الحي المحوّر</label>
 			<km-value-ml value="document.identity" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.transformationEvent">
-			<label>حدث التحوّر</label>
+			<label>حدث التحور</label>
 			<div ng-bind="document.transformationEvent" class="km-value"></div>
 		</div>
 		<div ng-show="document.uniqueIdentification">
-			<label>المعرف الفريد</label>
+			<label>المُعرِّف الفريد</label>
 			<div ng-bind="document.uniqueIdentification" class="km-value"></div>
 		</div>
 		<div ng-show="document.developers">
@@ -37,8 +37,8 @@
 		</div>
 
 		<div ng-show="document.recipientOrganisms">
-			<label>Recipient Organism or Parental Organisms</label>
-			<div class="help-info">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+			<label>الكائن المتلقّي أو الكائنات المصدر</label>
+			<div class="help-info">يشير مصطلح "الكائن المتلقي" إلى الكائن (المُحوَّر بالفعل أو غير المُحوَّر) الذي تعرض للتعديل الوراثي، بينما يشير مصطلح "الكائنات المصدر" إلى الكائنات التي استخدمت في التهجين أو مزج الخلايا.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.recipientOrganisms" >						
@@ -53,7 +53,7 @@
 			<km-value-ml value="document.recipientOrganismCollectionPoint" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.linkedModifiedOrganisms">
-			<label>الكائنات الحية المحورة ذات الصلة</label>	
+			<label>الكائنات الحية المُحوَّرة ذات الصلة</label>	
 			<div class="km-value">	
 				<ul class="list">
 					<li ng-repeat="item in document.linkedModifiedOrganisms" >						
@@ -63,19 +63,19 @@
 			</div>
 		</div>
 		
-		<legend>Characteristics of the transformation process</legend>
+		<legend>سمات عملية التحول</legend>
 		
 		<div ng-show="document.vector">
 			<label>Vector</label>
 			<km-value-ml value="document.vector" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.transformationEvent">
-			<label>الأساليب المستخدمة في التعديل</label>
+			<label>التقنيات المستخدمة فى التعديل</label>
 			<div ng-bind="document.transformationEvent" class="km-value"></div>
 		</div>
 
 		<div ng-show="document.geneConstructs">
-			<label>بناء العناصر الوراثية</label>
+			<label>تكوين العناصر الجينية</label>
 
 			<div class="km-value">
 				<div ng-repeat="construct in document.geneConstructs">
@@ -84,8 +84,8 @@
 			</div>
 		</div>
 		<div ng-show="document.genes">
-			<label>العناصر الجينية المدخلة أو المحورة</label>
-			<div class="help-info">ربما توجد بعض هذه العناصر كشذرات أو كأشكال مبتورة. يرجى مراعاة الملاحظات أدناه عند الضرورة.</div>
+			<label>العناصر الجينية التي تم إدخالها أو تحويرها</label>
+			<div class="help-info">ربما توجد بعض العناصر كشذرات أو كأشكال مبتورة. يُرجى مراعاة الملاحظات أدناه عند الضرورة.</div>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.genes" >						
@@ -96,12 +96,12 @@
 		</div>
 
 		<div ng-show="document.geneNotes">
-			<label>Notes regarding the genetic elements introduced or modified in this LMO</label>
+			<label>ملاحظات بشأن العناصر الجينية المدخلة أو المحورة في هذا الكائن الحي المحور</label>
 			<km-value-ml value="document.geneNotes" locales="locale"></km-value-ml>
 		</div>
 
 
-		<legend>LMO characteristics</legend>		
+		<legend>خصائص الكائن الحى المُحوّر</legend>		
 		<div ng-show="document.traits">
 			<label>السمات المحورة</label>
 			<div class="km-value">
@@ -121,7 +121,7 @@
 			</div>
 		</div>
 		<div ng-show="document.affectedGeneNotes">
-			<label>كيف تأثر تعبير الجين (الجينات)</label>
+			<label>مدى تأثر تعبير الجين (الجينات)</label>
 			<div ng-bind="document.affectedGeneNotes" class="km-value"></div>
 		</div>
 		<div ng-show="document.commonUses">
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 		<div ng-show="document.detectionMethod||document.detectionMethodLinks">
-			<legend>طريقة (طرق) التحديد</legend>
+			<legend>طريقة (طرق) الكشف</legend>
 			<div ng-show="document.detectionMethodLinks">
 				<label>الرابط (الروابط) الخارجية</label>
 				<div class="km-value">
@@ -156,7 +156,7 @@
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>عنوان لموقع إنترنت أو وثائق مرفقة أخرى ذات صلة</label>
+				<label>Other relevant website address or attached documents</label>
 				<div class="km-value">
 					<ul>
 						<li ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>

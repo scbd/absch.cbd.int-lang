@@ -8,7 +8,7 @@
 
 			
 		<document-date></document-date><br><div ng-show="document.title">
-			<label>Denominaci&oacute;n</label>
+			<label>Título</label>
 			<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		</div>
 
@@ -32,12 +32,12 @@
 		</div>
 
 		<div ng-show="document.publicationYear">
-			<label>A&ntilde;o de publicaci&oacute;n</label>
+			<label>Año de publicación</label>
 			<div class="km-value">{{document.publicationYear}}</div>
 		</div>
 
 		<div ng-show="organizations && organizations.length>0">
-			<label>Referencia a la(s) organizaci&oacute;n(es) a cargo de la autor&iacute;a</label>
+			<label>Referencia a la(s) organización(es) a cargo de la autoría</label>
 			<div >
 				<div class="row">
 					<div class="col-sm-12"  ng-repeat="organization in organizations">
@@ -74,13 +74,13 @@
 		</div>
 
 		<div ng-show="document.formatDetails">
-			<label>Informaci&oacute;n acerca de los formatos</label>
+			<label>Información acerca de los formatos</label>
 
 			<div class="km-value km-pre">{{document.formatDetails | lstring:locale}}</div>
 		</div>
 
 		<div ng-show="document.purpose">
-			<label>Prop&oacute;sito principal del recurso</label>
+			<label>Propósito principal del recurso</label>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="purpose in document.purpose">{{purpose | term:locale}}</li>
@@ -98,7 +98,7 @@
 		</div>
 
 		<div ng-show="document.expertiseLevel">
-			<label>Nivel del contenido o nivel de conocimientos/conocimientos especializados del p&uacute;blico destinatario del recurso</label>
+			<label>Nivel del contenido o nivel de conocimientos/conocimientos especializados del público destinatario del recurso</label>
 
 			<div class="km-value km-pre">{{document.expertiseLevel | term:locale}}</div>
 		</div>
@@ -119,7 +119,7 @@
 		</div>
 
 		<div ng-show="document.regions">
-			<label>Pa&iacute;s(es), grupo(s) regional(es) o econ&oacute;mico(s) relacionado(s) con el recurso</label>
+			<label>País(es), grupo(s) regional(es) o económico(s) relacionado(s) con el recurso</label>
 			<div class="km-value">
 				<ul ng-repeat="term in document.regions" class="list">
 					<li>{{term | term | lstring:locale}}</li>
@@ -128,7 +128,7 @@
 		</div>
 
 		<div ng-show="document.aichiTargets">
-			<label>Meta(s) de Aichi para la Diversidad Biol&oacute;gica relacionada(s)</label>
+			<label>Meta(s) de Aichi para la Diversidad Biológica relacionada(s)</label>
 			<div class="km-value">
 				<ul >
 					<li ng-repeat="term in document.aichiTargets">{{term | term:locale}}</li>
@@ -138,7 +138,7 @@
 
 		<div ng-show="document.absSubjects || document.mccKeywords || document.keywords">
 
-			<label>Thematic areas(s) and keywords for facilitating online searches</label>
+			<label>Área(s) temática(s) y palabras clave para facilitar las búsquedas en línea</label>
 			<div class="km-value" ng-show="document.absSubjects || document.mccKeywords">
 				<ul>
 					<li ng-repeat="term in document.absSubjects">{{term|term}}</li>
@@ -148,14 +148,14 @@
 
 
 			<div ng-show="document.keywords ">
-				<label>Palabras clave y cualquier otra informaci&oacute;n pertinente</label>
+				<label>Palabras clave y cualquier otra información pertinente</label>
 				<div class="km-value km-pre">{{document.keywords | lstring:locale}}</div>
 			</div>
 
 		</div>
 
 		<div ng-show="document.absKeyAreas">
-			<label>&Aacute;reas clave y medidas estrat&eacute;gicas para la creaci&oacute;n y el desarrollo de capacidad</label>
+			<label>Áreas clave y medidas estratégicas para la creación y el desarrollo de capacidad</label>
 			<div class="km-value">
 				<ul >
 					<li ng-repeat="term in document.absKeyAreas">{{term | term:locale}}</li>
@@ -164,7 +164,7 @@
 		</div>
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Informaci&oacute;n adicional</legend>
+			<legend>Información adicional</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind="document.relevantInformation | lstring:locale"></div>

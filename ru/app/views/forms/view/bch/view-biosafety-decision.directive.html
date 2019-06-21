@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Country&apos;s Decision or any other Communication <span class="color-black">(DES)</span></h4>
+		<h4>Решение страны или другое сообщение <span class="color-black">(РЕШ)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -13,7 +13,7 @@
 		</div>
 
 		<div ng-show="document.authorities">
-			<label>Competent National Authority(ies) responsible for the decision or communication</label>
+			<label>Компетентный(-ые) национальный(-ые) орган(ы), отвечающий(-ие) за решение или сообщение</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						
@@ -24,7 +24,7 @@
 		</div>
 
 		<div ng-show="document.title">
-			<label>Title / Reference number of the decision or communication</label>
+			<label>Название/справочный номер решения/сообщения</label>
 			<div class="km-value">
 				<km-value-ml value="document.title" locales="locale"></km-value-ml>
 			</div>
@@ -34,7 +34,7 @@
 			<div class="km-value" ng-bind-html="document.date | formatDate"></div>
 		</div>
 		<div ng-show="document.takenPriorEntryIntoForce!==undefined">
-			<label>Is the decision taken prior to entry into force of the Protocol?</label>
+			<label>Принято ли решение до вступления Протокола в силу?</label>
 			<div  class="km-value">
 				<km-value-bool value="document.takenPriorEntryIntoForce" locales="locale"></km-value-bool>
 			</div>
@@ -48,20 +48,20 @@
 			</div>
 		</div>
 		<div ng-show="document.jurisdictionDetails">
-			<label>Jurisdiction details</label>
+			<label>Сведения о юрисдикции</label>
 			<div class="km-value">
 				<km-value-ml value="document.jurisdictionDetails" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-if="document.isAmendment">
 			<div ng-show="document.isAmendment">
-				<label>Is this an amendment to a previous decision / communication?</label>
+				<label>Является ли это поправкой к предыдущему решению/сообщению?</label>
 				<div  class="km-value">
 					<km-value-bool value="document.isAmendment" locales="locale"></km-value-bool>
 				</div>
 			</div>
 			<div ng-show="document.amendedDecisions">
-				<label>BCH decision amended</label>
+				<label>Решение по МПБ, в которое внесена поправка</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.amendedDecisions">
@@ -71,20 +71,20 @@
 				</div>
 			</div>
 			<div ng-show="document.amendmentReason">
-				<label>Reasons for the amendment</label>
+				<label>Причины внесения поправки</label>
 				<div class="km-value">
 					<km-value-ml value="document.amendmentReason" locales="locale"></km-value-ml>
 				</div>
 			</div>
 			<div>
-				<label>This decision has been amended by following decision</label>
+				<label>В данное решение были внесены поправки в соответствии со следующим решением</label>
 				<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 			</div>
 		</div>
 
-		<legend>Decision or communication details</legend>
+		<legend>Сведения о решении или сообщении</legend>
 		<div ng-show="document.decisionTypes">
-			<label>Subject(s) of the decision</label>
+			<label>Предмет решения</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.decisionTypes" ng-bind="item|term:locale"></li>
@@ -93,7 +93,7 @@
 		</div>
 
 		<div ng-show="document.uses">
-			<label>Uses of the LMO(s)</label>
+			<label>Использование ЖИО</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.uses" ng-bind="item|term:locale"></li>
@@ -102,28 +102,28 @@
 		</div>
 
 		<div ng-show="document.takenInAccordanceWithA116!==undefined">
-			<label>Has the decision been taken in the absence of a domestic regulatory framework and in accordance with Article 11.6?</label>
+			<label>Принято ли решение при отсутствии национальной регламентационной базы и в соответствии со статьей 11.6?</label>
 			<div class="km-value">
 				<km-value-bool value="document.takenInAccordanceWithA116" locales="locale"></km-value-bool>
 			</div>
 		</div>
 
 		<div ng-show="document.addressesTransboundaryMovement!==undefined">
-			<label>Was the decision triggered by a request for a transboundary movement of LMOs into the country?</label>
+			<label>Было ли данное решение принято по запросу на трансграничное перемещение ЖИО в вашу страну?</label>
 			<div class="km-value">
 				<km-value-bool value="document.addressesTransboundaryMovement" locales="locale"></km-value-bool>
 			</div>
 		</div>
 
 		<div ng-show="document.appliesToTransboundaryMovement!==undefined">
-			<label>Does the decision apply to transboundary movements of LMO(s) into the country?</label>
+			<label>Применимо ли данное решение к трансграничным перемещениям ЖИО в вашу страну?</label>
 			<div class="km-value">
 				<km-value-bool value="document.appliesToTransboundaryMovement" locales="locale"></km-value-bool>
 			</div>
 		</div>
 
 		<div ng-show="document.exporters">
-			<label>Exporter&rsquo;s contact details</label>
+			<label>Контактные данные экспортера</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.exporters">
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 		<div ng-show="document.importers">
-			<label>Importer&rsquo;s or Applicant&rsquo;s contact details</label>
+			<label>Контактные данные импортера</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.importers">
@@ -143,35 +143,35 @@
 			</div>
 		</div>
 		<div ng-show="document.receiptDate">
-			<label>Date on which the notification was received.</label>
+			<label>Дата получения уведомления.</label>
 			<div class="km-value" ng-bind="document.receiptDate | formatDate:locale"></div>
 		</div>
 		<div ng-show="document.receiptAcknowledgementDate">
-			<label>Date on which acknowledgement of receipt of the notification was sent to the notifier.</label>
+			<label>Дата отправки уведомителю подтверждения о получении уведомления.</label>
 			<div class="km-value" ng-bind="document.receiptAcknowledgementDate | formatDate:locale"></div>
 		</div>
 		<div ng-show="document.communicationDate">
-			<label>Date on which the decision was communicated to the notifier.</label>
+			<label>Дата сообщения решения уведомителю.</label>
 			<div class="km-value" ng-bind="document.communicationDate | formatDate:locale"></div>
 		</div>
 		<div ng-show="document.decisionResult">
-			<label>Result of the decision</label>
+			<label>Результат решения</label>
 			<div class="km-value"><span ng-bind="document.developers|term:locale"></span></div>
 		</div>
 
 		<div ng-show="document.description">
-			<label>Time extension in days</label>
+			<label>Продление срока (в днях)</label>
 			<div class="km-value" ng-bind="document.description | lstring:locale"></div>
 		</div>
 
 		<div ng-show="document.conditions">
-			<label>Conditions</label>
+			<label>Условия</label>
 			<div class="km-value">
 				<km-value-ml value="document.conditions" locales="locale"></km-value-ml>
 			</div>
 		</div>
 		<div ng-show="document.reasons">
-			<label>Reasons</label>
+			<label>Причины</label>
 			<div class="km-value">
 				<km-value-ml value="document.reasons" locales="locale"></km-value-ml>
 			</div>
@@ -184,31 +184,31 @@
 			</div>
 		</div>
 		<div ng-show="document.involvesCommercialRelease!==undefined">
-			<label>Предусматривается ли решением коммерческий релиз?</label>
+			<label>Предусматривается ли решением коммерческое высвобождение?</label>
 			<div class="km-value">
 				<km-value-bool value="document.involvesCommercialRelease" locales="locale"></km-value-bool>
 			</div>
 		</div>
 		<div ng-show="document.appliesToSubsequentIntroductions!==undefined">
-			<label>Will the decision apply to subsequent introductions of the same LMO(s) into the environment?</label>
+			<label>Будет ли данное решение применяться к последующим интродукциям тех же ЖИО в окружающую среду?</label>
 			<div class="km-value">
 				<km-value-bool value="document.appliesToSubsequentIntroductions" locales="locale"></km-value-bool>
 			</div>
 		</div>
 		<div ng-show="document.movementAllowedUnderA131A!==undefined">
-			<label>Does the decision specify cases when the intentional transboundary movement of LMOs may take place at the same time of the notification to the Party of import?</label>
+			<label>Указаны ли в решении случаи, когда преднамеренное трансграничное перемещение ЖИО может иметь место одновременно с уведомлением Стороны импорта?</label>
 			<div class="km-value">
 				<km-value-bool value="document.movementAllowedUnderA131A" locales="locale"></km-value-bool>
 			</div>
 		</div>
 		<div ng-show="document.appliesToSubsequentImports!==undefined">
-			<label>Will the decision apply to subsequent introductions of the same LMO(s) into the environment?</label>
+			<label>Будет ли данное решение применяться к последующим интродукциям тех же ЖИО в окружающую среду?</label>
 			<div class="km-value">
 				<km-value-bool value="document.appliesToSubsequentImports" locales="locale"></km-value-bool>
 			</div>
 		</div>
 		<div ng-show="document.exemptedFromAIA!==undefined">
-			<label>Does the decision specify cases when the intentional transboundary movement of LMOs should be exempted from the Advance Informed Agreement (AIA) procedure?</label>
+			<label>Указаны ли в решении случаи, когда  преднамеренное трансграничное перемещение ЖИО является исключением из процедуры заблаговременного обоснованного согласия?</label>
 			<div class="km-value">
 				<km-value-bool value="document.exemptedFromAIA" locales="locale"></km-value-bool>
 			</div>
@@ -236,7 +236,7 @@
 
 
 		<div ng-show="document.documents">
-			<legend>Decision document</legend>
+			<legend>Документ, содержащий решение</legend>
 			<div class="km-value">
 				<ul>
 					<li ng-repeat="item in document.documents"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -244,14 +244,14 @@
 			</div>
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Дополнительная информация</legend>
+			<legend>Additional Information</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Адрес другого соответствующего веб-сайта или прилагаемые документы</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments">
 					<ul>
 						<li ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>

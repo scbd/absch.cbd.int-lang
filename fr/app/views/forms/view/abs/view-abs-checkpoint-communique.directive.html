@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default">
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span >Communiqu&eacute; aux points de contr&ocirc;le <span class="color-black">(CPC)</span></span></h4>	
+		<h4><span >Communiqué aux points de contrôle <span class="color-black">(CPC)</span></span></h4>	
 	</div>
 	<div class="record-body panel-body">
 			
@@ -9,18 +9,18 @@
 		
 
     	   	<div ng-show="document.government || document.absCheckpoints">
-				<legend>Informations g&eacute;n&eacute;rales</legend>
+				<legend>Informations générales</legend>
 				<div ng-show="document.government">
-					<label>Pays &eacute;metteur du communiqu&eacute; de point de contr&ocirc;le</label>
+					<label>Pays émetteur du communiqué de point de contrôle</label>
 					<div class="km-value" ><a ng-href="/countries/{{document.government.identifier}}" target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
 				</div>
 			</div>
 			<div ng-show="document.title">
-    		 	<label>Titre de ce communiqu&eacute; de point de contr&ocirc;le</label>
+    		 	<label>Titre de ce communiqué de point de contrôle</label>
     		 	<div class="km-value"><strong>{{document.title | lstring:locale}}</strong></div>
 		 	</div>
 			<div ng-show="document.absCheckpoints">
-				<legend>Point(s) de contr&ocirc;le qui ont collect&eacute; ou re&ccedil;u l&rsquo;information</legend>
+				<legend>Point(s) de contrôle qui ont collecté ou reçu l’information</legend>
 					<div class="km-value">
 						<ul>
 							<li ng-repeat="item in document.absCheckpoints">
@@ -30,10 +30,10 @@
 					</div>
 			</div>
 			<div ng-if="emailList && emailList.length>0">
-				<legend>R&eacute;cipiendaires du Communiqu&eacute; de point de contr&ocirc;le</legend>
+				<legend>Récipiendaires du Communiqué de point de contrôle</legend>
 				<div class="row">
 					<div class="col-xs-12 col-lg-12" >
-						<div class="help-info color-red"  >Note&nbsp;: Le Centre d&apos;&eacute;change ne garantie pas la r&eacute;ception des courriers &eacute;lectroniques g&eacute;n&eacute;r&eacute;s de fa&ccedil;on automatique. </br></div>
+						<div class="help-info color-red"  >Note : Le Centre d'échange ne garantie pas la réception des courriers électroniques générés de façon automatique. </br></div>
 					</div>
 				</div>
 				<div ng-if="emailList">
@@ -54,9 +54,9 @@
 						document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 						document.evidenceOfPIC || document.evidenceOfMAT ||
 						document.entityToWhomPICGranted || document.personsAtCheckpoint">
-				<legend>Information collect&eacute;e ou re&ccedil;ue par le point de contr&ocirc;le</legend>
+				<legend>Information collectée ou reçue par le point de contrôle</legend>
 				<div ng-show="document.absIRCCs">
-					<label>Num&eacute;ro(s) de r&eacute;f&eacute;rence des autres certificats de conformit&eacute; reconnus &agrave; l&rsquo;&eacute;chelle internationale en lien avec ce communiqu&eacute;.</label>
+					<label>Numéro(s) de référence des autres certificats de conformité reconnus à l’échelle internationale en lien avec ce communiqué.</label>
 					<div class="km-value">
 						<ul>
 							<li  ng-repeat="item in document.absIRCCs">
@@ -65,13 +65,13 @@
 						</ul>
 					</div>
 				</div>
-				<div ng-show="document.absIRCCsNotAvailable" class="km-value">Le certificat de conformit&eacute; internationalement reconnu n&apos;est pas disponible</div>
+				<div ng-show="document.absIRCCsNotAvailable" class="km-value">Le certificat de conformité internationalement reconnu n'est pas disponible</div>
 				<div ng-show="document.sourceCountries || document.entityWhoGrantedPIC ||
 					document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 					document.evidenceOfPIC || document.evidenceOfMAT ||
 					document.entityToWhomGrantedPIC || document.keywords || document.dateOfAccess">
 					<div ng-show="document.sourceCountries">
-						<label>Source des la ressource g&eacute;n&eacute;tique</label>
+						<label>Source des la ressource génétique</label>
 						<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="term in document.sourceCountries">{{term|term:locale}}</li>
@@ -79,19 +79,19 @@
 						</div>
 					</div>
 					<div ng-show="document.entityWhoGrantedPIC">
-						<label>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; donn&eacute;</label>
+						<label>La personne ou entité à laquelle le consentement préalable en connaissance de cause a été donné</label>
 						<div class="km-value">
 							<div view-contact-reference ng-model="document.entityWhoGrantedPIC" locale="locale"></div>
 						</div>
 					</div>
 					<div ng-show="document.subjectMatter">
-						<label>Objet ou ressources g&eacute;n&eacute;tiques pertinents pour les informations recueillies ou re&ccedil;ues</label>
+						<label>Objet ou ressources génétiques pertinents pour les informations recueillies ou reçues</label>
 						<div class="km-value km-pre" ng-bind-html="document.subjectMatter | lstring:locale"></div>
 					</div>
 					<div ng-show="document.specimens || document.taxonomies || document.gisFiles || document.keywords">
-						<label>D&eacute;tails optionnels et suppl&eacute;mentaires sur le sujet</label>
+						<label>Détails optionnels et supplémentaires sur le sujet</label>
 						<div ng-show="document.specimens">
-							<label>Donn&eacute;es sur l&rsquo;&eacute;chantillon</label>
+							<label>Données sur l’échantillon</label>
 							<div class="km-value">
 							<ul class="list">
 								<li ng-repeat="item in document.specimens"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 						<div ng-show="document.taxonomies">
-							<label>Donn&eacute;es taxonomiques</label>
+							<label>Données taxonomiques</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="item in document.taxonomies"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 						<div ng-show="document.gisFiles">
-							<label>Coordonn&eacute;es g&eacute;ographiques</label>
+							<label>Coordonnées géographiques</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="item in document.gisFiles"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -116,7 +116,7 @@
 							<div class="leaflet" center="gisMapCenter" layers="gisMapLayers"></div>
 						</div>
 						<div ng-show="document.keywords">
-							<label>Mots cl&eacute;s pour d&eacute;crire le sujet ou les ressources g&eacute;n&eacute;tiques abord&eacute;s par le communiqu&eacute;s</label>
+							<label>Mots clés pour décrire le sujet ou les ressources génétiques abordés par le communiqués</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="term in document.keywords">{{term|term}} <span ng-show="term.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">({{document.keywordOther|lstring:locale}})</span></li>
@@ -125,51 +125,51 @@
 						</div>
 					</div>
 					<div ng-show="document.evidenceOfPIC">
-						<label>R&eacute;f&eacute;rence ou preuve du consentement pr&eacute;alable en connaissance de cause CPCC</label>
+						<label>Référence ou preuve du consentement préalable en connaissance de cause CPCC</label>
 						<div class="km-value km-pre"ng-bind-html="document.evidenceOfPIC | lstring:locale"></div>
 					</div>
 
 					<div ng-show="document.entityToWhomGrantedPIC">
-						<label>La personne ou entit&eacute; &agrave; laquelle le consentement pr&eacute;alable en connaissance de cause a &eacute;t&eacute; accord&eacute;</label>
+						<label>La personne ou entité à laquelle le consentement préalable en connaissance de cause a été accordé</label>
 						<div class="km-value">
 							<div view-contact-reference ng-model="document.entityToWhomGrantedPIC" locale="locale"></div>
 						</div>
 					</div>
 
                     <div ng-show="document.evidenceOfMAT">
-						<label>R&eacute;f&eacute;rence ou preuve de mise en place de conditions convenues d&rsquo;un commun accord</label>
+						<label>Référence ou preuve de mise en place de conditions convenues d’un commun accord</label>
 						<div class="km-value km-pre"ng-bind-html="document.evidenceOfMAT | lstring:locale"></div>
 					</div>
 
                     <div ng-show="document.dateOfAccess">
-					    <label>Date d&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques</label>
+					    <label>Date d’accès aux ressources génétiques</label>
 					    <div class="km-value">{{document.dateOfAccess}}</div>
 				    </div>
 
 				</div>
 			</div>
 			<div ng-show="document.description || document.dateCollectedFrom || document.dateCollectedTo || information || informationDocuments ||document.personsAtCheckpoint">
-				<legend>Information sur l&rsquo;utilisation de la ou des ressource(s) g&eacute;n&eacute;tique(s).</legend>
+				<legend>Information sur l’utilisation de la ou des ressource(s) génétique(s)</legend>
 				<div ng-show="document.description">
-					<label>Br&egrave;ve description des informations amass&eacute;es ou re&ccedil;ues par le point de contr&ocirc;le sur l&rsquo;utilisation de ressources g&eacute;n&eacute;tiques</label>
+					<label>Brève description des informations amassées ou reçues par le point de contrôle sur l’utilisation de ressources génétiques</label>
 					<div class="km-value km-pre" ng-bind-html="document.description | lstring:locale"></div>
 				</div>
 				<div ng-show="document.personsAtCheckpoint">
-					<label>Personne ou entit&eacute; qui donne acc&egrave;s &agrave; l&rsquo;information au point de contr&ocirc;le sur l&rsquo;utilisation de la ressource g&eacute;n&eacute;tique</label>
+					<label>Personne ou entité qui donne accès à l’information au point de contrôle sur l’utilisation de la ressource génétique</label>
 					<div class="km-value" ng-repeat="user in document.personsAtCheckpoint">
 						<div view-contact-reference ng-model="user" locale="locale"></div>
 					</div>
 				</div>
 				<div ng-show="document.dateCollected">
-					<label>Date &agrave; laquelle l&rsquo;information a &eacute;t&eacute; collect&eacute;e par le point de contr&ocirc;le</label>
+					<label>Date à laquelle l’information a été collectée par le point de contrôle</label>
 					<div class="km-value">{{document.dateCollected}}</div>
 				</div>
 				<div ng-show="document.dateCollectedFrom">
-					<label>Date &agrave; laquelle la collecte de l&rsquo;information a d&eacute;but&eacute; au point de contr&ocirc;le</label>
+					<label>Date à laquelle la collecte de l’information a débuté au point de contrôle</label>
 					<div class="km-value">{{document.dateCollectedFrom}}</div>
 				</div>
 				<div ng-show="document.dateCollectedTo">
-					<label>Date &agrave; laquelle l&rsquo;information a &eacute;t&eacute; re&ccedil;ue par le point de contr&ocirc;le</label>
+					<label>Date à laquelle l’information a été reçue par le point de contrôle</label>
 					<div class="km-value">{{document.dateCollectedTo}}</div>
 				</div>
 				<div ng-show="document.informationDocuments">
@@ -183,14 +183,14 @@
 			</div>
 
             <div ng-show="document.relevantInformation||document.relevantDocuments">
-				<legend>Additional Information</legend>
+				<legend>Informations supplémentaires</legend>
 
 				<div ng-show="document.relevantInformation">
 					<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>
 				</div>
 
 				<div ng-show="document.relevantDocuments">
-					<label>Other relevant website address or attached documents</label>
+					<label>Autres sites Web pertinents ou documents en pièce jointe</label>
 					<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 			</div>

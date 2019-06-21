@@ -36,23 +36,23 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">¿Qu&eacute; desea borrar? <i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
+                            <h4 class="modal-title">¿Qué desea eliminar? <i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
                         </div>
                         <div class="modal-body" ng-hide="cantDelete || iacCantDelete">
 
                             <div ng-show="isDraft(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Borrar el borrador</button><em>Borrador {{recordToDelete.documentID||&apos;[new]&apos;}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
+                                <button type="button" class="btn btn-warning pull-right" ng-disabled="loading" ng-click="deleteDraft(recordToDelete)">Elminar el borrador</button><em>Borrador {{recordToDelete.documentID||'[new]'}}</em><p><b>{{recordToDelete.workingDocumentTitle|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.workingDocumentSummary|lstring"></p>
                             </div>
 
                             <div ng-show="isPublished(recordToDelete)" class="well">
-                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Nota: tambi&eacute;n se borrar&aacute; cualquier borrador pendiente">No publicar y borrar el registro</button><em>Registro publicado {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
+                                <button type="button" class="btn btn-danger pull-right" ng-disabled="loading" ng-click="deleteRecord(recordToDelete)" data-toggle="tooltip" data-placement="top" title="Nota: también se eliminará cualquier borrador pendiente.">No publicar y eliminar el registro</button><em>Registro publicado {{recordToDelete.documentID}}</em><p><b>{{recordToDelete.title|lstring}}</b></p>
                                 <p ng-bind-html="recordToDelete.summary|lstring"></p>
                             </div>
 
                         </div>
-                        <div class="modal-body" ng-show="cantDelete || pilotDelete">No est&aacute; permitido borrar registros publicados del CCRI en el Centro de Intercambio de Informaci&oacute;n sobre APB. Los registros del CCRI pueden enmendarse y especificarse como <i>revocado</i>. Los registros del CCRI <i>revocados</i> carecen de validez. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
-                        <div class="modal-body" ng-show="iacCantDelete">No est&aacute; autorizado a borrar un documento.</div>
+                        <div class="modal-body" ng-show="cantDelete || pilotDelete">No está permitido eliminar registros publicados del CCRI en el Centro de Intercambio de Información sobre APB. Los registros del CCRI pueden enmendarse y especificarse como <i>revocado</i>. Los registros del CCRI <i>revocados</i> carecen de validez. <!-- <span class="label label-danger">The delete button is only enabled for pilot phase.</span> --></div>
+                        <div class="modal-body" ng-show="iacCantDelete">No está autorizado a eliminar un documento.</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         </div>
@@ -63,14 +63,14 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4>Cancelar solicitud de publicaci&oacute;n<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
+                            <h4>Cancelar solicitud de publicación<i ng-show="loading" class="fa fa-spinner fa-spin"></i></h4>
                         </div>
                         <div class="modal-body">
-                            <p>¿Est&aacute; seguro de que quiere retirar y cancelar esta solicitud de publicaci&oacute;n?</p>
+                            <p>¿Está seguro de que quiere retirar y cancelar esta solicitud de publicación?</p>
                         </div>
                         <div class="modal-footer" style="margin-top:0">
                             <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
-                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Yes</button>
+                            <button ng-disabled="loading" type="button" ng-click="deleteWorkflowRequest(recordForDeleteWorkflowRequest)" class="btn btn-primary">Sí</button>
 
                         </div>
                     </div>

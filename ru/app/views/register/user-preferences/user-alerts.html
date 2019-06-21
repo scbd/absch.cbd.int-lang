@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div ng-if="showSystemAlerts">
             <div class="row" style="padding:10px 0;background-color:#eee;">
-                <div class="col-xs-7 col-sm-8"><small class="color-red">system alert</small><br> <span class="bold">Certificates (IRCC) published indicating that prior informed consent (PIC) has been granted to a user within my jurisdiction</span></div>
+                <div class="col-xs-7 col-sm-8"><small class="color-red">системное оповещение</small><br> <span class="bold">Опубликованные сертификаты (МПССТ), свидетельствующие о предоставлении пользователю в пределах моей юрисдикции предварительного обоснованного согласия (ПОС)</span></div>
                 <div class="col-xs-1 text-center color-darkgray"><small class="hidden-xs">Email&nbsp;me</small><div ng-click="subscribe('absPermit')" class="color-white" ng-if="!hasUserSubscribed('absPermit')"
                         style="cursor:pointer"><i class="fa fa-square fa-2x"></i></div>
                     <div ng-click="unsubscribe('absPermit')" class="color-darkgray" ng-if="hasUserSubscribed('absPermit')"
@@ -32,11 +32,11 @@
                 </div>
             </div>
         </div>
-    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Add new</button>
+    </div><br><button class="btn btn-primary pull-right" ng-click="addEdit()"><i class="fa fa-plus-circle"></i> Добавить новое</button>
     <div class="clearfix"></div>
 
     <div ng-show="!loading && (!userFilters || userFilters.length==0) && !showSystemAlerts">
-        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">You do not have any saved alerts. <span ng-if="!user.isAuthenticated">Please log in to view your saved alerts.</span></div>
+        <div class="alert  bg-grey" role="alert" style="margin-top:20px;"><span ng-if="user.isAuthenticated">Нет сохраненных оповещений. <span ng-if="!user.isAuthenticated">Выполните вход, что просмотреть сохраненные оповещения.</span></div>
     </div>
     <script type="text/ng-template" trados-translation="true" id="newFilterDialog">
         <div class="modal-header">

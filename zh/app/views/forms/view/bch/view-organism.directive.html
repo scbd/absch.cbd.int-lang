@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Organism <span class="color-black">(ORSM)</span></h4>
+		<h4>生物体<span class="color-black"> (ORSM)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -9,10 +9,10 @@
 		
 		<div ng-show="document.scientificName">
 			<label>学名</label>
-			<div class="km-value" ng-bind="document.scientificName"><span ng-if="document.scientificNameSynonyms">({{document.scientificNameSynonyms}})</span></div>
+			<div class="km-value" ng-bind="document.scientificName"><span ng-if="document.scientificNameSynonyms">（{{document.scientificNameSynonyms}}）</span></div>
 		</div>
 		<div>
-			<label>Taxonomic Classification</label>
+			<label>分类法分类</label>
 			<div class="km-value">
 				<table cellpadding="0" cellspacing="0">
 					<tbody>
@@ -29,7 +29,7 @@
 		</div>
 
 		<div ng-show="document.scientificNameSynonyms">
-				<label>Scientific name synonyms(s)</label>
+				<label>学名同义词</label>
 				<div class="km-value"> 
 					<ul class="list">
 						<li ng-repeat="name in document.scientificNameSynonyms" ng-bind="name"></li>
@@ -102,7 +102,7 @@
 		</div>
 
 		<div ng-show="document.compatibleSpecies">
-				<label>Cross-compatible species</label>
+				<label>杂交亲和种</label>
 				<view-default-reference ng-model="document.compatibleSpecies.identifier" locale="locale" target="target"></view-default-reference>
 				<div class="km-value" ng-bind="document.compatibleSpecies"></div>
 		</div>

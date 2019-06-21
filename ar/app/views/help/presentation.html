@@ -1,6 +1,6 @@
 ﻿<div ng-controller="presentationController" dir="rtl">
 
-        <style> .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus { z-index: 2; color: #fff; background-color: #428bca; border-color: #428bca; } .add_padding{ padding: 0 0px; } .coya-start{ font-weight: bold; font-size: 20px; /*font-family: &apos;alternategotno3dotregular&apos;;*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-h1{ font-weight: normal; font-size: 40px; /*font-family: &apos;alternategotno3dotregular&apos;;*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-points{ font-weight: bold; font-size: 20px; /*font-family: &apos;alternategotno3dotregular&apos;;*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-help-on{ font-weight: bold; font-size: 20px; /*font-family: &apos;alternategotno3dotregular&apos;;*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-help-off{ font-weight: bold; font-size: 20px; /*font-family: &apos;alternategotno3dotregular&apos;;*/ text-rendering: optimizeLegibility; text-transform:uppercase; color:#ddd; } </style>
+        <style> .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus { z-index: 2; color: #fff; background-color: #428bca; border-color: #428bca; } .add_padding{ padding: 0 0px; } .coya-start{ font-weight: bold; font-size: 20px; /*font-family: 'alternategotno3dotregular';*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-h1{ font-weight: normal; font-size: 40px; /*font-family: 'alternategotno3dotregular';*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-points{ font-weight: bold; font-size: 20px; /*font-family: 'alternategotno3dotregular';*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-help-on{ font-weight: bold; font-size: 20px; /*font-family: 'alternategotno3dotregular';*/ text-rendering: optimizeLegibility; text-transform:uppercase; } .coya-help-off{ font-weight: bold; font-size: 20px; /*font-family: 'alternategotno3dotregular';*/ text-rendering: optimizeLegibility; text-transform:uppercase; color:#ddd; } </style>
 
 
 
@@ -22,7 +22,7 @@
                 <div class="text-center coya-points"><span class="color-green">Provider points</span> <span ng-repeat="point in providerPoints">&nbsp;<span class="label" ng-class="{'label-info':point.type=='r', 'label-success':point.type=='b', 'label-warning':point.type=='c'}">{{point.score}}</span></span></div>
             </div>
 
-            <div class="col-xs-2"><span class="pull-right" style="cursor:pointer;" ng-click="help=!help;" ng-class="{'coya-help-off':!help, 'coya-help-on':help}">{{help ? &quot;hide&quot; : &quot;show&quot;}} help</span></div><!-- <div class="col-xs-2">
+            <div class="col-xs-2"><span class="pull-right" style="cursor:pointer;" ng-click="help=!help;" ng-class="{'coya-help-off':!help, 'coya-help-on':help}">{{help ? "hide" : "show"}} help</span></div><!-- <div class="col-xs-2">
                     <li class="list-group-item" ng-repeat="selected in choicesMade">{{selected}}</li>
             </div> --></div>
 

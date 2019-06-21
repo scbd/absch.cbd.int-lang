@@ -1,11 +1,11 @@
 ﻿<div id="Record" class="record panel panel-default">
-	<div class="panel-heading bg-blue"><h4>Base de donn&eacute;e nationale ou site Web <span class="color-black">(BDN)</span></h4></div>
+	<div class="panel-heading bg-blue"><h4>Base de donnée nationale ou site Web <span class="color-black">(BDN)</span></h4></div>
 	<div class="record-body panel-body">
 
 
 			
 		<document-date></document-date>
-<legend>Informations g&eacute;n&eacute;rales</legend>
+<legend>Informations générales</legend>
 		
 		<div ng-show="document.government">
 			<label name="country">Pays</label>
@@ -37,7 +37,7 @@
 
 
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Renseignements suppl&eacute;mentaires</legend>
+			<legend>Renseignements supplémentaires</legend>
 
 			<div ng-show="document.relevantInformation">
 				<div class="km-value" ng-bind-html="document.relevantInformation | lstring:locale"></div>

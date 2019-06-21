@@ -10,7 +10,7 @@
 							<legend name="formInfo" style="display:none"></legend>
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption="Veuillez s&eacute;lectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+									<div class="km-control-group" name="languages" required caption="Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -19,7 +19,7 @@
 							</div>
 							<section>
 
-								<legend>Nom du site Web ou de la base de donn&eacute;es</legend>
+								<legend>Nom du site Web ou de la base de données</legend>
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="government" required caption="Pays">
@@ -30,8 +30,8 @@
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
-										<div class="km-control-group" name="title" required caption="Nom du site Web ou de la base de donn&eacute;es">
-											<div class="help-info">Veuillez entrer le nom du site Web ou de la base de donn&eacute;es tel que vous voudriez le voir dans le titre du dossier.</div>
+										<div class="km-control-group" name="title" required caption="Nom du site Web ou de la base de données">
+											<div class="help-info">Veuillez entrer le nom du site Web ou de la base de données tel que vous voudriez le voir dans le titre du dossier.</div>
 											<div km-textbox-ml required name="title" ng-model="document.title" locales="document.header.languages"
 											 placeholder="exemple: Le titre"></div>
 										</div>
@@ -40,7 +40,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="description" required caption="Description">
-											<div class="help-info">Fournissez une courte description de la base de donn&eacute;es ou du site Web national, telle que sa fonction ou l&apos;information qu&apos;il publie.</div>
+											<div class="help-info">Fournissez une courte description de la base de données ou du site Web national, telle que sa fonction ou l'information qu'il publie.</div>
 											<div km-rich-textbox required name="description" ng-model="document.description" rows="4" locales="document.header.languages"
 											 placeholder="exemple: La description"></div>
 										</div>
@@ -49,7 +49,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="website" required caption="Adresse du site Web">
-											<div class="help-info">Veuillez joindre au document l&apos;adresse URL compl&egrave;te (http://www.cbd.int).</div>
+											<div class="help-info">Veuillez joindre au document l'adresse URL complète (http://www.cbd.int).</div>
 											<input type="url" ng-model="document.website.url" required class="form-control" placeholder="exemple: http://www.cbd.int" />
 										</div>
 									</div>
@@ -58,12 +58,12 @@
 
 							<section>
 
-								<legend>Information suppl&eacute;mentaire</legend>
+								<legend>Information supplémentaire</legend>
 
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="address" caption="Any other relevant information">
-											<div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le dossier.</div>
+											<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 											<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 										</div>
 									</div>
@@ -85,7 +85,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-info">Le champ «Notes» est destin&eacute; &agrave; vos notes ou commentaires personnels et sera masqu&eacute; lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
+											<div class="help-info">Le champ «Notes» est destiné à vos notes ou commentaires personnels et sera masqué lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

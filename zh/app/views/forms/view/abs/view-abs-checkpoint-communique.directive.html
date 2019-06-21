@@ -1,7 +1,7 @@
 ﻿<div id="Record" class="record panel panel-default">
 
 	<div class="panel-heading bg-blue" ng-show="display('header')">
-		<h4><span >Checkpoint Communiqu&eacute; <span class="color-black">(CPC)</span></span></h4>	
+		<h4><span >检查站公报<span class="color-black">（CPC）</span></span></h4>	
 	</div>
 	<div class="record-body panel-body">
 			
@@ -30,10 +30,10 @@
 					</div>
 			</div>
 			<div ng-if="emailList && emailList.length>0">
-				<legend>Recipients of the Checkpoint Communiqu&eacute;</legend>
+				<legend>检查点公报收件人</legend>
 				<div class="row">
 					<div class="col-xs-12 col-lg-12" >
-						<div class="help-info color-red"  >Note:The ABS Clearing-House does not guarantee the receipt of automatically generated emails. </br></div>
+						<div class="help-info color-red"  >Note:获取和惠益分享信息交换所不保证自动生成电子邮件的接收。 </br></div>
 					</div>
 				</div>
 				<div ng-if="emailList">
@@ -54,9 +54,9 @@
 						document.specimens || document.taxonomies || document.gisFiles || document.subjectMatter ||
 						document.evidenceOfPIC || document.evidenceOfMAT ||
 						document.entityToWhomPICGranted || document.personsAtCheckpoint">
-				<legend>Information Collected or Received at the Checkpoint</legend>
+				<legend>检查站收集或收到的信息</legend>
 				<div ng-show="document.absIRCCs">
-					<label>Reference number(s) of the internationally recognized certificate(s) of compliance that relate(s) to this communiqu&eacute;</label>
+					<label>与本公报相关的国际公认合规证书的参考编号</label>
 					<div class="km-value">
 						<ul>
 							<li  ng-repeat="item in document.absIRCCs">
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 					<div ng-show="document.entityWhoGrantedPIC">
-						<label>Person or entity who granted prior informed consent</label>
+						<label>授予事先知情同意的个人或实体</label>
 						<div class="km-value">
 							<div view-contact-reference ng-model="document.entityWhoGrantedPIC" locale="locale"></div>
 						</div>
@@ -89,7 +89,7 @@
 						<div class="km-value km-pre" ng-bind-html="document.subjectMatter | lstring:locale"></div>
 					</div>
 					<div ng-show="document.specimens || document.taxonomies || document.gisFiles || document.keywords">
-						<label>Optional additional subject-matter details</label>
+						<label>可选附加主题细节</label>
 						<div ng-show="document.specimens">
 							<label>样本数据</label>
 							<div class="km-value">
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 						<div ng-show="document.taxonomies">
-							<label>Taxonomy data</label>
+							<label>分类数据</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="item in document.taxonomies"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></li>
@@ -116,7 +116,7 @@
 							<div class="leaflet" center="gisMapCenter" layers="gisMapLayers"></div>
 						</div>
 						<div ng-show="document.keywords">
-							<label>Keywords to describe the subject-matter or genetic resource(s) covered by this communique</label>
+							<label>描述本公报所涵盖主题或遗传资源的关键词</label>
 							<div class="km-value">
 								<ul class="list">
 									<li ng-repeat="term in document.keywords">{{term|term}} <span ng-show="term.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">({{document.keywordOther|lstring:locale}})</span></li>
@@ -125,24 +125,24 @@
 						</div>
 					</div>
 					<div ng-show="document.evidenceOfPIC">
-						<label>Reference or evidence of prior informed consent</label>
+						<label>事先知情同意书的参考或证据</label>
 						<div class="km-value km-pre"ng-bind-html="document.evidenceOfPIC | lstring:locale"></div>
 					</div>
 
 					<div ng-show="document.entityToWhomGrantedPIC">
-						<label>Person or entity to whom prior informed consent was granted</label>
+						<label>获授事先知情同意的个人或实体</label>
 						<div class="km-value">
 							<div view-contact-reference ng-model="document.entityToWhomGrantedPIC" locale="locale"></div>
 						</div>
 					</div>
 
                     <div ng-show="document.evidenceOfMAT">
-						<label>Reference or evidence of establishment of mutually agreed terms</label>
+						<label>确立共同商定条件的参考或证据</label>
 						<div class="km-value km-pre"ng-bind-html="document.evidenceOfMAT | lstring:locale"></div>
 					</div>
 
                     <div ng-show="document.dateOfAccess">
-					    <label>Date of access to the genetic resource</label>
+					    <label>获取遗传资源的日期</label>
 					    <div class="km-value">{{document.dateOfAccess}}</div>
 				    </div>
 
@@ -151,7 +151,7 @@
 			<div ng-show="document.description || document.dateCollectedFrom || document.dateCollectedTo || information || informationDocuments ||document.personsAtCheckpoint">
 				<legend>关于遗传资源利用的信息</legend>
 				<div ng-show="document.description">
-					<label>Short description of the information collected or received by the checkpoint relevant to the utilization of genetic resources</label>
+					<label>与遗传资源利用相关的检查站收集或收到的信息的简短描述</label>
 					<div class="km-value km-pre" ng-bind-html="document.description | lstring:locale"></div>
 				</div>
 				<div ng-show="document.personsAtCheckpoint">
@@ -161,23 +161,23 @@
 					</div>
 				</div>
 				<div ng-show="document.dateCollected">
-					<label>Date on which the information was collected at the checkpoint</label>
+					<label>检查站收集信息的日期</label>
 					<div class="km-value">{{document.dateCollected}}</div>
 				</div>
 				<div ng-show="document.dateCollectedFrom">
-					<label>Date on which the information started being collected at the checkpoint</label>
+					<label>检查站开始收集信息的日期</label>
 					<div class="km-value">{{document.dateCollectedFrom}}</div>
 				</div>
 				<div ng-show="document.dateCollectedTo">
-					<label>Date on which the information was received at the checkpoint</label>
+					<label>检查点收到信息的日期</label>
 					<div class="km-value">{{document.dateCollectedTo}}</div>
 				</div>
 				<div ng-show="document.informationDocuments">
-					<label>Relevant document</label>
+					<label>相关文件</label>
 					<div class="km-value" ng-repeat="item in document.informationDocuments"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 				</div>
 				<div ng-show="document.information">
-					<label>Copy of relevant information</label>
+					<label>相关资料副本</label>
 					<div class="km-value km-pre">{{document.information | lstring:locale}}</div>
 				</div>
 			</div>

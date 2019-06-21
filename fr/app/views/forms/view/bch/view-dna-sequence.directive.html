@@ -1,13 +1,13 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Gene and DNA Sequence <span class="color-black">(DNA)</span></h4>
+		<h4>Gènes et des séquences d'ADN <span class="color-black">(DNA)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
 
 
 		<document-date></document-date>
-		<legend>Informations g&eacute;n&eacute;rales</legend>
+		<legend>Informations générales</legend>
 
 		<div ng-show="document.title">
 			<label>Titre</label>
@@ -15,11 +15,11 @@
 		</div>
 
 		<div ng-show="document.name">
-			<label>Nom du g&egrave;ne ou de la s&eacute;quence d&apos;ADN</label>
+			<label>Nom du gène ou de la séquence d'ADN</label>
 			<km-value-ml value="document.name" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.synonymNames">
-			<label>Alternate Genetic Element Name (synonyms)</label>
+			<label>Nom de l’élément génétique alternatif (synonymes)</label>
 			<ul class="list" style="padding-left:0px">
 				<li ng-repeat="synonym in document.synonymNames" style="padding-bottom:5px;">
 					<km-value-ml value="synonym" locales="locale"></km-value-ml>
@@ -28,17 +28,17 @@
 			
 		</div>
 		<div ng-show="document.abbreviation">
-			<label>Abbreviation</label>
+			<label>Abréviation</label>
 			<km-value-ml value="document.abbreviation" locales="locale"></km-value-ml>
 		</div>
 		<div ng-show="document.family">
-			<label>Cat&eacute;gorie de la s&eacute;quence d&apos;ADN</label>
+			<label>Catégorie de la séquence d'ADN</label>
 			<div class="km-value" ng-bind="document.family | term:locale"></div>
 		</div>
 
 		<div ng-show="document.isSynthetic!=undefined">
-			<label>Est-ce que le g&egrave;ne ou la s&eacute;quence d&apos;ADN est une mol&eacute;cule synth&eacute;tique?</label>
-			<div class="km-value" ng-if="document.isSynthetic">Yes</div>
+			<label>Est-ce que le gène ou la séquence d'ADN est une molécule synthétique?</label>
+			<div class="km-value" ng-if="document.isSynthetic">Oui</div>
 			<div class="km-value" ng-if="!document.isSynthetic">Non</div>
 		</div>
 	
@@ -52,17 +52,17 @@
 		</div>
 
 		<div ng-show="document.donorOrganismCollectionPoint">
-			<label>Point de collecte de l&apos;organisme donneur</label>
+			<label>Point de collecte de l'organisme donneur</label>
 			<div class="km-value">
 				<km-value-ml value="document.donorOrganismCollectionPoint"  html locales="locale"></km-value-ml>
 			</div>
 		</div>
 
 
-		<legend>Caract&eacute;ristiques de la s&eacute;quence codante de la prot&eacute;ine</legend>
+		<legend>Caractéristiques de la séquence codante de la protéine</legend>
 
 		<div ng-show="document.proteinName">
-			<label>Nom de la prot&eacute;ine exprim&eacute; par la s&eacute;quence codante</label>
+			<label>Nom de la protéine exprimé par la séquence codante</label>
 			<div class="km-value">
 					<km-value-ml value="document.proteinName" locales="locale"></km-value-ml>
 			</div>
@@ -76,7 +76,7 @@
 		</div>
 
 		<div ng-show="document.traits">
-			<label>Caract&eacute;ristiques ou utilisations connexes en biotechnologie</label>
+			<label>Caractéristiques ou utilisations connexes en biotechnologie</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="use in document.traits" ng-bind="use | term:locale"></li>
@@ -84,14 +84,14 @@
 			</div>
 		</div>
 		<div ng-show="document.relevantInformation||document.relevantDocuments">
-			<legend>Additional Information</legend>
+			<legend>Informations supplémentaires</legend>
 
 			<div ng-show="document.relevantInformation">
 				<km-value-ml value="document.relevantInformation" html locales="locale"></km-value-ml>
 			</div>
 
 			<div ng-show="document.relevantDocuments">
-				<label>Other relevant website address or attached documents</label>
+				<label>Autres sites Web pertinents ou documents en pièce jointe</label>
 				<div class="km-value" ng-repeat="item in document.relevantDocuments"><a translation-url target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Biosafety Law, Regulation, Guidelines and Agreements <span class="color-black">(LAW)</span></h4>
+		<h4>Законодательство, нормативные положения, руководящие принципы и соглашения по биобезопасности <span class="color-black">(ЗАК)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -31,12 +31,12 @@
 		<legend>Сведения о законодательных актах</legend>
 		<div>
 			<div ng-show="document.type">
-				<label>Type of document</label>
+				<label>Тип документа</label>
 				<div class="km-value"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type.customValue|lstring:locale"></span></div>
 			</div>
 
 			<div ng-show="document.cpbSubjectAreas">
-				<label>Subject areas</label>
+				<label>Тематические области</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbSubjectAreas"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div ng-show="document.cpbOrganismTypes">
-				<label>Types of LMOs addressed</label>
+				<label>Типы рассматриваемого ЖИО</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbOrganismTypes"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -53,7 +53,7 @@
 			</div>
 
 			<div ng-show="document.description">
-				<label>Brief description of the document including objective and scope</label>
+				<label>Краткое описание документа, включая его цель и сферу применения</label>
 				<div>
 					<km-value-ml value="document.description" html locales="locale"></km-value-ml>
 				</div>
@@ -70,20 +70,20 @@
 				<div class="km-value" ng-bind-html="document.date | formatDate"></div>
 			</div>
 			<div ng-show="document.takenPriorEntryIntoForce!==undefined">
-				<label>Is the decision taken prior to entry into force of the Protocol?</label>
+				<label>Принято ли решение до вступления Протокола в силу?</label>
 				<div  class="km-value">
 					<km-value-bool value="document.takenPriorEntryIntoForce" locales="locale"></km-value-bool>
 				</div>
 			</div>
 			<div ng-if="document.isAmendment">
 				<div ng-show="document.isAmendment">
-					<label>Is this an amendment to a previous decision / communication?</label>
+					<label>Является ли это поправкой к предыдущему решению/сообщению?</label>
 					<div  class="km-value">
 						<km-value-bool value="document.isAmendment" locales="locale"></km-value-bool>
 					</div>
 				</div>
 				<div ng-show="document.amendedDecisions">
-					<label>BCH decision amended</label>
+					<label>Решение по МПБ, в которое внесена поправка</label>
 					<div class="km-value">
 						<ul class="list">
 							<li ng-repeat="item in document.amendedDecisions">
@@ -93,19 +93,19 @@
 					</div>
 				</div>
 				<div ng-show="document.amendmentReason">
-					<label>Reasons for the amendment</label>
+					<label>Причины внесения поправки</label>
 					<div class="km-value">
 						<km-value-ml value="document.amendmentReason" locales="locale"></km-value-ml>
 					</div>
 				</div>
 				<div>
-					<label>This decision has been amended by following decision</label>
+					<label>В данное решение были внесены поправки в соответствии со следующим решением</label>
 					<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 				</div>
 			</div>
 
 		<div ng-show="document.authorities">
-			<label>Competent National Authority(ies) responsible for the decision or communication</label>
+			<label>Компетентный(-ые) национальный(-ые) орган(ы), отвечающий(-ие) за решение или сообщение</label>
 			<div class="km-value">
 				<ul class="list">
 					<li ng-repeat="item in document.authorities" >						

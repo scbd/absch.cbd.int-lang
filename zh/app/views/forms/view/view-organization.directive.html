@@ -51,7 +51,7 @@
 			</div>
 
 			<div ng-show="document.thematicAreas">
-				<label>CBD Thematic areas</label>
+				<label>生物多样性公约主题领域</label>
 				<div  class="km-value">
 					<ul class="list" km-terms ng-model="document.thematicAreas">
 						<li ng-repeat="term in terms">{{term.name}}</li>
@@ -61,20 +61,20 @@
 
 
 			<div ng-show="document.profileLink">
-				<label>Organization&rsquo;s profile</label>
+				<label>组织简介</label>
 				<div class="km-value" ng-repeat="item in document.profileLink"><a translation-url  target="{{target}}" ng-href="{{item.url}}">{{item.name||item.url}}</a> <i ng-show="item.name && item.url.indexOf('/api/v2013/documents/')<0">({{item.url}})</i></div>
 			</div>
 		</div>
 
 		<div ng-show="linkedOrganizations">
-			<legend>Linked organizations</legend>
+			<legend>关联组织</legend>
 			<div class="km-value" ng-repeat="organization in linkedOrganizations">
 				<div class="cbdViewOrganizationReference" ng-model="organization.document" locale="locale"></div>
 			</div>
 		</div>
 
 		<div ng-show="contacts">
-			<legend>Contact person in the organization</legend>
+			<legend>该组织的联系人</legend>
 			<div class="km-value" ng-repeat="contact in contacts">
 				<div class="cbdViewContactReference" ng-model="contact.document" locale="locale"></div>
 			</div>

@@ -32,7 +32,7 @@
 				</div>
 
         	     <div ng-show="document.relatedIRCCs">
-					<label>Регистрационный(-ые) номер(а) другого(-их) международно признанного(-ых) сертификата(ы) о соответствии требованиям, имеющего(-их) отношение к данному разрешению</label>
+					<label>Reference number(s) to other internationally recognized certificate(s) of compliance that relate(s) to this permit</label>
 					<div class="km-value">
 						<ul>
 							<li ng-repeat="item in document.relatedIRCCs">
@@ -199,7 +199,7 @@
 
 		<legend ng-if="document.usages || document.usagesDescription || document.usagesConfidential || document.thirdPartyTransferCondition">Информация об использовании генетического(-их) ресурса(-ов)</legend>
 			<div ng-if="document.usages">
-				<label>Вид использования, предусматриваемый разрешением или эквивалентным ему документом</label>
+				<label>Type of use allowed by the permit or its equivalent</label>
 				<div class="km-value" ng-if="document.usages && !document.usagesConfidential">
 					<ul class="list">
 						<li ng-repeat="term in document.usages">{{term|term}}</li>

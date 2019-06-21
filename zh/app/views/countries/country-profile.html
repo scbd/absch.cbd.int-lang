@@ -13,20 +13,20 @@
             <h1 style="font-size:280%;"><i class="flag-icon" ng-class="country.cssClass"></i> <strong>{{country.name}}</strong></h1>
             <div class="well bg-white cp-header">
                     <div style="margin-bottom:5px;">
-                        <label >Party Status:</label><span ng-if="!country.isNPParty && !country.isNPInbetweenParty" class="color-grey bold">Not a Party to the Nagoya Protocol</span> <span ng-if="country.isNPParty" class="color-party bold">Party to the Nagoya Protocol</span> <span ng-if="country.isNPInbetweenParty" class="color-inbetween bold">Ratified, not yet Party to the Nagoya Protocol</span><div ng-if="country.code==='dk'" style="margin-left:194px;"class="bold"><i class="fa fa-info-circle"></i> Denmark&rsquo;s ratification of the Nagoya Protocol does not apply in respect of Greenland and the Faroe Islands.</div>
-                         <div ng-if="country.code==='gb'" style="margin-left:194px;"class="bold"><i class="fa fa-info-circle"></i> The UK&rsquo;s ratification of the Nagoya Protocol does not extend to the <a ng-href="#" class="gb-territories" data-toggle="tooltip" data-placement="bottom" title="Anguilla; Bermuda; British Antarctic Territory; British Indian Ocean Territory; British Virgin Islands; Cayman Islands; Falkland Islands; Gibraltar; Montserrat; Pitcairn Islands; Saint Helena, Ascension and Tristan da Cunha; South Georgia and the South Sandwich Islands; Sovereign Base Areas of Akrotiri and Dhekelia; Turks and Caicos Islands" >14 Overseas Territories</a> or <a ng-href="#" class="gb-territories" data-toggle="tooltip" data-placement="bottom" 
-                            title="Bailiwick of Jersey, the Bailiwick of Guernsey and the Isle of Man">3 Crown Dependencies</a></div>
+                        <label >缔约方身份：</label><span ng-if="!country.isNPParty && !country.isNPInbetweenParty" class="color-grey bold">非名古屋议定书缔约方</span> <span ng-if="country.isNPParty" class="color-party bold">名古屋议定书缔约方</span> <span ng-if="country.isNPInbetweenParty" class="color-inbetween bold">已批准，但尚未成为名古屋议定书缔约方</span><div ng-if="country.code==='dk'" style="margin-left:194px;"class="bold"><i class="fa fa-info-circle"></i> 丹麦对名古屋议定书的批准并不适用于格陵兰岛及法罗群岛。</div>
+                         <div ng-if="country.code==='gb'" style="margin-left:194px;"class="bold"><i class="fa fa-info-circle"></i> 英国对名古屋议定书的批准并不延伸到<a ng-href="#" class="gb-territories" data-toggle="tooltip" data-placement="bottom" title="安圭拉；百慕大；英属南极领土；英属印度洋领地；英属维尔京群岛；开曼群岛；福克兰群岛；直布罗陀；蒙特塞拉特；皮特凯恩群岛；圣赫勒拿、阿森松岛和特里斯坦达库尼亚；南乔治亚岛和南桑威奇群岛；阿克罗蒂里和德凯利亚英属基地区；特克斯和凯科斯群岛" >14个海外领土</a>或<a ng-href="#" class="gb-territories" data-toggle="tooltip" data-placement="bottom" 
+                            title="泽西岛皇家属地、根西岛皇家属地和马恩岛">3个属地</a></div>
                     </div>
                      <div ng-if="country.isNPParty || country.isNPInbetweenParty" style="margin-bottom:5px;">
-                        <label>Enter<span ng-if="country.isNPInbetweenParty">s</span><span ng-if="country.isNPParty">ed</span> into force on:</label><span class="color-grey bold">{{country.entryIntoForce|formatDate}}</span></div>
+                        <label>生效日期<span ng-if="country.isNPInbetweenParty"></span><span ng-if="country.isNPParty"></span>：</label><span class="color-grey bold">{{country.entryIntoForce|formatDate}}</span></div>
                     <div ng-if="country.isNPRatified && country.dateDeposit"  style="margin-bottom:5px;">
-                        <label ng-if="country.instrument" ><span style="text-transform:capitalize;">{{country.instrument}}</span> on:</label>
-                        <label ng-if="!country.instrument">Ratification on:</label><span class="color-grey bold">{{country.dateDeposit|formatDate}}</span></div>
+                        <label ng-if="country.instrument" ><span style="text-transform:capitalize;">{{country.instrument}}</span>，日期：</label>
+                        <label ng-if="!country.instrument">批准日期：</label><span class="color-grey bold">{{country.dateDeposit|formatDate}}</span></div>
                     <div style="margin-bottom:5px;">
-                        <label>Signatory:</label><span ng-if="country.isNPSignatory && !country.dateSigned" class="bold">Signatory</span> <span ng-if="country.isNPSignatory && country.dateSigned" class="bold">Signed on {{country.dateSigned|formatDate}}</span> <span ng-if="!country.isNPSignatory" class="color-grey bold">No</span></div>
+                        <label>签字方：</label><span ng-if="country.isNPSignatory && !country.dateSigned" class="bold">签署方</span><span ng-if="country.isNPSignatory && country.dateSigned" class="bold">签署日期：{{country.dateSigned|formatDate}}</span> <span ng-if="!country.isNPSignatory" class="color-grey bold">否</span></div>
                    
                     <div style="white-space:nowrap;overflow-x:hidden;margin-bottom:5px;">
-                        <label>CBD Country Profile:</label><a translation-url   href="https://www.cbd.int/countries/?country={{country.code}}" target="_new">www.cbd.int/countries/?country={{country.code}}</a></div>
+                        <label>生物多样性公约国家概况：</label><a translation-url   href="https://www.cbd.int/countries/?country={{country.code}}" target="_new">www.cbd.int/countries/?country={{country.code}}</a></div>
                         
             </div>
         </div>

@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="pull-left">
-                                    <div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Situaci&oacute;n de la Parte" items="options.filterPartyStatus()"></div>
+                                    <div km-select ng-model="filters.partyStatus" binding-type="string" placeholder="Situación de la Parte" items="options.filterPartyStatus()"></div>
                                     <div km-select ng-model="filters.filterType" binding-type="string" placeholder="Filtro" items="options.filterTypes()"></div>
                                     <div km-select ng-model="filters.role" binding-type="string" placeholder="Funciones" items="options.filterRoles()"></div>
                                 </div>
@@ -54,7 +54,7 @@
                                             <tbody>
                                                 <tr>
                                                     <th></th>
-                                                    <th>Pa&iacute;s <i ng-show="reverse" ng-click="sortByField='name.en';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='name.en'}"></i> <i ng-show="!reverse" ng-click="sortByField='name.en';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='name.en'}"></i></th>
+                                                    <th>País <i ng-show="reverse" ng-click="sortByField='name.en';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='name.en'}"></i> <i ng-show="!reverse" ng-click="sortByField='name.en';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='name.en'}"></i></th>
                                                     <th>Recuento <i ng-show="reverse" ng-click="sortByField='count';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='count'}"></i> <i ng-show="!reverse" ng-click="sortByField='count';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='count'}"></i></th>
                                                     <th>CBD Region <i ng-show="reverse" ng-click="sortByField='region';reverse=false" class="fa fa-caret-up" ng-class="{'active':sortByField=='region'}"></i> <i ng-show="!reverse" ng-click="sortByField='region';reverse=true" class="fa fa-caret-down" ng-class="{'active':sortByField=='region'}"></i></th>
                                                     <th>User(s)</th>
@@ -84,9 +84,9 @@
                                 <table class="table table-hover" style="text-align: left" id="forExport">
                                     <tbody>
                                         <tr>
-                                            <th>Pa&iacute;s</th>
+                                            <th>País</th>
                                             <th>Usuario</th>
-                                            <th>Correo electr&oacute;nico</th>
+                                            <th>Correo electrónico</th>
                                         </tr>
                                         <tr ng-repeat="user in usersToExport">
                                             <td>{{user.country|lstring:locale}}</td>

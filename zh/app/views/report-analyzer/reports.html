@@ -10,10 +10,10 @@
                     <table class="table" cellspacing="0" cellpadding="0" style="width:100%;">
                             <thead>
                             <tr>
-                                <th>Report</th>
-                                <th style="text-align:center;" class="hidden-xs">Year</th>
+                                <th>报告</th>
+                                <th style="text-align:center;" class="hidden-xs">年份</th>
                                 <th style="text-align:center;">Party count <br/>on due date</th>
-                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace(&apos;CBD - &apos;, &apos;&apos;)}}</th>                                
+                                <th style="text-align:center;" class="hidden-xs" ng-repeat="region in reportData[0].regionMapping">{{(region.shortTitle|lstring:locale).replace('CBD - ', '')}}</th>                                
                                 <th style="text-align:center;" class="hidden-xs">By Parties</th>
                                 <th style="text-align:center;" class="hidden-xs">By Non-Parties</th>
                                 <th style="text-align:center;">报告</th>
@@ -39,7 +39,7 @@
                     <table style="width:100%">
                         <tr>
                             <td style="width:99%">
-                                <h4 class="panel-title">National report analyzer</h4>This tool allows you to select specific sections or questions of the report and to display the results by country/region.</td>
+                                <h4 class="panel-title">国家报告分析器</h4>此工具让您可以选择报告的特定部分或问题，并按国家或地区显示结果。</td>
                             <td>
                                 <button type="button" class="btn btn-primary" ng-click="analyze()">分析 »</button>
                             </td>

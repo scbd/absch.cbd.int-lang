@@ -17,21 +17,21 @@
             <td>
                 <select style="width: 100%;" ng-model="selectedRegionsPreset" ng-change="regionsPresetChanged()" class="form-control">
                     <option value="cbdRegions">按生物多样性公约地区细分</option>
-                    <option value="countries">Select countries</option>
-                    <option value="regions">Select regions</option>
-                    <option value="protocolParties">Breakdown by Nagoya Protocol Parties</option>
-                    <option value="protocolNonParties">Breakdown by Nagoya Protocol Non-Parties</option>
+                    <option value="countries">选择国家或地区</option>
+                    <option value="regions">选择地区</option>
+                    <option value="protocolParties">按名古屋议定书缔约方细分</option>
+                    <option value="protocolNonParties">按名古屋议定书非缔约方细分</option>
                 </select>
             </td>
         </tr>
         <tr ng-if="selectedRegionsPreset!='cbdRegions'">
             <td class="text-center">
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="selectedRegionsPreset=='countries'">Select countries</button>
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="selectedRegionsPreset=='regions'">Select regions</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="selectedRegionsPreset=='countries'">选择国家或地区</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="selectedRegionsPreset=='regions'">选择地区</button>
             </td>
             <td>
 
-                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">No countries or regions selected</div>
+                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">未选定任何国家或地区</div>
 
                 <ul ng-if="selectedRegions.length" class="list-unstyled">
                     <li ng-repeat="c in selectedRegions"><span ng-if="selectedRegionsPreset!='protocolParties' && selectedRegionsPreset!='protocolNonParties'"><i class="fa fa-times" ng-click="removeRegions(c)" ng-show="selectedRegionsPreset!='cbdRegions'"></i> {{regionsMap[c].title|lstring}}</span> <span ng-if="selectedRegionsPreset!='protocolParties' || selectedRegionsPreset!='protocolNonParties'">{{npCountries[c].title|lstring}}</span></li>

@@ -3,7 +3,7 @@
         <style> #rec {font-size:12px;} #rec .type {text-transform:uppercase; white-space:nowrap; font-size:10px; font-weight:bold;} #rec .id {text-transform:uppercase; white-space:nowrap; } #rec .title {color:#111;font-size:12px; font-weight:bold;} #rec .meta {max-width:20%;} .col-title {color:#333; text-transform: uppercase; font-size: 12px; font-weight: bold;} </style><!-- existing documents display --><div class="row">
         <div class="col-xs-12">
 
-            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || &apos;إضافة سجل&apos;}}{{type!==&apos;radio&apos; ? &quot;(s)&quot; : &quot;&quot;}}</button><span ng-show="model.length==0 || !model"><i class="color-blue">لم يتّم ربط أية سجلات</i></span> <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} سجلات مرتبطة.</a></div>
+            <button style="margin-right:20px;" class="btn btn-default" ng-click="openAddDialog();" ng-disabled="disabled"><i class="fa fa-plus"></i> {{caption || 'إضافة سجل'}}{{type!=='radio' ? "(s)" : ""}}</button><span ng-show="model.length==0 || !model"><i class="color-blue">لم يتّم ربط أية سجلات</i></span> <a translation-url  class="bold" href="#" ng-click="areVisible = true" ng-show="!areVisible && model.length>0" name="showRecords"><i class="fa fa-chevron-circle-right"></i> {{model.length}} linked records.</a> <a translation-url  class="bold" href="#" name="hideRecords" ng-click="areVisible=false" ng-show="areVisible && model.length>0 "><i class="fa fa-chevron-circle-down"></i> {{model.length}} سجلات مرتبطة.</a></div>
     </div>
     <div class="row" ng-show="areVisible && !disabled">
         <div class="col-xs-12"><br /><table class="table" id="search-new" style="padding-bottom:3px;width:100%;">
@@ -27,9 +27,9 @@
     </div><!-- Modal --> <script type="text/ng-template" trados-translation="true" id="documentSelectionModal">
         <div class="rounded bg-dropshadow" id="{{question}}" dir="rtl">
             <div class="modal-header bg-grey ">
-                <h3>Please select from the list of <span class="bold color-blue">{{docs.length}}</span> published record(s) below:</h3>
-                <div ng-if="hideAddContact" class="help-info">If the record is not listed, please save your current draft and go to the &lsquo;Dashboard&rsquo; and create a new record.</div>
-                <div ng-if="!hideAddContact" class="help-info">If the contact you are looking for is not listed, please create a new record by clicking the <a style="cursor:pointer;" ng-click="addNewContact=!addNewContact;loadContactDirective()">&apos;create contact&apos;</a> button below.</div><!-- <div ng-show="filter"> --><input type="textbox" ng-model="keyword" placeholder="فلترة السجلات بالكلمات الرئيسية أو المعرف الفريد" class="form-control"><!-- </div> --></div>
+                <h3>يُرجى التحديد من قائمة <span class="bold color-blue">{{docs.length}}</span> السجل (السجلات) المنشورة أدناه:</h3>
+                <div ng-if="hideAddContact" class="help-info">إذا لم يكن السجل مُدرجًا، يُرجى حفظ المسودة الحالية والانتقال إلى "لوحة التحكم" وإنشاء سجل جديد.</div>
+                <div ng-if="!hideAddContact" class="help-info">إذا كانت جهة الاتصال التي تبحث عنها غير مُدرجة، يُرجى إنشاء سجل جديد بالضغط على زر <a style="cursor:pointer;" ng-click="addNewContact=!addNewContact;loadContactDirective()">'إنشاء جهة اتصال'</a> أدناه.</div><!-- <div ng-show="filter"> --><input type="textbox" ng-model="keyword" placeholder="تصفية السجلات بالكلمات المفتاحية أو المعرف الفريد" class="form-control"><!-- </div> --></div>
             
             <div class="modal-body" >
                 
@@ -52,15 +52,15 @@
                                     <tr>
                                         <th></th>
                                         <th></th>
-                                        <th style="white-space:nowrap;"><a href="#" class="col-title" ng-click="sortType = 'schema_s'; sortReverse = !sortReverse">type</a> <span ng-show="sortType == 'schema_s'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
+                                        <th style="white-space:nowrap;"><a href="#" class="col-title" ng-click="sortType = 'schema_s'; sortReverse = !sortReverse">النوع</a> <span ng-show="sortType == 'schema_s'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
 
-                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_title'; sortReverse = !sortReverse">name</a> <span ng-show="sortType == 'rec_title'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
+                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_title'; sortReverse = !sortReverse">الاسم</a> <span ng-show="sortType == 'rec_title'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
 
-                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_countryName'; sortReverse = !sortReverse">owner</a> <span ng-show="sortType == 'rec_countryName'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
+                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_countryName'; sortReverse = !sortReverse">المالك</a> <span ng-show="sortType == 'rec_countryName'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
 
-                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'uniqueIdentifier_s'; sortReverse = !sortReverse">unique identifier</a> <span ng-show="sortType == 'uniqueIdentifier_s'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
+                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'uniqueIdentifier_s'; sortReverse = !sortReverse">المعرف الفريد</a> <span ng-show="sortType == 'uniqueIdentifier_s'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
 
-                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_summary'; sortReverse = !sortReverse">summary</a> <span ng-show="sortType == 'rec_summary'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
+                                        <th style="white-space:nowrap;"><a href="#"class="col-title"  ng-click="sortType = 'rec_summary'; sortReverse = !sortReverse">ملخص</a> <span ng-show="sortType == 'rec_summary'" ng-class="{'fa-caret-down': !sortReverse , 'fa-caret-up': sortReverse}" class="fa"></span></th>
 
                                             <th></th>
                                             <th></th>
@@ -79,9 +79,9 @@
                                             <td >{{doc.rec_countryName}}</td>
                                             <td class="id color-blue"><a href="{{doc.url_ss}}" target="_blank">{{doc.uniqueIdentifier_s}}</a></td>
                                             <td class="summary">{{doc.rec_summary | limitTo:20 }}</td>
-                                            <td class="meta"><span ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
-                                            <td class="meta"><span ng-repeat="meta1 in doc.rec_meta2">{{meta1}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
-                                            <td class="meta"><span ng-repeat="meta2 in doc.rec_meta3">{{meta2}}{{$last ? &apos;&apos;:&apos;, &apos;}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta in doc.rec_meta1">{{meta}}{{$last ? '':', '}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta1 in doc.rec_meta2">{{meta1}}{{$last ? '':', '}}</span></td>
+                                            <td class="meta"><span ng-repeat="meta2 in doc.rec_meta3">{{meta2}}{{$last ? '':', '}}</span></td>
                                         </tr>
                                         </tbody>
                                       </table>
@@ -89,8 +89,8 @@
 
                         </div> 
 
-                    <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> التحميل</div>
-                    <div ng-if="rawDocuments.numFound===0">لا توجد أي سجلات</div>
+                    <div ng-if="isLoading"><i class="fa fa-spinner fa-spin"></i> قيد التحميل...</div>
+                    <div ng-if="rawDocuments.numFound===0">لا توجد أي سجلات.</div>
                 </div>
                 <div  ng-show="addNewContact" class="row" style="max-width:100%">
                     <div id="divNewContact" class="col-lg-12" style="margin:20px"></div>
@@ -99,7 +99,7 @@
 
             <div class="modal-footer bg-grey">
                 <div class="row">
-                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;" ng-hide="addNewContact"   ng-click="saveDocuments()">Select</a> <a translation-url  type="button" class="btn btn-info bold pull-left" style="color:white;" ng-hide="hideAddContact || addNewContact"   ng-click="addNewContact=!addNewContact;loadContactDirective()">Create Contact</a> <a translation-url  type="button" class="btn btn-info bold pull-left" style="color:white;" ng-show="addNewContact"   ng-click="addNewContact=!addNewContact">Show Existing Contacts</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">Close</a></div>
+                    <div class="col-xs-12"><a translation-url  type="button" class="btn btn-primary bold pull-left" style="color:white;" ng-hide="addNewContact"   ng-click="saveDocuments()">تحديد</a> <a translation-url  type="button" class="btn btn-info bold pull-left" style="color:white;" ng-hide="hideAddContact || addNewContact"   ng-click="addNewContact=!addNewContact;loadContactDirective()">إنشاء جهة اتصال</a> <a translation-url  type="button" class="btn btn-info bold pull-left" style="color:white;" ng-show="addNewContact"   ng-click="addNewContact=!addNewContact">إظهار جهات الاتصال الموجودة</a> <a translation-url  type="button" class="btn btn-warning bold" data-dismiss="modal" ng-click="closeDialog()">إغلاق</a></div>
                 </div>
             </div>
         </div>

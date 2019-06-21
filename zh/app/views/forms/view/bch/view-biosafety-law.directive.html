@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Biosafety Law, Regulation, Guidelines and Agreements <span class="color-black">(LAW)</span></h4>
+		<h4>生物安全法、条例、准则和协议 <span class="color-black">（法律）</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -31,12 +31,12 @@
 		<legend>立法细节</legend>
 		<div>
 			<div ng-show="document.type">
-				<label>Type of document</label>
+				<label>文件类型</label>
 				<div class="km-value"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="document.type.customValue|lstring:locale"></span></div>
 			</div>
 
 			<div ng-show="document.cpbSubjectAreas">
-				<label>Subject areas</label>
+				<label>主题领域</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbSubjectAreas"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div ng-show="document.cpbOrganismTypes">
-				<label>Types of LMOs addressed</label>
+				<label>所涉改性活生物体类型</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.cpbOrganismTypes"><span ng-if="item.identifier!='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item|term:locale"></span> <span ng-if="item.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'" ng-bind="item.customValue|lstring:locale"></span></li>
@@ -53,7 +53,7 @@
 			</div>
 
 			<div ng-show="document.description">
-				<label>Brief description of the document including objective and scope</label>
+				<label>文件（包含目标和范围）的简要描述</label>
 				<div>
 					<km-value-ml value="document.description" html locales="locale"></km-value-ml>
 				</div>
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 				<div ng-show="document.amendedDecisions">
-					<label>BCH decision amended</label>
+					<label>生物安全信息交换所决定修订版</label>
 					<div class="km-value">
 						<ul class="list">
 							<li ng-repeat="item in document.amendedDecisions">
@@ -99,7 +99,7 @@
 					</div>
 				</div>
 				<div>
-					<label>This decision has been amended by following decision</label>
+					<label>本决定已由以下决定修订</label>
 					<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 				</div>
 			</div>

@@ -1,16 +1,16 @@
 ﻿<div class="modal-content">
-    <style> .has-error .fa-validate:before { content: &quot;\f069&quot;; color: #a94442; } .has-warning .fa-validate:before { content: &quot;\f0a5&quot;; color: #c09853; } .has-success .fa-validate:before { content: &quot;\f00c&quot;; color: #468847; } .help-block.error { text-transform: uppercase; font-size: 10px; font-weight: bold; margin-bottom: -10px; } .panel-identity { position: relative; padding-top: 19px; } .panel-identity:after { content: &quot;Identity&quot;; position: absolute; top: -1px; left: -1px; padding: 3px 7px; font-size: 12px; font-weight: bold; background-color: #f5f5f5; border: 1px solid #ddd; color: #9da0a4; height: 1.6em; line-height: 1em; -webkit-border-radius: 4px 0 4px 0; -moz-border-radius: 4px 0 4px 0; border-radius: 4px 0 4px 0; } </style>
+    <style> .has-error .fa-validate:before { content: "\f069"; color: #a94442; } .has-warning .fa-validate:before { content: "\f0a5"; color: #c09853; } .has-success .fa-validate:before { content: "\f00c"; color: #468847; } .help-block.error { text-transform: uppercase; font-size: 10px; font-weight: bold; margin-bottom: -10px; } .panel-identity { position: relative; padding-top: 19px; } .panel-identity:after { content: "Identity"; position: absolute; top: -1px; left: -1px; padding: 3px 7px; font-size: 12px; font-weight: bold; background-color: #f5f5f5; border: 1px solid #ddd; color: #9da0a4; height: 1.6em; line-height: 1em; -webkit-border-radius: 4px 0 4px 0; -moz-border-radius: 4px 0 4px 0; border-radius: 4px 0 4px 0; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Nouvel usager -  {{editUserDialogCtrl.user.firstName}} {{editUserDialogCtrl.user.lastName}} <span ng-if="!editUserDialogCtrl.user.firstName && !editUserDialogCtrl.user.lastName">coordonn&eacute;es</span></h3>
+        <h3 class="modal-title">Nouvel usager -  {{editUserDialogCtrl.user.firstName}} {{editUserDialogCtrl.user.lastName}} <span ng-if="!editUserDialogCtrl.user.firstName && !editUserDialogCtrl.user.lastName">coordonnées</span></h3>
         <h4 class="modal-title">{{editUserDialogCtrl.user.email}}</h4>
     </div>
 
     <div class="modal-body">
         <form name="form" novalidate>
 
-            <p>Veuillez fournir les coordonn&eacute;es de base et  renseignements du nomin&eacute;</p>
+            <p>Veuillez fournir les coordonnées de base et  renseignements du nominé</p>
 
             <div class="panel panel-default panel-identity" style="min-height:300px;position:relative">
                 <div class="panel-body">
@@ -18,7 +18,7 @@
 
                         <div class="col-sm-6 col-xs-12">
                             <div class="form-group" ng-class="{ 'has-warning': form.firstName.$invalid }">
-                                <label for="firstName">Pr&eacute;nom</label>
+                                <label for="firstName">Prénom</label>
                                 <input type="text" class="form-control" name="firstName" ng-model="editUserDialogCtrl.user.firstName" required>
                                 <p class="help-info error" ng-show="form.firstName.$invalid">Ce champs est obligatoire</p>
                             </div>

@@ -12,7 +12,7 @@
 			<label>Description</label><span class="km-value">{{document.description_EN_t}}</span></div>
 
 		<div ng-show="document.themes_CEN_ss">
-			<label>Th&egrave;mes</label>
+			<label>Thèmes</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.themes_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>
@@ -21,7 +21,7 @@
 		</div>
 
 		<div ng-show="document.thematicAreas_CEN_ss">
-			<label>Domaines th&eacute;matiques</label>
+			<label>Domaines thématiques</label>
 			<div class="km-value" >
 				<ul class="list">
 					<li ng-repeat="item in document.thematicAreas_CEN_ss">{{item |stringToJSON | lstring:locale}}</li>

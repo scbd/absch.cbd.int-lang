@@ -1,6 +1,6 @@
 ﻿<div id="Record" class="record panel panel-default">
 	<div class="panel-heading bg-blue">
-		<h4>Country&apos;s Decision or any other Communication <span class="color-black">(DES)</span></h4>
+		<h4>各国的决定或其它通信 <span class="color-black">(DES)</span></h4>
 	</div>
 	<div class="record-body panel-body">
 
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div ng-show="document.jurisdictionDetails">
-			<label>Jurisdiction details</label>
+			<label>辖区详情</label>
 			<div class="km-value">
 				<km-value-ml value="document.jurisdictionDetails" locales="locale"></km-value-ml>
 			</div>
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<div ng-show="document.amendedDecisions">
-				<label>BCH decision amended</label>
+				<label>生物安全信息交换所决定修订版</label>
 				<div class="km-value">
 					<ul class="list">
 						<li ng-repeat="item in document.amendedDecisions">
@@ -77,7 +77,7 @@
 				</div>
 			</div>
 			<div>
-				<label>This decision has been amended by following decision</label>
+				<label>本决定已由以下决定修订</label>
 				<view-default-reference ng-model="document.header.identifier"></view-default-reference>
 			</div>
 		</div>

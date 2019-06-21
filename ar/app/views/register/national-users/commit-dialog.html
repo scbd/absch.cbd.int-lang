@@ -1,6 +1,6 @@
 ﻿<div class="modal-content" dir="rtl">
 
-    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group &gt; .btn { float: none; display: inline-block; } </style>
+    <style> .text-nowrap.btn-group { white-space: nowrap; } .text-nowrap.btn-group > .btn { float: none; display: inline-block; } </style>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-disabled="commitDialogCtrl.loading" ng-click="closeThisDialog()"><span aria-hidden="true">&times;</span></button>
@@ -34,7 +34,7 @@
                 <td style="width:90%">{{tran.governmentName|lstring}}</td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!-- GRANT --><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'grantRole'}).length">
-                <td colspan="3"><b>الدور (الأدوار) التي سيتم إنشاؤها:</b></td>
+                <td colspan="3"><b>الدور (الأدوار) الذي سيتم إنشاؤه:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'grantRole'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -42,7 +42,7 @@
                 <td style="width:90%">{{tran.role.name}} <br> <i>{{tran.role.description}}</i></td>
                 <td style="width:5%">{{tran.error.code || tran.error}}</td>
             </tr><!-- REVOKE --><tr ng-if="(commitDialogCtrl.transactions | filter:{type:'revokeRoles'}).length">
-                <td colspan="3"><b>الدور (الأدوار) التي سيتم رفضها:</b></td>
+                <td colspan="3"><b>الدور (الأدوار) الذي سيتم رفضه:</b></td>
             </tr>
 
             <tr ng-repeat="tran in commitDialogCtrl.transactions | filter:{type:'revokeRoles'}" ng-class="{ success : tran.success, danger : tran.error }">
@@ -65,6 +65,6 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" aria-label="Close" ng-click="closeThisDialog()" ng-disabled="commitDialogCtrl.loading">إلغاء</button>
-        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="commitDialogCtrl.save()" ng-disabled="commitDialogCtrl.loading">استمرار الترشيح »</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" ng-click="commitDialogCtrl.save()" ng-disabled="commitDialogCtrl.loading">الاستمرار في عملية الترشيح »</button>
     </div>
 </div>

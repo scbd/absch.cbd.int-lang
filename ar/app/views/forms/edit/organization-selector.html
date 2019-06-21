@@ -7,7 +7,7 @@
             </div>
             <view-organization-reference ng-model='contact' locale="edition.contact.header.languages"></view-organization-reference>
         </div>
-    </div><!-- ng-show="showButtons()" --><button class="btn btn-default" ng-click="showOrganizations(-1)"><i class="fa fa-plus"></i> {{caption || &apos;إضافة منظمة أو جهة اتصال »&apos;}}</button><!-- Modal --> <script type="text/ng-template" trados-translation="true" id="organizationModal">
+    </div><!-- ng-show="showButtons()" --><button class="btn btn-default" ng-click="showOrganizations(-1)"><i class="fa fa-plus"></i> {{caption || 'إضافة منظمة أو جهة اتصال »'}}</button><!-- Modal --> <script type="text/ng-template" trados-translation="true" id="organizationModal">
     <div  id="editOrganizationTemplate"  dir="rtl">
                 <div class="modal-header bg-litegrey">
                     <h3 class="modal-title" id="myModalLabel"><span ng-hide="showExisting">منظمة جديدة</span> <span ng-show="showExisting" >تحديد منظمة حالية</span></h3>
@@ -18,7 +18,7 @@
                     <div ng-show="showExisting"  class="row clearfix" >
                         <div class="col-xs-12">
                             <div ng-if="!loading && existingOrganizations && existingOrganizations.length==0" style="padding:0 10px;">
-                                <h3 class="color-litegrey">لا توجد أي منظمات. يرجى إضافة منظمة جديدة.</h3>
+                                <h3 class="color-litegrey">لا توجد أي منظمات. يُرجى إضافة منظمة جديدة.</h3>
                             </div>
                             <input type="textbox" ng-model="search.keyword" placeholder="تصفية أسماء المنظمات" 
                                 class="form-control" style="margin-bottom:20px;" ><span class="pull-right col-xs-2 label label-info">تم العثور على {{recordCount}} منظمة</span></div>
@@ -29,7 +29,7 @@
                             
                             <div class="well" ng-repeat="contact in existingOrganizations | filter:isSelected | orderBy:'name.en' track by $index">
                                 <div class="col-xs-1"><a translation-url  class="btn btn-default" href="#" ng-click="selectOrganization(contact)"><i class="fa fa-thumbs-o-up"></i></a></div>
-                                <div class="col-xs-11"><span class="label label-warning" ng-if="contact._state_s=='workflow'">الموافقة معلقة</span><view-organization-reference ng-model='contact' locale="edition.contact.header.languagesen"></view-organization-reference>
+                                <div class="col-xs-11"><span class="label label-warning" ng-if="contact._state_s=='workflow'">قيد الموافقة</span><view-organization-reference ng-model='contact' locale="edition.contact.header.languagesen"></view-organization-reference>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="modal-footer bg-litegrey">
                     <div class="clearfix"></div>
-                    <div><a translation-url  class="btn btn-default pull-left" ng-click="showExisting=true" ng-show="!showExisting" ng-href="#"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Select from exisiting organizations</a> <a translation-url  class="btn btn-primary color-white" ng-click="editOrganization(-1);showExisting=false" ng-show="showExisting" ng-href="#">Add new organization</a> <a translation-url  type="button" class="pull-right btn btn-warning" ng-click="closeOrganization()">Close</a></div>
+                    <div><a translation-url  class="btn btn-default pull-left" ng-click="showExisting=true" ng-show="!showExisting" ng-href="#"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> اختر من المنظمات الحالية</a> <a translation-url  class="btn btn-primary color-white" ng-click="editOrganization(-1);showExisting=false" ng-show="showExisting" ng-href="#">إضافة منظمة جديدة</a> <a translation-url  type="button" class="pull-right btn btn-warning" ng-click="closeOrganization()">إغلاق</a></div>
                 </div>
     </div>
     </script></div>
