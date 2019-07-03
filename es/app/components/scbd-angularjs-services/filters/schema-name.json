@@ -1,93 +1,93 @@
 {
   "meetingDocument": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "es": "Meeting Document"
     },
     "description": {
-      "en": ""
+      "es": "Meeting Document"
     },
-    "shortCode": "",
+    "shortCode": "MTD",
     "titlePlural": {
-      "en": ""
+      "es": "Meeting Document"
     }
   },
   "pressRelease": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Comunicado de prensa"
+      "es": "Comunicado de prensa"
     },
     "description": {
-      "en": "Comunicado de prensa"
+      "es": "Comunicado de prensa"
     },
-    "shortCode": "",
+    "shortCode": "PR",
     "titlePlural": {
-      "en": "Comunicados de prensa"
+      "es": "Comunicados de prensa"
     }
   },
   "news": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Noticias"
+      "es": "Noticias"
     },
     "description": {
-      "en": "Noticias"
+      "es": "Noticias"
     },
-    "shortCode": "",
+    "shortCode": "NEWS",
     "titlePlural": {
-      "en": "Noticias"
+      "es": "Noticias"
     }
   },
   "new": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Novedades"
+      "es": "Novedades"
     },
     "description": {
-      "en": "Novedades"
+      "es": "Novedades"
     },
-    "shortCode": "",
+    "shortCode": "NEW",
     "titlePlural": {
-      "en": "Novedades"
+      "es": "Novedades"
     }
   },
   "statement": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Declaración"
+      "es": "Declaración"
     },
     "description": {
-      "en": "Declaraciones"
+      "es": "Declaraciones"
     },
-    "shortCode": "",
+    "shortCode": "ST",
     "titlePlural": {
-      "en": "Declaración"
+      "es": "Declaración"
     }
   },
   "meeting": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Reunión"
+      "es": "Reunión"
     },
     "description": {
-      "en": "Reunión"
+      "es": "Reunión"
     },
-    "shortCode": "",
+    "shortCode": "MY",
     "titlePlural": {
-      "en": "Reuniones"
+      "es": "Reuniones"
     }
   },
   "notification": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Notificación"
+      "es": "Notificación"
     },
     "description": {
-      "en": "Notificación"
+      "es": "Notificación"
     },
-    "shortCode": "",
+    "shortCode": "NT",
     "titlePlural": {
-      "en": "Notificaciones"
+      "es": "Notificaciones"
     }
   }
 }

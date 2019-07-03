@@ -1,93 +1,93 @@
 {
   "meetingDocument": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ar": "Meeting Document"
     },
     "description": {
-      "en": ""
+      "ar": "Meeting Document"
     },
-    "shortCode": "",
+    "shortCode": "MTD",
     "titlePlural": {
-      "en": ""
+      "ar": "Meeting Document"
     }
   },
   "pressRelease": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": "بيان صحفي"
+      "ar": "بيان صحفي"
     },
     "description": {
-      "en": "بيان صحفي"
+      "ar": "بيان صحفي"
     },
-    "shortCode": "",
+    "shortCode": "PR",
     "titlePlural": {
-      "en": ""
+      "ar": "Press Releases"
     }
   },
   "news": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": "الأخبار"
+      "ar": "الأخبار"
     },
     "description": {
-      "en": "الأخبار"
+      "ar": "الأخبار"
     },
-    "shortCode": "",
+    "shortCode": "NEWS",
     "titlePlural": {
-      "en": "الأخبار"
+      "ar": "News"
     }
   },
   "new": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": "الجديد"
+      "ar": "الجديد"
     },
     "description": {
-      "en": "الجديد"
+      "ar": "الجديد"
     },
-    "shortCode": "",
+    "shortCode": "NEW",
     "titlePlural": {
-      "en": "الجديد"
+      "ar": "What's New"
     }
   },
   "statement": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ar": "Statement"
     },
     "description": {
-      "en": "البيانات"
+      "ar": "البيانات"
     },
-    "shortCode": "",
+    "shortCode": "ST",
     "titlePlural": {
-      "en": ""
+      "ar": "Statement"
     }
   },
   "meeting": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ar": "Meeting"
     },
     "description": {
-      "en": ""
+      "ar": "Meeting"
     },
-    "shortCode": "",
+    "shortCode": "MT",
     "titlePlural": {
-      "en": "الاجتماعات"
+      "ar": "الاجتماعات"
     }
   },
   "notification": {
-    "type": "أمانة الاتفاقية المتعلقة بالتنوع البيولوجي",
+    "type": "scbd",
     "title": {
-      "en": "الإخطار"
+      "ar": "الإخطار"
     },
     "description": {
-      "en": "الإخطار"
+      "ar": "الإخطار"
     },
-    "shortCode": "",
+    "shortCode": "NT",
     "titlePlural": {
-      "en": "الإخطارات"
+      "ar": "الإخطارات"
     }
   }
 }

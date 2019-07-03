@@ -1,93 +1,93 @@
 {
   "meetingDocument": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ru": "Meeting Document"
     },
     "description": {
-      "en": ""
+      "ru": "Meeting Document"
     },
-    "shortCode": "",
+    "shortCode": "MTD",
     "titlePlural": {
-      "en": ""
+      "ru": "Meeting Document"
     }
   },
   "pressRelease": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ru": "Comunicado de prensa"
     },
     "description": {
-      "en": ""
+      "ru": "Comunicado de prensa"
     },
-    "shortCode": "",
+    "shortCode": "PR",
     "titlePlural": {
-      "en": "Пресс-релизы"
+      "ru": "Пресс-релизы"
     }
   },
   "news": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Новости"
+      "ru": "Новости"
     },
     "description": {
-      "en": "Новости"
+      "ru": "Новости"
     },
-    "shortCode": "",
+    "shortCode": "NEWS",
     "titlePlural": {
-      "en": "Новости"
+      "ru": "Новости"
     }
   },
   "new": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ru": "What's New"
     },
     "description": {
-      "en": ""
+      "ru": "What's New"
     },
-    "shortCode": "",
+    "shortCode": "NEW",
     "titlePlural": {
-      "en": ""
+      "ru": "What's New"
     }
   },
   "statement": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Заявление"
+      "ru": "Заявление"
     },
     "description": {
-      "en": "Заявления"
+      "ru": "Заявления"
     },
-    "shortCode": "",
+    "shortCode": "ST",
     "titlePlural": {
-      "en": "Заявление"
+      "ru": "Заявление"
     }
   },
   "meeting": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "Совещание"
+      "ru": "Совещание"
     },
     "description": {
-      "en": "Совещание"
+      "ru": "Совещание"
     },
-    "shortCode": "",
+    "shortCode": "MT",
     "titlePlural": {
-      "en": "Совещания"
+      "ru": "Совещания"
     }
   },
   "notification": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "ru": "Notification"
     },
     "description": {
-      "en": ""
+      "ru": "Notification"
     },
-    "shortCode": "",
+    "shortCode": "NT",
     "titlePlural": {
-      "en": "Уведомления"
+      "ru": "Уведомления"
     }
   }
 }

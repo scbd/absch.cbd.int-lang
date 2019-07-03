@@ -1,93 +1,93 @@
 {
   "meetingDocument": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "zh": "Meeting Document"
     },
     "description": {
-      "en": ""
+      "zh": "Meeting Document"
     },
-    "shortCode": "",
+    "shortCode": "MTD",
     "titlePlural": {
-      "en": ""
+      "zh": "Meeting Document"
     }
   },
   "pressRelease": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "新闻简报"
+      "zh": "新闻简报"
     },
     "description": {
-      "en": "新闻简报"
+      "zh": "新闻简报"
     },
-    "shortCode": "",
+    "shortCode": "PR",
     "titlePlural": {
-      "en": "新闻稿"
+      "zh": "新闻稿"
     }
   },
   "news": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "新闻"
+      "zh": "新闻"
     },
     "description": {
-      "en": "新闻"
+      "zh": "新闻"
     },
-    "shortCode": "",
+    "shortCode": "NEWS",
     "titlePlural": {
-      "en": "新闻"
+      "zh": "新闻"
     }
   },
   "new": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "最新消息"
+      "zh": "最新消息"
     },
     "description": {
-      "en": "最新消息"
+      "zh": "最新消息"
     },
-    "shortCode": "",
+    "shortCode": "NEW",
     "titlePlural": {
-      "en": "最新消息"
+      "zh": "最新消息"
     }
   },
   "statement": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": "声明"
+      "zh": "声明"
     },
     "description": {
-      "en": "声明"
+      "zh": "声明"
     },
-    "shortCode": "",
+    "shortCode": "ST",
     "titlePlural": {
-      "en": "声明"
+      "zh": "声明"
     }
   },
   "meeting": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "zh": "Meeting"
     },
     "description": {
-      "en": ""
+      "zh": "Meeting"
     },
-    "shortCode": "",
+    "shortCode": "MT",
     "titlePlural": {
-      "en": "会议"
+      "zh": "会议"
     }
   },
   "notification": {
-    "type": "",
+    "type": "scbd",
     "title": {
-      "en": ""
+      "zh": "Notification"
     },
     "description": {
-      "en": ""
+      "zh": "Notification"
     },
-    "shortCode": "",
+    "shortCode": "NT",
     "titlePlural": {
-      "en": "通知"
+      "zh": "通知"
     }
   }
 }
