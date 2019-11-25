@@ -1,6 +1,6 @@
 ﻿<div id="editContactDiv"><span block-region activate="status=='loading'" ng-if="status=='loading'"></span><div class="registerpage-content">        
 
-            <workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+            <workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
             tab="tab" validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
             on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
             on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -201,7 +201,7 @@
 			
 											<div class="col-md-6 col-xs-12">
 												<div class="km-control-group" name="contact_websites" caption="网址">
-													<div km-inputtext-list name="contact_websites" type="url" ng-model="doc._urls" placeholder="例如：http://www.cbd.int"></div>
+													<div km-inputtext-list name="contact_websites" type="url" ng-model="doc.websites" placeholder="例如：http://www.cbd.int"></div>
 												</div>
 											</div>
 										</div>

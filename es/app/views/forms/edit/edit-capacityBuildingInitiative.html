@@ -7,7 +7,7 @@
             <div class="alert alert-success alert-dismissable" ng-show="msg">
                 <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
                 languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
 							<form name="editForm" style="margin-top:10px"><!-- <div km-tab="general"> --><div ng-show="tab=='edit'" km-tab="edit">
 											
@@ -194,7 +194,7 @@
 														<div class="km-control-group" ng-show="document.isCollaboratededByPartners" name="collaboratingPartners" caption="Por favor, seleccione el/los asociado(s) en colaboración">
 															<div class="help-info">Los asociados en colaboración son las entidades u organizaciones que realizan contribuciones económicas o de otro tipo importantes para la iniciativa o que apoyan o colaboran activamente con la ejecución de la iniciativa.</div>
 															 
-															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="8. Persona(s) de contacto"></organization-selector>
+															<organization-selector multiple ng-model="document.collaboratingPartners" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
 														</div>
 													</div>
 												</div>
@@ -277,7 +277,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="15. Fuente(s) de cofinanciación"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coreFundingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
 												</div>
 											</div>
 										</div>
@@ -289,7 +289,7 @@
 																						schema="contact"
 																						government="document.government"
 																						filter="true"
-																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="16. Presupuesto total (monto, en USD)"></organization-selector>
+																						></div> --><organization-selector multiple ng-model="document.coFinancingSources" locales="document.header.languages" caption="{{'Add an organization »'}}"></organization-selector>
 												</div>
 											</div>
 										</div>

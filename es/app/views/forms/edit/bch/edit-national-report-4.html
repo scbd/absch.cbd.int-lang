@@ -3,10 +3,11 @@
     <style> .disabled { -moz-opacity:.50;filter:alpha(opacity=50);opacity:.50; } .inverted.dimmer { background-color: rgba(255, 255, 255, .85); } .km-terms-check-add-input-int{ width:50px; } .block-position{ position: relative; } </style>
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;">
 
+        
         <div class="registerpage-content" style="padding-bottom:30px;" ng-class="{'block-position' : blockEditForm || isLoading()}">
 
             <div block-region activate="blockEditForm || isLoading()"></div>      
-            <workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+            <workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
                 tab="tab" on-step-change="onStepChange(tab)" validation-report="validationReport" on-post-close="onPostClose()" 
                 on-error="onError(error, errorCode)">
                 <edit-form>

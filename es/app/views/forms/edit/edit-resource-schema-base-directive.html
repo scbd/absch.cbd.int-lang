@@ -1,7 +1,7 @@
 ﻿<div>
 	<div class="registerpage-content">
 
-		<div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
+		<div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
 					<form name="editForm" class="editForm" style="margin-top:10px">
 
 							<div ng-show="tab=='edit'" km-tab="edit">
@@ -99,7 +99,7 @@
 										<div class="col-xs-12">
 											<div class="km-control-group" name="organizations" caption="Organización(es) a cargo de la autoría">
 												<organization-selector multiple ng-model="document.organizations" organization-only locales="document.header.languages"
-												 caption="Año de publicación">
+												 caption="Add organizations »">
 											</div>
 										</div>
 									</div>

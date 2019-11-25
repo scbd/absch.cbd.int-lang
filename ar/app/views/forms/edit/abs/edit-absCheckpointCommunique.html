@@ -4,7 +4,7 @@
 
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
             languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         <form class="editForm" name="editForm" style="margin-top:10px">
                                 <div ng-show="tab=='edit'" km-tab="edit">

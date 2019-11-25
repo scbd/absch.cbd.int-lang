@@ -65,7 +65,7 @@
                                 ng-bind-html="::spaceSubQuestion(question.number) + question.title" ></l></strong></strong>
                 </div>
                 <div ng-if="document[question.key]">
-                    <div ng-if="question.type!='text'">
+                    <div ng-if="question.type!='text' && question.type!='lstring'">
                         <km-value-ml ng-if="document[question.key].value"
                             value="displayText(document[question.key].value, question)" locales="locale"></km-value-ml>
                         <div ng-if="question.multiple" class="km-value">
@@ -78,7 +78,7 @@
                             <km-value-ml value="::document[question.key].additionalInformation" locales="locale"></km-value-ml>
                         </div>
                     </div>
-                    <div ng-if="question.type=='text'">
+                    <div ng-if="question.type=='text' || question.type=='lstring'">
                         <km-value-ml value="document[question.key]" locales="locale"></km-value-ml>
                     </div>
                 </div><!-- <div ng-if="!document[question.key] && question.type!= 'legend' && !question.questions">

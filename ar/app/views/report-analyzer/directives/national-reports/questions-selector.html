@@ -19,8 +19,8 @@
                     <option value="cbdRegions">التصنيف بمناطق اتفاقية التنوع البيولوجي</option>
                     <option value="countries">تحديد الدول</option>
                     <option value="regions">تحديد المناطق</option>
-                    <option value="protocolParties">التصنيف بحالة الانضمام لبروتوكول ناغويا</option>
-                    <option value="protocolNonParties">التصنيف بحالة عدم الانضمام لبروتوكول ناغويا</option>
+                    <option value="protocolParties">Breakdown by Parties</option>
+                    <option value="protocolNonParties">Breakdown by Protocol Non-Parties</option>
                 </select>
             </td>
         </tr>
@@ -48,7 +48,7 @@
 
         <tr ng-repeat-start="section in sections">
             <td><input type="checkbox" ng-model="section.selected" ng-change="sectionClicked(section)" indeterminate="section.selected===null"></td>
-            <th ng-click="section.expanded=!section.expanded" colspan="3">{{::section.title}}</th>
+            <th ng-click="section.expanded=!section.expanded" colspan="3" ng-bind-html="::section.title"></th>
             <th ng-click="section.expanded=!section.expanded"><i class="fa" ng-class="{ 'fa-caret-up' : section.expanded, 'fa-caret-down' : !section.expanded }"></i></th>
         </tr>
 
@@ -56,7 +56,7 @@
             <td></td>
             <td><input type="checkbox" ng-model="question.selected" ng-change="questionClicked(question)"></td>
             <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap"><span ng-switch="question.key[0]"><span ng-switch-when="S">Survey Question {{::question.number}}.</span> <span ng-switch-default>Question {{::question.number}}.</span></span></td>
-            <td ng-click="question.selected=!question.selected; questionClicked(question)">{{::question.title}}</td>
+            <td ng-click="question.selected=!question.selected; questionClicked(question)" ng-bind-html="::question.title"></td>
             <td></td>
         </tr>
 

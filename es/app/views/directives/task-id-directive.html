@@ -19,7 +19,7 @@
                         <div style="display:inline;padding:5px;" >
                             <button type="button" class="btn btn-warning bold" ng-click="showRejectDialog()" ng-disabled="isUpdating"><i class="fa fa-times-circle"></i> <span ng-if="activity.name == 'deleteRecord'" >Rechazar (no eliminar)</span> <span ng-if="activity.name != 'deleteRecord'" >Rechazar</span></button>
                         </div>
-                        <div style="display:inline;padding:5px;"  ng-show="activity.name == 'deleteRecord')">
+                        <div style="display:inline;padding:5px;"  ng-show="activity.name == 'deleteRecord'">
                                 <button type="button" class="btn btn-danger bold" ng-click="confirmDelete()" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span >Eliminar</span></button>
                         </div>
                     </div>
