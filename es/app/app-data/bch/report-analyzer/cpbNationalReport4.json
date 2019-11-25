@@ -77,7 +77,7 @@
             "section": "Article2",
             "number": "14",
             "type": "option",
-            "title": "¿Ha adoptado su País las medidas nacionales necesarias para la aplicación del Protocolo? ",
+            "title": "¿Ha adoptado su País las medidas nacionales necesarias para la aplicación del Protocolo?",
             "multiple": false,
             "options": [
                {
@@ -129,7 +129,7 @@
                },
                {
                   "value": "instrument.none",
-                  "title": "No hay instrumentos establecidos"
+                  "title": "No hay instrumentos en vigor"
                }
             ]
          },
@@ -213,7 +213,7 @@
             "section": "Article2",
             "number": "19",
             "type": "option",
-            "title": "Si su respuesta a la pregunta 18 es <i>Sí</i>, ¿cuántos miembros de personal permanente cumplen funciones directamente relacionadas con la seguridad de la biotecnología?  ",
+            "title": "Si su respuesta a la pregunta 18 es <i>Sí</i>, ¿cuántos miembros de personal permanente cumplen funciones directamente relacionadas con la seguridad de la biotecnología? ",
             "multiple": false,
             "options": [
                {
@@ -242,7 +242,7 @@
             "section": "Article2",
             "number": "",
             "type": "option",
-            "title": "¿Es suficiente este número? ",
+            "title": "¿Es suficiente este número?",
             "multiple": false,
             "options": [
                {
@@ -373,14 +373,14 @@
             "section": "Article6",
             "number": "26",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 6 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 6 en su país",
             "multiple": false
          }
       ]
    },
    {
       "key": "Articles7-10",
-      "title": "Artículos 7 a 10 - Acuerdo fundamentado previo (AFP) e introducción deliberada de OVM en el medio ambiente ",
+      "title": "Artículos 7 a 10 - Acuerdo fundamentado previo (AFP) e introducción deliberada de OVM en el medio ambiente",
       "questions": [
          {
             "key": "Q027",
@@ -538,7 +538,7 @@
                   "section": "Articles7-10",
                   "number": "a",
                   "type": "option",
-                  "title": "¿Al notificador? ",
+                  "title": "¿Al notificador?",
                   "multiple": false,
                   "options": [
                      {
@@ -660,7 +660,7 @@
             "section": "Articles7-10",
             "number": "35",
             "type": "option",
-            "title": "Si <i>en la pregunta 34<i> respondió que <i>se autorizaron OVM</i>, ¿se han importado efectivamente todos esos OVM a su país?",
+            "title": "Si en <i>la pregunta 34</i> respondió que <i>se autorizaron OVM</i>, ¿se han importado efectivamente todos esos OVM a su país?",
             "multiple": false,
             "options": [
                {
@@ -1135,7 +1135,7 @@
             "section": "Article12",
             "number": "52",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 12 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 12 en su país",
             "multiple": false
          }
       ]
@@ -1232,7 +1232,7 @@
             "section": "Article13",
             "number": "56",
             "type": "option",
-            "title": "Si su respuesta a la pregunta 54 es <i>Sí</i>¿ha informado su país a las Partes a través del CIISB sobre los casos en los que se aplicó el procedimiento simplificado?",
+            "title": "Si su respuesta a la pregunta 54 es <i>Sí</i> ¿ha informado su país a las Partes a través del CIISB sobre los casos en los que se aplicó el procedimiento simplificado?",
             "multiple": false,
             "options": [
                {
@@ -1255,7 +1255,7 @@
             "section": "Article13",
             "number": "57",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 13 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 13 en su país",
             "multiple": false
          }
       ]
@@ -1456,7 +1456,7 @@
                   "section": "Article15_16",
                   "number": "a",
                   "type": "option",
-                  "title": "Evaluación del riesgo:",
+                  "title": "Evaluación del riesgo",
                   "multiple": false,
                   "options": [
                      {
@@ -1516,7 +1516,7 @@
                   "section": "Article15_16",
                   "number": "b",
                   "type": "option",
-                  "title": "Gestión de riesgos",
+                  "title": "Gestión del riesgo",
                   "multiple": false,
                   "options": [
                      {
@@ -1576,7 +1576,7 @@
                   "section": "Article15_16",
                   "number": "c",
                   "type": "option",
-                  "title": "Vigilancia:",
+                  "title": "Vigilancia",
                   "multiple": false,
                   "options": [
                      {
@@ -1757,7 +1757,7 @@
                {
                   "key": "Q070_b",
                   "section": "Article15_16",
-                  "number": "b.",
+                  "number": "b",
                   "type": "option",
                   "title": "Identificar",
                   "multiple": false,
@@ -1856,7 +1856,7 @@
                   "section": "Article15_16",
                   "number": "b",
                   "type": "option",
-                  "title": "Gestión de riesgos",
+                  "title": "Gestión del riesgo",
                   "multiple": false,
                   "options": [
                      {
@@ -1922,7 +1922,7 @@
             "section": "Article15_16",
             "number": "74",
             "type": "option",
-            "title": "¿Ha cooperado su país con otras Partes con miras a identificar OVM o rasgos específicos que pudieran tener efectos adversos para la conservación y la utilización sostenible de la diversidad biológica? ",
+            "title": "¿Ha cooperado su país con otras Partes con miras a identificar OVM o rasgos específicos que pudieran tener efectos adversos para la conservación y la utilización sostenible de la diversidad biológica?",
             "multiple": false,
             "options": [
                {
@@ -2003,7 +2003,7 @@
                },
                {
                   "value": "100+",
-                  "title": "Más de 100"
+                  "title": "100 o más"
                }
             ]
          },
@@ -2012,7 +2012,7 @@
             "section": "Article15_16",
             "number": "77",
             "type": "term",
-            "title": "Si su respuesta a la pregunta 75 es <i>Sí</i>, indique el alcance de las evaluaciones del riesgo (seleccione todas las respuestas que correspondan):",
+            "title": "Si su respuesta a la pregunta 75 es <i>Sí</i>, indique el alcance de las evaluaciones del riesgo (seleccione todas las respuestas que correspondan)",
             "multiple": true,
             "options": [
                {
@@ -2925,7 +2925,7 @@
             "section": "Article19",
             "number": "111",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 19 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 19 en su país",
             "multiple": false
          }
       ]
@@ -3439,7 +3439,7 @@
             "section": "Article20",
             "number": "115",
             "type": "option",
-            "title": "¿Ha establecido su país un mecanismo de coordinación entre el punto focal nacional para el CIISB, el punto focal del Protocolo de Cartagena y la o las autoridades nacionales competentes para poner la información a disposición del CIISB? (Seleccione todas las opciones que correspondan.)",
+            "title": "¿Ha establecido su país un mecanismo de coordinación entre el punto focal nacional para el CIISB, el punto focal del Protocolo de Cartagena y la o las autoridades nacionales competentes para poner la información a disposición del CIISB?",
             "multiple": false,
             "options": [
                {
@@ -3448,7 +3448,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "Sí, en cierta medida:",
+                  "title": "Sí, en cierta medida",
                   "type": "lstring"
                },
                {
@@ -3514,7 +3514,7 @@
             "options": [
                {
                   "value": "0",
-                  "title": "Ninguno"
+                  "title": "Ninguna"
                },
                {
                   "value": "1+",
@@ -3632,7 +3632,7 @@
             "section": "Article21",
             "number": "123",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 21 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 21 en su país",
             "multiple": false
          }
       ]
@@ -3705,7 +3705,7 @@
             "section": "Article22",
             "number": "126",
             "type": "option",
-            "title": "Si su respuesta a la pregunta 125 es <i>Sí</i>, ¿cómo accedió a esos recursos? (Seleccione todas las opciones que correspondan.)",
+            "title": "Si su respuesta a la pregunta 125 es <i>Sí</i>, ¿cómo se proporcionaron esos recursos? (Seleccione todas las opciones que correspondan.)",
             "multiple": true,
             "options": [
                {
@@ -3881,7 +3881,7 @@
             "section": "Article22",
             "number": "132",
             "type": "term",
-            "title": "Si su respuesta a la pregunta 131 es <i>Sí</i>, ¿en cuáles de las siguientes áreas se emprendieron estas actividades? (Seleccione todas las respuestas que correspondan.) (Seleccione todas las opciones que correspondan.) ",
+            "title": "Si su respuesta a la pregunta 131 es <i>Sí</i>, ¿en cuáles de las siguientes áreas se emprendieron estas actividades? (Seleccione todas las respuestas que correspondan.)",
             "multiple": true,
             "options": [
                {
@@ -3910,7 +3910,7 @@
                },
                {
                   "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
-                  "title": "Colaboración científica, técnica e institucional a nivel subregional, regional e internacional"
+                  "title": "Colaboración científica, técnica e institucional a nivel sub-regional, regional e internacional"
                },
                {
                   "value": "6F6C058C-6741-4878-A448-AE56299821A8",
@@ -3938,7 +3938,7 @@
                },
                {
                   "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
-                  "title": "Investigación científica en seguridad de la biotecnología relacionada con los OVMs"
+                  "title": "Investigación científica en seguridad de la biotecnología relativa a OVM"
                },
                {
                   "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
@@ -4529,7 +4529,7 @@
             "section": "Article23",
             "number": "152",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 23 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 23 en su país",
             "multiple": false
          }
       ]
@@ -4637,7 +4637,7 @@
             "section": "Article24",
             "number": "157",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 24 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 24 en su país",
             "multiple": false
          }
       ]
@@ -4735,7 +4735,7 @@
             "section": "Article25",
             "number": "161",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 25 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 25 en su país",
             "multiple": false
          }
       ]
@@ -4800,7 +4800,7 @@
             "options": [
                {
                   "value": "0",
-                  "title": "Ninguno"
+                  "title": "Ninguna"
                },
                {
                   "value": "1+",
@@ -4873,7 +4873,7 @@
             "section": "Article26",
             "number": "166",
             "type": "lstring",
-            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 26 en su país:",
+            "title": "En este espacio puede proporcionar más detalles sobre la aplicación del artículo 26 en su país",
             "multiple": false
          }
       ]

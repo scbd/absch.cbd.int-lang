@@ -82,11 +82,11 @@
             "options": [
                {
                   "value": "implementation.fullInPlace",
-                  "title": "国家措施已完全启动"
+                  "title": "全面采取了国家措施"
                },
                {
                   "value": "implementation.partiallyInPlace",
-                  "title": "国家措施已部分启动"
+                  "title": "部分采取了国家措施"
                },
                {
                   "value": "implementation.temporaryMeasures",
@@ -98,7 +98,7 @@
                },
                {
                   "value": "implementation.none",
-                  "title": "尚未采取措施"
+                  "title": "未采取任何措施"
                }
             ],
             "mandatory": true
@@ -129,7 +129,7 @@
                },
                {
                   "value": "instrument.none",
-                  "title": "未制定任何文书"
+                  "title": "未出台任何文书"
                }
             ]
          },
@@ -171,7 +171,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -226,7 +226,7 @@
                },
                {
                   "value": "10+",
-                  "title": "至少10人"
+                  "title": "10人或以上"
                }
             ],
             "validations": [
@@ -283,7 +283,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -321,7 +321,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -373,7 +373,7 @@
             "section": "Article6",
             "number": "26",
             "type": "lstring",
-            "title": "您可以在此提供贵国执行第6条的更多细节:",
+            "title": "您可以在此提供贵国执行第6条的更多细节",
             "multiple": false
          }
       ]
@@ -396,7 +396,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -420,7 +420,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -660,7 +660,7 @@
             "section": "Articles7-10",
             "number": "35",
             "type": "option",
-            "title": "若您对 <i>第34个问题<i> 的回答为 <i>已经核准了改性活生物体</i>，那么，已经核准的改性活生物体是否都已经实际进口至贵国？",
+            "title": "若您对 <i>第34个问题</i> 的回答为<i>已经核准了改性活生物体</i>，那么，已经核准的改性活生物体是否都已经实际进口至贵国？",
             "multiple": false,
             "options": [
                {
@@ -786,7 +786,7 @@
             "section": "Article11",
             "number": "40",
             "type": "option",
-            "title": "贵国是否就申请者所提供关于可能予以越境转移的拟直接作食物或饲料或加工之用的改性活生物体的国内用途（包括投放市场）之资料的准确性规定了法律要求？ ",
+            "title": "贵国是否就申请者所提供关于可能予以越境转移的拟直接作食物或饲料或加工之用的改性活生物体的国内用途（包括投放市场）之资料的准确性规定了法律要求？",
             "multiple": false,
             "options": [
                {
@@ -795,7 +795,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -906,7 +906,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某种程度上",
+                  "title": "是，某种程度上",
                   "type": "lstring"
                },
                {
@@ -1222,7 +1222,7 @@
                },
                {
                   "value": "5+",
-                  "title": "5种或以上"
+                  "title": "5 种或 5 种以上"
                }
             ],
             "mandatory": true
@@ -1456,7 +1456,7 @@
                   "section": "Article15_16",
                   "number": "a",
                   "type": "option",
-                  "title": "风险评估：",
+                  "title": "风险评估",
                   "multiple": false,
                   "options": [
                      {
@@ -1498,7 +1498,7 @@
                   "section": "Article15_16",
                   "number": "",
                   "type": "option",
-                  "title": "人数是否充足",
+                  "title": "数量是否充足",
                   "multiple": false,
                   "options": [
                      {
@@ -1558,7 +1558,7 @@
                   "section": "Article2",
                   "number": "",
                   "type": "option",
-                  "title": "人数是否充足",
+                  "title": "数量是否充足",
                   "multiple": false,
                   "options": [
                      {
@@ -1576,7 +1576,7 @@
                   "section": "Article15_16",
                   "number": "c",
                   "type": "option",
-                  "title": "监测：",
+                  "title": "监测",
                   "multiple": false,
                   "options": [
                      {
@@ -1618,7 +1618,7 @@
                   "section": "Article2",
                   "number": "",
                   "type": "option",
-                  "title": "人数是否充足",
+                  "title": "数量是否充足",
                   "multiple": false,
                   "options": [
                      {
@@ -2257,7 +2257,7 @@
             "options": [
                {
                   "value": "true",
-                  "title": "是，每次"
+                  "title": "是，经常"
                },
                {
                   "value": "true.some",
@@ -2734,7 +2734,7 @@
             "section": "Article18",
             "number": "",
             "type": "option",
-            "title": "人数是否充足",
+            "title": "数量是否充足",
             "multiple": false,
             "options": [
                {
@@ -3439,7 +3439,7 @@
             "section": "Article20",
             "number": "115",
             "type": "option",
-            "title": "贵国是否已建立相关机制以协调生物安全信息交换所国家联络点、《卡塔赫纳生物安全议定书》联络点以及国家主管部门以便向生物安全信息交换所提供信息？（请选择所有适用项）",
+            "title": "贵国是否已建立相关机制以协调生物安全信息交换所国家联络点、《卡塔赫纳生物安全议定书》联络点以及国家主管部门以便向生物安全信息交换所提供信息？",
             "multiple": false,
             "options": [
                {
@@ -3472,7 +3472,7 @@
                },
                {
                   "value": "true.some",
-                  "title": "是，在某些情况下"
+                  "title": "是，有时"
                },
                {
                   "value": "false",
@@ -3705,7 +3705,7 @@
             "section": "Article22",
             "number": "126",
             "type": "option",
-            "title": "若您对第125个问题的回答为 <i>是</i> ，那么，贵国是如何得到这些资源的？（请选择所有适用项）",
+            "title": "若您对第125个问题的回答为 <i>是</i> ，那么，贵国是如何提供这些资源的？（请选择所有适用项）",
             "multiple": true,
             "options": [
                {
@@ -3881,7 +3881,7 @@
             "section": "Article22",
             "number": "132",
             "type": "term",
-            "title": "若您对第131个问题的回答为 <i>是</i> ，那么，在下列哪些领域开展了此类行动？（请选择所有适用项） ",
+            "title": "若您对第131个问题的回答为 <i>是</i> ，那么，在下列哪些领域开展了此类行动（请选择所有适用项）？",
             "multiple": true,
             "options": [
                {
@@ -3910,7 +3910,7 @@
                },
                {
                   "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
-                  "title": "在次区域、区域和国际层面进行的科学、技术和机构合作"
+                  "title": "在次区域、区域和国际层次上的科学、技术和机构合作"
                },
                {
                   "value": "6F6C058C-6741-4878-A448-AE56299821A8",
@@ -4030,7 +4030,7 @@
                },
                {
                   "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
-                  "title": "生物安全方面的公众意识、参与和教育"
+                  "title": "生物安全方面的公众认识、参与和教育"
                },
                {
                   "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
@@ -4304,7 +4304,7 @@
             "section": "Article23",
             "number": "",
             "type": "option",
-            "title": "数量是否充足",
+            "title": "人数是否充足",
             "multiple": false,
             "options": [
                {
@@ -4331,23 +4331,23 @@
                },
                {
                   "value": "1+",
-                  "title": "1 至 4"
+                  "title": "1 至 4个"
                },
                {
                   "value": "5+",
-                  "title": "5 至 9"
+                  "title": "5 至 9个"
                },
                {
                   "value": "10+",
-                  "title": "10 至 24"
+                  "title": "10 至 24个"
                },
                {
                   "value": "25+",
-                  "title": "25 至 99"
+                  "title": "25 至 99个"
                },
                {
                   "value": "100+",
-                  "title": "100 或以上"
+                  "title": "100个或以上"
                }
             ],
             "validations": [
@@ -4496,7 +4496,7 @@
                },
                {
                   "value": "5+",
-                  "title": "5次或以上"
+                  "title": "5 次或 5 次以上"
                },
                {
                   "value": "na",
@@ -4685,11 +4685,11 @@
                },
                {
                   "value": "1+",
-                  "title": "1 至 4"
+                  "title": "1 至 4次"
                },
                {
                   "value": "5+",
-                  "title": "5 至 9"
+                  "title": "5 至 9次"
                },
                {
                   "value": "10+",
@@ -4804,15 +4804,15 @@
                },
                {
                   "value": "1+",
-                  "title": "1 至 4"
+                  "title": "1 至 4份"
                },
                {
                   "value": "5+",
-                  "title": "5 至 9"
+                  "title": "5 至 9份"
                },
                {
                   "value": "10+",
-                  "title": "10 至 49"
+                  "title": "10 至 49份"
                },
                {
                   "value": "50+",
