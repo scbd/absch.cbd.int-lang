@@ -7,7 +7,7 @@
             <div class="alert alert-success alert-dismissable" ng-show="msg">
                 <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
                 languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         
                 <form name="editForm" style="margin-top:10px">
@@ -18,7 +18,7 @@
 	
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+									<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -130,7 +130,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="source" caption="来源">
-										<div class="help-info">对产生当前资源之资源的引述（如期刊文章）。就原始文档而言，您可能想说明这是&ldquo;原始文档&rdquo;。</div>
+										<div class="help-info">对产生当前资源之资源的引述（如期刊文章）。就原始文档而言，您可能想说明这是“原始文档”。</div>
 										<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -204,7 +204,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="notes">
-										<legend>备注</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
+										<legend>备注</legend><span class="help-info">The field “Notes” is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 									</div>
 								</div>
 							</div>

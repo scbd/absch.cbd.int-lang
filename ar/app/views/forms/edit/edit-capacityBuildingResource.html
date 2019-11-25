@@ -7,7 +7,7 @@
             <div class="alert alert-success alert-dismissable" ng-show="msg">
                 <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
                 languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         
                 <form name="editForm" style="margin-top:10px">
@@ -18,7 +18,7 @@
 	
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+									<div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -35,7 +35,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="resourceTypes" caption="نوع المورد">
+									<div class="km-control-group" required name="resourceTypes" caption="نوع الوثيقة المرجعية">
 										<div km-select multiple name="resourceTypes" required ng-model="document.resourceTypes" items="options.resourceTypes()"></div>
 									</div>
 								</div>
@@ -52,7 +52,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="formatDetails" caption="تفاصيل الصيغة">
+									<div class="km-control-group" name="formatDetails" caption="تفاصيل نموذج الاستطلاع">
 										<div km-textbox-ml rows="2" name="formatDetails" ng-model="document.formatDetails" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -60,7 +60,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="purpose" caption="يرجى تحديد الغرض الرئيسي للمورد">
+									<div class="km-control-group" name="purpose" caption="يُرجى تحديد الغرض الرئيسي للوثيقة المرجعية">
 										<div km-select multiple  name="purpose" ng-model="document.purpose" items="options.purposes()"></div>
 									</div>
 								</div>
@@ -68,7 +68,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="targetGroups" caption="المجموعة (المجموعات)/المستفيد (المستفيدين)">
+									<div class="km-control-group" required name="targetGroups" caption="Target group(s)/beneficiary(ies)">
 										<div km-term-check name="targetGroups" required ng-model="document.targetGroups" terms="options.targetGroups()" binding-type="term[]"></div>
 									</div>
 								</div>
@@ -76,7 +76,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="expertiseLevel" caption="مستوى المحتوى أو مستوى المعرفة/الخبرة للجمهور الذي يستهدفه المورد">
+									<div class="km-control-group" name="expertiseLevel" caption="مستوى المحتوى أو مستوى معرفة/خبرة الجمهور الذي يستهدفه الوثيقة المرجعية">
 										<div km-select name="expertiseLevel" ng-model="document.expertiseLevel" items="options.expertiseLevels()"></div>
 									</div>
 								</div>
@@ -85,7 +85,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" required name="authors" caption="المؤلف (المؤلفون):">
-										<div class="help-info">اسم الشخص الذي كتب المطبوعة أو مصدر المعلومات.</div>
+										<div class="help-info">اسم الشخص الذي كتب المطبوعة أو وثيقة المعلومات.</div>
 										<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -93,7 +93,7 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="organizations" caption="المرجع للمنظمة/المنظمات المؤلفة">
+									<div class="km-control-group" name="organizations" caption="إشارة مرجعية للمنظمة/المنظمات المؤلفة">
 										
 										<div document-selector ng-model="document.organizations"
 																			question="organizations"
@@ -121,7 +121,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="rights" caption="الحقوق">
-										<div class="help-info">المعلومات عن الحقوق الخاصة بالمورد مثل صاحب حقوق النشر وإمكانية إعادة النشر للأغراض التعليمية أو غير الربحية.</div>
+										<div class="help-info">المعلومات عن الحقوق الخاصة بالمرجع/المصدر مثل صاحب حقوق النشر وإمكانية إعادة النشر للأغراض التعليمية أو غير الربحية.</div>
 										<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -130,18 +130,18 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="source" caption="المصدر">
-										<div class="help-info">إشارة للمصدر الذي تم اقتباس المصدر الحالي منه (على سبيل المثال مقال من دورية). بالنسبة للوثائق الأصلية التي قد ترغب في تحديدها &quot;كوثائق أصلية&quot;.</div>
+										<div class="help-info">إشارة مرجعية للمصدر الذي أعدت منه الوثيقة الحالية (على سبيل المثال مقال من دورية). بالنسبة للوثائق الأصلية التي قد ترغب في تحديدها باعتبارها "وثائق أصلية".</div>
 										<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 									</div>
 								</div>
 							</div>
 	
-							<legend>الوصول للمصدر</legend>
+							<legend>الوصول للوثيقة المرجعية</legend>
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="resourceLinks" caption="رابط للمصدر (المصادر)">
-										<div class="help-info">يرجى دائما إرفاق المستند (المستندات) ذات الصلة التي سيتم تخزينها في قاعدة البيانات حتى يتمكن المستخدمون من تنزيلها. إذا كانت المصادر متاحة على الإنترنت، يرجى أيضًا وضع رابط لها.</div>
+									<div class="km-control-group" required name="resourceLinks" caption="رابط للوثيقة (الوثائق) المرجعية">
+										<div class="help-info">يُرجى دومًا إرفاق المستند (المستندات) ذات الصلة التي سيتم تخزينها في قاعدة البيانات حتى يتمكن المستخدمون من تنزيلها. عندما تصبح الوثائق المرجعية متاحة على الإنترنت، يُرجى أيضًا إضافة الروابط الخاصة بها.</div>
 										<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 									</div>
 								</div>
@@ -156,7 +156,7 @@
 								</div>
 							</div>
 	
-							<legend>معلومات عن محتوى المورد</legend>
+							<legend>معلومات عن محتوى الوثائق المرجعية</legend>
 	
 							<div class="row">
 								<div class="col-md-12">
@@ -168,8 +168,8 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" required name="regions" caption="البلد(البلاد)، المجموعة (المجموعات) الإقليمية أو الاقتصادية">
-										<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="حدد البلد/البلاد والمنطقة/المناطق أو الاثنين معًا."></div>
+									<div class="km-control-group" required name="regions" caption="البلد (البلدان) أو المجموعة (المجموعات) الإقليمية أو الاقتصادية المرتبطة بالوثيقة المرجعية">
+										<div km-select style="display: inline-block" name="regions" ng-model="document.regions" items="options.regions()" multiple placeholder="حدد البلد/البلاد والمنطقة/المناطق أو الاثنين معًا.."></div>
 									</div>
 								</div>
 							</div>
@@ -186,8 +186,8 @@
 	
 							<div class="row">
 								<div class="col-md-12">
-									<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-										<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+									<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+										<div class="help-info">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 										<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -204,7 +204,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="notes">
-										<legend>ملاحظات</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
+										<legend>ملاحظات</legend><span class="help-info">الحقل "ملاحظات" للاستخدام الشخصي ويظهر فقط أثناء تحرير السجل.</span><div km-notes name="notes" ng-model="document.notes"></div>
 									</div>
 								</div>
 							</div>

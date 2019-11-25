@@ -1,40 +1,34 @@
 ﻿<div class="row" style="margin-bottom:15px;"  ng-hide="hideEverything">
     <div class="col-xs-12">
-        <style>
-            .active {
-                position: absolute!important;
-                top: 0!important;
-                left: 0!important;
-                padding: 0;
-                margin: 0;
-            }
-        </style><span block-region activate="isUpdating"></span><div class="alert alert-danger" style="border-color:#DDD; background-color: #f5f5f5;" role="alert">
-            <h3 class="color-black;" style="margin-top:0;border-bottom:1px solid #999;"><span ng-if="workflow.type.name != 'delete-record'">Publishing </span> <span ng-if="workflow.type.name == 'delete-record'">Deletion </span> Request</h3>
-            <div><span style="font-size:12px">Запрашивающее лицо: </span> <span class="color-black"><a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">{{workflow.createdBy_info.firstName + &apos; &apos; + workflow.createdBy_info.lastName}}</a><span> on </span> <span  style="text-transform: uppercase;"> {{workflow.createdOn | formatDateWithTime}} </span><span ng-if="document.amendmentIntent == 1" class="bold color-red"> has requested to revoke this record.</span></span></div>
-            <div><span style="font-size:12px">Сообщение: </span> <span class="color-black">{{workflow.data.additionalInfo}}</span></div>
+        <style> .active { position: absolute!important; top: 0!important; left: 0!important; padding: 0; margin: 0; } </style><span block-region activate="isUpdating"></span><div class="alert alert-danger" style="border-color:#DDD; background-color: #f5f5f5;" role="alert">
+            <h3 class="color-black;" style="margin-top:0;border-bottom:1px solid #999;"><span ng-if="workflow.type.name != 'delete-record'">Опубликование</span> <span ng-if="workflow.type.name == 'delete-record'">Удаление</span> Запрос</h3>
+            <div><span style="font-size:12px">Автор запроса:</span> <span class="color-black"><span class="bold">{{workflow.createdBy_info.firstName + ' ' + workflow.createdBy_info.lastName}}</span> <a translation-url  ng-href="mailTo:{{workflow.createdBy_info.email}}" class="color-blue">({{workflow.createdBy_info.email}})</a> <span>on</span> <span  style="text-transform: uppercase; font-size:12px" class="bold">{{workflow.createdOn | formatDateWithTime}}</span> <span ng-if="document.amendmentIntent == 1" class="bold color-red">has requested to revoke this record.</span></span></div>
+            <div><span style="font-size:12px">Сообщение:</span> <span class="color-black">{{workflow.data.additionalInfo}}</span></div>
 
-            <div><span style="font-size:12px"> This request expire in: </span> <span>{{workflow.daysToApproval}} days</span></div> 
-                
+            <div><span style="font-size:12px">Количество дней до истечения срок действия запроса:</span> <span>{{workflow.daysToApproval}}</span></div> 
+
             <div ng-repeat="activity in workflow.activities|filter:isOpen|orderBy:'createdOn'" style="padding-top:20px;">
-                    <div  id="buttonsDiv" ng-show="isAssignedToMe(activity)">
 
-                        <div  style="display:inline;padding:5px;" ng-show="isAssignedToMe(activity) && activity.name != 'deleteRecord'">
-                            <button type="button" class="btn btn-success bold" ng-click="updateActivity({ action : 'approve' })" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span >Approve</span></button>
+                    <div  id="buttonsDiv" ng-show="isAssignedToMe(activity) || isAdmin()">
+                        <div  style="display:inline;padding:5px;" ng-show="activity.name != 'deleteRecord' ">
+                            <button type="button" class="btn btn-success bold" ng-click="updateActivity({ action : 'approve' })" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span >Утвердить</span></button>
                         </div>
                         <div  style="display:inline;padding:5px;"  ng-show="activity.name != 'deleteRecord' && document.amendmentIntent != 1">
                             <button type="button" class="btn btn-info bold  color-white" ng-click="edit(workflow, activity, workflow._id)" ng-disabled="isUpdating"><i class="fa fa-pencil-square-o"></i> <span >Редактировать</span></button>
                         </div>
                         <div style="display:inline;padding:5px;" >
-                            <button type="button" class="btn btn-warning bold" ng-click="showRejectDialog()" ng-disabled="isUpdating"><i class="fa fa-times-circle"></i> <span ng-if="activity.name == 'deleteRecord'"  >Reject (do not delete)</span> <span ng-if="activity.name != 'deleteRecord'" >Reject</span></button>
+                            <button type="button" class="btn btn-warning bold" ng-click="showRejectDialog()" ng-disabled="isUpdating"><i class="fa fa-times-circle"></i> <span ng-if="activity.name == 'deleteRecord'" >Отклонить (не удалять)</span> <span ng-if="activity.name != 'deleteRecord'" >Отклонить</span></button>
                         </div>
-                        <div style="display:inline;padding:5px;"  ng-show="isAssignedToMe(activity) && activity.name == 'deleteRecord'">
+                        <div style="display:inline;padding:5px;"  ng-show="activity.name == 'deleteRecord'">
                                 <button type="button" class="btn btn-danger bold" ng-click="confirmDelete()" ng-disabled="isUpdating"><i class="fa fa-check-circle"></i> <span >Удалить</span></button>
                         </div>
                     </div>
+
                     <div ng-show="workFlowIsCreatedByMe()">
-                        <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span> Отменить запрос</span></button>
+                        <button type="button" class="btn btn-warning bold" ng-click="askCancelWorkflowRequest()" ng-disabled="isUpdating"><i class="fa fa-rotate-left"></i> <span>Отменить запрос</span></button>
                     </div>
-                </div>
+            </div>
+
         </div>
 
     </div>
@@ -80,7 +74,7 @@
             <h3 class="modal-title">Удалить подтверждение</h3>
         </div>
         <div class="modal-body bg-white">
-           <h2 class="color-red"> Вы действительно хотите удалить данную запись?</h2>{{document}}</div>
+           <h2 class="color-red">Вы действительно хотите удалить данную запись?</h2>{{document}}</div>
         <div class="modal-footer">
             <button type="button" class="btn btn-danger bold pull-left" ng-click="updateActivity()" ng-disabled="isUpdating"><span class="hidden-xs">Удалить запись</span></button>
             <button type="button" class="btn btn-default" ng-click="closeConfirmation()" ng-disabled="isUpdating"><span class="hidden-xs">Закрыть</span></button>

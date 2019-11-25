@@ -4,7 +4,7 @@
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 	
-				<workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
+				<workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
 				 validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
 				 on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
 				 on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -18,7 +18,7 @@
 									<legend>一般信息</legend>
 									<div class="row">
 										<div class="col-xs-12" >
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -69,7 +69,7 @@
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="jurisdictions" caption="辖区">
-													<div class="help-info">如果辖区不同于国家名称，则请提供适用法律、法规、准则或协议所属的辖区。示例：国家：Denmark, Jurisdiction:&ldquo;法罗群岛和格陵兰属于例外领土&rdquo;。</div>
+													<div class="help-info">如果辖区不同于国家名称，则请提供适用法律、法规、准则或协议所属的辖区。示例：国家：丹麦，辖区：“法罗群岛和格陵兰属于例外领土”。</div>
 													<div km-select multiple name="jurisdictions" ng-model="document.jurisdictions" items="options.countries()"></div>
 												</div>
 											</div>
@@ -108,8 +108,8 @@
 	
 								<section>
 									<div class="well no-shadow bg-white">
-									<label for="decisionTypes" style="width:0px;height:0px;display:inline"><span style="display:none">Subject of the decision / notification / communication</span></label>
-									<legend>Subject of the decision / notification / communication</legend>								
+									<label for="decisionTypes" style="width:0px;height:0px;display:inline"><span style="display:none">决定/通知/通信的主题</span></label>
+									<legend>决定/通知/通信的主题</legend>								
 									<div class="row">
 										<div class="col-xs-12">
 											<div block-region activate="decisions.otherDecisions.identifier" skip-loading-icon="true" >
@@ -133,7 +133,7 @@
 	
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>LMOs for intentional introduction into the environment</legend>
+										<legend>有意引入到环境中的改性活生物体</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="addressesTransboundaryMovement" required caption="Was the decision triggered by a request for a transboundary movement of LMOs into your country?">
@@ -214,7 +214,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForDirectUse">
 									<div class="well no-shadow bg-white">
-										<legend>LMOs for direct use as food or feed, or for processing (LMOs-FFPs)</legend>
+										<legend>直接用作食品或饲料，或用于加工目的之改性活生物体（LMO-FFP）</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="decisionLMOFFPSubject" required caption="Subject of the decision">
@@ -235,7 +235,7 @@
 										</div>
 										<div class="row" ng-if="isLmoDecisionForIntentionalIntroduction">
 											<div class="col-xs-12">
-												<div class="alert alert-danger"><strong>Note:</strong> The first two categories in the field Subject of the decision / communication at the top of this page have been selected indicating that this record refers to a decision addressing LMOs for both Intentional introduction into the environment (Articles 7-10) AND LMOs-FFPs (Article 11).Accordingly, the fields below, Type of decision and contact details of the importer/exporter or applicant, are therefore not active because the information has already been provided.Should this not be the case, please create two different records, one for intentional introduction into the environment and one for the LMOs-FFPs.</div>
+												<div class="alert alert-danger"><strong>Note:</strong> 在本页顶部“决定/通信主题”字段中选择前两个类别，表明此记录涉及关于有意引入到环境中的改性活生物体（第7条至第10条）和直接用作食品或饲料、或用于加工目的之改性活生物体（第11条）的决定。因此，由于相关信息已提供，因此下面字段，即“决定类型”与“进口商/出口商或申请人联系方式”不活动。如果情况并非如此，则请创建两个不同的记录，一个用于有意引入到环境中的改性活生物体，另一个用于直接用作食品或饲料，或用于加工目的之改性活生物体。</div>
 											</div>
 										</div>
 										<div class="row">
@@ -289,7 +289,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>LMO &amp; risk assessment</legend>
+										<legend>改性活生物体和风险评估</legend>
 										<div class="row">
 											<div class="col-xs-12">
 												<div class="km-control-group" name="modifiedOrganisms" required caption="改性活生物体识别">											
@@ -310,7 +310,7 @@
 								</section>
 								<section ng-if="isLmoDecisionForIntentionalIntroduction">
 									<div class="well no-shadow bg-white">
-										<legend>Decision and/or other relevant document(s)</legend>
+										<legend>决定和/或其他相关文档</legend>
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="km-control-group" name="documents" required caption="Document (attached file)">
@@ -362,7 +362,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="notes">
-												<div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+												<div class="help-block">“备注”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
 												<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 											</div>
 										</div>

@@ -5,7 +5,7 @@
 
     <div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content" >
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
             languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         <form name="editForm" style="margin-top:10px" class="editForm" >
                                 <div class="editForm" ng-show="tab=='edit'" km-tab="edit">
@@ -15,7 +15,7 @@
               
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -45,7 +45,7 @@
                                     <section>
               
                                     <legend name="responsibilities–title">职责</legend>
-                                    <div class="help-info">第 17 条第 1 (a) (一) 项规定，指定的检查点将收集或酌情接收关于事先知情同意、遗传资源的来源、共同商定条件的订立和/或酌情包括遗传资源的利用情况信息；第（四）项规定，检查点必须有效，并应具有与执行本项 (a)目相关的职能。检查点应同遗传资源的利用或同在研究、开发、创新、商业化前和商业化等的任何阶段收集有关信息相关联。 </div>
+                                    <div class="help-info">第 17 条第 1 (a) (一) 项规定，指定的检查点将收集或酌情接收关于事先知情同意、遗传资源的来源、共同商定条件的订立和/或酌情包括遗传资源的利用情况信息；第（四）项规定，检查点必须有效，并应具有与执行本项 (a)目相关的职能。检查点应同遗传资源的利用或同在研究、开发、创新、商业化前和商业化等的任何阶段收集有关信息相关联。</div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" required name="responsibilities" caption="职责简述">
@@ -89,7 +89,7 @@
                                     <section>
               
                                     <legend name="nationalAuthorities">接收指定检查站收集或收到之信息的国家主管部门</legend>
-                                    <div class="help-info">根据《名古屋议定书》第 17 条第 1 款第 (a)（一）项和（三）项，检查点收集或接收的有关事先知情同意、遗传资源来源、设立共同商定条件和/或遗传资源利用的信息，包括来自国际公认合规证书（如有）的信息，需要视情向国家主管部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供。On the basis of the information provided, the ABS Clearing-House will issue a communiqu&eacute; and automatically send a courtesy copy to the designated national authority/ies of your country. <br><br> 因此，以下部分中与国家主管机构相关的联系人将是接收指定检查站收集或收到的信息的机构（并通过检查站公报向获取和惠益分享信息交换所通报）。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。请说明您希望向贵国的哪个国家主管机构或联系人发送指定检查站收集或收到的信息。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。</div>
+                                    <div class="help-info">根据《名古屋议定书》第 17 条第 1 款第 (a)（一）项和（三）项，检查点收集或接收的有关事先知情同意、遗传资源来源、设立共同商定条件和/或遗传资源利用的信息，包括来自国际公认合规证书（如有）的信息，需要视情向国家主管部门、提供事先知情同意的缔约方以及获取和惠益分享信息交换所提供。根据所提供的信息，获取和惠益分享信息交换所会发布公报，并自动向贵国指定的国家主管部门发送免费副本。 <br><br> 因此，以下部分中与国家主管机构相关的联系人将是接收指定检查站收集或收到的信息的机构（并通过检查站公报向获取和惠益分享信息交换所通报）。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。请说明您希望向贵国的哪个国家主管机构或联系人发送指定检查站收集或收到的信息。如有多个主管机构，请包括多个记录编号或联系方式表。请注意，提供事先知情同意的缔约方将自动收到检查站收集或收到的信息。</div>
                                     
                                     
                                     
@@ -151,7 +151,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="notes">
-                                                            <div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                            <div class="help-info">“备注”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                                 <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                             </div>
                                         </div>

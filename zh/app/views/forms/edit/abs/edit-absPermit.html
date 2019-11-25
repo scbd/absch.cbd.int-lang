@@ -1,31 +1,10 @@
 ﻿<div ng-controller="editAbsPermit">
 
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
-    <style>
-        .dimmer-parent{
-            position: relative;
-        }
-        .blockRegion {
-            position: initial;
-            /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
-            margin: 1rem 0;
-            padding: 1em;
-            border-radius: .28571429rem;
-            /*border: 1px solid rgba(34,36,38,.15);*/
-        }
-        .dimmer {
-            border-radius: inherit!important;
-            position: absolute!important;
-            top: 0!important;
-            left: 0!important;
-            padding: 0;
-            margin: 0;
-        }
-
-    </style>
+    <style> .dimmer-parent{ position: relative; } .blockRegion { position: initial; /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/ margin: 1rem 0; padding: 1em; border-radius: .28571429rem; /*border: 1px solid rgba(34,36,38,.15);*/ } .dimmer { border-radius: inherit!important; position: absolute!important; top: 0!important; left: 0!important; padding: 0; margin: 0; } </style>
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
             languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         <div ng-if="isIRCCRevoked">
                                 <div class="blockRegion inverted dimmer active" ng-if="isIRCCRevoked"><div class="medium loader"></div></div>
@@ -33,7 +12,7 @@
                                     <div class="alert alert-danger" ng-show="isIRCCRevoked">
                                         <div class="text-center">
                                             <h1>本证书已撤销</h1>
-                                            <p>Revoked or cancelled certificates are not editable.</p>
+                                            <p>已撤销或已取消证书不可编辑。</p>
                                         </div>
                                     </div>
                                 </label>
@@ -71,7 +50,7 @@
                                         <legend>一般信息</legend>
                                         <div class="row">
                                             <div class="col-xs-12" >
-                                                <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                     <div class="indent">
                                                         <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                     </div>
@@ -89,7 +68,7 @@
                                             <div class="col-xs-12">
                                                 <div class="km-control-group">
                                                     <div class="km-control-group" name="permit" caption="指向与本许可证相关的其他国际认可合格证书（IRCC）的链接">
-                                                        <div class="help-info">有时，许可证可能与其他以前颁发的许可证有关，例如与获取土壤样本的许可证相关。取决于共同商定条件，有些国家有可能决定就后来从所取土壤样本中查明的遗传资源颁发特定的许可证。鉴于这类情况，获取和惠益分享信息交换所推出了将不同国际公认合规证书链接起来的功能。通过此机制联系起来的国际公认合规证书将一起显示，从而便于跟踪国际公认合规证书。 </div>
+                                                        <div class="help-info">有时，许可证可能与其他以前颁发的许可证有关，例如与获取土壤样本的许可证相关。取决于共同商定条件，有些国家有可能决定就后来从所取土壤样本中查明的遗传资源颁发特定的许可证。鉴于这类情况，获取和惠益分享信息交换所推出了将不同国际公认合规证书链接起来的功能。通过此机制联系起来的国际公认合规证书将一起显示，从而便于跟踪国际公认合规证书。</div>
                                                         <div document-selector ng-model="document.relatedIRCCs" question="relatedIRCCs" government="document.government" schema="absPermit" hide-self="document.header.identifier"></div>
             
                                                     </div>
@@ -139,7 +118,7 @@
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="km-control-group" name="dateOfExpiry" caption="许可证或同等证照的到期日期">
-                                                    <div class="help-info">在许可证到期前的两个月，会给国家主管部门发一封电子邮件，提醒国际公认合规证书的到期日。 </div>
+                                                    <div class="help-info">在许可证到期前的两个月，会给国家主管部门发一封电子邮件，提醒国际公认合规证书的到期日。</div>
                                                     <div km-date placeholder="YYYY-MM-DD" name="dateOfExpiry" ng-model="document.dateOfExpiry"></div>
                                                 </div>
                                             </div>
@@ -192,7 +171,7 @@
                                                     <div class="panel-body panel-body-confidential" ng-class="{'disable':document.entitiesToWhomPICGrantedConfidential}">
                                                         <div class="km-control-group " name="entitiesToWhomPICGranted" required required caption="获授事先知情同意（PIC）的个人或实体；" style="margin-top:0;">
                                                             <div ng-show="!document.entitiesToWhomPICGrantedConfidential">
-                                                                <div class="help-info">请提供获授事先知情同意的个人或实体的姓名/名称和联系方式。如信息被标注为机密，则该人将无法无条件获得国际公认合规证书或检查点已发布公报。 </div>
+                                                                <div class="help-info">请提供获授事先知情同意的个人或实体的姓名/名称和联系方式。如信息被标注为机密，则该人将无法无条件获得国际公认合规证书或检查点已发布公报。</div>
                                                                 <div document-selector ng-model="document.entitiesToWhomPICGranted" question="entitiesToWhomPICGranted" government="document.government" schema="(contact authority)"></div>
                                                             </div>
                                                         </div>
@@ -333,7 +312,7 @@
             
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <div class="km-control-group" name="thirdPartyTransferCondition" caption="第三方转让条件"><span class="help-info">如果许可证或同等证照就转让给第三方确立了条件或限制，则其将有助于通过获取和惠益分享信息交换所提供此类信息，以监测对遗传资源的利用并加强法律确定性。 </span><div km-rich-textbox name="thirdPartyTransferCondition" rows="4" ng-model="document.thirdPartyTransferCondition" locales="document.header.languages"></div>
+                                                <div class="km-control-group" name="thirdPartyTransferCondition" caption="第三方转让条件"><span class="help-info">如果许可证或同等证照就转让给第三方确立了条件或限制，则其将有助于通过获取和惠益分享信息交换所提供此类信息，以监测对遗传资源的利用并加强法律确定性。</span><div km-rich-textbox name="thirdPartyTransferCondition" rows="4" ng-model="document.thirdPartyTransferCondition" locales="document.header.languages"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -381,7 +360,7 @@
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="km-control-group" name="notes">
-                                                    <div class="help-info">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                    <div class="help-info">“备注”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                                     <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                                 </div>
                                             </div>

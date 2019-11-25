@@ -6,7 +6,7 @@
 
                 <warning-message-cna doc="document"></warning-message-cna>
 
-                <div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab">
+                <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" tab="tab">
                     <edit-form>
                         <form class="editForm" name="editForm">
 
@@ -14,11 +14,11 @@
                                 <legend name="formInfo" style="display:none"></legend>
 			
                                 <section>
-                                    <legend name="generalInfo">Informations g&eacute;n&eacute;rales</legend>
+                                    <legend name="generalInfo">Informations générales</legend>
 
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+                                            <div class="km-control-group" name="languages" required caption="Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="name" required caption="Nom de l'autorité nationale compétente">
-                                                <div class="help-info"> Fournissez le nom de l&rsquo;entit&eacute; responsable par ex. : Minist&egrave;re de l&rsquo;Environnement Gardez en t&ecirc;te que le nom de l&rsquo;autorit&eacute; nationale comp&eacute;tente vous aidera &agrave; identifier le fichier au Centre d&rsquo;&eacute;change d&rsquo;information pour l&rsquo;APA.</div>
+                                                <div class="help-info">Fournissez le nom de l’entité responsable par ex. : Ministère de l’Environnement Gardez en tête que le nom de l’autorité nationale compétente vous aidera à identifier le fichier au Centre d’échange d’information pour l’APA.</div>
                                                 <div km-textbox-ml name="name" required ng-model="document.name" rows="1"
                                                     placeholder="" locales="document.header.languages"></div>
                                             </div>
@@ -50,8 +50,8 @@
                                 </section>
 
                                 <section>
-                                    <legend name="coordinates">Coordonn&eacute;es</legend>
-                                    <div class="help-info">Les coordonn&eacute;es aideront les usagers des ressources g&eacute;n&eacute;tiques &agrave; entrer en contact avec l&rsquo;ANC. Il est important que garder cette information &agrave; jour afin de donner aux usagers l&apos;information la plus r&eacute;cente et la plus pr&eacute;cise.</div>
+                                    <legend name="coordinates">Coordonnées</legend>
+                                    <div class="help-info">Les coordonnées aideront les usagers des ressources génétiques à entrer en contact avec l’ANC. Il est important que garder cette information à jour afin de donner aux usagers l'information la plus récente et la plus précise.</div>
 
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -131,7 +131,7 @@
                                     </div>
                                 </section>
 
-                                <legend name="contactInfo">Coordonn&eacute;es</legend>
+                                <legend name="contactInfo">Coordonnées</legend>
 
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -146,8 +146,8 @@
                                 </section>
 
                                 <section>
-                                    <legend name="policyBasis">Bases juridiques, administratives et politiques pour la comp&eacute;tence de l&rsquo;ANC</legend>
-                                    <div class="help-info">Dans cette section, une r&eacute;f&eacute;rence aux mesures d&rsquo;APA li&eacute;s qui accordent la comp&eacute;tence &agrave; l&rsquo;ANC peut &ecirc;tre incluse. Afin de lier l&rsquo;ANC &agrave; une mesure APA pertinente, le fichier de la mesure APA doit &ecirc;tre enregistr&eacute; en premier. Ainsi, si vous n&rsquo;avez pas encore soumis la mesure APA pertinente, vous voudrez peut-&ecirc;tre sauvegarder l&rsquo;ANC en tant que brouillon et publier d&rsquo;abord la mesure APA.</div>
+                                    <legend name="policyBasis">Bases juridiques, administratives et politiques pour la compétence de l’ANC</legend>
+                                    <div class="help-info">Dans cette section, une référence aux mesures d’APA liés qui accordent la compétence à l’ANC peut être incluse. Afin de lier l’ANC à une mesure APA pertinente, le fichier de la mesure APA doit être enregistré en premier. Ainsi, si vous n’avez pas encore soumis la mesure APA pertinente, vous voudrez peut-être sauvegarder l’ANC en tant que brouillon et publier d’abord la mesure APA.</div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="absPolicyBasisForCompetencyRef" caption="Fournir un lien vers toute mesure juridique, administrative ou politique pertinente">
@@ -169,8 +169,8 @@
 
 
                                 <section>
-                                    <legend name="responsibilities">Responsabilit&eacute;s</legend>
-                                    <div class="help-info">Le paragraphe 4 de l&rsquo;article 13 pr&eacute;voit que lorsqu&apos;une Partie d&eacute;signe plus d&apos;une autorit&eacute; nationale comp&eacute;tente, elle indique au Secr&eacute;tariat, avec sa notification &agrave; cet effet, quels sont les domaines de responsabilit&eacute; respectifs de ces autorit&eacute;s. Le cas échéant, il sera au moins précisé quelle est l&rsquo;autorité compétente responsable des ressources génétiques sollicitées.</div>
+                                    <legend name="responsibilities">Responsabilités</legend>
+                                    <div class="help-info">Le paragraphe 4 de l’article 13 prévoit que lorsqu'une Partie désigne plus d'une autorité nationale compétente, elle indique au Secrétariat, avec sa notification à cet effet, quels sont les domaines de responsabilité respectifs de ces autorités. Le cas échéant, il sera au moins précisé quelle est l’autorité compétente responsable des ressources génétiques sollicitées.</div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" ng-show="showResponsibleforAllMsg()" name="absResponsibleForAllNot"
@@ -188,16 +188,16 @@
                                             <div class="col-xs-12">
                                                 <div class="row">
                                                     <div class="col-xs-12">
-                                                        <h4 ng-show="document.absResponsibleForAll==null">Si non, l&rsquo;information suivante est requise.</h4>
-                                                        <h4 ng-show="document.absResponsibleForAll==true">Cette section n&apos;est pas requise.</h3>
+                                                        <h4 ng-show="document.absResponsibleForAll==null">Si non, l’information suivante est requise.</h4>
+                                                        <h4 ng-show="document.absResponsibleForAll==true">Cette section n'est pas requise.</h3>
                                                             <div ng-show="document.absResponsibleForAll==false">
-                                                                <h4 class="color-red">Cette section est requise lorsqu&rsquo;il existe plus d&rsquo;une autorit&eacute; nationale comp&eacute;tente (ANC). Veuillez vous assurer que les responsabilit&eacute;s pour chacune des autorit&eacute;s nationales comp&eacute;tentes (ANC) soit bien d&eacute;crite dans tous les fichiers publi&eacute;s.</h4>
+                                                                <h4 class="color-red">Cette section est requise lorsqu’il existe plus d’une autorité nationale compétente (ANC). Veuillez vous assurer que les responsabilités pour chacune des autorités nationales compétentes (ANC) soit bien décrite dans tous les fichiers publiés.</h4>
                                                             </div>
 
                                                             <div class="km-control-group" name="responsibilities"
                                                                 caption="Brève description des responsabilités de l’ANC (maximum 300 caractères)."
                                                                 required>
-                                                                <div class="help-info">Le paragraphe 2 de l&rsquo;Article 13, pr&eacute;voit &agrave; ce que les autorités nationales compétentes, en conformité avec les mesures législatives et administratives ainsi que les politiques nationales applicables, sont chargées d&rsquo;accorder l&rsquo;accès ou, s&rsquo;il y a lieu, de délivrer une preuve écrite que les conditions d&rsquo;accès ont été respectées, et de fournir des conseils sur les procédures et les conditions d&rsquo;obtention du consentement préalable donné en connaissance de cause et de conclusion de conditions convenues d&rsquo;un commun accord ». Rappelez-vous que la raison d&rsquo;&ecirc;tre de cette section est d&rsquo;aider les usagers &agrave; comprendre les responsabilit&eacute;s relatives &agrave; l&rsquo;acc&egrave;s aux ressources g&eacute;n&eacute;tiques en r&eacute;pondant &agrave; la question : Qui accorde un acc&egrave;s et pour quoi? La description des responsabilit&eacute; doit &ecirc;tre br&egrave;ve et facile &agrave; comprendre. </div>
+                                                                <div class="help-info">Le paragraphe 2 de l’Article 13, prévoit à ce que les autorités nationales compétentes, en conformité avec les mesures législatives et administratives ainsi que les politiques nationales applicables, sont chargées d’accorder l’accès ou, s’il y a lieu, de délivrer une preuve écrite que les conditions d’accès ont été respectées, et de fournir des conseils sur les procédures et les conditions d’obtention du consentement préalable donné en connaissance de cause et de conclusion de conditions convenues d’un commun accord ». Rappelez-vous que la raison d’être de cette section est d’aider les usagers à comprendre les responsabilités relatives à l’accès aux ressources génétiques en répondant à la question : Qui accorde un accès et pour quoi? La description des responsabilité doit être brève et facile à comprendre.</div>
                                                                 <div km-rich-textbox name="responsibilities" ng-model="document.responsibilities"
                                                                     rows="6" placeholder="" locales="document.header.languages"
                                                                     required></div>
@@ -209,7 +209,7 @@
                                                     <div class="col-xs-12">
                                                         <div class="km-control-group" name="absJurisdiction" caption="La zone de juridiction pour octroyer l’accès aux ressources génétiques"
                                                             required>
-                                                            <div class="help-info">L&rsquo;information sur La zone de juridiction (&eacute;chelon national/f&eacute;d&eacute;ral, infra national ou communautaire) aide &agrave; inventorier sur une carte les diff&eacute;rentes responsabilit&eacute;s parmi les ANC.</div>
+                                                            <div class="help-info">L’information sur La zone de juridiction (échelon national/fédéral, infra national ou communautaire) aide à inventorier sur une carte les différentes responsabilités parmi les ANC.</div>
                                                             <div km-select multiple name="absJurisdiction" ng-model="document.absJurisdiction"
                                                                 items="options.jurisdictions()" required></div>
                                                         </div>
@@ -232,7 +232,7 @@
                                                     <div class="col-xs-12">
                                                         <div class="km-control-group" name="absGeneticResourceTypes"
                                                             caption="Mots clés pour décrire l’étendue des responsabilités de l’ANC">
-                                                            <div class="help-info">La collecte de ces informations est importante pour faciliter des recherches harmonis&eacute;es parmi les fichiers. Veuillez s&eacute;lectionner tous les mots cl&eacute;s pertinents qui peuvent aider &agrave; d&eacute;crire les responsabilit&eacute;s de l&rsquo;autorit&eacute; nationale comp&eacute;tente.</div>
+                                                            <div class="help-info">La collecte de ces informations est importante pour faciliter des recherches harmonisées parmi les fichiers. Veuillez sélectionner tous les mots clés pertinents qui peuvent aider à décrire les responsabilités de l’autorité nationale compétente.</div>
                                                             <div km-select multiple name="absGeneticResourceTypes"
                                                                 ng-model="document.absGeneticResourceTypes" items="options.keywords()"
                                                                 show-description="true"></div>
@@ -247,11 +247,11 @@
 
 
                                 <section>
-                                    <legend>Information suppl&eacute;mentaire</legend>
+                                    <legend>Information supplémentaire</legend>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="km-control-group" name="relevantInformation" caption="Additional Information">
-                                                <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le fichier.</div>
+                                            <div class="km-control-group" name="relevantInformation" caption="Informations supplémentaires">
+                                                <div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n'ayant pas été abordé ailleurs dans le fichier.</div>
                                                 <div km-rich-textbox name="relevantInformation" rows="6" ng-model="document.relevantInformation"
                                                     locales="document.header.languages"></div>
                                             </div>
@@ -273,7 +273,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="km-control-group" name="notes">
-                                                <div class="help-info">Le champ «Notes» est destin&eacute; &agrave; vos notes ou commentaires personnels et sera masqu&eacute; lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
+                                                <div class="help-info">Le champ «Notes» est destiné à vos notes ou commentaires personnels et sera masqué lors de la visualisation du fichier. This field is not meant to be used for confidential information.</div>
                                                 <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                             </div>
                                         </div>

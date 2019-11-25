@@ -4,7 +4,7 @@
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
 
-			<workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
+			<workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
 			 validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
 			 on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
 			 on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -18,7 +18,7 @@
 									<legend>معلومات عامة</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -30,28 +30,28 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Identity of the living modified organism (LMO)</legend>
+									<legend>هوية الكائن الحي المحوّر</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group"  name="identity" caption="اسم الكائن الحى المحوّر">
+											<div class="km-control-group"  name="identity" caption="اسم الكائن الحي المحوّر">
 												<div class="help-block">الاسم الشائع استخدامه لتحديد الكائن الحى المحوّر، على سبيل المثال الاسم التجارى ( مثل Roundup soy ،NewLeaf® potato, وما إلى ذلك)</div>
 												<div km-textbox-ml name="identity"  ng-model="document.identity" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="transformationEvent" caption="حدث التحوّر">
+											<div class="km-control-group" required name="transformationEvent" caption="حدث التحور">
 												<div class="help-block">اسم حدث التحوّر، على سبيل المثال MON810</div>
 												<input type="text" class="form-control" name="transformationEvent" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="hasUniqueIdentification" required caption="هل للكائن الحى المحوّر محدِّد فريد من نوعه؟">
-												<div class="help-block">The BCH is currently using the Unique Identifier system as set out in the OECD Guidance for the Designation of Unique Identifiers for Transgenic Plants (example MON-&Oslash;&Oslash;81&Oslash;-6). For more information see <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
+											<div class="km-control-group" name="hasUniqueIdentification" required caption="هل هذا الكائن الحي المحور للكائن له معرف فريد من نوعه؟">
+												<div class="help-block">تستخدم غرفة تبادل معلومات السلامة الأحيائية نظاما من المعرفات الفريدة يتوافق مع إرشادات منظمة التعاون الاقتصادي والتنمية لوضع المعرفات الفريدة للنباتات المعدلة وراثيًا (على سبيل المثال: MON-ØØ81Ø-6). لمعرفة المزيد من المعلومات، يُرجى زيارة الرابط <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml"> http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
 												<div km-yes-no required ng-model="hasUniqueIdentification" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-sm-12" ng-if="hasUniqueIdentification">
-											<div class="km-control-group" required name="uniqueIdentification" caption="المعرف الفريد">
+											<div class="km-control-group" required name="uniqueIdentification" caption="المُعرِّف الفريد">
 												<input type="text" class="form-control" name="uniqueIdentification" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
@@ -67,21 +67,21 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="recipientOrganisms" caption="Recipient Organism or Parental Organisms">	
-												<div class="help-block">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+											<div class="km-control-group" required name="recipientOrganisms" caption="الكائن المتلقّي أو الكائنات المصدر">	
+												<div class="help-block">يشير مصطلح "الكائن المتلقي" إلى الكائن (المُحوَّر بالفعل أو غير المُحوَّر) الذي تعرض للتعديل الوراثي، بينما يشير مصطلح "الكائنات المصدر" إلى الكائنات التي استخدمت في التهجين أو مزج الخلايا.</div>
 												<div document-selector required ng-model="document.recipientOrganisms" question="recipientOrganisms"
-													schema="(organism modifiedOrganism)" caption="Add Organism / Modified Organism"></div>			
+													schema="(organism modifiedOrganism)" caption="إضافة كائن حي /كائن حي مُحوَّر"></div>			
 											</div>
 										</div>
 
 										<div class="col-sm-12">
-											<div class="km-control-group"  name="recipientOrganismCollectionPoint" caption="نقاط جمع أو الحصول على الكائن المتلقّى أو الكائنات الأبوية">
+											<div class="km-control-group"  name="recipientOrganismCollectionPoint" caption="نقاط جمع الكائن المتلقّى أو الكائنات الأبوية أو الحصول عليها">
 												<div km-textbox-ml name="recipientOrganismCollectionPoint"  ng-model="document.recipientOrganismCollectionPoint" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="linkedModifiedOrganisms" caption="كائنات حية محوّرة ذات صلة">	
-												<div class="help-block">This field relates to other LMOs with similar characteristics.</div>
+											<div class="km-control-group" name="linkedModifiedOrganisms" caption="الكائنات الحية المُحوَّرة ذات الصلة">	
+												<div class="help-block">يرتبط هذا  الحقل بالكائنات الحية المُحوًّرة الأخرى ذات الخصائص المماثلة.</div>
 												<div document-selector ng-model="document.linkedModifiedOrganisms" question="linkedModifiedOrganisms"
 													schema="(modifiedOrganism)"></div>			
 											</div>
@@ -97,7 +97,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group"  name="vector" caption="Vector">
-												<div class="help-block">Vectors are used to incorporate a DNA sequence (typically the promoter-gene-terminator construct) to assist its transfer into the recipient organism. أمثلة: Agrobacterium Ti plasmid and pBIN19.</div>
+												<div class="help-block">تستخدم النواقل في احتواء تسلسل الحمض النووي (خاصة في تكوين المحفز-الجين-المثبط) للمساعدة في نقله إلى الكائن المستقبل. أمثلة: Agrobacterium Ti plasmid and pBIN19.</div>
 												<div km-textbox-ml name="vector"  ng-model="document.vector" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -107,20 +107,20 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="genes" caption="العناصر الجينية المدخلة أو المحورة">	
-												<div class="help-block">يجب على نحو تفضيلي الإشارة إلى جميع العناصر الجينية التي تم طرحها في هذا الكائن الحي المحور، مثل عناصر التحفيز وتسلسلات ترميز البروتين والمثبطات في هذا القسم. على الأقل جميع تسلسلات ترميز البروتين إجبارية.</div>
+											<div class="km-control-group" required name="genes" caption="العناصر الجينية التي تم إدخالها أو تحويرها">	
+												<div class="help-block">ومن الأفضل أن يُشار في هذا القسم إلى جميع العناصر الجينية التي تم إدخالها في هذا الكائن الحي المُحوَّر، مثل عناصر التحفيز وتسلسلات ترميز البروتين والمثبطات. على الأقل جميع تسلسلات ترميز البروتين إجبارية.</div>
 												<div document-selector ng-model="document.genes" question="genes"
-													schema="(dnaSequence)" caption="تتابع الجينات والحمض النووي DNA"></div>			
+													schema="(dnaSequence)" caption="تسلسل الجينات والحمض النووي"></div>			
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="geneConstructs" caption="بناء العناصر الوراثية">
+											<div class="km-control-group" required name="geneConstructs" caption="تكوين العناصر الجينية">
 												<div class="help-block"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="geneNotes" caption="ملاحظات بشأن العناصر الجينية في هذا الكائن الحي المحور">	
-												<div class="help-block">Please specify if any of these elements has been modified from the sequence registered in the BCH Genetic Element Registry and how they relate to each other in this LMO, for instance &ldquo;epsps protein coding sequence under control of the 35S promoter and nos terminator&rdquo;.</div>
+												<div class="help-block">يُرجى تحديد إذا كان أي من هذه العناصر قد تم تعديله من التسلسل المُسجل في "سجل العناصر الجينية في غرفة تبادل معلومات السلامة الأحيائية"، ومدى ارتباطها ببعضها البعض في هذا الكائن الحي المُحوَّر. على سبيل المثال " تسلسل ترميز البروتين epsps تحت تأثير المحفز 35S والمثبط nos".</div>
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
 										</div>
@@ -131,28 +131,28 @@
 							
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>LMO characteristics</legend>
+									<legend>خصائص الكائن الحى المُحوّر</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="traits" caption="Modified Traits">
+											<div class="km-control-group" required name="traits" caption="السمات الوراثية المُحوّرة">
 												<div km-term-check name="traits" required ng-model="document.traits" terms="options.traits" binding-type="term[]"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" required name="affectedGenes" caption="الجين (الجينات) التي تأثر تعبيرها بالتحول">	
-												<div class="help-block">هذا القسم يجب أن يستخدم فى تحديد التغيرات التى تطرأ على هيئة الجينات بعيداّ عن تلك التغييرات المدخلة إلى الكائن الحى المحوّر: على سبيل المثال، سكون الجين أو تحفيزه.</div>
+												<div class="help-block">يجب استخدام هذا القسم في تحديد التغيرات التي تطرأ على تعبير الجينات بعيداّ عن تلك التغييرات المدخلة في الكائن الحى المحوّر: على سبيل المثال، إخماد الجين أو تنشيطه.</div>
 												<div document-selector ng-model="document.affectedGenes" question="affectedGenes"
-													schema="(dnaSequence)" caption="تتابع الجينات والحمض النووي DNA"></div>			
+													schema="(dnaSequence)" caption="تسلسل الجينات والحمض النووي"></div>			
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="geneNotes" caption="من فضلك قم بوصف كيف كان التأثير على هيئة الجين (الجينات)">	
+											<div class="km-control-group" name="geneNotes" caption="يُرجى وصف مدى التأثير على تعبير الجين (الجينات)">	
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
 										</div>
 										<div class="col-sm-12">
 											<div class="km-control-group" required name="commonUses" caption="الاستخدام (الاستخدامات) الشائعة للكائن الحى المحوّر">
-												<div class="help-block">Choose as many options as applicable.</div>
+												<div class="help-block">اختر أكبر عدد ممكن من الخيارات الممكنة.</div>
 												<div km-term-check name="commonUses" required ng-model="document.commonUses" terms="options.commonUses" binding-type="term[]"></div>
 											</div>
 										</div>
@@ -161,7 +161,7 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>طريقة (طرق) التحديد</legend>
+									<legend>طريقة (طرق) الكشف</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="detectionMethod" caption="الرابط (الروابط) الخارجية">
@@ -185,8 +185,8 @@
 									<legend>معلومات إضافية</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+											<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+												<div class="help-block">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -195,7 +195,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="relevantDocuments" caption="أي وثائق أخرى ذات صلة">
-												<div class="help-block">من فضلك قم باستخدام هذا الحقل فى توفير أى عناوين لمواقع انترنت أخرى ذات صلة و/أو مستند أو أكثر لتخزينها فى قاعدة البيانات ليمكن تحميلها من قبل المستخدمين.</div>
+												<div class="help-block">يُرجى استخدام هذا الحقل في إدخال عناوين أي مواقع إنترنت أخرى ذات صلة و/أو وثيقة أو وثائق أخرى ذات صلة لتخزينها في قاعدة البيانات ليستطيع المستخدمون تنزيلها.</div>
 												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>
@@ -209,7 +209,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">The &ldquo;Notes&rdquo; field is for your personal notes or comments and will be hidden when viewing the record. هذا الحقل لا ينبغي استخدامه في الحصول على معلومات سرية.</div>
+											<div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record. This field is not meant to be used for confidential information.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

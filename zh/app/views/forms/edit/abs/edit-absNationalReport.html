@@ -4,7 +4,7 @@
 
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content" style="padding-bottom:30px;">
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
             languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                     
                     <div class="row">
@@ -43,7 +43,7 @@
     
                                                     <p>此外，有些问题并非严格基于议定书规定，因而被设定为自愿填写字段。将这些问题纳入该报告格式是为了帮助按照第31条评估和审查议定书成效，从而查明实施议定书所面临的挑战和困难，并帮助评估和审查作为名古屋议定书缔约方会议之缔约方大会通过的决定。</p>
     
-                                                    <p>The interim national report can be a useful tool for both Parties and Non-Parties to assess the level of implementation of the Nagoya Protocol, as well as gaps and needs in terms of capacity, and will assist the COP-MOP in reviewing, on a regular basis, the implementation of the Nagoya Protocol and to make, within its mandate, the decisions necessary to promote its effective implementation in accordance with Article&nbsp;26, paragraph&nbsp;4.</p>
+                                                    <p>The interim national report can be a useful tool for both Parties and Non-Parties to assess the level of implementation of the Nagoya Protocol, as well as gaps and needs in terms of capacity, and will assist the COP-MOP in reviewing, on a regular basis, the implementation of the Nagoya Protocol and to make, within its mandate, the decisions necessary to promote its effective implementation in accordance with Article 26, paragraph 4.</p>
     
                                                     <p>通过临时国家报告提交的信息还可用于分享与名古屋议定书实施相关的经验、挑战和解决方案。在此方面，临时国家报告可作为建设和培养议定书实施能力以及更有效地设计能力建设活动的重要工具。该格式旨在最大程度减轻各国的报告负担，因而其中的问题实质上很简单（一般是用是或否回答的问题）。通常，在这些问题之后是文本输入，鼓励各国提供有关所采取措施的详细信息，以及报告实施议定书特定条款所面临的困难和挑战，并通过链接至现有的获取和惠益分享信息交换所记录、网站或上传文档来提供有关该问题的其他信息。这为查明名古屋议定书实施方面的良好做法和制约因素提供了机会。</p>
     
@@ -68,7 +68,7 @@
                                             <legend>一般信息</legend>
                                             <div class="row">
                                                 <div class="col-xs-12" >
-                                                    <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                                    <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                         <div class="indent">
                                                             <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                         </div>
@@ -78,7 +78,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="government" required bold="true"
-                                                        caption="国家"><span class="help-inline color-blue bold" ng-if="userGovernment()">国家不可更改。 </span><div afc-autocomplete required name="government" ng-disabled="userGovernment()"
+                                                        caption="国家"><span class="help-inline color-blue bold" ng-if="userGovernment()">国家不可更改。</span><div afc-autocomplete required name="government" ng-disabled="userGovernment()"
                                                             ng-model="document.government" source="options.countries"
                                                             filter="genericFilter" mapping="genericMapping" selectbox="true"
                                                             placeholder="请选择一个国家..."></div>
@@ -170,7 +170,7 @@
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
-                                                    <div class="km-control-group" name="question5FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question5FurtherInfo" ng-model="document.question5.furtherInfo"
+                                                    <div class="km-control-group" name="question5FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question5FurtherInfo" ng-model="document.question5.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -195,7 +195,7 @@
                                                         <div km-textbox-ml rows=4 name="question6.ChallengesInfo" ng-model="document.question6.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question6FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question6FurtherInfo" ng-model="document.question6.furtherInfo"
+                                                    <div class="km-control-group" name="question6FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question6FurtherInfo" ng-model="document.question6.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -227,7 +227,7 @@
                                                         <div km-textbox-ml rows=4 name="question7.ChallengesInfo" ng-model="document.question7.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question7FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question7FurtherInfo" ng-model="document.question7.furtherInfo"
+                                                    <div class="km-control-group" name="question7FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question7FurtherInfo" ng-model="document.question7.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -252,7 +252,7 @@
                                                         <div ng-disabled="document.question8.notApplicable" class="km-yes-no"
                                                             name="question8" ng-model="document.question8.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question8FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question8FurtherInfo" ng-model="document.question8.furtherInfo"
+                                                    <div class="km-control-group" name="question8FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question8FurtherInfo" ng-model="document.question8.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -276,7 +276,7 @@
                                                     <div class="km-control-group" name="question9Challenges" caption="">请提供指定一个或多个检查点所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question9Challenges" ng-model="document.question9.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question9FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question9FurtherInfo" ng-model="document.question9.furtherInfo"
+                                                    <div class="km-control-group" name="question9FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question9FurtherInfo" ng-model="document.question9.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -293,7 +293,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question10" caption="10.其他信息">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question10" caption="10.Additional information">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question10" ng-model="document.question10.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -331,7 +331,7 @@
                                                         </div>
                                                     </div>
     
-                                                    <div class="km-control-group" name="question11FurtherInfo" caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question11FurtherInfo" ng-model="document.question11.furtherInfo"
+                                                    <div class="km-control-group" name="question11FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question11FurtherInfo" ng-model="document.question11.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -403,7 +403,7 @@
                                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no"
                                                             required name="question14" ng-model="document.question14.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question14FurtherInfo" caption="">Please provide further information<div ng-disabled="!isQ11Yes(document.question11.answer)"
+                                                    <div class="km-control-group" name="question14FurtherInfo" caption="">请提供其他信息<div ng-disabled="!isQ11Yes(document.question11.answer)"
                                                             km-textbox-ml rows=4 name="question14FurtherInfo" ng-model="document.question14.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -426,7 +426,7 @@
                                                         <div ng-disabled="!isQ11Yes(document.question11.answer)" class="km-yes-no"
                                                             required name="question15" ng-model="document.question15.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question15FurtherInfo" caption="">Please provide further information<div ng-disabled="!isQ11Yes(document.question11.answer)"
+                                                    <div class="km-control-group" name="question15FurtherInfo" caption="">请提供其他信息<div ng-disabled="!isQ11Yes(document.question11.answer)"
                                                             km-textbox-ml rows=4 name="question15FurtherInfo" ng-model="document.question15.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -452,7 +452,7 @@
                                                                 ng-model="document.question16.permitsOnAbsCh" min="0"
                                                                 ng-init="document.question16.permitsOnAbsCh=0">
     
-                                                            <div class="help-info color-blue bold" ng-if="recordsCount.ircc">Currently you have <strong>{{recordsCount.ircc}} </strong> permits or their equivalents (IRCC) published in the ABS-CH.</div>
+                                                            <div class="help-info color-blue bold" ng-if="recordsCount.ircc">目前您已在获取和惠益分享信息交换所发布<strong>{{recordsCount.ircc}} </strong>张许可证或同等证照（国际公认的合规证书）。</div>
                                                         </div>
     
                                                     </div>
@@ -526,7 +526,7 @@
                                                                     ng-change="Q18Clear()">Traditional knowledge associated with genetic resources</label>
                                                             <div class="checkbox" ng-show="document.question18.tk.answer">
                                                                 <label><input type="checkbox" ng-model="document.question18.tk.monetary"
-                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">经济惠益</label>
+                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.monetary); Q18ClearInfo()">Monetary benefits</label>
                                                                 <div ng-show="document.question18.tk.monetary"
                                                                     km-textbox-ml rows=2 name="question18FurtherInfo"
                                                                     ng-model="document.question18.tk.monetaryInfo" locales="document.header.languages"
@@ -534,7 +534,7 @@
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question18.tk.answer">
                                                                 <label><input type="checkbox" ng-model="document.question18.tk.nonMonetary"
-                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.nonMonetary); Q18ClearInfo()">非货币性惠益</label>
+                                                                        ng-change="Q18TraditionalKnowledge(document.question18.tk.nonMonetary); Q18ClearInfo()">非货币惠益</label>
                                                                 <div ng-show="document.question18.tk.nonMonetary"
                                                                     km-textbox-ml rows=2 name="question18FurtherInfo"
                                                                     ng-model="document.question18.tk.nonMonetaryInfo"
@@ -560,7 +560,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question19" caption="19.其他信息">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question19" caption="19.Additional information">请提供主要困难和挑战的摘要<div km-textbox-ml rows=4 name="question19" ng-model="document.question19.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -589,7 +589,7 @@
                                                         caption="20.第5.1条规定，对遗传资源的利用及随后的应用和商业化所产生的惠益应与提供该等资源的缔约方（即该等资源的原产国或已按照公约及第5.3条规定获取该等遗传资源的缔约方）分享。贵国是否已采取立法、行政或政策措施来落实此项规定？">
                                                         <div class="km-yes-no" required name="question20" ng-model="document.question20.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question20FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question20FurtherInfo" ng-model="document.question20.furtherInfo"
+                                                    <div class="km-control-group" name="question20FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question20FurtherInfo" ng-model="document.question20.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -610,7 +610,7 @@
                                                         caption="21.为确保按照第5.2条规定以及贵国认可土著和地方社区对其所持有遗传资源之权利的法律法规，与持有遗传资源的土著和地方社区分享利用其持有的遗传资源所产生的惠益，贵国是否已采取立法、行政或政策措施？">
                                                         <div class="km-yes-no" required name="question21" ng-model="document.question21.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question21FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question21FurtherInfo" ng-model="document.question21.furtherInfo"
+                                                    <div class="km-control-group" name="question21FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question21FurtherInfo" ng-model="document.question21.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -631,7 +631,7 @@
                                                         caption="22.为确保按照第5.5条规定与持有遗传资源相关传统知识的土著和地方社区分享利用其持有的遗传资源相关传统知识所产生的惠益，贵国是否已采取立法、行政或政策措施？">
                                                         <div class="km-yes-no" required name="question22" ng-model="document.question22.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question22FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question22FurtherInfo" ng-model="document.question22.furtherInfo"
+                                                    <div class="km-control-group" name="question22FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question22FurtherInfo" ng-model="document.question22.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -648,7 +648,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question23" caption="23.其他信息">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question23" ng-model="document.question23.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question23" caption="23.Additional information">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question23" ng-model="document.question23.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -713,7 +713,7 @@
     
                                                     </div>
     
-                                                    <div class="km-control-group" name="question24FurtherInfo" caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question24FurtherInfo" ng-model="document.question24.furtherInfo"
+                                                    <div class="km-control-group" name="question24FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question24FurtherInfo" ng-model="document.question24.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -752,7 +752,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="km-control-group" name="question25FurtherInfo" caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question25FurtherInfo" ng-model="document.question25.furtherInfo"
+                                                    <div class="km-control-group" name="question25FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question25FurtherInfo" ng-model="document.question25.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -792,7 +792,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="km-control-group" name="question26FurtherInfo" caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question26FurtherInfo" ng-model="document.question26.furtherInfo"
+                                                    <div class="km-control-group" name="question26FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question26FurtherInfo" ng-model="document.question26.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -824,7 +824,7 @@
                                                                 <label class="radio-inline"><input type="radio" ng-model="document.question27.cpc.option"
                                                                         name="q27Options" id="q27Option3" value="Other">其他</label>
                                                             </div>
-                                                            <div class="km-control-group" name="question27_ccFurtherInfo">Please provide further information<div km-textbox-ml rows=2 name="question27_ccFurtherInfo"
+                                                            <div class="km-control-group" name="question27_ccFurtherInfo">请提供其他信息<div km-textbox-ml rows=2 name="question27_ccFurtherInfo"
                                                                     ng-model="document.question27.cpc.furtherInfo" locales="document.header.languages"
                                                                     placeholder=""></div>
                                                             </div>
@@ -838,7 +838,7 @@
                                                         <input class="col-xs-2" type="number" name="ccsOnAbsCh" class="form-control text-right"
                                                             ng-model="document.question27.cpcsOnAbsChCount" min="0" ng-init="document.question27.cpcsOnAbsChCount=0">
     
-                                                        <div class="help-info color-blue bold" ng-if="recordsCount.cpc">Currently you have <strong>{{recordsCount.cpc}} </strong> Checkpoint Communiques published (CPC) published in the ABS-CH.</div>
+                                                        <div class="help-info color-blue bold" ng-if="recordsCount.cpc">目前您已在获取和惠益分享信息交换所发布<strong>{{recordsCount.ircc}} </strong>份检查点已发布公报。</div>
     
                                                     </div>
     
@@ -898,7 +898,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question30" caption="30.其他信息">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question30" ng-model="document.question30.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question30" caption="30.Additional information">请提供落实措施所面临主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question30" ng-model="document.question30.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -934,7 +934,7 @@
                                                             ng-required="!document.question31.notApplicable" name="question31"
                                                             ng-model="document.question31.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question31FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question31FurtherInfo" ng-model="document.question31.furtherInfo"
+                                                    <div class="km-control-group" name="question31FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question31FurtherInfo" ng-model="document.question31.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -979,7 +979,7 @@
                                                         <div class="km-yes-no" required name="question33_justice" ng-model="document.question33.justice.answer"></div>
                                                     </div>
                                                     <div class="km-control-group" name="question33JusticeFurtherInfo"
-                                                        caption="">Please provide further information<div km-textbox-ml rows=4 name="question33JusticeFurtherInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=4 name="question33JusticeFurtherInfo"
                                                             ng-model="document.question33.justice.furtherInfo" locales="document.header.languages"
                                                             placeholder=""></div>
                                                     </div>
@@ -989,7 +989,7 @@
                                                             ng-model="document.question33.mechanisms.answer"></div>
                                                     </div>
                                                     <div class="km-control-group" name="question33MechanismsFurtherInfo"
-                                                        caption="">Please provide further information<div km-textbox-ml rows=4 name="question33MechanismsFurtherInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=4 name="question33MechanismsFurtherInfo"
                                                             ng-model="document.question33.mechanisms.furtherInfo" locales="document.header.languages"
                                                             placeholder=""></div>
                                                     </div>
@@ -1007,7 +1007,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question34" caption="34.其他信息">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question34" ng-model="document.question34.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question34" caption="34.Additional information">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question34" ng-model="document.question34.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1061,7 +1061,7 @@
                                                             ng-model="document.question35.emergencies.answer"></div>
                                                     </div>
                                                     <div class="km-control-group" name="question35EmergenciesFurtherInfo"
-                                                        caption="">Please provide further information<div km-textbox-ml rows=4 name="question35EmergenciesFurtherInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=4 name="question35EmergenciesFurtherInfo"
                                                             ng-model="document.question35.emergencies.furtherInfo" locales="document.header.languages"
                                                             placeholder=""></div>
                                                     </div>
@@ -1078,7 +1078,7 @@
                                                         <div class="km-yes-no" required name="question35_access" ng-model="document.question35.access.answer"></div>
                                                     </div>
                                                     <div class="km-control-group" name="question35AccessFurtherInfo"
-                                                        caption="">Please provide further information<div km-textbox-ml rows=4 name="question35AccessFurtherInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=4 name="question35AccessFurtherInfo"
                                                             ng-model="document.question35.access.furtherInfo" locales="document.header.languages"
                                                             placeholder=""></div>
                                                     </div>
@@ -1098,7 +1098,7 @@
                                                     </div>
     
                                                     <div class="km-control-group" name="question35ImportanceFurtherInfo"
-                                                        caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question35ImportanceFurtherInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=4 name="question35ImportanceFurtherInfo"
                                                             ng-model="document.question35.importance.furtherInfo" locales="document.header.languages"
                                                             placeholder=""></div>
                                                     </div>
@@ -1122,7 +1122,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" bold="true" name="question36" caption="36.其他信息">请提供落实措施所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question36" ng-model="document.question36.challengesInfo"
+                                                    <div class="km-control-group" bold="true" name="question36" caption="36.Additional information">请提供落实措施所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question36" ng-model="document.question36.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1152,7 +1152,7 @@
                                                         <div class="km-yes-no" required name="question37" ng-model="document.question37.answer"
                                                             ng-click="Q37Clear()"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question37FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question37FurtherInfo" ng-model="document.question37.furtherInfo"
+                                                    <div class="km-control-group" name="question37FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question37FurtherInfo" ng-model="document.question37.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1202,7 +1202,7 @@
                                                             </div>
     
                                                             <div class="km-control-group" name="question38AdditionalInfo"
-                                                                caption="">Please provide further information<div km-textbox-ml rows=2 name="question38MeasuresFurtherInfo"
+                                                                caption="">请提供其他信息<div km-textbox-ml rows=2 name="question38MeasuresFurtherInfo"
                                                                     ng-model="document.question38.measures.furtherInfo"
                                                                     locales="document.header.languages" placeholder=""></div>
                                                             </div>
@@ -1214,14 +1214,14 @@
                                                             </div>
     
                                                             <div class="km-control-group" name="question38AdditionalInfo"
-                                                                caption="">Please provide further information<div km-textbox-ml rows=2 name="question38PICFurtherInfo"
+                                                                caption="">请提供其他信息<div km-textbox-ml rows=2 name="question38PICFurtherInfo"
                                                                     ng-model="document.question38.pic.furtherInfo" locales="document.header.languages"
                                                                     placeholder=""></div>
                                                             </div>
                                                         </div>
                                                     </div>
     
-                                                    <div class="km-control-group" name="question38FurtherInfo" caption="">Please provide further information<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question38FurtherInfo" caption="">请提供其他信息<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question38FurtherInfo" ng-model="document.question38.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1267,7 +1267,7 @@
                                                         <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}"
                                                             class="km-yes-no" name="question40" ng-model="document.question40.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question40FurtherInfo" caption="">Please provide further information<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question40FurtherInfo" caption="">请提供其他信息<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question40FurtherInfo" ng-model="document.question40.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1290,7 +1290,7 @@
                                                         <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}"
                                                             class="km-yes-no" name="question41" ng-model="document.question41.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question41FurtherInfo" caption="">Please provide further information<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question41FurtherInfo" caption="">请提供其他信息<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question41FurtherInfo" ng-model="document.question41.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1396,7 +1396,7 @@
                                                         <div ng-disabled="!document.question37.answer" required="{{Q37IsYes()}}"
                                                             class="km-yes-no" name="question43" ng-model="document.question43.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question43FurtherInfo" caption="">Please provide further information<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question43FurtherInfo" caption="">请提供其他信息<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question43FurtherInfo" ng-model="document.question43.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1414,7 +1414,7 @@
     
                                             <div class="row" ng-class="{'disable': !document.question37.answer}">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question44" bold="true" caption="44.其他信息">请提供落实与遗传资源相关传统知识相关的措施所面临主要困难和挑战的摘要：<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
+                                                    <div class="km-control-group" name="question44" bold="true" caption="44.Additional information">请提供落实与遗传资源相关传统知识相关的措施所面临主要困难和挑战的摘要：<div ng-disabled="!document.question37.answer" km-textbox-ml rows=4
                                                             name="question44" ng-model="document.question44.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
@@ -1481,7 +1481,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question47" bold="true" caption="47.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question47" ng-model="document.question47.challengesInfo"
+                                                    <div class="km-control-group" name="question47" bold="true" caption="47.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question47" ng-model="document.question47.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1516,7 +1516,7 @@
                                                     <div class="km-control-group" name="question48ILCInfo" caption="">如果贵国有土著和地方社区，请提供有关其参与情况的其他信息。<div km-textbox-ml rows=3 name="question48ILCInfo" ng-model="document.question48.ilcInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question48FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question48FurtherInfo" ng-model="document.question48.furtherInfo"
+                                                    <div class="km-control-group" name="question48FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question48FurtherInfo" ng-model="document.question48.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1542,7 +1542,7 @@
                                                         <div ng-disabled="document.question49.notApplicable" class="km-yes-no"
                                                             name="question49" ng-model="document.question49.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question49FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question49FurtherInfo" ng-model="document.question49.furtherInfo"
+                                                    <div class="km-control-group" name="question49FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question49FurtherInfo" ng-model="document.question49.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
                                                     <div class="km-control-group" style="margin-bottom:20px;" name="q49DocRefs"
@@ -1558,7 +1558,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question50" bold="true" caption="50.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question50" ng-model="document.question50.challengesInfo"
+                                                    <div class="km-control-group" name="question50" bold="true" caption="50.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question50" ng-model="document.question50.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1610,7 +1610,7 @@
                                                         caption="52.贵国是否正按照第20条规定鼓励制定、更新和使用行为准则、指导方针和最佳做法或标准？">
                                                         <div class="km-yes-no" required name="question52" ng-model="document.question52.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question52FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question52FurtherInfo" ng-model="document.question52.furtherInfo"
+                                                    <div class="km-control-group" name="question52FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question52FurtherInfo" ng-model="document.question52.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1627,7 +1627,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question53" bold="true" caption="53.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question53" ng-model="document.question53.challengesInfo"
+                                                    <div class="km-control-group" name="question53" bold="true" caption="53.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question53" ng-model="document.question53.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1707,7 +1707,7 @@
                                                     <div class="row" ng-show="document.question55.answer">
                                                         <div class="col-xs-10 col-xs-offset-1">
                                                             <div class="km-control-group" name="question55_measures"
-                                                                caption="贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？ ">
+                                                                caption="贵国是否已采取措施实施能力建设和培养战略框架为有效实施名古屋获取和惠益分享议定书提供支持？">
                                                                 <div class="help-info">作为决定NP-1/8通过</div>
                                                                 <div class="km-yes-no" name="question55_measures" ng-click="Q55Clear()"
                                                                     ng-model="document.question55.measures.answer"></div>
@@ -1749,7 +1749,7 @@
                                                     <div class="km-control-group" name="question56" bold="true" caption="56.在名古屋议定书实施能力建设和培养方面，贵国是否已获得外部支持？">
                                                         <div class="km-yes-no" name="question56" ng-model="document.question56.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question56FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question56FurtherInfo" ng-model="document.question56.furtherInfo"
+                                                    <div class="km-control-group" name="question56FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question56FurtherInfo" ng-model="document.question56.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1769,7 +1769,7 @@
                                                     <div class="km-control-group" name="question57" bold="true" caption="57.在名古屋议定书实施能力建设和培养方面，贵国是否已对外提供支持？">
                                                         <div class="km-yes-no" name="question57" ng-model="document.question57.answer"></div>
                                                     </div>
-                                                    <div class="km-control-group" name="question57FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question57FurtherInfo" ng-model="document.question57.furtherInfo"
+                                                    <div class="km-control-group" name="question57FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question57FurtherInfo" ng-model="document.question57.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1786,7 +1786,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question58" bold="true" caption="58.其他信息">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question58" ng-model="document.question58.challengesInfo"
+                                                    <div class="km-control-group" name="question58" bold="true" caption="58.Additional information">请提供主要困难和挑战的摘要：<div km-textbox-ml rows=4 name="question58" ng-model="document.question58.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1821,7 +1821,7 @@
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
-                                                    <div class="km-control-group" name="question59FurtherInfo" caption="">Please provide further information<div km-textbox-ml rows=4 name="question59FurtherInfo" ng-model="document.question59.furtherInfo"
+                                                    <div class="km-control-group" name="question59FurtherInfo" caption="">请提供其他信息<div km-textbox-ml rows=4 name="question59FurtherInfo" ng-model="document.question59.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -1863,7 +1863,7 @@
                                                             ng-click="Q61Clear()"></div>
                                                     </div>
                                                     <div ng-show="document.question61.answer" class="km-control-group" name="question61AdditionalInfo"
-                                                        caption="">Please provide further information<div km-textbox-ml rows=2 name="question61AdditionalInfo" ng-model="document.question61.additionalInfo"
+                                                        caption="">请提供其他信息<div km-textbox-ml rows=2 name="question61AdditionalInfo" ng-model="document.question61.additionalInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
                                                     <div class="km-control-group" name="question61Challenges" caption="">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question61Challenges" ng-model="document.question61.challengesInfo"
@@ -1890,7 +1890,7 @@
                                                         <label><input type="checkbox" ng-model="document.question62.donor.answer"
                                                                 ng-change="Q62ClearDonor()">是，已提供资金</label>
                                                         <div ng-show="document.question62.donor.answer" class="km-control-group"
-                                                            name="question62DonorAdditionalInfo" caption="">Please provide further information<div km-textbox-ml rows=2 ng-model="document.question62.donor.additionalInfo"
+                                                            name="question62DonorAdditionalInfo" caption="">请提供其他信息<div km-textbox-ml rows=2 ng-model="document.question62.donor.additionalInfo"
                                                                 locales="document.header.languages" placeholder=""></div>
                                                         </div>
                                                     </div>
@@ -1902,7 +1902,7 @@
                                                             <label><input type="checkbox" ng-model="document.question62.recipient.parties"
                                                                     ng-change="Q62ClearRecipientFromParty()">来自其他缔约方</label>
                                                             <div ng-show="document.question62.recipient.parties" class="km-control-group"
-                                                                name="question62DonorAdditionalInfo" caption="">Please provide further information<div km-textbox-ml rows=2 ng-model="document.question62.recipient.partiesInfo"
+                                                                name="question62DonorAdditionalInfo" caption="">请提供其他信息<div km-textbox-ml rows=2 ng-model="document.question62.recipient.partiesInfo"
                                                                     locales="document.header.languages" placeholder="">
                                                                 </div>
                                                             </div>
@@ -1914,14 +1914,14 @@
                                                                 <label><input type="checkbox" ng-model="document.question62.recipient.gef">来自全球环境基金</label>
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question62.recipient.financialInstitutions">
-                                                                <label><input type="checkbox" ng-model="document.question62.recipient.npImplementationFund">来自名古屋议定书实施基金 </label>
+                                                                <label><input type="checkbox" ng-model="document.question62.recipient.npImplementationFund">来自名古屋议定书实施基金</label>
                                                             </div>
                                                             <div class="checkbox" ng-show="document.question62.recipient.financialInstitutions">
                                                                 <label><input type="checkbox" ng-model="document.question62.recipient.otherSources"
                                                                         ng-change="Q62ClearRecipientFromOtherSources()">来自其他来源</label>
                                                                 <div ng-show="document.question62.recipient.otherSources"
                                                                     class="km-control-group" name="question62DonorAdditionalInfo"
-                                                                    caption="">Please provide further information<div km-textbox-ml rows=2 name="question62ReceiverotherSourcesInfo"
+                                                                    caption="">请提供其他信息<div km-textbox-ml rows=2 name="question62ReceiverotherSourcesInfo"
                                                                         ng-model="document.question62.recipient.otherSourcesInfo"
                                                                         locales="document.header.languages" placeholder=""></div>
                                                                 </div>
@@ -1973,7 +1973,7 @@
     
                                             <div class="row">
                                                 <div class="col-xs-12">
-                                                    <div class="km-control-group" name="question63" bold="true" caption="63.贵国是否由特定工作人员管理与名古屋议定书直接相关的各项职能？ ">
+                                                    <div class="km-control-group" name="question63" bold="true" caption="63.贵国是否由特定工作人员管理与名古屋议定书直接相关的各项职能？">
                                                         <div class="help-info">收集此信息可用于评估第31条下评估和审查方面的议定书成效，以及衡量议定书实施进展并查明所面临的困难和挑战。</div>
                                                         <div class="km-yes-no" name="question63" ng-model="document.question63.answer"
                                                             ng-click="Q63Clear()"></div>
@@ -1982,17 +1982,17 @@
                                                     <div ng-show="document.question63.answer" class="km-control-group" name="question63NumberOfStaff"
                                                         caption="请说明此等工作人员的数量">
                                                         <label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
-                                                                value="One"> 1人</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
-                                                                value="Less than 5"> Less than 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
-                                                                value="Less than 10"> Less than 10</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
-                                                                value="10 or more"> 10 or more</label>
+                                                                value="One">1人</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
+                                                                value="Less than 5">Less than 5</label><br /><label><input type="radio" name="question63NumberOfStaff" ng-model="document.question63.numberOfStaff"
+                                                                value="Less than 10">Less than 10</label><br /><label><input type="radio" name="amendmentIntent" ng-model="document.question63.numberOfStaff"
+                                                                value="10 or more">10 or more</label>
                                                     </div>
     
                                                     <div class="km-control-group" name="question63Challenges" caption="">请提供所面临主要困难和挑战的摘要。<div km-textbox-ml rows=4 name="question63Challenges" ng-model="document.question63.challengesInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
-                                                    <div class="km-control-group" name="question63FurtherInfo" caption="">请提供进一步信息<div km-textbox-ml rows=4 name="question63FurtherInfo" ng-model="document.question63.furtherInfo"
+                                                    <div class="km-control-group" name="question63FurtherInfo" caption="">Use the text entry to provide further information<div km-textbox-ml rows=4 name="question63FurtherInfo" ng-model="document.question63.furtherInfo"
                                                             locales="document.header.languages" placeholder=""></div>
                                                     </div>
     
@@ -2047,7 +2047,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="km-control-group" name="Notes" bold="true" caption="注释：">
-                                                        <div class="help-info">&ldquo;注释&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+                                                        <div class="help-info">“注释”字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
                                                         <textarea class="form-control" rows="4" name="notes" ng-model="document.notes"></textarea>
                                                     </div>
                                                 </div>
@@ -2061,7 +2061,7 @@
     
     
     
-                        </div> <!-- tab='edit' --></form>
+                        </div><!-- tab='edit' --></form>
                 </edit-form>
                 <review-form>
                     <view-abs-national-report ng-model="reviewDocument" locale="review.locale" allow-drafts="true"></view-abs-national-report>

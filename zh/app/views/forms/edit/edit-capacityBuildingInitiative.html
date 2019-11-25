@@ -7,7 +7,7 @@
             <div class="alert alert-success alert-dismissable" ng-show="msg">
                 <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
                 languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
 							<form name="editForm" style="margin-top:10px"><!-- <div km-tab="general"> --><div ng-show="tab=='edit'" km-tab="edit">
 											
@@ -15,7 +15,7 @@
 				
 										<div class="row">
 											<div class="col-xs-12" >
-												<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+												<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 													<div class="indent">
 														<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 													</div>
@@ -61,7 +61,7 @@
 																items="options.regions()"></div>
 															</div>
 														</div>
-														<div class="col-md-2" ng-hide="!isGlobalOrRegional()">And / Or</div>
+														<div class="col-md-2" ng-hide="!isGlobalOrRegional()">和/或</div>
 														<div class="col-md-5">
 															<div class="km-control-group"  name="countries" caption="国家">
 																<div km-select multiple required name="geographicalCountries" ng-model="document.geographicScope.countries" placeholder="请选择一个选项" items="options.countries()"></div>
@@ -89,12 +89,12 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="km-control-group" required name="capacityBuildingType" caption="4.能力建设倡议类型">
-													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4.Atleast one question should be answered yes</span></label>
+													<label for="capacityBuildingTypeYes" style="width:0px;height:0px;display:inline"><span style="display:none">4.至少一个问题的回答为是</span></label>
 													<div style="padding-left:20px" class="well">
-														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. Is this a dedicated ABS capacity-building project/programme? ">
+														<div class="km-control-group"  bold="true" required name="isProjectProgramme" caption="a. 这是专门的获取和惠益分享能力建设项目/方案吗？">
 															<div class="km-yes-no" required name="isProjectProgramme" ng-model="document.capacityBuildingType.isProjectProgramme"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. Is this an ABS activity or component which is part of a broader capacity-building project or programme?">
+														<div class="km-control-group"  bold="true" required name="isBroaderProjectPart" caption="b. 这一获取和惠益分享活动或组成部分是否属于更广泛的能力建设项目或方案？">
 															<div class="km-yes-no" required name="isBroaderProjectPart" ng-model="document.capacityBuildingType.isBroaderProjectPart"></div>
 														</div>
 														<div class="km-control-group" name="broaderProjects" caption="Please identify the broader project" ng-show="document.capacityBuildingType.isBroaderProjectPart">
@@ -103,7 +103,7 @@
 																							question="capacityBuildingInitiative"
 																							schema="capacityBuildingInitiative" filter="true" skip-government="true"></div>
 														</div>
-														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. Is this a stand-alone ABS activity that is not part of a broader capacity-building project or programme? ">
+														<div class="km-control-group"  bold="true" required name="isStandaloneProject" caption="c. 这一独立获取和惠益分享活动是否独立于更广泛的能力建设项目或方案？">
 															<div class="km-yes-no" required name="isStandaloneProject" ng-model="document.capacityBuildingType.isStandaloneProject"></div>
 														</div>
 													</div>
@@ -136,21 +136,21 @@
 																</div>
 															</div>
 															<div class="col-md-1 text-center" ng-show="!document.status || isProposedOrApproved()">
-																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" > 或者 </div>
+																<div class="km-control-group bold" name="enddate" style="margin-top:30px;" >或者</div>
 															</div>
 															<div class="col-md-5">
 																<div class="km-control-group" name="duration" caption="持续时间" ng-show="!document.status || isProposedOrApproved()">
-																	<label for="durationPeriod" style="width:0px;height:0px;display:inline"><span style="display:none">6.Please enter duration in number for eg. 24</span></label>
-																	<label for="durationText" style="width:0px;height:0px;display:inline"><span style="display:none">6.Please identify whether the duration is expressed in years, months or days</span></label>
+																	<label for="durationPeriod" style="width:0px;height:0px;display:inline"><span style="display:none">6.请以数字输入持续时间，例如 24</span></label>
+																	<label for="durationText" style="width:0px;height:0px;display:inline"><span style="display:none">6.请指出持续时间的单位是年、月还是日</span></label>
 																	<input type="number" name="durationPeriod" ng-model="document.durationPeriod"
 																	minlength="1" placeholder="eg. 24" ng-change="clearDates()" class="form-control"
 																	style="display:inline-block;width:100px"/>
 																	<select name="durationText" ng-model="document.durationText"  class="form-control"
 																	style="display:inline-block;width:100px" placeholder="eg. Months">
 																		<option value=""></option>	
-																		<option value="days">Days</option>
-																		<option value="months">Months</option>
-																		<option value="years">Years</option>
+																		<option value="days">日</option>
+																		<option value="months">月</option>
+																		<option value="years">年</option>
 																	</select>
 																</div>
 															</div>
@@ -357,11 +357,11 @@
 													 <div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 												</div>
 											</div>
-										</div><a translation-url  name="#AdditionalInformation"></a><legend>21.其他信息</legend>
+										</div><a translation-url  name="#AdditionalInformation"></a><legend>21.Additional information</legend>
 				
 										<div class="row">
 											<div class="col-md-12">
-												<div class="km-control-group" name="address" caption=" 其它相关信息" >
+												<div class="km-control-group" name="address" caption="其它相关信息" >
 													<div class="help-info">请在此处提供记录中其它位置未能提到的任何其它相关信息。</div>
 													<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 												</div>
@@ -379,7 +379,7 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="km-control-group" name="notes">
-													<legend>22.备注</legend><span class="help-info">The field &ldquo;Notes&rdquo; is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
+													<legend>22.备注</legend><span class="help-info">The field “Notes” is for personal reference and can be seen only when the record is being edited.</span><div km-notes name="notes" ng-model="document.notes"></div>
 												</div>
 											</div>
 										</div>

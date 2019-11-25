@@ -24,11 +24,11 @@
                 <div ng-show="document.reportPeriodStartDate || document.reportPeriodEndDate"></br><label>10.Time period covered by this report</label>
                     <div class="row">
                         <div class="col-xs-6" ng-if="document.reportPeriodStartDate">
-                            <label>From</label>
+                            <label>发件人</label>
                             <div class="km-value" ng-bind="document.reportPeriodStartDate|formatDate"></div>
                         </div>
                         <div class="col-xs-6" ng-if="document.reportPeriodEndDate">
-                            <label>To</label>
+                            <label>收件人</label>
                             <div class="km-value" ng-bind="document.reportPeriodEndDate|formatDate"></div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                 ng-bind-html="::spaceSubQuestion(question.number) + question.title" ></l></strong></strong>
                 </div>
                 <div ng-if="document[question.key]">
-                    <div ng-if="question.type!='text'">
+                    <div ng-if="question.type!='text' && question.type!='lstring'">
                         <km-value-ml ng-if="document[question.key].value"
                             value="displayText(document[question.key].value, question)" locales="locale"></km-value-ml>
                         <div ng-if="question.multiple" class="km-value">
@@ -78,7 +78,7 @@
                             <km-value-ml value="::document[question.key].additionalInformation" locales="locale"></km-value-ml>
                         </div>
                     </div>
-                    <div ng-if="question.type=='text'">
+                    <div ng-if="question.type=='text' || question.type=='lstring'">
                         <km-value-ml value="document[question.key]" locales="locale"></km-value-ml>
                     </div>
                 </div><!-- <div ng-if="!document[question.key] && question.type!= 'legend' && !question.questions">

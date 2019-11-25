@@ -4,7 +4,7 @@
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()" dir="rtl"></span><div class="registerpage-content">
 
-			<workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
+			<workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
 			 validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
 			 on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
 			 on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -18,7 +18,7 @@
 									<legend>معلومات عامة</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="يُرجى اختيار اللغة (اللغات) التي تريد إرسال هذا السجل بها:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -27,9 +27,9 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="government" required caption="Country submitting the decision or communication">
+											<div class="km-control-group" name="government" required caption="الدولة المرسلة للقرار أو المنشور">
 												<div afc-autocomplete required name="government" ng-disabled="userGovernment()" ng-model="document.government"
-												 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يرجى اختيار البلد..."></div>
+												 source="options.countries" filter="genericFilter" mapping="genericMapping" selectbox="true" placeholder="يُرجى اختيار البلد..."></div>
 											</div>
 										</div>
 									</div>
@@ -37,13 +37,13 @@
 
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="jurisdiction" required caption="الولاية القضائية">
-												<div class="help-block">Provide the jurisdiction where the law, regulation, guideline or agreement applies if this is different from the country name. مثال: البلد: الدنمارك، الاختصاص القضائي: &quot;مع استبعاد الأقاليم فيما يتعلق بجزر الفارو وجرينلاند&quot;. <br/> <strong>Important note for EU Members only: if the law, regulation, guideline or agreement applies to all EU Member States please select &quot;European Union&quot; in the &apos;Jurisdiction&apos; field.</strong></div>
+											<div class="km-control-group" name="jurisdiction" required caption="منطقة الاختصاص">
+												<div class="help-block">Provide the jurisdiction where the law, regulation, guideline or agreement applies if this is different from the country name. مثال: البلد: الدنمارك، منطقة الاختصاص: "مع استبعاد الأقاليم فيما يتعلق بجزر الفارو وجرينلاند". <br/> <strong>ملاحظة مهمة لدول الاتحاد الأوروبي فقط: إذا كانت القانون أو اللوائح أو التشريعات أو الاتفاقيات تنطبق على جميع الدول الأعضاء في الاتحاد الأوروبي، يُرجى تحديد "الاتحاد الأوربي" في حقل "منطقة الاختصاص".</strong></div>
 												<div km-select multiple required name="jurisdiction" ng-model="document.jurisdictions"
-												 items="options.jurisdiction()" placeholder="Please select a Jurisdiction..."></div>
+												 items="options.jurisdiction()" placeholder="يُرجى تحديد منطقة الاختصاص ..."></div>
 												 <div class="row">
 													<div class="col-sm-12" ng-if="hasOther(document.jurisdictions)">
-														<div class="km-control-group" name="otherJurisdiction" caption="Other jurisdiction"><!-- <div ng-repeat="jurisdiction in jurisdictionNames" style="padding-bottom:5px;"> {{$index}}--><div km-textbox-ml name="jurisdictionNames" ng-model="otherJurisdictionValue" locales="document.header.languages"></div><!-- </div>
+														<div class="km-control-group" name="otherJurisdiction" caption="منطقة اختصاص أخرى"><!-- <div ng-repeat="jurisdiction in jurisdictionNames" style="padding-bottom:5px;"> {{$index}}--><div km-textbox-ml name="jurisdictionNames" ng-model="otherJurisdictionValue" locales="document.header.languages"></div><!-- </div>
 															<button class="btn btn-primary" ng-click="jurisdictionNames.push({})">Add a item</button> --></div>
 													</div>
 												</div>
@@ -54,7 +54,7 @@
 
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" required name="title" caption="Title of document">
+											<div class="km-control-group" required name="title" caption="عنوان الوثيقة أو المستند">
 												<div km-textbox-ml name="title" required ng-model="document.title" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -65,11 +65,11 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>تفاصيل تشريعية</legend>
+									<legend>التفاصيل التشريعية</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="type" required caption="Type of document">
-												<div class="help-block">A law is usually legislation (a statute) enacted by a state government. A regulation is usually an act or process of controlling by rule or restriction, having legal force, issued by an administrative agency or a local government. A guideline is usually a document that announces the policy an agency intends to implement in future decision-making, or which will otherwise guide the agency in the exercise of its administrative discretion. A regulatory summary is a text summary of the national biosafety regulatory framework in place, or being developed in a country.</div>
+											<div class="km-control-group" name="type" required caption="نوع الوثيقة">
+												<div class="help-block">القوانين هي تشريعات تصدرها حكومات الدول أو حكومات الولايات اللوائح التشريعية تصدرها وكالة أو حكومة محلية وهي عادة ما تكون وسيلة أو إجراء له قوة القانون يهدف إلى تعزيز التحكم والسيطرة من خلال فرض القواعد أو القيود. المبدأ التوجيهي عادة ما يكون وثيقة تعلن عن سياسة وكالة أو هيئة تنوي تطبيقها في عمليات صنع القرار في المستقبل، أو توجه الوكالة أو الهيئة في ممارسة قدرتها على التقدير الإداري. الموجز التنظيمي هو ملخص نصي للإطار الوطني التنظيمي للسلامة الأحيائية سواء كان قائمًا بالفعل أو يجري تطويره في إحدى الدول.</div>
 												<div km-term-radio required ng-model="document.type" locales="document.header.languages"
 													terms="options.legislationAgreementTypes()" binding-type="term" show-other="true"></div>
 											</div>
@@ -78,8 +78,8 @@
 
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="cpbSubjectAreas" required caption="Subject areas">
-												<div class="help-block">يحتوي هذا القسم على الكلمات الرئيسية المرتبطة بالموضوع محل المناقشة للمساعدة في البحث عن السجل وترجمته (يجوز تقديم وصف كامل في موضع آخر من السجل)</div>
+											<div class="km-control-group" name="cpbSubjectAreas" required caption="مجالات الموضوع">
+												<div class="help-block">يحتوي هذا القسم على الكلمات الرئيسية المرتبطة بالموضوع محل المناقشة للمساعدة في البحث عن السجل وترجمته (يجوز تقديم وصف كامل في موضع آخر من السجل).</div>
 												<div km-term-check required ng-model="document.cpbSubjectAreas" locales="document.header.languages"
 													terms="options.subjectAreas()" show-other="true" binding-type="term[]"></div>
 											</div>
@@ -87,8 +87,8 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="type" required caption="Types of LMOs addressed">
-												<div class="help-block">يحتوي هذا القسم على الكلمات الرئيسية المرتبطة بفئات الكائنات الحية المحورة محل التعامل للمساعدة في البحث عن السجل وترجمته (يجوز تقديم وصف كامل في موضع آخر من السجل)</div>
+											<div class="km-control-group" name="type" required caption="أنواع الكائنات الحية المُحوَّرة التي يتم التعامل معها">
+												<div class="help-block">يحتوي هذا القسم على الكلمات المفتاحية المرتبطة بفئات الكائنات الحية المحورة محل التعامل للمساعدة في البحث عن السجل وترجمته (يجوز تقديم وصف كامل في موضع آخر من السجل).</div>
 												<div km-term-check required ng-model="document.cpbOrganismTypes" locales="document.header.languages"
 													terms="options.typeOfOrganisms()" show-other="true" binding-type="term[]"></div>
 											</div>
@@ -96,16 +96,16 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="description" caption="Brief description of the document including objective and scope">
-												<div class="help-block">Objective Example: &quot;The objective of this Act is to contribute to ensuring an adequate level of protection in the field of the safe transfer, handling and use of living modified organisms resulting from modern biotechnology that may have adverse effects on the conservation and sustainable use of biological diversity, taking also into account risks to human health, and specifically focusing on transboundary movements.&quot; <br/> <br/> Scope Example: &quot;These regulations apply to the transboundary movement, transit, handling and use of all living modified plants that may have adverse effects on the conservation and sustainable use of biological diversity, taking also into account risks to human health.&quot;</div>
+											<div class="km-control-group" name="description" caption="وصف موجز للوثيقة يشمل الهدف والنطاق">
+												<div class="help-block">مثال على الهدف: "الهدف من هذا القانون هو المساهمة في ضمان توفير المستوى الكافي من الحماية والسلامة عند نقل واستخدام وتناول الكائنات الحية المحورة الناتجة عن التكنولوجيا الحيوية الحديثة التي ربما يكون لها آثار سلبية على الحفاظ على التنوع البيولوجي واستمراره، مع الأخذ في الاعتبار المخاطر على صحة الإنسان والتركيز بصفة خاصة على النقل عبر الحدود". <br/> <br/> مثال على النطاق: "تنطبق هذه اللوائح على الحركة عبر الحدود والعبور والمناولة والاستخدام لجميع النباتات الحية المحورة التي قد تنطوي على آثار ضارة على حفظ واستدامة استخدام التنوع البيولوجي، مع مراعاة المخاطر على صحة الإنسان".</div>
 												<div km-rich-textbox ng-model="document.description" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="entryIntoForce" caption="Date of entry into force">
-												<div km-date placeholder="YYYY-MM-DD" name="entryIntoForce" ng-model="document.entryIntoForce"></div>
+											<div class="km-control-group" name="entryIntoForce" caption="تاريخ النفاذ أو التطبيق">
+												<div km-date placeholder="يوم - شهر - سنة" name="entryIntoForce" ng-model="document.entryIntoForce"></div>
 											</div>
 										</div>
 									</div>
@@ -118,7 +118,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="documents" caption="نص الوثيقة">
-												<div class="help-block">من المفضل إرفاق مستند الوثيقة. وإلا، فقم من فضلك بتوفير موقع المستند (على سبيل المثال، عنوان الموقع الإلكتروني مشتملاً علي الرابط إلي الموقع الإلكتروني (علي سبيل المثال، http://bch.biodiv.org) واسم موقع الانترنت (على سبيل المثال، &quot;غرفة تبادل معلومات السلامة الأحيائية&quot;).</div>
+												<div class="help-block">يُفضل إرفاق المستند. وإلا، يُرجى إضافة موقع المستند (على سبيل المثال، عنوان الموقع الإلكتروني الذي يشتمل على رابط الموقع الإلكتروني (علي سبيل المثال، http://bch.biodiv.org) واسم موقع الإنترنت (على سبيل المثال، "غرفة تبادل معلومات السلامة الأحيائية").</div>
 												<div km-link name="documents" ng-model="document.documents" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>
@@ -126,8 +126,8 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="unofficialDocuments" caption="Unofficial Documents">
-												<div class="help-block">Unofficial document and / or courtesy translation.</div>
+											<div class="km-control-group" name="unofficialDocuments" caption="وثائق ومستندات غير رسمية">
+												<div class="help-block">ترجمة هدية و/أو غير رسمية</div>
 												<div km-link name="unofficialDocuments" ng-model="document.unofficialDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>
@@ -136,7 +136,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="documentsInfo" caption="">
-												<div class="help-block">Use this field to provide any relevant information about document text including details of how to obtain a copy of the document if it is not available as an attachment or online.</div>
+												<div class="help-block">استخدم هذا الحقل في إضافة أي معلومات ذات صلة حول نص الوثيقة مثل تفاصيل كيفية الحصول على نسخة من الوثيقة إن لم تكن متاحة كمرفق رقمي أو على الإنترنت.</div>
 												<div km-rich-textbox ng-model="document.documentsInfo" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -144,9 +144,9 @@
 									<div class="row">
 										<div class="col-xs-12">
 											<div class="km-control-group" name="amendedRecords" caption="التعديلات">	
-												<div class="help-block">يرجى توضيح أي تعديلات تم إجراؤها على هذه الوثيقة. اذكر الرابط المرجعي إذا تم تسجيل التعديلات في سجل منفصل.</div>										
+												<div class="help-block">يُرجى توضيح أي تعديلات تم إجراؤها على هذه الوثيقة. اذكر الرابط المرجعي إذا تم تسجيل التعديلات في سجل منفصل.</div>										
 												<div document-selector ng-model="document.amendedRecords" question="amendedRecords"
-													government="document.government" schema="(biosafetyLaw)" caption="القوانين أو اللوائح او المبادئ التوجيهية"></div>			
+													government="document.government" schema="(biosafetyLaw)" caption="القوانين أو اللوائح أو المبادئ التوجيهية"></div>			
 											</div>
 										</div>
 										<div class="col-sm-12">
@@ -160,7 +160,7 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Regulatory contact information</legend>
+									<legend>معلومات جهات الاتصال التنظيمية</legend>
 									<div class="row">
 										<div  class="col-xs-12">
 											<div class="km-control-group" name="authorities" caption="السلطات الوطنية المختصة" required>	
@@ -174,11 +174,11 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>الجدول الزمني لتأكيد المعلومات أو تحديثها</legend>
+									<legend>الجدول الزمنى لتأكيد المعلومات أو تحديثها</legend>
 									<div class="row">
 										<div  class="col-xs-12">
-											<div class="km-control-group" name="authorities" caption="هل ينبغي تأكيد هذه المعلومات أو تحديثها بعد مضي سنتين من تاريخ تقديمها؟" required>	
-												<div class="help-block">If the answer to this question is &ldquo;Yes&rdquo;, after two years from the date of submission you will be asked to confirm or update the record within 3 months. إن لم يصل التأكيد بعد هذه المدة، سيتم تحديد السجل كسجل &quot;غير مؤكد&quot;.</div>     
+											<div class="km-control-group" name="authorities" caption="هل ينبغي تأكيد هذه المعلومات أو تحديثها بعد مضي عامين من تاريخ تقديمها؟" required>	
+												<div class="help-block">إذا كانت الإجابة علي هذا السؤال هي "نعم"، فبعد عامين من تاريخ الإرسال سيطلب منك تأكيد السجل أو تحديثه في غضون 3 أشهر. إن لم يصل التأكيد بعد هذه المدة، سيتم تمييز السجل بالوصف "غير مؤكد".</div>     
 												<div class="km-yes-no" name="expires" ng-model="document.expires"></div>			
 											</div>
 										</div>
@@ -191,8 +191,8 @@
 									<legend>معلومات إضافية</legend>
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="km-control-group" name="address" caption="أى معلومات أخرى ذات صلة">
-												<div class="help-block">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
+											<div class="km-control-group" name="address" caption="أي معلومات أخرى ذات صلة">
+												<div class="help-block">يُرجى استخدام هذا الحقل في إضافة أي معلومات أخرى ذات صلة لم تُذكر أو لم تُستخدم في مكان آخر في هذا السجل.</div>
 												<div km-rich-textbox ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -201,7 +201,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="relevantDocuments" caption="أي وثائق أخرى ذات صلة">
-												<div class="help-block">من فضلك قم باستخدام هذا الحقل فى توفير أى عناوين لمواقع انترنت أخرى ذات صلة و/أو مستند أو أكثر لتخزينها فى قاعدة البيانات ليمكن تحميلها من قبل المستخدمين.</div>
+												<div class="help-block">يُرجى استخدام هذا الحقل في إدخال عناوين أي مواقع إنترنت أخرى ذات صلة و/أو وثيقة أو وثائق أخرى ذات صلة لتخزينها في قاعدة البيانات ليستطيع المستخدمون تنزيلها.</div>
 												<div km-link name="relevantDocuments" ng-model="document.relevantDocuments" allow-link="true" allow-file="true"
 												 identifier="document.header.identifier"></div>
 											</div>
@@ -215,7 +215,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">حقل الملاحظات هو لاستخدامك الشخصى فقط: يمكنك رؤيته عند تعديل السجل ولكنه لا يظهر للآخرين حين تتم مشاهدة السجل عن طريق صفحات البحث.</div>
+											<div class="help-block">حقل الملاحظات هو لاستخدامك الشخصي فقط: يمكنك رؤيته عند تعديل السجل ولكنه لا يظهر للآخرين حين يُعرض  السجل عن طريق صفحات البحث.عرض</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

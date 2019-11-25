@@ -4,7 +4,7 @@
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
-			<workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
+			<workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
 			 validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
 			 on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
 			 on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -18,7 +18,7 @@
 									<legend>一般信息</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -30,7 +30,7 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Identity of the living modified organism (LMO)</legend>
+									<legend>改性活生物体（LMO）的身份。</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group"  name="identity" caption="改性活生物体的名称">
@@ -46,12 +46,12 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="hasUniqueIdentification" required caption="此改性活生物体是否有独特识别码？">
-												<div class="help-block">生物安全信息交换所目前使用的是根据经济合作与发展组织（OECD）设计的独特识别码系统，用于为转基因植物指定独特识别码（如MON-&Oslash;&Oslash;81&Oslash;-6）。For more information see <a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>.</div>
+												<div class="help-block">生物安全信息交换所目前使用的是根据经济合作与发展组织（OECD）设计的独特识别码系统，用于为转基因植物指定独特识别码（如MON-ØØ81Ø-6）。如需更多信息，请查看<a href="http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml">http://bch.cbd.int/database/organisms/uniqueidentifiers/about.shtml</a>。</div>
 												<div km-yes-no required ng-model="hasUniqueIdentification" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-sm-12" ng-if="hasUniqueIdentification">
-											<div class="km-control-group" required name="uniqueIdentification" caption="Unique identifier">
+											<div class="km-control-group" required name="uniqueIdentification" caption="唯一识别码">
 												<input type="text" class="form-control" name="uniqueIdentification" required ng-model="document.transformationEvent"/>
 											</div>
 										</div>
@@ -67,8 +67,8 @@
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" required name="recipientOrganisms" caption="Recipient Organism or Parental Organisms">	
-												<div class="help-block">The term Recipient organism refers to an organism (either already modified or non-modified) that was subjected to genetic modification, whereas Parental organisms refers to those that were involved in cross breeding or cell fusion.</div>
+											<div class="km-control-group" required name="recipientOrganisms" caption="受体生物体或亲本生物体">	
+												<div class="help-block">“受体生物体”一词是指经受基因改性的生物体（已改性或未改性），而“亲本生物体”是指那些参与交叉育种或细胞融合的生物体。</div>
 												<div document-selector required ng-model="document.recipientOrganisms" question="recipientOrganisms"
 													schema="(organism modifiedOrganism)" caption="Add Organism / Modified Organism"></div>			
 											</div>
@@ -81,7 +81,7 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="linkedModifiedOrganisms" caption="相关改性活生物体">	
-												<div class="help-block">This field relates to other LMOs with similar characteristics.</div>
+												<div class="help-block">此字段涉及具有类似特征的其他改性活生物体。</div>
 												<div document-selector ng-model="document.linkedModifiedOrganisms" question="linkedModifiedOrganisms"
 													schema="(modifiedOrganism)"></div>			
 											</div>
@@ -120,7 +120,7 @@
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="geneNotes" caption="有关该改性活生物体中存在之基因片断的注释">	
-												<div class="help-block">Please specify if any of these elements has been modified from the sequence registered in the BCH Genetic Element Registry and how they relate to each other in this LMO, for instance &ldquo;epsps protein coding sequence under control of the 35S promoter and nos terminator&rdquo;.</div>
+												<div class="help-block">请说明是否有任何基因片断是自生物安全信息交换所基因片断登记薄所登记的序列改性而得，以及它们在当前改性活生物体中的相互关系，例如“在35S启动子和nos终结子控制下的epsps蛋白质编码序列。</div>
 												<div km-textbox-ml name="geneNotes"  ng-model="document.geneNotes" locales="document.header.languages"></div>	
 											</div>
 										</div>
@@ -182,7 +182,7 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Additional information</legend>
+									<legend>更多信息</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="address" caption="其它相关信息">
@@ -209,7 +209,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">&ldquo;备注&rdquo;字段用于填写您的个人注释或评论，在查看记录时将被隐藏。此字段不适用于保密信息。</div>
+											<div class="help-block">The “Notes” field is for your personal notes or comments and will be hidden when viewing the record.此字段不适用于保密信息。</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

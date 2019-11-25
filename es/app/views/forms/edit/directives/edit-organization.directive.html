@@ -1,16 +1,16 @@
 ﻿<div id="editOrganizationDiv"><span block-region activate="status=='loading'" ng-if="status=='loading'" update-parent-position="true"></span><div class="registerpage-content">
 
-        <div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+        <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
             tab="tab" validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
             on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
             on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
             data-container="{{container}}" is-dialog="{{isDialog}}">
             <edit-form>
                 <form name="editForm" class="editForm" style="margin-top:10px">
-                    <legend>Informaci&oacute;n general</legend>
+                    <legend>Información general</legend>
                     <div class="row">
                         <div class="col-xs-12" >
-                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                 <div class="indent">
                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                 </div>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <legend>Datos de la Organizaci&oacute;n</legend>
+                    <legend>Datos de la Organización</legend>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -92,7 +92,7 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
                             <div class="km-control-group" name="phones" required caption="Números de teléfono">
-                                <div class="help-info">Por favor, utilice el siguiente formato: + [c&oacute;digo del pa&iacute;s] [c&oacute;digo de ciudad] [n&uacute;mero de tel&eacute;fono] [extensi&oacute;n, si corresponde].</div>
+                                <div class="help-info">Por favor, utilice el siguiente formato: + [código del país] [código de ciudad] [número de teléfono] [extensión, si corresponde].</div>
                                 <div km-inputtext-list required name="phones" ng-model="document.phones"
                                     placeholder="ejemplo: +1 514.288.2220"></div>
                             </div>
@@ -100,7 +100,7 @@
 
                         <div class="col-md-6 col-xs-12">
                             <div class="km-control-group" name="faxes" caption="Números de fax">
-                                <div class="help-info">Por favor, utilice el siguiente formato: + [c&oacute;digo del pa&iacute;s] [c&oacute;digo de ciudad] [n&uacute;mero de tel&eacute;fono] [extensi&oacute;n, si corresponde].</div>
+                                <div class="help-info">Por favor, utilice el siguiente formato: + [código del país] [código de ciudad] [número de teléfono] [extensión, si corresponde].</div>
                                 <div km-inputtext-list name="faxes" ng-model="document.faxes" placeholder="ejemplo: +1 514.288.6588"></div>
                             </div>
                         </div>

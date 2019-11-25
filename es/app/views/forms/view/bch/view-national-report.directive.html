@@ -1,11 +1,11 @@
 ﻿<div>
     <div class="section-pane panel panel-default" style="margin-bottom:3px!important">
 
-        <div class="panel-heading">Informaci&oacute;n general</div>
+        <div class="panel-heading">Información general</div>
         <div class="panel-body" style="padding:0px">
             <div style="margin:5px" class="row">
                 <div ng-show="document.government">
-                    <label name="country">Pa&iacute;s</label>
+                    <label name="country">País</label>
                     <div class="km-value"><a ng-href="/countries/{{document.government.identifier}}"
                             target={{target}}>{{document.government|term:locale}}</a> <span ng-party-status government="document.government" id="government"></span></div>
                 </div>
@@ -65,7 +65,7 @@
                                 ng-bind-html="::spaceSubQuestion(question.number) + question.title" ></l></strong></strong>
                 </div>
                 <div ng-if="document[question.key]">
-                    <div ng-if="question.type!='text'">
+                    <div ng-if="question.type!='text' && question.type!='lstring'">
                         <km-value-ml ng-if="document[question.key].value"
                             value="displayText(document[question.key].value, question)" locales="locale"></km-value-ml>
                         <div ng-if="question.multiple" class="km-value">
@@ -74,11 +74,11 @@
                             </ul>                            
                         </div>
                         <div ng-if="document[question.key].additionalInformation">
-                            <label>Informaci&oacute;n suplementaria</label>
+                            <label>Información suplementaria</label>
                             <km-value-ml value="::document[question.key].additionalInformation" locales="locale"></km-value-ml>
                         </div>
                     </div>
-                    <div ng-if="question.type=='text'">
+                    <div ng-if="question.type=='text' || question.type=='lstring'">
                         <km-value-ml value="document[question.key]" locales="locale"></km-value-ml>
                     </div>
                 </div><!-- <div ng-if="!document[question.key] && question.type!= 'legend' && !question.questions">

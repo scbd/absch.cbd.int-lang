@@ -1,7 +1,7 @@
 ﻿<div>
 	<div class="registerpage-content">
 
-		<div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
+		<div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
 					<form name="editForm" class="editForm" style="margin-top:10px">
 
 							<div ng-show="tab=='edit'" km-tab="edit">
@@ -13,7 +13,7 @@
 			
                                     <div class="row">
                                         <div class="col-xs-12" >
-                                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                                 <div class="indent">
                                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                                 </div>
@@ -36,7 +36,7 @@
 											</div>
 											<div ng-if="isNationalUser && displayMCCWarning" class="alert alert-info">
 												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-												<h4><strong>Внимание!</strong> If this module contractual clause has been developed by your country, then please submit it under the national record format <a href="/register/NMCC/new" class="color-blue" >&apos;National Model Contractual Clause&apos;</a> so that will be clearly visible as a national record in the search and country profile. </h4><a href="/register/NMCC/new" class="bold">Click here</a> to open the national record submission form.</div>
+												<h4><strong>Please note:</strong> если данное типовое договорное положение разработано вашей страной, сведения о нем следует представить по форме для национальной записи <a href="/register/NMCC/new" class="color-blue" >«Национальное типовое договорное положение»</a>, с тем чтобы оно отчетливо фигурировало как национальная запись в результатах поиска и профиле страны.</h4><a href="/register/NMCC/new" class="bold">Щелкните здесь</a>, чтобы открыть форму представления национальной записи.</div>
 										</div>
 										<div class="col-xs-12" ng-show="isOtherSelected(document.resourceTypes)">
 											<div class="km-control-group" required name="resourceTypeName" caption="Название другого типа материала">
@@ -97,7 +97,7 @@
 			
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="organizations" caption="Организация(-и), выступающая(-ие) в качестве автора(-ов) ">
+											<div class="km-control-group" name="organizations" caption="Организация(-и), выступающая(-ие) в качестве автора(-ов)">
 												<organization-selector multiple ng-model="document.organizations" organization-only locales="document.header.languages"
 												 caption="Add organizations »">
 											</div>
@@ -108,7 +108,7 @@
 										<div class="col-xs-12">
 											<div class="km-control-group" required name="publicationYear" caption="Год публикации">
 												<select class="form-control" style="width:10%" required name="publicationYear" ng-model="document.publicationYear"
-												 convert-to-number>&gt;<option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
+												 convert-to-number>><option ng-repeat="option in years" value="{{option.id}}">{{option.name}}</option>
 												</select>
 											</div>
 										</div>
@@ -216,7 +216,7 @@
 									<div class="row" ng-if="IsCapacityBuilding() && IsTarget16()">
 										<div class="col-md-12">
 											<div class="km-control-group" required name="absKeyAreas" caption="Ключевые области и стратегические меры по созданию и развитию потенциала">
-												<div class="help-info">Ключевые области, определенные в стратегической структуре для создания и развития потенциала в поддержку эффективного осуществления Нагойского протокола (решение NP-1/8, приложение&nbsp;I).</div>
+												<div class="help-info">Ключевые области, определенные в стратегической структуре для создания и развития потенциала в поддержку эффективного осуществления Нагойского протокола (решение NP-1/8, приложение I).</div>
 												<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()"
 												 binding-type="term[]"></div>
 											</div>

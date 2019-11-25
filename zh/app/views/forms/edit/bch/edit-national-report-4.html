@@ -1,18 +1,20 @@
 ﻿<div ng-controller="editBchNationalReport4">
     <div ng-include="'/app/views/forms/edit/edit_header.html'"></div>
-    <style>.disabled { -moz-opacity:.50;filter:alpha(opacity=50);opacity:.50; } .inverted.dimmer { background-color: rgba(255, 255, 255, .85); } .km-terms-check-add-input-int{ width:50px; } .block-position{ position: relative; }</style>
+    <style> .disabled { -moz-opacity:.50;filter:alpha(opacity=50);opacity:.50; } .inverted.dimmer { background-color: rgba(255, 255, 255, .85); } .km-terms-check-add-input-int{ width:50px; } .block-position{ position: relative; } </style>
     <div style="padding: 24px;background-color:#FFF;;border-bottom:2px solid #ccc;">
 
+        
         <div class="registerpage-content" style="padding-bottom:30px;" ng-class="{'block-position' : blockEditForm || isLoading()}">
 
-            <div block-region activate="blockEditForm || isLoading()"></div>            
-            <workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
-                tab="tab" on-step-change="onStepChange(tab)" validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)">
+            <div block-region activate="blockEditForm || isLoading()"></div>      
+            <workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+                tab="tab" on-step-change="onStepChange(tab)" validation-report="validationReport" on-post-close="onPostClose()" 
+                on-error="onError(error, errorCode)">
                 <edit-form>
                     <div class="row">
                         <div class="col-xs-12">
                             <ul class="pagination" id="nrTabs">
-                                <li ng-repeat="tab in nr4Tabs" ng-class="{'active': $index==activeTab-1}" ng-click="setTab($index)"><a translation-url href="#tab{{$index+1}}" data-toggle="tab" ng-bind="::tab.title" ng-class="{'disabled': !tab.render}"></a></li>
+                                <li ng-repeat="tab in nr4Tabs" ng-class="{'active': $index==activeTab-1}" ng-click="setTab($index)" style="cursor: hand"><a translation-url href="#tab{{$index+1}}" data-toggle="tab" ng-class="{'disabled': !tab.render}" >Question <span ng-bind="::tab.title"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -45,8 +47,8 @@
                                                                             ng-bind-html="::(spaceSubQuestion(question.number) + question.title)" ng-required="question.mandatory">
                                                                         </label>                                                          
                                                                         <div class="pull-right" style="margin-bottom:5px;">
-                                                                            <button ng-if="previousAnswerMapping[question.key] && !question.showPrevious" ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">显示以前的回答</button>
-                                                                            <button ng-if="previousAnswerMapping[question.key] && question.showPrevious"  ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">隐藏以前的答案</button>
+                                                                            <button ng-if="previousAnswerMapping[question.key] && !question.showPrevious" ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Show previous Answer</button>
+                                                                            <button ng-if="previousAnswerMapping[question.key] && question.showPrevious"  ng-click="question.showPrevious = !question.showPrevious" class="btn btn-primary btn-xs">Hide previous Answer</button>
                                                                         </div>
                                                                     </div>         
                                                                 </div>
@@ -61,8 +63,8 @@
                                                                                         ng-bind-html="::(spaceSubQuestion(subQuestion.number) + subQuestion.title)" ng-required="subQuestion.mandatory">
                                                                                     </label>        
                                                                                     <div class="pull-right" style="margin-bottom:5px;">
-                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && !subQuestion.showPrevious" ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">显示以前的回答</button>
-                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && subQuestion.showPrevious"  ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">隐藏以前的答案</button>
+                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && !subQuestion.showPrevious" ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Show previous Answer</button>
+                                                                                        <button ng-if="previousAnswerMapping[subQuestion.key] && subQuestion.showPrevious"  ng-click="subQuestion.showPrevious = !subQuestion.showPrevious" class="btn btn-primary btn-xs">Hide previous Answer</button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -96,7 +98,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <ul class="pagination" id="nrTabs">
-                                <li ng-repeat="tab in nr4Tabs" ng-class="{'active': $index==activeTab-1}" ng-click="setTab($index)"><a translation-url href="#tab{{$index+1}}" data-toggle="tab" ng-bind="::tab.title"  ng-class="{'disabled': !tab.render}"></a></li>
+                                <li ng-repeat="tab in nr4Tabs" ng-class="{'active': $index==activeTab-1}" ng-click="setTab($index)" style="cursor: hand"><a translation-url href="#tab{{$index+1}}" data-toggle="tab" ng-class="{'disabled': !tab.render}">Question <span ng-bind="::tab.title"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -113,7 +115,7 @@
             <div style="margin:20px">
                 <div class="row">
                     <div class="col-xs-12" >
-                        <div class="km-control-group" name="languages" required caption="请选择您希望提交此报告的语言">
+                        <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                             <div class="indent">
                                 <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                             </div>
@@ -131,7 +133,7 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="km-control-group" name="contact" caption="提交报告的联系人" required>											
+                        <div class="km-control-group" name="contact" caption="Contact person submitting the report" required>											
                             <div document-selector ng-model="document.contact" question="contact"  type="radio"
                                 government="document.government" schema="(contact focalPoint)"></div>			
                         </div>
@@ -139,7 +141,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="km-control-group" required name="stakeholders" caption="9提供咨询或参与编写本报告的组织/利益攸关方">
+                        <div class="km-control-group" required name="stakeholders" caption="9.Organizations/stakeholders who were consulted or participated in the preparation of this report">
                             <div km-textbox-ml name="stakeholders" required ng-model="document.stakeholders" locales="document.header.languages"></div>
                         </div>
                     </div>
@@ -147,7 +149,7 @@
 
                 <div class="row">
                         <div class="col-sm-6">
-                            <div class="km-control-group" required name="stakeholders" caption="10本报告的时间跨度">
+                            <div class="km-control-group" required name="stakeholders" caption="10.Time period covered by this report">
                                 <div class="col-sm-5">
                                     <div km-date placeholder="YYYY-MM-DD" name="reportPeriodStartDate" required ng-model="document.reportPeriodStartDate"></div>
                                 </div> 
@@ -189,7 +191,7 @@
                 </div>
                 <div class="col-md-4" ng-if="question.showPrevious">
                     <div style="border: 2px solid #fff;padding:5px">
-                        <div class="alert alert-info" ng-if="previousAnswerMapping[question.key].showMessage">请注意，这个问题在每份国家报告中的覆盖时间都不一样</div>
+                        <div class="alert alert-info" ng-if="previousAnswerMapping[question.key].showMessage">* Please note that the period covered by this question is different in each reporting format.</div>
                         <div><strong ng-bind="::(previousAnswerMapping[question.key].prevQuestion + '. ' + previousAnswerMapping[question.key].previousQuestion.title)"></strong></div>
                         <div class="well well-sm" ng-if="previousAnswerMapping[question.key].previousQuestion.type!='array' && previousAnswerMapping[question.key].previousQuestion.answer"
                             ng-bind="::(previousAnswerMapping[question.key].previousQuestion.answer|lstring)"></div>
@@ -204,11 +206,11 @@
         </script>
         <script type="text/ng-template" id="recordExistsTemplate.html" trados-translation="true">
             <div style="margin:10px;">
-                <h1>第四次国家报告</h1>
+                <h1>Fourth national report</h1>
                 <hr>
                 <div class=" alert alert-danger">
                     <div class="glyphicon glyphicon-exclamation-sign"></div>
-                    <div>每个政府只允许有一份第四次国家报告的记录，如果贵政府已经有了第四次国家报告，你将在{{alertSeconds}}秒内回到该记录</div>
+                    <div>Only one record of the fourth national report is allowed for each government, the fourth national report already exists for your government, you will be redirected to the record in {{alertSeconds}} seconds.</div>
                 </div>
                 <div class="ngdialog-buttons">
                     <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="openExisting()">现在引导</button>

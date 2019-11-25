@@ -4,7 +4,7 @@
 
 	<div style="padding: 24px;background-color:#FFF;border-bottom:2px solid #ccc;"><span block-region activate="isLoading()" ng-if="isLoading()"></span><div class="registerpage-content">
 
-			<workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
+			<workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false" tab="tab"
 			 validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
 			 on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
 			 on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -15,10 +15,10 @@
 
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Informaci&oacute;n general</legend>
+									<legend>Información general</legend>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+											<div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
 												<div class="indent">
 													<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 												</div>
@@ -29,16 +29,16 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Informaci&oacute;n del Organismo</legend>
+									<legend>Información sobre el organismo</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" required name="scientificName" caption="Nombre científico">
-												<div class="help-block">El nombre cient&iacute;fico de un organismo se compone generalmente del nombre del g&eacute;nero, seguido de la denominaci&oacute;n espec&iacute;fica. Por ejemplo: Oryza sativa es el nombre cient&iacute;fico del arroz.</div>
+												<div class="help-block">El nombre científico de un organismo se compone generalmente del nombre del género, seguido de la denominación específica. Por ejemplo: Oryza sativa es el nombre científico del arroz.</div>
 												<input type="text" class="form-control" name="scientificName" required ng-model="document.scientificName"/>
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="kingdom" caption="Unido">
+											<div class="km-control-group" name="kingdom" caption="Reino">
 												<input type="text" class="form-control" name="kingdom" ng-model="document.kingdom" />
 											</div>
 										</div>
@@ -68,7 +68,7 @@
 											</div>
 										</div>
 										<div class="col-sm-12">
-											<div class="km-control-group" name="species" caption="Especies">
+											<div class="km-control-group" name="species" caption="Especie">
 												<input type="text" class="form-control" name="species" ng-model="document.species" />
 											</div>
 										</div>
@@ -98,7 +98,7 @@
 							</section>
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Clasificaci&oacute;n adicional</legend>
+									<legend>Clasificación adicional</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="plantCultivar" caption="Cultivar / variedad (plantas)">
@@ -127,7 +127,7 @@
 											</div>	
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="domestication"  caption="Domesticación de Organismo">
+											<div class="km-control-group" name="domestication"  caption="Domesticación del organismo">
 												<div km-term-radio  ng-model="document.domestication" locales="document.header.languages"
 													terms="options.domestication" binding-type="term"></div>
 											</div>	
@@ -138,42 +138,42 @@
 							
 							<section>
 								<div class="well no-shadow bg-white">
-									<legend>Caracter&iacute;sticas relacionadas con la seguridad de la biotecnolog&iacute;a</legend>
+									<legend>Características relacionadas con la seguridad de la biotecnología</legend>
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="km-control-group" name="originCentre" caption="Centro(s) de origen">
-												<div class="help-block">m&aacute;x. 200 caracteres</div>
+												<div class="help-block">máx. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.originCentre" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="diversityCentre" caption="Centro(s) de la diversidad genética">
-												<div class="help-block">m&aacute;x. 200 caracteres</div>
+												<div class="help-block">máx. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.diversityCentre" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="habitat" caption="Hábitat, ámbito">
-												<div class="help-block">m&aacute;x. 200 caracteres</div>
+											<div class="km-control-group" name="habitat" caption="Área del hábitat">
+												<div class="help-block">máx. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.habitat" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 
 										<div class="col-xs-12">
 											<div class="km-control-group" name="geographicalDistribution" caption="Distribución geográfica">
-												<div class="help-block">Ejemplo: &aacute;lamo oriental (Populus deltoides) se produce en Am&eacute;rica del Norte de Alberta en el oeste de Quebec en el este y la Florida, Tejas, Arizona y el norte de M&eacute;xico en el sur. (m&aacute;x. 200 caracteres)</div>
+												<div class="help-block">Ejemplo: álamo oriental (Populus deltoides) se produce en América del Norte de Alberta en el oeste de Quebec en el este y la Florida, Tejas, Arizona y el norte de México en el sur. (máx. 200 caracteres)</div>
 												<div km-rich-textbox ng-model="document.geographicalDistribution" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
-											<div class="km-control-group" name="donorOrganism" caption="Cross-compatible species">
-												<div class="hel-block">Proporcionar una lista de las especies mediante la clasificaci&oacute;n taxon&oacute;mica (nombres del g&eacute;nero y especie) que se sabe que tienen cruce fecundo con el organismo en el registro.</div>
+											<div class="km-control-group" name="donorOrganism" caption="Especies compatibles entre sí">
+												<div class="hel-block">Proporcionar una lista de las especies mediante la clasificación taxonómica (nombres del género y especie) que se sabe que tienen cruce fecundo con el organismo en el registro.</div>
 												<div document-selector ng-model="document.donorOrganism" question="donorOrganism" schema="(organism)"></div>
 											</div>
 										</div>
 										<div class="col-xs-12">
 											<div class="km-control-group" name="pathogenicity" caption="Patogenicidad y/o alergenicidad conocidos">
-												<div class="help-block">m&aacute;x. 200 caracteres</div>
+												<div class="help-block">máx. 200 caracteres</div>
 												<div km-rich-textbox ng-model="document.pathogenicity" rows="4" placeholder="" locales="document.header.languages"></div>
 											</div>
 										</div>
@@ -209,12 +209,12 @@
 								</div>
 							</section>
 							<section>
-								<legend>Notes</legend>
+								<legend>Notas</legend>
 
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="km-control-group" name="notes">
-											<div class="help-block">El campo &quot;Notas&quot; es para sus notas u observaciones personales y quedar&aacute; oculto al ver el registro. Este campo no est&aacute; destinado a ser usado para informaci&oacute;n confidencial.</div>
+											<div class="help-block">El campo "Notas" es para sus notas u observaciones personales y quedará oculto al ver el registro. Este campo no está destinado a ser usado para información confidencial.</div>
 											<textarea class="form-control" name="notes" ng-model="document.notes" rows="4"></textarea>
 										</div>
 									</div>

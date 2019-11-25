@@ -7,18 +7,18 @@
             <div class="alert alert-success alert-dismissable" ng-show="msg">
                 <button aria-hidden="true" class="close" data-dismiss="alert" ng-click="msg=''" type="button">&times;</button><strong>{{msg}}</strong></div>
 
-            <div workflow-arrow-buttons document="getCleanDocument()" 
+            <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" 
                 languages="document.header.languages" tab="tab"><!-- <intro-form></intro-form> --> <!--only use it if default article intro is not required --><edit-form>
                         
                 <form name="editForm" style="margin-top:10px">
 
 						<div ng-show="tab=='edit'" km-tab="edit">
 	
-							<legend>Informations g&eacute;n&eacute;rales</legend>
+							<legend>Informations générales</legend>
 	
 							<div class="row">
 								<div class="col-xs-12" >
-									<div class="km-control-group" name="languages" required caption=" Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
+									<div class="km-control-group" name="languages" required caption="Veuillez sélectionner la ou les langues dans lesquelles vous souhaitez soumettre ce fichier :">
 										<div class="indent">
 											<div km-form-languages required name="languages" ng-model="document.header.languages"></div>
 										</div>
@@ -85,7 +85,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" required name="authors" caption="Auteur(s)* :">
-										<div class="help-info">Nom de l&apos;auteur de la publication ou de la source d&apos;information.</div>
+										<div class="help-info">Nom de l'auteur de la publication ou de la source d'information.</div>
 										<div km-textbox-ml required ng-model="document.authors" rows="2" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="rights" caption="Droits">
-										<div class="help-info">Renseignements sur les droits associ&eacute;s &agrave; la ressource tels que le d&eacute;tenteur du droit d&apos;auteur et la disponibilit&eacute; aux fins de reproduction &agrave; des fins &eacute;ducatives et &agrave; but non lucratif.</div>
+										<div class="help-info">Renseignements sur les droits associés à la ressource tels que le détenteur du droit d'auteur et la disponibilité aux fins de reproduction à des fins éducatives et à but non lucratif.</div>
 										<div km-textbox-ml name="rights" ng-model="document.rights" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -130,18 +130,18 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="source" caption="Source">
-										<div class="help-info">Toute r&eacute;f&eacute;rence &agrave; l&apos;origine de la pr&eacute;sente ressource (p. ex., l&apos;article d&apos;un journal). Pour les documents originaux, vous pouvez sp&eacute;cifier «&nbsp;document original&nbsp;».</div>
+										<div class="help-info">Toute référence à l'origine de la présente ressource (p. ex., l'article d'un journal). Pour les documents originaux, vous pouvez spécifier « document original ».</div>
 										<div km-textbox-ml name="source" ng-model="document.source" locales="document.header.languages"></div>
 									</div>
 								</div>
 							</div>
 	
-							<legend>Acc&egrave;s &agrave; la ressource</legend>
+							<legend>Accès à la ressource</legend>
 	
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" required name="resourceLinks" caption="Lien à la ressource">
-										<div class="help-info">Pri&egrave;re de toujours joindre le ou les documents pertinents &agrave; int&eacute;grer &agrave; la base de donn&eacute;es afin que les utilisateurs puissent les t&eacute;l&eacute;charger. Veuillez &eacute;galement ajouter le lien vers les ressources qui sont disponibles sur Internet.</div>
+										<div class="help-info">Prière de toujours joindre le ou les documents pertinents à intégrer à la base de données afin que les utilisateurs puissent les télécharger. Veuillez également ajouter le lien vers les ressources qui sont disponibles sur Internet.</div>
 										<div km-link name="resourceLinks" required ng-model="document.resourceLinks" allow-link="true" allow-file="true" identifier="document.header.identifier"></div>
 									</div>
 								</div>
@@ -150,7 +150,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="cover" caption="Image de couverture">
-										<div class="help-info">Seuls les formats JPEG et PNG sont support&eacute;s.</div>
+										<div class="help-info">Seuls les formats JPEG et PNG sont supportés.</div>
 										<div km-link name="cover" ng-model="document.covers" allow-link="false" allow-file="true" mime-types="image/jpeg;image/png" identifier="document.header.identifier"></div>
 									</div>
 								</div>
@@ -182,12 +182,12 @@
 										<div km-term-check name="absKeyAreas" ng-model="document.absKeyAreas" terms="options.absKeyAreas()" binding-type="term[]"></div>
 									</div>
 								</div>
-							</div><a translation-url  name="#AdditionalInformation"></a><legend>Information suppl&eacute;mentaire</legend>
+							</div><a translation-url  name="#AdditionalInformation"></a><legend>Information supplémentaire</legend>
 	
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="address" caption="Any other relevant information">
-										<div class="help-info">Veuillez utiliser ce champ pour tout autre renseignement pertinent n&apos;ayant pas &eacute;t&eacute; abord&eacute; ailleurs dans le dossier.</div>
+										<div class="help-info">Please use this field to provide any other relevant information that may not have been addressed elsewhere in the record.</div>
 										<div km-textbox-ml ng-model="document.relevantInformation" rows="4" placeholder="" locales="document.header.languages"></div>
 									</div>
 								</div>
@@ -204,7 +204,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="km-control-group" name="notes">
-										<legend>Notes</legend><span class="help-info">Le champ «&nbsp;Notes&nbsp;» est r&eacute;serv&eacute; &agrave; votre usage personnel. Il ne peut &ecirc;tre vu que pendant la modification de l&apos;enregistrement.</span><div km-notes name="notes" ng-model="document.notes"></div>
+										<legend>Notes</legend><span class="help-info">Le champ « Notes » est réservé à votre usage personnel. Il ne peut être vu que pendant la modification de l'enregistrement.</span><div km-notes name="notes" ng-model="document.notes"></div>
 									</div>
 								</div>
 							</div>

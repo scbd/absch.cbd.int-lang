@@ -1,6 +1,6 @@
 ﻿<div id="editOrganizationDiv"><span block-region activate="status=='loading'" ng-if="status=='loading'" update-parent-position="true"></span><div class="registerpage-content">
 
-        <div workflow-arrow-buttons document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
+        <div workflow-arrow-buttons on-review-language-change="onReviewLanguageChange(lang)" document="getCleanDocument()" languages="document.header.languages" hide-timer="false"
             tab="tab" validation-report="validationReport" on-post-close="onPostClose()" on-error="onError(error, errorCode)"
             on-post-publish="onPostPublishOrRequest(data)" on-pre-publish="onPrePublish()" on-pre-save-draft="onPreSaveDraft()"
             on-post-save-draft="onPostSaveDraft(data)" on-post-request="onPostPublishOrRequest(data)" on-pre-request="onPreRequest()"
@@ -10,7 +10,7 @@
                     <legend>Общая информация</legend>
                     <div class="row">
                         <div class="col-xs-12" >
-                            <div class="km-control-group" name="languages" required caption=" Please select in which language(s) you wish to submit this record:">
+                            <div class="km-control-group" name="languages" required caption="Please select in which language(s) you wish to submit this record:">
                                 <div class="indent">
                                     <div km-form-languages required name="languages" ng-model="document.header.languages"></div>
                                 </div>
@@ -42,7 +42,7 @@
                         <div class="col-md-4" ng-show="document.organizationType.identifier=='5B6177DD-5E5E-434E-8CB7-D63D67D5EBED'">
                             <div class="km-control-group" name="contact_organizationTypeName" caption="Другой тип организации">
                                 <div km-textbox-ml name="contact_organizationTypeName" ng-model="document.organizationType.customValue"
-                                    placeholder="example: СКБР" locales="locales"></div>
+                                    placeholder="example: SCBD" locales="locales"></div>
                             </div>
                         </div>
                     </div>
